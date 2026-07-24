@@ -3,8 +3,7 @@
         "target": "ES2015",
         "module": "commonjs",
         "allowJs": true,
-        "checkJs": true,
-        "baseUrl": ".",
+        "checkJs": true,        
         "paths": {
             "*": [
                 "probe/generated/*"

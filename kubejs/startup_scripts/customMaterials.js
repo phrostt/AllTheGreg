@@ -1,5 +1,5 @@
 // priority: 500
-//@ts-check
+// @ts-nocheck
 const PropertyKey = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey')
 const BlastProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty')
 const OreProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.OreProperty')
@@ -42,6 +42,7 @@ const adMats = [
     { name: 'ostrum', color: 0x8A6E78, eleemnt: 'ostrum' },
     { name: 'calorite', color: 0xBF2A3C, element: 'calorite' }
 ];
+
 const materialsGem = [
     { name: 'demon', simple: true, color: '0x00FFFF', iconSet: 'DIAMOND' },
     { name: 'steadfast', simple: true, color: '0xB0C4DE', iconSet: 'LAPIS' },
@@ -76,19 +77,19 @@ const materialsGem = [
 //needs proper unification
 const otherElements = [
     //need to make sure each 1 of these is useful by checking usage on its dust[
-    { name: 'radium', namespace: 'chemlib', oItems: [], cBlast: 5400, cVolt: 131072, cIngot: true },
-    { name: 'rhenium', namespace: 'chemlib', oItems: [], cBlast: 5400, cVolt: 131072, cIngot: true },
-    { name: 'astatine', namespace: 'chemlib', oItems: [], cBlast: 7200, cVolt: 524288, cIngot: true },
+    { name: 'radium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
+    { name: 'rhenium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
+    { name: 'astatine', namespace: 'chemlib', oItems: ['dust'], cBlast: 7200, cVolt: 524288, cIngot: true },
     { name: 'graphite', cBlast: 3600, cVolt: 2048, cIngot: true },
-    { name: 'strontium', namespace: 'chemlib', oItems: [], cBlast: 4500, cVolt: 8192, cIngot: true },
-    { name: 'tellurium', namespace: 'chemlib', oItems: [], cBlast: 18900, cVolt: 33554432, cIngot: true },
+    { name: 'strontium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cBlast: 4500, cVolt: 8192, cIngot: true },
+    { name: 'tellurium', namespace: 'chemlib', oItems: ['dust'], cBlast: 18900, cVolt: 33554432, cIngot: true },
     { name: 'californium', cBlast: 18900, cVolt: 536870912, cIngot: true },
     { name: 'berkelium', cBlast: 18900, cVolt: 134217728, cIngot: true },
-    { name: 'polonium' },
-    { name: 'selenium', namespace: 'chemlib', oItems: [], cPolymer: true },
-    { name: 'francium', namespace: 'chemlib', oItems: [], cIngot: true }, //en
-    { name: 'germanium', namespace: 'chemlib', oItems: [], cVolt: 524416, cIngot: true },
-    { name: 'zirconium', namespace: 'chemlib', oItems: [], cIngot: true }
+    { name: 'polonium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
+    { name: 'selenium', namespace: 'chemlib', oItems: ['dust'], cPolymer: true },
+    { name: 'francium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true }, //en
+    { name: 'germanium', namespace: 'chemlib', oItems: ['dust'], cVolt: 524416, cIngot: true },
+    { name: 'zirconium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true }
 ];
 
 
@@ -285,15 +286,16 @@ const fluids = [
     { name: 'mind_control_serum', components: '1x terrazine, 1x mind_numbing_agent', color: 0x00FFFF, iconSet: 'FLUID' },
     { name: 'concentrated_dark_matter', components: '1x cesium, 1x water', color: 0x1A0033, iconSet: 'FLUID' },
 
-    { name: 'activated_carbon_slurry', color: 0x1A1A1A, iconSet: 'DULL' },
+    { name: 'activated_carbon_slurry', components: '1x activated_carbon, 1x zinc, 1x hydrochloric_acid', color: 0x1A1A1A, iconSet: 'DULL' },
     { name: 'filtered_water', components: '1x water', color: 0x33A1DE, iconSet: 'FLUID' },
     { name: 'ozonated_water', components: '1x water', color: 0x3366FF, iconSet: 'FLUID' },
     { name: 'flocculated_water', components: '1x water', color: 0x4682B4, iconSet: 'FLUID' },
     { name: 'neutralized_water', components: '1x water', color: 0x5F9EA0, iconSet: 'FLUID' },
     { name: 'electrically_neutral_water', components: '1x water', color: 0xAFEEEE, iconSet: 'FLUID' },
     { name: 'cryo_stabilized_water', components: '1x water', color: 0x87CEEB, iconSet: 'FLUID' },
-    { name: 'polyaluminium_chloride', components: '1x water', color: 0xCCCCCC, iconSet: 'DULL' },
-    { name: 'spent_flocculant_slurry', components: '1x water', color: 0x555555, iconSet: 'DULL' },
+    { name: 'polyaluminium_chloride', components: '1x chlorine, 1x aluminium', color: 0xCCCCCC, iconSet: 'DULL' },    
+    { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL' },
+    { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
     { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' }
 ];
 
@@ -996,8 +998,7 @@ StartupEvents.postInit(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');    
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'evilcraft:garmonbozia');
+    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');        
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
@@ -1090,6 +1091,17 @@ GTCEuStartupEvents.materialModification(event => {
             });
         }
     });
+
+    otherElements.forEach(mat => {
+        let gtMat = GTMaterials.get(mat.name);
+        if (gtMat && mat.oItems) {
+            mat.oItems.forEach(type => {
+                if (TagPrefix[type]) {
+                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${mat.name}_${type}`);
+                }
+            });
+        }
+    }); 
             
     // Block
     TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
@@ -1101,8 +1113,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');    
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'evilcraft:garmonbozia');
+    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');        
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');

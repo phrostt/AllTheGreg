@@ -15,7 +15,7 @@ allthemods.recipes.gtceu.mixer('gregification:mind_numbing_agent_synthesis')
         .EUt(EUSimple);
 
 allthemods.recipes.gtceu.large_chemical_reactor('gregification:poison_agent_synthesis')
-        .itemInputs('1x gtceu:astatine_dust')
+        .itemInputs('#forge:dusts/astatine')
         .inputFluids('evilcraft:poison 1000')
         .outputFluids('gtceu:poison_agent 1000')
         .duration(1600)
@@ -23,25 +23,17 @@ allthemods.recipes.gtceu.large_chemical_reactor('gregification:poison_agent_synt
 
 
 allthemods.recipes.gtceu.large_chemical_reactor('gregification:paralytic_agent_synthesis')
-        .itemInputs('1x twilightforest:thorn_rose')
+        .itemInputs('twilightforest:thorn_rose')
         .inputFluids('gtceu:poison_agent 1000')
         .outputFluids('gtceu:paralytic_agent 1000')
         .duration(1600)
         .EUt(EUComplex);
 
 allthemods.recipes.gtceu.large_chemical_reactor('gregification:mind_control_serum_synthesis')
-        .itemInputs('1x gtceu:mind_numbing_agent_dust')
+        .itemInputs('#forge:dusts/mind_numbing_agent')
         .inputFluids('gtceu:terrazine 1000', 'gtceu:paralytic_agent 1000')
         .outputFluids('gtceu:mind_control_serum 1000')
         .duration(1600)
         .EUt(EUComplex);
-        
-
-        //this is missing quarks lol
-        allthemods.recipes.gtceu.bacterial_vat('gregification:concentrated_dark_matter_synthesis')
-        .itemInputs('#forge:dusts/cesium')
-        .inputFluids('#forge:water 1000')
-        .outputFluids('gtceu:concentrated_dark_matter 1')
-        .duration(10000)
-        .EUt(EUComplex);
+                
 });

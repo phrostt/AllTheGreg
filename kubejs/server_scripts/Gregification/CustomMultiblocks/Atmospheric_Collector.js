@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {   
-    const collectorEU = 32768;
+    const collectorEU = 8192;
     const collectorDuration = 600;
     
     //overworld

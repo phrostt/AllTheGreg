@@ -342,5 +342,9 @@
     "material.gtceu.electrically_neutral_water": "Electrically Neutral Water (Stage 5)",
     "material.gtceu.cryo_stabilized_water": "Cryo-Stabilized Water (Stage 6)",  
     "material.gtceu.purest_water": "Purest Water (Stage 7)",
-    "material.gtceu.etrium": "Etrium"
+    "material.gtceu.etrium": "Etrium",
+    "material.gtceu.super_coolant": "Super Coolant",    
+    "material.gtceu.activated_carbon_slurry": "Activated Carbon Slurry",
+    "material.gtceu.polyaluminium_chloride": "Polyaluminium Chloride",
+    "material.gtceu.spent_flocculant_slurry": "Spent Flocculant Slurry"    
 }

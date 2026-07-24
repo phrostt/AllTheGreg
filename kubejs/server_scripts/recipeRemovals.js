@@ -20,7 +20,9 @@ ServerEvents.recipes(allthemods => {
         "enderio:endsteel_conduit", "enderio:lumium_conduit", "enderio:signalum_conduit", "enderio:vibrant_conduit", "enderio:enderium_conduit",
 
 
-        "gtceu:macerator/macerate_wheat", 'megacells:transform/sky_steel_ingot','appflux:mega/sky_resin'
+        "gtceu:macerator/macerate_wheat", 'megacells:transform/sky_steel_ingot','appflux:mega/sky_resin',
+        'draconicevolution:components/draconium_ingot_from_ore','elementalcraft:pure_ore/draconicevolution/components/draconium_ingot_from_ore'
+
     ]
     const globalRemoves = [
         // --- Thermal ---
@@ -219,7 +221,7 @@ ServerEvents.recipes(allthemods => {
         'productivebees:upgrades/productivity', 'productivebees:upgrades/productivity_2', 'productivebees:upgrades/anti_teleport',
         'productivebees:upgrades/simulator', 'productivebees:upgrades/productivity_3', 'productivebees:upgrades/comb_block', 'productivebees:upgrades/productivity_4',
 
-        // --- Draconic Evolution & Allthemodium (Smelting/Processing) ---
+        // --- Draconic Evolution & Allthemodium (Smelting/Processing) ---        
         'draconicevolution:machines/crafting_core', 'draconicevolution:components/draconium_ingot_from_dust',
         'draconicevolution:components/awakened_draconium_ingot_from_dust',
         'enderio:smelting/draconicevolution/components/draconium_ingot_from_dust', 'enderio:smelting/draconicevolution/components/awakened_draconium_ingot_from_dust',
