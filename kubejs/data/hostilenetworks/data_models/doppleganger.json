@@ -1,0 +1,68 @@
+{	
+    "entity": "botania:doppleganger",
+	  "variants": [
+		"botania:doppeeganger",
+		"botania:gaia_guardian"
+	  ],
+    "name": "entity.botania.doppleganger",
+    "name_color": "#BF40BF",
+    "gui_scale": 1,
+    "gui_x_offset": 0,
+    "gui_y_offset": 0,
+    "gui_z_offset": 0,
+    "sim_cost": 16384,
+    "input": {
+        "item": "hostilenetworks:prediction_matrix"
+    },
+    "base_drop": {
+        "item": "hostilenetworks:overworld_prediction"
+    },
+	  "data_per_kill": [
+		1,
+		4,
+		10,
+		18
+	  ],
+    "fabricator_drops": [
+        {
+            "item": "botania:life_essence",
+            "count": 8
+        },
+        {
+            "item": "gtceu:manasteel_ingot",
+            "count": 16
+        },
+        {
+            "item": "botania:mana_pearl",
+            "count": 8
+        },
+        {
+            "item": "botania:mana_diamond",
+            "count": 4
+        },
+        {
+            "item": "botania:ancient_will_ahrim",
+            "count": 1
+        },
+        {
+            "item": "botania:ancient_will_dharok",
+            "count": 1
+        },
+        {
+            "item": "botania:ancient_will_guthan",
+            "count": 1
+        },
+        {
+            "item": "botania:ancient_will_torag",
+            "count": 1
+        },
+        {
+            "item": "botania:ancient_will_verac",
+            "count": 1
+        },
+        {
+            "item": "botania:ancient_will_karil",
+            "count": 1
+        }
+    ]
+}

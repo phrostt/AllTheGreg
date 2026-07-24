@@ -1,0 +1,2012 @@
+{
+  "entries": [
+    {
+      "item": "minecraft:beef",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:cooked_beef",
+      "emc": 64
+    },
+    {
+      "item": "forcecraft:raw_bacon",
+      "emc": 32
+    },
+    {
+      "item": "forcecraft:cooked_bacon",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:porkchop",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:bacon",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:cooked_bacon",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:bacon",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:cooked_porkchop",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:cooked_bacon",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:mutton",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:mutton_chops",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:cooked_mutton",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:cooked_mutton_chops",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:chicken",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:chicken_cuts",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:cooked_chicken",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:cooked_chicken_cuts",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:rabbit",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:cooked_rabbit",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:tropical_fish",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:pufferfish",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:shrimp",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:cooked_shrimp",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:tuna",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:cooked_tuna",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:anchovy",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:cooked_anchovy",
+      "emc": 64
+    },
+    {
+      "item": "croptopia:roe",
+      "emc": 16
+    },
+    {
+      "item": "minecraft:cod",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:cod_slice",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:cooked_cod",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:cooked_cod_slice",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:salmon",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:salmon_slice",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:cooked_salmon",
+      "emc": 64
+    },
+    {
+      "item": "farmersdelight:cooked_salmon_slice",
+      "emc": 32
+    },
+    {
+      "item": "xycraft_world:xychorium_gem_blue",
+      "emc": 128
+    },
+    {
+      "item": "xycraft_world:xychorium_gem_light",
+      "emc": 128
+    },
+    {
+      "item": "xycraft_world:xychorium_gem_dark",
+      "emc": 128
+    },
+    {
+      "item": "xycraft_world:xychorium_gem_red",
+      "emc": 128
+    },
+    {
+      "item": "xycraft_world:xychorium_gem_green",
+      "emc": 128
+    },
+    {
+      "item": "minecraft:bone",
+      "emc": 128
+    },
+    {
+      "item": "minecraft:string",
+      "emc": 12
+    },
+    {
+      "item": "minecraft:gunpowder",
+      "emc": 196
+    },
+    {
+      "item": "forcecraft:pile_of_gunpowder",
+      "emc": 49
+    },
+    {
+      "item": "minecraft:ghast_tear",
+      "emc": 1024
+    },
+    {
+      "item": "minecraft:slime_ball",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:rotten_flesh",
+      "emc": 32
+    },
+    {
+      "item": "minecraft:smooth_basalt",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:basalt",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:sandstone",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:smooth_sandstone",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:chiseled_sandstone",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:red_sandstone",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:smooth_red_sandstone",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:chiseled_red_sandstone",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:blackstone",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:tuff",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:cobbled_deepslate",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:deepslate",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:polished_deepslate",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:deepslate_bricks",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:deepslate_tiles",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:cobblestone",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:cobblestone_stairs",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:cobblestone_wall",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:mossy_cobblestone",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:stone",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:stone_stairs",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:stone_pressure_plate",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:stone_button",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:smooth_stone",
+      "emc": 1
+    },
+    {
+      "item": "#minecraft:stone_bricks",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:stone_brick_stairs",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:stone_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:mossy_stone_bricks",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:moss_block",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:moss_carpet",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:calcite",
+      "emc": 4
+    },
+    {
+      "item": "minecraft:flower_pot",
+      "emc": 4
+    },
+    {
+      "item": "#chipped:clay",
+      "emc": 4
+    },
+    {
+      "item": "#chipped:nether_bricks",
+      "emc": 4
+    },
+    {
+      "item": "#chipped:bricks",
+      "emc": 4
+    },
+    {
+      "item": "#chipped:andesite",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:polished_andesite",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:diorite",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:polished_diorite",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:granite",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:polished_granite",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:dripstone_block",
+      "emc": 4
+    },
+    {
+      "item": "create:limestone",
+      "emc": 4
+    },
+    {
+      "item": "create:asurine",
+      "emc": 4
+    },
+    {
+      "item": "create:crimsite",
+      "emc": 4
+    },
+    {
+      "item": "create:ochrum",
+      "emc": 4
+    },
+    {
+      "item": "create:veridium",
+      "emc": 4
+    },
+    {
+      "item": "croptopia:calamari",
+      "emc": 16
+    },
+    {
+      "item": "croptopia:cooked_calamari",
+      "emc": 16
+    },
+    {
+      "item": "minecraft:ink_sac",
+      "emc": 16
+    },
+    {
+      "item": "minecraft:glow_ink_sac",
+      "emc": 16
+    },
+    {
+      "item": "croptopia:glowing_calamari",
+      "emc": 16
+    },
+    {
+      "item": "minecraft:spider_eye",
+      "emc": 128
+    },
+    {
+      "item": "#chipped:ochre_froglight",
+      "emc": 256
+    },
+    {
+      "item": "#chipped:verdant_froglight",
+      "emc": 256
+    },
+    {
+      "item": "#chipped:pearlescent_froglight",
+      "emc": 256
+    },
+    {
+      "item": "minecraft:leather",
+      "emc": 27
+    },
+    {
+      "item": "minecraft:blaze_rod",
+      "emc": 1024
+    },
+    {
+      "item": "thermal:basalz_rod",
+      "emc": 1024
+    },
+    {
+      "item": "thermal:blitz_rod",
+      "emc": 1024
+    },
+    {
+      "item": "thermal:blizz_rod",
+      "emc": 1024
+    },
+    {
+      "item": "projecte:transmutation_table",
+      "emc": 260
+    },
+    {
+      "item": "projecte:repair_talisman",
+      "emc": 490
+    },
+    {
+      "item": "projecte:divining_rod_1",
+      "emc": 12
+    },
+    {
+      "item": "projecte:divining_rod_2",
+      "emc": 76
+    },
+    {
+      "item": "projecte:divining_rod_3",
+      "emc": 1740
+    },
+    {
+      "item": "projecte:low_covalence_dust",
+      "emc": 1
+    },
+    {
+      "item": "projecte:medium_covalence_dust",
+      "emc": 5
+    },
+    {
+      "item": "projecte:high_covalence_dust",
+      "emc": 208
+    },
+    {
+      "item": "minecraft:feather",
+      "emc": 48
+    },
+    {
+      "item": "minecraft:egg",
+      "emc": 16
+    },
+    {
+      "item": "#chipped:glass",
+      "emc": 1
+    },
+    {
+      "item": "connectedglass:borderless_glass",
+      "emc": 1
+    },
+    {
+      "item": "connectedglass:clear_glass",
+      "emc": 1
+    },
+    {
+      "item": "connectedglass:scratched_glass",
+      "emc": 1
+    },
+    {
+      "item": "create:tiled_glass",
+      "emc": 1
+    },
+    {
+      "item": "create:framed_glass",
+      "emc": 1
+    },
+    {
+      "item": "create:horizontal_framed_glass",
+      "emc": 1
+    },
+    {
+      "item": "create:vertical_framed_glass",
+      "emc": 1
+    },
+    {
+      "item": "xycraft_world:glass_viewer",
+      "emc": 1
+    },
+    {
+      "item": "xycraft_world:glass_viewer_silicon",
+      "emc": 1
+    },
+    {
+      "item": "xycraft_world:glass_viewer_dire",
+      "emc": 1
+    },
+    {
+      "item": "xycraft_world:glass_viewer_glowing",
+      "emc": 1
+    },
+    {
+      "item": "xycraft_world:glass_viewer_glowing_clear",
+      "emc": 1
+    },
+    {
+      "item": "#forge:stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:black_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:blue_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:brown_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:cyan_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:gray_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:green_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_blue_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_gray_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:lime_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:magenta_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:orange_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:pink_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:purple_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:red_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:white_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:yellow_stained_glass",
+      "emc": 1
+    },
+    {
+      "item": "forbidden_arcanus:ender_pearl_fragment",
+      "emc": 256
+    },
+    {
+      "item": "minecraft:ender_pearl",
+      "emc": 1024
+    },
+    {
+      "item": "#chipped:sea_lantern",
+      "emc": 128
+    },
+    {
+      "item": "minecraft:phantom_membrane",
+      "emc": 2048
+    },
+    {
+      "item": "minecraft:magma_cream",
+      "emc": 64
+    },
+    {
+      "item": "#projecte:alchemical_bags",
+      "emc": 8192
+    },
+    {
+      "item": "#minecraft:wool",
+      "emc": 48
+    },
+    {
+      "item": "#minecraft:wool_carpets",
+      "emc": 32
+    },
+    {
+      "item": "#chipped:terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:white_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_gray_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:gray_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:black_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:brown_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:red_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:orange_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:yellow_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:lime_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:green_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:cyan_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_blue_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:blue_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:purple_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:magenta_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:pink_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:white_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_gray_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:gray_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:black_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:brown_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:red_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:orange_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:yellow_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:lime_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:green_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:cyan_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_blue_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:blue_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:purple_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:magenta_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:pink_glazed_terracotta",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:white_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_gray_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:gray_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:black_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:brown_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:red_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:orange_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:yellow_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:lime_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:green_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:cyan_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:light_blue_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:blue_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:purple_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:magenta_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#chipped:pink_concrete",
+      "emc": 1
+    },
+    {
+      "item": "#minecraft:leaves",
+      "emc": 1
+    },
+    {
+      "item": "#minecraft:planks",
+      "emc": 8
+    },
+    {
+      "item": "#minecraft:wooden_slabs",
+      "emc": 4
+    },
+    {
+      "item": "#minecraft:wooden_stairs",
+      "emc": 8
+    },
+    {
+      "item": "#minecraft:wooden_doors",
+      "emc": 16
+    },
+    {
+      "item": "#minecraft:wooden_trapdoors",
+      "emc": 24
+    },
+    {
+      "item": "#minecraft:wooden_buttons",
+      "emc": 8
+    },
+    {
+      "item": "#minecraft:wooden_pressure_plates",
+      "emc": 4
+    },
+    {
+      "item": "#minecraft:wooden_fences",
+      "emc": 8
+    },
+    {
+      "item": "#forge:fence_gates/wooden",
+      "emc": 8
+    },
+    {
+      "item": "minecraft:bamboo_mosaic",
+      "emc": 8
+    },
+    {
+      "item": "#minecraft:logs",
+      "emc": 32
+    },
+    {
+      "item": "mcwfences:acacia_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:acacia_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:acacia_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:acacia_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:acacia_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:acacia_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:acacia_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:andesite_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:andesite_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:andesite_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:azalea_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:bamboo_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:bamboo_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:bamboo_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:bamboo_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:bamboo_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:bamboo_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:bamboo_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:birch_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:birch_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:birch_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:birch_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:birch_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:birch_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:birch_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:blackstone_brick_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:blackstone_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:blackstone_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:blackstone_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:cherry_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:cherry_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:cherry_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:cherry_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:cherry_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:cherry_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:cherry_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:crimson_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:crimson_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:crimson_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:crimson_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:crimson_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:crimson_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:dark_oak_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:dark_oak_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:dark_oak_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:dark_oak_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:dark_oak_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:dark_oak_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:dark_oak_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:deepslate_brick_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:deepslate_brick_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:deepslate_brick_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:deepslate_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:deepslate_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:deepslate_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:diorite_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:diorite_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:diorite_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:end_brick_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:end_brick_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:end_brick_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:flowering_azalea_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:granite_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:granite_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:granite_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:jungle_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:jungle_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:jungle_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:jungle_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:jungle_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:jungle_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:jungle_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mangrove_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mangrove_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mangrove_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mangrove_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mangrove_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mangrove_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mangrove_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_andesite_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_blackstone_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_deepslate_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_deepslate_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_diorite_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_end_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_granite_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_mud_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_nether_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_prismarine_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_quartz_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_red_sandstone_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_sandstone_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:modern_stone_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mud_brick_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mud_brick_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:mud_brick_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:nether_brick_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:nether_brick_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:nether_brick_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:oak_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:oak_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:oak_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:oak_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:oak_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:oak_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:oak_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:prismarine_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:prismarine_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:prismarine_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:quartz_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:quartz_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:quartz_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_andesite_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_blackstone_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_deepslate_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_deepslate_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_diorite_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_end_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_granite_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_mud_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_nether_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_prismarine_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_quartz_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_red_sandstone_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_sandstone_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:railing_stone_brick_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:red_sandstone_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:red_sandstone_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:red_sandstone_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:sandstone_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:sandstone_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:sandstone_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:spruce_hedge",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:spruce_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:spruce_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:spruce_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:spruce_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:spruce_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:spruce_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:stone_brick_railing_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:stone_grass_topped_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:stone_pillar_wall",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:warped_highley_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:warped_horse_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:warped_picket_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:warped_pyramid_gate",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:warped_stockade_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:warped_wired_fence",
+      "emc": 1
+    },
+    {
+      "item": "mcwfences:wooden_cheval_de_frise",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:acacia_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:acacia_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:acacia_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:acacia_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:acacia_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:andesite_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:andesite_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:andesite_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:asian_red_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:asian_red_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:asian_red_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_andesite_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_blackstone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_cobblestone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_deepslate_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_deepslate_tiles_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_diorite_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_end_stone_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_granite_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_mossy_cobblestone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_mossy_stone_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_mud_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_nether_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_orange_sandstone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_prismarine_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_sandstone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:balustrade_stone_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:bamboo_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:bamboo_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:bamboo_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:birch_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:birch_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:birch_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:birch_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:birch_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:blackstone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:blackstone_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:blackstone_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:brick_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:brick_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:brick_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cherry_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cherry_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cherry_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cherry_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cherry_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cobblestone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cobblestone_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:cobblestone_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:crimson_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:crimson_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:crimson_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:crimson_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:crimson_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dark_oak_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dark_oak_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dark_oak_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dark_oak_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dark_oak_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:deepslate_brick_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:deepslate_brick_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:deepslate_brick_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:diorite_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:diorite_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:diorite_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dry_bamboo_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dry_bamboo_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:dry_bamboo_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:end_stone_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:end_stone_bricks_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:end_stone_bricks_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:glass_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:glass_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:glass_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:jungle_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:jungle_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:jungle_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:jungle_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:jungle_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mangrove_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mangrove_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mangrove_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mangrove_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mangrove_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mossy_cobblestone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mossy_cobblestone_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mossy_cobblestone_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mossy_stone_brick_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mossy_stone_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mossy_stone_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mud_brick_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mud_brick_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:mud_brick_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:nether_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:nether_bricks_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:nether_bricks_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:oak_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:oak_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:oak_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:oak_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:oak_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:orange_sandstone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:prismarine_bricks_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:prismarine_bricks_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:prismarine_bricks_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:red_sandstone_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:red_sandstone_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_acacia_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_birch_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_cherry_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_crimson_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_dark_oak_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_jungle_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_mangrove_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_oak_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_spruce_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:rope_warped_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:sandstone_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:sandstone_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:sandstone_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:spruce_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:spruce_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:spruce_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:spruce_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:spruce_rope_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:stone_brick_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:stone_brick_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:stone_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:warped_bridge_pier",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:warped_log_bridge_middle",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:warped_log_bridge_stair",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:warped_rail_bridge",
+      "emc": 1
+    },
+    {
+      "item": "mcwbridges:warped_rope_bridge_stair",
+      "emc": 1
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "loader": "ldlib:renderer",
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gtceu:block/coils/cosmic_alloy_bloom"
+  }
+}

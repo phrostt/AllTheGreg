@@ -1,0 +1,204 @@
+ServerEvents.recipes(allthemods => {
+
+
+    const hephaestus = (inputs, fluids, outputs, duration, eu, nonConsumables, customID, program) => {
+
+        let id
+
+        if (customID) {
+            id = customID
+        }
+        else {
+            let firstOutput = Array.isArray(outputs) ? outputs[0] : outputs;
+            let outputName = firstOutput.toString().replace(/^\d+[x ]\s*/, '').split(':').pop().replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase();
+            id = `gregification:hephaestus_forge/${outputName}`;
+        }
+
+        let recipe = allthemods.recipes.gtceu.hephaestus_forge(id)
+            .itemInputs(inputs)
+            .itemOutputs(outputs)
+            .duration(duration)
+            .EUt(eu);
+
+        if (fluids && fluids.length > 0) {
+            recipe.inputFluids(fluids);
+        }
+        /*
+        if (nonConsumables && nonConsumables.length > 0) {            
+                recipe.notConsumable(nonConsumables);            
+        }*/
+        if (nonConsumables) {
+            // If it's an Array, loop through it.
+            if (Array.isArray(nonConsumables) && nonConsumables.length > 0) {
+                nonConsumables.forEach(item => {
+                    recipe.notConsumable(item);
+                });
+            }
+            // If it's a single item (not an array), add it directly.
+            else if (!Array.isArray(nonConsumables)) {
+                recipe.notConsumable(nonConsumables);
+            }
+        }
+        if (program) {
+            recipe.circuit(program);
+        }
+    };
+
+    const saplings = ["forbidden_arcanus:growing_edelwood", "ars_nouveau:blue_archwood_sapling", "ars_nouveau:red_archwood_sapling", "ars_nouveau:purple_archwood_sapling", "ars_nouveau:green_archwood_sapling", "ars_elemental:yellow_archwood_sapling"]
+
+
+    //saplings
+    saplings.forEach((sapling, index) => {
+
+        hephaestus(
+            [
+                "64x #forge:sapling",
+            ],
+            [
+                "gtceu:liquid_aureal 1000",
+                "#forge:liquid_soul 10",
+                'gtceu:sanguine_concentrate 1000',
+                "gtceu:distilled_water 10000"
+            ],
+            //"forbidden_arcanus:growing_edelwood",
+            sapling,
+            120,
+            8192, [], null, index
+        )
+    });
+
+    //sea prism
+    hephaestus(
+        [
+            "minecraft:heart_of_the_sea",
+            "2x #forge:dusts/prismarine",
+            "2x minecraft:scute",
+            "2x #forge:gems/lapis"
+        ],
+        [
+            "gtceu:liquid_aureal 1000",
+            "#forge:liquid_soul 8",
+            'gtceu:sanguine_concentrate 2000'
+        ],
+        "forbidden_arcanus:sea_prism",
+        1200,
+        32768,
+        "forbidden_arcanus:elementarium"
+    )
+
+    //smelter prism
+    hephaestus(
+        [
+            "#forge:storage_blocks/arcane_crystal",
+            "2x #forge:gems/coal",
+            "2x #forge:dusts/blaze"
+        ],
+        [
+            "gtceu:liquid_aureal 200",
+            "#forge:liquid_soul 4",
+            'gtceu:sanguine_concentrate 1250'
+        ],
+        "forbidden_arcanus:smelter_prism",
+        1200,
+        32768,
+        "forbidden_arcanus:elementarium"
+    )
+
+    //terrastom prism
+    hephaestus(
+        [
+            "#forge:storage_blocks/diamond",
+            "2x #forge:gems/flint",
+            "2x minecraft:dripstone_block",
+            "2x minecraft:pointed_dripstone"
+        ],
+        [
+            "gtceu:liquid_aureal 300",
+            "#forge:liquid_soul 9",
+            'gtceu:sanguine_concentrate 1500'
+        ],
+        "forbidden_arcanus:terrastomp_prism",
+        1200,
+        32768,
+        "forbidden_arcanus:elementarium"
+    )
+
+    //whirlwind prism
+    hephaestus(
+        [
+            "#forge:wool",
+            "forbidden_arcanus:bat_wing",
+            "2x #forge:feathers",
+            "3x minecraft:phantom_membrane"
+        ],
+        [
+            "gtceu:liquid_aureal 1000",
+            "#forge:liquid_soul 3",
+            'gtceu:sanguine_concentrate 2250'
+        ],
+        "forbidden_arcanus:whirlwind_prism",
+        1200,
+        32768,
+        "forbidden_arcanus:elementarium"
+    )
+
+    //eternal stella
+    hephaestus(
+        [
+            "4x #forge:double_plates/naquatainium",
+            "3x forbidden_arcanus:xpetrified_orb",
+            "1x forbidden_arcanus:stellarite_piece"
+        ],
+        [
+            "gtceu:liquid_aureal 1000",
+            "#forge:liquid_soul 500",
+            'gtceu:sanguine_concentrate 1000'
+        ],
+        "forbidden_arcanus:eternal_stella",
+        1200,
+        32768,
+        null
+    )
+
+    //ferrognetic mixture
+    hephaestus(
+        [
+            "evilcraft:garmonbozia",
+            "2x forbidden_arcanus:wax",
+            "#forge:ingots/dark_steel",
+            "#forge:ingots/pink_slime",
+            "#forge:ingots/alfsteel",
+            "#forge:ingots/hellforged",
+            "#forge:ingots/iesnium"
+        ],
+        [
+            "gtceu:liquid_aureal 100",
+            "#forge:liquid_soul 20",
+            'gtceu:sanguine_concentrate 2000'
+        ],
+        "forbidden_arcanus:ferrognetic_mixture",
+        400,
+        32768,
+        null
+    )
+
+    //stellarite bee
+    hephaestus(
+        [
+            Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:diamond"}}').strongNBT(),
+            "4x forbidden_arcanus:xpetrified_orb",
+            "2x forbidden_arcanus:eternal_stella"
+        ],
+        [
+            "gtceu:liquid_aureal 82",
+            "#forge:liquid_soul 1",
+            'gtceu:sanguine_concentrate 1000'
+        ],
+        Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:stellarite"}}').strongNBT(),
+        1200,
+        32768,
+        null,
+        "stellarite_bee"
+    )
+
+});

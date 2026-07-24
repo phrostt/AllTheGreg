@@ -1,0 +1,204 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "square"
+	filename: "gendustry"
+	group: "46D49B1102629CD3"
+	icon: "gendustry:advanced_mutatron"
+	id: "235C8F68E9231894"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["Craft the **Industrial Apiary**. It uses RF/FE power and accepts specialized upgrades for superior production."]
+			id: "1F39394E828FAE6C"
+			rewards: [{
+				count: 4
+				id: "4A9EBB221CD54A05"
+				item: "gendustry:upgrade_frame"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "The RF-Powered Hive."
+			tasks: [{
+				id: "68BFDC00EC0A7E8A"
+				item: "gendustry:industrial_apiary"
+				type: "item"
+			}]
+			title: "The Industrial Apiary"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Mutagen Producer**. This converts resources (like Glowstone) into **Liquid Mutagen**, the fuel for precise breeding."]
+			id: "1F72AF061382AB16"
+			rewards: [{
+				id: "3B0B4ABAC0526C9E"
+				type: "custom"
+			}]
+			shape: "square"
+			subtitle: "Fueling forced mutations."
+			tasks: [{
+				id: "3C8328A6B9D9B178"
+				item: "gendustry:mutagen_producer"
+				type: "item"
+			}]
+			title: "Mutagen Producer"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Mutatron**. Use Mutagen to force a Princess/Drone pair to mutate, eliminating the randomness of traditional breeding."]
+			id: "49D37A0E4284FCAB"
+			rewards: [{
+				id: "107A34B68B04B08B"
+				item: "gendustry:genetics_labware"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Guaranteed species mutations."
+			tasks: [{
+				id: "2BF76600ECFF0582"
+				item: "gendustry:mutatron"
+				type: "item"
+			}]
+			title: "Forced Mutation: Mutatron"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Advanced Mutatron**. This superior version allows you to **select the exact mutation outcome**."]
+			id: "421CC0849565D0D0"
+			rewards: [{
+				id: "78A37ADF0E20A634"
+				item: "forestry:circuit_board_enhanced"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Select your desired mutation."
+			tasks: [{
+				id: "2862166036FF3615"
+				item: "gendustry:advanced_mutatron"
+				type: "item"
+			}]
+			title: "Precision Control"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft **8 Production Upgrades**. Install them in your Industrial Apiary to drastically increase yield."]
+			id: "547F2F2DD82C3E5F"
+			rewards: [{
+				id: "6FD9B5AE06F8C185"
+				item: "gendustry:automation_upgrade"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Maximize honey and comb output."
+			tasks: [{
+				count: 8L
+				id: "57C32684E30BA5BC"
+				item: "gendustry:productivity_upgrade"
+				type: "item"
+			}]
+			title: "Ultimate Productivity"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Genetic Sampler**. This extracts single genes (like 'Fastest Production') from a bee onto a **Blank Gene Sample**."]
+			id: "67C6E2142638C6FF"
+			rewards: [{
+				count: 8
+				id: "23CEF2F48BC8F29C"
+				item: "gendustry:blank_gene_sample"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Isolating individual genes."
+			tasks: [{
+				id: "25E8A62C87BD0011"
+				item: "gendustry:sampler"
+				type: "item"
+			}]
+			title: "The Genetic Sampler"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			description: ["Craft the **Genetic Imprinter**. This machine saves a blueprint of desired traits to force onto future bees."]
+			id: "06BFA1273850BD60"
+			rewards: [{
+				id: "0749BD68A79881A5"
+				item: "gendustry:genetic_template"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Creating a trait template."
+			tasks: [{
+				id: "726C8FE7A5CF67B8"
+				item: "gendustry:imprinter"
+				type: "item"
+			}]
+			title: "Genetic Blueprint"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			description: ["Craft the **Protein Liquifier**. This processes raw meat into **Liquid Protein**, a fluid needed for bee replication."]
+			id: "0149CBF760BA3560"
+			rewards: [{
+				id: "4E51A791909AB0A9"
+				type: "custom"
+			}]
+			shape: "square"
+			subtitle: "Liquefying meat for cloning."
+			tasks: [{
+				id: "546AF7A5718B7FA7"
+				item: "gendustry:protein_liquefier"
+				type: "item"
+			}]
+			title: "The Protein Source"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			description: ["Craft the **DNA Extractor**. This machine breaks down bees or butterflies to produce **Liquid DNA**."]
+			id: "4CEEAF81C994F601"
+			rewards: [{
+				id: "11E56E62A1C4F56E"
+				type: "custom"
+			}]
+			shape: "square"
+			subtitle: "Extracting the Genetic Code."
+			tasks: [{
+				id: "7F4FA46C2823F863"
+				item: "gendustry:dna_extractor"
+				type: "item"
+			}]
+			title: "DNA Extraction"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			description: ["Craft the **Genetic Replicator**. This clones Princesses and Drones using Liquid DNA, Liquid Protein, and a Genetic Template."]
+			id: "49A5A06AE7071F18"
+			rewards: [{
+				count: 64
+				id: "0A95A4662D026C5A"
+				item: "gendustry:labware"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Cloning perfect bees."
+			tasks: [{
+				id: "532A181195B24356"
+				item: "gendustry:replicator"
+				type: "item"
+			}]
+			title: "Replicate Life"
+			x: 4.0d
+			y: 4.0d
+		}
+	]
+	title: "Gendustry"
+}

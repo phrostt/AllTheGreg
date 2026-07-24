@@ -1,0 +1,14 @@
+{
+  "type": "productivebees:bee_conversion",
+  "source": "productivebees:neutronium",
+  "result": "productivebees:infinite",
+  "item": {
+    "item": "gtceu:infinity_block"
+  },
+  "conditions": [
+    {
+      "type": "productivebees:bee_exists",
+      "bee": "productivebees:infinite"
+    }
+  ]
+}

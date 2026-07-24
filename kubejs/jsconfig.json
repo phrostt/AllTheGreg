@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "commonjs",
+        "allowJs": true,
+        "checkJs": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "probe/generated/*"
+            ]
+        },
+        "lib": [
+            "ES5",
+            "ES2015"
+        ],
+        "rootDirs": [
+            "probe/generated",
+            "probe/user",
+            "server_scripts",
+            "startup_scripts",
+            "client_scripts"
+        ]
+    },
+    "include": [
+        "server_scripts/**/*.js",
+        "startup_scripts/**/*.js",
+        "probe/generated/**/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

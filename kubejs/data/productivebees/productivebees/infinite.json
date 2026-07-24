@@ -1,0 +1,23 @@
+{
+    "primaryColor": "#1d122c",
+    "secondaryColor": "#ffffff",
+    "tertiaryColor": "#e3b5ff",
+    "renderer": "default_shell",
+    "size": 5.00,
+    "selfbreed": false,
+    "selfheal": true,
+    "fireproof": true,
+    "flowerItem": "gtceu:infinity_block",
+    "name": "Infinity Bee",
+    "invulnerability": [
+        "mekanism.radiation",
+        "minecraft.drown",
+        "minecraft.starve"
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "gtceu"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+
+
+
+
+profile Saved activate HOT9
+	HOT1
+		"enderio:dark_steel_sword"
+	HOT2
+		"tconstruct:pickaxe"
+	HOT3
+		"minecraft:iron_sword"
+	HOT4
+		"tconstruct:sledge_hammer"
+	HOT5
+		"immersiveengineering:hemp_fiber"
+	HOT6
+		"immersiveengineering:hemp_fiber"
+	HOT8
+		"forestry:scoop"
+	HOT9
+		"croptopia:toast"
+	HEAD
+		"pneumaticcraft:compressed_iron_helmet"
+	CHEST
+		"pneumaticcraft:compressed_iron_chestplate"
+	LEGS
+		"minecraft:golden_leggings" -> "Enchantments" : [{id:"minecraft:protection",lvl:3}]
+	FEET
+		"pneumaticcraft:compressed_iron_boots"
+

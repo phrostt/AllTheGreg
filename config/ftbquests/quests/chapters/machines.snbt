@@ -1,0 +1,175 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "square"
+	filename: "machines"
+	group: "46D49B1102629CD3"
+	icon: "forestry:engine_biogas"
+	id: "419FAF6CB9C68F77"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["Craft a carpenter for more efficient woodworking."]
+			id: "7A02789C9D294784"
+			rewards: [{
+				count: 16
+				id: "4206754B93FF60A5"
+				item: "forestry:wood_pulp"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Efficient lumber production."
+			tasks: [{
+				id: "03BD901999A4C51A"
+				item: "forestry:carpenter"
+				type: "item"
+			}]
+			title: "The Carpenter"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft a Fermenter and a Still to convert crops into Ethanol, a renewable power source."]
+			id: "611006B5A2A4AC2B"
+			rewards: [{
+				id: "3F66C529EA761437"
+				item: "forestry:bucket_bio_ethanol"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Fermenter and Still setup."
+			tasks: [
+				{
+					id: "38A15CFD568CA8B2"
+					item: "forestry:fermenter"
+					type: "item"
+				}
+				{
+					id: "7A71017AEFE74FEB"
+					item: "forestry:still"
+					type: "item"
+				}
+			]
+			title: "Biofuel Production Line"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Biogas Engine**. This uses Ethanol to generate reliable RF/FE power."]
+			id: "73C7BE9EC63AB282"
+			rewards: [{
+				count: 8
+				id: "71C073A05F4BBA81"
+				item: "pipez:energy_pipe"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Powering your industrial machines."
+			tasks: [{
+				id: "0FB88C28FD304D3C"
+				item: "forestry:engine_biogas"
+				type: "item"
+			}]
+			title: "Biogas Engine"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Farm Control** block for assembling the large-scale **MultiFarm** structure."]
+			id: "4B5514328B099167"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "29DD2B21976C03F3"
+				table_id: 4196188979167302596L
+				type: "all_table"
+			}]
+			shape: "square"
+			subtitle: "Automated agriculture controller."
+			tasks: [
+				{
+					id: "450276397194ED12"
+					item: "forestry:farm_control_stone_brick"
+					type: "item"
+				}
+				{
+					id: "07B5330061AD7934"
+					item: "forestry:farm_gearbox_stone_brick"
+					type: "item"
+				}
+				{
+					id: "4DD6F30FB3993F81"
+					item: "forestry:farm_hatch_stone_brick"
+					type: "item"
+				}
+				{
+					id: "059FFA2A3AD43EC8"
+					item: "forestry:farm_valve_stone_brick"
+					type: "item"
+				}
+			]
+			title: "Multiblock Farm"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			description: ["The moistener produces mulch and as a biproduct can turn regular blocks to their mossy variants."]
+			id: "0E99C46FF552F74E"
+			rewards: [{
+				count: 16
+				id: "630B1BE8CA4B202E"
+				item: "forestry:mulch"
+				type: "item"
+			}]
+			subtitle: "Used to create mulch."
+			tasks: [{
+				id: "1298697111D434A1"
+				item: "forestry:moistener"
+				type: "item"
+			}]
+			title: "Moistener"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Squeezer**. It extracts **Seed Oil** from crops, a fluid needed for impregnated components."]
+			id: "617F73D2BFF3CA99"
+			rewards: [{
+				count: 4
+				id: "525A133312DDF45C"
+				item: "pipez:fluid_pipe"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "Producing Seed Oil for crafting."
+			tasks: [{
+				id: "7A74F0BEC7A7799D"
+				item: "forestry:squeezer"
+				type: "item"
+			}]
+			title: "Squeezer"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: ["Craft the **Carpenter**. It uses fluid inputs (like Seed Oil) to create items like **Impregnated Casings**."]
+			id: "2D862F8D20E18A1B"
+			rewards: [{
+				count: 2
+				id: "51130448FFAC90F3"
+				item: "forestry:impregnated_casing"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "The fluid-based crafting station."
+			tasks: [{
+				id: "56E016B27D5DD6E1"
+				item: "forestry:carpenter"
+				type: "item"
+			}]
+			title: "Carpenter"
+			x: 12.0d
+			y: 0.0d
+		}
+	]
+	title: "Forestry Machines"
+}

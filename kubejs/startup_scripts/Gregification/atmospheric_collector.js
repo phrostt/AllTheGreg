@@ -1,0 +1,42 @@
+
+GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
+    allthemods.create('atmospheric_collector')
+        .category('atmospheric_collector')
+        .setEUIO('in') // Machine takes power IN
+        .setMaxIOSize(1, 0, 0, 1) // Item In, Item Out, Fluid In, Fluid Out
+        .setProgressBar(GuiTextures.COMPRESSOR_OVERLAY, FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.COMPRESSOR)
+})
+
+GTCEuStartupEvents.registry('gtceu:machine', allthemods => {    
+    allthemods.create('atmospheric_collector', 'multiblock')        
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('atmospheric_collector')         
+        .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
+        .pattern(definition => FactoryBlockPattern.start()        
+            .aisle('SSSSSSSSS', 'SLLLLLLLS', 'SSSSSSSSS', 'SLLLLLLLS', 'SSSSSSSSS', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ')
+            .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCCCCCCCS', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '   CCC   ', '    C    ', '         ', '         ')    
+            .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCSSSSSCS', '         ', '         ', '         ', '  SSSSS  ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '    C    ', '  CCLCC  ', '  C   C  ', '         ', '         ')
+            .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCSCSCSCS', '   CLC   ', '   CLC   ', '   CLC   ', '  SSSSS  ', '         ', '         ', '         ', '   CCC   ', '         ', '         ', '         ', '         ', '         ', '   CCC   ', ' CCLLLCC ', '         ', '         ', '         ')
+            .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCSSSSSCS', '   L L   ', '   L L   ', '   L L   ', '  SSSSS  ', '    C    ', '    C    ', '    C    ', '   CCC   ', '    C    ', '    C    ', '    C    ', '    C    ', '    C    ', '  CCCCC  ', ' CLLCLLC ', ' C  C  C ', '    C    ', '    A    ')
+            .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCSCSCSCS', '   CLC   ', '   CLC   ', '   CLC   ', '  SSSSS  ', '         ', '         ', '         ', '   CCC   ', '         ', '         ', '         ', '         ', '         ', '   CCC   ', ' CCLLLCC ', '         ', '         ', '         ')
+            .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCSSSSSCS', '         ', '         ', '         ', '  SSSSS  ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '    C    ', '  CCLCC  ', '  C   C  ', '         ', '         ')
+            .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCCCCCCCS', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '   CCC   ', '    C    ', '         ', '         ')    
+            .aisle('SSSSSSSSS', 'SLLLLLLLS', 'SSSSKSSSS', 'SLLLLLLLS', 'SSSSSSSSS', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ')
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))                                    
+            .where('A', Predicates.blocks('allthetweaks:atm_star_block'))				
+            .where('L', Predicates.blocks('gtceu:superconducting_coil'))
+            .where('S', Predicates.blocks('gtceu:solid_machine_casing'))            
+            .where('C', Predicates.blocks('gtceu:inert_machine_casing')
+				.or(Predicates.autoAbilities(definition.getRecipeTypes()))	
+				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
+			)
+            .where(' ', Predicates.air()) 
+            .build()
+        )
+		.workableCasingModel(
+            'gtceu:block/casings/solid/machine_casing_inert_ptfe',            
+            'gtceu:block/multiblock/fusion_reactor'
+        )		
+})

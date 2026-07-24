@@ -1,0 +1,9 @@
+{
+    "ldlib": {
+        "connection": "kubejs:block/coils/antimatter_alloy_bloom_ctm",
+        "emissive": true
+    },
+    "shimmer": {
+        "bloom": true
+    }
+}
