@@ -17,8 +17,6 @@ const MaterialStack = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.ma
 
 const singularityMetals = ['iron', 'copper', 'silver', 'gold', 'lead', 'tin', 'platinum', 'nickel', 'zinc', 'brass', 'bronze', 'invar', 'steel']
 
-
-
 //need to utilize
 const erMaterials = [
     { name: 'blutonium', color: 0x14147b, oItems: ['ingot', 'dust', 'block'] },
@@ -37,40 +35,6 @@ const naqStages = [
     { name: 'naquadria_awakened', color: 0xFFC107, icon: 'RADIOACTIVE', polymer: true }
 ];
 
-/*
-//wills - unified
-const wills = [
-    { name: 'demon', color: '0x00FFFF', iconSet: 'DIAMOND', oGem: 'bloodmagic:defaultcrystal' },
-    { name: 'steadfast', color: '0xB0C4DE', iconSet: 'LAPIS', oGem: 'bloodmagic:steadfastcrystal' },
-    { name: 'corrosive', color: '0x90EE90', iconSet: 'EMERALD', oGem: 'bloodmagic:corrosivecrystal' },
-    { name: 'vengeful', color: '0xFFCCCB', iconSet: 'DIAMOND', oGem: 'bloodmagic:vengefulcrystal' },
-    { name: 'destructive', color: '0xFFFFE0', iconSet: 'QUARTZ', oGem: 'bloodmagic:destructivecrystal' },
-    { name: 'eternal', color: '0xFFFFE0', iconSet: 'SHINY', element: 'eternal', oGem: 'forbidden_arcanus:eternal_stella' },
-    { name: 'source', color: '0xD662FF', iconSet: 'EMERALD', oGem: 'ars_nouveau:source_gem' },
-    { name: 'soul', color: '0x3A4F6D', iconSet: 'GLASS', oGem: 'occultism:soul_gem' }
-];
-//actually materials
-const aaMaterials = [
-    { name: 'restonia', element: 'restonia', color: 0xff0000, iconSet: 'RUBY' },
-    { name: 'palis', element: 'palis', color: 0x1a237e, iconSet: 'LAPIS' },
-    { name: 'diamatine', element: 'diamatine', color: 0x4fc3f7, iconSet: 'DIAMOND' },
-    { name: 'void_crystal', element: 'void_crystal', color: 0x212121, iconSet: 'LIGNITE' },
-    { name: 'emeradic', element: 'emeradic', color: 0x00e676, iconSet: 'EMERALD' },
-    { name: 'enori', element: 'enori', color: 0xf5f5f5, iconSet: 'QUARTZ' },
-    { name: 'black_quartz', element: 'black_quartz', color: 0x000000, iconSet: 'QUARTZ' },
-    // Empowered Crystals
-    { name: 'empowered_restonia', element: 'restonia', color: 0xff4d4d, iconSet: 'RUBY' },
-    { name: 'empowered_palis', element: 'palis', color: 0x534bae, iconSet: 'LAPIS' },
-    { name: 'empowered_diamatine', element: 'diamatine', color: 0x8bf6ff, iconSet: 'DIAMOND' },
-    { name: 'empowered_void_crystal', element: 'void_crystal', color: 0x484848, iconSet: 'LIGNITE' },
-    { name: 'empowered_emeradic', element: 'emeradic', color: 0x66ffa6, iconSet: 'EMERALD' },
-    { name: 'empowered_enori', element: 'enori', color: 0xffffff, iconSet: 'QUARTZ' },
-
-    { name: 'fluix', color: 0x8F5CCB, iconSet: 'SHINY', components: '1x redstone, 1x certus_quartz, 1x nether_quartz', voltage: 32, loss: 2, superconductor: false, oGem: 'ae2:fluix_crystal', oDust: 'ae2:fluix_dust' },
-    { name: 'atm_star', color: 0xFFC107, iconSet: 'SHINY', voltage: 2097152, loss: 2, superconductor: false, oGem: 'allthetweaks:atm_star' }
-];
-
-*/
 //ad astra - unified
 const adMats = [
     { name: 'etrium', color: 0x5ABFB5, element: 'etrium' },
@@ -106,46 +70,25 @@ const materialsGem = [
     { name: 'fluix', color: 0x8F5CCB, iconSet: 'SHINY', components: '1x redstone, 1x certus_quartz, 1x nether_quartz', voltage: 32, loss: 2, superconductor: false },
     { name: 'atm_star', color: 0xFFC107, iconSet: 'SHINY', voltage: 2097152, loss: 2, superconductor: false }
 ];
-//THIS IS NOT FOR REGISTERING, ONLY FOR UNIFICATION
-const otherMats = [
-    //evilcraft & mekanism
-    { name: 'antimatter', oDust: 'mekanism:pellet_antimatter' },
-    { name: 'garmonbozia', oDust: 'evilcraft:garmonbozia' },
 
 
-    // --- Actually Additions (GTCEu Custom Gems) ---
-    { name: 'restonia' },
-    { name: 'palis' },
-    { name: 'diamatine' },
-    { name: 'void_crystal' },
-    { name: 'emeradic' },
-    { name: 'enori' },
-    { name: 'black_quartz' },
-    { name: 'empowered_restonia' },
-    { name: 'empowered_palis' },
-    { name: 'empowered_diamatine' },
-    { name: 'empowered_void_crystal' },
-    { name: 'empowered_emeradic' },
-    { name: 'empowered_enori' }
-
-];
 
 //needs proper unification
 const otherElements = [
     //need to make sure each 1 of these is useful by checking usage on its dust[
-    { name: 'radium', namespace: 'chemlib', oItems: ['ingot', 'dust'], cBlast: 5400, cVolt: 131072, cIngot: true },
-    { name: 'rhenium', namespace: 'chemlib', oItems: ['ingot', 'dust'], cBlast: 5400, cVolt: 131072, cIngot: true },
-    { name: 'astatine', namespace: 'chemlib', oItems: ['ingot', 'dust'], cBlast: 7200, cVolt: 524288, cIngot: true },
+    { name: 'radium', namespace: 'chemlib', oItems: [], cBlast: 5400, cVolt: 131072, cIngot: true },
+    { name: 'rhenium', namespace: 'chemlib', oItems: [], cBlast: 5400, cVolt: 131072, cIngot: true },
+    { name: 'astatine', namespace: 'chemlib', oItems: [], cBlast: 7200, cVolt: 524288, cIngot: true },
     { name: 'graphite', cBlast: 3600, cVolt: 2048, cIngot: true },
-    { name: 'strontium', namespace: 'chemlib', oItems: ['ingot', 'dust'], cBlast: 4500, cVolt: 8192, cIngot: true },
-    { name: 'tellurium', namespace: 'chemlib', oItems: ['dust'], cBlast: 18900, cVolt: 33554432, cIngot: true },
+    { name: 'strontium', namespace: 'chemlib', oItems: [], cBlast: 4500, cVolt: 8192, cIngot: true },
+    { name: 'tellurium', namespace: 'chemlib', oItems: [], cBlast: 18900, cVolt: 33554432, cIngot: true },
     { name: 'californium', cBlast: 18900, cVolt: 536870912, cIngot: true },
     { name: 'berkelium', cBlast: 18900, cVolt: 134217728, cIngot: true },
     { name: 'polonium' },
-    { name: 'selenium', namespace: 'chemlib', oItems: ['dust'], cPolymer: true },
-    { name: 'francium', namespace: 'chemlib', oItems: ['dust'], cIngot: true }, //en
-    { name: 'germanium', namespace: 'chemlib', oItems: ['dust'], cVolt: 524416, cIngot: true },
-    { name: 'zirconium', namespace: 'chemlib', oItems: ['dust', 'ingot'], cIngot: true }
+    { name: 'selenium', namespace: 'chemlib', oItems: [], cPolymer: true },
+    { name: 'francium', namespace: 'chemlib', oItems: [], cIngot: true }, //en
+    { name: 'germanium', namespace: 'chemlib', oItems: [], cVolt: 524416, cIngot: true },
+    { name: 'zirconium', namespace: 'chemlib', oItems: [], cIngot: true }
 ];
 
 
@@ -353,9 +296,6 @@ const fluids = [
     { name: 'spent_flocculant_slurry', components: '1x water', color: 0x555555, iconSet: 'DULL' },
     { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' }
 ];
-
-
-
 
 const polymers = [
     { name: "chaos_plastic", color: 0x222222 },
@@ -611,21 +551,6 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             );
     });
 
-
-
-
-
-
-
-
-
-
-/////////////
-
-
-
-
-
     materialsGem.forEach(mat => {
         let materialBuilder = event.create(mat.name)
         .gem()
@@ -673,108 +598,6 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         }
     });
 
-
-
-
-
-
-
-
-///////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    //actually additions
-    aaMaterials.forEach(mat => {
-        let materialBuilder = event.create(mat.name)
-            // @ts-ignore
-            .gem()
-            .dust()
-            .fluid()
-            .color(mat.color)
-            .iconSet(GTMaterialIconSet[mat.iconSet])
-            .flags(
-                GTMaterialFlags.GENERATE_FOIL,
-                GTMaterialFlags.GENERATE_RING,
-                GTMaterialFlags.GENERATE_SPRING,
-                GTMaterialFlags.GENERATE_SPRING_SMALL,
-                GTMaterialFlags.GENERATE_ROUND,
-                GTMaterialFlags.GENERATE_FINE_WIRE,
-                GTMaterialFlags.GENERATE_PLATE,
-                GTMaterialFlags.GENERATE_DENSE,
-                GTMaterialFlags.GENERATE_ROD,
-                GTMaterialFlags.GENERATE_LONG_ROD,
-                GTMaterialFlags.GENERATE_GEAR,
-                GTMaterialFlags.GENERATE_SMALL_GEAR,
-                GTMaterialFlags.GENERATE_BOLT_SCREW,
-                GTMaterialFlags.GENERATE_FRAME,
-                GTMaterialFlags.GENERATE_LENS,
-                // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
-            );
-        if (mat.element) { materialBuilder.element(mat.element) }
-        if (mat.voltage && mat.voltage > 0) { materialBuilder.cableProperties(getVoltage(mat.voltage), 1, mat.loss || 0, mat.superconductor || false); }
-        if (mat.components) {
-            let parts = mat.components.split(', ');
-            materialBuilder.components(parts);
-        }
-        if (mat.formula) { materialBuilder.formula(mat.formula) }
-        if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
-    });
-
-        wills.forEach(mat => {
-        let materialBuilder = event.create(mat.name)
-            // @ts-ignore
-            .gem()
-            .dust()
-            .fluid()
-            .color(mat.color)
-            .element(mat.name)
-            .iconSet(GTMaterialIconSet.SHINY)
-            .flags(
-                GTMaterialFlags.GENERATE_PLATE,
-                GTMaterialFlags.GENERATE_LENS,
-                // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
-            );
-    });*/
 
     let mana_essence = event.create('mana_essence')
         // @ts-ignore
@@ -1127,13 +950,7 @@ StartupEvents.postInit(event => {
                 }
             });
         }
-    });
-   
-
-    //blood magic
-    wills.forEach(mat => {
-        TagPrefix.gem.setIgnored(GTMaterials.get(mat.name), mat.oGem);
-    });
+    });    
 
     //unification
     unification.forEach(mat => {
@@ -1146,9 +963,6 @@ StartupEvents.postInit(event => {
             });
         }
     });
-    
-
-
     
 
     dusts.forEach(mat => {
@@ -1170,43 +984,7 @@ StartupEvents.postInit(event => {
         }
     });
 
-    aaMaterials.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat) {
-            let ingotItem = Item.of(mat.oItem);
-            let dustItem = Item.of(mat.oDust);
-            let gemItem = Item.of(mat.oGem);
-
-            if (gtMat && !ingotItem.isEmpty()) {
-                TagPrefix.ingot.setIgnored(gtMat, ingotItem.item);
-            }
-            if (gtMat && !dustItem.isEmpty()) {
-                TagPrefix.dust.setIgnored(gtMat, dustItem.item);
-            }
-            if (gtMat && !gemItem.isEmpty()) {
-                TagPrefix.gem.setIgnored(gtMat, gemItem.item);
-            }
-        }
-    });
-
-    otherMats.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat) {
-            let ingotItem = Item.of(mat.oItem);
-            let dustItem = Item.of(mat.oDust);
-            let gemItem = Item.of(mat.oGem);
-
-            if (gtMat && !ingotItem.isEmpty()) {
-                TagPrefix.ingot.setIgnored(gtMat, ingotItem.item);
-            }
-            if (gtMat && !dustItem.isEmpty()) {
-                TagPrefix.dust.setIgnored(gtMat, dustItem.item);
-            }
-            if (gtMat && !gemItem.isEmpty()) {
-                TagPrefix.gem.setIgnored(gtMat, gemItem.item);
-            }
-        }
-    });
+    
 
     // Block
     TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
@@ -1218,10 +996,11 @@ StartupEvents.postInit(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'mekanism:pellet_antimatter');
+    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');    
     TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'evilcraft:garmonbozia');
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
+    TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
+    TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
 
     // Gear
     TagPrefix.gear.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_gear');
@@ -1233,6 +1012,12 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'ars_nouveau:source_gem');
     TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'occultism:soul_gem');
     TagPrefix.gem.setIgnored(GTMaterials.get('glycerol'), 'pneumaticcraft:glycerol');
+    TagPrefix.gem.setIgnored(GTMaterials.get('demon'), 'bloodmagic:defaultcrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('steadfast'), 'bloodmagic:steadfastcrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('corrosive'), 'bloodmagic:corrosivecrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
+
 
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');
@@ -1269,8 +1054,7 @@ GTCEuStartupEvents.materialModification(event => {
         TagPrefix.nugget.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_nugget`)
         TagPrefix.plate.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_plate`)
         TagPrefix.block.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_block`)
-    });
-    
+    });   
 
     // extreme reactors
     erMaterials.forEach(mat => {
@@ -1283,24 +1067,7 @@ GTCEuStartupEvents.materialModification(event => {
             });
         }
     });
-
-    //blood magic
-    wills.forEach(mat => {
-        TagPrefix.gem.setIgnored(GTMaterials.get(mat.name), mat.oGem);
-    });
-
     
-    otherElements.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${mat.name}_${type}`);
-                }
-            });
-        }
-    });
-
     unification.forEach(mat => {
         let gtMat = GTMaterials.get(mat.name);
         if (gtMat && mat.oItems) {
@@ -1334,10 +1101,11 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'mekanism:pellet_antimatter');
+    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');    
     TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'evilcraft:garmonbozia');
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
+    TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
+    TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
 
     // Gear
     TagPrefix.gear.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_gear');
@@ -1350,6 +1118,11 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'ars_nouveau:source_gem');
     TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'occultism:soul_gem');
     TagPrefix.gem.setIgnored(GTMaterials.get('glycerol'), 'pneumaticcraft:glycerol');
+    TagPrefix.gem.setIgnored(GTMaterials.get('demon'), 'bloodmagic:defaultcrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('steadfast'), 'bloodmagic:steadfastcrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('corrosive'), 'bloodmagic:corrosivecrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
 
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');
