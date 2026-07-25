@@ -1,6 +1,6 @@
 GTCEuServerEvents.oreVeins(event => {
     // Silicon-Zircon Vein (Expanded with Zircon, Baddeleyite, and Silicon)
-    event.add("allthemods:ganymede/silicon_zircon", vein => {
+    event.add("ganymede_silicon_zircon", vein => {
         vein.weight(50)
         vein.density(0.5)
         vein.clusterSize(32)
@@ -18,7 +18,7 @@ GTCEuServerEvents.oreVeins(event => {
     })
 
     // Kurilite-Telluride Vein (Expanded with Kurilite, Sphalerite, and Silver)
-    event.add("allthemods:ganymede/kurilite_telluride", vein => {
+    event.add("ganymede_kurilite_telluride", vein => {
         vein.weight(40)
         vein.density(0.5)
         vein.clusterSize(25)
@@ -36,7 +36,7 @@ GTCEuServerEvents.oreVeins(event => {
     })
 
     // Bauxite-Sphalerite Vein
-    event.add("allthemods:ganymede/bauxite_sphalerite", vein => {
+    event.add("ganymede_bauxite_sphalerite", vein => {
         vein.weight(45)
         vein.density(0.6)
         vein.clusterSize(30)
@@ -52,7 +52,7 @@ GTCEuServerEvents.oreVeins(event => {
     })
 
     // Platinum Group Vein
-    event.add("allthemods:ganymede/platinum_group", vein => {
+    event.add("ganymede_platinum_group", vein => {
         vein.weight(25)
         vein.density(0.2)
         vein.clusterSize(60)
@@ -67,7 +67,7 @@ GTCEuServerEvents.oreVeins(event => {
     })
 
     // Copper Vein
-    event.add("allthemods:ganymede/copper", vein => {
+    event.add("ganymede_copper", vein => {
         vein.weight(60)
         vein.density(0.6)
         vein.clusterSize(40)
@@ -85,7 +85,7 @@ GTCEuServerEvents.oreVeins(event => {
     })
 
     // Iron Vein (Magnetite/Iron/Gold)
-    event.add("allthemods:ganymede/iron", vein => {
+    event.add("ganymede_iron", vein => {
         vein.weight(60)
         vein.density(0.6)
         vein.clusterSize(40)
@@ -103,7 +103,7 @@ GTCEuServerEvents.oreVeins(event => {
     })
 
     // Nether Quartz Vein
-    event.add("allthemods:ganymede/nether_quartz", vein => {
+    event.add("ganymede_nether_quartz", vein => {
         vein.weight(40)
         vein.density(0.5)
         vein.clusterSize(30)

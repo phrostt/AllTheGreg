@@ -1231,6 +1231,10 @@ GTCEuStartupEvents.registry("gtceu:dimension_marker", event => {
         .iconSupplier(() => Item.of("ad_astra:glacio_globe").getItem())
         .tier(0)
         .overrideName("Glacio")
+    event.create("planetsplus:ganymede")
+        .iconSupplier(() => Item.of("supplementaries:globe_sepia").getItem())
+        .tier(0)
+        .overrideName("Ganymede")
 })
 
 GTCEuStartupEvents.registry("gtceu:material_icon_set", event => {
