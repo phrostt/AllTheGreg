@@ -287,12 +287,12 @@ const fluids = [
     { name: 'concentrated_dark_matter', components: '1x cesium, 1x water', color: 0x1A0033, iconSet: 'FLUID' },
 
     { name: 'activated_carbon_slurry', components: '1x activated_carbon, 1x zinc, 1x hydrochloric_acid', color: 0x1A1A1A, iconSet: 'DULL' },
-    { name: 'filtered_water', components: '1x water', color: 0x33A1DE, iconSet: 'FLUID' },
-    { name: 'ozonated_water', components: '1x water', color: 0x3366FF, iconSet: 'FLUID' },
-    { name: 'flocculated_water', components: '1x water', color: 0x4682B4, iconSet: 'FLUID' },
-    { name: 'neutralized_water', components: '1x water', color: 0x5F9EA0, iconSet: 'FLUID' },
-    { name: 'electrically_neutral_water', components: '1x water', color: 0xAFEEEE, iconSet: 'FLUID' },
-    { name: 'cryo_stabilized_water', components: '1x water', color: 0x87CEEB, iconSet: 'FLUID' },
+    { name: 'water_stage_1', components: '1x water', color: 0x33A1DE, iconSet: 'FLUID' },
+    { name: 'water_stage_2', components: '1x water', color: 0x3366FF, iconSet: 'FLUID' },
+    { name: 'water_stage_3', components: '1x water', color: 0x4682B4, iconSet: 'FLUID' },
+    { name: 'water_stage_4', components: '1x water', color: 0x5F9EA0, iconSet: 'FLUID' },
+    { name: 'water_stage_5', components: '1x water', color: 0xAFEEEE, iconSet: 'FLUID' },
+    { name: 'water_stage_6', components: '1x water', color: 0x87CEEB, iconSet: 'FLUID' },
     { name: 'polyaluminium_chloride', components: '1x chlorine, 1x aluminium', color: 0xCCCCCC, iconSet: 'DULL' },    
     { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL' },
     { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
@@ -349,12 +349,13 @@ const newOres = [
     { name: 'radio_thoric_phosphate', components: '1x thorium, 1x uranium, 1x radium, 1x francium, 1x astatine, 4x phosphorus, 16x oxygen', byproducts: ['thorium', 'uranium', 'plutonium'], color: 0x7FFF00, iconSet: 'RADIOACTIVE', formula: '(ThURaFrAt)(PO4)4', noDecomp: true },
     { name: 'argyrodite', components: '1x germanium, 6x sulfur, 8x silver', byproducts: ['argyrodite', 'sulfur', 'silver'], iconSet: 'METALLIC', color: 0x8C7B70, noDecomp: true },
     { name: 'kurilite', components: '8x silver, 3x tellurium, 1x selenium', byproducts: ['kurilite', 'silver'], iconSet: 'METALLIC', color: 0x4A5D23, noDecomp: true },
+    { name: 'telluride', components: '1x tellurium, 1x silver', byproducts: ['telluride', 'silver'], iconSet: 'METALLIC', color: 0xC0C0D0, noDecomp: true },
     { name: 'zircon', components: '1x zirconium, 1x silicon, 4x oxygen', byproducts: ['zircon', 'silicon'], color: 0xFFB3B3, iconSet: 'METALLIC', noDecomp: true },
     { name: 'baddeleyite', components: '1x zirconium, 2x oxygen', color: 0x9999FF, iconSet: 'DULL', noDecomp: true },
     { name: 'rhenite', components: '1x rhenium, 2x sulfur', byproducts: ['rhenite', 'sulfur'], iconSet: 'METALLIC', color: 0x8A8A8A, noDecomp: true },
     { name: 'hellish', components: '1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x880808, noDecomp: true },
     { name: 'tenebrius', components: '3x tenebrium, 1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x101010, noDecomp: true },
-    { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true }
+    { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true }    
 ];
 
 
@@ -535,7 +536,12 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.DULL)
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.DISABLE_DECOMPOSITION);
 
-
+    
+    materialBuilder = event.create('blue_ice')
+        .dust()
+        .fluid()
+        .color('0x739BD0')
+        .iconSet(GTMaterialIconSet.GLASS)        
 
     //extreme reactors
     erMaterials.forEach(mat => {
@@ -992,6 +998,7 @@ StartupEvents.postInit(event => {
     TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
+    TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
@@ -1107,6 +1114,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
+    TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');

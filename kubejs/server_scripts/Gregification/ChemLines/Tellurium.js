@@ -54,4 +54,15 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:carbon_dioxide 2000')
         .itemOutputs('2x chemlib:tellurium_dust', '4x gtceu:sodium_hydroxide_dust')
         .duration(300).EUt(TelluriumEUComplex);
+
+    allthemods.recipes.gtceu.electric_blast_furnace('gregification:telluride_roasting')
+        .itemInputs('2x #forge:dusts/telluride', '2x #forge:dusts/sodium_carbonate')
+        .inputFluids('#forge:oxygen 4000')
+        .itemOutputs('2x gtceu:sodium_tellurite_dust', '2x #forge:ingots/silver')
+        .outputFluids('gtceu:carbon_dioxide 2000') // Matches your Calaverite gas output convention
+        .blastFurnaceTemp(7200)
+        .duration(200)
+        .EUt(TelluriumEUComplex);
+
+    
 });

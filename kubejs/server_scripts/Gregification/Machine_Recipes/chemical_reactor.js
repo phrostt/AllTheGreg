@@ -92,4 +92,11 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:saturated_life_fertilizer 500')
         .duration(100)
         .EUt(512);
+    
+    allthemods.recipes.gtceu.chemical_reactor('gregification:super_coolant')
+        .itemInputs('ad_astra:ice_shard', '#forge:dusts/blue_ice')
+        .inputFluids('#forge:blue_ice 1000')
+        .outputFluids('gtceu:super_coolant 1000')
+        .duration(500)
+        .EUt(512);
 });

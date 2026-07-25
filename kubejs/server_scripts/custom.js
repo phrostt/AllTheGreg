@@ -264,7 +264,7 @@ ServerEvents.recipes(allthemods => {
         .duration(200)
         .EUt(128);
 
-	oxidize('minecraft:blue_ice', 'kubejs:compressed_air_gas', 1000);
+	
 	rotary('kubejs:saturated_tau_gas', 'gtceu:saturated_tau', 1);
 	rotary('kubejs:compressed_air_gas', 'gtceu:compressed_air', 1);
 	rotary('mekanism:polonium', 'gtceu:polonium', 1)
@@ -294,7 +294,6 @@ ServerEvents.recipes(allthemods => {
 	//						 Item/Tag                       	Fluid Output                        Amount  Energy      Tier    GT?
     crucibleMelt('#forge:plastic',              	'pneumaticcraft:plastic',           1000,   20000,      'mv',   true);
     crucibleMelt('evilcraft:vengeance_essence',		'gtceu:liquid_vengeance',          1000,   25000,      'mv',   true);
-    crucibleMelt('minecraft:blue_ice',         		'gtceu:liquid_blue_ice',           1000,   150000,     'mv',   true);
     crucibleMelt('bloodmagic:strong_tau',    		'gtceu:saturated_tau',             100,    20000,      'mv',   true);	
 	//crucibleMelt('ars_nouveau:source_gem',         	'gtceu:liquid_source',      		250,  	20000,      'hv',   true);
 	crucibleMelt('minecraft:rotten_flesh',         	'gtceu:liquid_rotten_flesh',  		50,  	20000,      'hv',   true);
@@ -315,7 +314,7 @@ ServerEvents.recipes(allthemods => {
     crucibleMelt('kubejs:unobtainium_chunk',    	'allthemodium:molten_unobtainium',  90,     150000,     'iv',   true);
 	
 
-	fluidmix('primordial_plasma', 			'gtceu:liquid_draconic_essence',		1000, 'gtceu:liquid_blue_ice', 				1000, 'gtceu:primordial_sanguine_plasma', 1000 );	
+	fluidmix('primordial_plasma', 			'gtceu:liquid_draconic_essence',		1000, '#forge:blue_ice', 					1000, 'gtceu:primordial_sanguine_plasma', 1000 );	
 	fluidmix('primordial_cosmic_soup', 		'gtceu:aetheric_sanguine_singularity',	1000, 'industrialforegoing:ether_gas', 		1000, 'gtceu:primordial_cosmic_soup', 1000, 250000 );	
 	fluidmix('unrefined_white_blood', 		'gtceu:liquid_white_chalk', 			1000, 'gtceu:sanguine_concentrate', 		1000, 'gtceu:unrefined_white_blood', 1000 );
 	fluidmix('unrefined_red_blood', 		'gtceu:liquid_purple_chalk', 			1000, 'gtceu:sanguine_concentrate',			1000, 'gtceu:unrefined_red_blood', 1000 );	
