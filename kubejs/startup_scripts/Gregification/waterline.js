@@ -2,6 +2,7 @@
 
 
 GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
+    
     allthemods.create('water_filtration_plant')
         .category('water_filtration_plant')
         .setEUIO('in')
@@ -20,6 +21,13 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
         .category('flocculation_plant')
         .setEUIO('in')
         .setMaxIOSize(0, 0, 2, 2)
+        .setSound(GTSoundEntries.CHEMICAL)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_DISTILLATION_TOWER, FillDirection.LEFT_TO_RIGHT)
+    
+    allthemods.create('microbial_filtration_array')
+        .category('microbial_filtration_array')
+        .setEUIO('in')
+        .setMaxIOSize(3, 3, 3, 3)
         .setSound(GTSoundEntries.CHEMICAL)
         .setProgressBar(GuiTextures.PROGRESS_BAR_DISTILLATION_TOWER, FillDirection.LEFT_TO_RIGHT)
 
@@ -58,7 +66,23 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
         .setSound(GTSoundEntries.SCIENCE)
         .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, FillDirection.LEFT_TO_RIGHT)
 
+    allthemods.create('hydro_electromagnetic_separator')
+        .category('hydro_electromagnetic_separator')
+        .setEUIO('in')
+        .setMaxIOSize(3, 3, 3, 3)
+        .setSound(GTSoundEntries.ELECTROLYZER)        
+        .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT, FillDirection.LEFT_TO_RIGHT)
+
+    allthemods.create('fractional_gas_separator')
+        .category('fractional_gas_separator')
+        .setEUIO('in')
+        .setMaxIOSize(3, 3, 3, 3)
+        .setSound(GTSoundEntries.ELECTROLYZER)        
+        .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT, FillDirection.LEFT_TO_RIGHT)
+
 });
+
+
 
 /*
 .where('P', Predicates.blocks(''))                        
@@ -94,6 +118,19 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             .build()
         )
         .workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/large_chemical_reactor')
+
+     allthemods.create('microbial_filtration_array', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('microbial_filtration_array')
+        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('K')
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+            .where(' ', Predicates.air())
+            .build()
+        )
+        .workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/large_chemical_reactor')
+
 
     allthemods.create('flocculation_plant', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
@@ -166,4 +203,28 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             .build()
         )
         .workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/research_station')
+
+        allthemods.create('hydro_electromagnetic_separator', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('hydro_electromagnetic_separator')
+        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('K')
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+            .where(' ', Predicates.air())
+            .build()
+        )
+        .workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/assembly_line')
+
+        allthemods.create('fractional_gas_separator', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('fractional_gas_separator')
+        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('K')
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+            .where(' ', Predicates.air())
+            .build()
+        )
+        .workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/distillation_tower')
 })

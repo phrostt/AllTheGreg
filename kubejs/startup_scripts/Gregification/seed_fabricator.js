@@ -2,7 +2,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
     allthemods.create('seed_fabricator')
         .category('fabricator')
         .setEUIO('in') // Machine takes power IN
-        .setMaxIOSize(9, 1, 3, 0) // 4 Item In, 1 Item Out, 2 Fluid In
+        .setMaxIOSize(9, 1, 3, 3) // 4 Item In, 1 Item Out, 2 Fluid In
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)	
 })

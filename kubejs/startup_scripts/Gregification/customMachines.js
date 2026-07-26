@@ -8,9 +8,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
         .setSlotOverlay(false, false, GuiTextures.MOLECULAR_OVERLAY_1)
         .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1 )
         .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT, FillDirection.LEFT_TO_RIGHT)                          
-        
-        
-    
+       
     event.create('reconstructor')
         .category('reconstructor')
         .setEUIO('in')

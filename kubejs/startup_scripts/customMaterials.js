@@ -318,7 +318,8 @@ const fluids = [
     { name: 'polyaluminium_chloride', components: '1x chlorine, 1x aluminium', color: 0xCCCCCC, iconSet: 'DULL' },    
     { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL', noDecomp: true },
     { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
-    { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' }
+    { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' },
+    { name: 'inert_gas_mixture', color: 0x8899A6, iconSet: 'FLUID' }
 ];
 
 const polymers = [
@@ -361,7 +362,7 @@ const dusts = [
     { name: 'soul_essence', color: 0x1A75FF, iconSet: 'SHINY' },
     { name: 'mind_numbing_agent', color: 0x00FFCC, iconSet: 'DULL' },
     { name: 'aluminium_hydroxide', color: 0xEEEEEE, iconSet: 'DULL', components: '1x aluminium, 3x oxygen, 3x hydrogen', formula: 'Al(OH)3' },
-    { name: 'picolinic_acid', color: 0x7E57C2, components: '6x carbon, 5x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C6H5NO2', iconSet: 'DULL' }
+    { name: 'picolinic_acid', color: 0x7E57C2, components: '6x carbon, 5x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C6H5NO2', iconSet: 'DULL' }    
 
 
 ];

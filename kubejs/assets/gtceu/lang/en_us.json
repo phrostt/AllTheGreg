@@ -486,6 +486,29 @@
     "material.gtceu.recycled_organic_matter": "Recycled Organic Matter",
     "material.gtceu.picoline": "2-Picoline",
     "material.gtceu.cyanopyridine": "2-Cyanopyridine",
-    "material.gtceu.acetaldehyde": "Acetaldehyde"
+    "material.gtceu.acetaldehyde": "Acetaldehyde",
+
+    "block.gtceu.water_filtration_plant": "Water Filtration Plant",
+    "gtceu.water_filtration_plant": "Water Filtration Plant",
+    "block.gtceu.ozonation_plant": "Ozonation Plant",
+    "gtceu.ozonation_plant": "Ozonation Plant",
+    "block.gtceu.microbial_filtration_array": "Microbial Filtration Array",
+    "gtceu.microbial_filtration_array": "Microbial Filtration Array",
+    "block.gtceu.flocculation_plant": "Flocculation Plant",
+    "gtceu.flocculation_plant": "Flocculation Plant",
+    "block.gtceu.laser_purification": "Laser Purification",
+    "gtceu.laser_purification": "Laser Purification",
+    "block.gtceu.cryogenic_unit": "Cryogenic Unit",
+    "gtceu.cryogenic_unit": "Cryogenic Unit",
+    "block.gtceu.baryonic_stabilizer": "Baryonic Stabilizer",
+    "gtceu.baryonic_stabilizer": "Baryonic Stabilizer",
+    "block.gtceu.baryonic_separator": "Baryonic Separator",
+    "gtceu.baryonic_separator": "Baryonic Separator",
+    "block.gtceu.fractional_gas_separator": "Fractional Gas Separator",
+    "gtceu.fractional_gas_separator": "Fractional Gas Separator",
+    "gtceu.hydro_electromagnetic_separator": "Hydro-Electromagnetic Separator",
+    "block.gtceu.hydro_electromagnetic_separator": "Hydro-Electromagnetic Separator"
+    
+    
     
 }

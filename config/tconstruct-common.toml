@@ -21,6 +21,8 @@
 	#DISABLED: syncs nothing. May cause inventory desync issues if the client lost the tool.
 	#Allowed Values: FULL_STACK, MINIMAL, DISABLED
 	toolInventorySync = "MINIMAL"
+	#Allow Tinker's tools can be enhanced
+	AllowTinkersToolsCanBeEnhanced = false
 
 #Options related to recipes, limited options as a datapack allows most recipes to be modified
 [recipes]
@@ -110,6 +112,10 @@
 	#If true, monsters will run melee modifiers when attacking with a modifiable weapon. Provided to work around potential issues with addons allowing more monsters to use tools.
 	#Note that if its just a specific mob or damage source that has an issue, there are tag blacklists.
 	allowMonsterMeleeModifiers = true
+	#Range: 4 ~ 256
+	guardingScanRange = 32
+	#Range: 1 ~ 86400
+	guardingHostilityDurationSeconds = 60
 
 #Features to use in debugging gameplay and mechanics, generally should not be enabled in packs
 [debug]
@@ -125,4 +131,10 @@
 	#If STACKTRACE, logs the stacktrace whenever a tool stack is created from a non-modifiable item. If WARNING (default), logs a shorter but more efficient error. If IGNORE, disables logging (useful for modpacks/players *after* they reported the issue). The stacktrace helps debug which mod is causing it, but is rather expensive on the chance they are doing it a lot.
 	#Allowed Values: STACKTRACE, WARNING, IGNORED
 	logInvalidToolStack = "WARNING"
+	#Dump all dynamically generated Tinkers' Construct server data?
+	#This includes recipes, advancements, tags, materials, tinkering data, and other JSON added to the dynamic data pack.
+	dumpRecipes = false
+	#Dump all dynamically generated Tinkers' Construct assets?
+	#This includes models, blockstates, textures, atlases, and other resources added to the dynamic resource pack.
+	dumpAssets = false
 
