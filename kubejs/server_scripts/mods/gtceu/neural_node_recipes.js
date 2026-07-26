@@ -13,7 +13,7 @@ ServerEvents.recipes(allthemods => {
     // neural node recipes
     function neural_node(model, inputs, outputs, duration, power) {
 
-        let fluid = '#forge:meat 1000'
+        let fluid = '#forge:recycled_organic_matter 1000'
         let itemInput = inputs
 
         if (inputs.includes(' ')) {
@@ -25,7 +25,7 @@ ServerEvents.recipes(allthemods => {
                 
                 if (!isNaN(number)) {
                     let amount = number * 1000
-                    fluid  = `#forge:meat ${amount}`                    
+                    fluid  = `#forge:recycled_organic_matter ${amount}`
                     itemInput = parts.slice(1).join(' ');
                 }
             }

@@ -10,7 +10,16 @@ ServerEvents.recipes(allthemods => {
 
 
     const globalRemoves2 = [
-                // --- EnderIO ---
+        // --- Occultism ---
+        'occultism:ritual/craft_dimensional_mineshaft', 'occultism:ritual/craft_miner_foliot_unspecialized',
+        'occultism:ritual/craft_miner_djinni_ores', 'occultism:ritual/craft_miner_afrit_deeps',
+        'occultism:ritual/craft_miner_marid_master', 'occultism:crafting/chalk_white_impure',
+        'occultism:crafting/chalk_red_impure', 'occultism:crafting/chalk_gold_impure',
+        'occultism:crafting/chalk_purple_impure',
+
+
+
+        // --- EnderIO ---
         "enderio:energy_conduit", "enderio:fluid_conduit", 
         "enderio:pressurized_fluid_conduit", "enderio:pressurized_fluid_conduit_upgrade", "enderio:ender_fluid_conduit_upgrade", "enderio:ender_fluid_conduit",
         "enderio:redstone_conduit", "enderio:item_conduit", "enderio:ae_covered_dense_cable", "enderio:ae_glass_cable",

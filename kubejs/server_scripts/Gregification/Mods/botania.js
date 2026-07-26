@@ -1,6 +1,11 @@
 ServerEvents.recipes(allthemods => {
+    const stage1 = 'gtceu:water_stage_1'
+    const stage2 = 'gtceu:water_stage_2'
+    const stage3 = 'gtceu:water_stage_3'
+    const stage4 = 'gtceu:water_stage_4'
+
     allthemods.recipes.gtceu.mana_converter('eu_to_source')
-        .inputFluids('#forge:distilled_water 200')
+        .inputFluids(`${stage1} 200}`)
         .outputFluids('gtceu:source 200')
         .addData('ebf_temp', 3600)
         .circuit(2)
@@ -8,7 +13,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(128);
 
     allthemods.recipes.gtceu.mana_converter('eu_to_liquid_mana')
-        .inputFluids('#forge:distilled_water 1280')
+        .inputFluids(`${stage1} 1280}`)
         .outputFluids('gtceu:mana_essence 1280')
         .addData('ebf_temp', 3600)
         .circuit(1)
@@ -18,7 +23,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.gtceu.mana_burner('coal_to_liquid_mana')
         .itemInputs('#minecraft:coals')
         .outputFluids('gtceu:mana_essence 1200')
-        .inputFluids('#forge:distilled_water 1200')
+        .inputFluids(`${stage1} 1200}`)
         .addData('ebf_temp', 3600)
         .circuit(1)
         .duration(1600)
@@ -27,7 +32,7 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.mana_burner('coal_to_source')
         .itemInputs('#minecraft:coals')
-        .inputFluids('#forge:distilled_water 200')
+        .inputFluids(`${stage1} 200}`)
         .outputFluids('gtceu:source 200')
         .addData('ebf_temp', 3600)
         .circuit(2)
@@ -36,7 +41,7 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.mana_burner('cake_to_liquid_mana')
         .itemInputs('minecraft:cake')
-        .inputFluids('#forge:distilled_water 10800')
+        .inputFluids(`${stage1} 10800}`)
         .outputFluids('gtceu:mana_essence 10800')
         .circuit(1)
         .duration(14400)
@@ -44,7 +49,7 @@ ServerEvents.recipes(allthemods => {
     
     allthemods.recipes.gtceu.mana_burner('cake_to_source')
         .itemInputs('minecraft:cake')
-        .inputFluids('#forge:distilled_water 1800')
+        .inputFluids(`${stage1} 1800}`)
         .outputFluids('gtceu:source 1800')
         .circuit(2)
         .duration(14400)
@@ -52,7 +57,7 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.mana_burner('lava_to_liquid_mana')
         .inputFluids('minecraft:lava 1000')
-        .inputFluids('#forge:distilled_water 320')
+        .inputFluids(`${stage1} 320}`)
         .outputFluids('gtceu:mana_essence 320')
         .circuit(1)
         .duration(400)
@@ -60,7 +65,7 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.mana_burner('lava_to_source')
         .inputFluids('minecraft:lava 1000')
-        .inputFluids('#forge:distilled_water 50')
+        .inputFluids(`${stage1} 50}`)
         .outputFluids('gtceu:source 50')
         .circuit(2)
         .duration(400)
@@ -93,7 +98,7 @@ ServerEvents.recipes(allthemods => {
         allthemods.recipes.gtceu.petal_apothecary(safeID)
             .itemInputs(inputItems)
             .itemOutputs(outputItem)
-            .inputFluids('#forge:distilled_water 1000')
+            .inputFluids(`${stage1} 1000}`)
             .duration(petalDuration)
             .EUt(petalVoltage);
     });
@@ -198,21 +203,22 @@ ServerEvents.recipes(allthemods => {
     const manaBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:mana"}}').strongNBT();
     const elementiumBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:elementium"}}').strongNBT();
     const alfBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:alfsteel"}}').strongNBT();
-    
+    const manaSteel = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:manasteel"}}').strongNBT();
+
     allthemods.recipes.gtceu.petal_apothecary('pure_bee')
         .itemInputs(['minecraft:bee_spawn_egg', '3x #botania:petals/white', 'productivebees:honey_treat', 'minecraft:bee_spawn_egg'])
         .itemOutputs(pureBee)
-        .inputFluids('#forge:distilled_water 1000')
+        .inputFluids(`${stage3} 10000}`)
         .duration(petalDuration)
         .EUt(petalVoltage);
     allthemods.recipes.gtceu.runic_altar('mana_bee')
         .itemInputs([pureBee, '4x botania:rune_mana', 'botania:livingrock'])
         .itemOutputs(manaBee)
-        .inputFluids('#forge:distilled_water 1000')
+        .inputFluids('gtceu:mana_essence 1000000')
         .duration(petalDuration)
         .EUt(runicVoltage);
     allthemods.recipes.gtceu.mana_infuser('terra_bee')
-        .itemInputs([manaBee, 'botania:mana_pearl', 'botania:mana_diamond'])
+        .itemInputs([manaSteel, 'botania:mana_pearl', 'botania:mana_diamond'])
         .itemOutputs(terraBee)
         .inputFluids('gtceu:mana_essence 500000')
         .duration(infusionDuration)

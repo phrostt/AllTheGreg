@@ -55,8 +55,8 @@ ServerEvents.recipes(allthemods => {
                 "64x #forge:sapling",
             ],
             [
-                "gtceu:liquid_aureal 1000",
-                "#forge:liquid_soul 10",
+                "gtceu:aureal 1000",
+                "#forge:soul 10",
                 'gtceu:sanguine_concentrate 1000',
                 "gtceu:distilled_water 10000"
             ],
@@ -76,8 +76,8 @@ ServerEvents.recipes(allthemods => {
             "2x #forge:gems/lapis"
         ],
         [
-            "gtceu:liquid_aureal 1000",
-            "#forge:liquid_soul 8",
+            "gtceu:aureal 1000",
+            "#forge:soul 8",
             'gtceu:sanguine_concentrate 2000'
         ],
         "forbidden_arcanus:sea_prism",
@@ -94,8 +94,8 @@ ServerEvents.recipes(allthemods => {
             "2x #forge:dusts/blaze"
         ],
         [
-            "gtceu:liquid_aureal 200",
-            "#forge:liquid_soul 4",
+            "gtceu:aureal 200",
+            "#forge:soul 4",
             'gtceu:sanguine_concentrate 1250'
         ],
         "forbidden_arcanus:smelter_prism",
@@ -113,8 +113,8 @@ ServerEvents.recipes(allthemods => {
             "2x minecraft:pointed_dripstone"
         ],
         [
-            "gtceu:liquid_aureal 300",
-            "#forge:liquid_soul 9",
+            "gtceu:aureal 300",
+            "#forge:soul 9",
             'gtceu:sanguine_concentrate 1500'
         ],
         "forbidden_arcanus:terrastomp_prism",
@@ -132,8 +132,8 @@ ServerEvents.recipes(allthemods => {
             "3x minecraft:phantom_membrane"
         ],
         [
-            "gtceu:liquid_aureal 1000",
-            "#forge:liquid_soul 3",
+            "gtceu:aureal 1000",
+            "#forge:soul 3",
             'gtceu:sanguine_concentrate 2250'
         ],
         "forbidden_arcanus:whirlwind_prism",
@@ -150,8 +150,8 @@ ServerEvents.recipes(allthemods => {
             "1x forbidden_arcanus:stellarite_piece"
         ],
         [
-            "gtceu:liquid_aureal 1000",
-            "#forge:liquid_soul 500",
+            "gtceu:aureal 1000",
+            "#forge:soul 500",
             'gtceu:sanguine_concentrate 1000'
         ],
         "forbidden_arcanus:eternal_stella",
@@ -172,8 +172,8 @@ ServerEvents.recipes(allthemods => {
             "#forge:ingots/iesnium"
         ],
         [
-            "gtceu:liquid_aureal 100",
-            "#forge:liquid_soul 20",
+            "gtceu:aureal 100",
+            "#forge:soul 20",
             'gtceu:sanguine_concentrate 2000'
         ],
         "forbidden_arcanus:ferrognetic_mixture",
@@ -190,8 +190,8 @@ ServerEvents.recipes(allthemods => {
             "2x forbidden_arcanus:eternal_stella"
         ],
         [
-            "gtceu:liquid_aureal 82",
-            "#forge:liquid_soul 1",
+            "gtceu:aureal 82",
+            "#forge:soul 1",
             'gtceu:sanguine_concentrate 1000'
         ],
         Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:stellarite"}}').strongNBT(),

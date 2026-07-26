@@ -87,11 +87,17 @@ ServerEvents.recipes(allthemods => {
     addChemical('gtceu:crystallized_seed', 'gtceu:refined_seed_oil 1000', null, 'gtceu:crystallized_oil 1000', 'EV', 600, 'refined_seed_oil')
     addChemical('gtceu:empowered_seed', 'gtceu:crystallized_oil 1000', null, 'gtceu:empowered_oil 1000', 'EV', 600, 'empowered_seed_oil')
 
-    allthemods.recipes.gtceu.large_chemical_reactor('saturated_life_fertilizer')
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:saturated_life_fertilizer')
         .inputFluids('gtceu:liquid_fertilizer 250','gtceu:sanguine_concentrate 250')
         .outputFluids('gtceu:saturated_life_fertilizer 500')
         .duration(100)
         .EUt(512);
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:recycled_organic_matter')
+        .inputFluids('gtceu:rotten_flesh 1000','#forge:meat 1000', 'gtceu:water_stage_2 1000')
+        .outputFluids('gtceu:recycled_organic_matter 2000')
+        .duration(600)
+        .EUt(2048);
     
     allthemods.recipes.gtceu.chemical_reactor('gregification:super_coolant')
         .itemInputs('ad_astra:ice_shard', '#forge:dusts/blue_ice')
@@ -99,4 +105,6 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:super_coolant 1000')
         .duration(500)
         .EUt(512);
+
+    
 });

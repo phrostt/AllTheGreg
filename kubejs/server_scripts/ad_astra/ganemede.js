@@ -16,6 +16,23 @@ GTCEuServerEvents.oreVeins(event => {
             )
         )
     })
+    // calaverite tantalite_sm crookesite
+    event.add("ganymede_calaverite_tantalite_sm_crookesite", vein => {
+        vein.weight(45)
+        vein.density(0.6)
+        vein.clusterSize(30)
+        vein.layer("ganymede")
+        vein.dimensions(["planetsplus:ganymede"])
+        vein.heightRangeUniform(30, 90)
+        vein.layeredVeinGenerator(generator => generator
+            .buildLayerPattern(pattern => pattern
+                .layer(l => l.weight(3).mat(GTMaterials.get("calaverite")).size(2, 4))
+                .layer(l => l.weight(2).mat(GTMaterials.get("tantalite_sm")).size(1, 3))
+                .layer(l => l.weight(1).mat(GTMaterials.get("crookesite")).size(1, 2))
+            )
+        )
+    })
+
 
     // Kurilite-Telluride Vein (Expanded with Kurilite, Sphalerite, and Silver)
     event.add("ganymede_kurilite_telluride", vein => {

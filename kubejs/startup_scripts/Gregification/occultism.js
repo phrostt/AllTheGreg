@@ -13,7 +13,19 @@ StartupEvents.registry('item', event => {
         { name: 'green', hex: 0x5E7C16 },
         { name: 'black', hex: 0x1D1D21 }        
     ];
-        
+    
+    
+    event.create('occultism:mining_dim_core')
+        //.texture('layer0', 'occultism:item/mining_dim_core')
+        .displayName('Mining Dimension Core');
+
+    event.create('occultism:miner_ancient_eldritch')
+        .texture('layer0', 'occultism:item/magic_lamp')
+        .displayName('Eldritch Miner')
+        .rarity('EPIC')
+        .glow(true);
+
+
     event.create('occultism:chalk_void')
             .displayName('Void Chalk');
 

@@ -51,6 +51,13 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
         .setSound(GTSoundEntries.SCIENCE)
         .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, FillDirection.LEFT_TO_RIGHT)
 
+    allthemods.create('psycho_fraculator')
+        .category('psycho_fraculator')
+        .setEUIO('in')
+        .setMaxIOSize(6, 12, 3, 0)
+        .setSound(GTSoundEntries.SCIENCE)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, FillDirection.LEFT_TO_RIGHT)
+
 });
 
 /*
@@ -139,6 +146,18 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
      allthemods.create('baryonic_separator', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('baryonic_separator')
+        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .pattern(definition => FactoryBlockPattern.start()
+            .aisle('K')
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+            .where(' ', Predicates.air())
+            .build()
+        )
+        .workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/research_station')
+
+    allthemods.create('psycho_fraculator', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('psycho_fraculator')
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('K')

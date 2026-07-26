@@ -89,7 +89,11 @@ const otherElements = [
     { name: 'selenium', namespace: 'chemlib', oItems: ['dust'], cPolymer: true },
     { name: 'francium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true }, //en
     { name: 'germanium', namespace: 'chemlib', oItems: ['dust'], cVolt: 524416, cIngot: true },
-    { name: 'zirconium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true }
+    { name: 'zirconium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
+    { name: 'scandium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
+    { name: 'hafnium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
+    { name: 'rubidium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
+    { name: 'thallium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true }
 ];
 
 
@@ -217,9 +221,27 @@ const gasses = [
     { name: 'compressed_air', color: 0x80C8F0, temp: 2500, iconSet: 'FLUID' },
     { name: 'terrazine', color: 0x4B0082, iconSet: 'RADIOACTIVE' }
 ]
+const chalks = [
+    { name: 'white_chalk', color: 0xFFFFFF, iconSet: 'FLUID' },
+    { name: 'yellow_chalk', color: 0xFFD700, iconSet: 'FLUID' },
+    { name: 'purple_chalk', color: 0x9D00FF, iconSet: 'FLUID' },
+    { name: 'red_chalk', color: 0xFF0000, iconSet: 'FLUID' },
+    { name: 'orange_chalk', color: 0xFFA500, iconSet: 'FLUID' },
+    { name: 'magenta_chalk', color: 0xFF00FF, iconSet: 'FLUID' },
+    { name: 'light_blue_chalk', color: 0xADD8E6, iconSet: 'FLUID' },
+    { name: 'lime_chalk', color: 0x00FF00, iconSet: 'FLUID' },
+    { name: 'pink_chalk', color: 0xFFC0CB, iconSet: 'FLUID' },
+    { name: 'gray_chalk', color: 0x808080, iconSet: 'FLUID' },
+    { name: 'light_gray_chalk', color: 0xD3D3D3, iconSet: 'FLUID' },
+    { name: 'cyan_chalk', color: 0x00FFFF, iconSet: 'FLUID' },
+    { name: 'blue_chalk', color: 0x0000FF, iconSet: 'FLUID' },
+    { name: 'brown_chalk', color: 0x8B4513, iconSet: 'FLUID' },
+    { name: 'green_chalk', color: 0x008000, iconSet: 'FLUID' },
+    { name: 'black_chalk', color: 0x000000, iconSet: 'FLUID' }
+]
 
 const fluids = [
-    { name: 'molten_iesnium', color: 0x6E0099, temp: 1300, iconSet: 'METALLIC' },
+    //{ name: 'molten_iesnium', color: 0x6E0099, temp: 1300, iconSet: 'METALLIC' },
     { name: 'cognizant_sanguine_ichor', color: 0x6A0DAD, temp: 300, iconSet: 'FLUID' },
     { name: 'stellar_sanguine_plasma', color: 0xE0FFFF, temp: 300, iconSet: 'FLUID' },
     { name: 'resonant_sanguine_void', color: 0x191970, temp: 300, iconSet: 'FLUID' },
@@ -232,16 +254,17 @@ const fluids = [
     { name: 'liquid_vengeance', color: 0xB197C2, temp: 200, iconSet: 'FLUID' },
     { name: 'saturated_life_fertilizer', color: 0x4CAF50, temp: 200, iconSet: 'FLUID' },
     { name: 'liquid_fertilizer', color: 0x241105, temp: 200, iconSet: 'FLUID' },
-    { name: 'molten_demonite', color: 0x7BA4B1, temp: 2500, iconSet: 'METALLIC' },
+    //{ name: 'molten_demonite', color: 0x7BA4B1, temp: 2500, iconSet: 'METALLIC' },
 
-    { name: 'liquid_rotten_flesh', color: 0x934537, temp: 2500, iconSet: 'FLUID' },
-    { name: 'liquid_blue_ice', color: 0x33CCFF, iconSet: 'FLUID' },
+    //{ name: 'liquid_rotten_flesh', color: 0x934537, temp: 2500, iconSet: 'FLUID' },        
+    { name: 'picoline', color: 0x9E9B54, components: '6x carbon, 7x hydrogen, 1x nitrogen', formula: 'C6H7N', iconSet: 'FLUID' },
+    { name: 'cyanopyridine', color: 0x4A6B82, components: '6x carbon, 4x hydrogen, 2x nitrogen', formula: 'C6H4N2', iconSet: 'FLUID' },
+    { name: 'acetaldehyde', color: 0xC2B280, components: '1x ethylene, 1x oxygen', formula: 'C2H4O', iconSet: 'FLUID' },
+
+    
+    
     { name: 'primordial_sanguine_plasma', color: 0x2E2E2E, iconSet: 'FLUID' },
-    { name: 'primordial_cosmic_soup', color: 0xBF00FF, iconSet: 'FLUID' },
-    { name: 'liquid_white_chalk', color: 0xFFFFFF, iconSet: 'FLUID' },
-    { name: 'liquid_yellow_chalk', color: 0xFFD700, iconSet: 'FLUID' },
-    { name: 'liquid_purple_chalk', color: 0x9D00FF, iconSet: 'FLUID' },
-    { name: 'liquid_red_chalk', color: 0xFF0000, iconSet: 'FLUID' },
+    { name: 'primordial_cosmic_soup', color: 0xBF00FF, iconSet: 'FLUID' },    
     { name: 'unrefined_white_blood', color: 0xF5F5FF, iconSet: 'FLUID' },
     { name: 'ethereal_white_blood', color: 0xFFFFFF, iconSet: 'FLUID' },
     { name: 'unrefined_red_blood', color: 0x8B0000, iconSet: 'FLUID' },
@@ -252,9 +275,8 @@ const fluids = [
     { name: 'essence_of_destruction', color: 0x2F4F4F, iconSet: 'FLUID' },
     { name: 'stable_life_essence', color: 0xFF69B4, iconSet: 'FLUID' },
     { name: 'saturated_tau', color: 0xFF8C00, iconSet: 'FLUID' },
-    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },
-    { name: 'liquid_soul', color: 0xBDC4CC, iconSet: 'FLUID' },
-    { name: 'liquid_aureal', color: 0xA1C2F7, iconSet: 'FLUID' },
+    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },    
+    { name: 'aureal', color: 0xA1C2F7, iconSet: 'FLUID' },
     { name: 'liquid_chaos', color: 0x111111, iconSet: 'FLUID' },
     { name: 'radioactive_acetate_slurry', color: 0x99FF33, iconSet: 'RADIOACTIVE' },
     { name: 'mixed_radioactive_concentrate', color: 0xCCFF66, iconSet: 'FLUID' },
@@ -294,7 +316,7 @@ const fluids = [
     { name: 'water_stage_5', components: '1x water', color: 0xAFEEEE, iconSet: 'FLUID' },
     { name: 'water_stage_6', components: '1x water', color: 0x87CEEB, iconSet: 'FLUID' },
     { name: 'polyaluminium_chloride', components: '1x chlorine, 1x aluminium', color: 0xCCCCCC, iconSet: 'DULL' },    
-    { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL' },
+    { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL', noDecomp: true },
     { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
     { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' }
 ];
@@ -338,7 +360,8 @@ const dusts = [
 
     { name: 'soul_essence', color: 0x1A75FF, iconSet: 'SHINY' },
     { name: 'mind_numbing_agent', color: 0x00FFCC, iconSet: 'DULL' },
-    { name: 'aluminium_hydroxide', color: 0xEEEEEE, iconSet: 'DULL', components: '1x aluminium, 3x oxygen, 3x hydrogen', formula: 'Al(OH)3' }
+    { name: 'aluminium_hydroxide', color: 0xEEEEEE, iconSet: 'DULL', components: '1x aluminium, 3x oxygen, 3x hydrogen', formula: 'Al(OH)3' },
+    { name: 'picolinic_acid', color: 0x7E57C2, components: '6x carbon, 5x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C6H5NO2', iconSet: 'DULL' }
 
 
 ];
@@ -355,9 +378,108 @@ const newOres = [
     { name: 'rhenite', components: '1x rhenium, 2x sulfur', byproducts: ['rhenite', 'sulfur'], iconSet: 'METALLIC', color: 0x8A8A8A, noDecomp: true },
     { name: 'hellish', components: '1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x880808, noDecomp: true },
     { name: 'tenebrius', components: '3x tenebrium, 1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x101010, noDecomp: true },
-    { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true }    
-];
+    { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true },
 
+    
+    { name: 'tounkite_re', components: '8x sodium, 4x calcium, 12x aluminium, 12x silicon, 1x rhenium, 36x oxygen', byproducts: ['tounkite_re', 'rhenium'], iconSet: 'METALLIC', color: 0x1E90FF, noDecomp: true },
+    { name: 'rhenium_oxide_complex', components: '2x rhenium, 3x oxygen, 1x potassium', byproducts: ['rhenium', 'potassium'], iconSet: 'METALLIC', color: 0x4682B4, noDecomp: true },
+    { name: 'strontianite', components: '1x strontium, 1x carbon, 3x oxygen', byproducts: ['strontianite', 'strontium'], iconSet: 'DULL', color: 0xF5F5DC, noDecomp: true },
+    { name: 'strontium_calcium_ore', components: '1x strontium, 1x calcium, 3x oxygen', byproducts: ['strontium', 'calcium'], iconSet: 'DULL', color: 0xE5E5CC, noDecomp: true },
+    { name: 'samarskite', components: '1x samarium, 1x yttrium, 1x iron, 2x niobium, 8x oxygen', byproducts: ['samarskite', 'samarium', 'niobium'], iconSet: 'METALLIC', color: 0x4A3B32, noDecomp: true },
+    { name: 'tantalite_sm', components: '1x samarium, 1x iron, 2x tantalum, 6x oxygen', byproducts: ['tantalite_sm', 'samarium', 'tantalum'], iconSet: 'METALLIC', color: 0x3D2314, noDecomp: true },
+    { name: 'yftisite', components: '4x yttrium, 2x titanium, 2x silicon, 13x oxygen, 2x fluorine', byproducts: ['yftisite', 'yttrium', 'titanium'], iconSet: 'METALLIC', color: 0xA0522D, noDecomp: true },
+    { name: 'bastnasite_sm', components: '1x samarium, 1x carbon, 3x oxygen, 1x fluorine', byproducts: ['bastnasite_sm', 'samarium'], iconSet: 'DULL', color: 0xDEB887, noDecomp: true },
+    { name: 'florencite_sm', components: '1x samarium, 1x aluminium, 3x phosphorus, 12x oxygen, 6x hydrogen', byproducts: ['florencite_sm', 'samarium'], iconSet: 'DULL', color: 0xBC8F8F, noDecomp: true },
+    { name: 'rowlandite', components: '4x yttrium, 2x silicon, 14x oxygen, 1x iron', byproducts: ['rowlandite', 'yttrium'], iconSet: 'DULL', color: 0x556B2F, noDecomp: true },
+    { name: 'frischolite', components: '3x yttrium, 1x calcium, 2x silicon, 7x oxygen', byproducts: ['frischolite', 'yttrium'], iconSet: 'METALLIC', color: 0x6B8E23, noDecomp: true },
+    { name: 'yttrialite', components: '2x yttrium, 2x silicon, 7x oxygen', byproducts: ['yttrialite', 'yttrium'], iconSet: 'METALLIC', color: 0x8FBC8F, noDecomp: true },
+    { name: 'xtyrechtite', components: '1x yttrium, 1x phosphorus, 4x oxygen, 2x water', byproducts: ['xtyrechtite', 'yttrium'], iconSet: 'METALLIC', color: 0x00FA9A, noDecomp: true },
+    { name: 'monazite_sm', components: '1x samarium, 1x phosphorus, 4x oxygen', byproducts: ['monazite_sm', 'samarium', 'neodymium'], iconSet: 'DULL', color: 0xD2B48C, noDecomp: true },
+    { name: 'loparite_sm', components: '1x samarium, 1x titanium, 3x oxygen', byproducts: ['loparite_sm', 'samarium', 'titanium'], iconSet: 'METALLIC', color: 0x2F4F4F, noDecomp: true },
+    { name: 'xenotime_sm', components: '1x samarium, 1x yttrium, 1x phosphorus, 4x oxygen', byproducts: ['xenotime_sm', 'samarium', 'yttrium'], iconSet: 'METALLIC', color: 0x8B7355, noDecomp: true },
+    { name: 'cerite_sm', components: '3x samarium, 1x silicon, 1x iron, 13x oxygen, 3x hydrogen', byproducts: ['cerite_sm', 'samarium'], iconSet: 'METALLIC', color: 0xCD853F, noDecomp: true },
+    { name: 'stibioruartite', components: '1x ruthenium, 3x antimony', byproducts: ['stibioruartite', 'ruthenium', 'antimony'], iconSet: 'METALLIC', color: 0x2F4F4F, noDecomp: true },
+    { name: 'ruthenium_sulfide_rare', components: '1x ruthenium, 2x sulfur, 1x silver', byproducts: ['ruthenium', 'silver'], iconSet: 'METALLIC', color: 0x3A3A3A, noDecomp: true },
+    { name: 'indite', components: '1x indium, 1x arsenic, 2x sulfur', byproducts: ['indite', 'indium', 'sulfur'], iconSet: 'METALLIC', color: 0x4682B4, noDecomp: true },
+    { name: 'sakuraiite', components: '3x copper, 1x iron, 1x zinc, 1x indium, 4x sulfur', byproducts: ['sakuraiite', 'copper', 'indium'], iconSet: 'METALLIC', color: 0x556B2F, noDecomp: true },
+    { name: 'indium_zinc_complex', components: '2x indium, 1x zinc, 4x sulfur', byproducts: ['indium', 'zinc'], iconSet: 'METALLIC', color: 0x4B6F96, noDecomp: true },
+    { name: 'samarium_niobate', components: '2x samarium, 1x niobium, 6x oxygen', byproducts: ['samarium', 'niobium'], iconSet: 'METALLIC', color: 0x5A4A42, noDecomp: true },
+    { name: 'germanite', components: '13x copper, 3x germanium, 3x iron, 16x sulfur', byproducts: ['germanite', 'copper', 'germanium', 'iron'], iconSet: 'METALLIC', color: 0x5C4033, noDecomp: true },
+    { name: 'renierite', components: '4x copper, 1x zinc, 1x iron, 1x germanium, 4x sulfur', byproducts: ['renierite', 'copper', 'germanium', 'zinc'], iconSet: 'METALLIC', color: 0x3F2D27, noDecomp: true },
+    { name: 'germanium_zinc_ore', components: '2x germanium, 1x zinc, 4x sulfur', byproducts: ['germanium', 'zinc'], iconSet: 'METALLIC', color: 0x4F433F, noDecomp: true },
+    { name: 'miassite', components: '17x rhodium, 14x sulfur', byproducts: ['miassite', 'rhodium', 'sulfur'], iconSet: 'METALLIC', color: 0xC0C0C0, noDecomp: true },
+    { name: 'rhodium_lead_ore', components: '1x rhodium, 1x lead, 2x sulfur', byproducts: ['rhodium', 'lead'], iconSet: 'METALLIC', color: 0xAAAAAA, noDecomp: true },
+    { name: 'laurite', components: '1x ruthenium, 2x sulfur', byproducts: ['laurite', 'ruthenium', 'sulfur'], iconSet: 'METALLIC', color: 0x555555, noDecomp: true },
+    { name: 'dzhalindite', components: '1x indium, 3x oxygen, 3x hydrogen', byproducts: ['dzhalindite', 'indium'], iconSet: 'DULL', color: 0xB0E0E6, noDecomp: true },
+    { name: 'yanomamite', components: '1x indium, 1x phosphorus, 4x oxygen, 2x water', byproducts: ['yanomamite', 'indium'], iconSet: 'DULL', color: 0x66CDAA, noDecomp: true },
+    { name: 'indium_ganide', components: '2x indium, 1x gallium', byproducts: ['indium', 'gallium'], iconSet: 'METALLIC', color: 0xC0C0C0, noDecomp: true },
+    { name: 'stottite', components: '1x iron, 1x germanium, 6x oxygen, 6x hydrogen', byproducts: ['stottite', 'iron', 'germanium'], iconSet: 'DULL', color: 0x696969, noDecomp: true },
+    { name: 'hollingworthite', components: '1x rhodium, 1x arsenic, 1x sulfur', byproducts: ['hollingworthite', 'rhodium', 'arsenic'], iconSet: 'METALLIC', color: 0xBEBEBE, noDecomp: true },
+    { name: 'bowieite', components: '2x rhodium, 3x sulfur', byproducts: ['bowieite', 'rhodium', 'sulfur'], iconSet: 'METALLIC', color: 0x7F7F7F, noDecomp: true },
+    { name: 'yttrotantalite', components: '1x yttrium, 1x tantalum, 4x oxygen', byproducts: ['yttrotantalite', 'yttrium', 'tantalum'], iconSet: 'METALLIC', color: 0x5C5C5C, noDecomp: true },
+    { name: 'fergusonite', components: '1x yttrium, 1x niobium, 4x oxygen', byproducts: ['fergusonite', 'yttrium', 'niobium'], iconSet: 'METALLIC', color: 0x708090, noDecomp: true },
+    { name: 'polycrase', components: '1x yttrium, 1x titanium, 2x niobium, 6x oxygen', byproducts: ['polycrase', 'yttrium', 'titanium'], iconSet: 'METALLIC', color: 0x2F4F4F, noDecomp: true },
+    { name: 'oulankaite', components: '5x platinum, 2x iron, 2x copper, 1x germanium, 10x sulfur', byproducts: ['oulankaite', 'platinum', 'germanium'], iconSet: 'METALLIC', color: 0x504A4B, noDecomp: true },
+    { name: 'roquesite', components: '1x copper, 1x indium, 2x sulfur', byproducts: ['roquesite', 'copper', 'indium'], iconSet: 'METALLIC', color: 0x36454F, noDecomp: true },
+    { name: 'indiumite', components: '2x cadmium, 1x indium, 4x sulfur', byproducts: ['indiumite', 'cadmium', 'indium'], iconSet: 'METALLIC', color: 0x708090, noDecomp: true },
+    { name: 'uranocircite_ra', components: '1x radium, 2x uranium, 2x phosphorus, 8x oxygen, 10x water', byproducts: ['uranocircite_ra', 'radium', 'uranium'], iconSet: 'RADIOACTIVE', color: 0xADFF2F, noDecomp: true },
+    { name: 'bazzite', components: '3x scandium, 2x beryllium, 3x silicon, 9x oxygen', byproducts: ['bazzite', 'scandium', 'beryllium'], iconSet: 'METALLIC', color: 0x00CED1 },
+    { name: 'lorandite', components: '1x thallium, 1x arsenic, 2x sulfur', byproducts: ['lorandite', 'thallium', 'arsenic'], iconSet: 'METALLIC', color: 0x8B008B },
+    { name: 'vrbaite', components: '4x mercury, 3x thallium, 2x arsenic, 10x sulfur', byproducts: ['vrbaite', 'mercury', 'thallium', 'arsenic'], iconSet: 'METALLIC', color: 0x480000 },
+    { name: 'hutchinsonite', components: '1x thallium, 1x lead, 5x arsenic, 9x sulfur', byproducts: ['hutchinsonite', 'thallium', 'lead', 'arsenic'], iconSet: 'METALLIC', color: 0x551A8B },
+    { name: 'crookesite', components: '7x copper, 1x thallium, 1x silver, 4x selenium', byproducts: ['crookesite', 'copper', 'thallium', 'selenium'], iconSet: 'METALLIC', color: 0x4E387E },
+    { name: 'hafnon', components: '1x hafnium, 1x silicon, 4x oxygen', byproducts: ['hafnon', 'hafnium', 'silicon'], iconSet: 'METALLIC', color: 0xE6E6FA },
+    { name: 'alurgite_hf', components: '1x potassium, 1x hafnium, 3x aluminium, 3x silicon, 10x oxygen, 2x hydrogen', byproducts: ['alurgite_hf', 'hafnium', 'potassium'], iconSet: 'DULL', color: 0xCD5C5C },
+    { name: 'thortveitite', components: '2x scandium, 2x silicon, 7x oxygen', byproducts: ['thortveitite', 'scandium'], iconSet: 'METALLIC', color: 0x778899 },
+    { name: 'silicate_scandium', components: '1x scandium, 1x silicon, 3x oxygen', byproducts: ['scandium', 'silicon'], iconSet: 'DULL', color: 0x708090 },
+    { name: 'bismutite', components: '2x bismuth, 1x carbon, 5x oxygen', byproducts: ['bismutite', 'bismuth'], iconSet: 'DULL', color: 0xE0FFFF },
+    { name: 'pucherite', components: '1x bismuth, 1x vanadium, 4x oxygen', byproducts: ['pucherite', 'bismuth', 'vanadium'], iconSet: 'METALLIC', color: 0x8B0000 },
+    { name: 'bismuth_cobalt_ore', components: '1x bismuth, 1x cobalt, 3x sulfur', byproducts: ['bismuth', 'cobalt'], iconSet: 'METALLIC', color: 0x709080 },
+    { name: 'wairauite', components: '1x cobalt, 1x iron', byproducts: ['wairauite', 'cobalt', 'iron'], iconSet: 'METALLIC', color: 0x414A4C },
+    { name: 'cattierite', components: '1x cobalt, 2x sulfur', byproducts: ['cattierite', 'cobalt', 'sulfur'], iconSet: 'METALLIC', color: 0x464646 },
+    { name: 'gersdorffite', components: '1x nickel, 1x arsenic, 1x sulfur', byproducts: ['gersdorffite', 'nickel', 'arsenic'], iconSet: 'METALLIC', color: 0xC0C0C0 },
+    { name: 'nickel_antimony_ore', components: '1x nickel, 1x antimony, 2x sulfur', byproducts: ['nickel', 'antimony'], iconSet: 'METALLIC', color: 0xB0B0B0 },
+    { name: 'erlichmanite', components: '1x osmium, 2x sulfur', byproducts: ['erlichmanite', 'osmium', 'sulfur'], iconSet: 'METALLIC', color: 0x333333 },
+    { name: 'osmium_titanium_ore', components: '1x osmium, 1x titanium, 3x oxygen', byproducts: ['osmium', 'titanium'], iconSet: 'METALLIC', color: 0x2A2A2A },
+    { name: 'vanadium_mercury_ore', components: '1x vanadium, 1x mercury, 4x oxygen', byproducts: ['vanadium', 'mercury'], iconSet: 'DULL', color: 0x994444 },
+    { name: 'selenium_silver_ore', components: '1x selenium, 1x silver, 1x sulfur', byproducts: ['selenium', 'silver'], iconSet: 'METALLIC', color: 0x666666 },
+    { name: 'hydrogen_beryllium_ore', components: '2x hydrogen, 1x beryllium, 4x oxygen', byproducts: ['hydrogen', 'beryllium'], iconSet: 'DULL', color: 0xCCDDEE },
+    { name: 'kolbeckite', components: '1x scandium, 1x phosphorus, 4x oxygen, 2x water', byproducts: ['kolbeckite', 'scandium'], iconSet: 'DULL', color: 0xADD8E6 },
+    { name: 'prassoite', components: '3x palladium, 2x arsenic', byproducts: ['prassoite', 'palladium', 'arsenic'], iconSet: 'METALLIC', color: 0x708090 },
+    { name: 'irarsite', components: '1x iridium, 1x arsenic, 1x sulfur', byproducts: ['irarsite', 'iridium', 'arsenic'], iconSet: 'METALLIC', color: 0xD3D3D3 },
+    { name: 'platarsite', components: '1x platinum, 1x arsenic, 1x sulfur', byproducts: ['platarsite', 'platinum', 'arsenic'], iconSet: 'METALLIC', color: 0xE5E4E2 },
+    { name: 'avogadrite', components: '1x potassium, 1x boron, 4x fluorine', byproducts: ['avogadrite', 'potassium', 'boron'], iconSet: 'DULL', color: 0xFFFACD },
+    { name: 'loellingite_rb', components: '1x iron, 2x arsenic, 1x rubidium', byproducts: ['loellingite_rb', 'iron', 'rubidium'], iconSet: 'METALLIC', color: 0x696969 },
+    { name: 'curite', components: '3x lead, 8x uranium, 22x oxygen, 4x water', byproducts: ['curite', 'lead', 'uranium'], iconSet: 'RADIOACTIVE', color: 0xFF8C00 },
+    { name: 'soddyite', components: '2x uranium, 1x silicon, 10x oxygen, 2x water', byproducts: ['soddyite', 'uranium', 'silicon'], iconSet: 'RADIOACTIVE', color: 0xDAA520 },
+    { name: 'kasolite', components: '1x lead, 1x uranium, 1x silicon, 6x oxygen, 1x water', byproducts: ['kasolite', 'lead', 'uranium'], iconSet: 'RADIOACTIVE', color: 0xB8860B },
+    { name: 'fourmarierite', components: '1x lead, 4x uranium, 19x oxygen, 4x water', byproducts: ['fourmarierite', 'lead', 'uranium'], iconSet: 'RADIOACTIVE', color: 0xFF4500 },
+    { name: 'thorogummite', components: '1x thorium, 1x silicon, 4x oxygen, 2x water', byproducts: ['thorogummite', 'thorium', 'silicon'], iconSet: 'RADIOACTIVE', color: 0x8FBC8F },
+    { name: 'upalite', components: '1x uranium, 2x phosphorus, 8x oxygen, 2x water', byproducts: ['upalite', 'uranium'], iconSet: 'RADIOACTIVE', color: 0x9ACD32 },
+    { name: 'arsenuranylite', components: '1x calcium, 4x uranium, 2x arsenic, 20x oxygen, 9x water', byproducts: ['arsenuranylite', 'uranium'], iconSet: 'RADIOACTIVE', color: 0xFFD700 },
+    { name: 'niobokuprite', components: '6x copper, 3x niobium, 2x oxygen', byproducts: ['niobokuprite', 'copper', 'niobium'], iconSet: 'METALLIC', color: 0xB87333 },
+    { name: 'bismutotantalite', components: '1x bismuth, 1x tantalum, 6x oxygen', byproducts: ['bismutotantalite', 'bismuth', 'tantalum'], iconSet: 'METALLIC', color: 0x4A4A4A },
+    { name: 'stibiotantalite', components: '1x antimony, 1x tantalum, 6x oxygen', byproducts: ['stibiotantalite', 'antimony', 'tantalum'], iconSet: 'METALLIC', color: 0x696969 },
+    { name: 'eschynite', components: '1x cerium, 1x titanium, 2x niobium, 6x oxygen', byproducts: ['eschynite', 'cerium', 'titanium'], iconSet: 'METALLIC', color: 0x363636 },
+    { name: 'shadlunite', components: '8x iron, 2x lead, 2x copper, 1x cadmium, 8x sulfur', byproducts: ['shadlunite', 'iron', 'lead', 'cadmium'], iconSet: 'METALLIC', color: 0x222222 },
+    { name: 'tambovite', components: '1x bismuth, 1x vanadium, 5x oxygen, 1x water', byproducts: ['tambovite', 'bismuth'], iconSet: 'DULL', color: 0xFF6347 },
+    { name: 'margaritasite', components: '2x cesium, 1x vanadium, 6x oxygen, 1x water', byproducts: ['margaritasite', 'cesium', 'vanadium'], iconSet: 'DULL', color: 0xFFD700 },
+    { name: 'calkinsite', components: '2x cerium, 1x carbon, 5x oxygen, 4x water', byproducts: ['calkinsite', 'cerium'], iconSet: 'DULL', color: 0xF4A460 },
+    { name: 'lanthanite', components: '2x lanthanum, 1x carbon, 6x oxygen, 8x water', byproducts: ['lanthanite', 'lanthanum'], iconSet: 'DULL', color: 0xE6CCB2, noDecomp: true },
+    { name: 'chlormagaluminite', components: '4x magnesium, 2x aluminium, 2x chlorine, 12x oxygen, 12x water', byproducts: ['chlormagaluminite', 'magnesium'], iconSet: 'DULL', color: 0x7B68EE },
+    { name: 'gallite', components: '1x copper, 1x gallium, 2x sulfur', byproducts: ['gallite', 'copper', 'gallium'], iconSet: 'METALLIC', color: 0x556B2F },
+    { name: 'sulgallite', components: '1x gallium, 1x copper, 4x sulfur, 1x water', byproducts: ['sulgallite', 'gallium'], iconSet: 'METALLIC', color: 0x483D8B },
+    { name: 'stringhamite_os', components: '1x calcium, 1x osmium, 2x silicon, 6x oxygen, 2x water', byproducts: ['stringhamite_os', 'osmium'], iconSet: 'METALLIC', color: 0x008B8B },
+    { name: 'pezzottaite', components: '1x cesium, 2x beryllium, 2x lithium, 3x aluminium, 6x silicon, 18x oxygen', byproducts: ['pezzottaite', 'cesium', 'lithium'], iconSet: 'METALLIC', color: 0xFF1493 },    
+    
+    { name: 'schafarzikite', components: '1x iron, 2x antimony, 4x oxygen', byproducts: ['schafarzikite', 'iron', 'antimony'], iconSet: 'METALLIC', color: 0x8B4513 },
+    { name: 'chalcophanite_bi', components: '1x zinc, 2x manganese, 4x oxygen, 3x water, 1x bismuth', byproducts: ['chalcophanite_bi', 'zinc', 'manganese'], iconSet: 'DULL', color: 0x483D8B },
+    { name: 'atheyite', components: '2x bismuth, 1x uranium, 6x oxygen, 2x water', byproducts: ['bismutite', 'uranium', 'bismuth'], iconSet: 'RADIOACTIVE', color: 0x00FF7F },
+    { name: 'beudantite_sb', components: '1x lead, 1x iron, 3x arsenic, 1x antimony, 11x oxygen, 6x hydrogen', byproducts: ['beudantite_sb', 'lead', 'iron'], iconSet: 'DULL', color: 0xDAA520 },
+    { name: 'partzite', components: '3x copper, 2x antimony, 6x oxygen, 3x water', byproducts: ['partzite', 'copper', 'antimony'], iconSet: 'DULL', color: 0xCD7F32 },
+    
+    { name: 'yttrium_fluorite_rare', components: '1x yttrium, 2x fluorine, 1x calcium', byproducts: ['yttrium', 'calcium'], iconSet: 'METALLIC', color: 0x8C7853, noDecomp: true }
+];
 
 GTCEuStartupEvents.registry('gtceu:material', event => {
 
@@ -451,6 +573,18 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
     });
 
+    
+    chalks.forEach(chalk => {
+        let materialBuilder = event.create(chalk.name)
+            // @ts-ignore               
+            .fluid()
+            .gem()
+            .color(chalk.color)
+            .iconSet(GTMaterialIconSet[chalk.iconSet || 'FLUID'])
+            .flags(                
+                GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES)                
+    });
+
     let materialBuilder
 
     materialBuilder = event.create("unrefined_tenebrius")
@@ -542,6 +676,23 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .fluid()
         .color('0x739BD0')
         .iconSet(GTMaterialIconSet.GLASS)        
+
+    materialBuilder = event.create('packed_ice')
+        .dust()
+        .fluid()
+        .color('0xA5C2F5')
+        .iconSet(GTMaterialIconSet.GLASS)        
+    
+    materialBuilder = event.create('rotten_flesh')
+        .fluid()
+        .color('0x934537')
+        .polymer()
+        .iconSet(GTMaterialIconSet.FLUID)        
+    
+    materialBuilder = event.create('recycled_organic_matter')        
+        .fluid()
+        .color('0x6E6259')
+        .iconSet(GTMaterialIconSet.FLUID);
 
     //extreme reactors
     erMaterials.forEach(mat => {
@@ -992,6 +1143,12 @@ StartupEvents.postInit(event => {
         }
     });
 
+    chalks.forEach(chalk => {
+        const color = chalk.name.replace('_chalk', '');
+        const gem = `occultism:chalk_${color}`;
+        TagPrefix.gem.setIgnored(GTMaterials.get(chalk.name), gem);
+    });
+
     
 
     // Block
@@ -999,6 +1156,7 @@ StartupEvents.postInit(event => {
     TagPrefix.block.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
+    TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
@@ -1018,7 +1176,7 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('atm_star'), 'allthetweaks:atm_star');
     TagPrefix.gem.setIgnored(GTMaterials.get('eternal'), 'forbidden_arcanus:eternal_stella');
     TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'ars_nouveau:source_gem');
-    TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'occultism:soul_gem');
+    TagPrefix.gem.setIgnored(GTMaterials.get('soul'), 'occultism:soul_gem');
     TagPrefix.gem.setIgnored(GTMaterials.get('glycerol'), 'pneumaticcraft:glycerol');
     TagPrefix.gem.setIgnored(GTMaterials.get('demon'), 'bloodmagic:defaultcrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('steadfast'), 'bloodmagic:steadfastcrystal');
@@ -1046,6 +1204,9 @@ StartupEvents.postInit(event => {
 
     // Rod
     TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod')
+
+    // Polymer
+    TagPrefix.foil.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
 });
 
 
@@ -1109,12 +1270,19 @@ GTCEuStartupEvents.materialModification(event => {
             });
         }
     }); 
+
+    chalks.forEach(chalk => {
+        const color = chalk.name.replace('_chalk', '');
+        const gem = `occultism:chalk_${color}`;
+        TagPrefix.gem.setIgnored(GTMaterials.get(chalk.name), gem);
+    });
             
     // Block
     TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
+    TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
@@ -1135,7 +1303,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('atm_star'), 'allthetweaks:atm_star');
     TagPrefix.gem.setIgnored(GTMaterials.get('eternal'), 'forbidden_arcanus:eternal_stella');
     TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'ars_nouveau:source_gem');
-    TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'occultism:soul_gem');
+    TagPrefix.gem.setIgnored(GTMaterials.get('soul'), 'occultism:soul_gem');
     TagPrefix.gem.setIgnored(GTMaterials.get('glycerol'), 'pneumaticcraft:glycerol');
     TagPrefix.gem.setIgnored(GTMaterials.get('demon'), 'bloodmagic:defaultcrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('steadfast'), 'bloodmagic:steadfastcrystal');
@@ -1163,7 +1331,9 @@ GTCEuStartupEvents.materialModification(event => {
     // Rod
     TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod');
     
-
+    
+    // Polymer
+    TagPrefix.foil.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
 
     //ore biproducts
     newOres.forEach(mat => {
@@ -1194,48 +1364,40 @@ GTCEuStartupEvents.materialModification(event => {
     });
 });
 
+ const dimensions = [
+    { name: 'bloodmagic:dungeon', displayName: 'Blood Dungeon', icon: 'ad_astra:moon_globe', tier: 4 },
+    { name: 'allthemodium:mining', displayName: 'Mining Dimension', icon: 'allthetweaks:atm_star', tier: 0 },
+    { name: 'deeperdarker:otherside', displayName: 'Deeper Darker', icon: 'minecraft:bedrock', tier: 0 },
+    { name: 'ad_astra:moon', displayName: 'Moon', icon: 'ad_astra:moon_globe', tier: 1 },
+    { name: 'ad_astra:mars', displayName: 'Mars', icon: 'ad_astra:mars_globe', tier: 1 },
+    { name: 'ad_astra:mercury', displayName: 'Mercury', icon: 'ad_astra:mercury_globe', tier: 2 },
+    { name: 'ad_astra:venus', displayName: 'Venus', icon: 'ad_astra:venus_globe', tier: 2 },
+    { name: 'ad_astra:glacio', displayName: 'Glacio', icon: 'ad_astra:glacio_globe', tier: 3 },
+    { name: 'planetsplus:ganymede', displayName: 'Ganymede', icon: 'supplementaries:globe_sepia', tier: 5 },
+    { name: 'charon', displayName: 'Charon', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'diater', displayName: 'Diater', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'dune', displayName: 'Dune', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'europa', displayName: 'Europa', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'galia', displayName: 'Galia', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'io', displayName: 'Io', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'jada', displayName: 'Jada', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'pluto', displayName: 'Pluto', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'soera', displayName: 'Soera', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'titan', displayName: 'Titan', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'vonic', displayName: 'Vonic', icon: 'supplementaries:globe_sepia', tier: 4 },
+    { name: 'vulcan', displayName: 'Vulcan', icon: 'supplementaries:globe_sepia', tier: 4 }
+];
+
 GTCEuStartupEvents.registry("gtceu:dimension_marker", event => {
-    event.create("bloodmagic:dungeon")
-        .iconSupplier(() => Item.of("ad_astra:moon_globe").getItem())
-        .tier(0)
-        .overrideName("Blood Dungeon")
+    dimensions.forEach(dim => {
+        event.create(dim.name)
+            .iconSupplier(() => Item.of(dim.icon).getItem())
+            .tier(dim.tier)
+            .overrideName(dim.displayName);
+    });
+});
 
-    event.create("allthemodium:mining")
-        .iconSupplier(() => Item.of("allthetweaks:atm_star").getItem())
-        .tier(0)
-        .overrideName("Mining dimstorage:dimensional_chest")
 
-    event.create("deeperdarker:otherside")
-        .iconSupplier(() => Item.of("minecraft:bedrock").getItem())
-        .tier(0)
-        .overrideName("Deeper Darker")
-
-    // Ad Astra dimensions
-    event.create("ad_astra:moon")
-        .iconSupplier(() => Item.of("ad_astra:moon_globe").getItem())
-        .tier(0)
-        .overrideName("Moon")
-    event.create("ad_astra:mars")
-        .iconSupplier(() => Item.of("ad_astra:mars_globe").getItem())
-        .tier(0)
-        .overrideName("Mars")
-    event.create("ad_astra:mercury")
-        .iconSupplier(() => Item.of("ad_astra:mercury_globe").getItem())
-        .tier(0)
-        .overrideName("Mercury")
-    event.create("ad_astra:venus")
-        .iconSupplier(() => Item.of("ad_astra:venus_globe").getItem())
-        .tier(0)
-        .overrideName("Venus")
-    event.create("ad_astra:glacio")
-        .iconSupplier(() => Item.of("ad_astra:glacio_globe").getItem())
-        .tier(0)
-        .overrideName("Glacio")
-    event.create("planetsplus:ganymede")
-        .iconSupplier(() => Item.of("supplementaries:globe_sepia").getItem())
-        .tier(0)
-        .overrideName("Ganymede")
-})
 
 GTCEuStartupEvents.registry("gtceu:material_icon_set", event => {
 

@@ -31,11 +31,28 @@ ServerEvents.recipes(allthemods => {
         if (fluidOut) { recipe.outputFluids(fluidOut) }
     };
 
-    addSpiritInfuser(["occultism:chalk_white_impure"], null, 'occultism:chalk_white', null, 128, 200);
-    addSpiritInfuser(["occultism:chalk_gold_impure"], null, 'occultism:chalk_gold', null, 128, 200);
-    addSpiritInfuser(["occultism:chalk_purple_impure"], null, 'occultism:chalk_purple', null, 128, 200);
-    addSpiritInfuser(["occultism:chalk_red_impure"], null, 'occultism:chalk_red', null, 128, 200);
-
+    const chalks = [
+        'white',
+        'orange',
+        'magenta',
+        'light_blue',
+        'gold',
+        'lime',
+        'pink',
+        'gray',
+        'light_gray',
+        'cyan',
+        'purple',
+        'blue',
+        'brown',
+        'green',
+        'red',
+        'black'
+    ];
+    
+    chalks.forEach(chalk => {
+        addSpiritInfuser([`occultism:chalk_${chalk}_impure`], null, `occultism:chalk_${chalk}`, null, 128, 200);
+    });
 
     addSpiritInfuser(["minecraft:diamond"], null, 'occultism:spirit_attuned_gem', null, 128, 20);
     addSpiritInfuser(["occultism:demons_dream_essence"], null, 'occultism:otherworld_essence', null, 128, 20);

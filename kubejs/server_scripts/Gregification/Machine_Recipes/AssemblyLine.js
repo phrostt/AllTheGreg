@@ -60,7 +60,7 @@ ServerEvents.recipes(allthemods => {
         ],
         [
             'gtceu:aetheric_sanguine_singularity 32000',
-            'gtceu:liquid_blue_ice 64000',
+            'gtceu:super_coolant 64000',
         ],
         TIME.very_long,
         32768,
@@ -78,7 +78,7 @@ ServerEvents.recipes(allthemods => {
         ],
         [
             'gtceu:aetheric_sanguine_singularity 32000',
-            'gtceu:liquid_blue_ice 64000',
+            'gtceu:super_coolant 64000',
         ],
         TIME.very_long,
         32768,
@@ -95,7 +95,7 @@ ServerEvents.recipes(allthemods => {
         ],
         [
             'gtceu:aetheric_sanguine_singularity 32000',
-            'gtceu:liquid_blue_ice 64000'
+            'gtceu:super_coolant 64000'
 
         ],
         TIME.very_long,
@@ -113,7 +113,7 @@ ServerEvents.recipes(allthemods => {
         ],
         [
             'gtceu:aetheric_sanguine_singularity 32000',
-            'gtceu:liquid_blue_ice 64000'
+            'gtceu:super_coolant 64000'
 
         ],
         TIME.very_long,
@@ -134,7 +134,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         [
-            "#forge:liquid_soul 1000",
+            "#forge:soul 1000",
             "gtceu:saturated_tau 10000"
         ],
         1200,

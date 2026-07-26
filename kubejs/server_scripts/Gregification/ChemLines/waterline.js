@@ -8,6 +8,7 @@ ServerEvents.recipes(allthemods => {
     const EUStage6 = 33554432; //uhv    
     const duration = 400;
 
+    //zinc carbon acid for the slurry
    const filter = Item.of('gtceu:fluid_cell', '{Fluid:{Amount:1000,FluidName:"gtceu:activated_carbon_slurry"}}').strongNBT();
 
     allthemods.recipes.gtceu.water_filtration_plant('gregification:water_stage_1')

@@ -110,12 +110,12 @@ ServerEvents.recipes(allthemods => {
 
     singularityGems.forEach(mat=>{
         let input = `64000x #forge:gems/${mat}`
-        blackHole(input, null, `gtceu:${mat}_singularity`,null,8388608, 1200)
+        //blackHole(input, '#forge:concentrated_dark_matter 1000', `gtceu:${mat}_singularity`,null,8388608, 1200)
     })
 
     singularityIngots.forEach(mat=>{
         let input = `64000x #forge:ingots/${mat}`        
-        blackHole(input, null, `gtceu:${mat}_singularity`,null,8388608, 1200)
+        //blackHole(input, '#forge:concentrated_dark_matter 1000', `gtceu:${mat}_singularity`,null,8388608, 1200)
     })
     
     addAssemblyLine(
@@ -137,5 +137,5 @@ ServerEvents.recipes(allthemods => {
         'gtceu:uev_compressor',
         64
     )
-    blackHole(['allthecompressed:cobblestone_6x'],'#forge:concentrated_dark_matter 1000', 'gtceu:small_bedrockium_dust', null, 2097152, 1200, 'bedrockium_compression')
+    blackHole(['allthecompressed:cobblestone_6x', '#forge:frames/alfsteel'],'#forge:concentrated_dark_matter 1000', 'gtceu:small_bedrockium_dust', null, 2097152, 1200, 'bedrockium_compression')
 })
