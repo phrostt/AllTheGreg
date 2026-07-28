@@ -35,26 +35,7 @@ ServerEvents.recipes(allthemods => {
         }        
     };
 
-    //chaos shard
-    bacterialVat(
-        [
-            'draconicevolution:small_chaos_frag',
-            'draconicevolution:dragon_heart',
-            'minecraft:dragon_egg',
-            'naturesaura:birth_spirit'
-        ],
-        [
-            'gtceu:saturated_life_fertilizer 2000',
-            'gtceu:mana_essence 2000',
-            'gtceu:liquid_dragon_breath 10000'
-
-        ],
-        'draconicevolution:chaos_shard',
-        null,
-        131072,
-        TIME.very_long,
-        4500
-    );
+    //chaos shard crystal_growth_chamber recipe
 
     allthemods.recipes.gtceu.bacterial_vat('gregification:concentrated_dark_matter_synthesis')
         .itemInputs('#forge:dusts/cesium')

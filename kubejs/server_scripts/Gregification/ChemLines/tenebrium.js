@@ -8,7 +8,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('gtceu:iesnium_dust', 1500, 1500)
         .duration(400).EUt(TenebriumEU);
     
-    allthemods.recipes.gtceu.bacterial_vat('gregification:tenebrius_gem')
+    allthemods.recipes.gtceu.crystal_growth_chamber('gregification:tenebrius_gem')
         .itemInputs('#forge:dusts/unrefined_tenebrius')
         .inputFluids('#forge:liquid_chaos 2000')        
         .itemOutputs('gtceu:refined_tenebrius_gem')

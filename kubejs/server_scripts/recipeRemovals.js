@@ -15,7 +15,9 @@ ServerEvents.recipes(allthemods => {
         'occultism:ritual/craft_miner_djinni_ores', 'occultism:ritual/craft_miner_afrit_deeps',
         'occultism:ritual/craft_miner_marid_master', 'occultism:crafting/chalk_white_impure',
         'occultism:crafting/chalk_red_impure', 'occultism:crafting/chalk_gold_impure',
-        'occultism:crafting/chalk_purple_impure',
+        'occultism:crafting/chalk_purple_impure', 'draconicevolution:machines/crafting_core',
+        'draconicevolution:machines/basic_crafting_injector', 'draconicevolution:machines/awakened_crafting_injector',
+        'draconicevolution:chaotic_crafting_injector', 'draconicevolution:wyvern_crafting_injector',
 
 
 

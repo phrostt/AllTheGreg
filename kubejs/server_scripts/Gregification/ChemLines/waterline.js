@@ -2,11 +2,12 @@ ServerEvents.recipes(allthemods => {
 
     const EUStage1 = 512; //hv
     const EUStage2 = 2048; //ev
-    const EUStage3 = 32768; //iv
-    const EUStage4 = 524288; //luv
-    const EUStage5 = 2097152; //zpm
-    const EUStage6 = 8388608; //uv
-    const EUStage7 = 33554432; //uhv    
+    const EUStage3 = 8192; //iv
+    const EUStage4 = 32768; //luv
+    const EUStage5 = 524288; //zpm
+    const EUStage6 = 2097152; //uv
+    const EUStage7 = 8388608; //uhv
+    const EUStage8 = 33554432; //uev
     const duration = 400;
 
     //zinc carbon acid for the slurry
@@ -31,13 +32,15 @@ ServerEvents.recipes(allthemods => {
         .duration(duration*.8)
         .EUt(EUStage3);
 
+
+    //this is where we get some bacteria!
     allthemods.recipes.gtceu.microbial_filtration_array('gregification:water_stage_4')
         .chancedInput('#forge:dusts/sodium_hydroxide', 2500, 0)
         .inputFluids('gtceu:water_stage_3 700')
         .chancedFluidInput('#forge:hydrochloric_acid 1000', 2500,0)
         .outputFluids('gtceu:water_stage_4 600')
         .duration(duration*.7)
-        .EUt(EUStage3);
+        .EUt(EUStage4);
     
     allthemods.recipes.gtceu.laser_purification('gregification:water_stage_5')
         .chancedInput('#forge:lenses/restonia', 500, 0)
@@ -50,7 +53,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('gtceu:water_stage_4 600')
         .outputFluids('gtceu:water_stage_5 500')
         .duration(duration*.6)
-        .EUt(EUStage4);
+        .EUt(EUStage5);
     
     allthemods.recipes.gtceu.cryogenic_unit('gregification:water_stage_6')
         .chancedFluidInput('#forge:super_coolant 100', 2500,0)
@@ -58,7 +61,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('gtceu:water_stage_5 500')
         .outputFluids('gtceu:water_stage_6 400')
         .duration(duration*.5)
-        .EUt(EUStage5);
+        .EUt(EUStage6);
     
     allthemods.recipes.gtceu.baryonic_stabilizer('gregification:water_stage_7')
         .chancedInput('gtceu:up_quark', 500, 0)
@@ -70,7 +73,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('gtceu:water_stage_6 400')
         .outputFluids('gtceu:purest_water 300')
         .duration(duration*.4)
-        .EUt(EUStage6); 
+        .EUt(EUStage7);
         
     allthemods.recipes.gtceu.baryonic_separator('gregification:quark_separation')
         .itemInputs(['#forge:small_dusts/infinity', '#forge:small_dusts/draconium_awakened'])
@@ -81,20 +84,28 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('gtceu:strange_quark', 500, 0)
         .chancedOutput('gtceu:charm_quark', 500, 0)
         .duration(duration)
-        .EUt(EUStage6); 
+        .EUt(EUStage7);
 
-    event.recipes.gtceu.hydro_electromagnetic_separator('allthemods:hydro_electromagnetic_separator/liquid_air_separation')
+    allthemods.recipes.gtceu.hydro_electromagnetic_separator('gregificatoion:hydro_electromagnetic_separator/liquid_air_separation')
         .itemInputs()
         .inputFluids('gtceu:liquid_air 13000')
         .itemOutputs()
-        .outputFluids('gtceu:oxygen 3000', 'allthemods:inert_gas_mixture 10000')
+        .outputFluids('gtceu:ionized_oxygen 3000', 'gtceu:inert_gas_mixture 10000')
+        .duration(duration)
+        .EUt(EUStage1);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregificatoion:chemical_reactor/ozone')
+        .itemInputs()
+        .inputFluids('#forge:ionized_oxygen 3000')
+        .itemOutputs()
+        .outputFluids('gtceu:ozone 1000')
         .duration(duration)
         .EUt(EUStage1);
 
     // Step 2: Fractional Gas Separator (Inert Gas Mixture -> Component Gases)
-    event.recipes.gtceu.fractional_gas_separator('allthemods:fractional_gas_separator/inert_gas_fractionation')
+    allthemods.recipes.gtceu.fractional_gas_separator('gregificatoion:fractional_gas_separator/inert_gas_fractionation')
         .itemInputs()
-        .inputFluids('allthemods:inert_gas_mixture 10000')
+        .inputFluids('gtceu:inert_gas_mixture 10000')
         .itemOutputs()
         .outputFluids('gtceu:nitrogen 9000', 'gtceu:carbon_dioxide 500', 'gtceu:helium 250', 'gtceu:argon 125')
         .duration(duration)

@@ -111,6 +111,14 @@
     "block.gtceu.pneumatic_assembler": "Pneumatic Assembler",
     "gtceu.draconic_infuser": "Draconic Infuser",
     "block.gtceu.draconic_infuser": "Draconic Infuser",
+    "gtceu.draconic_infuser_draconic": "Draconic Infuser (Draconic)",
+    "block.gtceu.draconic_infuser_draconic": "Draconic Infuser (Draconic)",
+    "gtceu.draconic_infuser_draconium": "Draconic Infuser (Draconium)",
+    "block.gtceu.draconic_infuser_draconium": "Draconic Infuser (Draconium)",
+    "gtceu.draconic_infuser_wyvern": "Draconic Infuser (Wyvern)",
+    "block.gtceu.draconic_infuser_wyvern": "Draconic Infuser (Wyvern)",
+    "gtceu.draconic_infuser_chaotic": "Draconic Infuser (Chaotic)",
+    "block.gtceu.draconic_infuser_chaotic": "Draconic Infuser (Chaotic)",
     "gtceu.hephaestus_forge": "Hephaestus Forge",
     "block.gtceu.hephaestus_forge": "Hephaestus Forge",
     "gtceu.soul_extractor": "Soul Extractor",
@@ -507,8 +515,15 @@
     "block.gtceu.fractional_gas_separator": "Fractional Gas Separator",
     "gtceu.fractional_gas_separator": "Fractional Gas Separator",
     "gtceu.hydro_electromagnetic_separator": "Hydro-Electromagnetic Separator",
-    "block.gtceu.hydro_electromagnetic_separator": "Hydro-Electromagnetic Separator"
+    "block.gtceu.hydro_electromagnetic_separator": "Hydro-Electromagnetic Separator",
+
     
+    "gtceu.bacterial_growth_chamber": "Bacterial Growth Chamber",
+    "block.gtceu.bacterial_growth_chamber": "Bacterial Growth Chamber",
+    "gtceu.crystal_growth_chamber": "Crystal Growth Chamber",
+    "block.gtceu.crystal_growth_chamber": "Crystal Growth Chamber",
+    "material.gtceu.ionized_oxygen": "Ionized Oxygen",
+    "material.gtceu.inert_gas_mixture": "Inert Gas Mixture"
     
     
 }

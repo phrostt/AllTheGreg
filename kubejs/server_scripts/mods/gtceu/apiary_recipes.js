@@ -74,8 +74,10 @@ ServerEvents.recipes(allthemods => {
         let isFluidFlower = flower instanceof $FluidStackJS || (flower instanceof Array && flower[0] instanceof $FluidStackJS)
 
         // Modified logic: Only generate specific circuit tiers
-        const circuitTiers = [1, 5, 10, 20, 30];
+        //const circuitTiers = [1, 5, 10, 20, 30];
         
+        const circuitTiers = [1];
+
         circuitTiers.forEach(i => {
             let recipeBuilder = allthemods.recipes.gtceu.apiary_ii(id + '/circuit_' + i.toString())
                 .circuit(i)

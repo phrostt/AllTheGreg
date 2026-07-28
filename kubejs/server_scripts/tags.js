@@ -3,9 +3,13 @@
 // As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
 
 ServerEvents.tags('item', allthemods => {
+
+
   allthemods.add('minecraft:boats', /byg:\w+?_boat/)
   allthemods.add('minecraft:chest_boats', /byg:.+?_chest_boat/)
   allthemods.add('forge:plastic', 'pneumaticcraft:plastic')
+  allthemods.add('forge:foils/polyethylene', 'mekanism:hdpe_pellet')
+
   allthemods.add('forge:dusts/ender', 'ae2:ender_dust')
   allthemods.add('forge:dusts/wood', 'forestry:wood_pulp')  
   allthemods.add('ars_nouveau:golem/shard', ['minecraft:amethyst_shard', 'ae2:certus_quartz_crystal'])
@@ -171,6 +175,7 @@ ServerEvents.tags('fluid', allthemods => {
   allthemods.add('forge:nutritional_paste', 'mekanism:nutritional_paste')
   allthemods.add('forge:ethanol', 'chemlib:ethanol_fluid')
   allthemods.add('forge:radon', 'chemlib:radon_fluid')
+  allthemods.add('forge:ethylene', 'mekanism:ethene')
 
 })
 

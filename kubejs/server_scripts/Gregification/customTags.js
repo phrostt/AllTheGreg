@@ -26,6 +26,8 @@ ServerEvents.tags('item', allthemods => {
 	allthemods.add('occultism:miner/djinni', 'occultism:miner_djinni_ores')
 	allthemods.add('occultism:miner/afrit', 'occultism:miner_afrit_deeps')
 	allthemods.add('occultism:miner/marid', 'occultism:miner_marid_master')	
+	allthemods.add('occultism:miner/eldritch', 'occultism:miner_ancient_eldritch')
+	allthemods.add('occultism:miners/eldritch', 'occultism:miner_ancient_eldritch')
 
 	allthemods.add('gtceu:transistors', 'pneumaticcraft:transistor')
     allthemods.add('gtceu:capacitors', 'pneumaticcraft:capacitor')

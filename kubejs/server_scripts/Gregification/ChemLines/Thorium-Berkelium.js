@@ -13,7 +13,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(eut2);
 
     //step 1 - autoclave thorium with calcium fluorite 
-    allthemods.recipes.gtceu.bacterial_vat('gregification:thorium_doped_calcium_fluoride_gem')
+    allthemods.recipes.gtceu.crystal_growth_chamber('gregification:thorium_doped_calcium_fluoride_gem')
         .itemInputs('#forge:dusts/thorium')
         .inputFluids('#forge:calcium_fluoride 2000')
         .outputFluids('gtceu:fluorine 2000')

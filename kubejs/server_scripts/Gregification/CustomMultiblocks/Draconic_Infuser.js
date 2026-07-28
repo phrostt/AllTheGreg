@@ -11,7 +11,10 @@ ServerEvents.recipes(allthemods => {
         long: 1000,
         very_long: 1200
     };
-    const draconicInfuser = (inputs, fluidIn, outputs, fluidOut, eu, duration, customID) => {
+    
+    
+    const coils = {draconium: 'draconium', wyvern: 'wyvern', draconic: 'draconic', chaotic: 'chaotic'};
+    const draconicInfuser = (inputs, fluidIn, outputs, fluidOut, eu, duration, customID, tier) => {
 
         // 1. AUTO-ID LOGIC
         let id;
@@ -29,8 +32,10 @@ ServerEvents.recipes(allthemods => {
                 .toLowerCase();
             id = `gregification:draconic_infuser/${outputName}`;
         }
+        let tierName = tier.toLowerCase();
+        let recipeTypeId = `draconic_infuser_${tierName}`;
 
-        let recipe = allthemods.recipes.gtceu.draconic_infuser(id)
+        let recipe = allthemods.recipes.gtceu[recipeTypeId](id)
             .itemInputs(inputs)
             .itemOutputs(outputs)
             .duration(duration)
@@ -45,15 +50,212 @@ ServerEvents.recipes(allthemods => {
             recipe.outputFluids(fluidOut);
         }
     };
+
+        const addAssemblyLine = (output, inputs, fluids, duration, eu, researchItem, CWUt) => {
+
+        let itemName = output.replace(/^\d+x\s+/, '').replace(':', '_');
+        let generatedId = `gregification:assembly_line/${itemName}`;
+
+        let recipe = allthemods.recipes.gtceu.assembly_line(generatedId)
+            .itemOutputs(output)
+            .itemInputs(inputs)
+            .duration(duration)
+            .EUt(eu);
+
+        if (fluids && fluids.length > 0) {
+            recipe.inputFluids(fluids);
+        }
+
+        if (researchItem) {
+            if (CWUt) {
+                recipe.stationResearch(b =>
+                    b.researchStack(researchItem)
+                        .EUt(eu / 4)
+                        .CWUt(CWUt)
+                );
+            }
+            else {
+                recipe.scannerResearch(researchItem);
+            }
+        }
+    };
+
+    const ad_ters = {1: 'desh', 2: 'ostrum', 3: 'calorite', 4: 'etrium'};
+
+    //controller 
+    addAssemblyLine(
+        'draconicevolution:crafting_core',
+        [
+            `4x #forge:gears/${ad_ters[1]}`,
+            '#forge:frames/hellforged',
+            '#forge:small_gears/hop_graphite',
+            'draconicevolution:draconium_core'            
+        ],
+        [
+            '#forge:alfsteel 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'gtceu:assembly_line');
+    
+    //draconium controller
+    addAssemblyLine(
+        'gtceu:draconic_infuser_draconium',
+        [
+            `4x #forge:gears/${ad_ters[1]}`,
+            '4x #gtceu:circuits/luv',
+            '#forge:frames/draconium',
+            '4x #forge:small_gears/hop_graphite'
+        ],
+        [
+            '#forge:alfsteel 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'draconicevolution:crafting_core');
+    
+    //wyvern controller
+    addAssemblyLine(
+        'gtceu:draconic_infuser_wyvern',
+        [
+            `4x #forge:gears/${ad_ters[2]}`,
+            'gtceu:draconic_infuser_draconium',
+            '4x #gtceu:circuits/luv',
+            '#forge:frames/draconium',
+            '4x #forge:small_gears/hop_graphite',
+            '6x #forge:plates/alloy_infused'
+        ],
+        [
+            '#forge:alfsteel 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'gtceu:draconic_infuser_draconium');
+
+    //draconic controller
+    addAssemblyLine(
+        'gtceu:draconic_infuser_draconic',
+        [
+            `4x #forge:gears/${ad_ters[3]}`,
+            'gtceu:draconic_infuser_wyvern',
+            '4x #gtceu:circuits/luv',
+            '#forge:frames/draconium_awakened',
+            '4x #forge:small_gears/hop_graphite',
+            '6x #forge:plates/alloy_reinforced'
+        ],
+        [
+            '#forge:alfsteel 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'gtceu:draconic_infuser_wyvern');
+
+    //chaotic controller
+    addAssemblyLine(
+        'gtceu:draconic_infuser_chaotic' ,
+        [
+            `4x #forge:gears/${ad_ters[4]}`,
+            'gtceu:draconic_infuser_draconic',
+            '4x #gtceu:circuits/luv',
+            '#forge:frames/draconium_awakened',
+            '4x #forge:small_gears/hop_graphite',
+            '6x #forge:plates/alloy_atomic'
+        ],
+        [
+            '#forge:alfsteel 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'gtceu:draconic_infuser_draconic');
+    
+
+    //draconium casing
+    addAssemblyLine(
+        'gtceu:draconium_casing',
+        [
+            `#forge:frames/${ad_ters[1]}`,            
+            '#forge:storage_blocks/osmiridium',
+            'draconicevolution:draconium_core',
+            '6x #forge:plates/draconium'            
+        ],
+        [
+            '#forge:iesnium 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'draconicevolution:crafting_core'        
+    );
+
+    //wyvern casing
+    addAssemblyLine(
+        'gtceu:wyvern_casing',
+        [
+            `#forge:frames/${ad_ters[2]}`,
+            'gtceu:draconium_casing',
+            '2x draconicevolution:draconium_core',
+            'draconicevolution:wyvern_core',
+            '6x #forge:plates/draconium'
+        ],
+        [
+            '#forge:iesnium 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'gtceu:draconium_casing'
+    );
+
+    //draconic casing
+    addAssemblyLine(
+        'gtceu:draconic_casing',
+        [
+            'gtceu:wyvern_casing',
+            `#forge:frames/${ad_ters[3]}`,            
+            '2x draconicevolution:wyvern_core',
+            '6x #forge:plates/draconium_awakened'
+        ],
+        [
+            '#forge:iesnium 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'gtceu:wyvern_casing'
+    );
+
+    addAssemblyLine(
+        'gtceu:chaotic_casing',
+        [
+            'gtceu:draconic_casing',
+            `#forge:frames/${ad_ters[4]}`,
+            '2x minecraft:dragon_egg',
+            '6x #forge:plates/draconium_awakened',
+            '4x draconicevolution:large_chaos_frag'
+        ],
+        [
+            '#forge:iesnium 576',
+            '#forge:selenium 576'
+        ],
+        TIME.medium,
+        32768,
+        'gtceu:wyvern_casing'
+    )
+
     //wyvern gear
     const wyvernGear = [
-        { out: 'draconicevolution:wyvern_sword', in: 'minecraft:diamond_sword' },
-        { out: 'draconicevolution:wyvern_pickaxe', in: 'minecraft:diamond_pickaxe' },
-        { out: 'draconicevolution:wyvern_shovel', in: 'minecraft:diamond_shovel' },
-        { out: 'draconicevolution:wyvern_axe', in: 'minecraft:diamond_axe' },
-        { out: 'draconicevolution:wyvern_hoe', in: 'minecraft:diamond_hoe' },
-        { out: 'draconicevolution:wyvern_bow', in: 'minecraft:bow' },
-        { out: 'draconicevolution:wyvern_chestpiece', in: 'minecraft:diamond_chestplate' }
+        { out: 'draconicevolution:wyvern_sword', in: 'minecraft:diamond_sword', tier: 'wyvern'},
+        { out: 'draconicevolution:wyvern_pickaxe', in: 'minecraft:diamond_pickaxe', tier: 'wyvern' },
+        { out: 'draconicevolution:wyvern_shovel', in: 'minecraft:diamond_shovel', tier: 'wyvern' },
+        { out: 'draconicevolution:wyvern_axe', in: 'minecraft:diamond_axe', tier: 'wyvern' },
+        { out: 'draconicevolution:wyvern_hoe', in: 'minecraft:diamond_hoe', tier: 'wyvern' },
+        { out: 'draconicevolution:wyvern_bow', in: 'minecraft:bow', tier: 'wyvern' },
+        { out: 'draconicevolution:wyvern_chestpiece', in: 'minecraft:diamond_chestplate', tier: 'wyvern' }
     ];
     wyvernGear.forEach(gear => {
         draconicInfuser(
@@ -68,19 +270,20 @@ ServerEvents.recipes(allthemods => {
             [gear.out],
             [],
             TIER.wyvern,
-            TIME.medium
+            TIME.medium,
+            gear.tier
         );
     });
 
     //draconic gear
     const draconicGear = [
-        { out: 'draconicevolution:draconic_sword', in: 'draconicevolution:wyvern_sword' },
-        { out: 'draconicevolution:draconic_pickaxe', in: 'draconicevolution:wyvern_pickaxe' },
-        { out: 'draconicevolution:draconic_shovel', in: 'draconicevolution:wyvern_shovel' },
-        { out: 'draconicevolution:draconic_axe', in: 'draconicevolution:wyvern_axe' },
-        { out: 'draconicevolution:draconic_hoe', in: 'draconicevolution:wyvern_hoe' },
-        { out: 'draconicevolution:draconic_bow', in: 'draconicevolution:wyvern_bow' },
-        { out: 'draconicevolution:draconic_chestpiece', in: 'draconicevolution:wyvern_chestpiece' }
+        { out: 'draconicevolution:draconic_sword', in: 'draconicevolution:wyvern_sword', tier: 'draconic' },
+        { out: 'draconicevolution:draconic_pickaxe', in: 'draconicevolution:wyvern_pickaxe', tier: 'draconic' },
+        { out: 'draconicevolution:draconic_shovel', in: 'draconicevolution:wyvern_shovel', tier: 'draconic' },
+        { out: 'draconicevolution:draconic_axe', in: 'draconicevolution:wyvern_axe', tier: 'draconic' },
+        { out: 'draconicevolution:draconic_hoe', in: 'draconicevolution:wyvern_hoe', tier: 'draconic' },
+        { out: 'draconicevolution:draconic_bow', in: 'draconicevolution:wyvern_bow', tier: 'draconic' },
+        { out: 'draconicevolution:draconic_chestpiece', in: 'draconicevolution:wyvern_chestpiece', tier: 'draconic' }
     ];
     draconicGear.forEach(gear => {
         draconicInfuser(
@@ -95,19 +298,20 @@ ServerEvents.recipes(allthemods => {
             [gear.out],
             [],
             TIER.draconic,
-            TIME.long
+            TIME.long,
+            gear.tier
         );
     });
 
     //chaotic gear
     const chaoticGear = [
-        { out: 'draconicevolution:chaotic_sword', in: 'draconicevolution:draconic_sword' },
-        { out: 'draconicevolution:chaotic_pickaxe', in: 'draconicevolution:draconic_pickaxe' },
-        { out: 'draconicevolution:chaotic_shovel', in: 'draconicevolution:draconic_shovel' },
-        { out: 'draconicevolution:chaotic_axe', in: 'draconicevolution:draconic_axe' },
-        { out: 'draconicevolution:chaotic_hoe', in: 'draconicevolution:draconic_hoe' },
-        { out: 'draconicevolution:chaotic_bow', in: 'draconicevolution:draconic_bow' },
-        { out: 'draconicevolution:chaotic_chestpiece', in: 'draconicevolution:draconic_chestpiece' }
+        { out: 'draconicevolution:chaotic_sword', in: 'draconicevolution:draconic_sword', tier: 'chaotic' },
+        { out: 'draconicevolution:chaotic_pickaxe', in: 'draconicevolution:draconic_pickaxe', tier: 'chaotic' },
+        { out: 'draconicevolution:chaotic_shovel', in: 'draconicevolution:draconic_shovel', tier: 'chaotic' },
+        { out: 'draconicevolution:chaotic_axe', in: 'draconicevolution:draconic_axe', tier: 'chaotic' },
+        { out: 'draconicevolution:chaotic_hoe', in: 'draconicevolution:draconic_hoe', tier: 'chaotic' },
+        { out: 'draconicevolution:chaotic_bow', in: 'draconicevolution:draconic_bow', tier: 'chaotic' },
+        { out: 'draconicevolution:chaotic_chestpiece', in: 'draconicevolution:draconic_chestpiece', tier: 'chaotic' }
     ];
     chaoticGear.forEach(gear => {
         draconicInfuser(
@@ -121,7 +325,8 @@ ServerEvents.recipes(allthemods => {
             [gear.out],
             [],
             TIER.chaotic,
-            TIME.very_long
+            TIME.very_long,
+            gear.tier
         );
     });
 
@@ -139,7 +344,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:draconic_staff'],
         [],
         TIER.draconic,
-        TIME.very_long
+        TIME.very_long,
+        coils.draconic
     );
 
     //chaotic staff
@@ -155,7 +361,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:chaotic_staff'],
         [],
         TIER.chaotic,
-        TIME.very_long
+        TIME.very_long,
+        coils.chaotic
     );
 
     //chaotic staff
@@ -173,7 +380,7 @@ ServerEvents.recipes(allthemods => {
         [],
         TIER.chaotic,
         TIME.very_long,
-        'staff_custom'
+        coils.chaotic
     );
 
     //wyvern capacitor
@@ -187,7 +394,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:wyvern_capacitor'],
         [],
         TIER.wyvern,
-        TIME.medium
+        TIME.medium,
+        coils.wyvern
     );
 
     //draconic capacitor
@@ -202,7 +410,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:draconic_capacitor'],
         [],
         TIER.draconic,
-        TIME.long
+        TIME.long,
+        coils.draconic
     );
 
     //chaotic capacitor
@@ -217,7 +426,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:chaotic_capacitor'],
         [],
         TIER.chaotic,
-        TIME.very_long
+        TIME.very_long,
+        coils.chaotic
     );
 
     //draconic relay
@@ -234,7 +444,7 @@ ServerEvents.recipes(allthemods => {
         [],
         TIER.draconic,
         TIME.long,
-        'draconic_relay_crystal'
+        coils.draconic
     );
 
     //reactor core
@@ -249,7 +459,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:reactor_core'],
         [],
         TIER.chaotic,
-        TIME.very_long
+        TIME.very_long,
+        coils.chaotic
     );
 
     //awakened core
@@ -263,7 +474,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:awakened_core'],
         [],
         TIER.wyvern,
-        TIME.medium
+        TIME.medium,
+        coils.wyvern
     );
 
     //reactor injector
@@ -278,7 +490,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:reactor_injector'],
         [],
         TIER.chaotic,
-        TIME.very_long
+        TIME.very_long,
+        coils.chaotic
     );
 
     //reactor stabilizer
@@ -297,7 +510,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:reactor_stabilizer'],
         [],
         TIER.chaotic,
-        TIME.very_long
+        TIME.very_long,
+        coils.chaotic
     );
 
     //awakened draconiium block
@@ -313,7 +527,7 @@ ServerEvents.recipes(allthemods => {
         [],
         TIER.wyvern,
         TIME.medium,
-        'draconium_awakened_block'
+        coils.wyvern
     );
 
     //advanced dislocator
@@ -329,7 +543,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:advanced_dislocator'],
         [],
         TIER.wyvern,
-        TIME.medium
+        TIME.medium,
+        coils.wyvern
     );
 
     //draconium chest
@@ -346,7 +561,8 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:draconium_chest'],
         [],
         TIER.draconic,
-        TIME.long
+        TIME.long,
+        coils.draconium
     );
 
     //chaos bee
@@ -365,7 +581,8 @@ ServerEvents.recipes(allthemods => {
         [],
         TIER.chaotic,
         TIME.very_long,
-        "chaos_bee"
+        "chaos_bee",
+        coils.chaotic
     );
 
     //awakened bee
@@ -383,7 +600,8 @@ ServerEvents.recipes(allthemods => {
         [],
         TIER.draconic,
         TIME.long,
-        "awakened_bee"
+        "awakened_bee",
+        coils.draconic
     );
 
     //draconium bee
@@ -400,7 +618,8 @@ ServerEvents.recipes(allthemods => {
         [],
         TIER.wyvern,
         TIME.medium,
-        "draconium_bee"
+        "draconium_bee",
+        coils.wyvern
     );
 
     //chaotic core
@@ -410,6 +629,7 @@ ServerEvents.recipes(allthemods => {
         ['draconicevolution:chaotic_core'],
         [],
         TIER.chaotic,
-        TIME.medium
+        TIME.medium,
+        coils.chaotic
     );
 });

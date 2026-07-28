@@ -319,7 +319,8 @@ const fluids = [
     { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL', noDecomp: true },
     { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
     { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' },
-    { name: 'inert_gas_mixture', color: 0x8899A6, iconSet: 'FLUID' }
+    { name: 'inert_gas_mixture', color: 0x8899A6, iconSet: 'FLUID' },
+    { name: 'ionized_oxygen', color: 0x3399FF, iconSet: 'FLUID' }
 ];
 
 const polymers = [
@@ -783,8 +784,23 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             .iconSet(GTMaterialIconSet.SHINY)
             .flags(
                 // @ts-ignore
+                GTMaterialFlags.GENERATE_FOIL,
+                GTMaterialFlags.GENERATE_RING,
+                GTMaterialFlags.GENERATE_SPRING,
+                GTMaterialFlags.GENERATE_SPRING_SMALL,
+                GTMaterialFlags.GENERATE_ROUND,
+                GTMaterialFlags.GENERATE_FINE_WIRE,
                 GTMaterialFlags.GENERATE_PLATE,
-                GTMaterialFlags.GENERATE_ROD
+                GTMaterialFlags.GENERATE_DENSE,
+                GTMaterialFlags.GENERATE_ROD,
+                GTMaterialFlags.GENERATE_LONG_ROD,
+                GTMaterialFlags.GENERATE_GEAR,
+                GTMaterialFlags.GENERATE_SMALL_GEAR,
+                GTMaterialFlags.GENERATE_BOLT_SCREW,
+                GTMaterialFlags.GENERATE_FRAME,
+                GTMaterialFlags.GENERATE_LENS,
+                // @ts-ignore
+                CMMEMaterialFlags.GENERATE_SINGULARITY
             )
     });
 
@@ -1040,6 +1056,25 @@ StartupEvents.registry('block', event => {
 
         { id: 'alchemical_casing', name: 'Alchemical Casing', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel', color: '0xFF8C00' },
     ];
+    const coils = [
+        //'draconium', 'wyvern', 'draconic', 'chaotic'
+        {name: 'draconium', displayName: 'Draconium Casing'},
+        {name: 'wyvern', displayName: 'Wyvern Casing'},
+        {name: 'draconic', displayName: 'Draconic Casing'},
+        {name: 'chaotic', displayName: 'Chaotic Casing'},
+        
+    ]
+
+    coils.forEach(coil => {
+         let block = event.create(`gtceu:${coil.name}_casing`)
+            // @ts-ignore
+            .displayName(coil.displayName)            
+            .textureAll(`gtceu:block/casings/${coil.name}_casing/${coil.name}_casing`)
+            .hardness(5.0)
+            .resistance(10.0)
+            .soundType('metal')            
+            .tagBlock('gtceu:casings');
+    });
 
     casings.forEach(casing => {
         let block = event.create(`gtceu:${casing.id}`)

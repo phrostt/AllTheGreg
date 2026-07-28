@@ -4,7 +4,7 @@
     "tag": "occultism:miners/ores"
   },
   "result": {
-    "tag": "forge:ores/uraninite"
+    "item": "powah:deepslate_uraninite_ore"
   },
   "weight": 140,
   "conditions": [

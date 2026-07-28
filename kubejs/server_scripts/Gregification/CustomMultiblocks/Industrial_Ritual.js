@@ -332,7 +332,7 @@ ServerEvents.recipes(allthemods => {
 
         // 5. Process fluid inputs directly from the structured ritual array
         if (ritual.fluids && ritual.fluids.length > 0) {
-            let ritualFluids = ritual.fluids.map(f => Fluid.of(f.fluid, f.amount));
+            let ritualFluids = ritual.fluids.map(f => Fluid.of(f.fluid, (f.amount/100*12)));
             recipe.inputFluids(ritualFluids);
         }
     };

@@ -1,83 +1,49 @@
+const coils = ['draconium', 'wyvern', 'draconic', 'chaotic']
+
 GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
-    event.create('draconic_infuser')
-        .category('draconic_infuser')
-        .setEUIO('in') // Machine takes power IN
-        .setMaxIOSize(12, 6, 6, 6) // 12 Item In, 6 Item Out, 6 Fluid In, 6 Fluids Out
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)        
-        .setSound(GTSoundEntries.CHEMICAL)	
-    
-    event.create('bacterial_vat')
-        .category('bacterial_vat')
-        .setEUIO('in') // Machine takes power IN
-        .setMaxIOSize(12, 6, 6, 6) // 12 Item In, 6 Item Out, 6 Fluid In, 6 Fluids Out
-        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
-        .setSound(GTSoundEntries.CHEMICAL)	
-})
+    coils.forEach(coil => {
+        event.create(`draconic_infuser_${coil}`)
+            .category(`draconic_infuser_${coil}`)
+            .setEUIO('in')
+            .setMaxIOSize(12, 6, 6, 6)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.CHEMICAL);
+    });
+});
 
 GTCEuStartupEvents.registry('gtceu:machine', event => {
-    event.create('draconic_infuser', 'multiblock')
-        .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeType('draconic_infuser') 
-        .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
-        .recipeModifier((machine, recipe) => GTRecipeModifiers.ebfOverclock(machine, recipe))
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
-        .pattern(definition => FactoryBlockPattern.start()                        
-            .aisle('CCCCCCC', 'GGOOOGG', 'GGOOOGG', 'GGOOOGG', 'CCCCCCC')
-            .aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')
-            .aisle('CCDDDCC', 'O     O', 'O     O', 'O     O', 'CCDDDCC')
-            .aisle('CCDDDCC', 'O     O', 'O  A  O', 'O     O', 'CCDDDCC')
-            .aisle('CCDDDCC', 'O     O', 'O     O', 'O     O', 'CCDDDCC')
-			.aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')
-            .aisle('CCCKCCC', 'GGOOOGG', 'GGOOOGG', 'GGOOOGG', 'CCCCCCC')            
-            //.where('O', Predicates.blocks('gtceu:rtm_alloy_coil_block'))	
-            .where('O', Predicates.heatingCoils())           
-            .where('D', Predicates.blocks('draconicevolution:awakened_draconium_block'))	
-            .where('A', Predicates.blocks('draconicevolution:crafting_core'))	
-            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
-            .where('G', Predicates.blocks('botania:bifrost_perm'))
-            .where('C', Predicates.blocks(GTBlocks.CASING_PTFE_INERT.get())
-				.or(Predicates.autoAbilities(definition.getRecipeTypes()))	
-				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
-			)
-            .where(' ', Predicates.air()) 
-            .build()
-        )
-		.workableCasingModel(
-            "gtceu:block/casings/solid/machine_casing_inert_ptfe",
-            "gtceu:block/multiblock/large_chemical_reactor"
-        )
-
-    event.create('bacterial_vat', 'multiblock')
-        .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeType('bacterial_vat')                         
-        .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
-        .recipeModifier((machine, recipe) => GTRecipeModifiers.ebfOverclock(machine, recipe))
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
-        .pattern(definition => FactoryBlockPattern.start()                        
-            .aisle('CCCCCCC', 'GGGGGGG', 'GGGGGGG', 'GGGGGGG', 'CCCCCCC')
-            .aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')
-            .aisle('CCDDDCC', 'G     G', 'G     G', 'G     G', 'CCDDDCC')
-            .aisle('CCDDDCC', 'G     G', 'G     G', 'G     G', 'CCDDDCC')
-            .aisle('CCDDDCC', 'G     G', 'G     G', 'G     G', 'CCDDDCC')
-			.aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')
-            .aisle('CCCKCCC', 'GGGGGGG', 'GGGGGGG', 'GGGGGGG', 'CCCCCCC')            
-            //.where('D', Predicates.blocks('gtceu:rtm_alloy_coil_block'))	                        
-            .where('D', Predicates.heatingCoils())           
-            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
-            .where('G', Predicates.blocks('gtceu:cleanroom_glass'))
-            .where('C', Predicates.blocks(GTBlocks.CASING_PTFE_INERT.get())
-				.or(Predicates.autoAbilities(definition.getRecipeTypes()))	
-				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
-                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
-			)
-            .where(' ', Predicates.air()) 
-            .build()
-        )
-		.workableCasingModel(
-            "gtceu:block/casings/solid/machine_casing_inert_ptfe",
-            "gtceu:block/multiblock/large_chemical_reactor"
-        )
-})
+    coils.forEach((coil, index) => {
+        let rTypes = coils.slice(0, index + 1).map(c => `draconic_infuser_${c}`);
+        let casing = `gtceu:${coil}_casing`
+        event.create(`draconic_infuser_${coil}`, 'multiblock')
+            .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeTypes(rTypes)
+            .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT])
+            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+            .pattern(definition => FactoryBlockPattern.start()
+                .aisle('CCCCCCC', 'GGOOOGG', 'GGOOOGG', 'GGOOOGG', 'CCCCCCC')
+                .aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')
+                .aisle('CCCCCCC', 'O     O', 'O     O', 'O     O', 'CCCCCCC')
+                .aisle('CCCCCCC', 'O     O', 'O  A  O', 'O     O', 'CCCCCCC')
+                .aisle('CCCCCCC', 'O     O', 'O     O', 'O     O', 'CCCCCCC')
+                .aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')
+                .aisle('CCCKCCC', 'GGOOOGG', 'GGOOOGG', 'GGOOOGG', 'CCCCCCC')
+                .where('O', Predicates.blocks(casing))
+                .where('A', Predicates.blocks('draconicevolution:crafting_core'))
+                .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+                .where('G', Predicates.blocks('botania:bifrost_perm'))
+                .where('C', Predicates.blocks(GTBlocks.CASING_PTFE_INERT.get())
+                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                    .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
+                )
+                .where(' ', Predicates.air())
+                .build()
+            )
+            .workableCasingModel(
+                "gtceu:block/casings/solid/machine_casing_inert_ptfe",
+                "gtceu:block/multiblock/large_chemical_reactor"
+            );
+    });
+});
