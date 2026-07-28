@@ -103,23 +103,7 @@ ServerEvents.recipes(allthemods => {
         'draconicevolution:chaos_shard'
     );
 
-    //draconic infuser
-    addAssemblyLine('gtceu:draconic_infuser',
-        [
-            '#forge:frames/naquamodium',
-            '4x draconicevolution:chaotic_core',
-            '4x #gtceu:circuits/luv',
-            '4x thermal:redstone_servo'
-        ],
-        [
-            'gtceu:aetheric_sanguine_singularity 32000',
-            'gtceu:super_coolant 64000'
-
-        ],
-        TIME.very_long,
-        32768,
-        '#forge:storage_blocks/draconium_awakened'
-    );
+    
 
     //hephaestus forge
     addAssemblyLine("gtceu:hephaestus_forge",
