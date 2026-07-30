@@ -170,42 +170,7 @@ ServerEvents.recipes(allthemods => {
         10000000
     );
 
-    addEnergize(
-        ['refinedstorage:portable_grid', 'allthetweaks:atm_star'],
-        'refinedstorage:creative_portable_grid',
-        10000000
-    );
-
-    addEnergize(
-        ['refinedstorage:wireless_grid', 'allthetweaks:atm_star'],
-        'refinedstorage:creative_wireless_grid',
-        10000000
-    );
-
-    addEnergize(
-        ['refinedstorageaddons:wireless_crafting_grid', 'allthetweaks:atm_star'],
-        'refinedstorageaddons:creative_wireless_crafting_grid',
-        10000000
-    );
-
-
-    addEnergize(
-        ['refinedstorage:wireless_fluid_grid', 'allthetweaks:atm_star'],
-        'refinedstorage:creative_wireless_fluid_grid',
-        10000000
-    );
-
-    addEnergize(
-        ['refinedstorage:wireless_crafting_monitor', 'allthetweaks:atm_star'],
-        'refinedstorage:creative_wireless_crafting_monitor',
-        10000000
-    );
-
-    addEnergize(
-        ['refinedstorage:controller', 'allthetweaks:atm_star'],
-        'refinedstorage:creative_controller',
-        10000000
-    );
+    
 
     //atm alloys
     addEnergize(

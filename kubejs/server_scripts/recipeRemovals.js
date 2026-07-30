@@ -18,6 +18,7 @@ ServerEvents.recipes(allthemods => {
         'occultism:crafting/chalk_purple_impure', 'draconicevolution:machines/crafting_core',
         'draconicevolution:machines/basic_crafting_injector', 'draconicevolution:machines/awakened_crafting_injector',
         'draconicevolution:chaotic_crafting_injector', 'draconicevolution:wyvern_crafting_injector',
+        'draconicevolution:components/wyvern_core', 'draconicevolution:components/draconium_core',
 
 
 
@@ -202,7 +203,7 @@ ServerEvents.recipes(allthemods => {
         'extrastorage:disk/shapeless/disk_1048576k_fluid', 'extrastorage:disk/shaped/disk_1048576k_fluid', 'extrastorage:part/storagepart_256k',
         'extrastorage:part/storagepart_1024k', 'extrastorage:part/storagepart_4096k', 'extrastorage:part/storagepart_16384k',
         'extrastorage:part/storagepart_16384k_fluid', 'extrastorage:part/storagepart_65536k_fluid', 'extrastorage:part/storagepart_262144k_fluid',
-        'extrastorage:part/storagepart_1048576k_fluid', 'refinedstorage:controller',
+        'extrastorage:part/storagepart_1048576k_fluid',
 
         // --- Applied Energistics 2 & Addons ---
         'ae2:network/blocks/controller', 'ae2:network/blocks/interfaces_interface', 'ae2:network/blocks/storage_chest',
@@ -343,6 +344,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.remove({ type: 'industrialforegoing:dissolution_chamber' });
     allthemods.remove({ type: 'occultism:spirit_fire' });
     allthemods.remove({ type: 'ad_astra:compressing' });
+    allthemods.remove({ type: 'draconicevolution:fusion_crafting' });
 
     // Input Removals
     allthemods.remove({ input: '#alltheores:ore_hammers' });

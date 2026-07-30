@@ -151,7 +151,6 @@ ServerEvents.recipes(allthemods => {
     gregifySeed('apatite', 'r', 3, '#forge:storage_blocks/apatite');
     gregifySeed('crimson_iron', 'r', 3, '#forge:storage_blocks/crimson_iron');
     gregifySeed('manasteel', 'r', 3, '#forge:storage_blocks/manasteel');
-    gregifySeed('quartz_enriched_iron', 'r', 3, 'refinedstorage:quartz_enriched_iron_block');
     gregifySeed('azure_silver', 'r', 3, '#forge:storage_blocks/azure_silver');
 
 

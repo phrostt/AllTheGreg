@@ -1,7 +1,7 @@
 {
   "__comment": "Instructions: https://blakesmods.com/docs/cucumber/tags-config",
   "forge:dusts/niter": "chemlib:potassium_nitrate_dust",
-  "forge:silicon": "refinedstorage:silicon",
+  "forge:silicon": "tinyredstone:silicon",
   "forge:gems/apatite": "gtceu:apatite_gem",
   "forge:ingots/titanium": "chemlib:titanium_ingot",
   "forge:ingots/chrome": "null",

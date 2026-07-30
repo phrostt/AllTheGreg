@@ -139,43 +139,6 @@
 });
 
 
-"gtceu.jei.ore_vein.charon_tounkite_re": "Charon Tounkite Re Vein",
-    "gtceu.jei.ore_vein.charon_ruthenium_sulfide_rare": "Charon Ruthenium Sulfide Rare Vein",
-    "gtceu.jei.ore_vein.charon_indium_zinc_complex": "Charon Indium Zinc Complex Vein",
-    "gtceu.jei.ore_vein.diater_samarium_niobate": "Diater Samarium Niobate Vein",
-    "gtceu.jei.ore_vein.diater_hutchinsonite": "Diater Hutchinsonite Vein",
-    "gtceu.jei.ore_vein.diater_alurgite_hf": "Diater Alurgite Hf Vein",
-    "gtceu.jei.ore_vein.dune_germanium_zinc_ore": "Dune Germanium Zinc Ore Vein",
-    "gtceu.jei.ore_vein.dune_bazzite": "Dune Bazzite Vein",
-    "gtceu.jei.ore_vein.dune_bismutite": "Dune Bismutite Vein",
-    "gtceu.jei.ore_vein.europa_strontianite": "Europa Strontianite Vein",
-    "gtceu.jei.ore_vein.europa_cattierite": "Europa Cattierite Vein",
-    "gtceu.jei.ore_vein.europa_miassite": "Europa Miassite Vein",
-    "gtceu.jei.ore_vein.galia_erlichmanite": "Galia Erlichmanite Vein",
-    "gtceu.jei.ore_vein.galia_selenium_silver_ore": "Galia Selenium Silver Ore Vein",
-    "gtceu.jei.ore_vein.galia_yanomamite": "Galia Yanomamite Vein",
-    "gtceu.jei.ore_vein.io_florencite_sm": "Io Florencite Sm Vein",
-    "gtceu.jei.ore_vein.io_frischolite": "Io Frischolite Vein",
-    "gtceu.jei.ore_vein.io_prassoite": "Io Prassoite Vein",
-    "gtceu.jei.ore_vein.jada_platarsite": "Jada Platarsite Vein",
-    "gtceu.jei.ore_vein.jada_loellingite_rb": "Jada Loellingite Rb Vein",
-    "gtceu.jei.ore_vein.jada_kasolite": "Jada Kasolite Vein",
-    "gtceu.jei.ore_vein.pluto_upalite": "Pluto Upalite Vein",
-    "gtceu.jei.ore_vein.pluto_bismutotantalite": "Pluto Bismutotantalite Vein",
-    "gtceu.jei.ore_vein.pluto_fergusonite": "Pluto Fergusonite Vein",
-    "gtceu.jei.ore_vein.soera_shadlunite": "Soera Shadlunite Vein",
-    "gtceu.jei.ore_vein.soera_xtyrechtite": "Soera Xtyrechtite Vein",
-    "gtceu.jei.ore_vein.soera_chlormagaluminite": "Soera Chlormagaluminite Vein",
-    "gtceu.jei.ore_vein.titan_sulgallite": "Titan Sulgallite Vein",
-    "gtceu.jei.ore_vein.titan_pollucite": "Titan Pollucite Vein",
-    "gtceu.jei.ore_vein.titan_chalcophanite_bi": "Titan Chalcophanite Bi Vein",
-    "gtceu.jei.ore_vein.vonic_monazite_sm": "Vonic Monazite Sm Vein",
-    "gtceu.jei.ore_vein.vonic_cerite_sm": "Vonic Cerite Sm Vein",
-    "gtceu.jei.ore_vein.vonic_partzite": "Vonic Partzite Vein",
-    "gtceu.jei.ore_vein.vulcan_stibioruartite": "Vulcan Stibioruartite Vein",
-    "gtceu.jei.ore_vein.vulcan_sakuraiite": "Vulcan Sakuraiite Vein",
-    "gtceu.jei.ore_vein.vulcan_tantalite_sm": "Vulcan Tantalite Sm Vein",
-
 */
 
 GTCEuServerEvents.oreVeins(event => {

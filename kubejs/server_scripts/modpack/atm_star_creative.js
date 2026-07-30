@@ -226,55 +226,6 @@ ServerEvents.recipes(allthemods => {
   ], 'pneumaticcraft:creative_compressed_iron_block', 1, 4.9)
 
 
-  ///# Refined storage
-  allthemods.custom({
-    type: 'powah:energizing',
-    ingredients: [Ingredient.of('refinedstorage:wireless_grid').toJson()],
-    energy: '2147483647',
-    result: Item.of('refinedstorage:creative_wireless_grid').toJson()
-  }).id(`allthemods:energizing/refinedstorage_creative_wireless_grid`)
-  allthemods.custom({
-    type: 'powah:energizing',
-    ingredients: [Ingredient.of('refinedstorage:wireless_fluid_grid').toJson()],
-    energy: '2147483647',
-    result: Item.of('refinedstorage:creative_wireless_fluid_grid').toJson()
-  }).id(`allthemods:energizing/refinedstorage_creative_wireless_fluid_grid`)
-  allthemods.custom({
-    type: 'powah:energizing',
-    ingredients: [Ingredient.of('refinedstorage:wireless_crafting_monitor').toJson()],
-    energy: '2147483647',
-    result: Item.of('refinedstorage:creative_wireless_crafting_monitor').toJson()
-  }).id(`allthemods:energizing/refinedstorage_creative_wireless_crafting_monitor`)
-  allthemods.custom({
-    type: 'powah:energizing',
-    ingredients: [Ingredient.of('refinedstorageaddons:wireless_crafting_grid').toJson()],
-    energy: '2147483647',
-    result: Item.of('refinedstorageaddons:creative_wireless_crafting_grid').toJson()
-  }).id(`allthemods:energizing/refinedstorage_creative_wireless_crafting_grid`)
-  allthemods.custom({
-    type: 'powah:energizing',
-    ingredients: [Ingredient.of('refinedstorage:portable_grid').toJson()],
-    energy: '2147483647',
-    result: Item.of('refinedstorage:creative_portable_grid').toJson()
-  }).id(`allthemods:energizing/refinedstorage_creative_portable_grid`)
-  allthemods.custom({
-    type: 'powah:energizing',
-    ingredients: [
-      Ingredient.of('refinedstorage:controller').toJson(),
-      Ingredient.of('allthetweaks:atm_star').toJson()
-    ],
-    energy: '2147483647',
-    result: Item.of('refinedstorage:creative_controller').toJson()
-  }).id(`allthemods:energizing/refinedstorage_creative_controller`)
-
-  ///# Universal Grid
-  allthemods.shaped('universalgrid:creative_wireless_universal_grid', ['ABA', 'CBD', 'ABA'], {
-    A: 'allthemodium:unobtainium_ingot',
-    B: 'refinedstorage:quartz_enriched_iron',
-    C: 'refinedstorageaddons:creative_wireless_crafting_grid',
-    D: 'universalgrid:wireless_universal_grid'
-  }).id('allthemods:universalgrid/creative_wireless_universal_grid')
-
 })
 
 // This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 9.

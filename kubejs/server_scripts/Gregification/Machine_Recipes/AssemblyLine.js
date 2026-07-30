@@ -50,23 +50,7 @@ ServerEvents.recipes(allthemods => {
 
 
 
-    //draconic evolution - crafting core
-    addAssemblyLine("draconicevolution:crafting_core",
-        [
-            '#forge:frames/naquamodium',
-            '4x #forge:double_plates/ferrognetic',
-            '4x #forge:gears/alfsteel',
-            '12x #gtceu:circuits/luv'
-        ],
-        [
-            'gtceu:aetheric_sanguine_singularity 32000',
-            'gtceu:super_coolant 64000',
-        ],
-        TIME.very_long,
-        32768,
-        "draconicevolution:dragon_heart"
-    );
-
+    
     //farming for blockheads - market
     addAssemblyLine("farmingforblockheads:market",
         [

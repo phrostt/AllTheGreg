@@ -280,20 +280,7 @@ ServerEvents.recipes(allthemods => {
         N: 'gtceu:network_casing',
         S: 'minecraft:redstone'
     }).id('gregification:xnet/controller')
-	
-	// Refined Storage Controller
-    
-    allthemods.shaped('refinedstorage:controller', [
-        'PLP',
-        'ENE',
-        'PLP'
-    ], {
-        P: '#forge:plates/aluminum',
-        L: '#gtceu:circuits/mv',
-        E: 'gtceu:mv_emitter',
-        N: 'gtceu:network_casing'
-    }).id('gregification:refinedstorage/controller')
-	
+		
 	//ae2 matrix frame	
     addAssembler(
 		[

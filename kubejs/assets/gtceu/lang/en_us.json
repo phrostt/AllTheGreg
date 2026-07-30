@@ -516,6 +516,9 @@
     "gtceu.fractional_gas_separator": "Fractional Gas Separator",
     "gtceu.hydro_electromagnetic_separator": "Hydro-Electromagnetic Separator",
     "block.gtceu.hydro_electromagnetic_separator": "Hydro-Electromagnetic Separator",
+    
+    "gtceu.oil_processing_plant": "Oil Processing Plant",
+    "block.gtceu.oil_processing_plant": "Oil Processing Plant",
 
     
     "gtceu.bacterial_growth_chamber": "Bacterial Growth Chamber",
@@ -523,7 +526,9 @@
     "gtceu.crystal_growth_chamber": "Crystal Growth Chamber",
     "block.gtceu.crystal_growth_chamber": "Crystal Growth Chamber",
     "material.gtceu.ionized_oxygen": "Ionized Oxygen",
-    "material.gtceu.inert_gas_mixture": "Inert Gas Mixture"
-    
+    "material.gtceu.inert_gas_mixture": "Inert Gas Mixture",
+    "material.gtceu.ostrum": "Ostrum",
+    "material.gtceu.desh": "Desh",
+    "material.gtceu.calorite": "Calorite"    
     
 }
