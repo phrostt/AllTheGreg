@@ -13,6 +13,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('empowerer')         
         .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()                                
             .aisle('  C  ', '     ')
             .aisle('  C  ', '     ')

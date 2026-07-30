@@ -12,6 +12,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('industrial_spirit_infuser') 
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()                        
             .aisle('CCCCC', 'GGGGG', 'GGGGG', 'GGGGG', 'CCCCC')
             .aisle('CCCCC', 'G   G', 'G   G', 'G   G', 'CCCCC')

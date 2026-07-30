@@ -20,7 +20,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeTypes(rTypes)
             .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT])
-            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+            .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
             .pattern(definition => FactoryBlockPattern.start()
                 .aisle('CCCCCCC', 'GGOOOGG', 'GGOOOGG', 'GGOOOGG', 'CCCCCCC')
                 .aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')

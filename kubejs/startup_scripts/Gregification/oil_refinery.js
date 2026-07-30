@@ -4,7 +4,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('oil_processing_plant')
         .category('oil_processing_plant')
         .setEUIO('in') // Machine takes power IN
-        .setMaxIOSize(0, 3, 2, 15) // 12 Item In, 6 Item Out, 6 Fluid In, 6 Fluids Out
+        .setMaxIOSize(1, 3, 2, 15) // 12 Item In, 6 Item Out, 6 Fluid In, 6 Fluids Out
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)	    
 })
@@ -15,7 +15,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
         .recipeType('oil_processing_plant')
         .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT, (machine, recipe) => GTRecipeModifiers.ebfOverclock(machine, recipe)])
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .appearanceBlock(GTBlocks.CASING_STAINLESS_CLEAN)
         .pattern(definition => FactoryBlockPattern.start()                                    
             .aisle('CCCCCCCCCCCCCCCCCCCCCCCCC', 'CGGGGGGGGGGCGGGGGGGGGCGGC', 'CGGGGGGGGGGCGGGGGGGGGCGGC', 'CGGGGGGGGGGCGGGGGGGGGCGGC', 'CGGGGGGGGGGCGGGGGGGGGCGGC', 'CGGGGGGGGGGCGGGGGGGGGCGGC', 'CGGGGGGGGGGCCCCCCCCCCCCCC', 'CGGGGGGGGGGCGGGGGGGGGGGGC', 'CGGGGGGGGGGCGGGGGGGGGGGGC', 'CGGGGGGGGGGCGGGGGGGGGGGGC', 'CGGGGGGGGGGCGGGGGGGGGGGGC', 'CGGGGGGGGGGCGGGGGGGGGGGGC', 'CCCCCCCCCCCCCCCCCCCCCCCCC')
             .aisle('CCCCCCCCCCCCCCCCCCCCCCCCC', 'G          G         G  G', 'G          G         G  G', 'G          G         G  G', 'G          G         G  G', 'G          G         G  G', 'G          CCCCCCCCCCC  G', 'G          C            G', 'G          C            G', 'G          C            G', 'G          C            G', 'G          C            G', 'CCCCCCCCCCCCCCCCCCCCCCCCC')

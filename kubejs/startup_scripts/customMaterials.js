@@ -381,7 +381,7 @@ const newOres = [
     { name: 'hellish', components: '1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x880808, noDecomp: true },
     { name: 'tenebrius', components: '3x tenebrium, 1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x101010, noDecomp: true },
     { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true },
-
+]/*
     
     { name: 'tounkite_re', components: '8x sodium, 4x calcium, 12x aluminium, 12x silicon, 1x rhenium, 36x oxygen', byproducts: ['tounkite_re', 'rhenium'], iconSet: 'METALLIC', color: 0x1E90FF, noDecomp: true },
     { name: 'rhenium_oxide_complex', components: '2x rhenium, 3x oxygen, 1x potassium', byproducts: ['rhenium', 'potassium'], iconSet: 'METALLIC', color: 0x4682B4, noDecomp: true },
@@ -481,7 +481,7 @@ const newOres = [
     { name: 'partzite', components: '3x copper, 2x antimony, 6x oxygen, 3x water', byproducts: ['partzite', 'copper', 'antimony'], iconSet: 'DULL', color: 0xCD7F32 },
     
     { name: 'yttrium_fluorite_rare', components: '1x yttrium, 2x fluorine, 1x calcium', byproducts: ['yttrium', 'calcium'], iconSet: 'METALLIC', color: 0x8C7853, noDecomp: true }
-];
+];*/
 
 GTCEuStartupEvents.registry('gtceu:material', event => {
 
