@@ -1,0 +1,9 @@
+# Ignore everything at the root by default
+/*
+ 
+# ...except the folders we actually want to track
+!/kubejs/
+!/config/
+ 
+# and this file itself
+!/.gitignore
