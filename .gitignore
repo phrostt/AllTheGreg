@@ -2,7 +2,6 @@
 /*
  
 # ...except the folders we actually want to track
-!/config/
 !/kubejs/
  
 # and this file itself
