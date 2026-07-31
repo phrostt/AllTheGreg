@@ -164,7 +164,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
                 .where(' ', Predicates.air())
                 .build()
             )
-        .workableCasingModel('gtceu:block/casings/solid/machine_casing_tungstensteel_robust', 'gtceu:block/multiblock/large_chemical_reactor')
+        .workableCasingModel('gtceu:block/casings/solid/machine_casing_robust_tungstensteel', 'gtceu:block/multiblock/large_chemical_reactor')
     
     allthemods.create('laser_purification', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
