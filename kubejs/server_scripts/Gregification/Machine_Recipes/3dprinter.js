@@ -10,7 +10,8 @@ ServerEvents.recipes(allthemods => {
             '8x gtceu:empowered_void_crystal_dust',
             '8x gtceu:empowered_enori_dust'
         ])
-        .itemOutputs('gtceu:empowered_polymer_lens')
+        //here
+        .itemOutputs('gtceu:empowered_polymer_dust')
         .duration(600)
         .EUt(524288);
 
@@ -21,7 +22,7 @@ ServerEvents.recipes(allthemods => {
             '8x gtceu:exquisite_black_quartz_gem',
             'gtceu:plastic_singularity'
         ])
-        .itemOutputs('gtceu:chaos_plastic_lens')
+        .itemOutputs('gtceu:chaos_plastic_dust')
         .duration(600)
         .EUt(524288);
 });

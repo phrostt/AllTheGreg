@@ -1,4 +1,4 @@
-GTCEuServerEvents.oreVeins(event => {
+/*GTCEuServerEvents.oreVeins(event => {
     // Silicon-Zircon Vein (Expanded with Zircon, Baddeleyite, and Silicon)
     event.add("ganymede_silicon_zircon", vein => {
         vein.weight(50)
@@ -134,4 +134,4 @@ GTCEuServerEvents.oreVeins(event => {
             )
         )
     })
-})
+})*/

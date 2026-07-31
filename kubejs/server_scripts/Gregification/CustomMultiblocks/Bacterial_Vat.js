@@ -40,7 +40,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.gtceu.bacterial_vat('gregification:concentrated_dark_matter_synthesis')
         .itemInputs('#forge:dusts/cesium')
         .inputFluids('#forge:water 1000')
-        .outputFluids('gtceu:concentrated_dark_matter 1')
+        .outputFluids('gtceu:concentrated_dark_matter 10')
         .duration(10000)
         .EUt(524296);
     

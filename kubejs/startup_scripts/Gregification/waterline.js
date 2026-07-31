@@ -132,7 +132,9 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             .build()
         )
         .workableCasingModel('gtceu:block/casings/solid/machine_casing_stable_titanium', 'gtceu:block/multiblock/large_chemical_reactor')
-    allthemods.create('flocculation_plant', 'multiblock')
+
+        
+   allthemods.create('flocculation_plant', 'multiblock')
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType('flocculation_plant')
             .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
@@ -154,6 +156,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
                 .where('I', Predicates.abilities(PartAbility.IMPORT_FLUIDS))
                 .where('E', Predicates.abilities(PartAbility.EXPORT_FLUIDS))                        
                 .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+                .where('F', Predicates.blocks('gtceu:filter_casing'))
                 .where('P', Predicates.blocks('gtceu:tungstensteel_pipe_casing'))
                 .where('C', Predicates.blocks('gtceu:robust_machine_casing')
                     .or(Predicates.autoAbilities(definition.getRecipeTypes()))
@@ -164,12 +167,15 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
                 .where(' ', Predicates.air())
                 .build()
             )
-        .workableCasingModel('gtceu:block/casings/solid/machine_casing_robust_tungstensteel', 'gtceu:block/multiblock/large_chemical_reactor')
+        .workableCasingModel(
+            'gtceu:block/casings/solid/machine_casing_robust_tungstensteel',
+            'gtceu:block/multiblock/large_chemical_reactor'
+        )
     
     allthemods.create('laser_purification', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('laser_purification')
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('K')
@@ -177,7 +183,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             .where(' ', Predicates.air())
             .build()
         )
-        .workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/large_engraving_laser')
+        .workableCasingModel('gtceu:block/casings/solid/machine_casing_robust_tungstensteel', 'gtceu:block/multiblock/large_engraving_laser')
     
 
     allthemods.create('microbial_filtration_array', 'multiblock')
@@ -186,6 +192,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()            
+            .aisle('K')
             .where('K', Predicates.controller(Predicates.blocks(definition.get())))
             .where(' ', Predicates.air())
             .build()
