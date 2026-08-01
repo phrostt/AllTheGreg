@@ -25,7 +25,7 @@
         "server_scripts/**/*.js",
         "startup_scripts/**/*.js",
         "probe/generated/**/*.d.ts"
-    ],
+, "startup_scripts/ad_astra/ganymede", "server_scripts/ad_astra/ganemede", "server_scripts/ad_astra/oremap.js", "startup_scripts/ad_astra/orem, "startup_scripts/ad_astra/oremap", "server_scripts/ad_astra/oremap"ap.js"    ],
     "exclude": [
         "node_modules"
     ]

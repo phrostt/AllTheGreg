@@ -13,6 +13,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('atmospheric_collector')         
         .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()        
             .aisle('SSSSSSSSS', 'SLLLLLLLS', 'SSSSSSSSS', 'SLLLLLLLS', 'SSSSSSSSS', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ')
             .aisle('SCCCCCCCS', 'L       L', 'S       S', 'L       L', 'SCCCCCCCS', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '         ', '   CCC   ', '    C    ', '         ', '         ')    

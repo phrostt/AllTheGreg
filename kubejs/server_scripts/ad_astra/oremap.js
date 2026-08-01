@@ -1,251 +1,244 @@
-/*GTCEuServerEvents.oreVeins(event => {
-    const gtOreVeins = [
-        "gtceu:cassiterite_vein", "gtceu:naquadah_vein", "gtceu:redstone_vein",
-        "gtceu:beryllium_vein", "gtceu:manganese_vein", "gtceu:magnetite_vein_end",
-        "gtceu:salts_vein", "gtceu:monazite_vein", "gtceu:saltpeter_vein",        
-        "gtceu:lapis_vein", "gtceu:olivine_vein", "gtceu:tetrahedrite_vein",
-        "gtceu:sheldonite_vein", "gtceu:garnet_vein", "gtceu:molybdenum_vein",
-        "gtceu:bauxite_vein_end", "gtceu:scheelite_vein", "gtceu:sapphire_vein",
-        "gtceu:mica_vein", "gtceu:copper_vein", "gtceu:magnetite_vein_ow",
-        "gtceu:lubricant_vein", "gtceu:garnet_tin_vein", "gtceu:coal_vein",
-        "gtceu:redstone_vein_ow", "gtceu:pitchblende_vein_end", "gtceu:nether_quartz_vein",
-        "gtceu:mineral_sand_vein", "gtceu:manganese_vein_ow", "gtceu:sulfur_vein",
-        "gtceu:topaz_vein", "gtceu:apatite_vein", "gtceu:banded_iron_vein",
-        "gtceu:nickel_vein", "gtceu:galena_vein", "gtceu:certus_quartz"
-    ];
 
-    const myOreVeins = [
-        { name: 'tounkite_re', weight: 35, heightRange: [5, 30], ores: ['tounkite_re', 'rhenium_oxide_complex', 'stibioruartite'] },
-        { name: 'ruthenium_sulfide_rare', weight: 35, heightRange: [8, 35], ores: ['ruthenium_sulfide_rare', 'indite', 'sakuraiite'] },
-        { name: 'indium_zinc_complex', weight: 35, heightRange: [10, 40], ores: ['indium_zinc_complex', 'samarskite', 'tantalite_sm'] },
-        { name: 'samarium_niobate', weight: 35, heightRange: [12, 42], ores: ['samarium_niobate', 'lorandite', 'vrbaite'] },
-        { name: 'hutchinsonite', weight: 35, heightRange: [15, 45], ores: ['hutchinsonite', 'crookesite', 'hafnon'] },
-        { name: 'alurgite_hf', weight: 35, heightRange: [18, 48], ores: ['alurgite_hf', 'germanite', 'renierite'] },
-        { name: 'germanium_zinc_ore', weight: 35, heightRange: [10, 50], ores: ['germanium_zinc_ore', 'thortveitite', 'silicate_scandium'] },
-        { name: 'bazzite', weight: 35, heightRange: [15, 55], ores: ['bazzite', 'yftisite', 'yttrium_fluorite_rare'] },
-        { name: 'bismutite', weight: 35, heightRange: [20, 60], ores: ['bismutite', 'pucherite', 'bismuth_cobalt_ore'] },
-        { name: 'strontianite', weight: 35, heightRange: [22, 65], ores: ['strontianite', 'strontium_calcium_ore', 'wairauite'] },
-        { name: 'cattierite', weight: 35, heightRange: [25, 70], ores: ['cattierite', 'gersdorffite', 'nickel_antimony_ore'] },
-        { name: 'miassite', weight: 35, heightRange: [28, 75], ores: ['miassite', 'rhodium_lead_ore', 'laurite'] },
-        { name: 'erlichmanite', weight: 35, heightRange: [15, 45], ores: ['erlichmanite', 'osmium_titanium_ore', 'vanadium_mercury_ore'] },
-        { name: 'selenium_silver_ore', weight: 35, heightRange: [18, 50], ores: ['selenium_silver_ore', 'hydrogen_beryllium_ore', 'dzhalindite'] },
-        { name: 'yanomamite', weight: 35, heightRange: [20, 55], ores: ['yanomamite', 'indium_ganide', 'bastnasite_sm'] },
-        { name: 'florencite_sm', weight: 35, heightRange: [5, 30], ores: ['florencite_sm', 'kolbeckite', 'rowlandite'] },
-        { name: 'frischolite', weight: 35, heightRange: [8, 33], ores: ['frischolite', 'yttrialite', 'stottite'] },
-        { name: 'prassoite', weight: 35, heightRange: [10, 35], ores: ['prassoite', 'irarsite', 'hollingworthite'] },
-        { name: 'platarsite', weight: 35, heightRange: [10, 40], ores: ['platarsite', 'bowieite', 'avogadrite'] },
-        { name: 'loellingite_rb', weight: 35, heightRange: [12, 43], ores: ['loellingite_rb', 'curite', 'soddyite'] },
-        { name: 'kasolite', weight: 35, heightRange: [15, 45], ores: ['kasolite', 'fourmarierite', 'thorogummite'] },
-        { name: 'upalite', weight: 35, heightRange: [20, 65], ores: ['upalite', 'arsenuranylite', 'niobokuprite'] },
-        { name: 'bismutotantalite', weight: 35, heightRange: [22, 70], ores: ['bismutotantalite', 'stibiotantalite', 'yttrotantalite'] },
-        { name: 'fergusonite', weight: 35, heightRange: [25, 75], ores: ['fergusonite', 'polycrase', 'eschynite'] },
-        { name: 'shadlunite', weight: 35, heightRange: [15, 55], ores: ['shadlunite', 'tambovite', 'margaritasite'] },
-        { name: 'xtyrechtite', weight: 35, heightRange: [18, 58], ores: ['xtyrechtite', 'calkinsite', 'lanthanite'] },
-        { name: 'chlormagaluminite', weight: 35, heightRange: [20, 60], ores: ['chlormagaluminite', 'oulankaite', 'gallite'] },
-        { name: 'sulgallite', weight: 35, heightRange: [35, 90], ores: ['sulgallite', 'stringhamite_os', 'pezzottaite'] },
-        { name: 'pollucite', weight: 35, heightRange: [38, 95], ores: ['pollucite', 'uranocircite_ra', 'schafarzikite'] },
-        { name: 'chalcophanite_bi', weight: 35, heightRange: [40, 100], ores: ['chalcophanite_bi', 'roquesite', 'indiumite'] },
-        { name: 'monazite_sm', weight: 35, heightRange: [20, 70], ores: ['monazite_sm', 'loparite_sm', 'xenotime_sm'] },
-        { name: 'cerite_sm', weight: 35, heightRange: [22, 72], ores: ['cerite_sm', 'atheyite', 'beudantite_sb'] },
-        { name: 'partzite', weight: 35, heightRange: [25, 75], ores: ['partzite', 'tounkite_re', 'rhenium_oxide_complex'] },
-        { name: 'stibioruartite', weight: 35, heightRange: [5, 40], ores: ['stibioruartite', 'ruthenium_sulfide_rare', 'indite'] },
-        { name: 'sakuraiite', weight: 35, heightRange: [8, 42], ores: ['sakuraiite', 'indium_zinc_complex', 'samarskite'] },
-        { name: 'tantalite_sm', weight: 35, heightRange: [10, 45], ores: ['tantalite_sm', 'samarium_niobate', 'lorandite'] }    
-    ];
-
-    const planets = [
-        'charon', 'diater', 'dune', 'europa', 
-        'galia', 'io', 'jada', 'pluto', 
-        'soera', 'titan', 'vonic', 'vulcan'
-    ];
-    
-    const defaultVeinSettings = {
-        density: 0.5,
-        clusterSize: 35
-    };
-
-    const gtVeinDimensions = {};
-    gtOreVeins.forEach(vein => { gtVeinDimensions[vein] = []; });
-
-    planets.forEach((planet, index) => {
-        let gtIndices = [];
-        if (index === 0) {
-            gtIndices = [0, 1, 2]; 
-        } else if (index === planets.length - 1) {
-            gtIndices = [index - 2, index - 1, index]; 
-        } else {
-            gtIndices = [index - 1, index, index + 1]; 
-        }
-        
-        gtIndices.forEach(gIndex => {
-            const slice = gtOreVeins.slice(gIndex * 3, gIndex * 3 + 3);
-            slice.forEach(gtVein => {
-                if (!gtVeinDimensions[gtVein].includes(planet)) {
-                    gtVeinDimensions[gtVein].push(planet);
-                }
-            });
-        });
-
-        const customSlice = myOreVeins.slice(index * 3, index * 3 + 3);
-        
-        // This MUST run every reload, so it stays outside the global check
-        customSlice.forEach(veinData => {
-            const veinID = `${planet}_${veinData.name}`;
-            
-            event.add(veinID, vein => {
-                vein.weight(veinData.weight)
-                vein.density(defaultVeinSettings.density)
-                vein.clusterSize(defaultVeinSettings.clusterSize)
-                vein.layer(planet)
-                vein.dimensions([`planetsplus:${planet}`])
-                vein.heightRangeUniform(veinData.heightRange[0], veinData.heightRange[1])
-                vein.layeredVeinGenerator(generator => generator
-                    .buildLayerPattern(pattern => pattern
-                        .layer(l => l.weight(3).mat(GTMaterials.get(veinData.ores[0])).size(2, 4))
-                        .layer(l => l.weight(2).mat(GTMaterials.get(veinData.ores[1])).size(1, 3))
-                        .layer(l => l.weight(2).mat(GTMaterials.get(veinData.ores[2])).size(1, 2))
-                        .layer(l => l.weight(1).mat(GTMaterials.get(veinData.ores[2])).size(1, 1))
-                    )
-                )
-            })
-        });
-    });
-
-    // Modifying built-in GT veins MUST be protected from /reload to stop JEI duplication
-    // Modifying built-in GT veins MUST be protected from /reload to stop JEI duplication
-    if (!global.gtVeinsModified) {
-        Object.keys(gtVeinDimensions).forEach(veinId => {
-            const dimensionsList = gtVeinDimensions[veinId].map(p => `planetsplus:${p}`);
-            
-            if (dimensionsList.length > 0) {
-                // Route the base generation to the End, Nether, or Mining Dimension 
-                if (veinId.endsWith('_end')) {
-                    dimensionsList.push('minecraft:the_end');
-                } else if (veinId.includes('nether') || veinId === 'gtceu:sulfur_vein') {
-                    dimensionsList.push('minecraft:the_nether');
-                } else {
-                    // Automatically replaces the Overworld with the targeted Mining Dimension
-                    dimensionsList.push('allthemodium:mining'); 
-                }
-
-                event.modify(veinId, vein => {
-                    vein.dimensions(dimensionsList);
-                });
-            }
-        });
-        
-        global.gtVeinsModified = true;
-    }
-});
-
-
-*/
+const PLANETS = {
+    moon: 'ad_astra:moon',
+    mars: 'ad_astra:mars',
+    mercury: 'ad_astra:mercury',
+    venus: 'ad_astra:venus',
+    glacio: 'ad_astra:glacio', // adjust namespace if your Glacio addon differs
+};
 
 GTCEuServerEvents.oreVeins(event => {
-    const gtOreVeins = [
-        "gtceu:cassiterite_vein", "gtceu:naquadah_vein", "gtceu:redstone_vein",
-        "gtceu:beryllium_vein", "gtceu:manganese_vein", "gtceu:magnetite_vein_end",
-        "gtceu:salts_vein", "gtceu:monazite_vein", "gtceu:saltpeter_vein",        
-        "gtceu:lapis_vein", "gtceu:olivine_vein", "gtceu:tetrahedrite_vein",
-        "gtceu:sheldonite_vein", "gtceu:garnet_vein", "gtceu:molybdenum_vein",
-        "gtceu:bauxite_vein_end", "gtceu:scheelite_vein", "gtceu:sapphire_vein",
-        "gtceu:mica_vein", "gtceu:copper_vein", "gtceu:magnetite_vein_ow",
-        "gtceu:lubricant_vein", "gtceu:garnet_tin_vein", "gtceu:coal_vein",
-        "gtceu:redstone_vein_ow", "gtceu:pitchblende_vein_end", "gtceu:nether_quartz_vein",
-        "gtceu:mineral_sand_vein", "gtceu:manganese_vein_ow", "gtceu:sulfur_vein",
-        "gtceu:topaz_vein", "gtceu:apatite_vein", "gtceu:banded_iron_vein",
-        "gtceu:nickel_vein", "gtceu:galena_vein", "gtceu:certus_quartz"
+
+       event.add("moon_platinum_vein", vein => {
+        vein.weight(25)
+        vein.density(0.2)
+        vein.clusterSize(60)
+        vein.layer("moon")
+        vein.dimensions(["ad_astra:moon"])
+        vein.heightRangeUniform(-50, 0)
+        vein.dikeVeinGenerator(generator => generator
+            .withBlock(GTMaterials.Platinum, 2, -50, 0)
+            .withBlock(GTMaterials.Palladium, 1, -50, -15)
+            .withBlock(GTMaterials.Cooperite, 1, -40, -20)
+        )
+    })
+
+
+    // Tier 1 - Moon (single planet, no split needed)
+    const moonOres = [
+        'clausthalite', 'naumannite', 'hafnian_zircon', 'hafnon', 'baddeleyite', 'zircon',
+        'ullmannite', 'jamesonite', 'gallite', 'columbite_tantalite', 'microlite', 'wodginite',
+        'bismuthinite', 'bismite', 'bismutite', 'thorianite', 'thorite', 'cryolite', 'hellish', 'terraria'
     ];
-
-    const veinGroups = [
-        { id: 'indium_group',            planet: 'charon', heightRange: [10, 50], ores: ['indium_zinc_complex', 'yanomamite', 'sakuraiite'] },
-        { id: 'samarium_group',          planet: 'diater', heightRange: [10, 70], ores: ['florencite_sm', 'monazite_sm', 'cerite_sm'] },
-        { id: 'yttrium_group',           planet: 'dune',   heightRange: [10, 70], ores: ['frischolite', 'xtyrechtite', 'fergusonite'] },
-        { id: 'platinum_group',          planet: 'europa', heightRange: [10, 75], ores: ['miassite', 'prassoite', 'platarsite'] },
-        { id: 'rhenium_ruthenium_group', planet: 'galia',  heightRange: [5, 40],  ores: ['tounkite_re', 'ruthenium_sulfide_rare', 'stibioruartite'] },
-        { id: 'bismuth_group',           planet: 'io',     heightRange: [20, 90], ores: ['bismutite', 'bismutotantalite', 'chalcophanite_bi'] },
-        { id: 'thallium_group',          planet: 'jada',   heightRange: [12, 48], ores: ['hutchinsonite', 'loellingite_rb', 'alurgite_hf'] },
-        { id: 'germanium_group',         planet: 'pluto',  heightRange: [10, 60], ores: ['germanium_zinc_ore', 'bazzite', 'chlormagaluminite'] },
-        { id: 'strontium_cobalt_group',  planet: 'soera',  heightRange: [15, 70], ores: ['strontianite', 'cattierite', 'erlichmanite'] },
-        { id: 'uranium_lead_group',      planet: 'titan',  heightRange: [15, 65], ores: ['kasolite', 'upalite', 'shadlunite'] },
-        { id: 'selenium_gallium_group',  planet: 'vonic',  heightRange: [10, 90], ores: ['selenium_silver_ore', 'sulgallite', 'tantalite_sm'] },
-        { id: 'antimony_cesium_group',   planet: 'vulcan', heightRange: [12, 95], ores: ['partzite', 'pollucite', 'samarium_niobate'] }
-    ];
-
-    const planets = veinGroups.map(g => g.planet);
-
-    const defaultVeinSettings = {
-        weight: 35,
-        density: 0.5,
-        clusterSize: 35
-    };
-
-    // 1. Register the 12 custom grouped veins, one per planet
-    veinGroups.forEach(group => {
-        const veinID = `${group.planet}_${group.id}`;
-
-        event.add(veinID, vein => {
-            vein.weight(defaultVeinSettings.weight)
-            vein.density(defaultVeinSettings.density)
-            vein.clusterSize(defaultVeinSettings.clusterSize)
-            vein.layer(group.planet)
-            vein.dimensions([`planetsplus:${group.planet}`])
-            vein.heightRangeUniform(group.heightRange[0], group.heightRange[1])
-            vein.layeredVeinGenerator(generator => generator
-                .buildLayerPattern(pattern => pattern
-                    .layer(l => l.weight(3).mat(GTMaterials.get(group.ores[0])).size(2, 4))
-                    .layer(l => l.weight(2).mat(GTMaterials.get(group.ores[1])).size(1, 3))
-                    .layer(l => l.weight(2).mat(GTMaterials.get(group.ores[2])).size(1, 2))
-                    .layer(l => l.weight(1).mat(GTMaterials.get(group.ores[2])).size(1, 1))
-                )
-            )
-        })
+    moonOres.forEach((ore, i) => {
+        event.add(`moon_${ore}`, vein => {
+            vein.weight(35).density(0.5).clusterSize(35)
+                .layer('moon')
+                .dimensions([PLANETS.moon])
+                .heightRangeUniform(10 + i * 3, 60 + i * 3)
+                .layeredVeinGenerator(gen => gen.buildLayerPattern(pattern => pattern
+                    .layer(l => l.weight(1).mat(GTMaterials.get(ore)).size(2, 4))
+                ));
+        });
     });
 
-    // 2. Assign each built-in GT vein to its neighboring planets (wrap-around)
-    const gtVeinDimensions = {};
-    gtOreVeins.forEach(vein => { gtVeinDimensions[vein] = []; });
+    // Tier 2 - Mars (single planet, no split needed)
+    const marsOres = [
+        'roquesite', 'indite', 'sakuraiite', 'thortveitite', 'kolbeckite', 'bazzite',
+        'fergusonite', 'samarskite', 'cerite', 'gadolinite', 'lanthanite', 'xenotime', 'yttrialite'
+    ];
+    marsOres.forEach((ore, i) => {
+        event.add(`mars_${ore}`, vein => {
+            vein.weight(35).density(0.5).clusterSize(35)
+                .layer('mars')
+                .dimensions([PLANETS.mars])
+                .heightRangeUniform(10 + i * 3, 60 + i * 3)
+                .layeredVeinGenerator(gen => gen.buildLayerPattern(pattern => pattern
+                    .layer(l => l.weight(1).mat(GTMaterials.get(ore)).size(2, 4))
+                ));
+        });
+    });
 
-    planets.forEach((planet, index) => {
-        let gtIndices = [];
-        if (index === 0) {
-            gtIndices = [0, 1, 2];
-        } else if (index === planets.length - 1) {
-            gtIndices = [index - 2, index - 1, index];
-        } else {
-            gtIndices = [index - 1, index, index + 1];
+    // Tier 3 - Mercury (half of the tier 3 list)
+    const mercuryOres = ['crookesite', 'hutchinsonite', 'lorandite', 'strontianite', 'celestite', 'osmiridium', 'nether_star'];
+    mercuryOres.forEach((ore, i) => {
+        event.add(`mercury_${ore}`, vein => {
+            vein.weight(35).density(0.5).clusterSize(35)
+                .layer('mercury')
+                .dimensions([PLANETS.mercury])
+                .heightRangeUniform(10 + i * 3, 60 + i * 3)
+                .layeredVeinGenerator(gen => gen.buildLayerPattern(pattern => pattern
+                    .layer(l => l.weight(1).mat(GTMaterials.get(ore)).size(2, 4))
+                ));
+        });
+    });
+
+    // Tier 3 - Venus (other half of the tier 3 list)
+    const venusOres = ['laurite', 'calaverite', 'kurilite', 'telluride'];
+    venusOres.forEach((ore, i) => {
+        event.add(`venus_${ore}`, vein => {
+            vein.weight(35).density(0.5).clusterSize(35)
+                .layer('venus')
+                .dimensions([PLANETS.venus])
+                .heightRangeUniform(10 + i * 3, 60 + i * 3)
+                .layeredVeinGenerator(gen => gen.buildLayerPattern(pattern => pattern
+                    .layer(l => l.weight(1).mat(GTMaterials.get(ore)).size(2, 4))
+                ));
+        });
+    });
+
+    // Tier 4 - Glacio (single planet, no split needed)
+    const glacioOres = [
+        'rubicline', 'germanite', 'renierite', 'argyrodite', 'rhenite', 'tarkianite', 'rhodizite',
+        'radio_thoric_phosphate', 'tenebrius', 'etrium'
+    ];
+    glacioOres.forEach((ore, i) => {
+        event.add(`glacio_${ore}`, vein => {
+            vein.weight(35).density(0.5).clusterSize(35)
+                .layer('glacio')
+                .dimensions([PLANETS.glacio])
+                .heightRangeUniform(10 + i * 3, 60 + i * 3)
+                .layeredVeinGenerator(gen => gen.buildLayerPattern(pattern => pattern
+                    .layer(l => l.weight(1).mat(GTMaterials.get(ore)).size(2, 4))
+                ));
+        });
+    });
+
+    // ------------------------------------------------------------------------
+    // PART B: Redistribute existing GT vanilla veins onto the 4 planets
+    // Overworld -> split Moon/Mars | Nether -> split Mercury/Venus | End -> Glacio
+    // ------------------------------------------------------------------------
+
+
+
+    // Clones existing GT vanilla veins onto the 4 Ad Astra planets, rather than
+    // modifying the originals - avoids the dimensions() getter bug and any load-order
+    // conflict with mining_dim_ores.js entirely.
+    //
+    // Overworld veins -> split Moon / Mars
+    // Nether veins    -> split Mercury / Venus
+    // End veins       -> Glacio
+
+
+
+    /*function cloneVeinToPlanet(sourceVeinId, newVeinId, planetDim, layerName, heightMin, heightMax) {
+        let copiedGen = null;
+        let newVein = {name: null, chance: null};        
+
+        try {
+            event.modify(`gtceu:${sourceVeinId}`, vein => {
+                copiedGen = vein.veinGenerator().copy();       
+                //let entries = vein.veinGenerator().getAllEntries();
+                //console.error(`allEntries() worked, length: ${entries.length}`);
+                //console.error(`First entry: ${entries[0]}`);
+                //console.error(vein.veinGenerator().allEntries().map(entry => `${entry.vein().getName()} (${entry.chance()})`).join(', '));                
+
+            });
+        } catch (err) {
+            console.error(`[ad_astra_ore_veins] Failed reading generator for '${sourceVeinId}' on '${planetDim} ${layerName}': ${err}`);
+            return;
         }
 
-        gtIndices.forEach(gIndex => {
-            const slice = gtOreVeins.slice(gIndex * 3, gIndex * 3 + 3);
-            slice.forEach(gtVein => {
-                if (!gtVeinDimensions[gtVein].includes(planet)) {
-                    gtVeinDimensions[gtVein].push(planet);
-                }
+        if (copiedGen) {
+            event.add(newVeinId, vein => {
+                vein.weight(35).density(0.5).clusterSize(35)
+                    .layer(layerName)
+                    .dimensions([planetDim])
+                    .heightRangeUniform(heightMin, heightMax);
+                vein['veinGenerator(com.gregtechceu.gtceu.api.data.worldgen.generator.VeinGenerator)'](copiedGen);
             });
-        });
-    });
+        } else {
+            console.error(`[ad_astra_ore_veins] Null generator for '${sourceVeinId}', skipped '${newVeinId}'`);
+        }
+    }*/
 
-    // 3. Modify built-in GT veins to add planet dimensions - guarded against re-running on /reload
-    if (!global.gtVeinsModified) {
-        Object.keys(gtVeinDimensions).forEach(veinId => {
-            const dimensionsList = gtVeinDimensions[veinId].map(p => `planetsplus:${p}`);
+    function cloneVeinToPlanet(sourceVeinId, newVeinId, planetDim, layerName, heightMin, heightMax) {
+        let entries = null;
 
-            if (dimensionsList.length > 0) {
-                if (veinId.endsWith('_end')) {
-                    dimensionsList.push('minecraft:the_end');
-                } else if (veinId.includes('nether') || veinId === 'gtceu:sulfur_vein') {
-                    dimensionsList.push('minecraft:the_nether');
-                } else {
-                    dimensionsList.push('allthemodium:mining');
-                }
+        try {
+            event.modify(`gtceu:${sourceVeinId}`, vein => {
+                entries = vein.veinGenerator().getAllEntries();
+            });
+        } catch (err) {
+            console.error(`[ad_astra_ore_veins] Failed reading entries for '${sourceVeinId}': ${err}`);
+            return;
+        }
 
-                event.modify(veinId, vein => {
-                    vein.dimensions(dimensionsList);
-                });
+        if (!entries || entries.length === 0) {
+            console.error(`[ad_astra_ore_veins] No entries for '${sourceVeinId}', skipped '${newVeinId}'`);
+            return;
+        }
+
+        let parsedLayers = [];
+        entries.forEach(entry => {
+            let veinStr = String(entry.vein());
+            let match = veinStr.match(/^Right\[([a-z_]+:[a-z_0-9]+)\]$/);
+            if (!match) {
+                //console.error(`[ad_astra_ore_veins] Skipping non-material entry in '${sourceVeinId}': ${veinStr}`);
+                return;
             }
+            let matName = match[1].split(':')[1];
+            let mat = GTMaterials.get(matName);
+            if (!mat || !mat.getName || mat.getName() !== matName) {
+                console.error(`[ad_astra_ore_veins] Could not resolve material '${matName}' from '${sourceVeinId}'`);
+                return;
+            }
+            parsedLayers.push({ mat: mat, chance: entry.chance() });
         });
 
-        global.gtVeinsModified = true;
+        if (parsedLayers.length === 0) {
+            console.error(`[ad_astra_ore_veins] No resolvable materials for '${sourceVeinId}', skipped '${newVeinId}'`);
+            return;
+        }
+
+        event.add(newVeinId, vein => {
+            vein.weight(35).density(0.5).clusterSize(35)
+                .layer(layerName)
+                .dimensions([planetDim])
+                .heightRangeUniform(heightMin, heightMax)
+                .layeredVeinGenerator(gen => gen.buildLayerPattern(pattern => {
+                    parsedLayers.forEach(pl => {
+                        pattern = pattern.layer(l => l.weight(pl.chance).mat(pl.mat).size(2, 4));
+                    });
+                    return pattern;
+                }));
+        });
+
+        console.info(`[ad_astra_ore_veins] Cloned '${sourceVeinId}' -> '${newVeinId}' with ${parsedLayers.length} materials`);
     }
+
+    function cloneList(veinList, planetPrefix, planetDim, layerName) {
+        veinList.forEach((veinId, i) => {
+            let newId = `${planetPrefix}_${veinId}`;
+            cloneVeinToPlanet(veinId, newId, planetDim, layerName, 10 + i * 5, 60 + i * 5);
+        });
+    }
+
+    // ---- Overworld -> Moon (11) ----
+    cloneList([
+        'apatite_vein', 'cassiterite_vein', 'coal_vein', 'copper_tin_vein', 'galena_vein',
+        'garnet_tin_vein', 'iron_vein', 'lubricant_vein', 'magnetite_vein_ow', 'mineral_sand_vein', 'nickel_vein'
+    ], 'moon', 'ad_astra:moon', 'moon');
+
+    // ---- Overworld -> Mars (10) ----
+    cloneList([
+        'salts_vein', 'oilsands_vein', 'copper_vein', 'diamond_vein', 'lapis_vein',
+        'manganese_vein_ow', 'mica_vein', 'olivine_vein', 'redstone_vein_ow', 'sapphire_vein'
+    ], 'mars', 'ad_astra:mars', 'mars');
+
+    // ---- Nether -> Mercury (6) ----
+    cloneList([
+        'banded_iron_vein', 'beryllium_vein', 'certus_quartz', 'manganese_vein', 'molybdenum_vein', 'monazite_vein'
+    ], 'mercury', 'ad_astra:mercury', 'mercury');
+
+    // ---- Nether -> Venus (6) ----
+    cloneList([
+        'nether_quartz_vein', 'redstone_vein', 'saltpeter_vein', 'sulfur_vein', 'tetrahedrite_vein', 'topaz_vein'
+    ], 'venus', 'ad_astra:venus', 'venus');
+
+    // ---- End -> Glacio (6) ----
+    cloneList([
+        'bauxite_vein_end', 'magnetite_vein_end', 'naquadah_vein', 'pitchblende_vein_end', 'scheelite_vein', 'sheldonite_vein'
+    ], 'glacio', 'ad_astra:glacio', 'glacio');
+
 });

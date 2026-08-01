@@ -31,12 +31,13 @@
         .inputFluids('gtceu:distilled_water 500')
         .outputFluids('gtceu:source 500')
         .duration(100)
-        .EUt(2018)
+        .EUt(2048)
 
     
     allthemods.recipes.gtceu.liquifier('poison')
         .itemInputs('evilcraft:poison_sac')
         .inputFluids('gtceu:purest_water 250')
         .outputFluids('evilcraft:poison 250')
-
+        .duration(100)
+        .EUt(2048)
     });

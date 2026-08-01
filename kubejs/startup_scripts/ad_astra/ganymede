@@ -1,3 +1,4 @@
+/*
 GTCEuStartupEvents.registry('gtceu:world_gen_layer', event => {
     event.create('ganymede')
         .targets(
@@ -6,4 +7,4 @@ GTCEuStartupEvents.registry('gtceu:world_gen_layer', event => {
             'minecraft:dripstone_block'
         )
         .dimensions('planetsplus:ganymede')
-})
+})*/

@@ -27,5 +27,11 @@ ServerEvents.recipes(allthemods => {
                 .duration(80)
                 .EUt(32)
                 .circuit(1)
+        
+        allthemods.recipes.gtceu.macerator('thorn_rose_dust')
+                .itemInputs('twilightforest:thorn_rose')
+                .itemOutputs('gtceu:thorn_rose_dust')
+                .duration(800)
+                .EUt(524288)                
                 
 });

@@ -29,7 +29,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .recipeTypes('bacterial_vat', 'bacterial_growth_chamber', 'crystal_growth_chamber')
         .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT, (machine, recipe) => GTRecipeModifiers.ebfOverclock(machine, recipe)])
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
         .pattern(definition => FactoryBlockPattern.start()                        
             .aisle('CCCCCCC', 'GGGGGGG', 'GGGGGGG', 'GGGGGGG', 'CCCCCCC')
             .aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')

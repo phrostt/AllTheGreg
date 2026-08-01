@@ -66,6 +66,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes('petal_apothecary', 'runic_altar', 'mana_infuser')
         .appearanceBlock(GTBlocks.CASING_STAINLESS_CLEAN)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()
             
             .aisle('CCCCCCC', 'CGGGGGC','CGGGGGC', 'CGGGGGC', 'CCCCCCC')
@@ -98,8 +99,8 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('mana_burner')
         .appearanceBlock(GTBlocks.CASING_STAINLESS_CLEAN)
-        .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
-        .recipeModifier((machine, recipe) => GTRecipeModifiers.ebfOverclock(machine, recipe))
+        .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))        
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, ((machine, recipe) => GTRecipeModifiers.ebfOverclock(machine, recipe))])
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('CCC', 'LLL', 'CCC')
             .aisle('CCC', 'L L', 'CCC')

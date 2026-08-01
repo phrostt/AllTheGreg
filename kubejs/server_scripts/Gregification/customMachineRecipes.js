@@ -100,13 +100,13 @@ ServerEvents.recipes(allthemods => {
 
     addAssembler(
         [
-            '4x #forge:small_gears/enori',
+            '4x #forge:small_gears/desh',
             '4x #forge:gears/titanium',
             '2x #gtceu:circuits/ev',
             '2x gtceu:ev_electric_piston',
             'gtceu:ev_machine_hull',
-            '4x #forge:rods/long/emeradic',
-            '16x #forge:screws/diamatine'
+            '4x #forge:rods/long/enderium',
+            '16x #forge:screws/terrasteel'
         ],
         [
             'gtceu:soldering_alloy 576',
