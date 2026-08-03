@@ -34,7 +34,7 @@ ServerEvents.recipes(allthemods => {
 
     addLaserEngraver(
         'gtceu:empowered_wafer',
-        'gtceu:empowered_polymer_lens',
+        '#forge:lenses/destructive',
         'gtceu:empowered_ram_wafer',
         900,
         tiers['UV']
@@ -42,7 +42,7 @@ ServerEvents.recipes(allthemods => {
 
     addLaserEngraver(
         'gtceu:germanium_wafer',
-        'gtceu:atm_star_lens',
+        '#forge:lenses/destructive',
         'gtceu:germanium_diode_wafer',
         900,
         tiers['ZPM']
@@ -50,7 +50,7 @@ ServerEvents.recipes(allthemods => {
 
     addLaserEngraver(
         'gtceu:atomic_wafer',
-        'gtceu:eternal_lens',
+        '#forge:lenses/destructive',
         'gtceu:atomic_clock_wafer',
         900,
         tiers['ZPM']
@@ -65,7 +65,7 @@ ServerEvents.recipes(allthemods => {
         { T: 14, Name: 'max', Lens: 'gtceu:chaos_plastic_lens' }
     ]
 
-    socs.forEach(soc => {
+    /*socs.forEach(soc => {
         let eTier = soc.T <= 13 ? soc.T : 13
         addLaserEngraver(
             'gtceu:empowered_wafer',
@@ -74,5 +74,5 @@ ServerEvents.recipes(allthemods => {
             900,
             tierValues[eTier],
             `${soc.Name}_soc`);
-    })
+    })*/
 });

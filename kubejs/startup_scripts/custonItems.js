@@ -93,6 +93,21 @@ StartupEvents.registry('item', event => {
             .rarity(quark.rarity)
             .glow(true)
     })
+
+    const elements = [
+        {name: 'fire', description: '§cThe essence of flame and heat.', rarity: 'extra_red'},
+        {name: 'water', description: '§9The essence of fluidity and life.', rarity: 'extra_blue'},
+        {name: 'earth', description: '§aThe essence of stability and growth.', rarity: 'extra_green'},
+        {name: 'air', description: '§fThe essence of freedom and movement.', rarity: 'white'},
+        {name: 'blank', description: '§7The essence of nothingness.', rarity: 'dark_gray'}
+    ]
+    elements.forEach(element => {
+        event.create(`gtceu:element_${element.name}`)
+            .displayName(`${element.name.charAt(0).toUpperCase() + element.name.slice(1)} Element`)
+            .rarity(element.rarity)
+            .tooltip(element.description)
+            .glow(true)
+    });
         
 })
 ItemEvents.modification(event => {

@@ -5,7 +5,7 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('gtceu:tenebrius_dust')
         .itemOutputs('gtceu:unrefined_tenebrius_dust')
         .chancedOutput('bloodmagic:sand_hellforged', 1500, 1500)
-        .chancedOutput('gtceu:iesnium_dust', 1500, 1500)
+        .chancedOutput('occultism:iesnium_dust', 1500, 1500)
         .duration(400).EUt(TenebriumEU);
     
     allthemods.recipes.gtceu.crystal_growth_chamber('gregification:tenebrius_gem')

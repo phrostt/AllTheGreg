@@ -38,7 +38,7 @@ ServerEvents.recipes(allthemods => {
     //chaos shard crystal_growth_chamber recipe
 
     allthemods.recipes.gtceu.bacterial_vat('gregification:concentrated_dark_matter_synthesis')
-        .itemInputs('#forge:dusts/cesium')
+        .itemInputs('#forge:dusts/caesium')
         .inputFluids('#forge:water 1000')
         .outputFluids('gtceu:concentrated_dark_matter 10')
         .duration(10000)
