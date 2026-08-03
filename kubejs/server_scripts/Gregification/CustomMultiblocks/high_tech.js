@@ -34,6 +34,7 @@ ServerEvents.recipes(allthemods => {
             recipe.circuit(program);
         }        
     };
+    
 
     //chaos shard crystal_growth_chamber recipe
 
