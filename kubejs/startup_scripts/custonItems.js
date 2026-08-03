@@ -93,6 +93,49 @@ StartupEvents.registry('item', event => {
             .rarity(quark.rarity)
             .glow(true)
     })
+
+    const elements = [
+        {name: 'fire', description: '§cThe essence of flame and heat.', rarity: 'extra_red'},
+        {name: 'water', description: '§9The essence of fluidity and life.', rarity: 'extra_blue'},
+        {name: 'earth', description: '§aThe essence of stability and growth.', rarity: 'extra_green'},
+        {name: 'air', description: '§fThe essence of freedom and movement.', rarity: 'white'},
+        {name: 'blank', description: '§7The essence of nothingness.', rarity: 'dark_gray'}
+    ]
+    elements.forEach(element => {
+        event.create(`gtceu:element_${element.name}`)
+            .displayName(`${element.name.charAt(0).toUpperCase() + element.name.slice(1)} Element`)
+            .rarity(element.rarity)
+            .tooltip(element.description)
+            //.glow(true)
+    });
+
+    event.create('gtceu:tier_1_rocket_schematic')
+        .displayName('Tier 1 Rocket Schematic')
+        .texture('minecraft:item/paper')
+        .color(0, 0x3FA9A0)
+        .rarity('COMMON')
+        .tooltip('§7A schematic for a Tier 1 Rocket, capable of reaching the Moon.')
+
+    event.create('gtceu:tier_2_rocket_schematic')
+        .displayName('Tier 2 Rocket Schematic')
+        .texture('minecraft:item/paper')
+        .color(0, 0xC1502E)
+        .rarity('UNCOMMON')
+        .tooltip('§7A schematic for a Tier 2 Rocket, capable of reaching Mars.')
+
+    event.create('gtceu:tier_3_rocket_schematic')
+        .displayName('Tier 3 Rocket Schematic')
+        .texture('minecraft:item/paper')
+        .color(0, 0x8B2E2E)
+        .rarity('RARE')
+        .tooltip('§7A schematic for a Tier 3 Rocket, capable of reaching Venus and Mercury.')
+
+    event.create('gtceu:tier_4_rocket_schematic')
+        .displayName('Tier 4 Rocket Schematic')
+        .texture('minecraft:item/paper')
+        .color(0, 0xA8E6C8)
+        .rarity('SUPREME')
+        .tooltip('§7A schematic for a Tier 4 Rocket, capable of reaching Glacio.')
         
 })
 ItemEvents.modification(event => {

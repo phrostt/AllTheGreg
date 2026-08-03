@@ -2,10 +2,6 @@
 
 GTCEuStartupEvents.registry('gtceu:element', event => {
 
-    event.create('cesium')
-        .symbol('Cs')
-        .protons(55)
-        .neutrons(55)
 
     event.create('etrium')
         .symbol('Et')

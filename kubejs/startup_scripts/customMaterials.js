@@ -49,7 +49,7 @@ const materialsGem = [
     { name: 'corrosive', simple: true, color: '0x90EE90', iconSet: 'EMERALD' },
     { name: 'vengeful', simple: true, color: '0xFFCCCB', iconSet: 'DIAMOND' },
     { name: 'destructive', simple: true, color: '0xFFFFE0', iconSet: 'QUARTZ' },
-    { name: 'eternal', simple: true, color: '0xFFFFE0', iconSet: 'SHINY', element: 'eternal'},
+    { name: 'eternal', simple: true, color: '0xFFFFE0', iconSet: 'SHINY', element: 'eternal' },
     { name: 'source', simple: true, color: '0xD662FF', iconSet: 'EMERALD' },
     { name: 'soul', simple: true, color: '0x3A4F6D', iconSet: 'GLASS' },
 
@@ -60,7 +60,7 @@ const materialsGem = [
     { name: 'emeradic', simple: true, element: 'emeradic', color: 0x00e676, iconSet: 'EMERALD' },
     { name: 'enori', simple: true, element: 'enori', color: 0xf5f5f5, iconSet: 'QUARTZ' },
     { name: 'black_quartz', simple: true, element: 'black_quartz', color: 0x000000, iconSet: 'QUARTZ' },
-    
+
     { name: 'empowered_restonia', simple: true, element: 'restonia', color: 0xff4d4d, iconSet: 'RUBY' },
     { name: 'empowered_palis', simple: true, element: 'palis', color: 0x534bae, iconSet: 'LAPIS' },
     { name: 'empowered_diamatine', simple: true, element: 'diamatine', color: 0x8bf6ff, iconSet: 'DIAMOND' },
@@ -77,23 +77,23 @@ const materialsGem = [
 //needs proper unification
 const otherElements = [
     //need to make sure each 1 of these is useful by checking usage on its dust[
-    { name: 'radium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
-    { name: 'rhenium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
+    { name: 'radium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
+    { name: 'rhenium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
     { name: 'astatine', namespace: 'chemlib', oItems: ['dust'], cBlast: 7200, cVolt: 524288, cIngot: true },
     { name: 'graphite', cBlast: 3600, cVolt: 2048, cIngot: true },
-    { name: 'strontium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cBlast: 4500, cVolt: 8192, cIngot: true },
+    { name: 'strontium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 4500, cVolt: 8192, cIngot: true },
     { name: 'tellurium', namespace: 'chemlib', oItems: ['dust'], cBlast: 18900, cVolt: 33554432, cIngot: true },
     { name: 'californium', cBlast: 18900, cVolt: 536870912, cIngot: true },
     { name: 'berkelium', cBlast: 18900, cVolt: 134217728, cIngot: true },
-    { name: 'polonium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
+    { name: 'polonium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
     { name: 'selenium', namespace: 'chemlib', oItems: ['dust'], cPolymer: true },
-    { name: 'francium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true }, //en
+    { name: 'francium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true }, //en
     { name: 'germanium', namespace: 'chemlib', oItems: ['dust'], cVolt: 524416, cIngot: true },
-    { name: 'zirconium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
-    { name: 'scandium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
-    { name: 'hafnium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
-    { name: 'rubidium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true },
-    { name: 'thallium', namespace: 'chemlib', oItems: ['ingot','block','nugget','dust','plate'], cIngot: true }
+    { name: 'zirconium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
+    { name: 'scandium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
+    { name: 'hafnium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
+    { name: 'rubidium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
+    { name: 'thallium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true }
 ];
 
 
@@ -124,11 +124,12 @@ const unification = [
     { name: 'terrasteel', oItems: ['nugget', 'ingot', 'block'], namespace: 'botania' },
     { name: 'gaia', oItems: ['ingot'], namespace: 'botania' },
     { name: 'alfsteel', oItems: ['nugget', 'ingot', 'block'], namespace: 'mythicbotany' },
+    { name: 'iesnium', oItems: ['dust', 'nugget', 'ingot', 'block'], namespace: 'occultism' },
 ]
 
 const mekanism = [
     { name: 'refined_obsidian', oItems: ['nugget', 'ingot', 'block'], namespace: 'mekanism' },
-    { name: 'refined_glowstone', oItems: ['nugget', 'ingot', 'block'], namespace: 'mekanism' }        
+    { name: 'refined_glowstone', oItems: ['nugget', 'ingot', 'block'], namespace: 'mekanism' }
 ]
 
 
@@ -139,7 +140,7 @@ const modalloys = [
     { name: 'energetic_alloy', components: '1x gold, 1x redstone, 1x glowstone', color: 0xFFB933, iconSet: 'METALLIC', voltage: 512, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 128 } },
     { name: 'vibrant_alloy', components: '1x energetic_alloy, 1x ender_pearl', color: 0xB6F132, iconSet: 'METALLIC', voltage: 2048, loss: 1, cBlast: { temp: 2700, duration: 400, volts: 512 } },
     { name: 'pulsating_alloy', components: '1x iron, 1x ender_pearl', color: 0x66FF82, iconSet: 'METALLIC', voltage: 2048, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 512 } },
-    { name: 'soularium', components: '1x gold, 1x soul_sand', color: 0x56402C, iconSet: 'METALLIC', voltage: 128, loss: 0, cBlast: { temp: 2700, duration: 400, volts: 512 } },
+    { name: 'soularium', components: '1x gold', color: 0x56402C, iconSet: 'METALLIC', voltage: 128, loss: 0, cBlast: { temp: 2700, duration: 400, volts: 512 } },
     { name: 'dark_steel', components: '1x steel, 1x carbon, 1x obsidian', color: 0x3D3D3D, iconSet: 'METALLIC', voltage: 512, loss: 2, cBlast: { temp: 2700, duration: 400, volts: 512 } },
     { name: 'end_steel', components: '1x dark_steel, 1x endstone, 1x obsidian', color: 0xE6F1A8, iconSet: 'METALLIC', voltage: 2048, loss: 0, cBlast: { temp: 3600, duration: 400, volts: 2048 } },
 
@@ -157,7 +158,7 @@ const modalloys = [
 
     // --- Magic Gating Materials ---
     { name: 'hellforged', element: 'hellforged', color: 0xC1D5EC, iconSet: 'METALLIC', voltage: 512, loss: 2 },
-    { name: 'iesnium', oItem: 'occultism:iesnium_ingot', element: 'iesnium', color: 0x9FD1FF, iconSet: 'METALLIC', voltage: 512, loss: 1 },
+    { name: 'iesnium', element: 'iesnium', color: 0x9FD1FF, iconSet: 'METALLIC', voltage: 512, loss: 1 },
 
     // --- AllTheModium End-Game Gating ---
     { name: 'allthemodium', element: 'allthemodium', color: 0xFAD64A, iconSet: 'METALLIC', voltage: 32768, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
@@ -182,9 +183,9 @@ const modalloys = [
 
     // --- Industrial Foregoing & Tech Frames ---
     { name: 'pink_slime', element: 'pink_slime', components: '2x iron, 2x gold', color: 0xE66EA9, iconSet: 'SHINY', voltage: 512, loss: 2 },
-    { name: 'plastic', oItem: 'industrialforegoing:plastic', color: 0xA9A9A9, iconSet: 'DULL', voltage: 0, loss: 0 },
+    { name: 'plastic', color: 0xA9A9A9, iconSet: 'DULL', voltage: 0, loss: 0 },
     { name: 'deorum', element: 'deorum', components: '4x carbon, 1x gold', color: 0xFFD700, iconSet: 'METALLIC', voltage: 128, loss: 1 },
-    { name: 'ferrognetic', pipe: true, color: 0xD1D1D1, components: '1x garmonbozia, 1x dark_steel, 1x pink_slime, 1x alfsteel, 1x hellforged, 1x iesnium', iconSet: 'METALLIC', voltage: 131072, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'ferrognetic', components: '1x garmonbozia, 1x dark_steel, 1x pink_slime, 1x alfsteel, 1x hellforged, 1x iesnium', pipe: true, color: 0xD1D1D1, iconSet: 'METALLIC', voltage: 131072, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
 
     // --- Advanced Hybrid Materials (Naquadah/ATM) ---
     { name: 'naquamodium', color: 0xF8FF40, iconSet: 'METALLIC', voltage: 32768, superconductor: true, cDust: true, components: '5x naquadah, 3x allthemodium', cBlast: { temp: 2700, duration: 1200, volts: 512 } },
@@ -203,14 +204,13 @@ const modalloys = [
     { name: 'vibtronium', pipe: true, color: 0x72fcb7, iconSet: 'METALLIC', components: '2x naquabranium, 2x alltheneutronium, 1x alloy_reinforced, 3x destructive', voltage: 33554432, loss: 0, superconductor: false, cBlast: { temp: 12600, duration: 1200, volts: 131072 }, rotor: { speed: 1400, power: 400, efficiency: 14.0, durability: 2621440 } },
     { name: 'unobtronium', pipe: true, color: 0xe782f2, iconSet: 'METALLIC', components: '2x naquatainium, 2x vibtronium, 1x alloy_atomic, 3x vengeful', voltage: 134217728, loss: 0, superconductor: false, cBlast: { temp: 15300, duration: 1200, volts: 524288 }, rotor: { speed: 1600, power: 500, efficiency: 16.0, durability: 10485760 } },
     { name: 'deorum_alloy', pipe: true, color: 0xCCDD22, iconSet: 'METALLIC', components: '3x naquadria, 2x deorum, 2x trinium, 3x steadfast', voltage: 536870912, loss: 0, superconductor: false, cBlast: { temp: 18900, duration: 1200, volts: 524288 }, rotor: { speed: 1800, power: 600, efficiency: 18.0, durability: 41943040 } },
-    { name: 'demonic_alloy', pipe: true, color: 0x22DDCC, iconSet: 'METALLIC', components: '3x demon, 3x tenebrium, 3x caesium, 3x tritanium, 3x gaia', voltage: 2147483647, loss: 0, superconductor: false, cBlast: { temp: 21600, duration: 1200, volts: 524288 }, rotor: { speed: 2000, power: 800, efficiency: 20.0, durability: 167772160 } },
+    { name: 'demonic_alloy', components: '3x demon, 3x tenebrium, 3x caesium, 3x tritanium, 3x gaia',  pipe: true, color: 0x22DDCC, iconSet: 'METALLIC', voltage: 2147483647, loss: 0, superconductor: false, cBlast: { temp: 21600, duration: 1200, volts: 524288 }, rotor: { speed: 2000, power: 800, efficiency: 20.0, durability: 167772160 } },
 
     { name: 'rhenium_nickel_alloy', color: 0xEAEAEA, iconSet: 'METALLIC', components: '3x rhenium, 1x nickel', voltage: 524288, loss: 2, superconductor: false, cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 800, power: 500, efficiency: 10.0, durability: 163840 } },
     { name: 'rheni_zirconium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '1x rhenium_nickel_alloy, 1x zirconium', cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
     { name: 'thorium_berkelium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '2x thorium, 1x berkelium', voltage: 131072, superconductor: true, cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
     { name: 'potassium_calcium_orthosilicate', color: 0xDAA520, iconSet: 'METALLIC', components: '2x potassium, 1x calcium, 1x silicon, 4x oxygen', cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1200, power: 850, efficiency: 17.0, durability: 400000 } },
     { name: 'bedrockium', color: 0x101010, iconSet: 'METALLIC' },
-    { name: 'cesium', element: 'cesium', color: 0xE6CA65, iconSet: 'METALLIC', oDust: 'chemlib:cesium_dust', oItem: 'chemlib:cesium_ingot', cIngot: true }
 
 ];
 
@@ -261,10 +261,10 @@ const fluids = [
     { name: 'cyanopyridine', color: 0x4A6B82, components: '6x carbon, 4x hydrogen, 2x nitrogen', formula: 'C6H4N2', iconSet: 'FLUID' },
     { name: 'acetaldehyde', color: 0xC2B280, components: '1x ethylene, 1x oxygen', formula: 'C2H4O', iconSet: 'FLUID' },
 
-    
-    
+
+
     { name: 'primordial_sanguine_plasma', color: 0x2E2E2E, iconSet: 'FLUID' },
-    { name: 'primordial_cosmic_soup', color: 0xBF00FF, iconSet: 'FLUID' },    
+    { name: 'primordial_cosmic_soup', color: 0xBF00FF, iconSet: 'FLUID' },
     { name: 'unrefined_white_blood', color: 0xF5F5FF, iconSet: 'FLUID' },
     { name: 'ethereal_white_blood', color: 0xFFFFFF, iconSet: 'FLUID' },
     { name: 'unrefined_red_blood', color: 0x8B0000, iconSet: 'FLUID' },
@@ -275,7 +275,7 @@ const fluids = [
     { name: 'essence_of_destruction', color: 0x2F4F4F, iconSet: 'FLUID' },
     { name: 'stable_life_essence', color: 0xFF69B4, iconSet: 'FLUID' },
     { name: 'saturated_tau', color: 0xFF8C00, iconSet: 'FLUID' },
-    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },    
+    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },
     { name: 'aureal', color: 0xA1C2F7, iconSet: 'FLUID' },
     { name: 'liquid_chaos', color: 0x111111, iconSet: 'FLUID' },
     { name: 'radioactive_acetate_slurry', color: 0x99FF33, iconSet: 'RADIOACTIVE' },
@@ -303,10 +303,10 @@ const fluids = [
     { name: 'crystallized_oil', color: 0xFFFFF0, iconSet: 'FLUID', burnTime: 20 },
     { name: 'empowered_oil', color: 0xFFA500, iconSet: 'FLUID', burnTime: 40 },
 
-    { name: 'poison_agent', components: '1x astatine, 1x evilcraft:poison', color: 0x4A154B, iconSet: 'FLUID' },
-    { name: 'paralytic_agent', components: '1x poison_agent, 1x twilightforest:thorn_rose', color: 0x2D0C35, iconSet: 'FLUID', nodecomp: true },
+    { name: 'poison_agent', color: 0x4A154B, iconSet: 'FLUID' },
+    { name: 'paralytic_agent', color: 0x2D0C35, iconSet: 'FLUID', nodecomp: true },
     { name: 'mind_control_serum', components: '1x terrazine, 1x mind_numbing_agent', color: 0x00FFFF, iconSet: 'FLUID' },
-    { name: 'concentrated_dark_matter', components: '1x cesium, 1x water', color: 0x1A0033, iconSet: 'FLUID', noDecomp: true },
+    { name: 'concentrated_dark_matter', components: '1x caesium, 1x water', color: 0x1A0033, iconSet: 'FLUID', noDecomp: true },
 
     { name: 'activated_carbon_slurry', components: '1x activated_carbon, 1x zinc, 1x hydrochloric_acid', color: 0x1A1A1A, iconSet: 'DULL' },
     { name: 'water_stage_1', components: '1x water', color: 0x33A1DE, iconSet: 'FLUID' },
@@ -315,7 +315,7 @@ const fluids = [
     { name: 'water_stage_4', components: '1x water', color: 0x5F9EA0, iconSet: 'FLUID' },
     { name: 'water_stage_5', components: '1x water', color: 0xAFEEEE, iconSet: 'FLUID' },
     { name: 'water_stage_6', components: '1x water', color: 0x87CEEB, iconSet: 'FLUID' },
-    { name: 'polyaluminium_chloride', components: '1x chlorine, 1x aluminium', color: 0xCCCCCC, iconSet: 'DULL' },    
+    { name: 'polyaluminium_chloride', components: '1x chlorine, 1x aluminium', color: 0xCCCCCC, iconSet: 'DULL' },
     { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL', noDecomp: true },
     { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
     { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' },
@@ -327,6 +327,7 @@ const polymers = [
     { name: "chaos_plastic", color: 0x222222 },
     { name: "empowered_polymer", color: 0x647B82 },
     { name: 'fluorozirconic_composite', color: 0x4DD0E1, components: '1x zirconium, 6x fluorine, 2x carbon' },
+    { name: 'fifth_element', components: '1x elemental_water, 1x elemental_fire, 1x elemental_air, 1x elemental_earth', color: 0xFF6600 },
 ];
 
 const dusts = [
@@ -363,7 +364,7 @@ const dusts = [
     { name: 'soul_essence', color: 0x1A75FF, iconSet: 'SHINY' },
     { name: 'mind_numbing_agent', color: 0x00FFCC, iconSet: 'DULL' },
     { name: 'aluminium_hydroxide', color: 0xEEEEEE, iconSet: 'DULL', components: '1x aluminium, 3x oxygen, 3x hydrogen', formula: 'Al(OH)3' },
-    { name: 'picolinic_acid', color: 0x7E57C2, components: '6x carbon, 5x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C6H5NO2', iconSet: 'DULL' }    
+    { name: 'picolinic_acid', color: 0x7E57C2, components: '6x carbon, 5x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C6H5NO2', iconSet: 'DULL' }
 
 
 ];
@@ -381,7 +382,7 @@ const newOres = [
     { name: 'baddeleyite', components: '1x zirconium, 2x oxygen', color: 0x9999FF, iconSet: 'DULL', noDecomp: true },
     { name: 'rhenite', components: '1x rhenium, 2x sulfur', byproducts: ['rhenite', 'sulfur'], iconSet: 'METALLIC', color: 0x8A8A8A, noDecomp: true },
     //{ name: 'rheniite', components: '1x rhenium, 2x sulfur', byproducts: ['rheniite', 'rhenium'], iconSet: 'METALLIC', color: 0x505050, noDecomp: true },
-    { name: 'hellish', components: '1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x880808, noDecomp: true },
+    { name: 'hellish', components: '1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x880808 },
     { name: 'tenebrius', components: '3x tenebrium, 1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x101010, noDecomp: true },
     { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true },
 
@@ -401,7 +402,7 @@ const newOres = [
 
     // Rubidium
     { name: 'rubicline', components: '1x rubidium, 1x potassium, 1x aluminium, 3x silicon, 8x oxygen', byproducts: ['rubicline', 'rubidium'], iconSet: 'DULL', color: 0xF0C8DC, noDecomp: true },
-    
+
 
     // Thallium
     { name: 'lorandite', components: '1x thallium, 1x arsenic, 2x sulfur', byproducts: ['lorandite', 'thallium'], iconSet: 'METALLIC', color: 0xB22222, noDecomp: true },
@@ -414,19 +415,19 @@ const newOres = [
 
     // Gallium
     { name: 'gallite', components: '1x copper, 1x gallium, 2x sulfur', byproducts: ['gallite', 'gallium'], iconSet: 'METALLIC', color: 0xDCC8E6, noDecomp: true },
-    
+
 
     // Tantalum & Niobium
     { name: 'columbite_tantalite', components: '1x iron, 1x manganese, 2x niobium, 2x tantalum, 6x oxygen', byproducts: ['columbite_tantalite', 'niobium', 'tantalum'], iconSet: 'METALLIC', color: 0x3C3C46, noDecomp: true },
     { name: 'microlite', components: '2x calcium, 2x tantalum, 7x oxygen', byproducts: ['microlite', 'tantalum'], iconSet: 'METALLIC', color: 0x8C7850, noDecomp: true },
-    { name: 'wodginite', components: '1x manganese, 1x iron, 1x tin, 1x tantalum, 1x titanium, 1x niobium, 8x oxygen', byproducts: ['wodginite', 'tantalum', 'niobium'], iconSet: 'METALLIC', color: 0x463C34, noDecomp: true },    
+    { name: 'wodginite', components: '1x manganese, 1x iron, 1x tin, 1x tantalum, 1x titanium, 1x niobium, 8x oxygen', byproducts: ['wodginite', 'tantalum', 'niobium'], iconSet: 'METALLIC', color: 0x463C34, noDecomp: true },
     { name: 'fergusonite', components: '1x yttrium, 1x niobium, 4x oxygen', byproducts: ['fergusonite', 'yttrium', 'niobium'], iconSet: 'METALLIC', color: 0x3C3428, noDecomp: true },
 
     // Rhenium    
     { name: 'tarkianite', components: '1x copper, 4x rhenium, 4x molybdenum, 8x sulfur', byproducts: ['tarkianite', 'rhenium', 'molybdenum'], iconSet: 'METALLIC', color: 0x686868, noDecomp: true },
 
     // Strontium
-    { name: 'strontianite', components: '1x strontium, 1x carbon, 3x oxygen', byproducts: ['strontianite', 'strontium'], iconSet: 'DULL', color: 0xF0F0DC, noDecomp: true },    
+    { name: 'strontianite', components: '1x strontium, 1x carbon, 3x oxygen', byproducts: ['strontianite', 'strontium'], iconSet: 'DULL', color: 0xF0F0DC, noDecomp: true },
 
     // Samarium
     { name: 'samarskite', components: '1x yttrium, 1x cerium, 1x uranium, 1x iron, 2x niobium, 2x tantalum, 1x titanium, 8x oxygen', byproducts: ['samarskite', 'samarium', 'yttrium'], iconSet: 'METALLIC', color: 0x2C2418, noDecomp: true },
@@ -453,8 +454,8 @@ const newOres = [
     { name: 'thorianite', components: '1x thorium, 2x oxygen', byproducts: ['thorianite', 'thorium'], iconSet: 'METALLIC', color: 0x1C1C1C, noDecomp: true },
     { name: 'thorite', components: '1x thorium, 1x silicon, 4x oxygen', byproducts: ['thorite', 'thorium'], iconSet: 'DULL', color: 0x3C3428, noDecomp: true },
 
-    // Cesium    
-    { name: 'rhodizite', components: '1x cesium, 1x potassium, 4x aluminium, 4x beryllium, 11x boron, 28x oxygen', byproducts: ['rhodizite', 'cesium'], iconSet: 'GEM_VERTICAL', color: 0xF0F0E0, noDecomp: true },
+    // Caesium    
+    { name: 'rhodizite', components: '1x caesium, 1x potassium, 4x aluminium, 4x beryllium, 11x boron, 28x oxygen', byproducts: ['rhodizite', 'caesium'], iconSet: 'GEM_VERTICAL', color: 0xF0F0E0, noDecomp: true },
 
     // Lanthanum
     { name: 'lanthanite', components: '2x lanthanum, 3x carbon, 9x oxygen', byproducts: ['lanthanite', 'lanthanum'], iconSet: 'DULL', color: 0xD8D8C0, noDecomp: true },
@@ -498,40 +499,9 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         return GasTier.HIGHEST;                       // UEV+
     };
 
-    dusts.forEach(mat => {
-        let materialBuilder = event.create(mat.name)
-            .dust()
-            .color(mat.color)
-            .iconSet(GTMaterialIconSet[mat.iconSet || 'METALLIC']);
-        if (mat.fluid) {
-            materialBuilder.fluid()
-        }
-        if (mat.components) {
-            materialBuilder.components(mat.components.split(', '))
-        }
-        if (mat.formula) { materialBuilder.formula(mat.formula) }
-        if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
-    });
+    
 
-    newOres.forEach(mat => {
-        let materialBuilder = event.create(mat.name)
-            .dust()
-            .ore(2, 1)
-            .color(mat.color)
-            .iconSet(GTMaterialIconSet[mat.iconSet || 'METALLIC'])
-
-        if (mat.fluid) {
-            materialBuilder.fluid()
-        }
-
-        if (mat.components) {
-            let parts = mat.components.split(', ');
-            materialBuilder.components(parts);
-        }
-
-        if (mat.formula) { materialBuilder.formula(mat.formula) }
-        if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
-    });
+    
 
     gasses.forEach(mat => {
         let materialBuilder = event.create(mat.name)
@@ -547,23 +517,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         }
         if (mat.formula) { materialBuilder.formula(mat.formula) }
         if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
-    });
+    });   
 
-    fluids.forEach(mat => {
-        let materialBuilder = event.create(mat.name)
-            // @ts-ignore               
-            .fluid()
-            .color(mat.color)
-            .iconSet(GTMaterialIconSet[mat.iconSet || GTMaterialIconSet.FLUID])
-        if (mat.components) {
-            let parts = mat.components.split(', ');
-            materialBuilder.components(parts);
-        }
-        if (mat.formula) { materialBuilder.formula(mat.formula) }
-        if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
-    });
-
-    
     chalks.forEach(chalk => {
         let materialBuilder = event.create(chalk.name)
             // @ts-ignore               
@@ -571,10 +526,38 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             .gem()
             .color(chalk.color)
             .iconSet(GTMaterialIconSet[chalk.iconSet || 'FLUID'])
-            .flags(                
+            .flags(
                 GTMaterialFlags.DISABLE_DECOMPOSITION,
-                GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES)                
+                GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES)
     });
+
+    event.create("elemental_fire")
+        .color(0xD55642)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+    
+    event.create("elemental_water")
+        .color(0xB7B5ED)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+    
+    event.create("elemental_air")
+        .color(0xE3E3BF)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+    
+    event.create("elemental_earth")
+        .color(0x289C2B)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
 
     let materialBuilder
 
@@ -650,7 +633,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
 
-    event.create('thorn_rose_dust')
+    event.create('thorn_rose')
         .dust()
         .color('0xAB3236')
         .iconSet(GTMaterialIconSet.WOOD)
@@ -666,26 +649,26 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.DULL)
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.DISABLE_DECOMPOSITION);
 
-    
+
     materialBuilder = event.create('blue_ice')
         .dust()
         .fluid()
         .color('0x739BD0')
-        .iconSet(GTMaterialIconSet.GLASS)        
+        .iconSet(GTMaterialIconSet.GLASS)
 
     materialBuilder = event.create('packed_ice')
         .dust()
         .fluid()
         .color('0xA5C2F5')
-        .iconSet(GTMaterialIconSet.GLASS)        
-    
+        .iconSet(GTMaterialIconSet.GLASS)
+
     materialBuilder = event.create('rotten_flesh')
         .fluid()
         .color('0x934537')
         .polymer()
-        .iconSet(GTMaterialIconSet.FLUID)        
-    
-    materialBuilder = event.create('recycled_organic_matter')        
+        .iconSet(GTMaterialIconSet.FLUID)
+
+    materialBuilder = event.create('recycled_organic_matter')
         .fluid()
         .color('0x6E6259')
         .iconSet(GTMaterialIconSet.FLUID);
@@ -708,13 +691,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     materialsGem.forEach(mat => {
         let materialBuilder = event.create(mat.name)
-        .gem()
-        .dust()
-        .fluid()
-        .color(mat.color)
-        .iconSet(GTMaterialIconSet[mat.iconSet])
 
-        if (mat.element) { materialBuilder.element(mat.element) }   
+            .dust()
+            .fluid()
+            .color(mat.color)
+            .iconSet(GTMaterialIconSet[mat.iconSet])
+
+        if (mat.element) { materialBuilder.element(mat.element) }
         if (mat.voltage && mat.voltage > 0) { materialBuilder.cableProperties(getVoltage(mat.voltage), 1, mat.loss || 0, mat.superconductor || false) }
         if (mat.components) {
             let parts = mat.components.split(', ')
@@ -723,6 +706,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         if (mat.formula) { materialBuilder.formula(mat.formula) }
         if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION) }
         if (mat.simple) {
+            materialBuilder.gem()
             materialBuilder.flags(
                 GTMaterialFlags.GENERATE_PLATE,
                 GTMaterialFlags.GENERATE_LENS,
@@ -730,7 +714,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 CMMEMaterialFlags.GENERATE_SINGULARITY
             );
         }
-        else {                     
+        else {
+            materialBuilder.ingot()
             materialBuilder.flags(
                 GTMaterialFlags.GENERATE_FOIL,
                 GTMaterialFlags.GENERATE_RING,
@@ -746,7 +731,6 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_SMALL_GEAR,
                 GTMaterialFlags.GENERATE_BOLT_SCREW,
                 GTMaterialFlags.GENERATE_FRAME,
-                GTMaterialFlags.GENERATE_LENS,
                 // @ts-ignore
                 CMMEMaterialFlags.GENERATE_SINGULARITY
             );
@@ -791,7 +775,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_GEAR,
                 GTMaterialFlags.GENERATE_SMALL_GEAR,
                 GTMaterialFlags.GENERATE_BOLT_SCREW,
-                GTMaterialFlags.GENERATE_FRAME,                
+                GTMaterialFlags.GENERATE_FRAME,
                 // @ts-ignore
                 CMMEMaterialFlags.GENERATE_SINGULARITY
             )
@@ -899,7 +883,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         modifyElement(material, mat.name, mat.cBlast, mat.cVolt, mat.oGem, mat.cPolymer, mat.cIngot)
     });
 
-        
+
 
     const glycerol = GTMaterials.get('glycerol');
     //glycerol.setProperty(PropertyKey.DUST, new DustProperty());      
@@ -952,7 +936,6 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                     GTMaterialFlags.GENERATE_LONG_ROD,
                     GTMaterialFlags.IS_MAGNETIC
                 );
-            //materialBuilder.polarizesInto(`magnetic_${mat.name}`);
         }
 
 
@@ -1004,6 +987,77 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     });
 
     //making changes here
+    
+
+    let samCoBuilder = event.create('samarium_cobalt')
+        .dust()
+        .ingot()
+        .fluid()
+        .color(0x8C7B4A)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .formula('SmCo5')
+        //.components('1x samarium, 5x cobalt')
+        .flags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.DISABLE_DECOMPOSITION);
+
+
+    // Magnetic variant - same forms, same flags + IS_MAGNETIC
+    event.create('magnetic_samarium_cobalt')
+        .dust()
+        .ingot()
+        .fluid()
+        .color(0x8C7B4A)
+        .iconSet(GTMaterialIconSet['MAGNETIC'])
+        .flags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.IS_MAGNETIC, GTMaterialFlags.DISABLE_DECOMPOSITION);
+
+    newOres.forEach(mat => {
+        let materialBuilder = event.create(mat.name)
+            .dust()
+            .ore(2, 1)
+            .color(mat.color)
+            .iconSet(GTMaterialIconSet[mat.iconSet || 'METALLIC'])
+
+        if (mat.fluid) {
+            materialBuilder.fluid()
+        }
+
+        if (mat.components) {
+            let parts = mat.components.split(', ');
+            materialBuilder.components(parts);
+        }
+
+        if (mat.formula) { materialBuilder.formula(mat.formula) }
+        if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
+    });
+
+    dusts.forEach(mat => {
+        let materialBuilder = event.create(mat.name)
+            .dust()
+            .color(mat.color)
+            .iconSet(GTMaterialIconSet[mat.iconSet || 'METALLIC']);
+        if (mat.fluid) {
+            materialBuilder.fluid()
+        }
+        if (mat.components) {
+            materialBuilder.components(mat.components.split(', '))
+        }
+        if (mat.formula) { materialBuilder.formula(mat.formula) }
+        if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
+    });
+
+    fluids.forEach(mat => {
+        let materialBuilder = event.create(mat.name)
+            // @ts-ignore               
+            .fluid()
+            .color(mat.color)
+            .iconSet(GTMaterialIconSet[mat.iconSet || GTMaterialIconSet.FLUID])
+        if (mat.components) {
+            let parts = mat.components.split(', ');
+            materialBuilder.components(parts);
+        }
+        if (mat.formula) { materialBuilder.formula(mat.formula) }
+        if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
+    });
+
     polymers.forEach(mat => {
         let materialBuilder = event.create(mat.name)
             // @ts-ignore            
@@ -1015,7 +1069,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             .flags(
                 GTMaterialFlags.GENERATE_PLATE,
                 GTMaterialFlags.GENERATE_FOIL,
-                GTMaterialFlags.GENERATE_RING                
+                GTMaterialFlags.GENERATE_RING
             )
         if (mat.components) {
             let parts = mat.components.split(', ');
@@ -1023,26 +1077,6 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         }
         //if (mat.formula) { materialBuilder.formula(mat.formula) }
     });
-
-    let samCoBuilder = event.create('samarium_cobalt')
-        .dust()
-        .ingot()
-        .fluid()
-        .color(0x8C7B4A)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .formula('SmCo5')        
-        //.components('1x samarium, 5x cobalt')
-        .flags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.DISABLE_DECOMPOSITION);
-
-
-    // Magnetic variant - same forms, same flags + IS_MAGNETIC
-    event.create('magnetic_samarium_cobalt')
-        .dust()
-        .ingot()
-        .fluid()
-        .color(0x8C7B4A)        
-        .iconSet(GTMaterialIconSet['MAGNETIC'])
-        .flags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.IS_MAGNETIC, GTMaterialFlags.DISABLE_DECOMPOSITION);    
 });
 
 
@@ -1072,21 +1106,21 @@ StartupEvents.registry('block', event => {
     ];
     const coils = [
         //'draconium', 'wyvern', 'draconic', 'chaotic'
-        {name: 'draconium', displayName: 'Draconium Casing'},
-        {name: 'wyvern', displayName: 'Wyvern Casing'},
-        {name: 'draconic', displayName: 'Draconic Casing'},
-        {name: 'chaotic', displayName: 'Chaotic Casing'},
-        
+        { name: 'draconium', displayName: 'Draconium Casing' },
+        { name: 'wyvern', displayName: 'Wyvern Casing' },
+        { name: 'draconic', displayName: 'Draconic Casing' },
+        { name: 'chaotic', displayName: 'Chaotic Casing' },
+
     ]
 
     coils.forEach(coil => {
-         let block = event.create(`gtceu:${coil.name}_casing`)
+        let block = event.create(`gtceu:${coil.name}_casing`)
             // @ts-ignore
-            .displayName(coil.displayName)            
+            .displayName(coil.displayName)
             .textureAll(`gtceu:block/casings/${coil.name}_casing/${coil.name}_casing`)
             .hardness(5.0)
             .resistance(10.0)
-            .soundType('metal')            
+            .soundType('metal')
             .tagBlock('gtceu:casings');
     });
 
@@ -1112,8 +1146,9 @@ StartupEvents.registry('block', event => {
             block.lightLevel(casing.light); // 1.0 is max brightness
         }
     });
-        
 
+
+    
 });
 
 
@@ -1125,7 +1160,7 @@ StartupEvents.postInit(event => {
         TagPrefix.plate.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_plate`)
         TagPrefix.block.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_block`)
     });
-    
+
 
     // extreme reactors
     erMaterials.forEach(mat => {
@@ -1151,7 +1186,7 @@ StartupEvents.postInit(event => {
         }
     });
 
-        
+
     otherElements.forEach(mat => {
         let gtMat = GTMaterials.get(mat.name);
         if (gtMat && mat.oItems) {
@@ -1161,7 +1196,7 @@ StartupEvents.postInit(event => {
                 }
             });
         }
-    });    
+    });
 
     //unification
     unification.forEach(mat => {
@@ -1174,7 +1209,7 @@ StartupEvents.postInit(event => {
             });
         }
     });
-    
+
 
     dusts.forEach(mat => {
         let gtMat = GTMaterials.get(mat.name);
@@ -1203,7 +1238,7 @@ StartupEvents.postInit(event => {
         TagPrefix.gem.setIgnored(GTMaterials.get(chalk.name), gem);
     });
 
-    
+
 
     // Block
     TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
@@ -1217,10 +1252,10 @@ StartupEvents.postInit(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');        
+    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
-    TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
+    TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');    
 
     // Gear
     TagPrefix.gear.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_gear');
@@ -1251,6 +1286,7 @@ StartupEvents.postInit(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
+    TagPrefix.ingot.setIgnored(GTMaterials.get('plastic'), 'industrialforegoing:plastic');
 
     // Nugget
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
@@ -1261,6 +1297,8 @@ StartupEvents.postInit(event => {
 
     // Polymer
     TagPrefix.foil.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
+
+
 });
 
 
@@ -1277,7 +1315,7 @@ GTCEuStartupEvents.materialModification(event => {
         TagPrefix.nugget.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_nugget`)
         TagPrefix.plate.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_plate`)
         TagPrefix.block.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_block`)
-    });   
+    });
 
     // extreme reactors
     erMaterials.forEach(mat => {
@@ -1290,7 +1328,7 @@ GTCEuStartupEvents.materialModification(event => {
             });
         }
     });
-    
+
     unification.forEach(mat => {
         let gtMat = GTMaterials.get(mat.name);
         if (gtMat && mat.oItems) {
@@ -1301,7 +1339,7 @@ GTCEuStartupEvents.materialModification(event => {
             });
         }
     });
-    
+
     //mekanism
     mekanism.forEach(mat => {
         let gtMat = GTMaterials.get(mat.name);
@@ -1323,14 +1361,14 @@ GTCEuStartupEvents.materialModification(event => {
                 }
             });
         }
-    }); 
+    });
 
     chalks.forEach(chalk => {
         const color = chalk.name.replace('_chalk', '');
         const gem = `occultism:chalk_${color}`;
         TagPrefix.gem.setIgnored(GTMaterials.get(chalk.name), gem);
     });
-            
+
     // Block
     TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
     TagPrefix.block.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_block');
@@ -1343,7 +1381,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');        
+    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
@@ -1376,7 +1414,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged' );
+    TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
 
     // Nugget
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
@@ -1384,8 +1422,8 @@ GTCEuStartupEvents.materialModification(event => {
 
     // Rod
     TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod');
-    
-    
+
+
     // Polymer
     TagPrefix.foil.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
 
@@ -1419,8 +1457,8 @@ GTCEuStartupEvents.materialModification(event => {
     let osmiridium = GTMaterials.get('osmiridium');
     let netherstar = GTMaterials.get('nether_star')
     let etrium = GTMaterials.get('etrium');
-        
-    
+
+
 
     let javaList = new ArrayList();
     javaList.add(GTMaterials.get('ruthenium'));
@@ -1429,18 +1467,12 @@ GTCEuStartupEvents.materialModification(event => {
     ore_prop['setOreByProducts(java.util.Collection)'](javaList);
 
     osmiridium.setProperty(PropertyKey.ORE, ore_prop);
-    
+
     netherstar.setProperty(PropertyKey.ORE, new OreProperty());
     etrium.setProperty(PropertyKey.ORE, new OreProperty());
-
-    GTMaterials.get('samarium_cobalt').polarizesInto('magnetic_samarium_cobalt')
-    GTMaterials.get('eternium').polarizesInto('magnetic_eternium')
-
-    
-
 });
 
- const dimensions = [
+const dimensions = [
     { name: 'bloodmagic:dungeon', displayName: 'Blood Dungeon', icon: 'ad_astra:moon_globe', tier: 4 },
     { name: 'allthemodium:mining', displayName: 'Mining Dimension', icon: 'allthetweaks:atm_star', tier: 0 },
     { name: 'deeperdarker:otherside', displayName: 'Deeper Darker', icon: 'minecraft:bedrock', tier: 0 },

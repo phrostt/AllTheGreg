@@ -4,7 +4,7 @@ ServerEvents.recipes(allthemods => {
     const baseMaterial = 'eternium';
     const magneticMaterial = 'magnetic_eternium';
     
-    components.forEach(type => {        
+    /*components.forEach(type => {        
         let recipeId = `gregification:polarize_${baseMaterial}_${type}`;
         allthemods.recipes.gtceu.polarizer(recipeId)
             .itemInputs(`gtceu:${baseMaterial}_${type}`)
@@ -21,37 +21,7 @@ ServerEvents.recipes(allthemods => {
             .itemOutputs(`gtceu:${m[0]}_${magneticMaterial}_${m[1]}`)            
             .duration(150)
             .EUt(524288);
-    });
+    });*/
 
-    /*  allthemods.recipes.gtceu.polarizer('magnetize_eternium_long_rod')
-            .itemInputs('gtceu:long_eternium_rod')
-            .itemOutputs('gtceu:long_magnetic_eternium_rod')
-            .duration(150)
-            .EUt(524288)
-
-
-        allthemods.recipes.gtceu.polarizer('magnetize_eternium_ingot')
-            .itemInputs('gtceu:eternium_ingot')
-            .itemOutputs('gtceu:magnetic_eternium_ingot')
-            .duration(150)
-            .EUt(524288)
     
-        allthemods.recipes.gtceu.polarizer('magnetize_eternium_rod')
-            .itemInputs('gtceu:eternium_rod')
-            .itemOutputs('gtceu:magnetic_eternium_rod')
-            .duration(150)
-            .EUt(524288)
-    
-        allthemods.recipes.gtceu.polarizer('magnetize_eternium_long_rod')
-            .itemInputs('gtceu:long_eternium_rod')
-            .itemOutputs('gtceu:long_magnetic_eternium_rod')
-            .duration(150)
-            .EUt(524288)
-    
-        allthemods.recipes.gtceu.polarizer('magnetize_eternium_dust')
-            .itemInputs('gtceu:eternium_dust')
-            .itemOutputs('gtceu:magnetic_eternium_dust')
-            .duration(150)
-            .EUt(524288)*/
 });
-//baseMetal.getProperty(PropertyKey.INGOT).setMagneicMaterial(magneticMetal); 

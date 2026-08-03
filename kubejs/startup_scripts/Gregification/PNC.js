@@ -19,6 +19,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('industrial_pressure_chamber') 
         .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()            
 			.aisle('CCCCC', 'CCCCC', 'GGGGG', 'CCCCC', 'CCCCC')            
             .aisle('CCCCC', 'COOOC', 'G   G', 'COOOC', 'CCCCC')

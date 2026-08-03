@@ -37,6 +37,19 @@ ServerEvents.recipes(event => {
         },
         weight: 20
     }).id(`occultism:eldritch_miner_mining_dim_core`)
+
+    event.custom({
+        type: 'occultism:miner',
+        ingredient: {
+            item: 'occultism:miner_ancient_eldritch'
+        },
+        result: {
+            item: 'gtceu:element_blank'
+        },
+        weight: 20
+    }).id(`gtceu:element_blank`)
+    
+    
     event.custom({
         type: 'occultism:miner',
         ingredient: {

@@ -606,6 +606,21 @@ ServerEvents.recipes(allthemods => {
         8192, 600
     );
 
+    addAssembler(
+        [
+            '4x pneumaticcraft:turbine_rotor',
+            '#forge:frames/plastic',
+            '2x #gtceu:circuits/iv',
+            'gtceu:titanium_crate',
+            '4x #forge:gears/plastic'
+        ],
+        [
+            '#forge:lubricant 4000'            
+        ],
+        'pneumaticcraft:collector_drone',
+        8192, 600
+    );
+
     //conduits
     const conduits = [
         { conduit: "energy", material: "gtceu:conductive_alloy_double_wire" },

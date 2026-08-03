@@ -1,0 +1,90 @@
+
+GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
+    allthemods.create('drone_station')
+        .category('drone_station')
+        .setEUIO('in') // Machine takes power IN
+        .setMaxIOSize(6, 6, 6, 6) // Item In, Item Out, Fluid In, Fluid Out
+        .setProgressBar(GuiTextures.COMPRESSOR_OVERLAY, FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.SCIENCE)
+    
+    allthemods.create('magnetic_containment_chamber')
+        .category('magnetic_containment_chamber')
+        .setEUIO('in') // Machine takes power IN
+        .setMaxIOSize(6, 6, 6, 6) // Item In, Item Out, Fluid In, Fluid Out
+        .setProgressBar(GuiTextures.COMPRESSOR_OVERLAY, FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.SCIENCE)
+})
+
+GTCEuStartupEvents.registry('gtceu:machine', allthemods => {    
+    allthemods.create('drone_station', 'multiblock')   
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('drone_station')
+        .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .pattern(definition => FactoryBlockPattern.start()            
+			.aisle('FCEMECF', 'FCCHCCF', 'FCCCCCF', 'FCCCCCF', 'CCCCCCC')
+            .aisle(' CCCCC ', ' C   C ', ' C   C ', 'CCCCCCC', 'C     C')
+            .aisle(' CCCCC ', ' C   C ', ' C   C ', 'CCCCCCC', 'C  D  C')
+            .aisle(' CCCCC ', ' C   C ', ' C   C ', 'CCCCCCC', 'C     C')
+            .aisle('FCCCCCF', 'FCCKCCF', 'FCCCCCF', 'FCCCCCF', 'CCCCCCC')            
+            .where('H', Predicates.abilities(PartAbility.PARALLEL_HATCH).setExactLimit(1))
+            .where('E', Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
+            .where('M', Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))            
+            .where('D', Predicates.blocks('gtceu:tungsten_steel_crate'))      
+            .where('F', Predicates.blocks('gtceu:gaia_frame'))      
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))                                                                        
+            .where('C', Predicates.blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get())                    
+                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
+                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1))
+                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(1))
+                .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1))				                
+			)
+            .where(' ', Predicates.air()) 
+            .build()
+        )
+		.workableCasingModel(
+            'gtceu:block/casings/solid/machine_casing_robust_tungstensteel',
+            'gtceu:block/multiblock/large_chemical_reactor'
+        )				
+		
+    
+    allthemods.create('magnetic_containment_chamber', 'multiblock')   
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('magnetic_containment_chamber')
+        .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .pattern(definition => FactoryBlockPattern.start()                                            
+            .aisle('               ', '      MCH      ', '               ')
+            .aisle('      SSS      ', '    CC   CC    ', '      SSS      ')
+            .aisle('    CC   CC    ', '   C  CCC  C   ', '    CC   CC    ')
+            .aisle('   C       C   ', '  C CC   CC C  ', '   C       C   ')
+            .aisle('  C         C  ', ' C C       C C ', '  C         C  ')
+            .aisle('  C         C  ', ' C C       C C ', '  C         C  ')
+            .aisle(' S           S ', 'C C         C C', ' S           S ')    
+            .aisle(' S           S ', 'C C         C C', ' S           S ')
+            .aisle(' S           S ', 'C C         C C', ' S           S ')
+            .aisle('  C         C  ', ' C C       C C ', '  C         C  ')
+            .aisle('  C         C  ', ' C C       C C ', '  C         C  ')
+            .aisle('   C       C   ', '  C CC   CC C  ', '   C       C   ')
+            .aisle('    CC   CC    ', '   C  CCC  C   ', '    CC   CC    ')
+            .aisle('      SSS      ', '    CC   CC    ', '      SSS      ')
+            .aisle('               ', '      EKE      ', '               ')            
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))                                                                        
+            .where('H', Predicates.abilities(PartAbility.PARALLEL_HATCH).setExactLimit(1))
+            .where('E', Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
+            .where('M', Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))            
+            .where('S', Predicates.blocks('gtceu:superconducting_coil'))
+            .where('C', Predicates.blocks(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get())       			                
+                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1))
+                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1))
+                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(1))
+                .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1))				                
+			)
+            .where(' ', Predicates.air()) 
+            .build()
+        )
+		.workableCasingModel(
+            'gtceu:block/casings/solid/machine_casing_robust_tungstensteel',
+            'gtceu:block/multiblock/fusion_reactor'
+        )		    
+})

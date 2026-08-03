@@ -23,7 +23,7 @@ allthemods.recipes.gtceu.large_chemical_reactor('gregification:poison_agent_synt
 
 
 allthemods.recipes.gtceu.large_chemical_reactor('gregification:paralytic_agent_synthesis')
-        .itemInputs('gtceu:thorn_rose_dust_dust')
+        .itemInputs('gtceu:thorn_rose_dust')
         .inputFluids('gtceu:poison_agent 1000')
         .outputFluids('gtceu:paralytic_agent 1000')
         .duration(1600)

@@ -18,37 +18,38 @@ ServerEvents.recipes(allthemods => {
     };    
     const blackHole = (inputs, fluidIn, outputs, fluidOut, eu, duration, customID, program) => {
 
-        let id;
+    let id;
 
-        if (customID) {
-            id = `gregification:black_hole/${customID}`;
-        } else {
-            let firstOutput = Array.isArray(outputs) ? outputs[0] : outputs;
-            let outputName = firstOutput.toString()
-                .replace(/^\d+[x ]\s*/, '')
-                .split(':').pop()
-                .replace(/[^a-zA-Z0-9_]/g, '_')
-                .toLowerCase();
-            id = `gregification:black_hole/${outputName}`;
-        }
-        
-        let recipe = allthemods.recipes.gtceu.black_hole(id)
-            .itemInputs(inputs)
-            .itemOutputs(outputs)
-            .duration(duration)
-            .EUt(eu);
+    if (customID) {
+        id = `gregification:black_hole/${customID}`;
+    } else {
+        let firstOutput = Array.isArray(outputs) ? outputs[0] : outputs;
+        let outputName = firstOutput.toString()
+            .replace(/^\d+[x ]\s*/, '')
+            .split(':').pop()
+            .replace(/[^a-zA-Z0-9_]/g, '_')
+            .toLowerCase();
+        id = `gregification:black_hole/${outputName}`;
+    }
 
-        if (fluidIn && fluidIn.length > 0) {
-            recipe.inputFluids(fluidIn);
-        }
+    let recipe = allthemods.recipes.gtceu.black_hole(id)
+        .itemInputs(inputs)
+        .duration(duration)
+        .EUt(eu);
 
-        if (fluidOut && fluidOut.length > 0) {
-            recipe.outputFluids(fluidOut);
-        }
-        if (program) {
-            recipe.circuit(program);
-        }        
-    };
+    if (outputs && outputs.length > 0) {
+        recipe.itemOutputs(outputs);
+    }
+    if (fluidIn && fluidIn.length > 0) {
+        recipe.inputFluids(fluidIn);
+    }
+    if (fluidOut && fluidOut.length > 0) {
+        recipe.outputFluids(fluidOut);
+    }
+    if (program) {
+        recipe.circuit(program);
+    }
+};
 
     const addAssemblyLine = (output, inputs, fluids, duration, eu, researchItem, CWUt) => {
 
@@ -108,7 +109,7 @@ ServerEvents.recipes(allthemods => {
     
              
 
-    singularityGems.forEach(mat=>{
+    /*singularityGems.forEach(mat=>{
         let input = `64000x #forge:gems/${mat}`
         //blackHole(input, '#forge:concentrated_dark_matter 1000', `gtceu:${mat}_singularity`,null,8388608, 1200)
     })
@@ -116,7 +117,7 @@ ServerEvents.recipes(allthemods => {
     singularityIngots.forEach(mat=>{
         let input = `64000x #forge:ingots/${mat}`        
         //blackHole(input, '#forge:concentrated_dark_matter 1000', `gtceu:${mat}_singularity`,null,8388608, 1200)
-    })
+    })*/
     
     addAssemblyLine(
         'gtceu:black_hole',
@@ -138,4 +139,11 @@ ServerEvents.recipes(allthemods => {
         64
     )
     blackHole(['allthecompressed:cobblestone_6x', '#forge:frames/alfsteel'],'#forge:concentrated_dark_matter 1', 'gtceu:small_bedrockium_dust', null, 2097152, 1200, 'bedrockium_compression')
+
+    blackHole('64000x #elementalcraft:shards/fire','#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 1200, 'fire_singularity')
+    blackHole('64000x #elementalcraft:shards/air','#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 1200, 'air_singularity')
+    blackHole('64000x #elementalcraft:shards/earth','#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 1200, 'earth_singularity')
+    blackHole('64000x #elementalcraft:shards/water','#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 1200, 'water_singularity')
+
+    blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:purest_water 32000000' , null, 'gtceu:fifth_element 14400', 524288, 1200, 'fifth_element')
 })
