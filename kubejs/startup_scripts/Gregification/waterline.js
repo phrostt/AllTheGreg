@@ -132,7 +132,6 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             .build()
         )
         .workableCasingModel('gtceu:block/casings/solid/machine_casing_stable_titanium', 'gtceu:block/multiblock/large_chemical_reactor')
-
         
    allthemods.create('flocculation_plant', 'multiblock')
             .rotationState(RotationState.NON_Y_AXIS)
@@ -190,6 +189,23 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()            
+            .aisle('K')
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
+            .where(' ', Predicates.air())
+            .build()
+        )
+        .workableCasingModel('gtceu:block/casings/solid/machine_casing_stable_titanium', 'gtceu:block/multiblock/large_chemical_reactor')
+
+
+    
+    
+
+    allthemods.create('microbial_filtration_array', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('microbial_filtration_array')
+        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .pattern(definition => FactoryBlockPattern.start()
             .aisle('K')
             .where('K', Predicates.controller(Predicates.blocks(definition.get())))
             .where(' ', Predicates.air())
