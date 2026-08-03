@@ -112,7 +112,12 @@ ServerEvents.recipes(allthemods => {
     }
 
     //////////////// machine controllers ////////////////
-    allthemods.shaped('gtceu:apiary_i', ['BAB', 'ACA', 'WSW'],
+    allthemods.shaped('gtceu:apiary_i', 
+        [
+            'BAB', 
+            'ACA', 
+            'WSW'
+        ],
         {
             A: '#gtceu:circuits/mv',
             W: 'gtceu:gold_single_cable',
