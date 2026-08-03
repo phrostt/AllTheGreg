@@ -183,20 +183,6 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .workableCasingModel('gtceu:block/casings/solid/machine_casing_robust_tungstensteel', 'gtceu:block/multiblock/large_engraving_laser')
     
 
-    allthemods.create('microbial_filtration_array', 'multiblock')
-        .rotationState(RotationState.NON_Y_AXIS)
-        .recipeType('microbial_filtration_array')
-        .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
-        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
-        .pattern(definition => FactoryBlockPattern.start()            
-            .aisle('K')
-            .where('K', Predicates.controller(Predicates.blocks(definition.get())))
-            .where(' ', Predicates.air())
-            .build()
-        )
-        .workableCasingModel('gtceu:block/casings/solid/machine_casing_stable_titanium', 'gtceu:block/multiblock/large_chemical_reactor')
-
-
     
     
 

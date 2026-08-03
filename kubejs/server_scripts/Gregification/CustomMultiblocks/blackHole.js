@@ -145,5 +145,5 @@ ServerEvents.recipes(allthemods => {
     blackHole('64000x #elementalcraft:shards/earth','#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 1200, 'earth_singularity')
     blackHole('64000x #elementalcraft:shards/water','#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 1200, 'water_singularity')
 
-    blackHole(['gtceu:elemental_fire_singularity','gtceu:elemental_water_singularity','gtceu:elemental_earth_singularity','gtceu:elemental_air_singularity'],'#forge:purest_water 32000000' , null, 'gtceu:fifth_element 14400', 524288, 1200, 'fifth_element')
+    blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:purest_water 32000000' , null, 'gtceu:fifth_element 14400', 524288, 1200, 'fifth_element')
 })
