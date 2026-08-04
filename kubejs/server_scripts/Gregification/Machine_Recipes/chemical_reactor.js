@@ -88,10 +88,11 @@ ServerEvents.recipes(allthemods => {
     addChemical('gtceu:empowered_seed', 'gtceu:crystallized_oil 1000', null, 'gtceu:empowered_oil 1000', 'EV', 600, 'empowered_seed_oil')
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:saturated_life_fertilizer')
-        .inputFluids('gtceu:liquid_fertilizer 250','gtceu:sanguine_concentrate 250')
-        .outputFluids('gtceu:saturated_life_fertilizer 500')
+        .itemInputs('#forge:dusts/picolinic_acid')
+        .inputFluids('gtceu:liquid_fertilizer 500','gtceu:sanguine_concentrate 500')
+        .outputFluids('gtceu:saturated_life_fertilizer 1000')
         .duration(100)
-        .EUt(512);
+        .EUt(512);    
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:recycled_organic_matter')
         .inputFluids('gtceu:rotten_flesh 1000','#forge:meat 1000', 'gtceu:water_stage_2 1000')

@@ -314,9 +314,9 @@ const fluids = [
     { name: 'water_stage_3', components: '1x water', color: 0x4682B4, iconSet: 'FLUID' },
     { name: 'water_stage_4', components: '1x water', color: 0x5F9EA0, iconSet: 'FLUID' },
     { name: 'water_stage_5', components: '1x water', color: 0xAFEEEE, iconSet: 'FLUID' },
-    { name: 'water_stage_6', components: '1x water', color: 0x87CEEB, iconSet: 'FLUID' },
-    { name: 'polyaluminium_chloride', components: '1x chlorine, 1x aluminium', color: 0xCCCCCC, iconSet: 'DULL' },
-    { name: 'spent_flocculant_slurry', components: '1x chlorine, 1x aluminium', color: 0x555555, iconSet: 'DULL', noDecomp: true },
+    { name: 'water_stage_6', components: '1x water', color: 0x87CEEB, iconSet: 'FLUID' },    
+    { name: 'polyaluminium_chloride', components: '2x aluminium_hydroxide, 3x hydrochloric_acid', color: 0xCCCCCC, iconSet: 'DULL', formula: 'Al2(OH)3Cl3', noDecomp: true },
+    { name: 'spent_flocculant_slurry', components: '1x polyaluminium_chloride', color: 0x555555, iconSet: 'DULL', noDecomp: true },
     { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
     { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' },
     { name: 'inert_gas_mixture', color: 0x8899A6, iconSet: 'FLUID' },
@@ -665,7 +665,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     materialBuilder = event.create('rotten_flesh')
         .fluid()
         .color('0x934537')
-        .polymer()
+        .ingot()
         .iconSet(GTMaterialIconSet.FLUID)
 
     materialBuilder = event.create('recycled_organic_matter')
@@ -1287,6 +1287,7 @@ StartupEvents.postInit(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
     TagPrefix.ingot.setIgnored(GTMaterials.get('plastic'), 'industrialforegoing:plastic');
+    TagPrefix.ingot.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
 
     // Nugget
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
@@ -1296,7 +1297,7 @@ StartupEvents.postInit(event => {
     TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod')
 
     // Polymer
-    TagPrefix.foil.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
+    
 
 
 });
@@ -1410,6 +1411,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:ingot_iron_compressed');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:ingot_hop_graphite');
     TagPrefix.ingot.setIgnored(GTMaterials.get('pink_slime'), 'industrialforegoing:pink_slime_ingot');
+    TagPrefix.ingot.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
     //TagPrefix.ingot.setIgnored(GTMaterials.get('deorum'), 'forbidden_arcanus:deorum_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
@@ -1425,7 +1427,7 @@ GTCEuStartupEvents.materialModification(event => {
 
 
     // Polymer
-    TagPrefix.foil.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
+    
 
     //ore biproducts
     newOres.forEach(mat => {

@@ -73,7 +73,8 @@ ServerEvents.recipes(allthemods => {
                 ingredient = catalyst.withCount(4);
             }
         }
-        let water = Fluid.of(`gtceu:water_stage_1`, tKey * 1000);
+        //let water = Fluid.of(`gtceu:water_stage_1`, tKey * 1000);
+        let water = Fluid.of(`gtceu:water_stage_${tKey}`, 1000);
         let fluids = [Fluid.of('gtceu:saturated_tau', 2000),Fluid.of('gtceu:saturated_life_fertilizer', 2000), water]
 
         // --- STEP 4: Register Recipe ---

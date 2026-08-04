@@ -32,6 +32,24 @@ ServerEvents.recipes(allthemods => {
         .duration(duration*.8)
         .EUt(EUStage3);
 
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:polyaluminium_chloride')
+        .itemInputs('2x #forge:dusts/aluminium_hydroxide')
+        .inputFluids('#forge:hydrochloric_acid 3000')
+        .outputFluids(['gtceu:polyaluminium_chloride 1000', 'minecraft:water 3000'])
+        .duration(duration*.8)
+        .EUt(EUStage3);
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:polyaluminium_chloride_slurry_processing')        
+        .inputFluids(['#forge:spent_flocculant_slurry 1000', '#forge:water 3000'])
+        .outputFluids('gtceu:polyaluminium_chloride 1000')
+        .duration(duration*.8)
+        .EUt(EUStage3);
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:aluminium_hydroxide')        
+        .itemInputs(['3x #forge:dusts/sodium_hydroxide', '#forge:dusts/aluminum'])        
+        .itemOutputs(['3x gtceu:sodium_dust', 'gtceu:aluminium_hydroxide_dust'])
+        .duration((duration*.8)/2)
+        .EUt(EUStage3);
 
     //this is where we get some bacteria!
     allthemods.recipes.gtceu.microbial_filtration_array('gregification:water_stage_4')

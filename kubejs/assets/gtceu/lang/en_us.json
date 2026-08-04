@@ -543,5 +543,8 @@
     "material.gtceu.magnetic_samarium_cobalt": "Magnetic Samarium Cobalt",
     "material.gtceu.samarium_cobalt": "Samarium Cobalt",
     "gtceu.jei.ore_vein.mercury_nether_star": "Mercury Nether Star Vein",
-    "gtceu.jei.ore_vein.mercury_osmiridium": "Mercury Osmiridium Vein"
+    "gtceu.jei.ore_vein.mercury_osmiridium": "Mercury Osmiridium Vein",
+    "material.gtceu.rotten_flesh": "Rotten Flesh",
+    "material.gtceu.recycled_organic_matter": "Recycled Organic Matter",
+    "material.gtceu.aluminium_hydroxide": "Aluminium Hydroxide"
 }
