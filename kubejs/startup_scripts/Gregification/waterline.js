@@ -192,7 +192,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             )
         .workableCasingModel('gtceu:block/casings/solid/machine_casing_robust_tungstensteel', 'gtceu:block/multiblock/large_chemical_reactor')
     
-
+ 
     
     
 

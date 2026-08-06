@@ -11,12 +11,26 @@ ServerEvents.recipes(allthemods => {
     const duration = 400;
 
     //zinc carbon acid for the slurry
-   const filter = Item.of('gtceu:fluid_cell', '{Fluid:{Amount:1000,FluidName:"gtceu:activated_carbon_slurry"}}').strongNBT();
-
+    const filter = Item.of('gtceu:fluid_cell', '{Fluid:{Amount:1000,FluidName:"gtceu:activated_carbon_slurry"}}').strongNBT();    
     allthemods.recipes.gtceu.water_filtration_plant('gregification:water_stage_1')
         .chancedInput(filter, 1000, 0)
         .inputFluids('#forge:distilled_water 1000')
         .outputFluids('gtceu:water_stage_1 900')
+        .duration(duration)
+        .EUt(EUStage1);
+    
+    
+    allthemods.recipes.gtceu.canner('gregification:carbon_slurry_filter')
+        .itemInputs('gtceu:fluid_cell')
+        .inputFluids('#forge:activated_carbon_slurry 1000')
+        .itemOutputs(filter)        
+        .duration(duration)
+        .EUt(EUStage1);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:carbon_slurry')
+        .itemInputs(['#forge:dusts/zinc', '#forge:dusts/activated_carbon'])
+        .inputFluids('#forge:hydrochloric_acid 1000')
+        .outputFluids('gtceu:activated_carbon_slurry 1000')
         .duration(duration)
         .EUt(EUStage1);
 
@@ -32,6 +46,24 @@ ServerEvents.recipes(allthemods => {
         .duration(duration*.8)
         .EUt(EUStage3);
 
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:polyaluminium_chloride')
+        .itemInputs('2x #forge:dusts/aluminium_hydroxide')
+        .inputFluids('#forge:hydrochloric_acid 3000')
+        .outputFluids(['gtceu:polyaluminium_chloride 1000', 'minecraft:water 3000'])
+        .duration(duration*.8)
+        .EUt(EUStage3);
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:polyaluminium_chloride_slurry_processing')        
+        .inputFluids(['#forge:spent_flocculant_slurry 1000', '#forge:water 3000'])
+        .outputFluids('gtceu:polyaluminium_chloride 1000')
+        .duration(duration*.8)
+        .EUt(EUStage3);
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:aluminium_hydroxide')        
+        .itemInputs(['3x #forge:dusts/sodium_hydroxide', '#forge:dusts/aluminum'])        
+        .itemOutputs(['3x gtceu:sodium_dust', 'gtceu:aluminium_hydroxide_dust'])
+        .duration((duration*.8)/2)
+        .EUt(EUStage3);
 
     //this is where we get some bacteria!
     allthemods.recipes.gtceu.microbial_filtration_array('gregification:water_stage_4')

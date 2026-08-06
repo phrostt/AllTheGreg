@@ -4,7 +4,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('oil_processing_plant')
         .category('oil_processing_plant')
         .setEUIO('in') // Machine takes power IN
-        .setMaxIOSize(1, 3, 2, 15) // 12 Item In, 6 Item Out, 6 Fluid In, 6 Fluids Out
+        .setMaxIOSize(1, 3, 3, 15) // 12 Item In, 6 Item Out, 6 Fluid In, 6 Fluids Out
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)	    
 })

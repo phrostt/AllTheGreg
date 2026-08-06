@@ -11,12 +11,12 @@ ServerEvents.recipes(allthemods => {
 
     // DATA MAPS & FUNCTION
     const TIER = {
-        1: { eu: 32, dur: 100, item: 'mysticalagriculture:inferium_essence' },
-        2: { eu: 128, dur: 150, item: 'mysticalagriculture:prudentium_essence' },
-        3: { eu: 512, dur: 200, item: 'mysticalagriculture:tertium_essence' },
-        4: { eu: 2048, dur: 300, item: 'mysticalagriculture:imperium_essence' },
-        5: { eu: 8192, dur: 400, item: 'mysticalagriculture:supremium_essence' },
-        6: { eu: 32768, dur: 600, item: 'mysticalagradditions:insanium_essence' }
+        1: { eu: 512, dur: 100, item: 'mysticalagriculture:inferium_essence' },
+        2: { eu: 2048, dur: 150, item: 'mysticalagriculture:prudentium_essence' },
+        3: { eu: 8192, dur: 200, item: 'mysticalagriculture:tertium_essence' },
+        4: { eu: 32768, dur: 300, item: 'mysticalagriculture:imperium_essence' },
+        5: { eu: 131072, dur: 400, item: 'mysticalagriculture:supremium_essence' },
+        6: { eu: 524288, dur: 600, item: 'mysticalagradditions:insanium_essence' }
     };
     const BASE = {
         r: 'mysticalagriculture:prosperity_seed_base',
@@ -73,7 +73,8 @@ ServerEvents.recipes(allthemods => {
                 ingredient = catalyst.withCount(4);
             }
         }
-        let water = Fluid.of(`gtceu:water_stage_1`, tKey * 1000);
+        //let water = Fluid.of(`gtceu:water_stage_1`, tKey * 1000);
+        let water = Fluid.of(`gtceu:water_stage_${tKey}`, 1000);
         let fluids = [Fluid.of('gtceu:saturated_tau', 2000),Fluid.of('gtceu:saturated_life_fertilizer', 2000), water]
 
         // --- STEP 4: Register Recipe ---
