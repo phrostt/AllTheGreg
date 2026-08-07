@@ -3,8 +3,7 @@ ServerEvents.recipes(allthemods => {
 		'FCF',
 		'PHP',
 		'FCF'
-	],
-    {
+	], {
         P: 'gtceu:hv_electric_pump', // pump
         F: 'gtceu:stainless_steel_normal_fluid_pipe', // pipe
         H: 'gtceu:hv_machine_hall', // machine hall
