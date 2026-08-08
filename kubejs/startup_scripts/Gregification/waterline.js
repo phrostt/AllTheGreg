@@ -136,17 +136,17 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
             .pattern(definition => FactoryBlockPattern.start()
                 .aisle(' CCC    CCC    CCC ', ' CCC    NCN    CCC ', ' CCC    CCC    CCC ')
-                .aisle('CCCCC   CCC   CCCCC', 'CC CC   CFC   CC CC', 'CCFCC   CCC   CCFCC')
-                .aisle('CCCCC   CCC   CCCCC', 'E   PPPPPPPPPPP   I', 'CFFFC   CCC   CFFFC')
-                .aisle('CCCCC   CCC   CCCCC', 'CC CC   CFC   CC CC', 'CCFCC   CCC   CCFCC')
+                .aisle('CCCCC   CCC   CCCCC', 'CC CCCCCCFCCCCCC CC', 'CCFCC   CCC   CCFCC')
+                .aisle('CCCCCCCCCCCCCCCCCCC', 'E   PPPPPPPPPPP   I', 'CFFFCCCCCCCCCCCFFFC')
+                .aisle('CCCCC   CCC   CCCCC', 'CC CCCCCCFCCCCCC CC', 'CCFCC   CCC   CCFCC')
                 .aisle(' CCC    CCC    CCC ', ' CCC    CPC    CCC ', ' CCC    CCC    CCC ')
                 .aisle('        CCC        ', '        CPC        ', '        CCC        ')
                 .aisle('        CCC        ', '        CPC        ', '        CCC        ')
                 .aisle('        CCC        ', '        CPC        ', '        CCC        ')
                 .aisle(' CCC    CCC    CCC ', ' CCC    CPC    CCC ', ' CCC    CCC    CCC ')
-                .aisle('CCCCC   CCC   CCCCC', 'CC CC   CFC   CC CC', 'CCFCC   CCC   CCFCC')
-                .aisle('CCCCC   CCC   CCCCC', 'E   PPPPPPPPPPP   I', 'CFFFC   CCC   CFFFC')
-                .aisle('CCCCC   CCC   CCCCC', 'CC CC   CFC   CC CC', 'CCFCC   CCC   CCFCC')
+                .aisle('CCCCC   CCC   CCCCC', 'CC CCCCCCFCCCCCC CC', 'CCFCC   CCC   CCFCC')
+                .aisle('CCCCCCCCCCCCCCCCCCC', 'E   PPPPPPPPPPP   I', 'CFFFCCCCCCCCCCCFFFC')
+                .aisle('CCCCC   CCC   CCCCC', 'CC CCCCCCFCCCCCC CC', 'CCFCC   CCC   CCFCC')
                 .aisle(' CCC    CMC    CCC ', ' CCC    CKC    CCC ', ' CCC    CHC    CCC ')
                 .where('E', Predicates.abilities(PartAbility.EXPORT_FLUIDS).setExactLimit(2))                        
                 .where('I', Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(2))                
@@ -179,7 +179,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
                 .where('K', Predicates.controller(Predicates.blocks(definition.get())))
                 .where('P', Predicates.blocks('gtceu:tungstensteel_pipe_casing'))
                 .where('L', Predicates.blocks('mekanism:laser'))
-                .where('G', Predicates.blocks('botania:alfglass'))
+                .where('G', Predicates.blocks('botania:alf_glass'))
                 .where('M', Predicates.blocks('mekanismgenerators:laser_focus_matrix'))
                 .where('C', Predicates.blocks('gtceu:robust_machine_casing')
                     .or(Predicates.autoAbilities(definition.getRecipeTypes()))
@@ -191,8 +191,6 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
                 .build()
             )
         .workableCasingModel('gtceu:block/casings/solid/machine_casing_robust_tungstensteel', 'gtceu:block/multiblock/large_chemical_reactor')
-    
- 
     
     
 
