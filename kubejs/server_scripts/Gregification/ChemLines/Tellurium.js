@@ -7,7 +7,7 @@ ServerEvents.recipes(allthemods => {
 
     // Step 1: Blast Furnace
     allthemods.recipes.gtceu.electric_blast_furnace('gregification:calaverite_roasting')
-        .itemInputs('3x #forge:dusts/calaverite', '6x #forge:dusts/sodium_carbonate')
+        .itemInputs('3x #forge:dusts/calaverite', '6x #forge:dusts/soda_ash')
         .inputFluids('#forge:oxygen 6000')
         .itemOutputs('6x gtceu:sodium_tellurite_dust', '3x minecraft:gold_ingot')
         .outputFluids('gtceu:carbon_monoxide 6000')
@@ -16,7 +16,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(TelluriumEUComplex);
 
     allthemods.recipes.gtceu.electric_blast_furnace('gregification:kurilite_roasting')
-        .itemInputs('#forge:dusts/kurilite', '3x #forge:dusts/sodium_carbonate')
+        .itemInputs('#forge:dusts/kurilite', '3x #forge:dusts/soda_ash')
         .inputFluids('#forge:sulfuric_acid 4000')
         .itemOutputs('3x gtceu:sodium_tellurite_dust', '4x gtceu:silver_sulfate_dust')
         .outputFluids('gtceu:hydrogen_selenide 1000, gtceu:propene 1000')
@@ -56,7 +56,7 @@ ServerEvents.recipes(allthemods => {
         .duration(300).EUt(TelluriumEUComplex);
 
     allthemods.recipes.gtceu.electric_blast_furnace('gregification:telluride_roasting')
-        .itemInputs('2x #forge:dusts/telluride', '2x #forge:dusts/sodium_carbonate')
+        .itemInputs('2x #forge:dusts/telluride', '2x #forge:dusts/soda_ash')
         .inputFluids('#forge:oxygen 4000')
         .itemOutputs('2x gtceu:sodium_tellurite_dust', '2x #forge:ingots/silver')
         .outputFluids('gtceu:carbon_dioxide 2000') // Matches your Calaverite gas output convention

@@ -69,7 +69,7 @@ const materialsGem = [
     { name: 'empowered_enori', simple: true, element: 'enori', color: 0xffffff, iconSet: 'QUARTZ' },
 
     { name: 'fluix', color: 0x8F5CCB, iconSet: 'SHINY', components: '1x redstone, 1x certus_quartz, 1x nether_quartz', voltage: 32, loss: 2, superconductor: false },
-    { name: 'atm_star', color: 0xFFC107, iconSet: 'SHINY', voltage: 2097152, loss: 2, superconductor: false }
+    { name: 'atm_star', color: 0xFFC107, iconSet: 'SHINY', voltage: 2097152, loss: 2, superconductor: false }    
 ];
 
 
@@ -103,7 +103,7 @@ const unification = [
     { name: 'signalum', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'alltheores' },
     { name: 'lumium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'alltheores' },
     { name: 'enderium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'alltheores' },
-
+    
     //{ name: 'allthemodium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'allthemodium' },
     //{ name: 'vibranium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'allthemodium' },
     //{ name: 'unobtainium', oItems: ['rod', 'gear', 'plate', 'nugget', block], namespace: 'allthemodium' },
@@ -335,7 +335,7 @@ const dusts = [
     { name: 'phantom_membrane', color: 0xC1B79F, iconSet: 'DULL' },
     { name: 'cerium_chloride', components: '1x cerium, 2x chlorine', color: 0xE0DED0, iconSet: 'METALLIC' },
     { name: 'carbonate', components: '1x carbon, 3x oxygen', color: 0xF4F4F4, iconSet: 'DULL' },
-    { name: 'sodium_carbonate', components: '2x sodium, 1x carbonate', color: 0xF5F5EC, iconSet: 'DULL' },
+
     { name: 'strontium_sulfide', components: '1x strontium, 1x sulfur', color: 0xD1D7DC, iconSet: 'METALLIC', noDecomp: true },
     { name: 'strontium_chloride', components: '1x strontium, 2x chlorine', color: 0xD1D7DC, iconSet: 'METALLIC' },
     { name: 'strontium_carbonate', components: '1x strontium, 1x carbonate', color: 0xE2E5DC, iconSet: 'DULL', noDecomp: true },
@@ -386,34 +386,33 @@ const newOres = [
     { name: 'tenebrius', components: '3x tenebrium, 1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x101010, noDecomp: true },
     { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true },
 
-    // Selenium
-    { name: 'clausthalite', components: '1x lead, 1x selenium', byproducts: ['clausthalite', 'lead'], iconSet: 'METALLIC', color: 0xC8C8D2, noDecomp: true },
+    // Selenium - done
+    { name: 'clausthalite', components: '1x lead, 1x selenium', byproducts: ['clausthalite', 'lead'], iconSet: 'METALLIC', color: 0xC8C8D2 },
     { name: 'crookesite', components: '2x copper, 1x thallium, 1x silver, 1x selenium', byproducts: ['crookesite', 'thallium', 'selenium'], iconSet: 'METALLIC', color: 0x8A7048, noDecomp: true },
-    { name: 'naumannite', components: '2x silver, 1x selenium', byproducts: ['naumannite', 'selenium'], iconSet: 'METALLIC', color: 0x4A4A52, noDecomp: true },
+    { name: 'naumannite', components: '2x silver, 1x selenium', byproducts: ['naumannite', 'selenium'], iconSet: 'METALLIC', color: 0x4A4A52 },
 
-    // Indium
+    // Indium - done
     { name: 'roquesite', components: '1x copper, 1x indium, 2x sulfur', byproducts: ['roquesite', 'indium'], iconSet: 'METALLIC', color: 0x8C8C96, noDecomp: true },
     { name: 'indite', components: '1x iron, 2x indium, 4x sulfur', byproducts: ['indite', 'indium'], iconSet: 'METALLIC', color: 0x5C5C64, noDecomp: true },
     { name: 'sakuraiite', components: '1x copper, 1x zinc, 1x indium, 1x tin, 4x sulfur', byproducts: ['sakuraiite', 'indium'], iconSet: 'METALLIC', color: 0x707888, noDecomp: true },
 
-    // Hafnium
+    // Hafnium - done
     { name: 'hafnian_zircon', components: '1x zirconium, 1x hafnium, 1x silicon, 4x oxygen', byproducts: ['hafnian_zircon', 'hafnium', 'zirconium'], iconSet: 'METALLIC', color: 0xB8C8D0, noDecomp: true },
     { name: 'hafnon', components: '1x hafnium, 1x silicon, 4x oxygen', byproducts: ['hafnon', 'hafnium'], iconSet: 'METALLIC', color: 0xC0CCD8, noDecomp: true },
 
-    // Rubidium
+    // Rubidium - done
     { name: 'rubicline', components: '1x rubidium, 1x potassium, 1x aluminium, 3x silicon, 8x oxygen', byproducts: ['rubicline', 'rubidium'], iconSet: 'DULL', color: 0xF0C8DC, noDecomp: true },
-
 
     // Thallium
     { name: 'lorandite', components: '1x thallium, 1x arsenic, 2x sulfur', byproducts: ['lorandite', 'thallium'], iconSet: 'METALLIC', color: 0xB22222, noDecomp: true },
     { name: 'hutchinsonite', components: '1x thallium, 1x lead, 5x arsenic, 9x sulfur', byproducts: ['hutchinsonite', 'thallium', 'lead'], iconSet: 'METALLIC', color: 0x782828, noDecomp: true },
 
-    // Scandium
+    // Scandium - done
     { name: 'thortveitite', components: '2x scandium, 2x silicon, 7x oxygen', byproducts: ['thortveitite', 'scandium'], iconSet: 'METALLIC', color: 0x4A5C3C, noDecomp: true },
     { name: 'kolbeckite', components: '1x scandium, 1x phosphorus, 4x oxygen', byproducts: ['kolbeckite', 'scandium'], iconSet: 'DULL', color: 0x5C7050, noDecomp: true },
     { name: 'bazzite', components: '3x beryllium, 2x scandium, 6x silicon, 18x oxygen', byproducts: ['bazzite', 'scandium', 'beryllium'], iconSet: 'GEM_VERTICAL', color: 0x6EC8C0, noDecomp: true },
 
-    // Gallium
+    // Gallium - done
     { name: 'gallite', components: '1x copper, 1x gallium, 2x sulfur', byproducts: ['gallite', 'gallium'], iconSet: 'METALLIC', color: 0xDCC8E6, noDecomp: true },
 
 
@@ -423,10 +422,10 @@ const newOres = [
     { name: 'wodginite', components: '1x manganese, 1x iron, 1x tin, 1x tantalum, 1x titanium, 1x niobium, 8x oxygen', byproducts: ['wodginite', 'tantalum', 'niobium'], iconSet: 'METALLIC', color: 0x463C34, noDecomp: true },
     { name: 'fergusonite', components: '1x yttrium, 1x niobium, 4x oxygen', byproducts: ['fergusonite', 'yttrium', 'niobium'], iconSet: 'METALLIC', color: 0x3C3428, noDecomp: true },
 
-    // Rhenium    
+    // Rhenium - done    
     { name: 'tarkianite', components: '1x copper, 4x rhenium, 4x molybdenum, 8x sulfur', byproducts: ['tarkianite', 'rhenium', 'molybdenum'], iconSet: 'METALLIC', color: 0x686868, noDecomp: true },
 
-    // Strontium
+    // Strontium - done
     { name: 'strontianite', components: '1x strontium, 1x carbon, 3x oxygen', byproducts: ['strontianite', 'strontium'], iconSet: 'DULL', color: 0xF0F0DC, noDecomp: true },
 
     // Samarium
@@ -454,7 +453,7 @@ const newOres = [
     { name: 'thorianite', components: '1x thorium, 2x oxygen', byproducts: ['thorianite', 'thorium'], iconSet: 'METALLIC', color: 0x1C1C1C, noDecomp: true },
     { name: 'thorite', components: '1x thorium, 1x silicon, 4x oxygen', byproducts: ['thorite', 'thorium'], iconSet: 'DULL', color: 0x3C3428, noDecomp: true },
 
-    // Caesium    
+    // Caesium - done
     { name: 'rhodizite', components: '1x caesium, 1x potassium, 4x aluminium, 4x beryllium, 11x boron, 28x oxygen', byproducts: ['rhodizite', 'caesium'], iconSet: 'GEM_VERTICAL', color: 0xF0F0E0, noDecomp: true },
 
     // Lanthanum
@@ -672,6 +671,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .fluid()
         .color('0x6E6259')
         .iconSet(GTMaterialIconSet.FLUID);
+    
+    materialBuilder = event.create('niter')
+        .dust()
+        .gem()
+        .color(0xF7F5F0)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .components('1x potassium', '1x nitrogen', '3x oxygen');
 
     //extreme reactors
     erMaterials.forEach(mat => {
@@ -1256,6 +1262,8 @@ StartupEvents.postInit(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');    
+    TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
+    
 
     // Gear
     TagPrefix.gear.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_gear');
@@ -1272,6 +1280,7 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('corrosive'), 'bloodmagic:corrosivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
 
 
     // Ingot
@@ -1386,6 +1395,8 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
+    TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
+    
 
     // Gear
     TagPrefix.gear.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_gear');
@@ -1403,6 +1414,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('corrosive'), 'bloodmagic:corrosivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
 
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');

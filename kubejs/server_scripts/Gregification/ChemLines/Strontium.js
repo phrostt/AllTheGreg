@@ -12,7 +12,7 @@ ServerEvents.recipes(allthemods => {
 
     // Step 2: Large Chemical Reactor
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:strontium_carbonate_reaction')
-        .itemInputs('#forge:dusts/strontium_sulfide', '#forge:dusts/sodium_carbonate')
+        .itemInputs('#forge:dusts/strontium_sulfide', '#forge:dusts/soda_ash')
         .itemOutputs('gtceu:strontium_carbonate_dust', 'gtceu:sodium_sulfide_dust')
         .duration(200).EUt(StrontiumEUComplex); 
 

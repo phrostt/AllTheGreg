@@ -3,24 +3,24 @@ ServerEvents.recipes(allthemods => {
     const GermaniumEUSimple = 128;
     const GermaniumEUComplex = 32768; //LuV
 
-    allthemods.recipes.gtceu.chemical_reactor('gregification:sodium_carbonate_via_bisulfate')
+    allthemods.recipes.gtceu.chemical_reactor('gregification:soda_ash_via_bisulfate')
         .itemInputs('2x #forge:dusts/sodium_bisulfate')
         .inputFluids('#forge:carbon_tetroxide 1000')
-        .itemOutputs('gtceu:sodium_carbonate_dust')
+        .itemOutputs('gtceu:soda_ash_dust')
         .outputFluids('gtceu:peroxodisulfuric_acid 1000, gtceu:oxygen 1000')
         .duration(200)
         .EUt(GermaniumEUSimple);
 
-    allthemods.recipes.gtceu.chemical_reactor('gregification:sodium_carbonate_solvay')
+    allthemods.recipes.gtceu.chemical_reactor('gregification:soda_ash_via_solvay')
         .itemInputs('2x #forge:dusts/salt', '1x #forge:dusts/calcite')
-        .itemOutputs('gtceu:sodium_carbonate_dust', 'gtceu:calcium_chloride_dust')
+        .itemOutputs('gtceu:soda_ash_dust', 'gtceu:calcium_chloride_dust')
         .duration(400)
         .EUt(GermaniumEUSimple);
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:peroxodisulfuric_acid_synthesis')
         .itemInputs('1x #forge:dusts/sodium_bisulfate', '#forge:dusts/sodium_hydroxide')
         .inputFluids('#forge:phthalic_acid 1000', '#forge:sulfuric_acid 1000')
-        .itemOutputs('1x gtceu:sodium_carbonate_dust', '5x gtceu:carbon_dust')
+        .itemOutputs('1x gtceu:soda_ash_dust', '5x gtceu:carbon_dust')
         .outputFluids('gtceu:peroxodisulfuric_acid 1000', 'gtceu:polyethylene 1000', 'minecraft:water 2000')
         .duration(1200)
         .EUt(GermaniumEUComplex);
@@ -46,7 +46,7 @@ ServerEvents.recipes(allthemods => {
 
     // Step 2: Carbonate Leaching 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:germanium_carbonate_leaching')
-        .itemInputs('#forge:dusts/germanium_sulfate', '3x #forge:dusts/sodium_carbonate')
+        .itemInputs('#forge:dusts/germanium_sulfate', '3x #forge:dusts/soda_ash')
         .inputFluids('minecraft:water 1000')
         .itemOutputs('2x gtceu:sodium_sulfate_dust')
         .outputFluids('gtceu:sodium_germanate_solution 1000', 'gtceu:carbon_dioxide 3000')

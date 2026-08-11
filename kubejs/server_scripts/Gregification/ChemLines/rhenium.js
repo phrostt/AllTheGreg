@@ -8,7 +8,7 @@
     
     // Step 1: Perrhenate Synthesis
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:rhenium_perrhenate_synthesis')
-        .itemInputs('2x #forge:dusts/rhenite', '#forge:dusts/sodium_carbonate')
+        .itemInputs('2x #forge:dusts/rhenite', '#forge:dusts/soda_ash')
         .inputFluids('#forge:peroxodisulfuric_acid 1000', 'gtceu:oxygen 12000')
         .itemOutputs('2x gtceu:sodium_perrhenate_dust')
         .outputFluids('gtceu:carbon_dioxide 1000', 'gtceu:sulfur_dioxide 6000', 'minecraft:water 1000')
@@ -37,4 +37,11 @@
         .outputFluids('gtceu:hydrogen_sulfide 7000')
         .blastFurnaceTemp(3200)
         .duration(600).EUt(RheniumEUComplex); 
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:tarkianite_reaction')
+        .itemInputs(['#forge:dusts/tarkianite', '8x #forge:dusts/silicon_dioxide'])
+        .inputFluids(['minecraft:water 9000', '#forge:oxygen 23000'])
+        .itemOutputs(['gtceu:copper_ii_sulfate_dust', '4x gtceu:molybdenum_disilicide_dust'])
+        .outputFluids(['gtceu:perrhenic_acid 4000', 'gtceu:sulfuric_acid 7000'])
+        .duration(400).EUt(RheniumEUComplex);
 });
