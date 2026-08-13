@@ -33,7 +33,7 @@ ServerEvents.recipes(allthemods => {
         .duration(Duration)
         .EUt(EUMars);
 
-    allthemods.recipes.gtceu.alloy_blast_smelter('gregification:roquesite_blast_smelter')
+    allthemods.recipes.gtceu.electric_blast_furnace('gregification:roquesite_blast_smelter')
         .itemInputs('2x #forge:dusts/indium_hydroxide')
         .itemOutputs('2x gtceu:indium_ingot')
         .blastFurnaceTemp(tempMars)
@@ -50,7 +50,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(EUMars);
 
     //sakuraiite
-    allthemods.recipes.gtceu.alloy_blast_smelter('gregification:zinc_stannate_blast_smelter')
+    allthemods.recipes.gtceu.electric_blast_furnace('gregification:zinc_stannate_blast_smelter')
         .itemInputs('2x #forge:dusts/zinc_stannate')
         .itemOutputs(['4x gtceu:zinc_ingot', '2x gtceu:tin_ingot'])
         .blastFurnaceTemp(tempMoon)
@@ -82,7 +82,7 @@ ServerEvents.recipes(allthemods => {
         .duration(Duration)
         .EUt(EUMoon);
 
-    allthemods.recipes.gtceu.alloy_blast_smelter('gregification:hafnium_silicide_blast_smelter')
+    allthemods.recipes.gtceu.electric_blast_furnace('gregification:hafnium_silicide_blast_smelter')
         .itemInputs('#forge:dusts/hafnium_silicide')
         .itemOutputs(['gtceu:hot_silicon_ingot', 'chemlib:hafnium_ingot'])
         .blastFurnaceTemp(tempMoon)
@@ -107,7 +107,7 @@ ServerEvents.recipes(allthemods => {
         .duration(Duration)
         .EUt(EUGlacio);
 
-    allthemods.recipes.gtceu.alloy_blast_smelter('gregification:rubidium_carbonate_blasting')
+    allthemods.recipes.gtceu.electric_blast_furnace('gregification:rubidium_carbonate_blasting')
         .itemInputs(['#forge:dusts/calcium'])
         .inputFluids('#forge:rubidium_carbonate 1000', '#forge:water 1000')
         .itemOutputs(['2x chemlib:rubidium_dust', 'gtceu:calcium_hydroxide_dust'])
@@ -133,7 +133,7 @@ ServerEvents.recipes(allthemods => {
         .duration(EUGlacio)
         .EUt(EUMercuryVenus);
 
-    allthemods.recipes.gtceu.alloy_blast_smelter('gregification:thallium_oxide_blasting')
+    allthemods.recipes.gtceu.electric_blast_furnace('gregification:thallium_oxide_blasting')
         .itemInputs(['#forge:dusts/thallium_oxide', '#forge:dusts/carbon'])
         .itemOutputs('2x chemlib:thallium_dust')
         .outputFluids('gtceu:carbon_monoxide 1000')
@@ -407,6 +407,8 @@ ServerEvents.recipes(allthemods => {
         .duration(Duration)
         .EUt(EUMercuryVenus);
     
+
+    //cerite
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:rare_earth_leach_residue_processing')
         .itemInputs(['#forge:dusts/cerite', '#forge:dusts/fluorine'])
         .inputFluids('#forge:hydrochloric_acid 6000')
@@ -430,7 +432,7 @@ ServerEvents.recipes(allthemods => {
         .duration(Duration)
         .EUt(EUMars);
 
-    allthemods.recipes.gtceu.alloy_blast_smelter('gregification:lanthanum_fluoride_reduction')
+    allthemods.recipes.gtceu.electric_blast_furnace('gregification:lanthanum_fluoride_reduction')
         .itemInputs(['2x #forge:dusts/lanthanum_fluoride', '3x #forge:dusts/calcium'])
         .itemOutputs(['2x gtceu:lanthanum_dust', '3x gtceu:calcium_fluoride_dust'])
         .blastFurnaceTemp(tempMars)
