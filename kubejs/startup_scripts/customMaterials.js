@@ -320,7 +320,13 @@ const fluids = [
     { name: 'super_coolant', color: 0x82C4E5, iconSet: 'FLUID' },
     { name: 'purest_water', components: '1x water', color: 0x00BFFF, iconSet: 'FLUID' },
     { name: 'inert_gas_mixture', color: 0x8899A6, iconSet: 'FLUID' },
-    { name: 'ionized_oxygen', color: 0x3399FF, iconSet: 'FLUID' }
+    { name: 'ionized_oxygen', color: 0x3399FF, iconSet: 'FLUID' },
+    { name: 'niobium_pentachloride', components: '1x niobium, 5x chlorine', color: 0xFFF0C1, formula: 'NbCl5', iconSet: 'FLUID' },    
+    { name: 'mixed_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 1x uranium, 1x titanium, 1x iron, 5x sulfur, 20x oxygen', color: 0x8B7355, iconSet: 'FLUID', noDecomp: true },
+    { name: 'light_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 1x uranium, 1x titanium, 3x sodium, 5x sulfur, 20x oxygen', color: 0xA89680, iconSet: 'FLUID', noDecomp: true },
+    { name: 'heavy_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 1x uranium, 7x sodium, 5x sulfur, 20x oxygen', color: 0x9C8A6E, iconSet: 'FLUID', noDecomp: true },
+    { name: 'final_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 13x sodium, 5x sulfur, 23x oxygen, 6x hydrogen', color: 0x8C7B6A, iconSet: 'FLUID', noDecomp: true },
+    { name: 'rare_earth_leach_residue', components: '1x lanthanum, 1x magnesium, 3x oxygen, 3x hydrogen', color: 0xB8A8C8, iconSet: 'FLUID', noDecomp: true },
 ];
 
 const polymers = [
@@ -331,6 +337,10 @@ const polymers = [
 ];
 
 const dusts = [
+    { name: 'lanthanum_fluoride', components: '1x lanthanum, 3x fluorine', color: 0xE8E8E8, formula: 'LaF3', iconSet: 'DULL', noDecomp: true },
+    { name: 'lanthanum_hydroxide', components: '1x lanthanum, 3x oxygen, 3x hydrogen', color: 0xE8E0F0, formula: 'La(OH)3', iconSet: 'DULL', noDecomp: true },
+    { name: 'uranium_trioxide', components: '1x uranium, 3x oxygen', color: 0xB8860B, formula: 'UO3', iconSet: 'RADIOACTIVE', noDecomp: true },
+    { name: 'titanium_hydroxide', components: '1x titanium, 4x oxygen, 4x hydrogen', color: 0xF0F0F0, formula: 'Ti(OH)4', iconSet: 'DULL', noDecomp: true },
     { name: 'neutrino', color: 0xFF990F, iconSet: 'METALLIC' },
     { name: 'phantom_membrane', color: 0xC1B79F, iconSet: 'DULL' },
     { name: 'cerium_chloride', components: '1x cerium, 2x chlorine', color: 0xE0DED0, iconSet: 'METALLIC' },
@@ -364,9 +374,35 @@ const dusts = [
     { name: 'soul_essence', color: 0x1A75FF, iconSet: 'SHINY' },
     { name: 'mind_numbing_agent', color: 0x00FFCC, iconSet: 'DULL' },
     { name: 'aluminium_hydroxide', color: 0xEEEEEE, iconSet: 'DULL', components: '1x aluminium, 3x oxygen, 3x hydrogen', formula: 'Al(OH)3' },
-    { name: 'picolinic_acid', color: 0x7E57C2, components: '6x carbon, 5x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C6H5NO2', iconSet: 'DULL' }
+    { name: 'picolinic_acid', color: 0x7E57C2, components: '6x carbon, 5x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C6H5NO2', iconSet: 'DULL' },
 
-
+    { name: 'copper_ii_sulfate', components: '1x copper, 1x sulfur, 4x oxygen', color: 0x0F52BA, formula: 'CuSO4', iconSet: 'METALLIC', fluid: true },
+    { name: 'indium_iii_oxide', components: '2x indium, 3x oxygen', color: 0xFFF3B0, formula: 'In2O3', iconSet: 'DULL', noDecomp: true, fluid: true },
+    { name: 'indium_hydroxide', components: '1x indium, 3x oxygen, 3x hydrogen', color: 0xFFFFFF, formula: 'In(OH)3', iconSet: 'DULL', noDecomp: true },
+    { name: 'zinc_stannate', components: '2x zinc, 1x tin, 4x oxygen', color: 0xF0F0F0, formula: 'Zn2SnO4', iconSet: 'DULL', noDecomp: true },
+    { name: 'hafnium_silicide', components: '1x hafnium, 1x silicon', color: 0xB0B0B0, formula: 'HfSi', iconSet: 'METALLIC', noDecomp: true },
+    { name: 'rubidium_aluminium_sulfate', components: '1x rubidium, 1x aluminium, 2x sulfur, 8x oxygen', color: 0xFFFFFF, formula: 'RbAl(SO4)2', iconSet: 'DULL', noDecomp: true },
+    { name: 'rubidium_carbonate', components: '2x rubidium, 1x carbon, 3x oxygen', color: 0xF5F5F5, formula: 'Rb2CO3', iconSet: 'DULL', noDecomp: true, fluid: true },    
+    { name: 'arsenic_acid', components: '1x arsenic, 3x hydrogen, 4x oxygen', color: 0xF8F8F8, formula: 'AsH3O4', iconSet: 'DULL', noDecomp: true, fluid: true },
+    { name: 'thallium_iodide', components: '1x thallium, 1x iodine', color: 0xFFF200, formula: 'TlI', iconSet: 'METALLIC', noDecomp: true },
+    { name: 'sodium_iodide', components: '1x sodium, 1x iodine', color: 0xFFFFFF, formula: 'NaI', iconSet: 'DULL' },
+    { name: 'thallium_oxide', components: '2x thallium, 1x oxygen', color: 0x3B2F2F, formula: 'Tl2O', iconSet: 'DULL', noDecomp: true },
+    { name: 'lead_chloride', components: '1x lead, 2x chlorine', color: 0xFFFFFF, formula: 'PbCl2', iconSet: 'DULL' },
+    { name: 'scandium_oxide', components: '2x scandium, 3x oxygen', color: 0xFFFFFF, formula: 'Sc2O3', iconSet: 'DULL', noDecomp: true },
+    { name: 'beryllium_oxide', components: '1x beryllium, 1x oxygen', color: 0xFFFFFF, formula: 'BeO', iconSet: 'DULL', noDecomp: true },
+    { name: 'potassium_selenide', components: '2x potassium, 1x selenium', color: 0xE8E8E8, formula: 'K2Se', iconSet: 'DULL' },
+    { name: 'stromeyerite', components: '1x silver, 1x copper, 1x sulfur', color: 0x4A4A4A, formula: 'AgCuS', iconSet: 'METALLIC', noDecomp: true },
+    { name: 'thallium_monoselenide', components: '1x thallium, 1x selenium', color: 0x5C5C5C, formula: 'TlSe', iconSet: 'METALLIC', noDecomp: true },
+    { name: 'caesium_hydroxide', components: '1x caesium, 1x oxygen, 1x hydrogen', color: 0xFFFFFF, formula: 'CsOH', iconSet: 'DULL' },
+    { name: 'caesium_potassium_carbonate', components: '1x caesium, 1x potassium, 1x carbon, 3x oxygen', color: 0xF5F5F5, formula: 'CsKCO3', iconSet: 'DULL', noDecomp: true },
+    { name: 'iron_hydroxide', components: '1x iron, 3x oxygen, 3x hydrogen', color: 0xB5651D, formula: 'Fe(OH)3', iconSet: 'DULL' },
+    { name: 'niobium_pentoxide', components: '2x niobium, 5x oxygen', color: 0xFAFAFA, formula: 'Nb2O5', iconSet: 'DULL', noDecomp: true },
+    { name: 'tantalum_dioxide', components: '2x tantalum, 2x oxygen', color: 0xC0C0C0, formula: 'Ta2O2', iconSet: 'METALLIC', noDecomp: true },
+    { name: 'manganese_heptoxide', components: '2x manganese, 7x oxygen', color: 0x2F4F2F, formula: 'Mn2O7', iconSet: 'DULL', noDecomp: true },
+    { name: 'yttrium_oxide', components: '2x yttrium, 3x oxygen', color: 0xFFFFFF, formula: 'Y2O3', iconSet: 'DULL', noDecomp: true },
+    { name: 'lead_oxide', components: '1x lead, 1x oxygen', color: 0xE8DED1, formula: 'PbO', iconSet: 'DULL'},
+    { name: 'tantalum_pentachloride', components: '1x tantalum, 5x chlorine', color: 0xF5DEB3, formula: 'TaCl5', iconSet: 'DULL', fluid: true, noDecomp: true },
+    { name: 'niobium_tantalum_residue', components: '2x niobium, 2x tantalum, 4x oxygen', color: 0x2B2B2B, formula: 'Nb2Ta2O4', iconSet: 'METALLIC', noDecomp: true }
 ];
 
 const newOres = [
@@ -403,7 +439,7 @@ const newOres = [
     // Rubidium - done
     { name: 'rubicline', components: '1x rubidium, 1x potassium, 1x aluminium, 3x silicon, 8x oxygen', byproducts: ['rubicline', 'rubidium'], iconSet: 'DULL', color: 0xF0C8DC, noDecomp: true },
 
-    // Thallium
+    // Thallium - done
     { name: 'lorandite', components: '1x thallium, 1x arsenic, 2x sulfur', byproducts: ['lorandite', 'thallium'], iconSet: 'METALLIC', color: 0xB22222, noDecomp: true },
     { name: 'hutchinsonite', components: '1x thallium, 1x lead, 5x arsenic, 9x sulfur', byproducts: ['hutchinsonite', 'thallium', 'lead'], iconSet: 'METALLIC', color: 0x782828, noDecomp: true },
 
@@ -416,7 +452,7 @@ const newOres = [
     { name: 'gallite', components: '1x copper, 1x gallium, 2x sulfur', byproducts: ['gallite', 'gallium'], iconSet: 'METALLIC', color: 0xDCC8E6, noDecomp: true },
 
 
-    // Tantalum & Niobium
+    // Tantalum & Niobium - done
     { name: 'columbite_tantalite', components: '1x iron, 1x manganese, 2x niobium, 2x tantalum, 6x oxygen', byproducts: ['columbite_tantalite', 'niobium', 'tantalum'], iconSet: 'METALLIC', color: 0x3C3C46, noDecomp: true },
     { name: 'microlite', components: '2x calcium, 2x tantalum, 7x oxygen', byproducts: ['microlite', 'tantalum'], iconSet: 'METALLIC', color: 0x8C7850, noDecomp: true },
     { name: 'wodginite', components: '1x manganese, 1x iron, 1x tin, 1x tantalum, 1x titanium, 1x niobium, 8x oxygen', byproducts: ['wodginite', 'tantalum', 'niobium'], iconSet: 'METALLIC', color: 0x463C34, noDecomp: true },
@@ -428,7 +464,7 @@ const newOres = [
     // Strontium - done
     { name: 'strontianite', components: '1x strontium, 1x carbon, 3x oxygen', byproducts: ['strontianite', 'strontium'], iconSet: 'DULL', color: 0xF0F0DC, noDecomp: true },
 
-    // Samarium
+    // Samarium - done
     { name: 'samarskite', components: '1x yttrium, 1x cerium, 1x uranium, 1x iron, 2x niobium, 2x tantalum, 1x titanium, 8x oxygen', byproducts: ['samarskite', 'samarium', 'yttrium'], iconSet: 'METALLIC', color: 0x2C2418, noDecomp: true },
     { name: 'cerite', components: '3x cerium, 1x lanthanum, 1x calcium, 1x iron, 1x magnesium, 3x silicon, 12x oxygen, 1x fluorine', byproducts: ['cerite', 'samarium', 'lanthanum'], iconSet: 'DULL', color: 0x8C7858, noDecomp: true },
 
@@ -557,7 +593,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .flags(
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
-
+    
     let materialBuilder
 
     materialBuilder = event.create("unrefined_tenebrius")
@@ -676,7 +712,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .dust()
         .gem()
         .color(0xF7F5F0)
-        .iconSet(GTMaterialIconSet.SHINY)
+        .formula("KNO3")
+        .iconSet(GTMaterialIconSet.DIAMOND)
         .components('1x potassium', '1x nitrogen', '3x oxygen');
 
     //extreme reactors
@@ -1252,6 +1289,7 @@ StartupEvents.postInit(event => {
     TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
     TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
+    TagPrefix.block.setIgnored(GTMaterials.get('niter'), 'thermal:niter_block');
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
@@ -1385,6 +1423,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
     TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
+    TagPrefix.block.setIgnored(GTMaterials.get('niter'), 'thermal:niter_block');
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
