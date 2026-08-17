@@ -113,7 +113,7 @@ GTCEuServerEvents.oreVeins(event => {
         ['columbite_tantalite', 'microlite', 'wodginite'],        // Nb/Ta minerals
         ['bismuthinite', 'bismite', 'bismutite'],                 // bismuth minerals
         ['thorianite', 'thorite'],                                // thorium minerals        
-        ['hellish', 'terraria']                                   // flavor/lore ores
+        ['hellish', 'terraria', 'coagulite']                                   // flavor/lore ores
     ];
 
     const marsOreGroups = [

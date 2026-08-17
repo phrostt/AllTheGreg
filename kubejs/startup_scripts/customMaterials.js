@@ -410,7 +410,7 @@ const newOres = [
     { name: 'caliche', components: '1x sodium, 1x iodine, 3x oxygen', byproducts: ['caliche', 'iodine', 'sodium'], iconSet: 'DULL', color: 0xE0D8B8, formula: 'NaIO3' },
     { name: 'calaverite', components: '2x tellurium, 1x gold', byproducts: ['calaverite', 'gold'], iconSet: 'METALLIC', color: 0xDAC084, noDecomp: true },
     { name: 'celestite', components: '1x strontium, 1x sulfur, 4x oxygen', byproducts: ['celestite', 'sulfur'], iconSet: 'METALLIC', color: 0xADD8E6, noDecomp: true },
-    //{ name: 'celestine', components: '1x strontium, 1x sulfur, 4x oxygen', byproducts: ['celestine', 'strontium'], iconSet: 'GEM_VERTICAL', color: 0xADD8E6, noDecomp: true },
+    //{ name: 'celestine', components: '1x strontium, 1x sulfur, 4x oxygen', byproducts: ['celestine', 'strontium'], iconSet: 'METALLIC', color: 0xADD8E6, noDecomp: true },
 
     { name: 'radio_thoric_phosphate', components: '1x thorium, 1x uranium, 1x radium, 1x francium, 1x astatine, 4x phosphorus, 16x oxygen', byproducts: ['thorium', 'uranium', 'plutonium'], color: 0x7FFF00, iconSet: 'RADIOACTIVE', formula: '(ThURaFrAt)(PO4)4', noDecomp: true },
     { name: 'argyrodite', components: '1x germanium, 6x sulfur, 8x silver', byproducts: ['argyrodite', 'sulfur', 'silver'], iconSet: 'METALLIC', color: 0x8C7B70, noDecomp: true },
@@ -420,9 +420,9 @@ const newOres = [
     { name: 'baddeleyite', components: '1x zirconium, 2x oxygen', color: 0x9999FF, iconSet: 'DULL', noDecomp: true },
     { name: 'rhenite', components: '1x rhenium, 2x sulfur', byproducts: ['rhenite', 'sulfur'], iconSet: 'METALLIC', color: 0x8A8A8A, noDecomp: true },
     //{ name: 'rheniite', components: '1x rhenium, 2x sulfur', byproducts: ['rheniite', 'rhenium'], iconSet: 'METALLIC', color: 0x505050, noDecomp: true },
-    { name: 'hellish', components: '1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x880808 },
+    { name: 'hellish', components: '1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium', 'coagulite'], iconSet: 'METALLIC', color: 0x880808 },
     { name: 'tenebrius', components: '3x tenebrium, 1x hellforged, 1x iesnium', byproducts: ['hellforged', 'iesnium'], iconSet: 'METALLIC', color: 0x101010, noDecomp: true },
-    { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true },
+    { name: 'terraria', components: '2x terrasteel, 1x elementium, 1x manasteel, 1x gaia', byproducts: ['elementium', 'manasteel', 'coagulite'], iconSet: 'METALLIC', color: 0xF7A8D8, noDecomp: true },
 
     // Selenium - done
     { name: 'clausthalite', components: '1x lead, 1x selenium', byproducts: ['clausthalite', 'lead'], iconSet: 'METALLIC', color: 0xC8C8D2 },
@@ -448,7 +448,7 @@ const newOres = [
     // Scandium - done
     { name: 'thortveitite', components: '2x scandium, 2x silicon, 7x oxygen', byproducts: ['thortveitite', 'scandium'], iconSet: 'METALLIC', color: 0x4A5C3C, noDecomp: true },
     { name: 'kolbeckite', components: '1x scandium, 1x phosphorus, 4x oxygen', byproducts: ['kolbeckite', 'scandium'], iconSet: 'DULL', color: 0x5C7050, noDecomp: true },
-    { name: 'bazzite', components: '3x beryllium, 2x scandium, 6x silicon, 18x oxygen', byproducts: ['bazzite', 'scandium', 'beryllium'], iconSet: 'GEM_VERTICAL', color: 0x6EC8C0, noDecomp: true },
+    { name: 'bazzite', components: '3x beryllium, 2x scandium, 6x silicon, 18x oxygen', byproducts: ['bazzite', 'scandium', 'beryllium'], iconSet: 'METALLIC', color: 0x6EC8C0, noDecomp: true },
 
     // Gallium - done
     { name: 'gallite', components: '1x copper, 1x gallium, 2x sulfur', byproducts: ['gallite', 'gallium'], iconSet: 'METALLIC', color: 0xDCC8E6, noDecomp: true },
@@ -492,7 +492,7 @@ const newOres = [
     { name: 'thorite', components: '1x thorium, 1x silicon, 4x oxygen', byproducts: ['thorite', 'thorium'], iconSet: 'DULL', color: 0x3C3428 },
 
     // Caesium - done
-    { name: 'rhodizite', components: '1x caesium, 1x potassium, 4x aluminium, 4x beryllium, 11x boron, 28x oxygen', byproducts: ['rhodizite', 'caesium'], iconSet: 'GEM_VERTICAL', color: 0xF0F0E0, noDecomp: true },
+    { name: 'rhodizite', components: '1x caesium, 1x potassium, 4x aluminium, 4x beryllium, 11x boron, 28x oxygen', byproducts: ['rhodizite', 'caesium'], iconSet: 'METALLIC', color: 0xF0F0E0, noDecomp: true },
 
     // Lanthanum - done
     { name: 'lanthanite', components: '2x lanthanum, 3x carbon, 9x oxygen', byproducts: ['lanthanite', 'lanthanum'], iconSet: 'DULL', color: 0xD8D8C0, noDecomp: true },
@@ -599,6 +599,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         );
     
     let materialBuilder
+
+    materialBuilder = event.create('coagulite')
+        .gem()
+        .ore(2, 1)
+        .color(0x5C0A0A)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION);
 
     materialBuilder = event.create("chaos_shard")
         //.dust()
@@ -1131,6 +1138,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         }
         //if (mat.formula) { materialBuilder.formula(mat.formula) }
     });
+    
 });
 
 
@@ -1331,6 +1339,7 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
     TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
+    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'condensed_blood');
 
 
     // Ingot
@@ -1467,6 +1476,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
     TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
+    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'condensed_blood');
 
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');

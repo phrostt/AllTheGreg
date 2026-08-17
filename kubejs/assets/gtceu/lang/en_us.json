@@ -460,7 +460,7 @@
     "gtceu.jei.ore_vein.moon_columbite_tantalite_microlite_wodginite": "Niobium-Tantalum Deposit",
     "gtceu.jei.ore_vein.moon_bismuthinite_bismite_bismutite": "Bismuth Deposit",
     "gtceu.jei.ore_vein.moon_thorianite_thorite": "Thorium Deposit",
-    "gtceu.jei.ore_vein.moon_hellish_terraria": "Hellish Terraria Deposit",
+    "gtceu.jei.ore_vein.moon_hellish_terraria_coagulite": "Hellish Terraria Deposit",
 
     "gtceu.jei.ore_vein.mars_roquesite_indite_sakuraiite": "Indium Deposit",
     "gtceu.jei.ore_vein.mars_thortveitite_kolbeckite_bazzite": "Scandium Deposit",
@@ -568,5 +568,6 @@
     "material.gtceu.lanthanum_hydroxide": "Lanthanum Hydroxide",
     "material.gtceu.lanthanum_fluoride": "Lanthanum Fluoride",
     "material.gtceu.cerium_oxide": "Cerium Oxide",
-    "material.gtceu.chaos_shard": "Chaos Shard"
+    "material.gtceu.chaos_shard": "Chaos Shard",
+    "material.gtceu.coagulite": "Coagulite"
 }
