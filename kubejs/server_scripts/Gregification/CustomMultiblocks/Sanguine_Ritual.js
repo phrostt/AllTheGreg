@@ -85,7 +85,7 @@ ServerEvents.recipes(allthemods => {
         { tier: 4, lp: 10000, input: beeHematophagous, output: beeRegenerative, ID: 'beeRegenerative'},
 
         // Tier 5
-        { tier: 5, lp: 10000, input: '#forge:dusts/terraria', output: 'gtceu:sanguine_terraria_dust' },
+        { tier: 5, lp: 1000, input: '#forge:dusts/terraria', output: 'gtceu:sanguine_terraria_dust' },
     ];
     sanguineRitualRecipes.forEach(ritual => {
         sanguineRitual(ritual.input, ritual.lp, ritual.output, null, ritual.tier, ritual.ID)

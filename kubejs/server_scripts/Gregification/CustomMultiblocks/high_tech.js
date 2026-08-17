@@ -79,4 +79,11 @@ ServerEvents.recipes(allthemods => {
         .duration(10000)
         .EUt(524288)
         .circuit(4);
+
+    allthemods.recipes.gtceu.hydro_electromagnetic_separator('gregificatoion:hydro_electromagnetic_separator/chaos_shards')
+        .itemInputs('#forge:dusts/chaotic')
+        .inputFluids('gtceu:water_stage_6 100')
+        .chancedOutput('draconicevolution:small_chaos_frag', 5000, 500)                
+        .duration(400)
+        .EUt(524288);
 });

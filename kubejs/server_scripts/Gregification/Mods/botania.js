@@ -19,7 +19,7 @@ ServerEvents.recipes(allthemods => {
         .circuit(1)
         .duration(100)
         .EUt(128);
-        
+
     allthemods.recipes.gtceu.mana_burner('coal_to_liquid_mana')
         .itemInputs('#minecraft:coals')
         .outputFluids('gtceu:mana_essence 1200')
@@ -27,8 +27,8 @@ ServerEvents.recipes(allthemods => {
         .addData('ebf_temp', 3600)
         .circuit(1)
         .duration(1600)
-        //.EUt(-512);
-            
+    //.EUt(-512);
+
 
     allthemods.recipes.gtceu.mana_burner('coal_to_source')
         .itemInputs('#minecraft:coals')
@@ -37,7 +37,7 @@ ServerEvents.recipes(allthemods => {
         .addData('ebf_temp', 3600)
         .circuit(2)
         .duration(1600)
-        //.EUt(-512); // Generates HV tier power out
+    //.EUt(-512); // Generates HV tier power out
 
     allthemods.recipes.gtceu.mana_burner('cake_to_liquid_mana')
         .itemInputs('minecraft:cake')
@@ -45,15 +45,15 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:mana_essence 10800')
         .circuit(1)
         .duration(14400)
-        //.EUt(-16);
-    
+    //.EUt(-16);
+
     allthemods.recipes.gtceu.mana_burner('cake_to_source')
         .itemInputs('minecraft:cake')
         .inputFluids(`${stage1} 1800}`)
         .outputFluids('gtceu:source 1800')
         .circuit(2)
         .duration(14400)
-        //.EUt(-16);
+    //.EUt(-16);
 
     allthemods.recipes.gtceu.mana_burner('lava_to_liquid_mana')
         .inputFluids('minecraft:lava 1000')
@@ -61,7 +61,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:mana_essence 320')
         .circuit(1)
         .duration(400)
-        //.EUt(-16);
+    //.EUt(-16);
 
     allthemods.recipes.gtceu.mana_burner('lava_to_source')
         .inputFluids('minecraft:lava 1000')
@@ -69,7 +69,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:source 50')
         .circuit(2)
         .duration(400)
-        //.EUt(-16);
+    //.EUt(-16);
 
     const petalDuration = 300;
     const runicDuration = 600;
@@ -104,7 +104,7 @@ ServerEvents.recipes(allthemods => {
     });
 
     //runic altar
-     allthemods.forEachRecipe({ type: 'botania:runic_altar' }, rawRecipe => {
+    allthemods.forEachRecipe({ type: 'botania:runic_altar' }, rawRecipe => {
         let recipe = JSON.parse(rawRecipe.json);
 
         let inputItems = (recipe.ingredients || []).map(ingredient => {
@@ -169,7 +169,7 @@ ServerEvents.recipes(allthemods => {
             return null;
         }).filter(item => item != null);
 
-        
+
         // Safely parse output item and handle stack counts properly
         let outObj = recipe.result || recipe.output;
         let outputItem;
@@ -189,7 +189,7 @@ ServerEvents.recipes(allthemods => {
         if (hasBee) return;
         let safeID = rawRecipe.getId().toString().replace(/[^a-z0-9]/gi, '_');
         let manaCost = recipe.mana ?? 5000;
-        
+
         allthemods.recipes.gtceu.mana_infuser(safeID)
             .itemInputs(inputItems)
             .itemOutputs(outputItem)
@@ -197,7 +197,7 @@ ServerEvents.recipes(allthemods => {
             .duration(infusionDuration)
             .EUt(infusionVoltage);
     });
-    
+
     const pureBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:pure"}}').strongNBT();
     const terraBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:terrasteel"}}').strongNBT();
     const manaBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:mana"}}').strongNBT();
@@ -230,54 +230,233 @@ ServerEvents.recipes(allthemods => {
         .duration(infusionDuration)
         .EUt(infusionVoltage);
 
-    
+
     allthemods.recipes.gtceu.mana_infuser('unobtainium_allthemodium_alloy_block')
-        .itemInputs ( ['#forge:storage_blocks/unobtainium', '#forge:storage_blocks/allthemodium', 'allthemodium:piglich_heart_block'])
-        .itemOutputs( 'allthemodium:unobtainium_allthemodium_alloy_block')
-        .inputFluids( 'gtceu:mana_essence 8100000')
+        .itemInputs(['#forge:storage_blocks/unobtainium', '#forge:storage_blocks/allthemodium', 'allthemodium:piglich_heart_block'])
+        .itemOutputs('allthemodium:unobtainium_allthemodium_alloy_block')
+        .inputFluids('gtceu:mana_essence 8100000')
         .duration(infusionDuration)
-        .EUt(infusionVoltage);      
-    
+        .EUt(infusionVoltage);
+
     allthemods.recipes.gtceu.mana_infuser('unobtainium_vibranium_alloy_block')
-        .itemInputs ( ['#forge:storage_blocks/unobtainium', '#forge:storage_blocks/vibranium', 'allthemodium:piglich_heart_block'])
-        .itemOutputs( 'allthemodium:unobtainium_vibranium_alloy_block')
-        .inputFluids( 'gtceu:mana_essence 8100000')
+        .itemInputs(['#forge:storage_blocks/unobtainium', '#forge:storage_blocks/vibranium', 'allthemodium:piglich_heart_block'])
+        .itemOutputs('allthemodium:unobtainium_vibranium_alloy_block')
+        .inputFluids('gtceu:mana_essence 8100000')
         .duration(infusionDuration)
-        .EUt(infusionVoltage);      
-    
+        .EUt(infusionVoltage);
+
     allthemods.recipes.gtceu.mana_infuser('vibranium_allthemodium_alloy_block')
-        .itemInputs ( ['#forge:storage_blocks/allthemodium', '#forge:storage_blocks/vibranium', 'allthemodium:piglich_heart_block'])
-        .itemOutputs( 'allthemodium:vibranium_allthemodium_alloy_block')
-        .inputFluids( 'gtceu:mana_essence 8100000')
+        .itemInputs(['#forge:storage_blocks/allthemodium', '#forge:storage_blocks/vibranium', 'allthemodium:piglich_heart_block'])
+        .itemOutputs('allthemodium:vibranium_allthemodium_alloy_block')
+        .inputFluids('gtceu:mana_essence 8100000')
         .duration(infusionDuration)
-        .EUt(infusionVoltage);      
+        .EUt(infusionVoltage);
 
     allthemods.recipes.gtceu.mana_infuser('unobtainium_vibranium_alloy_ingot')
-        .itemInputs ( ['#forge:ingots/unobtainium', '#forge:ingots/vibranium', 'allthemodium:piglich_heart'])
-        .itemOutputs( 'allthemodium:unobtainium_vibranium_alloy_ingot')
-        .inputFluids( 'gtceu:mana_essence 1000000')
+        .itemInputs(['#forge:ingots/unobtainium', '#forge:ingots/vibranium', 'allthemodium:piglich_heart'])
+        .itemOutputs('allthemodium:unobtainium_vibranium_alloy_ingot')
+        .inputFluids('gtceu:mana_essence 1000000')
         .duration(infusionDuration)
-        .EUt(infusionVoltage);      
-    
+        .EUt(infusionVoltage);
+
     allthemods.recipes.gtceu.mana_infuser('vibranium_allthemodium_alloy_ingot')
-        .itemInputs ( ['#forge:ingots/vibranium', '#forge:ingots/allthemodium', 'allthemodium:piglich_heart'])
-        .itemOutputs( 'allthemodium:vibranium_allthemodium_alloy_ingot')
-        .inputFluids( 'gtceu:mana_essence 1000000')
+        .itemInputs(['#forge:ingots/vibranium', '#forge:ingots/allthemodium', 'allthemodium:piglich_heart'])
+        .itemOutputs('allthemodium:vibranium_allthemodium_alloy_ingot')
+        .inputFluids('gtceu:mana_essence 1000000')
         .duration(infusionDuration)
-        .EUt(infusionVoltage);      
-    
+        .EUt(infusionVoltage);
+
     allthemods.recipes.gtceu.mana_infuser('unobtainium_allthemodium_alloy_ingot')
-        .itemInputs ( ['#forge:ingots/unobtainium', '#forge:ingots/allthemodium', 'allthemodium:piglich_heart'])
-        .itemOutputs( 'allthemodium:unobtainium_allthemodium_alloy_ingot')
-        .inputFluids( 'gtceu:mana_essence 1000000')
+        .itemInputs(['#forge:ingots/unobtainium', '#forge:ingots/allthemodium', 'allthemodium:piglich_heart'])
+        .itemOutputs('allthemodium:unobtainium_allthemodium_alloy_ingot')
+        .inputFluids('gtceu:mana_essence 1000000')
         .duration(infusionDuration)
-        .EUt(infusionVoltage);      
+        .EUt(infusionVoltage);
 
     allthemods.recipes.gtceu.mana_infuser('mythicbotany:alfsteel_ingot')
-        .itemInputs ( ['botania:elementium_ingot', 'botania:pixie_dust','botania:mana_pearl'])
-        .itemOutputs( 'mythicbotany:alfsteel_ingot')
-        .inputFluids( 'gtceu:mana_essence 1000000')
+        .itemInputs(['botania:elementium_ingot', 'botania:pixie_dust', 'botania:mana_pearl'])
+        .itemOutputs('mythicbotany:alfsteel_ingot')
+        .inputFluids('gtceu:mana_essence 1000000')
         .duration(infusionDuration)
-        .EUt(infusionVoltage);   
+        .EUt(infusionVoltage);
 
+    //alchemy table
+    const TOOL_ITEM_IDS = {
+        resonator: 'bloodmagic:hellforged_resonator',
+        cuttingfluid: 'bloodmagic:advancedcuttingfluid',
+        explosive: 'bloodmagic:hellforged_explosive_cell',
+        reverter: 'bloodmagic:sanguinereverter'
+    };
+
+    allthemods.forEachRecipe({ type: 'bloodmagic:arc' }, rawRecipe => {
+        let safeID = rawRecipe.getId().toString().replace(/[^a-z0-9]/gi, '_');
+        try {
+            let recipe = JSON.parse(rawRecipe.json);
+
+            // --- Input item ---
+            let inputItem = null;
+            if (recipe.input) {
+                if (recipe.input.item) {
+                    inputItem = recipe.input.item;
+                } else if (recipe.input.tag) {
+                    inputItem = '#' + recipe.input.tag;
+                }
+            }
+            let inputItems = inputItem ? [inputItem] : [];
+
+            // --- Input fluid ---
+            let inputFluids = [];
+            if (recipe.inputFluid && recipe.inputFluid.fluid) {
+                let amount = recipe.inputFluid.amount || 1000;
+                inputFluids.push(`${recipe.inputFluid.fluid} ${Math.round(amount)}`);
+            }
+
+            // --- Main output item(s) — handle both single-object and array shapes ---
+            let outputItems = [];
+            let outputObjs = Array.isArray(recipe.output) ? recipe.output : (recipe.output ? [recipe.output] : []);
+            outputObjs.forEach(out => {
+                if (out.item) {
+                    let count = out.count || 1;
+                    outputItems.push(count > 1 ? `${count}x ${out.item}` : out.item);
+                }
+            });
+
+            // --- Output fluid ---
+            let outputFluids = [];
+            if (recipe.outputFluid && recipe.outputFluid.fluid) {
+                let amount = recipe.outputFluid.amount || 1000;
+                outputFluids.push(`${recipe.outputFluid.fluid} ${Math.round(amount)}`);
+            }
+
+            // --- addedoutput: split into guaranteed extras vs genuine chanced outputs ---
+            let chancedEntries = [];
+            if (Array.isArray(recipe.addedoutput)) {
+                recipe.addedoutput.forEach(added => {
+                    if (!added.type || !added.type.item) return;
+
+                    let mainChance = added.mainchance || 0;
+                    let chance = Math.round((added.chance || 0) * 10000);
+
+                    if (mainChance >= 1.0) {
+                        // Guaranteed extra output — treat as a normal output, not chanced
+                        let count = added.type.count || 1;
+                        outputItems.push(count > 1 ? `${count}x ${added.type.item}` : added.type.item);
+                    } else if (chance > 0 && chance < 10000) {
+                        chancedEntries.push({ item: added.type.item, chance: chance });
+                    }
+                    // else: chance is 0 and mainchance isn't 1.0 — nothing happens, skip silently
+                });
+            }
+
+            if (outputItems.length === 0) {
+                outputItems.push('minecraft:air');
+            }
+
+            // --- Build the recipe ---
+            let builder = allthemods.recipes.gtceu.alchemical_workbench(safeID)
+                .itemInputs(inputItems)
+                .itemOutputs(outputItems)
+                .duration(runicDuration)
+                .EUt(runicVoltage);
+
+            if (inputFluids.length > 0) builder.inputFluids(inputFluids);
+            if (outputFluids.length > 0) builder.outputFluids(outputFluids);
+
+            // --- Tool handling: hydrate dropped entirely, others become non-consumed requirements ---
+            if (recipe.tool && recipe.tool.tag) {
+                let match = recipe.tool.tag.match(/bloodmagic:arc\/([a-z]+)/);
+                let category = match ? match[1] : null;
+                if (category && category !== 'hydrate' && TOOL_ITEM_IDS[category]) {
+                    try {
+                        builder.notConsumable(TOOL_ITEM_IDS[category]);
+                    } catch (err) {
+                        console.error(`notConsumable FAILED for ${safeID}: ${err}`);
+                    }
+                }
+            }
+
+            // --- Genuine chanced outputs ---
+            chancedEntries.forEach(entry => {
+                try {
+                    builder.chancedOutput(entry.item, entry.chance, 0);
+                } catch (err) {
+                    console.error(`chancedOutput FAILED for ${safeID}: ${err}`);
+                }
+            });
+
+        } catch (err) {
+            console.error(`FAILED recipe ID: ${safeID} — ${err}`);
+        }
+    });
+
+
+
+    const BLOOD_ORB_TIERS = {
+        1: 'bloodmagic:weakbloodorb',
+        2: 'bloodmagic:apprenticebloodorb',
+        3: 'bloodmagic:magicianbloodorb',
+        4: 'bloodmagic:masterbloodorb'
+    };
+
+    allthemods.forEachRecipe({ type: 'bloodmagic:alchemytable' }, rawRecipe => {
+        let safeID = rawRecipe.getId().toString().replace(/[^a-z0-9]/gi, '_');
+        try {
+            let recipe = JSON.parse(rawRecipe.json);
+
+            // --- Input items — array of {item} or {tag}, some entries may be nested OR-arrays ---
+            let inputItems = [];
+            (recipe.input || []).forEach(ing => {
+                if (Array.isArray(ing)) {
+                    // OR-slot — take the first option only
+                    let first = ing[0];
+                    if (first.item) {
+                        inputItems.push(first.item);
+                    } else if (first.tag) {
+                        inputItems.push('#' + first.tag);
+                    }
+                } else if (ing.item) {
+                    inputItems.push(ing.item);
+                } else if (ing.tag) {
+                    inputItems.push('#' + ing.tag);
+                }
+            });
+
+            // --- Output item ---
+            let outputItem = 'minecraft:air';
+            if (recipe.output && recipe.output.item) {
+                let count = recipe.output.count || 1;
+                outputItem = count > 1 ? `${count}x ${recipe.output.item}` : recipe.output.item;
+            }
+
+            // --- Liquid blood cost (syphon → fluid) ---
+            let syphonAmount = Math.round(recipe.syphon || 0);
+
+            // --- Duration ---
+            let duration = Math.round(recipe.ticks || 100);
+
+            // --- Blood orb tier as non-consumed requirement ---
+            let orbItem = BLOOD_ORB_TIERS[Math.round(recipe.upgradeLevel || 1)];
+
+            let builder = allthemods.recipes.gtceu.alchemical_workbench(safeID)
+                .itemInputs(inputItems)
+                .itemOutputs(outputItem)
+                .duration(duration)
+                .EUt(runicVoltage);
+
+            if (syphonAmount > 0) {
+                builder.inputFluids([`gtceu:sanguine_concentrate ${syphonAmount}`]);
+            }
+
+            if (orbItem) {
+                try {
+                    builder.notConsumable(orbItem);
+                } catch (err) {
+                    console.error(`notConsumable FAILED for ${safeID}: ${err}`);
+                }
+            }
+
+        } catch (err) {
+            console.error(`FAILED recipe ID: ${safeID} — ${err}`);
+        }
+    });
 });

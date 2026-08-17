@@ -438,4 +438,58 @@ ServerEvents.recipes(allthemods => {
         .blastFurnaceTemp(tempMars)
         .duration(Duration)
         .EUt(EUMars);
+
+    //xenotime
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:xenotime_processing')
+        .itemInputs(['2x #forge:dusts/xenotime', '#forge:dusts/potassium_calcium_silicate', '#forge:dusts/potassium_hydroxide'])
+        .inputFluids('minecraft:water 3000')
+        .itemOutputs(['gtceu:potassium_calcium_orthosilicate_dust', 'gtceu:yttrium_oxide_dust'])
+        .outputFluids(['gtceu:phosphoric_acid 2000', 'gtceu:hydrofluoric_acid 1000'])
+        .duration(Duration)
+        .EUt(EUMars);
+
+    allthemods.recipes.gtceu.chemical_bath('gregification:gadolinite_processing')
+        .itemInputs('#forge:dusts/gadolinite')
+        .inputFluids('#forge:oxygen 1000')
+        .itemOutputs(['gtceu:yttrium_oxide_dust', 'gtceu:cerium_oxide_dust', 'gtceu:iron_dust', '2x gtceu:beryllium_oxide_dust', '2x gtceu:silicon_dioxide_dust'])
+        .duration(Duration)
+        .EUt(EUMars);
+
+    allthemods.recipes.gtceu.chemical_bath('gregification:laurite_processing')
+        .itemInputs('#forge:dusts/laurite')
+        .inputFluids('#forge:oxygen 8000')
+        .itemOutputs('gtceu:ruthenium_tetroxide_dust')
+        .outputFluids('gtceu:sulfur_dioxide 2000')
+        .duration(Duration)
+        .EUt(EUMercuryVenus);
+    
+    allthemods.recipes.gtceu.chemical_bath('gregification:germanite_processing')
+        .itemInputs('#forge:dusts/germanite')
+        .inputFluids('#forge:sulfur_dioxide 8000')
+        .itemOutputs(['2x gtceu:germanium_sulfate_dust', '2x gtceu:chalcopyrite_dust', '11x gtceu:copper_dust', '16x gtceu:sulfur_dust'])
+        .duration(Duration)
+        .EUt(EUGlacio);
+
+    allthemods.recipes.gtceu.chemical_bath('gregification:renierite_processing')
+        .itemInputs('#forge:dusts/renierite')
+        .inputFluids('#forge:oxygen 16000')
+        .itemOutputs(['4x gtceu:zinc_dust', '2x gtceu:chalcopyrite_dust', '9x gtceu:copper_dust', '2x gtceu:germanium_sulfate_dust', '2x gtceu:arsenic_dust', '8x gtceu:sulfur_dust'])
+        .duration(Duration)
+        .EUt(EUGlacio);
+
+    allthemods.recipes.gtceu.chemical_bath('gregification:lanthanite_processing')
+        .itemInputs('#forge:dusts/lanthanite')
+        .inputFluids('minecraft:water 3000')
+        .itemOutputs('2x gtceu:lanthanum_hydroxide_dust')
+        .outputFluids('gtceu:carbon_dioxide 3000')
+        .duration(Duration)
+        .EUt(EUMars);
+
+    allthemods.recipes.gtceu.chemical_bath('gregification:yttrialite_processing')
+        .itemInputs('#forge:dusts/yttrialite')
+        .inputFluids('#forge:sulfuric_acid 8000')
+        .itemOutputs(['gtceu:yttrium_oxide_dust', 'gtceu:thorium_dust', '2x gtceu:silicon_dioxide_dust'])
+        .outputFluids('gtceu:diluted_sulfuric_acid 8000')
+        .duration(Duration)
+        .EUt(EUMars);
 });

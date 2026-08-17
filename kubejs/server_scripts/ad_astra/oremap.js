@@ -23,7 +23,7 @@ GTCEuServerEvents.oreVeins(event => {
         )
     })
 
-
+    /*
     // Tier 1 - Moon (single planet, no split needed)
     const moonOres = [
         'clausthalite', 'naumannite', 'hafnian_zircon', 'hafnon', 'baddeleyite', 'zircon',
@@ -90,7 +90,7 @@ GTCEuServerEvents.oreVeins(event => {
     // Tier 4 - Glacio (single planet, no split needed)
     const glacioOres = [
         'rubicline', 'germanite', 'renierite', 'argyrodite', 'rhenite', 'tarkianite', 'rhodizite',
-        'radio_thoric_phosphate', 'tenebrius', 'etrium'
+        'radio_thoric_phosphate', 'tenebrius', 'etrium', 'chaotic'
     ];
     glacioOres.forEach((ore, i) => {
         event.add(`glacio_${ore}`, vein => {
@@ -103,54 +103,68 @@ GTCEuServerEvents.oreVeins(event => {
                 ));
         });
     });
+    */
+   
+    const moonOreGroups = [
+        ['clausthalite', 'naumannite'],                          // selenides (Pb-Se, Ag-Se)
+        ['hafnian_zircon', 'hafnon', 'baddeleyite', 'zircon'],    // Zr/Hf minerals — classic real-world association
+        ['ullmannite', 'jamesonite'],                             // antimony sulfosalts
+        ['gallite', 'cryolite'],
+        ['columbite_tantalite', 'microlite', 'wodginite'],        // Nb/Ta minerals
+        ['bismuthinite', 'bismite', 'bismutite'],                 // bismuth minerals
+        ['thorianite', 'thorite'],                                // thorium minerals        
+        ['hellish', 'terraria']                                   // flavor/lore ores
+    ];
 
-    // ------------------------------------------------------------------------
-    // PART B: Redistribute existing GT vanilla veins onto the 4 planets
-    // Overworld -> split Moon/Mars | Nether -> split Mercury/Venus | End -> Glacio
-    // ------------------------------------------------------------------------
+    const marsOreGroups = [
+        ['roquesite', 'indite', 'sakuraiite'],           // indium minerals
+        ['thortveitite', 'kolbeckite', 'bazzite'],       // scandium minerals
+        ['fergusonite', 'samarskite', 'lanthanite'],                   // Nb + rare-earth minerals
+        ['cerite', 'gadolinite', 'yttrialite', 'xenotime'] // Y/Ce/REE silicates & phosphates        
+    ];
 
+    const mercuryOreGroups = [
+        ['crookesite', 'hutchinsonite', 'lorandite', 'caliche'],    // thallium minerals
+        ['strontianite', 'celestite'],                   // strontium minerals
+        ['osmiridium', 'nether_star']
+        ];
 
+    const venusOreGroups = [
+        ['calaverite', 'kurilite', 'telluride'],         // telluride minerals (Au-Te, Ag-Te-Se, Ag-Te)
+        ['laurite']                                       // ruthenium/osmium sulfide
+    ];
 
-    // Clones existing GT vanilla veins onto the 4 Ad Astra planets, rather than
-    // modifying the originals - avoids the dimensions() getter bug and any load-order
-    // conflict with mining_dim_ores.js entirely.
-    //
-    // Overworld veins -> split Moon / Mars
-    // Nether veins    -> split Mercury / Venus
-    // End veins       -> Glacio
+    const glacioOreGroups = [
+        ['germanite', 'renierite', 'argyrodite'],        // germanium minerals
+        ['rhenite', 'tarkianite'],                        // rhenium minerals
+        ['rubicline', 'rhodizite'],        
+        ['radio_thoric_phosphate'],
+        ['tenebrius', 'etrium', 'chaotic']                // flavor/lore ores
+    ];
 
-
-
-    /*function cloneVeinToPlanet(sourceVeinId, newVeinId, planetDim, layerName, heightMin, heightMax) {
-        let copiedGen = null;
-        let newVein = {name: null, chance: null};        
-
-        try {
-            event.modify(`gtceu:${sourceVeinId}`, vein => {
-                copiedGen = vein.veinGenerator().copy();       
-                //let entries = vein.veinGenerator().getAllEntries();
-                //console.error(`allEntries() worked, length: ${entries.length}`);
-                //console.error(`First entry: ${entries[0]}`);
-                //console.error(vein.veinGenerator().allEntries().map(entry => `${entry.vein().getName()} (${entry.chance()})`).join(', '));                
-
-            });
-        } catch (err) {
-            console.error(`[ad_astra_ore_veins] Failed reading generator for '${sourceVeinId}' on '${planetDim} ${layerName}': ${err}`);
-            return;
-        }
-
-        if (copiedGen) {
-            event.add(newVeinId, vein => {
+    function addOreGroups(groups, planetPrefix, planetDim, layerName) {
+        groups.forEach((group, i) => {
+            const veinId = group.join('_');
+            event.add(`${planetPrefix}_${veinId}`, vein => {
                 vein.weight(35).density(0.5).clusterSize(35)
                     .layer(layerName)
                     .dimensions([planetDim])
-                    .heightRangeUniform(heightMin, heightMax);
-                vein['veinGenerator(com.gregtechceu.gtceu.api.data.worldgen.generator.VeinGenerator)'](copiedGen);
+                    .heightRangeUniform(10 + i * 5, 60 + i * 5)
+                    .layeredVeinGenerator(gen => gen.buildLayerPattern(pattern => {
+                        group.forEach(ore => {
+                            pattern = pattern.layer(l => l.weight(1).mat(GTMaterials.get(ore)).size(2, 4));
+                        });
+                        return pattern;
+                    }));
             });
-        } else {
-            console.error(`[ad_astra_ore_veins] Null generator for '${sourceVeinId}', skipped '${newVeinId}'`);
-        }
-    }*/
+        });
+    }
+
+    addOreGroups(moonOreGroups, 'moon', PLANETS.moon, 'moon');
+    addOreGroups(marsOreGroups, 'mars', PLANETS.mars, 'mars');
+    addOreGroups(mercuryOreGroups, 'mercury', PLANETS.mercury, 'mercury');
+    addOreGroups(venusOreGroups, 'venus', PLANETS.venus, 'venus');
+    addOreGroups(glacioOreGroups, 'glacio', PLANETS.glacio, 'glacio');
 
     function cloneVeinToPlanet(sourceVeinId, newVeinId, planetDim, layerName, heightMin, heightMax) {
         let entries = null;

@@ -89,7 +89,7 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:saturated_life_fertilizer')
         .itemInputs('#forge:dusts/picolinic_acid')
-        .inputFluids('gtceu:liquid_fertilizer 500','gtceu:sanguine_concentrate 500')
+        .inputFluids('gtceu:liquid_fertilizer 500','gtceu:sanguine_concentrate 500', 'gtceu:copper_ii_sulfate 432')
         .outputFluids('gtceu:saturated_life_fertilizer 1000')
         .duration(100)
         .EUt(512);    
@@ -104,6 +104,13 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('ad_astra:ice_shard', '#forge:dusts/blue_ice')
         .inputFluids('#forge:blue_ice 1000')
         .outputFluids('gtceu:super_coolant 1000')
+        .duration(500)
+        .EUt(512);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:copper_ii_sulfate')
+        .itemInputs('#forge:dusts/copper', '#forge:dusts/sulfur')
+        .inputFluids('#forge:oxygen 4000')
+        .itemOutputs('6x gtceu:copper_ii_sulfate_dust')
         .duration(500)
         .EUt(512);
 

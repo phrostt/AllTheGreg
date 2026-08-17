@@ -402,10 +402,12 @@ const dusts = [
     { name: 'yttrium_oxide', components: '2x yttrium, 3x oxygen', color: 0xFFFFFF, formula: 'Y2O3', iconSet: 'DULL', noDecomp: true },
     { name: 'lead_oxide', components: '1x lead, 1x oxygen', color: 0xE8DED1, formula: 'PbO', iconSet: 'DULL'},
     { name: 'tantalum_pentachloride', components: '1x tantalum, 5x chlorine', color: 0xF5DEB3, formula: 'TaCl5', iconSet: 'DULL', fluid: true, noDecomp: true },
-    { name: 'niobium_tantalum_residue', components: '2x niobium, 2x tantalum, 4x oxygen', color: 0x2B2B2B, formula: 'Nb2Ta2O4', iconSet: 'METALLIC', noDecomp: true }
+    { name: 'niobium_tantalum_residue', components: '2x niobium, 2x tantalum, 4x oxygen', color: 0x2B2B2B, formula: 'Nb2Ta2O4', iconSet: 'METALLIC', noDecomp: true },
+    { name: 'cerium_oxide', components: '1x cerium, 2x oxygen', color: 0xF5DEB3, formula: 'CeO2', iconSet: 'DULL' },
 ];
 
 const newOres = [
+    { name: 'caliche', components: '1x sodium, 1x iodine, 3x oxygen', byproducts: ['caliche', 'iodine', 'sodium'], iconSet: 'DULL', color: 0xE0D8B8, formula: 'NaIO3' },
     { name: 'calaverite', components: '2x tellurium, 1x gold', byproducts: ['calaverite', 'gold'], iconSet: 'METALLIC', color: 0xDAC084, noDecomp: true },
     { name: 'celestite', components: '1x strontium, 1x sulfur, 4x oxygen', byproducts: ['celestite', 'sulfur'], iconSet: 'METALLIC', color: 0xADD8E6, noDecomp: true },
     //{ name: 'celestine', components: '1x strontium, 1x sulfur, 4x oxygen', byproducts: ['celestine', 'strontium'], iconSet: 'GEM_VERTICAL', color: 0xADD8E6, noDecomp: true },
@@ -468,43 +470,45 @@ const newOres = [
     { name: 'samarskite', components: '1x yttrium, 1x cerium, 1x uranium, 1x iron, 2x niobium, 2x tantalum, 1x titanium, 8x oxygen', byproducts: ['samarskite', 'samarium', 'yttrium'], iconSet: 'METALLIC', color: 0x2C2418, noDecomp: true },
     { name: 'cerite', components: '3x cerium, 1x lanthanum, 1x calcium, 1x iron, 1x magnesium, 3x silicon, 12x oxygen, 1x fluorine', byproducts: ['cerite', 'samarium', 'lanthanum'], iconSet: 'DULL', color: 0x8C7858, noDecomp: true },
 
-    // Yttrium
+    // Yttrium - done
     { name: 'xenotime', components: '1x yttrium, 1x phosphorus, 4x oxygen', byproducts: ['xenotime', 'yttrium', 'lutetium'], iconSet: 'METALLIC', color: 0xC8A050, noDecomp: true },
     { name: 'gadolinite', components: '2x yttrium, 1x cerium, 1x iron, 2x beryllium, 2x silicon, 10x oxygen', byproducts: ['gadolinite', 'yttrium'], iconSet: 'DULL', color: 0x3C3428, noDecomp: true },
 
-    // Ruthenium & Osmium
+    // Ruthenium & Osmium - done
     { name: 'laurite', components: '1x ruthenium, 2x sulfur', byproducts: ['laurite', 'ruthenium', 'osmium'], iconSet: 'METALLIC', color: 0x505860, noDecomp: true },
     //{ name: 'osmiridium', components: '1x osmium, 1x iridium', byproducts: ['osmiridium', 'osmium', 'ruthenium'], iconSet: 'METALLIC', color: 0x788088, noDecomp: true },
 
-    // Germanium
+    // Germanium - done
     { name: 'germanite', components: '13x copper, 2x iron, 2x germanium, 16x sulfur', byproducts: ['germanite', 'germanium', 'gallium'], iconSet: 'METALLIC', color: 0x6E5A4A, noDecomp: true },
     { name: 'renierite', components: '11x copper, 4x zinc, 2x iron, 2x germanium, 2x arsenic, 16x sulfur', byproducts: ['renierite', 'germanium'], iconSet: 'METALLIC', color: 0x5A4A3C, noDecomp: true },
 
     // Bismuth
-    { name: 'bismuthinite', components: '2x bismuth, 3x sulfur', byproducts: ['bismuthinite', 'bismuth'], iconSet: 'METALLIC', color: 0xC8B8C0, noDecomp: true },
-    { name: 'bismite', components: '2x bismuth, 3x oxygen', byproducts: ['bismite', 'bismuth'], iconSet: 'DULL', color: 0xD8C8A8, noDecomp: true },
-    { name: 'bismutite', components: '2x bismuth, 1x carbon, 5x oxygen', byproducts: ['bismutite', 'bismuth'], iconSet: 'DULL', color: 0xB8A898, noDecomp: true },
+    { name: 'bismuthinite', components: '2x bismuth, 3x sulfur', byproducts: ['bismuthinite', 'bismuth'], iconSet: 'METALLIC', color: 0xC8B8C0 },
+    { name: 'bismite', components: '2x bismuth, 3x oxygen', byproducts: ['bismite', 'bismuth'], iconSet: 'DULL', color: 0xD8C8A8 },
+    { name: 'bismutite', components: '2x bismuth, 1x carbon, 5x oxygen', byproducts: ['bismutite', 'bismuth'], iconSet: 'DULL', color: 0xB8A898 },
 
     // Thorium  - thorianite is added by immersive geology
-    { name: 'thorianite', components: '1x thorium, 2x oxygen', byproducts: ['thorianite', 'thorium'], iconSet: 'METALLIC', color: 0x1C1C1C, noDecomp: true },
-    { name: 'thorite', components: '1x thorium, 1x silicon, 4x oxygen', byproducts: ['thorite', 'thorium'], iconSet: 'DULL', color: 0x3C3428, noDecomp: true },
+    { name: 'thorianite', components: '1x thorium, 2x oxygen', byproducts: ['thorianite', 'thorium'], iconSet: 'METALLIC', color: 0x1C1C1C },
+    { name: 'thorite', components: '1x thorium, 1x silicon, 4x oxygen', byproducts: ['thorite', 'thorium'], iconSet: 'DULL', color: 0x3C3428 },
 
     // Caesium - done
     { name: 'rhodizite', components: '1x caesium, 1x potassium, 4x aluminium, 4x beryllium, 11x boron, 28x oxygen', byproducts: ['rhodizite', 'caesium'], iconSet: 'GEM_VERTICAL', color: 0xF0F0E0, noDecomp: true },
 
-    // Lanthanum
+    // Lanthanum - done
     { name: 'lanthanite', components: '2x lanthanum, 3x carbon, 9x oxygen', byproducts: ['lanthanite', 'lanthanum'], iconSet: 'DULL', color: 0xD8D8C0, noDecomp: true },
 
-    // Lutetium
+    // Yttrium - done
     { name: 'yttrialite', components: '2x yttrium, 1x thorium, 2x silicon, 7x oxygen', byproducts: ['yttrialite', 'lutetium', 'yttrium'], iconSet: 'DULL', color: 0x8C8058, noDecomp: true },
 
     // Fluorine    - cryolite is added by immersive geology
-    { name: 'cryolite', components: '3x sodium, 1x aluminium, 6x fluorine', byproducts: ['cryolite', 'fluorine'], iconSet: 'DULL', color: 0xE8E8E8, noDecomp: true },
+    { name: 'cryolite', components: '3x sodium, 1x aluminium, 6x fluorine', byproducts: ['cryolite', 'fluorine'], iconSet: 'DULL', color: 0xE8E8E8 },
 
     // Antimony
-    { name: 'ullmannite', components: '1x nickel, 1x antimony, 1x sulfur', byproducts: ['ullmannite', 'antimony'], iconSet: 'METALLIC', color: 0x9A9A9A, noDecomp: true },
-    { name: 'jamesonite', components: '4x lead, 2x iron, 6x antimony, 14x sulfur', byproducts: ['jamesonite', 'antimony', 'lead'], iconSet: 'METALLIC', color: 0x605868, noDecomp: true },
+    { name: 'ullmannite', components: '1x nickel, 1x antimony, 1x sulfur', byproducts: ['ullmannite', 'antimony'], iconSet: 'METALLIC', color: 0x9A9A9A },
+    { name: 'jamesonite', components: '4x lead, 2x iron, 6x antimony, 14x sulfur', byproducts: ['jamesonite', 'antimony', 'lead'], iconSet: 'METALLIC', color: 0x605868 },
 
+    //chaos shard
+    { name: 'chaotic', iconSet: 'SHINY', color: 0x090909 },
 ];
 
 GTCEuStartupEvents.registry('gtceu:material', event => {
@@ -595,6 +599,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         );
     
     let materialBuilder
+
+    materialBuilder = event.create("chaos_shard")
+        //.dust()
+        .gem()
+        //.fluid()
+        .color(0x090909)
+        .iconSet(GTMaterialIconSet.RADIOACTIVE);
 
     materialBuilder = event.create("unrefined_tenebrius")
         .dust()
@@ -1319,6 +1330,7 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
+    TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
 
 
     // Ingot
@@ -1454,6 +1466,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
+    TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
 
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');
@@ -1509,9 +1522,7 @@ GTCEuStartupEvents.materialModification(event => {
     });
     let osmiridium = GTMaterials.get('osmiridium');
     let netherstar = GTMaterials.get('nether_star')
-    let etrium = GTMaterials.get('etrium');
-
-
+    let etrium = GTMaterials.get('etrium');  
 
     let javaList = new ArrayList();
     javaList.add(GTMaterials.get('ruthenium'));

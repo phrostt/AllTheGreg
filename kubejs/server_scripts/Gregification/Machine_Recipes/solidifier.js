@@ -5,7 +5,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('industrialforegoing:plastic')
         .duration(20) // Takes 1 second
         .EUt(32) // LV tier energy
-        .circuit(3)
+        .circuit(3);
 
     allthemods.recipes.gtceu.fluid_solidifier('pnc_plastic_plate_solidification')
         .notConsumable('gtceu:plate_casting_mold')
@@ -13,7 +13,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('pneumaticcraft:plastic')
         .duration(20) // Takes 1 second
         .EUt(32) // LV tier energy
-        .circuit(2)
+        .circuit(2);
 
     allthemods.recipes.gtceu.fluid_solidifier('gt_plastic_plate_solidification')
         .notConsumable('gtceu:plate_casting_mold')
@@ -21,5 +21,5 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('gtceu:plastic_plate')
         .duration(20) // Takes 1 second
         .EUt(32) // LV tier energy
-        .circuit(1)
+        .circuit(1);
 });

@@ -62,7 +62,7 @@ ServerEvents.recipes(allthemods => {
                 '4x #gtceu:circuits/iv',
                 '2x gtceu:iv_field_generator',
                 '4x #forge:gears/enderium',
-                '8x #forge:rods/draconium',
+                '8x #forge:rods/hafnium',
                 '4x #forge:double_plates/graphite'
             ],
             'gtceu:polytetrafluoroethylene 576',
@@ -107,6 +107,7 @@ ServerEvents.recipes(allthemods => {
                 '#forge:frames/draconium',
                 '4x #forge:double_plates/graphite',
                 '2x #forge:screws/enderium',
+                '8x #forge:plates/hafnium',
                 '8x #forge:plates/tungsten_steel',
                 'pneumaticcraft:reinforced_stone'
             ],
@@ -135,6 +136,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:frames/draconium',
             '8x #forge:rods/graphite',
             '4x #forge:plates/tungsten_steel',
+            '16x #forge:screws/hafnium',
             '2x #forge:rings/enderium'
         ],
         'gtceu:polytetrafluoroethylene 144',
@@ -160,7 +162,8 @@ ServerEvents.recipes(allthemods => {
             '#forge:frames/draconium',
             '6x #forge:rods/graphite',
             '3x #forge:ingots/uranium',
-            '2x #forge:rings/enderium'
+            '2x #forge:rings/enderium',
+            '4x #forge:plates/hafnium'
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reinforced_reactorfuelrod',
@@ -174,6 +177,7 @@ ServerEvents.recipes(allthemods => {
             '2x gtceu:ev_conveyor_module',
             'gtceu:ev_robot_arm',
             '4x #forge:small_gears/plastic',
+            '4x #forge:small_gears/hafnium',
             'gtceu:item_detector_cover'
 
         ],
@@ -196,6 +200,7 @@ ServerEvents.recipes(allthemods => {
                 '2x gtceu:iv_conveyor_module',
                 'gtceu:iv_robot_arm',
                 '4x #forge:gears/plastic',
+                '4x #forge:small_gears/hafnium',
                 'gtceu:advanced_item_detector_cover'
             ],
             'gtceu:polytetrafluoroethylene 144',
@@ -248,6 +253,7 @@ ServerEvents.recipes(allthemods => {
                 'pneumaticcraft:reinforced_stone',
                 'gtceu:iv_electric_pump',
                 '2x #forge:screws/enderium',
+                '4x #forge:small_gears/hafnium',
                 'gtceu:advanced_fluid_detector_cover'
             ],
             'gtceu:polytetrafluoroethylene 288',
@@ -265,7 +271,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:frames/end_steel',
             'pneumaticcraft:reinforced_stone',
             '2x #forge:small_gears/graphite',
-            '4x #forge:plates/titanium',
+            '4x #forge:plates/titanium',            
             '2x #forge:screws/lumium'
 
         ],
@@ -279,6 +285,7 @@ ServerEvents.recipes(allthemods => {
             'pneumaticcraft:reinforced_stone',
             '2x #forge:gears/graphite',
             '4x #forge:plates/tungsten_steel',
+            '2x #forge:rods/hafnium',
             '2x #forge:screws/enderium'
         ],
         'gtceu:polytetrafluoroethylene 144',
@@ -292,6 +299,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:frames/draconium',
             'pneumaticcraft:reinforced_stone',
             '4x #forge:gears/graphite',
+            '4x #forge:plates/hafnium',
             '2x gtceu:iv_field_generator',
             '4x #forge:rods/hop_graphite'
 
@@ -307,7 +315,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:frames/end_steel',
             '4x #forge:screws/titanium',
             '2x #forge:rotors/graphite',
-            '2x #forge:plates/titanium',
+            '2x #forge:plates/titanium',            
             '#forge:rings/titanium'
 
         ],
@@ -321,6 +329,7 @@ ServerEvents.recipes(allthemods => {
             '4x #forge:screws/tungsten_steel',
             '2x #forge:rotors/graphite',
             '2x #forge:plates/tungsten_steel',
+            '2x #forge:rods/hafnium',
             '#forge:rings/titanium'
         ],
         'gtceu:polytetrafluoroethylene 144',
@@ -345,7 +354,8 @@ ServerEvents.recipes(allthemods => {
             '#forge:rods/draconium',
             '2x #forge:plates/draconium',
             '2x #forge:plates/tungsten_steel',
-            '4x #forge:screws/tungsten_steel'
+            '4x #forge:screws/tungsten_steel',
+            '2x #forge:plates/hafnium'
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reinforced_turbinerotorblade',
@@ -396,7 +406,8 @@ ServerEvents.recipes(allthemods => {
                 '2x gtceu:hpic_chip',
                 '2x gtceu:iv_voltage_coil',
                 '2x #forge:screws/enderium',
-                '4x #forge:plates/plastic',                
+                '4x #forge:plates/plastic',      
+                '4x #forge:small_gears/hafnium',
                 'gtceu:advanced_energy_detector_cover'
             ],
             'gtceu:polytetrafluoroethylene 288',
@@ -443,6 +454,7 @@ ServerEvents.recipes(allthemods => {
                 'gtceu:iv_voltage_coil',
                 '2x #forge:screws/enderium',
                 '2x #forge:plates/plastic',
+                '4x #forge:small_gears/hafnium',
                 'gtceu:advanced_energy_detector_cover'
             ],
             'gtceu:polytetrafluoroethylene 288',
@@ -493,6 +505,7 @@ ServerEvents.recipes(allthemods => {
                 '2x #forge:screws/enderium',
                 '4x #forge:plates/plastic',
                 'pneumaticcraft:reinforced_stone',
+                '4x #forge:small_gears/hafnium',
                 'gtceu:advanced_activity_detector_cover'
             ],
             'gtceu:polytetrafluoroethylene 288',
@@ -518,6 +531,7 @@ ServerEvents.recipes(allthemods => {
                 'pneumaticcraft:reinforced_stone',
                 'gtceu:cpu_chip',
                 '2x pneumaticcraft:printed_circuit_board',
+                '4x #forge:small_gears/hafnium',
                 'gtceu:computer_monitor_cover'
             ],
             'gtceu:polytetrafluoroethylene 288',
