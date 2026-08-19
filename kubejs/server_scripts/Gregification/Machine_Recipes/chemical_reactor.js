@@ -43,7 +43,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:liquid_chaos 1000'
         ],
         null,
-        'gtceu:chaos_plastic 11520',
+        'gtceu:chaos_plastic 1000',
         'IV',
         6000,
         'chaos_plastic'

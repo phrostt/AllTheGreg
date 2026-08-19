@@ -4,10 +4,10 @@ ServerEvents.recipes(allthemods => {
     const EUStage2 = 2048; //ev
     const EUStage3 = 8192; //iv
     const EUStage4 = 32768; //luv
-    const EUStage5 = 524288; //zpm
-    const EUStage6 = 2097152; //uv
-    const EUStage7 = 8388608; //uhv
-    const EUStage8 = 33554432; //uev
+    const EUStage5 = 131072; //zpm
+    const EUStage6 = 524288; //uv
+    const EUStage7 = 2097152; //uhv
+    const EUStage8 = 8388608; //uev
     const duration = 400;
 
     //zinc carbon acid for the slurry
@@ -109,12 +109,12 @@ ServerEvents.recipes(allthemods => {
         
     allthemods.recipes.gtceu.baryonic_separator('gregification:quark_separation')
         .itemInputs(['#forge:small_dusts/infinity', '#forge:small_dusts/draconium_awakened'])
-        .chancedOutput('gtceu:up_quark', 500, 0)
-        .chancedOutput('gtceu:down_quark', 500, 0)
-        .chancedOutput('gtceu:top_quark', 500, 0)
-        .chancedOutput('gtceu:bottom_quark', 500, 0)
-        .chancedOutput('gtceu:strange_quark', 500, 0)
-        .chancedOutput('gtceu:charm_quark', 500, 0)
+        .chancedOutput('gtceu:up_quark', 5000, 0)
+        .chancedOutput('gtceu:down_quark', 5000, 0)
+        .chancedOutput('gtceu:top_quark', 5000, 0)
+        .chancedOutput('gtceu:bottom_quark', 5000, 0)
+        .chancedOutput('gtceu:strange_quark', 5000, 0)
+        .chancedOutput('gtceu:charm_quark', 5000, 0)
         .duration(duration)
         .EUt(EUStage7);
 

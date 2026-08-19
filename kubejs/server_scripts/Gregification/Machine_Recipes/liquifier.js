@@ -17,7 +17,7 @@
         .inputFluids('gtceu:primordial_cosmic_soup 1000')
         .outputFluids('gtceu:liquid_chaos 1000')
         .duration(1200)
-        .EUt(128)
+        .EUt(8192)
 
     allthemods.recipes.gtceu.liquifier('source_gem_block_to_source')
         .itemInputs('#forge:storage_blocks/source')
@@ -40,4 +40,12 @@
         .outputFluids('evilcraft:poison 250')
         .duration(100)
         .EUt(2048)
+    
+    allthemods.recipes.gtceu.liquifier('blood')
+        .itemInputs('evilcraft:condensed_blood')
+        .inputFluids('gtceu:distilled_water 500')
+        .outputFluids('gtceu:sanguine_concentrate 500')
+        .duration(100)
+        .EUt(512)
+
     });

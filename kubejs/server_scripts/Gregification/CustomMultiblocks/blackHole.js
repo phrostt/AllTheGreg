@@ -140,10 +140,13 @@ ServerEvents.recipes(allthemods => {
     )
     blackHole(['allthecompressed:cobblestone_6x', '#forge:frames/alfsteel'],'#forge:concentrated_dark_matter 1', 'gtceu:small_bedrockium_dust', null, 2097152, 1200, 'bedrockium_compression')
 
-    blackHole('64000x #elementalcraft:shards/fire','#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 1200, 'fire_singularity')
-    blackHole('64000x #elementalcraft:shards/air','#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 1200, 'air_singularity')
-    blackHole('64000x #elementalcraft:shards/earth','#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 1200, 'earth_singularity')
-    blackHole('64000x #elementalcraft:shards/water','#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 1200, 'water_singularity')
+    blackHole('4000x gtceu:beryllium_ingot', null, 'gtceu:beryllium_singularity', null, 524288, 1200, 'beryllium_singularity')
+
+    blackHole('4000x #elementalcraft:shards/fire','#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 1200, 'fire_singularity')
+    blackHole('4000x #elementalcraft:shards/air','#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 1200, 'air_singularity')
+    blackHole('4000x #elementalcraft:shards/earth','#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 1200, 'earth_singularity')
+    blackHole('4000x #elementalcraft:shards/water','#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 1200, 'water_singularity')
+
 
     blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:purest_water 32000000' , null, 'gtceu:fifth_element 14400', 524288, 1200, 'fifth_element')
 })

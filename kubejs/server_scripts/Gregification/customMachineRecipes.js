@@ -147,6 +147,7 @@ ServerEvents.recipes(allthemods => {
         let bRunic = `gtceu:${tData.tier}_runic_altar`;
         let bInfuser = `gtceu:${tData.tier}_mana_infuser`;
         let aChamber = `gtceu:${tData.tier}_imbument_chamber`;
+        let baChamber = `gtceu:${tData.tier}_alchemical_workbench`;
         
 
         let machineR = `gtceu:${tData.tier}_reconstructor`;
@@ -191,13 +192,26 @@ ServerEvents.recipes(allthemods => {
         if (tData.t >= 3 && tData.t <= 8) {
             addAssembler(
                 [
-                    'ars_nouveau:imbuement_chamber', hull, pump, piston, circuit, `4x ${plate}`
+                    'ars_nouveau:imbuement_chamber', hull, `2x ${pump}`, piston, `2x ${circuit}`, `4x ${plate}`
                 ],
                 [
                     '#forge:source 1440',
                     '#forge:lubricant 1000'
                 ],
                 aChamber,
+                tierValues[tData.t - 1],
+                600
+            );     
+
+            addAssembler(
+                [
+                    'bloodmagic:alchemicalreactionchamber', 'bloodmagic:alchemytable', hull, `2x ${pump}`, piston, `2x ${circuit}`, `4x ${plate}`
+                ],
+                [
+                    '#forge:source 1440',
+                    '#forge:lubricant 1000'
+                ],
+                baChamber,
                 tierValues[tData.t - 1],
                 600
             );     

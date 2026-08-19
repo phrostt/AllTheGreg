@@ -91,7 +91,7 @@ StartupEvents.registry('item', event => {
         event.create(`gtceu:${quark.name}_quark`)
             .displayName(`${quark.name.charAt(0).toUpperCase() + quark.name.slice(1)} Quark`)
             .rarity(quark.rarity)
-            .glow(true)
+            //.glow(true)
     })
 
     const elements = [

@@ -15,14 +15,15 @@ ServerEvents.recipes(allthemods => {
         .duration(600)
         .EUt(524288);
 
-    allthemods.recipes.gtceu.printer('chaos_plastic_lens')
-        .inputFluids('gtceu:chaos_plastic 11520')
+    /*allthemods.recipes.gtceu.printer('chaos_plastic_lens')
+        .inputFluids('gtceu:chaos_plastic 9216')
         .itemInputs([
             '8x gtceu:tenebrium_dust',
             '8x gtceu:exquisite_black_quartz_gem',
             'gtceu:plastic_singularity'
         ])
-        .itemOutputs('gtceu:chaos_plastic_dust')
+        .itemOutputs('64x gtceu:chaos_plastic_dust')
         .duration(600)
         .EUt(524288);
+    */ 
 });

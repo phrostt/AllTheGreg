@@ -874,6 +874,14 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .formula('Th:CaF2');
 
 
+    GTMaterials.get('beryllium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
+    GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
+    
+    
+
+        
+
     const modifyElement = (materialO, materialN, bTemp, volts, gem, polymer, ingot) => {
         let mrp = GTMaterials.get(materialN).getFlags()
         let mmaterialClass = mrp.getClass()
@@ -929,8 +937,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_SPRING_SMALL,
                 GTMaterialFlags.GENERATE_ROTOR,
                 GTMaterialFlags.GENERATE_ROUND,
-                GTMaterialFlags.GENERATE_FINE_WIRE,
-                GTMaterialFlags.GENERATE_BOLT_SCREW,
+                GTMaterialFlags.GENERATE_FINE_WIRE,                
                 // @ts-ignore
                 CMMEMaterialFlags.GENERATE_SINGULARITY
             )
@@ -941,7 +948,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     otherElements.forEach(mat => {
         let material = GTMaterials.get(mat.name);
-        modifyElement(material, mat.name, mat.cBlast, mat.cVolt, mat.oGem, mat.cPolymer, mat.cIngot)
+        modifyElement(material, mat.name, mat.cBlast, mat.cVolt, mat.oGem, mat.cPolymer, mat.cIngot)        
     });
 
 
@@ -1339,7 +1346,7 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
     TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
-    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'condensed_blood');
+    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'evilcraft:condensed_blood');
 
 
     // Ingot
@@ -1476,7 +1483,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
     TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
-    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'condensed_blood');
+    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'evilcraft:condensed_blood');
 
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');

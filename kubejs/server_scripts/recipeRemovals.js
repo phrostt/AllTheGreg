@@ -9,7 +9,30 @@ ServerEvents.recipes(allthemods => {
     // 1. Dielectric Paste (Chemical Mixing)
 
 
+
+
+    const globalRemoves3 = [
+        // --- Ad Astra ---        
+        'ad_astra:rocket_fin', 'ad_astra:rocket_nose_cone', 'ad_astra:engine_frame',
+        'ad_astra:steel_engine', 'ad_astra:desh_engine', 'ad_astra:ostrum_engine', 'ad_astra:calorite_engine',
+        'ad_astra:steel_tank', 'ad_astra:desh_tank', 'ad_astra:ostrum_tank', 'ad_astra:calorite_tank',
+    ];
+    
     const globalRemoves2 = [
+
+        // --- Mekanism ---
+        'mekanism:factory/basic/smelting',      'mekanism:factory/advanced/smelting',       'mekanism:factory/elite/smelting',      'mekanism:factory/ultimate/smelting',
+        'mekanism:factory/basic/enriching',     'mekanism:factory/advanced/enriching',      'mekanism:factory/elite/enriching',     'mekanism:factory/ultimate/enriching',
+        'mekanism:factory/basic/crushing',      'mekanism:factory/advanced/crushing',       'mekanism:factory/elite/crushing',      'mekanism:factory/ultimate/crushing',
+        'mekanism:factory/basic/compressing',   'mekanism:factory/advanced/compressing',    'mekanism:factory/elite/compressing',   'mekanism:factory/ultimate/compressing',
+        'mekanism:factory/basic/combining',     'mekanism:factory/advanced/combining',      'mekanism:factory/elite/combining',     'mekanism:factory/ultimate/combining',
+        'mekanism:factory/basic/purifying',     'mekanism:factory/advanced/purifying',      'mekanism:factory/elite/purifying',     'mekanism:factory/ultimate/purifying',
+        'mekanism:factory/basic/injecting',     'mekanism:factory/advanced/injecting',      'mekanism:factory/elite/injecting',     'mekanism:factory/ultimate/injecting',
+        'mekanism:factory/basic/infusing',      'mekanism:factory/advanced/infusing',       'mekanism:factory/elite/infusing',      'mekanism:factory/ultimate/infusing',
+        'mekanism:factory/basic/sawing',        'mekanism:factory/advanced/sawing',         'mekanism:factory/elite/sawing',        'mekanism:factory/ultimate/sawing',
+
+       
+
         // --- Occultism ---
         'occultism:ritual/craft_dimensional_mineshaft', 'occultism:ritual/craft_miner_foliot_unspecialized',
         'occultism:ritual/craft_miner_djinni_ores', 'occultism:ritual/craft_miner_afrit_deeps',
@@ -24,7 +47,7 @@ ServerEvents.recipes(allthemods => {
 
 
         // --- EnderIO ---
-        "enderio:energy_conduit", "enderio:fluid_conduit", 
+        "enderio:energy_conduit", "enderio:fluid_conduit",
         "enderio:pressurized_fluid_conduit", "enderio:pressurized_fluid_conduit_upgrade", "enderio:ender_fluid_conduit_upgrade", "enderio:ender_fluid_conduit",
         "enderio:redstone_conduit", "enderio:item_conduit", "enderio:ae_covered_dense_cable", "enderio:ae_glass_cable",
         "enderio:ae_covered_cable", "enderio:mek_basic_pressurized_tube", "enderio:mek_advanced_pressurized_tube",
@@ -33,8 +56,8 @@ ServerEvents.recipes(allthemods => {
         "enderio:endsteel_conduit", "enderio:lumium_conduit", "enderio:signalum_conduit", "enderio:vibrant_conduit", "enderio:enderium_conduit",
 
 
-        "gtceu:macerator/macerate_wheat", 'megacells:transform/sky_steel_ingot','appflux:mega/sky_resin',
-        'draconicevolution:components/draconium_ingot_from_ore','elementalcraft:pure_ore/draconicevolution/components/draconium_ingot_from_ore'
+        "gtceu:macerator/macerate_wheat", 'megacells:transform/sky_steel_ingot', 'appflux:mega/sky_resin',
+        'draconicevolution:components/draconium_ingot_from_ore', 'elementalcraft:pure_ore/draconicevolution/components/draconium_ingot_from_ore'
 
     ]
     const globalRemoves = [
@@ -293,6 +316,9 @@ ServerEvents.recipes(allthemods => {
     const removalObjects2 = globalRemoves2.map(recipeId => ({ id: recipeId }));
     allthemods.remove(removalObjects2);
 
+    const removalObjects3 = globalRemoves3.map(recipeId => ({ id: recipeId }));
+    allthemods.remove(removalObjects3);
+
     // 2. --- DYNAMIC MATERIAL REMOVALS (Optimized) ---
 
     // Chemlib Materials
@@ -345,6 +371,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.remove({ type: 'industrialforegoing:dissolution_chamber' });
     allthemods.remove({ type: 'occultism:spirit_fire' });
     allthemods.remove({ type: 'ad_astra:compressing' });
+    allthemods.remove({ type: 'ad_astra:nasa_workbench' });
     allthemods.remove({ type: 'draconicevolution:fusion_crafting' });
 
     // Input Removals

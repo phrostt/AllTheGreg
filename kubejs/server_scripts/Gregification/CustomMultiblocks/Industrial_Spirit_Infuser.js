@@ -54,7 +54,7 @@ ServerEvents.recipes(allthemods => {
         addSpiritInfuser([`occultism:chalk_${chalk}_impure`], null, `occultism:chalk_${chalk}`, null, 128, 200);
     });
 
-    addSpiritInfuser(["minecraft:diamond"], null, 'occultism:spirit_attuned_gem', null, 128, 20);
+    addSpiritInfuser(["botania:mana_diamond"], null, 'occultism:spirit_attuned_gem', null, 128, 20);
     addSpiritInfuser(["occultism:demons_dream_essence"], null, 'occultism:otherworld_essence', null, 128, 20);
     addSpiritInfuser(["minecraft:oak_sapling"], null, 'occultism:otherworld_sapling_natural', null, 128, 20);
 
