@@ -388,4 +388,12 @@ ServerEvents.recipes(allthemods => {
             .itemInputs(chalk.ingredients)
             .itemOutputs(`occultism:chalk_${chalk.color}_impure`)
     });
+
+
+    //primogel goo
+    addRitual(['gtceu:hv_machine_hull',  'allthecompressed:dirt_3x', 'bloodmagic:blankslate', '#forge:frames/manasteel', 'pneumaticcraft:etching_acid_bucket'], 'justdirethings:gooblock_tier1', 'ophyx_calling');
+    addRitual(['gtceu:ev_machine_hull',  'justdirethings:gooblock_tier1', 'bloodmagic:reinforcedslate', '#forge:frames/elementium', '4x minecraft:nether_wart', '4x minecraft:blaze_powder'], 'justdirethings:gooblock_tier2', 'kandras_open_conjure');
+    addRitual(['gtceu:iv_machine_hull',  'justdirethings:gooblock_tier2', 'bloodmagic:infusedslate', '#forge:frames/terrasteel', '4x minecraft:dragon_breath', 'gtceu:quantum_eye'], 'justdirethings:gooblock_tier3', 'tibiras_attraction');
+    addRitual(['gtceu:luv_machine_hull', 'justdirethings:gooblock_tier3', 'bloodmagic:demonslate', '#forge:frames/alfsteel', '4x minecraft:echo_shard', '4x minecraft:sculk', '2x minecraft:sculk_shrieker'], 'justdirethings:gooblock_tier4', 'fatmas_incentivized_attraction');
+    addRitual(['16x bloodmagic:etherealslate', '4x #forge:gears/alfsteel', '8x #forge:plates/selenium', '#forge:frames/draconium_awakened', '#forge:rods/long/iesnium', '#forge:gems/soul'], 'bmaddon:blood_generator','ronazas_contract')
 });

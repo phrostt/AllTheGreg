@@ -19,7 +19,8 @@
         "fluid": {
           "fluid": "gtceu:nitrogen"
         },
-        "amount": 250
+        "amount": 250,
+        "chance": 40
       }
     ],
     "conditions": [

@@ -157,7 +157,7 @@ ServerEvents.recipes(allthemods => {
             P: "#forge:plates/enderium",
             C: "laserio:logic_chip",
             F: "gtceu:iv_field_generator",
-            A: "#forge:frames/allthemodium",
+            A: "#forge:frames/terrasteel",
             G: "#forge:gears/pink_slime"
         }
     )

@@ -37,7 +37,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
 				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                 .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
 			)
-            .where(' ', Predicates.air()) 
+            .where(' ', Predicates.any()) 
             .build()
         )
 		.workableCasingModel(
@@ -63,7 +63,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
 				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                 .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
 			)
-            .where(' ', Predicates.air()) 
+            .where(' ', Predicates.any()) 
             .build()
         )
 		.workableCasingModel(

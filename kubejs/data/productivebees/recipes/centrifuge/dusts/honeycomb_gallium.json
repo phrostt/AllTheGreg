@@ -1,40 +1,40 @@
 {
-    "type": "productivebees:centrifuge",
-    "ingredient": {
-      "type": "forge:nbt",
-      "item": "productivebees:configurable_honeycomb",
-      "nbt": {
-        "EntityTag": {
-          "type": "productivebees:gallium"
-        }
+  "type": "productivebees:centrifuge",
+  "ingredient": {
+    "type": "forge:nbt",
+    "item": "productivebees:configurable_honeycomb",
+    "nbt": {
+      "EntityTag": {
+        "type": "productivebees:gallium"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "item": {
+        "tag": "forge:raw_materials/gallite"
+      },
+      "chance": 40
+    },
+    {
+      "item": {
+        "tag": "forge:wax"
       }
     },
-    "outputs": [
-      {
-        "item": {
-          "tag": "forge:dusts/gallium"
-        },
-        "chance": 40
+    {
+      "fluid": {
+        "fluid": "productivebees:honey"
       },
-      {
-        "item": {
-          "tag": "forge:wax"
-        }
-      },
-      {
-        "fluid": {
-          "fluid": "productivebees:honey"
-        },
-        "amount": 50
+      "amount": 50
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:tag_empty",
+        "tag": "forge:dusts/gallium"
       }
-    ],
-    "conditions": [
-      {
-        "type": "forge:not",
-        "value": {
-          "type": "forge:tag_empty",
-          "tag": "forge:dusts/gallium"
-        }
-      }
-    ]
+    }
+  ]
 }

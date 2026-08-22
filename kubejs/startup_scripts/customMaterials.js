@@ -157,16 +157,16 @@ const modalloys = [
     { name: 'alfsteel', element: 'alfsteel', color: 0xFD9D32, cDust: true, iconSet: 'METALLIC', voltage: 32768, superconductor: true },
 
     // --- Magic Gating Materials ---
-    { name: 'hellforged', element: 'hellforged', color: 0xC1D5EC, iconSet: 'METALLIC', voltage: 512, loss: 2 },
-    { name: 'iesnium', element: 'iesnium', color: 0x9FD1FF, iconSet: 'METALLIC', voltage: 512, loss: 1 },
+    { name: 'hellforged', ore: true,  element: 'hellforged', color: 0xC1D5EC, iconSet: 'METALLIC', voltage: 512, loss: 2 },
+    { name: 'iesnium', ore: true,element: 'iesnium', color: 0x9FD1FF, iconSet: 'METALLIC', voltage: 512, loss: 1 },
 
     // --- AllTheModium End-Game Gating ---
-    { name: 'allthemodium', element: 'allthemodium', color: 0xFAD64A, iconSet: 'METALLIC', voltage: 32768, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-    { name: 'vibranium', element: 'vibranium', color: 0x6DFF6D, iconSet: 'METALLIC', voltage: 131072, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-    { name: 'unobtainium', element: 'unobtainium', color: 0xA336FF, iconSet: 'METALLIC', voltage: 524288, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'allthemodium', ore: true, element: 'allthemodium', color: 0xFAD64A, iconSet: 'METALLIC', voltage: 32768, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'vibranium', ore: true, element: 'vibranium', color: 0x6DFF6D, iconSet: 'METALLIC', voltage: 131072, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'unobtainium', ore: true, element: 'unobtainium', color: 0xA336FF, iconSet: 'METALLIC', voltage: 524288, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
 
     // --- Draconic Evolution ---
-    { name: 'draconium', element: 'draconium', color: 0x502C6C, iconSet: 'SHINY', voltage: 8192, loss: 1, cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
+    { name: 'draconium', ore: true, element: 'draconium', color: 0x502C6C, iconSet: 'SHINY', voltage: 8192, loss: 1, cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
     { name: 'draconium_awakened', element: 'draconium_awakened', color: 0xFF6600, iconSet: 'BRIGHT', voltage: 2097152, superconductor: true },
     { name: 'tenebrium', element: 'tenebrium', color: 0x101010, iconSet: 'METALLIC', voltage: 8388608, superconductor: true },
 
@@ -388,7 +388,7 @@ const dusts = [
     { name: 'sodium_iodide', components: '1x sodium, 1x iodine', color: 0xFFFFFF, formula: 'NaI', iconSet: 'DULL' },
     { name: 'thallium_oxide', components: '2x thallium, 1x oxygen', color: 0x3B2F2F, formula: 'Tl2O', iconSet: 'DULL', noDecomp: true },
     { name: 'lead_chloride', components: '1x lead, 2x chlorine', color: 0xFFFFFF, formula: 'PbCl2', iconSet: 'DULL' },
-    { name: 'scandium_oxide', components: '2x scandium, 3x oxygen', color: 0xFFFFFF, formula: 'Sc2O3', iconSet: 'DULL', noDecomp: true },
+    { name: 'scandium_oxide', components: '2x scandium, 3x oxygen', color: 0xFFFFFF, formula: 'Sc2O3', iconSet: 'DULL' },
     { name: 'beryllium_oxide', components: '1x beryllium, 1x oxygen', color: 0xFFFFFF, formula: 'BeO', iconSet: 'DULL', noDecomp: true },
     { name: 'potassium_selenide', components: '2x potassium, 1x selenium', color: 0xE8E8E8, formula: 'K2Se', iconSet: 'DULL' },
     { name: 'stromeyerite', components: '1x silver, 1x copper, 1x sulfur', color: 0x4A4A4A, formula: 'AgCuS', iconSet: 'METALLIC', noDecomp: true },
@@ -605,8 +605,20 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .ore(2, 1)
         .color(0x5C0A0A)
         .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION);
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION);    
 
+    materialBuilder = event.create('azure_silver')
+        .ore(2, 1)
+        .color(0xDE81E6)
+        .iconSet(GTMaterialIconSet.METALLIC)        
+
+    materialBuilder = event.create('mithril')
+        .ore(2, 1)
+        .dust()
+        .ingot()
+        .color(0x99D9D9)
+        .iconSet(GTMaterialIconSet.METALLIC)        
+        
     materialBuilder = event.create("chaos_shard")
         //.dust()
         .gem()
@@ -642,6 +654,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .element('infinity')
         .color(0xffffff)
         .iconSet("infinity")
+        .blastTemp(10800, getGasTier(33554432), 33554432, 600)
         .flags(
             GTMaterialFlags.GENERATE_PLATE,
             GTMaterialFlags.GENERATE_ROD,
@@ -758,7 +771,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             .color(mat.color)
             .iconSet(GTMaterialIconSet[mat.iconSet])
 
-        if (mat.element) { materialBuilder.element(mat.element) }
+        if (mat.element) { materialBuilder.element(mat.element) }        
         if (mat.voltage && mat.voltage > 0) { materialBuilder.cableProperties(getVoltage(mat.voltage), 1, mat.loss || 0, mat.superconductor || false) }
         if (mat.components) {
             let parts = mat.components.split(', ')
@@ -817,6 +830,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             // @ts-ignore
             .dust()
             .ingot()
+            //.ore(2, 1)
             .element(mat.element)
             .fluid()
             .color(mat.color)
@@ -1006,7 +1020,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 );
         }
 
-
+        if (mat.ore) {materialBuilder.ore(2, 1)}
         if (mat.pipe) { materialBuilder.fluidPipeProperties(16384, 10800, true) }
         if (mat.element) { materialBuilder.element(mat.element) }
         if (mat.cDust) { materialBuilder.dust() }
@@ -1363,16 +1377,39 @@ StartupEvents.postInit(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
     TagPrefix.ingot.setIgnored(GTMaterials.get('plastic'), 'industrialforegoing:plastic');
     TagPrefix.ingot.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
+    TagPrefix.ingot.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ingot');
 
     // Nugget
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_nugget');
 
     // Rod
-    TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod')
+    TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod');
 
     // Polymer
     
+    // Ore
+    TagPrefix.ore.setIgnored(GTMaterials.get('allthemodium'), 'allthemodium:allthemodium_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('vibranium'), 'allthemodium:vibranium_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('unobtainium'), 'allthemodium:unobtainium_ore')    ;
+    TagPrefix.ore.setIgnored(GTMaterials.get('iesnium'), 'occultism:iesnium_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:dungeon_ore');
+
+    TagPrefix.ore.setIgnored(GTMaterials.get('desh'), 'ad_astra:moon_desh_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:mars_ostrum_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('calorite'), 'ad_astra:venus_calorite_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:azure_silver_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ore');
+
+    // Raw Ores
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
+
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('calorite'), 'ad_astra:raw_calorite');
 
 
 });
@@ -1498,6 +1535,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
+    TagPrefix.ingot.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ingot');
 
     // Nugget
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
@@ -1508,6 +1546,30 @@ GTCEuStartupEvents.materialModification(event => {
 
 
     // Polymer
+    
+     // Ore
+    TagPrefix.ore.setIgnored(GTMaterials.get('allthemodium'), 'allthemodium:allthemodium_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('vibranium'), 'allthemodium:vibranium_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('unobtainium'), 'allthemodium:unobtainium_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('iesnium'), 'occultism:iesnium_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:dungeon_ore');
+
+    TagPrefix.ore.setIgnored(GTMaterials.get('desh'), 'ad_astra:moon_desh_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:mars_ostrum_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('calorite'), 'ad_astra:venus_calorite_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:azure_silver_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ore');
+
+    // Raw Ores
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
+
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('calorite'), 'ad_astra:raw_calorite');
+
     
 
     //ore biproducts
@@ -1551,6 +1613,10 @@ GTCEuStartupEvents.materialModification(event => {
 
     netherstar.setProperty(PropertyKey.ORE, new OreProperty());
     etrium.setProperty(PropertyKey.ORE, new OreProperty());
+
+    GTMaterials.get('desh').setProperty(PropertyKey.ORE, new OreProperty());
+    GTMaterials.get('ostrum').setProperty(PropertyKey.ORE, new OreProperty());
+    GTMaterials.get('calorite').setProperty(PropertyKey.ORE, new OreProperty());
 });
 
 const dimensions = [

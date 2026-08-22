@@ -195,8 +195,7 @@ ServerEvents.recipes(allthemods => {
                     'ars_nouveau:imbuement_chamber', hull, `2x ${pump}`, piston, `2x ${circuit}`, `4x ${plate}`
                 ],
                 [
-                    '#forge:source 1440',
-                    '#forge:lubricant 1000'
+                    '#forge:source 1440'
                 ],
                 aChamber,
                 tierValues[tData.t - 1],
@@ -208,8 +207,7 @@ ServerEvents.recipes(allthemods => {
                     'bloodmagic:alchemicalreactionchamber', 'bloodmagic:alchemytable', hull, `2x ${pump}`, piston, `2x ${circuit}`, `4x ${plate}`
                 ],
                 [
-                    '#forge:source 1440',
-                    '#forge:lubricant 1000'
+                    '#forge:sanguine_concentrate 1440'
                 ],
                 baChamber,
                 tierValues[tData.t - 1],
@@ -221,8 +219,7 @@ ServerEvents.recipes(allthemods => {
                     'botania:apothecary_default', hull, pump, piston, circuit, `4x ${plate}`
                 ],
                 [
-                    '#forge:mana_essence 9200',
-                    '#forge:lubricant 1000'
+                    '#forge:mana_essence 9200'                    
                 ],
                 bPetal,
                 tierValues[tData.t - 1],
@@ -234,8 +231,7 @@ ServerEvents.recipes(allthemods => {
                     'botania:runic_altar', hull, pump, `2x ${piston}`, `2x ${circuit}`, `2x ${plate}`
                 ],
                 [
-                    '#forge:mana_essence 9200',
-                    '#forge:lubricant 1000'
+                    '#forge:mana_essence 9200'                
                 ],
                 bRunic,
                 tierValues[tData.t - 1],
@@ -247,8 +243,7 @@ ServerEvents.recipes(allthemods => {
                     'botania:terra_plate', hull, `2x ${pump}`, piston, `2x ${circuit}`, `2x ${plate}`
                 ],
                 [
-                    '#forge:mana_essence 9200',
-                    '#forge:lubricant 1000'
+                    '#forge:mana_essence 9200'
                 ],
                 bInfuser,
                 tierValues[tData.t - 1],

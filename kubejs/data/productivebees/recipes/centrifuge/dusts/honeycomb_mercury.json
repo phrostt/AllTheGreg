@@ -19,7 +19,8 @@
         "fluid": {
           "fluid": "gtceu:mercury"
         },
-        "amount": 250
+        "amount": 250,
+        "chance": 40
       }
     ],
     "conditions": [

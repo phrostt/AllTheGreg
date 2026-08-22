@@ -1,17 +1,59 @@
 //@ts-check
 ServerEvents.recipes(allthemods => {
 
-    // 1. --- THE MASTER REGEX ARRAY ---
-    // Every single specific ID removal is collected here.
+    /*allthemods.forEachRecipe({ type: 'productivebees:centrifuge' }, recipe => {        
+        console.error(recipe.json);
+        console.error(String(recipe.id));    
+    });*/
+
+    
+
+    let beeRemoves = [];
+
+    let beeMaterials = [
+        'arsenic', 'gallium', 'hafnium',
+        'iodine', 'magnesium', 'manganese', 'mercury', 'niobium',
+        'nitrogen', 'scandium', 'tantalum', 'tellurium', 'thallium', 'titanium',
+        'redstone'
+    ];
+   
+
+    let gemMaterials = [
+        'diamond','emerald', 'lapis', 'coal', 'crystalline', 
+        'amethyst', 'apatite', 'fluorine', 'green_sapphire', 'malachite', 
+        'opal', 'ruby', 'sapphire', 'cinnabar'
+    ];
+
+    let otherMaterials = [
+        'fossilised'
+    ];
+    
+    beeMaterials.forEach(function(mat) {        
+        beeRemoves.push('productivebees:centrifuge/chemlib/honeycomb_' + mat);
+        beeRemoves.push('productivebees:centrifuge/chemlib/honeycomb_' + mat + '_block');
+    });
+
+    gemMaterials.forEach(function(mat) {
+        beeRemoves.push('productivebees:centrifuge/gem/honeycomb_' + mat);
+        beeRemoves.push('productivebees:centrifuge/gem/honeycomb_' + mat + '_block');
+    });
+
+    otherMaterials.forEach(function(mat) {
+        beeRemoves.push('productivebees:centrifuge/honeycomb_' + mat);
+        beeRemoves.push('productivebees:centrifuge/honeycomb_' + mat + '_block');
+    });
 
 
 
-    // 1. Dielectric Paste (Chemical Mixing)
-
-
-
+    const beeRemovals = beeRemoves.map(recipeId => ({ id: recipeId }));    
+    allthemods.remove(beeRemovals);
 
     const globalRemoves3 = [
+        'productivebees:centrifuge/gems/honeycomb_ruby', 'productivebees:centrifuge/gems/honeycomb_ruby_block',
+        'sanguine_networks:virtual_sacrificer', 'industrialforegoingsouls:soul_laser_base', 'industrialforegoingsouls:soul_surge',
+        'industrialforegoingsouls:soul_network_pipe', 'ad_astra:launch_pad', 'ad_astra:oxygen_loader', 'ad_astra:fuel_refinery',
+        'justdirethings:gooblock_tier1', 'justdirethings:gooblock_tier2', 'justdirethings:gooblock_tier3', 'justdirethings:gooblock_tier4',
+
         // --- Ad Astra ---        
         'ad_astra:rocket_fin', 'ad_astra:rocket_nose_cone', 'ad_astra:engine_frame',
         'ad_astra:steel_engine', 'ad_astra:desh_engine', 'ad_astra:ostrum_engine', 'ad_astra:calorite_engine',
@@ -30,6 +72,12 @@ ServerEvents.recipes(allthemods => {
         'mekanism:factory/basic/injecting',     'mekanism:factory/advanced/injecting',      'mekanism:factory/elite/injecting',     'mekanism:factory/ultimate/injecting',
         'mekanism:factory/basic/infusing',      'mekanism:factory/advanced/infusing',       'mekanism:factory/elite/infusing',      'mekanism:factory/ultimate/infusing',
         'mekanism:factory/basic/sawing',        'mekanism:factory/advanced/sawing',         'mekanism:factory/elite/sawing',        'mekanism:factory/ultimate/sawing',
+        
+        'mekanism:electric_pump', 'mekanism:logistical_sorter', 'mekanism:teleporter', 'mekanism:teleportation_core', 'mekanism:digital_miner',
+        'mekanism:energy_cube/basic', 'mekanism:energy_cube/advanced', 'mekanism:energy_cube/elite', 'mekanism:energy_cube/ultimate', 
+        'mekanism:pigment_mixer', 'mekanism:rotary_condensentrator', 'mekanism:chemical_oxidizer', 'mekanism:chemical_infuser', 
+        'mekanism:electrolytic_separator', 'mekanism:chemical_dissolution_chamber', 'mekanism:chemical_washer', 
+        'mekanism:chemical_crystallizer', 'mekanism:pressurized_reaction_chamber', 'mekanism:isotopic_centrifuge', 'mekanism:teleporter_frame',
 
        
 
@@ -369,10 +417,11 @@ ServerEvents.recipes(allthemods => {
 
     // Type Removals
     allthemods.remove({ type: 'industrialforegoing:dissolution_chamber' });
-    allthemods.remove({ type: 'occultism:spirit_fire' });
-    allthemods.remove({ type: 'ad_astra:compressing' });
+    allthemods.remove({ type: 'occultism:spirit_fire' });    
     allthemods.remove({ type: 'ad_astra:nasa_workbench' });
+    allthemods.remove({ type: 'ad_astra:compressing' });
     allthemods.remove({ type: 'draconicevolution:fusion_crafting' });
+    allthemods.remove({ type: 'mysticalagriculture:soul_extraction' });
 
     // Input Removals
     allthemods.remove({ input: '#alltheores:ore_hammers' });

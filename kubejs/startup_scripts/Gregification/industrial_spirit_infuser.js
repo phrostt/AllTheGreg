@@ -27,7 +27,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
                 .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
 				.or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
             ) // Added the missing closing bracket here
-            .where(' ', Predicates.air())
+            .where(' ', Predicates.any())
             .build()
         )                
 		.workableCasingModel('gtceu:block/casings/solid/machine_casing_solid_steel', 'gtceu:block/multiblock/fusion_reactor')

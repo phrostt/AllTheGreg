@@ -87,7 +87,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                 .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setExactLimit(1))                
 			)
-            .where(' ', Predicates.air()) 
+            .where(' ', Predicates.any()) 
             .build()
         )
         
@@ -112,7 +112,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                 //.or(Predicates.abilities(PartAbility.OUTPUT_ENERGY))
 			)
-            .where(' ', Predicates.air()) 
+            .where(' ', Predicates.any()) 
             .build()
         )
 		.workableCasingModel(
@@ -136,7 +136,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
 				.or(Predicates.autoAbilities(definition.getRecipeTypes()))	
 				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))                
 			)
-            .where(' ', Predicates.air()) 
+            .where(' ', Predicates.any()) 
             .build()
         )
 		.workableCasingModel(

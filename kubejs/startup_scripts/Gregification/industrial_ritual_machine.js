@@ -32,7 +32,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
                 .or(Predicates.autoAbilities(definition.getRecipeTypes())) 
                 .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
             )
-            .where(' ', Predicates.air())
+            .where(' ', Predicates.any())
             .build()
         )
 		//.workableCasingModel('gtceu:block/casings/solid/machine_casing_clean_stainless_steel', 'gtceu:block/multiblock/large_chemical_reactor')			

@@ -17,7 +17,9 @@ ServerEvents.recipes(allthemods => {
         MAX: 2147483647
     };
     const alchemistryEU = 524288;
-
+    const mekShort = 100;
+    const mekLong = 1000;
+    
     const addAssemblyLine = (output, inputs, fluids, duration, eu, researchItem, CWUt) => {
 
         let itemName = output.replace(/^\d+x\s+/, '').replace(':', '_');
@@ -64,7 +66,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:aetheric_sanguine_singularity 32000',
             'gtceu:super_coolant 64000',
         ],
-        TIME.very_long,
+        mekLong,
         32768,
         "allthemodium:allthemodium_hoe"
     );
@@ -75,14 +77,14 @@ ServerEvents.recipes(allthemods => {
             '#forge:frames/ferrognetic',
             '4x draconicevolution:chaotic_core',
             '4x #gtceu:circuits/luv',
-            '4x mekanism:alloy_atomic'
+            '4x #forge:plates/alloy_atomic'
         ],
         [
             'gtceu:aetheric_sanguine_singularity 32000',
             'gtceu:super_coolant 64000'
 
         ],
-        TIME.very_long,
+        mekLong,
         32768,
         'draconicevolution:chaos_shard'
     );
@@ -105,7 +107,7 @@ ServerEvents.recipes(allthemods => {
             "#forge:soul 1000",
             "gtceu:saturated_tau 10000"
         ],
-        1200,
+        mekLong,
         32768,
         "forbidden_arcanus:hephaestus_forge"
     );
@@ -121,11 +123,11 @@ ServerEvents.recipes(allthemods => {
 
         ],
         [
-            "gtceu:saturated_tau 10000",
-            'gtceu:sanguine_concentrate 10000',
-            "gtceu:europium 576"
+            "#forge:saturated_tau 10000",
+            '#forge:sanguine_concentrate 10000',
+            "#forge:polytetrafluoroethylene 576"
         ],
-        1200,
+        mekLong,
         32768,
         "forbidden_arcanus:soul_extractor"
     );
@@ -135,7 +137,7 @@ ServerEvents.recipes(allthemods => {
         [
             'thermal:machine_frame',
             '4x #forge:plates/osmiridium',
-            '4x #forge:plates/draconium_awakened',
+            '4x #forge:plates/hafnium',
             '8x #forge:gears/plastic',
             '2x #forge:rods/hop_graphite',
         ],
@@ -143,7 +145,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 288',
             '#forge:lubricant 288'
         ],
-        1000,
+        mekShort,
         32768,
         'thermal:machine_frame'
     );
@@ -161,7 +163,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -169,7 +171,8 @@ ServerEvents.recipes(allthemods => {
     addAssemblyLine('mekanism:enrichment_chamber',
         [
             'mekanism:steel_casing',
-            '#forge:rotors/rhodium_plated_palladium',
+            '4x #forge:rods/rhodium_plated_palladium',
+            '4x #forge:plates/hafnium',
             'gtceu:luv_electric_motor',
             '2x #gtceu:circuits/luv',
             '2x gtceu:laminated_glass'
@@ -179,9 +182,434 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
+
+    //mekanism - rotary condensentrator
+    addAssemblyLine('mekanism:rotary_condensentrator',
+        [
+            'mekanism:steel_casing',            
+            '4x #forge:plates/hafnium',
+            '2x gtceu:luv_electric_motor',
+            '2x #gtceu:circuits/luv',
+            '4x gtceu:laminated_glass'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - chemical oxidier
+    addAssemblyLine('mekanism:chemical_oxidizer',
+        [
+            'mekanism:steel_casing',            
+            'gtceu:luv_electric_motor',
+            'gtceu:luv_conveyor_module',
+            '4x #forge:plates/hafnium',
+            '2x #gtceu:circuits/luv'            
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - chemical infuser
+    addAssemblyLine('mekanism:chemical_infuser',
+        [
+            'mekanism:steel_casing',   
+            'gtceu:luv_conveyor_module',         
+            'gtceu:luv_electric_motor',            
+            '6x #forge:plates/hafnium',
+            '2x #gtceu:circuits/luv',
+            '4x #forge:plates/alloy_infused'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - electrolytic separator
+    addAssemblyLine('mekanism:electrolytic_separator',
+        [
+            'mekanism:steel_casing',
+            'mekanism:electrolytic_core',
+            '2x #forge:plates/alloy_infused',
+            'gtceu:luv_electric_motor',            
+            'gtceu:luv_electric_pump',
+            '2x #forge:plates/hafnium',
+            '2x #gtceu:circuits/luv'            
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - chemical dissolution chamber
+    addAssemblyLine('mekanism:chemical_dissolution_chamber',
+        [
+            'mekanism:steel_casing',
+            '4x #forge:plates/refined_obsidian',            
+            '2x gtceu:luv_electric_pump',
+            'gtceu:luv_electric_motor',            
+            '6x #forge:plates/hafnium',
+            '2x #gtceu:circuits/luv'            
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - chemical washer
+    addAssemblyLine('mekanism:chemical_washer',
+        [
+            'mekanism:steel_casing',
+            '4x gtceu:luv_electric_pump',
+            '4x #forge:plates/refined_obsidian',
+            'gtceu:luv_electric_motor',            
+            '2x #forge:plates/hafnium',
+            '2x #gtceu:circuits/luv'            
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - teleporter
+    addAssemblyLine('mekanism:teleporter',
+        [
+            'mekanism:steel_casing',
+            'mekanism:teleportation_core',
+            'gtceu:luv_emitter',
+            'gtceu:luv_sensor',            
+            '4x #forge:plates/hafnium',            
+            '4x #gtceu:circuits/luv',
+            '4x #forge:plates/alloy_atomic'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',            
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+        //mekanism - teleporter frame
+    addAssemblyLine('9x mekanism:teleporter_frame',
+        [
+            'mekanism:steel_casing',   
+            '4x #forge:plates/graphite',         
+            '4x #forge:plates/hafnium',            
+            '4x #forge:plates/alloy_atomic',
+            '8x #forge:rods/rhodium_plated_palladium'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',            
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - teleportation core
+    addAssemblyLine('mekanism:teleportation_core',
+        [            
+            '4x gtceu:luv_field_generator',
+            '64x #forge:rings/hafnium',            
+            '16x #gtceu:circuits/luv',
+            '16x #forge:plates/alloy_atomic'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',            
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - digital miner
+    addAssemblyLine('mekanism:digital_miner',
+        [
+            'mekanism:steel_casing',
+            'mekanism:teleportation_core',
+            'gtceu:luv_field_generator',            
+            '16x #forge:plates/hafnium',            
+            '8x #gtceu:circuits/luv',
+            '8x #forge:plates/alloy_atomic',
+            '#occultism:miners/eldritch'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',            
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - logistical sorter
+    addAssemblyLine('mekanism:logistical_sorter',
+        [
+            'mekanism:steel_casing',            
+            'gtceu:luv_sensor',
+            '2x gtceu:luv_electric_motor',
+            '2x gtceu:luv_conveyor_module',
+            '2x #gtceu:circuits/luv',
+            '2x #forge:plates/rhodium_plated_palladium'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',            
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - electric pump
+    addAssemblyLine('mekanism:electric_pump',
+        [
+            'mekanism:steel_casing',
+            '2x gtceu:luv_electric_pump',
+            '2x gtceu:luv_electric_motor',            
+            '2x #gtceu:circuits/luv',
+            '4x #forge:plates/rhodium_plated_palladium'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - chemical crystallizer
+    addAssemblyLine('mekanism:chemical_crystallizer',
+        [
+            'mekanism:steel_casing',
+            '2x gtceu:luv_electric_pump',
+            '4x #forge:plates/refined_obsidian',
+            '4x #forge:plates/hafnium',
+            '4x gtceu:luv_electric_motor',                                    
+            '2x #gtceu:circuits/luv'            
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - pressurised reaction chamber
+    addAssemblyLine('mekanism:pressurized_reaction_chamber',
+        [
+            'mekanism:steel_casing',
+            '2x gtceu:luv_electric_piston',
+            '2x gtceu:luv_electric_pump',            
+            '4x #forge:plates/hafnium',
+            'gtceu:luv_electric_motor',
+            '2x #gtceu:circuits/luv'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - mekanism:isotopic centrifuge
+    addAssemblyLine('mekanism:isotopic_centrifuge',
+        [
+            'mekanism:steel_casing',            
+            'gtceu:luv_electric_pump',            
+            '6x #forge:plates/hafnium',
+            '6x #forge:plates/graphite',
+            'gtceu:luv_electric_motor',
+            '2x #gtceu:circuits/luv'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - resistive heater
+    addAssemblyLine('mekanism:resistive_heater',
+        [
+            'mekanism:steel_casing',                        
+            '4x #forge:plates/hafnium',
+            '4x #forge:plates/graphite',
+            '2x gtceu:luv_electric_motor',
+            '2x #gtceu:circuits/luv',
+            'mekanism:energy_tablet'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - antiprotonic nucleosynthesizer
+    addAssemblyLine('mekanism:antiprotonic_nucleosynthesizer',
+        [
+            'mekanism:steel_casing',
+            '4x #forge:plates/alloy_atomic',
+            '2x mekanism:pellet_antimatter',
+            '4x #forge:plates/hafnium',
+            '4x #forge:plates/graphite',
+            '2x gtceu:luv_electric_motor',
+            '2x #gtceu:circuits/luv',            
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - pigment extractor
+    addAssemblyLine('mekanism:pigment_extractor',
+        [
+            'mekanism:steel_casing',                        
+            '4x #forge:plates/rhodium_plated_palladium',            
+            '2x gtceu:luv_electric_motor',
+            'gtceu:luv_electric_pump',
+            '2x #gtceu:circuits/luv',            
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - pigment mixer
+    addAssemblyLine('mekanism:pigment_mixer',
+        [
+            'mekanism:steel_casing',                        
+            'gtceu:rhodium_plated_palladium_rotor',
+            '4x #forge:plates/rhodium_plated_palladium',            
+            'gtceu:luv_electric_motor',
+            'gtceu:luv_electric_pump',
+            '2x #gtceu:circuits/luv',
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - basic energy cube
+    addAssemblyLine('mekanism:basic_energy_cube',
+        [
+            'mekanism:steel_casing',                        
+            '4x #forge:plates/rhodium_plated_palladium',                                    
+            '2x #gtceu:circuits/luv',
+            '2x mekanism:energy_tablet',
+            '2x gtceu:hpic_chip'
+        ],
+        [
+            '#forge:sodium_potassium 1000',
+            '#forge:soldering_alloy 1000'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - advanced energy cube
+    addAssemblyLine('mekanism:advanced_energy_cube',
+        [
+            'mekanism:basic_energy_cube',
+            '4x #forge:plates/alloy_infused',
+            '2x #gtceu:circuits/luv',
+            '2x mekanism:energy_tablet',
+            '2x gtceu:hpic_chip'
+        ],
+        [
+            '#forge:sodium_potassium 1000',
+            '#forge:soldering_alloy 1000'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - elite energy cube
+    addAssemblyLine('mekanism:elite_energy_cube',
+        [
+            'mekanism:advanced_energy_cube',
+            '4x #forge:plates/alloy_reinforced',
+            '2x #gtceu:circuits/luv',
+            '2x mekanism:energy_tablet',
+            '2x gtceu:hpic_chip'
+        ],
+        [
+            '#forge:sodium_potassium 1000',
+            '#forge:soldering_alloy 1000'
+        ],
+        mekLong,
+        32768
+    );
+
+    //mekanism - ultimate energy cube
+    addAssemblyLine('mekanism:ultimate_energy_cube',
+        [
+            'mekanism:elite_energy_cube',
+            '4x #forge:plates/alloy_atomic',
+            '2x #gtceu:circuits/luv',
+            '2x mekanism:energy_tablet',
+            '2x gtceu:hpic_chip'
+        ],
+        [
+            '#forge:sodium_potassium 1000',
+            '#forge:soldering_alloy 1000'
+        ],
+        mekLong,
+        32768
+    );
+
+    
+
+
 
     //mekanism - crusher
     addAssemblyLine('mekanism:crusher',
@@ -198,7 +626,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -207,23 +635,7 @@ ServerEvents.recipes(allthemods => {
         [
             'mekanism:steel_casing',
             '2x gtceu:luv_electric_piston',
-            '2x #gtceu:circuits/luv',
-            '2x gtceu:laminated_glass'
-        ],
-        [
-            'gtceu:polytetrafluoroethylene 144',
-            '#forge:lubricant 1440',
-            '#forge:soldering_alloy 1440'
-        ],
-        1000,
-        32768
-    );
-
-    //mekanism - combiner
-    addAssemblyLine('mekanism:combiner',
-        [
-            'mekanism:steel_casing',
-            'gtceu:osmiridium_rotor',
+            '4x #forge:plates/hafnium',
             'gtceu:luv_electric_motor',
             '2x #gtceu:circuits/luv',
             '2x gtceu:laminated_glass'
@@ -233,7 +645,26 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
+        32768
+    );
+
+    //mekanism - combiner
+    addAssemblyLine('mekanism:combiner',
+        [
+            'mekanism:steel_casing',
+            'gtceu:osmiridium_rotor',
+            '4x #forge:plates/hafnium',
+            'gtceu:luv_electric_motor',
+            '2x #gtceu:circuits/luv',
+            '2x gtceu:laminated_glass'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 144',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
         32768,
         null
     );
@@ -243,14 +674,15 @@ ServerEvents.recipes(allthemods => {
         [
             'mekanism:enrichment_chamber',
             '4x #forge:plates/osmiridium',
-            '2x gtceu:luv_electric_motor'
+            '4x #forge:plates/hafnium',
+            '2x #gtceu:circuits/luv'
         ],
         [
             'gtceu:polytetrafluoroethylene 144',
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -261,6 +693,7 @@ ServerEvents.recipes(allthemods => {
             '2x gtceu:luv_conveyor_module',
             'gtceu:luv_electric_pump',
             '2x #gtceu:circuits/luv',
+            '4x #forge:plates/hafnium',
             '2x gtceu:laminated_glass'
         ],
         [
@@ -268,7 +701,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -287,7 +720,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -299,6 +732,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:luv_electric_motor',
             '2x gtceu:luv_conveyor_module',
             '2x #gtceu:circuits/luv',
+            '4x #forge:plates/hafnium',
             '2x gtceu:laminated_glass'
         ],
         [
@@ -306,7 +740,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -317,9 +751,10 @@ ServerEvents.recipes(allthemods => {
             '4x gtceu:luv_field_generator',
             '2x gtceu:luv_electric_pump',
             '2x gtceu:luv_conveyor_module',
-            '2x #gtceu:circuits/luv',
+            '8x #gtceu:circuits/luv',
             '2x mekanism:ultimate_control_circuit',
             '4x gtceu:laminated_glass',
+            '16x #forge:plates/hafnium',
             '4x mekanismgenerators:fusion_reactor_frame'
         ],
         [
@@ -327,7 +762,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768,
         'gtceu:luv_fusion_reactor',
         16
@@ -338,7 +773,8 @@ ServerEvents.recipes(allthemods => {
         [
             'gtceu:fusion_casing',
             '2x gtceu:laminated_glass',
-            '4x mekanism:alloy_atomic',
+            '4x #forge:plates/alloy_atomic',
+            '16x #forge:rods/hafnium',
             '4x mekanism:pellet_polonium'
         ],
         [
@@ -346,7 +782,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768,
     );
 
@@ -358,6 +794,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:luv_input_bus',
             'gtceu:luv_input_hatch',
             'mekanism:ultimate_control_circuit',
+            '16x #forge:rods/hafnium',
             '#gtceu:circuits/luv'
         ],
         [
@@ -365,7 +802,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -376,8 +813,9 @@ ServerEvents.recipes(allthemods => {
             '#forge:frames/ferrognetic',
             '4x mekanism:pellet_polonium',
             '4x mekanism:pellet_plutonium',
+            '4x #forge:plates/scandium',
             '2x mekanism:ultimate_control_circuit',
-            '2x mekanism:alloy_atomic',
+            '2x #forge:plates/alloy_atomic',
             '#gtceu:circuits/luv'
         ],
         [
@@ -385,7 +823,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768,
         'mekanismgenerators:fusion_reactor_controller',
         16
@@ -397,8 +835,9 @@ ServerEvents.recipes(allthemods => {
             '4x mekanism:hdpe_sheet',
             'gtceu:luv_input_bus',
             'gtceu:luv_input_hatch',
+            '4x #forge:rods/scandium',
             '2x mekanism:ultimate_control_circuit',
-            '2x mekanism:alloy_atomic',
+            '2x #forge:plates/alloy_atomic',
             '#gtceu:circuits/luv'
 
         ],
@@ -407,7 +846,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -425,7 +864,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768,
         '#forge:ingots/plutonium'
     );
@@ -437,7 +876,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:luv_input_bus',
             'gtceu:luv_input_hatch',
             '2x mekanism:ultimate_control_circuit',
-            '2x mekanism:alloy_atomic',
+            '2x #forge:plates/alloy_atomic',
             '#gtceu:circuits/luv'
 
         ],
@@ -446,7 +885,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -456,7 +895,7 @@ ServerEvents.recipes(allthemods => {
             'mekanismgenerators:fission_reactor_casing',
             '2x mekanism:ultimate_chemical_tank',
             '2x mekanism:ultimate_control_circuit',
-            '2x mekanism:alloy_atomic',
+            '2x #forge:plates/alloy_atomic',
             '#gtceu:circuits/luv'
 
         ],
@@ -465,7 +904,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 1440',
             '#forge:soldering_alloy 1440'
         ],
-        1000,
+        mekLong,
         32768
     );
 
@@ -478,10 +917,11 @@ ServerEvents.recipes(allthemods => {
             '5x mekanism:hdpe_sheet',
             '5x mekanism:pellet_polonium',
             'mekanism:ultimate_induction_cell',
+            '4x #forge:plates/scandium',
             '5x #forge:dense_plates/gaia'
         ],
         'gtceu:europium 720',
-        2400,
+        mekLong,
         32768,
         'allthemodium:unobtainium_helmet', 16
     );
@@ -495,10 +935,11 @@ ServerEvents.recipes(allthemods => {
             '8x mekanism:hdpe_sheet',
             '8x mekanism:pellet_polonium',
             'mekanism:ultimate_induction_cell',
+            '4x #forge:plates/scandium',
             '8x #forge:dense_plates/gaia'
         ],
         'gtceu:europium 1152',
-        2400,
+        mekLong,
         32768,
         'allthemodium:unobtainium_chestplate', 16
     );
@@ -512,10 +953,11 @@ ServerEvents.recipes(allthemods => {
             '7x mekanism:hdpe_sheet',
             '7x mekanism:pellet_polonium',
             'mekanism:ultimate_induction_cell',
+            '4x #forge:plates/scandium',
             '7x #forge:dense_plates/gaia'
         ],
         'gtceu:europium 1008',
-        2400,
+        mekLong,
         32768,
         'allthemodium:unobtainium_leggings', 16
     );
@@ -529,10 +971,11 @@ ServerEvents.recipes(allthemods => {
             '4x mekanism:hdpe_sheet',
             '4x mekanism:pellet_polonium',
             'mekanism:ultimate_induction_cell',
+            '4x #forge:plates/scandium',
             '4x #forge:dense_plates/gaia'
         ],
         'gtceu:europium 576',
-        2400,
+        mekLong,
         32768,
         'allthemodium:unobtainium_boots', 16
     );
@@ -556,7 +999,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 1440'
         ],
         2400,
-        tiers['UXV'],
+        tiers['UV'],
         'gtceu:uv_reconstructor'
     );
 
@@ -777,7 +1220,7 @@ ServerEvents.recipes(allthemods => {
             "2x quarryplus:pump_plus",
             "4x minecraft:dragon_head",
             "allthecompressed:nether_star_block_3x",
-            "32x mekanism:alloy_atomic",
+            "32x #forge:plates/alloy_atomic",
             "64x #forge:plates/draconium_awakened",
             "16x thermal:redstone_servo",
             "12x #gtceu:circuits/luv"
@@ -801,7 +1244,7 @@ ServerEvents.recipes(allthemods => {
             "4x quarryplus:mover",            
             "4x minecraft:dragon_head",
             "allthecompressed:nether_star_block_3x",
-            "16x mekanism:alloy_atomic",
+            "16x #forge:plates/alloy_atomic",
             "32x #forge:plates/draconium_awakened",
             "8x thermal:redstone_servo",
             "12x #gtceu:circuits/luv"

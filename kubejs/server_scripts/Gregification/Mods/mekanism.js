@@ -14,8 +14,8 @@ ServerEvents.recipes(allthemods => {
         if (program) {
             recipe.circuit(program);
         }
-    };    
-       
+    };
+
     allthemods.recipes.gtceu.canner('mekanism_energy_tablet')
         .itemInputs([
             '16x #forge:dusts/alloy_infused',
@@ -39,7 +39,7 @@ ServerEvents.recipes(allthemods => {
         32768,
         600
     );
-    
+
     //basic tier
     addAssembler(
         [
@@ -108,9 +108,9 @@ ServerEvents.recipes(allthemods => {
     addAssembler(
         [
             '4x #forge:plates/osmium',
-            '2x #forge:circuits/ultimate',            
+            '2x #forge:circuits/ultimate',
             '2x #forge:plates/alloy_atomic',
-            'mekanism:energy_tablet'            
+            'mekanism:energy_tablet'
         ],
         [
             'gtceu:polytetrafluoroethylene 100'
@@ -124,9 +124,9 @@ ServerEvents.recipes(allthemods => {
     addAssembler(
         [
             '4x #forge:plates/gold',
-            '2x #forge:circuits/ultimate',            
+            '2x #forge:circuits/ultimate',
             '2x #forge:plates/alloy_atomic',
-            'mekanism:energy_tablet'            
+            'mekanism:energy_tablet'
         ],
         [
             'gtceu:polytetrafluoroethylene 100'
@@ -140,9 +140,9 @@ ServerEvents.recipes(allthemods => {
     addAssembler(
         [
             '4x #forge:plates/tin',
-            '2x #forge:circuits/ultimate',            
+            '2x #forge:circuits/ultimate',
             '2x #forge:plates/alloy_atomic',
-            'mekanism:energy_tablet'            
+            'mekanism:energy_tablet'
         ],
         [
             'gtceu:polytetrafluoroethylene 100'
@@ -156,9 +156,9 @@ ServerEvents.recipes(allthemods => {
     addAssembler(
         [
             '4x #forge:plates/steel',
-            '2x #forge:circuits/ultimate',            
+            '2x #forge:circuits/ultimate',
             '2x #forge:plates/alloy_atomic',
-            'mekanism:energy_tablet'            
+            'mekanism:energy_tablet'
         ],
         [
             'gtceu:polytetrafluoroethylene 100'
@@ -167,4 +167,40 @@ ServerEvents.recipes(allthemods => {
         32768,
         600
     );
+
+
+    var mekMachines = [
+        { machine: 'mekanism:energized_smelter', factory: 'smelting' },
+        { machine: 'mekanism:enrichment_chamber', factory: 'enriching' },
+        { machine: 'mekanism:crusher', factory: 'crushing' },
+        { machine: 'mekanism:osmium_compressor', factory: 'compressing' },
+        { machine: 'mekanism:combiner', factory: 'combining' },
+        { machine: 'mekanism:purification_chamber', factory: 'purifying' },
+        { machine: 'mekanism:chemical_injection_chamber', factory: 'injecting' },
+        { machine: 'mekanism:precision_sawmill', factory: 'sawing' },
+        { machine: 'mekanism:metallurgic_infuser', factory: 'infusing' }
+    ];
+
+    let upgradeTiers = ['advanced', 'elite', 'ultimate'];
+
+    mekMachines.forEach(function(entry) {
+        let machine = entry.machine;
+        let factory = entry.factory;
+
+        // base machine -> basic factory
+        allthemods.shapeless(
+            'mekanism:basic_' + factory + '_factory',
+            [machine, 'mekanism:basic_tier_installer']
+        );
+
+        // each subsequent tier upgrades the previous factory
+        upgradeTiers.forEach(function(tier, i) {
+            let prevTier = i === 0 ? 'basic' : upgradeTiers[i - 1];
+            allthemods.shapeless(
+                'mekanism:' + tier + '_' + factory + '_factory',
+                ['mekanism:' + prevTier + '_' + factory + '_factory', 'mekanism:' + tier + '_tier_installer']
+            );
+        });
+    });
+
 })

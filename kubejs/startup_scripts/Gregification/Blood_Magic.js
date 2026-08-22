@@ -4,7 +4,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     
     event.create('alchemical_workbench')
         .category('alchemical_workbench')        
-        .setMaxIOSize(9, 3, 6, 3)
+        .setMaxIOSize(12, 6, 3, 3)
         .setSound(GTSoundEntries.BATH)        
         .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT, FillDirection.LEFT_TO_RIGHT);
     

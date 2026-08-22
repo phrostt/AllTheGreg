@@ -26,10 +26,7 @@ ServerEvents.recipes(allthemods => {
             id = `gregification:soul_extraction/${fluidName}`;
 
         }
-        
-
-        
-
+                
 
         let recipe = allthemods.recipes.gtceu.soul_extractor(id)
             .itemInputs(inputs)
@@ -94,10 +91,34 @@ ServerEvents.recipes(allthemods => {
 
     soulExtractor(['forbidden_arcanus:soul_extractor', '128x minecraft:soul_sand'], 'gtceu:water_stage_3 2000', '128x forbidden_arcanus:soulless_sand', 'gtceu:soul 2000', 800, EUStage3)
     soulExtractor(["128x minecraft:ghast_tear", "128x #forge:dusts/redstone", "128x #forge:dusts/glowstone"], 'gtceu:water_stage_3 5000', null, 'gtceu:aureal 5000', 800, EUStage3)
-    soulExtractor(['draconicevolution:dragon_heart'], 'gtceu:water_stage_3 1000', null, 'gtceu:liquid_draconic_essence 1000', 1000, EUStage3)
-    soulExtractor(['industrialforegoing:fertilizer'], 'gtceu:water_stage_1 1000', null, 'gtceu:liquid_fertilizer 1000', 100, EUStage1)
-    soulExtractor(['bloodmagic:strong_tau'], 'gtceu:water_stage_1 1000', null, 'gtceu:saturated_tau 1000', 100, EUStage1)
-    soulExtractor(['minecraft:dragon_breath'], 'gtceu:water_stage_2 1000', null, 'gtceu:liquid_dragon_breath 1000', 100, EUStage2)    
-    //soulExtractor(['20x minecraft:rotten_flesh'], 'gtceu:water_stage_4 2000', null, 'gtceu:liquid_rotten_flesh 2000', 100, EUStage5)
+    
+
+    allthemods.recipes.gtceu.hydro_electromagnetic_separator('dragon_heart')
+        .itemInputs('draconicevolution:dragon_heart')
+        .inputFluids('gtceu:water_stage_3 1000')        
+        .outputFluids('gtceu:liquid_draconic_essence 1000')
+        .duration(1000)
+        .EUt(EUStage3);
+
+    allthemods.recipes.gtceu.hydro_electromagnetic_separator('fertilizer')
+        .itemInputs('industrialforegoing:fertilizer')
+        .inputFluids('gtceu:water_stage_1 1000')        
+        .outputFluids('gtceu:liquid_fertilizer 1000')
+        .duration(100)
+        .EUt(EUStage1);
+
+    allthemods.recipes.gtceu.hydro_electromagnetic_separator('saturated_tau')
+        .itemInputs('bloodmagic:strong_tau')
+        .inputFluids('gtceu:water_stage_1 1000')        
+        .outputFluids('gtceu:saturated_tau 1000')
+        .duration(100)
+        .EUt(EUStage1);
+
+    allthemods.recipes.gtceu.hydro_electromagnetic_separator('dragon_breath')
+        .itemInputs('minecraft:dragon_breath')
+        .inputFluids('gtceu:water_stage_2 1000')        
+        .outputFluids('gtceu:liquid_dragon_breath 1000')
+        .duration(100)
+        .EUt(EUStage2);   
 
 });

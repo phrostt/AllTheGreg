@@ -14,6 +14,27 @@ ServerEvents.recipes(allthemods => {
     const partDuration = 200;
     const rocketDuration = 2000;
 
+    allthemods.recipes.gtceu.assembler('fuel_refinery')
+        .itemInputs(['gtceu:iv_machine_hull', '2x gtceu:iv_electric_pump', '2x #gtceu:circuits/iv', '4x #forge:plates/hop_graphite'])
+        .inputFluids('#forge:soldering_alloy 2000')
+        .itemOutputs('ad_astra:fuel_refinery')
+        .duration(rocketDuration)
+        .EUt(ivTier);
+
+    allthemods.recipes.gtceu.assembler('oxygen_loader')
+        .itemInputs(['gtceu:iv_machine_hull', '2x gtceu:iv_electric_pump', '2x #gtceu:circuits/iv', '#forge:rotors/tungsten_steel'])
+        .inputFluids('#forge:soldering_alloy 2000')
+        .itemOutputs('ad_astra:oxygen_loader')
+        .duration(rocketDuration)
+        .EUt(ivTier);
+
+    allthemods.recipes.gtceu.assembler('launch_pad')
+        .itemInputs(['gtceu:iv_machine_hull', '#forge:plates/tungsten_steel', '4x #gtceu:circuits/iv', '4x #forge:rods/hop_graphite'])
+        .inputFluids('#forge:soldering_alloy 2000')
+        .itemOutputs('ad_astra:launch_pad')
+        .duration(rocketDuration)
+        .EUt(ivTier);
+
     allthemods.recipes.gtceu.assembler('rocket_nose_cone')
         .itemInputs(['4x #forge:double_plates/titanium', 'gtceu:iv_sensor', 'gtceu:iv_emitter', '16x #forge:plates/tungsten_steel', '12x #forge:rings/enderium', '64x #forge:screws/aluminium'])
         .inputFluids('#forge:soldering_alloy 2000')

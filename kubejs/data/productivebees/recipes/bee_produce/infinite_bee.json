@@ -1,0 +1,16 @@
+{
+    "type": "productivebees:advanced_beehive",
+    "ingredient": "productivebees:infinite",
+    "results": [
+        {
+            "item": {
+                "item": "productivebees:configurable_honeycomb",
+                "nbt": {
+                    "EntityTag": {
+                        "type": "productivebees:infinite"
+                    }
+                }
+            }
+        }
+    ]
+}

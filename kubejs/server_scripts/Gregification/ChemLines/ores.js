@@ -75,7 +75,7 @@ ServerEvents.recipes(allthemods => {
         .duration(Duration)
         .EUt(EUMoon);
 
-    allthemods.recipes.gtceu.large_chemical_reactor('gregification:hafnon_chemical_reactor')
+    allthemods.recipes.gtceu.centrifuge('gregification:hafnon_chemical_reactor')
         .itemInputs('#forge:dusts/hafnon')
         .itemOutputs('gtceu:hafnium_silicide_dust')
         .outputFluids('gtceu:oxygen 4000')

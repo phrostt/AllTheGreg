@@ -181,6 +181,72 @@ ServerEvents.recipes(allthemods => {
         600
     );
 
+    //sanguine hostile network
+    addAssembler(
+        [
+            'hostilenetworks:sim_chamber',
+            '2x #gtceu:circuits/hv',
+            '2x bloodmagic:reagentbinding',
+            '2x bloodmagic:infusedslate',
+            'bloodmagic:daggerofsacrifice'           
+        ],
+        'gtceu:polyethylene 144',
+        'sanguine_networks:virtual_sacrificer',
+        512,                                        // HV Voltage
+        600
+    );
+
+
+    //soul surge
+    addAssembler(
+        [            
+            '4x #forge:plastic',
+            '2x minecraft:echo_shard',
+            '2x gtceu:iv_electric_piston',
+            '2x gtceu:iv_electric_pump',
+            '2x #gtceu:circuits/iv',
+            '2x #forge:gears/selenium',
+            '#forge:frames/hafnium',
+        ],
+        'gtceu:polyethylene 144',
+        'industrialforegoingsouls:soul_surge',
+        8192,                                        // IV Voltage
+        600
+    );
+
+    //soul pipe
+    addAssembler(
+        [            
+            '2x #forge:plastic',
+            '2x minecraft:echo_shard',
+            '6x #forge:plates/hafnium',
+            '2x #forge:small_gears/selenium'            
+        ],
+        'gtceu:polyethylene 144',
+        '8x industrialforegoingsouls:soul_network_pipe',
+        8192,
+        60
+    );
+
+    //soul laser base
+    addAssembler(
+        [
+            '4x #forge:plastic',
+            'minecraft:sculk_shrieker',            
+            '#industrialforegoing:machine_frame/advanced',
+            '2x #forge:gears/unobtainium',
+            '2x #forge:gears/selenium',
+            '#forge:frames/hafnium',
+            'minecraft:sculk_catalyst',            
+            '4x #gtceu:circuits/iv'           
+        ],
+        'gtceu:polytetrafluoroethylene 288',
+        'industrialforegoingsouls:soul_laser_base',
+        8192,
+        600
+    );
+
+
     // 2. Loot Fabricator
     // Tier: HV (Matter Fabrication Logic)
     addAssembler(
@@ -595,13 +661,13 @@ ServerEvents.recipes(allthemods => {
 
     //thermal machine frame
     addAssembler([
-        "#forge:frames/vibranium",
+        "#forge:frames/selenium",
         "4x #forge:plates/tungsten_steel",
-        "4x #forge:screws/alfsteel",
+        "4x #forge:screws/terrasteel",
         "8x #forge:small_gears/plastic",
         "2x #gtceu:circuits/iv",
         "2x gtceu:iv_electric_piston"],
-        "gtceu:polybenzimidazole 144",
+        "gtceu:polytetrafluoroethylene 144",
         "thermal:machine_frame",
         8192, 600
     );

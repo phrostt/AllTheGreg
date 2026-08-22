@@ -1,5 +1,8 @@
 
 [IFSoulsMachines]
+	#How many souls each pipe can hold
+	#Range: > 0
+	SOUL_AMOUNT_PER_PIPE = 4
 
 	[IFSoulsMachines.ConfigSoulSurge]
 		#How long in ticks a soul last to accelerate ticks
@@ -17,6 +20,8 @@
 		#How often a random tick block will be accelerated, by default 3% of the ticks (random)
 		#Range: 0.0 ~ 1.0
 		RANDOM_TICK_ACCELERATION_CHANCE = 0.03
+		#Register a list of blocks that will not be affected by Soul Surge.
+		SOUL_SURGE_IGNORE_BLOCKS = ["minecraft:bedrock", "minecraft:dirt"]
 
 	[IFSoulsMachines.ConfigSoulLaserBase]
 		#Max soul storage tank amount
