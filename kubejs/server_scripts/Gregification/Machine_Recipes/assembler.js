@@ -92,7 +92,8 @@ ServerEvents.recipes(allthemods => {
 
     //ender chest
     addAssembler(
-        ["gtceu:magical_bio_composite",
+        [
+            "gtceu:magical_bio_composite",
             "enderchests:ender_pouch",
             "#forge:frames/terrasteel",
             "4x #forge:plates/pink_slime",
@@ -111,7 +112,8 @@ ServerEvents.recipes(allthemods => {
 
     //ender chest
     addAssembler(
-        ["gtceu:magical_bio_composite",
+        [
+            "gtceu:magical_bio_composite",
             "enderchests:ender_pouch",
             "#forge:frames/terrasteel",
             "4x #forge:plates/pink_slime",
@@ -129,7 +131,8 @@ ServerEvents.recipes(allthemods => {
 
     //ender tank
     addAssembler(
-        ["gtceu:magical_bio_composite",
+        [
+            "gtceu:magical_bio_composite",
             "endertanks:ender_bucket",
             "#forge:frames/terrasteel",
             "4x #forge:plates/pink_slime",
@@ -718,7 +721,62 @@ ServerEvents.recipes(allthemods => {
             'gtceu:conduit_binder 864',
             `8x enderio:${conduit.conduit}_conduit`,
             128,
-            100,
+            100
         )
     })
+
+    //wirelesschargers:basic_wireless_player_charger
+    addAssembler(
+        [
+            'gtceu:hv_machine_hull',
+            '#forge:gears/manasteel',
+            '4x #forge:plates/stainless_steel',
+            '2x #gtceu:circuits/hv',
+            'gtceu:hv_field_generator'
+        ], 
+        null, 
+        'wirelesschargers:basic_wireless_player_charger', 
+        512, 200, 1);
+
+    //wirelesschargers:advanced_wireless_player_charger
+    addAssembler(
+        [
+            'wirelesschargers:basic_wireless_player_charger',
+            'gtceu:ev_machine_hull',
+            '4x #forge:plates/titanium',
+            '2x #gtceu:circuits/ev',
+            'gtceu:ev_field_generator'
+        ], 
+        null, 
+        'wirelesschargers:advanced_wireless_player_charger', 
+        2048, 600, 2);
+
+    //wirelesschargers:basic_wireless_block_charger
+    addAssembler(
+        [
+            'gtceu:hv_machine_hull',
+            'bloodmagic:blankslate',
+            '4x #forge:plates/stainless_steel',
+            '2x #gtceu:circuits/hv',
+            'gtceu:hv_field_generator'
+        ], 
+        null, 
+        'wirelesschargers:basic_wireless_block_charger', 
+        512, 200, 1);
+
+    //wirelesschargers:advanced_wireless_block_charger
+    addAssembler(
+        [
+            'wirelesschargers:basic_wireless_block_charger',
+            'gtceu:ev_machine_hull',
+            '4x #forge:plates/titanium',
+            '2x #gtceu:circuits/ev',
+            'gtceu:ev_field_generator'
+        ], 
+        null, 
+        'wirelesschargers:advanced_wireless_block_charger', 
+        2048, 600, 2);
+
+    
+    
 });

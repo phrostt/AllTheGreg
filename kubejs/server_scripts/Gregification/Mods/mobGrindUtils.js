@@ -32,7 +32,9 @@ ServerEvents.recipes(allthemods => {
             '4x #forge:plates/manasteel',                        
             'botania:rune_mana',
 			'occultism:spirit_attuned_gem',
-			'ars_nouveau:source_gem'
+			'ars_nouveau:source_gem',
+            'bloodmagic:reinforcedslate',
+            '#forge:ingots/deorum'
         ],
         'gtceu:soldering_alloy 144',
         'gtceu:magical_bio_composite',

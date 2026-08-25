@@ -58,13 +58,21 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
         .setSound(GTSoundEntries.ASSEMBLER)
         .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
         .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
+
+    event.create('mana_pool')
+        .category('mana_pool')
+        .setEUIO('in')
+        .setMaxIOSize(3, 3, 1, 0)
+        .setSound(GTSoundEntries.ASSEMBLER)
+        .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
 })
  
 
 GTCEuStartupEvents.registry("gtceu:machine", event => {
     event.create('botanical_factory', 'multiblock')              
         .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes('petal_apothecary', 'runic_altar', 'mana_infuser')
+        .recipeTypes('petal_apothecary', 'runic_altar', 'mana_infuser', 'mana_pool')
         .appearanceBlock(GTBlocks.CASING_STAINLESS_CLEAN)
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()
@@ -186,6 +194,15 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             builder
                 .rotationState(RotationState.NON_Y_AXIS)
                 .recipeType("mana_infuser")                
+                .workableTieredHullModel("gtceu:block/machines/assembler")
+        );   
+    
+    event.create("mana_pool", "simple")
+        .tiers(GTValues.HV, GTValues.EV, GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
+        .definition((tier, builder) =>
+            builder
+                .rotationState(RotationState.NON_Y_AXIS)
+                .recipeType("mana_pool")
                 .workableTieredHullModel("gtceu:block/machines/assembler")
         );   
 });

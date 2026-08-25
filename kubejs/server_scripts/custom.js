@@ -82,6 +82,13 @@ ServerEvents.recipes(allthemods => {
 			],
 			"energy": finalEnergy
 		}).id(`gregification:thermal/brewer/${id}`);
+
+		allthemods.recipes.gtceu.chemical_reactor(`gregification:chemical_reactor/${id}`)        
+			.itemInputs(`${itemIn}`)
+			.inputFluids(`${fluidIn} ${fluidInA}`)
+			.outputFluids(`${fluidOut} ${fluidOutA}`)
+			.duration(150)
+			.EUt(8192);
 	};
 	
 	const fluidmix = (id, fluidIn1, fluidA1, fluidIn2, fluidA2, fluidOut, fAmount, energy) => {

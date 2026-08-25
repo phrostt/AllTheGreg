@@ -204,6 +204,8 @@ ServerEvents.recipes(allthemods => {
     const elementiumBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:elementium"}}').strongNBT();
     const alfBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:alfsteel"}}').strongNBT();
     const manaSteel = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:manasteel"}}').strongNBT();
+    const ironBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:iron"}}').strongNBT();
+            
 
     allthemods.recipes.gtceu.petal_apothecary('pure_bee')
         .itemInputs(['minecraft:bee_spawn_egg', '3x #botania:petals/white', 'productivebees:honey_treat', 'minecraft:bee_spawn_egg'])
@@ -459,4 +461,81 @@ ServerEvents.recipes(allthemods => {
             console.error(`FAILED recipe ID: ${safeID} — ${err}`);
         }
     });
+
+    const CATALYST_ITEM_IDS = {
+        'botania:alchemy_catalyst': 'botania:alchemy_catalyst',
+        'botania:conjuration_catalyst': 'botania:conjuration_catalyst'
+    };
+ 
+    allthemods.forEachRecipe({ type: 'botania:mana_infusion' }, rawRecipe => {
+        let baseSafeID = rawRecipe.getId().toString().replace(/[^a-z0-9]/gi, '_');
+        try {
+            let recipe = JSON.parse(rawRecipe.json);
+ 
+            // --- Skip NBT-based recipes (e.g. bee spawn eggs) - handled manually below ---
+            if ((recipe.input && recipe.input.type === 'forge:nbt') ||
+                (recipe.output && recipe.output.type === 'forge:nbt')) {
+                return;
+            }
+ 
+            // --- Output item (shared across every alternative input) ---
+            let outObj = recipe.output;
+            let outputItem = 'minecraft:air';
+            if (outObj && outObj.item) {
+                let count = outObj.count || 1;
+                outputItem = count > 1 ? `${count}x ${outObj.item}` : outObj.item;
+            }
+ 
+            let manaCost = recipe.mana || 0;
+ 
+            // --- Input: normalize to an array of alternatives (single-item input becomes a 1-length array) ---
+            let rawInput = recipe.input;
+            let inputEntries = Array.isArray(rawInput) ? rawInput : [rawInput];
+ 
+            inputEntries.forEach(function(inputEntry, index) {
+                let inputItem = null;
+                if (inputEntry) {
+                    if (inputEntry.item) {
+                        inputItem = inputEntry.item;
+                    } else if (inputEntry.tag) {
+                        inputItem = '#' + inputEntry.tag;
+                    }
+                }
+                if (!inputItem) return;
+ 
+                // one recipe ID per alternative - suffix only added when there's more than one
+                let safeID = inputEntries.length > 1 ? `${baseSafeID}_alt${index}` : baseSafeID;
+ 
+                let builder = allthemods.recipes.gtceu.mana_pool(safeID)
+                    .itemInputs([inputItem])
+                    .itemOutputs(outputItem)
+                    .inputFluids(`gtceu:mana_essence ${manaCost}`)
+                    .duration(10)
+                    .EUt(512);
+ 
+                // --- Catalyst (Alchemy/Conjuration) as a non-consumed second input ---
+                if (recipe.catalyst && recipe.catalyst.block) {
+                    let catalystItem = CATALYST_ITEM_IDS[recipe.catalyst.block];
+                    if (catalystItem) {
+                        try {
+                            builder.notConsumable(catalystItem);
+                        } catch (err) {
+                            console.error(`notConsumable FAILED for ${safeID}: ${err}`);
+                        }
+                    }
+                }
+            });
+ 
+        } catch (err) {
+            console.error(`FAILED recipe ID: ${baseSafeID} — ${err}`);
+        }
+    });
+ 
+    // --- Manasteel bee - manual, NBT-based, excluded from the automated loop above ---
+    allthemods.recipes.gtceu.mana_pool('bacteria_mana_pool_manasteel_bee')
+        .itemInputs(ironBee)
+        .itemOutputs(manaSteel)
+        .inputFluids('gtceu:mana_essence 10000')
+        .duration(10)
+        .EUt(512);
 });

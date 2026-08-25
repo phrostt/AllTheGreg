@@ -338,6 +338,8 @@
     "block.gtceu.imbument_chamber": "Imbuent Chamber",
     "gtceu.mana_infuser": "Mana Infuser",
     "block.gtceu.mana_infuser": "Mana Infuser",
+    "gtceu.mana_pool": "Mana Pool",
+    "block.gtceu.mana_pool": "Mana Pool",
     "gtceu.petal_apothecary": "Petal Apothecary",
     "block.gtceu.petal_apothecary": "Petal Apothecary",
     "gtceu.runic_altar": "Runic Altar",
@@ -347,6 +349,7 @@
     "gtceu.alchemical_workbench": "Alchemical Workbench",
     "block.gtceu.alchemical_workbench": "Alchemical Workbench",
     "material.gtceu.terrazine": "Terrazine",
+    "material.gtceu.acetaldehyde": "Acetaldehyde",
     "material.gtceu.soul_dust": "Soul Dust",
     "material.gtceu.poison_agent": "Poison Agent",
     "material.gtceu.paralytic_agent": "Paralytic Agent",
@@ -453,7 +456,14 @@
     "material.gtceu.tetrahedrite": "Tetrahedrite",
     "material.gtceu.ullmannite": "Ullmannite",
     "material.gtceu.jamesonite": "Jamesonite",
+    "material.gtceu.hepatizon": "Hepatizon",
+    "material.gtceu.manyullyn": "Manyullyn",
+    "material.gtceu.amethyst_bronze": "Amethyst Bronze",
 
+    "gtceu.jei.ore_vein.mars_draconium_vein": "Draconium Deposit",
+    "gtceu.jei.ore_vein.glacio_trinium_vein": "Trinium Deposit",
+    "gtceu.jei.ore_vein.mining_dolomite_fluorite_vein": "Dolomite-Fluorite Deposit",
+    "gtceu.jei.ore_vein.mining_trona_vein": "Trona Deposit",
     
     "gtceu.jei.ore_vein.moon_clausthalite_naumannite": "Clausthalite-Naumannite Deposit",
     "gtceu.jei.ore_vein.moon_hafnian_zircon_hafnon_baddeleyite_zircon": "Zirconium-Hafnium Deposit",
@@ -468,7 +478,7 @@
     "gtceu.jei.ore_vein.mars_thortveitite_kolbeckite_bazzite": "Scandium Deposit",
     "gtceu.jei.ore_vein.mars_fergusonite_samarskite_lanthanite": "Rare Earth Niobate Deposit",
     "gtceu.jei.ore_vein.mars_cerite_gadolinite_yttrialite_xenotime": "Yttrium-Cerium Silicate Deposit",
-
+    "gtceu.jei.ore_vein.mars_drenched_iron_swift_alloy_fireite": "Elemental Deposit",
     "gtceu.jei.ore_vein.mercury_crookesite_hutchinsonite_lorandite_caliche": "Thallium Deposit",
     "gtceu.jei.ore_vein.mercury_strontianite_celestite": "Strontium Deposit",
     "gtceu.jei.ore_vein.mercury_osmiridium_nether_star": "Osmiridium Deposit",
@@ -482,7 +492,7 @@
     "gtceu.jei.ore_vein.glacio_radio_thoric_phosphate": "Radio-Thoric Phosphate Deposit",
     "gtceu.jei.ore_vein.glacio_tenebrius_etrium_chaotic": "Tenebrius-Etrium Deposit",
 
-        "gtceu.jei.ore_vein.moon_apatite_vein": "Moon Apatite Vein",
+    "gtceu.jei.ore_vein.moon_apatite_vein": "Moon Apatite Vein",
     "gtceu.jei.ore_vein.moon_cassiterite_vein": "Moon Cassiterite Vein",
     "gtceu.jei.ore_vein.moon_coal_vein": "Moon Coal Vein",
     "gtceu.jei.ore_vein.moon_copper_tin_vein": "Moon Copper Tin Vein",
@@ -571,5 +581,8 @@
     "material.gtceu.lanthanum_fluoride": "Lanthanum Fluoride",
     "material.gtceu.cerium_oxide": "Cerium Oxide",
     "material.gtceu.chaos_shard": "Chaos Shard",
-    "material.gtceu.coagulite": "Coagulite"
+    "material.gtceu.coagulite": "Coagulite",
+    "material.gtceu.drenched_iron": "Drenched Iron",
+    "material.gtceu.swift_alloy": "Swift Alloy",
+    "material.gtceu.fireite": "Fireite"
 }

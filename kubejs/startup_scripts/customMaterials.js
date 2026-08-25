@@ -93,7 +93,7 @@ const otherElements = [
     { name: 'scandium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
     { name: 'hafnium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
     { name: 'rubidium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
-    { name: 'thallium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true }
+    { name: 'thallium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true }    
 ];
 
 
@@ -103,6 +103,10 @@ const unification = [
     { name: 'signalum', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'alltheores' },
     { name: 'lumium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'alltheores' },
     { name: 'enderium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'alltheores' },
+    
+    { name: 'drenched_iron', oItems: ['ingot', 'block', 'nugget'], namespace: 'elementalcraft' },
+    { name: 'swift_alloy', oItems: ['ingot', 'block', 'nugget'], namespace: 'elementalcraft' },
+    { name: 'fireite', oItems: ['ingot', 'block', 'nugget'], namespace: 'elementalcraft' },
     
     //{ name: 'allthemodium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'allthemodium' },
     //{ name: 'vibranium', oItems: ['rod', 'gear', 'plate', 'nugget', 'block'], namespace: 'allthemodium' },
@@ -125,6 +129,11 @@ const unification = [
     { name: 'gaia', oItems: ['ingot'], namespace: 'botania' },
     { name: 'alfsteel', oItems: ['nugget', 'ingot', 'block'], namespace: 'mythicbotany' },
     { name: 'iesnium', oItems: ['dust', 'nugget', 'ingot', 'block'], namespace: 'occultism' },
+
+    { name: 'hepatizon', oItems: ['nugget', 'ingot', 'block', 'fluid'], namespace: 'tconstruct' },
+    { name: 'manyullyn', oItems: ['nugget', 'ingot', 'block', 'fluid'], namespace: 'tconstruct' },
+    { name: 'amethyst_bronze', oItems: ['nugget', 'ingot', 'block', 'fluid'], namespace: 'tconstruct' }
+
 ]
 
 const mekanism = [
@@ -570,6 +579,32 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES)
     });
 
+    event.create("hepatizon")
+        .color(0x715A7C)
+        .dust()
+        .components('2x copper, 1x cobalt, 1x NetherQuartz')
+        .ingot()
+        .fluid()
+        .iconSet(GTMaterialIconSet.METALLIC)
+
+    event.create("amethyst_bronze")
+        .color(0xEBC4DB)
+        .dust()
+        .components('1x copper, 1x amethyst')
+        .ingot()
+        .fluid()
+        .iconSet(GTMaterialIconSet.METALLIC)
+        
+    
+    event.create("manyullyn")
+        .color(0xC097F0)
+        .dust()        
+        .ingot()
+        .fluid()
+        .iconSet(GTMaterialIconSet.METALLIC)
+
+        
+
     event.create("elemental_fire")
         .color(0xD55642)
         .iconSet(GTMaterialIconSet.SHINY)
@@ -600,24 +635,86 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     
     let materialBuilder
 
+    materialBuilder = event.create('drenched_iron')
+        .ingot()
+        .dust()
+        .fluid()
+        .ore(2, 1)
+        .element('iron')
+        .color(0x5490CF)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.GENERATE_ROD,
+            GTMaterialFlags.GENERATE_LONG_ROD,
+            GTMaterialFlags.GENERATE_RING,
+            GTMaterialFlags.GENERATE_BOLT_SCREW,
+            GTMaterialFlags.GENERATE_ROUND,
+            GTMaterialFlags.GENERATE_FRAME,
+            GTMaterialFlags.GENERATE_DENSE,
+            GTMaterialFlags.GENERATE_GEAR,
+            GTMaterialFlags.GENERATE_SMALL_GEAR,
+            GTMaterialFlags.GENERATE_FOIL);
+
+    materialBuilder = event.create('swift_alloy')
+        .ingot()
+        .dust()
+        .fluid()
+        .ore(2, 1)
+        .color(0xEBB760)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.GENERATE_ROD,
+            GTMaterialFlags.GENERATE_LONG_ROD,
+            GTMaterialFlags.GENERATE_RING,
+            GTMaterialFlags.GENERATE_BOLT_SCREW,
+            GTMaterialFlags.GENERATE_ROUND,
+            GTMaterialFlags.GENERATE_FRAME,
+            GTMaterialFlags.GENERATE_DENSE,
+            GTMaterialFlags.GENERATE_GEAR,
+            GTMaterialFlags.GENERATE_SMALL_GEAR,
+            GTMaterialFlags.GENERATE_FOIL);
+
+    materialBuilder = event.create('fireite')
+        .ingot()
+        .dust()
+        .fluid()
+        .ore(2, 1)
+        .color(0x5C0A0A)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.GENERATE_ROD,
+            GTMaterialFlags.GENERATE_LONG_ROD,
+            GTMaterialFlags.GENERATE_RING,
+            GTMaterialFlags.GENERATE_BOLT_SCREW,
+            GTMaterialFlags.GENERATE_ROUND,
+            GTMaterialFlags.GENERATE_FRAME,
+            GTMaterialFlags.GENERATE_DENSE,
+            GTMaterialFlags.GENERATE_GEAR,
+            GTMaterialFlags.GENERATE_SMALL_GEAR,
+            GTMaterialFlags.GENERATE_FOIL);
+        
+
     materialBuilder = event.create('coagulite')
         .gem()
         .ore(2, 1)
         .color(0x5C0A0A)
         .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION);    
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION);
 
     materialBuilder = event.create('azure_silver')
         .ore(2, 1)
         .color(0xDE81E6)
-        .iconSet(GTMaterialIconSet.METALLIC)        
+        .iconSet(GTMaterialIconSet.METALLIC);
 
     materialBuilder = event.create('mithril')
         .ore(2, 1)
         .dust()
         .ingot()
         .color(0x99D9D9)
-        .iconSet(GTMaterialIconSet.METALLIC)        
+        .iconSet(GTMaterialIconSet.METALLIC);
         
     materialBuilder = event.create("chaos_shard")
         //.dust()
@@ -1406,6 +1503,7 @@ StartupEvents.postInit(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:end_draconium_ore');
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
@@ -1565,11 +1663,13 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:end_draconium_ore');
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('calorite'), 'ad_astra:raw_calorite');
 
+    // Fluid    
     
 
     //ore biproducts

@@ -89,7 +89,7 @@ ServerEvents.highPriorityData(allthemods => {
         },
         {
             name: 'tenebrius',
-            activator: 'gtceu:tenebrium_block',
+            activator: 'gtceu:bedrockium_block',
             syphon: tiers[6],
             filler: 'minecraft:end_stone',
             explosionRadius: explosionRadius.veryLarge,

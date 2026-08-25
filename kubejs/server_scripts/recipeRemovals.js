@@ -14,7 +14,7 @@ ServerEvents.recipes(allthemods => {
         'arsenic', 'gallium', 'hafnium',
         'iodine', 'magnesium', 'manganese', 'mercury', 'niobium',
         'nitrogen', 'scandium', 'tantalum', 'tellurium', 'thallium', 'titanium',
-        'redstone'
+        'redstone', 'francium', 'astatine'
     ];
    
 
@@ -53,6 +53,9 @@ ServerEvents.recipes(allthemods => {
         'sanguine_networks:virtual_sacrificer', 'industrialforegoingsouls:soul_laser_base', 'industrialforegoingsouls:soul_surge',
         'industrialforegoingsouls:soul_network_pipe', 'ad_astra:launch_pad', 'ad_astra:oxygen_loader', 'ad_astra:fuel_refinery',
         'justdirethings:gooblock_tier1', 'justdirethings:gooblock_tier2', 'justdirethings:gooblock_tier3', 'justdirethings:gooblock_tier4',
+
+        'wirelesschargers:basic_wireless_player_charger', 'wirelesschargers:advanced_wireless_player_charger',
+        'wirelesschargers:basic_wireless_block_charger', 'wirelesschargers:advanced_wireless_block_charger',
 
         // --- Ad Astra ---        
         'ad_astra:rocket_fin', 'ad_astra:rocket_nose_cone', 'ad_astra:engine_frame',
@@ -105,7 +108,8 @@ ServerEvents.recipes(allthemods => {
 
 
         "gtceu:macerator/macerate_wheat", 'megacells:transform/sky_steel_ingot', 'appflux:mega/sky_resin',
-        'draconicevolution:components/draconium_ingot_from_ore', 'elementalcraft:pure_ore/draconicevolution/components/draconium_ingot_from_ore'
+        'draconicevolution:components/draconium_ingot_from_ore', 'elementalcraft:pure_ore/draconicevolution/components/draconium_ingot_from_ore',
+        'enderio:smelting/draconicevolution/components/draconium_ingot_from_ore'
 
     ]
     const globalRemoves = [
@@ -306,7 +310,7 @@ ServerEvents.recipes(allthemods => {
         'productivebees:upgrades/simulator', 'productivebees:upgrades/productivity_3', 'productivebees:upgrades/comb_block', 'productivebees:upgrades/productivity_4',
 
         // --- Draconic Evolution & Allthemodium (Smelting/Processing) ---        
-        'draconicevolution:machines/crafting_core', 'draconicevolution:components/draconium_ingot_from_dust',
+        'draconicevolution:machines/crafting_core', 'draconicevolution:components/draconium_ingot_from_dust', 'draconicevolution:components/draconium_ingot_from_ore',
         'draconicevolution:components/awakened_draconium_ingot_from_dust',
         'enderio:smelting/draconicevolution/components/draconium_ingot_from_dust', 'enderio:smelting/draconicevolution/components/awakened_draconium_ingot_from_dust',
         'enderio:smelting/gtceu/smelting/smelt_dust_draconium_awakened_to_ingot',

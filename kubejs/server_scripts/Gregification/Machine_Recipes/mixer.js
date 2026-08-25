@@ -45,6 +45,40 @@ ServerEvents.recipes(allthemods => {
         500
     )
 
+    addMixer(
+        [
+            '2x #forge:dusts/copper',
+            '#forge:dusts/cobalt',
+            '#forge:dusts/nether_quartz'
+
+        ],
+        '2x gtceu:hepatizon_dust',
+        'hv',
+        50
+    )
+
+    addMixer(
+        [
+            '3x #forge:dusts/cobalt',
+            'minecraft:ancient_debris'
+
+        ],
+        '4x gtceu:manyullyn_dust',
+        'hv',
+        50
+    )
+
+    addMixer(
+        [
+            '1x #forge:dusts/copper',
+            '1x #forge:dusts/amethyst',
+
+        ],
+        '1x gtceu:amethyst_bronze_dust',
+        'hv',
+        50
+    )
+
     //absolute
     addMixer(
         [            

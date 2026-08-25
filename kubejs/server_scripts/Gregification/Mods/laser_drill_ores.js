@@ -927,7 +927,7 @@ ServerEvents.recipes(event => {
         ]
     )
 
-    event.recipes.industrialforegoing.laser_drill_ore(
+    /*event.recipes.industrialforegoing.laser_drill_ore(
         'gtceu:raw_tenebrius',
         'industrialforegoing:laser_lens15',
         [
@@ -942,7 +942,7 @@ ServerEvents.recipes(event => {
                 weight: 4
             }
         ]
-    )
+    )*/
 
     event.recipes.industrialforegoing.laser_drill_ore(
         'gtceu:raw_etrium',

@@ -9,7 +9,7 @@ const PLANETS = {
 
 GTCEuServerEvents.oreVeins(event => {
 
-       event.add("moon_platinum_vein", vein => {
+    event.add("moon_platinum_vein", vein => {
         vein.weight(25)
         vein.density(0.2)
         vein.clusterSize(60)
@@ -20,6 +20,57 @@ GTCEuServerEvents.oreVeins(event => {
             .withBlock(GTMaterials.Platinum, 2, -50, 0)
             .withBlock(GTMaterials.Palladium, 1, -50, -15)
             .withBlock(GTMaterials.Cooperite, 1, -40, -20)
+        )
+    })
+
+    event.add("mars_draconium_vein", vein => {
+        vein.weight(25)
+        vein.density(0.2)
+        vein.clusterSize(60)
+        vein.layer("mars")
+        vein.dimensions(["ad_astra:mars"])
+        vein.heightRangeUniform(-50, 0)
+        vein.dikeVeinGenerator(generator => generator
+            .withBlock(GTMaterials.get('draconium'), 2, -50, 0)            
+        )
+    })
+
+    event.add("glacio_trinium_vein", vein => {
+        vein.weight(25)
+        vein.density(0.2)
+        vein.clusterSize(60)
+        vein.layer("glacio")
+        vein.dimensions(["ad_astra:glacio"])
+        vein.heightRangeUniform(-50, 0)
+        vein.dikeVeinGenerator(generator => generator
+            .withBlock(GTMaterials.get('trinium'), 2, -50, 0)
+        )
+    })
+    
+    event.add("mining_dolomite_fluorite_vein", vein => {
+        vein.weight(25)
+        vein.density(0.4)
+        vein.clusterSize(100)
+        vein.layer(GTWorldGenLayers.STONE)
+        vein.dimensions(["allthemodium:mining"])
+        vein.biomes("#allthemodium:mining_features/mining_biomes")
+        vein.heightRangeUniform(129, 248)
+        vein.dikeVeinGenerator(generator => generator            
+            .withBlock(GTMaterials.get('dolomite'), 2, 129, 248)
+            .withBlock(GTMaterials.get('fluorite'), 1, 129, 213)
+        )
+    })
+
+    event.add("mining_trona_vein", vein => {
+        vein.weight(25)
+        vein.density(0.4)
+        vein.clusterSize(100)
+        vein.layer(GTWorldGenLayers.STONE)
+        vein.dimensions(["allthemodium:mining"])
+        vein.biomes("#allthemodium:mining_features/mining_biomes")
+        vein.heightRangeUniform(129, 248)
+        vein.dikeVeinGenerator(generator => generator            
+            .withBlock(GTMaterials.get('trona'), 2, 129, 248)            
         )
     })
    
@@ -38,7 +89,8 @@ GTCEuServerEvents.oreVeins(event => {
         ['roquesite', 'indite', 'sakuraiite'],           // indium minerals
         ['thortveitite', 'kolbeckite', 'bazzite'],       // scandium minerals
         ['fergusonite', 'samarskite', 'lanthanite'],                   // Nb + rare-earth minerals
-        ['cerite', 'gadolinite', 'yttrialite', 'xenotime'] // Y/Ce/REE silicates & phosphates        
+        ['cerite', 'gadolinite', 'yttrialite', 'xenotime'], // Y/Ce/REE silicates & phosphates        
+        ['drenched_iron', 'swift_alloy', 'fireite']
     ];
 
     const mercuryOreGroups = [

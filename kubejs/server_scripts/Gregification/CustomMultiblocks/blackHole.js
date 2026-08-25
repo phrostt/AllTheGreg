@@ -142,11 +142,15 @@ ServerEvents.recipes(allthemods => {
 
     blackHole('4000x gtceu:beryllium_ingot', null, 'gtceu:beryllium_singularity', null, 524288, 1200, 'beryllium_singularity')
 
-    blackHole('4000x #elementalcraft:shards/fire','#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 1200, 'fire_singularity')
-    blackHole('4000x #elementalcraft:shards/air','#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 1200, 'air_singularity')
-    blackHole('4000x #elementalcraft:shards/earth','#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 1200, 'earth_singularity')
-    blackHole('4000x #elementalcraft:shards/water','#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 1200, 'water_singularity')
+    blackHole('8000x elementalcraft:fire_shard',    '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 1200, 'fire_singularity')
+    blackHole('8000x elementalcraft:air_shard',     '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 1200, 'air_singularity')
+    blackHole('8000x elementalcraft:earth_shard',   '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 1200, 'earth_singularity')
+    blackHole('8000x elementalcraft:water_shard',   '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 1200, 'water_singularity')
 
+    blackHole('4000x elementalcraft:powerful_fire_shard',  '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 600, 'powerful_fire_singularity')
+    blackHole('4000x elementalcraft:powerful_air_shard',   '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 600, 'powerful_air_singularity')
+    blackHole('4000x elementalcraft:powerful_earth_shard', '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 600, 'powerful_earth_singularity')
+    blackHole('4000x elementalcraft:powerful_water_shard', '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 600, 'powerful_water_singularity')
 
     blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:purest_water 32000000' , null, 'gtceu:fifth_element 14400', 524288, 1200, 'fifth_element')
 })
