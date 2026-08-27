@@ -17,8 +17,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:distilled_water 1000')
         .outputFluids('gtceu:water_stage_1 900')
         .duration(duration)
-        .EUt(EUStage1);
-    
+        .EUt(EUStage1);            
     
     allthemods.recipes.gtceu.canner('gregification:carbon_slurry_filter')
         .itemInputs('gtceu:fluid_cell')

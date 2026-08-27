@@ -177,7 +177,7 @@ ServerEvents.recipes(allthemods => {
                 bConverter,
                 tierValues[tData.t - 1],
                 600,
-                1
+                11
             );       
              addAssembler(
                 [
@@ -187,7 +187,7 @@ ServerEvents.recipes(allthemods => {
                 bBurner,
                 tierValues[tData.t - 1],
                 600,
-                2
+                12
             );              
         }
 

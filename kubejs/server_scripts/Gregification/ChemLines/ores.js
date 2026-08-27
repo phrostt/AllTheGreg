@@ -71,7 +71,7 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('#forge:dusts/hafnian_zircon')
         .inputFluids(['gtceu:hydrofluoric_acid 6000', 'gtceu:carbon_monoxide 2000'])
         .itemOutputs(['gtceu:fluorozirconic_composite_dust', 'gtceu:hafnium_silicide_dust'])
-        .outputFluids('gtceu:hydrogen_peroxide 3000')
+        .outputFluids('gtceu:hydrogen_peroxide 3000')        
         .duration(Duration)
         .EUt(EUMoon);
 

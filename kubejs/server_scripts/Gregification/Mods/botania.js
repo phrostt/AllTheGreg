@@ -205,6 +205,20 @@ ServerEvents.recipes(allthemods => {
             .EUt(infusionVoltage);
     });
 
+    allthemods.recipes.gtceu.mana_infuser('gregification:livingrock')
+        .itemInputs('8x #forge:stone')
+        .itemOutputs('8x botania:livingrock')
+        .inputFluids('#forge:mana_essence 1000')
+        .duration(infusionDuration)
+        .EUt(infusionVoltage);
+
+    allthemods.recipes.gtceu.mana_infuser('gregification:livingwood')
+        .itemInputs('8x #minecraft:logs')
+        .itemOutputs('8x botania:livingwood')
+        .inputFluids('#forge:mana_essence 1000')
+        .duration(infusionDuration)
+        .EUt(infusionVoltage);
+
     const pureBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:pure"}}').strongNBT();
     const terraBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:terrasteel"}}').strongNBT();
     const manaBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:mana"}}').strongNBT();
