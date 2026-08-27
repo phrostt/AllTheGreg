@@ -86,4 +86,43 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('draconicevolution:small_chaos_frag', 5000, 500)                
         .duration(400)
         .EUt(524288);
+
+
+    allthemods.recipes.gtceu.drone_station('gregification:allthemodium_upgrade')
+        .itemInputs(drone, '32x #forge:storage_blocks/allthemodium')
+        .chancedOutput('allthemodium:allthemodium_upgrade_smithing_template', 1500, 500)
+        .inputFluids(['#forge:kerosene 4000', '#forge:hafnium 1440'])
+        .duration(10000)
+        .EUt(32768)
+        .circuit(11);  
+
+    allthemods.recipes.gtceu.drone_station('gregification:vibranium_upgrade')
+        .itemInputs(drone, '32x #forge:storage_blocks/vibranium')
+        .chancedOutput('allthemodium:vibranium_upgrade_smithing_template', 1500, 500)
+        .inputFluids(['#forge:kerosene 4000', '#forge:scandium 1440'])
+        .duration(10000)
+        .EUt(131072)
+        .circuit(12);
+    
+    allthemods.recipes.gtceu.drone_station('gregification:unobtainium_upgrade')
+        .itemInputs(drone, '32x #forge:storage_blocks/unobtainium')
+        .chancedOutput('allthemodium:unobtainium_upgrade_smithing_template', 1500, 500)
+        .inputFluids(['#forge:kerosene 4000', '#forge:thallium 1440'])
+        .duration(10000)
+        .EUt(524288)
+        .circuit(13);
+
+    
+    allthemods.recipes.gtceu.drone_station('gregification:forbidden_search')
+        .itemInputs(drone, 'forbidden_arcanus:dark_nether_star')
+        .chancedOutput('forbidden_arcanus:artisan_relic', 100, 500)
+        .chancedOutput('forbidden_arcanus:crescent_moon', 100, 500)
+        .chancedOutput('forbidden_arcanus:crimson_stone', 100, 500)
+        .chancedOutput('forbidden_arcanus:elementarium', 100, 500)
+        .chancedOutput('forbidden_arcanus:divine_pact', 100, 500)
+        .chancedOutput('forbidden_arcanus:maledictus_pact', 100, 500)
+        .inputFluids('#forge:kerosene 10000')
+        .duration(10000)
+        .EUt(32768)
+        .circuit(5);
 });

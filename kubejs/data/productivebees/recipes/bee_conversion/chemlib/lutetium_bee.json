@@ -1,9 +1,9 @@
 {
     "type": "productivebees:bee_conversion",
-    "source": "productivebees:potassium",
-    "result": "productivebees:yttrium",
+    "source": "productivebees:lanthanum",
+    "result": "productivebees:lutetium",
     "item": {
-      "tag": "chemlib:yttrium_metal_block"
+      "item": "chemlib:lutetium_metal_block"
     },
     "conditions": [
       {

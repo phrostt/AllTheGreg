@@ -20,6 +20,13 @@ ServerEvents.recipes(allthemods => {
         .duration(100)
         .EUt(128);
 
+    allthemods.recipes.gtceu.mana_converter('mana_to_portal_fluid')
+        .inputFluids('#forge:mana_essence 1000')
+        .outputFluids('gtceu:alfheim_portal_fluid 1000')
+        .addData('ebf_temp', 3600)
+        .duration(100)
+        .EUt(128);
+
     allthemods.recipes.gtceu.mana_burner('coal_to_liquid_mana')
         .itemInputs('#minecraft:coals')
         .outputFluids('gtceu:mana_essence 1200')
@@ -538,4 +545,32 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('gtceu:mana_essence 10000')
         .duration(10)
         .EUt(512);
+
+    
+    let alfheimRecipes = 
+    [    
+        {id: 'elementium_ingot', input: '2x #forge:ingots/manasteel', output: 'botania:elementium_ingot', cost: 100},
+        {id: 'elementium_block', input: '2x #forge:storage_blocks/manasteel', output: 'botania:elementium_block', cost: 900},
+        {id: 'dragonstone', input: '#forge:gems/mana_diamond', output: 'botania:dragonstone', cost: 100},
+        {id: 'dragonstone_block', input: '#forge:storage_blocks/mana_diamond', output: 'botania:dragonstone_block', cost: 900},
+        {id: 'pixie_dust', input: 'botania:mana_pearl', output: 'botania:pixie_dust', cost: 100},
+        {id: 'quartz_elven', input: '#forge:gems/quartz', output: 'botania:quartz_elven', cost: 100},
+        {id: 'elf_glass', input: 'botania:mana_glass', output: 'botania:elf_glass', cost: 100},
+        {id: 'livingwood_log', input: 'botania:livingwood_log', output: 'botania:dreamwood_log', cost: 100},
+        {id: 'livingwood', input: 'botania:livingwood', output: 'botania:dreamwood', cost: 100},
+        {id: 'dreamwood_leaves', input: '#minecraft:leaves', output: 'mythicbotany:dreamwood_leaves', cost: 100},
+        {id: 'elementium_bee', input: manaSteel, output: elementiumBee, cost: 10000},
+    ];
+
+    alfheimRecipes.forEach(recipe => {
+        allthemods.recipes.gtceu.alfheim_trader('gregification/' + recipe.id)
+        .itemInputs(recipe.input)
+        .itemOutputs(recipe.output)
+        .inputFluids('#forge:alfheim_portal_fluid 1000')
+        .duration(10)
+        .EUt(512);
+    });
+
+    
+        
 });

@@ -406,7 +406,11 @@
     "gtceu.bacterial_growth_chamber": "Bacterial Growth Chamber",
     "block.gtceu.bacterial_growth_chamber": "Bacterial Growth Chamber",
     "gtceu.crystal_growth_chamber": "Crystal Growth Chamber",
-    "block.gtceu.crystal_growth_chamber": "Crystal Growth Chamber",
+    "block.gtceu.crystal_growth_chamber": "Crystal Growth Chamber",    
+    "gtceu.alfheim_trader": "Alfheim Trader",
+    "block.gtceu.alfheim_trader": "Alfheim Trader",
+    "gtceu.thorium_reactor": "Thorium Reactor",
+    "block.gtceu.thorium_reactor": "Thorium Reactor",
     "material.gtceu.ionized_oxygen": "Ionized Oxygen",
     "material.gtceu.inert_gas_mixture": "Inert Gas Mixture",
     "material.gtceu.ostrum": "Ostrum",
@@ -584,5 +588,7 @@
     "material.gtceu.coagulite": "Coagulite",
     "material.gtceu.drenched_iron": "Drenched Iron",
     "material.gtceu.swift_alloy": "Swift Alloy",
-    "material.gtceu.fireite": "Fireite"
+    "material.gtceu.fireite": "Fireite",
+    "material.gtceu.alfheim_portal_fluid": "Portal Fluid",
+    "material.gtceu.thorium_oxide": "Thorium Oxide"
 }

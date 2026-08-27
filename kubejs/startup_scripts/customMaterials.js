@@ -77,23 +77,24 @@ const materialsGem = [
 //needs proper unification
 const otherElements = [
     //need to make sure each 1 of these is useful by checking usage on its dust[
-    { name: 'radium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
-    { name: 'rhenium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 5400, cVolt: 131072, cIngot: true },
-    { name: 'astatine', namespace: 'chemlib', oItems: ['dust'], cBlast: 7200, cVolt: 524288, cIngot: true },
+    { name: 'radium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true },
+    { name: 'rhenium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true },
+    { name: 'astatine', namespace: 'chemlib', oItems: ['dust'], cBlast: 9000, cIngot: true },
     { name: 'graphite', cBlast: 3600, cVolt: 2048, cIngot: true },
-    { name: 'strontium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 4500, cVolt: 8192, cIngot: true },
-    { name: 'tellurium', namespace: 'chemlib', oItems: ['dust'], cBlast: 18900, cVolt: 33554432, cIngot: true },
-    { name: 'californium', cBlast: 18900, cVolt: 536870912, cIngot: true },
-    { name: 'berkelium', cBlast: 18900, cVolt: 134217728, cIngot: true },
-    { name: 'polonium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
+    { name: 'strontium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 4500, cIngot: true },
+    { name: 'tellurium', namespace: 'chemlib', oItems: ['dust'], cBlast: 9000, cIngot: true },
+    { name: 'californium', cBlast: 18900, cIngot: true },
+    { name: 'berkelium', cBlast: 18900, cIngot: true },
+    { name: 'polonium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'] },
     { name: 'selenium', namespace: 'chemlib', oItems: ['dust'], cPolymer: true },
-    { name: 'francium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true }, //en
-    { name: 'germanium', namespace: 'chemlib', oItems: ['dust'], cVolt: 524416, cIngot: true },
+    { name: 'francium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true },
+    { name: 'germanium', namespace: 'chemlib', oItems: ['dust'], cIngot: true },
     { name: 'zirconium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
-    { name: 'scandium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
-    { name: 'hafnium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
-    { name: 'rubidium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
-    { name: 'thallium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true }    
+    { name: 'scandium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 7200, cIngot: true },
+    { name: 'hafnium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 5400, cIngot: true },
+    { name: 'rubidium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 7200, cIngot: true },
+    { name: 'thallium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true },
+    { name: 'protactinium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true }    
 ];
 
 
@@ -130,9 +131,9 @@ const unification = [
     { name: 'alfsteel', oItems: ['nugget', 'ingot', 'block'], namespace: 'mythicbotany' },
     { name: 'iesnium', oItems: ['dust', 'nugget', 'ingot', 'block'], namespace: 'occultism' },
 
-    { name: 'hepatizon', oItems: ['nugget', 'ingot', 'block', 'fluid'], namespace: 'tconstruct' },
-    { name: 'manyullyn', oItems: ['nugget', 'ingot', 'block', 'fluid'], namespace: 'tconstruct' },
-    { name: 'amethyst_bronze', oItems: ['nugget', 'ingot', 'block', 'fluid'], namespace: 'tconstruct' }
+    { name: 'hepatizon', oItems: ['nugget', 'ingot', 'block' ], namespace: 'tconstruct' },
+    { name: 'manyullyn', oItems: ['nugget', 'ingot', 'block' ], namespace: 'tconstruct' },
+    { name: 'amethyst_bronze', oItems: ['nugget', 'ingot', 'block' ], namespace: 'tconstruct' }
 
 ]
 
@@ -336,7 +337,23 @@ const fluids = [
     { name: 'heavy_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 1x uranium, 7x sodium, 5x sulfur, 20x oxygen', color: 0x9C8A6E, iconSet: 'FLUID', noDecomp: true },
     { name: 'final_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 13x sodium, 5x sulfur, 23x oxygen, 6x hydrogen', color: 0x8C7B6A, iconSet: 'FLUID', noDecomp: true },
     { name: 'rare_earth_leach_residue', components: '1x lanthanum, 1x magnesium, 3x oxygen, 3x hydrogen', color: 0xB8A8C8, iconSet: 'FLUID', noDecomp: true },
+    { name: 'alfheim_portal_fluid', color: 0x66FF33, iconSet: 'FLUID', noDecomp: true },
+    
 ];
+
+const getCoilVoltage = (coil) => {
+    switch (coil) {
+        case 1800: return 128;
+        case 2700: return 512;
+        case 3600: return 2048;
+        case 4500: return 8192;
+        case 5400: return 32768;
+        case 7200: return 131072;
+        case 9000: return 524288;
+        case 10800: return 2097152;
+        default: return 8388608;
+    }    
+};
 
 const polymers = [
     { name: "chaos_plastic", color: 0x222222 },
@@ -413,6 +430,8 @@ const dusts = [
     { name: 'tantalum_pentachloride', components: '1x tantalum, 5x chlorine', color: 0xF5DEB3, formula: 'TaCl5', iconSet: 'DULL', fluid: true, noDecomp: true },
     { name: 'niobium_tantalum_residue', components: '2x niobium, 2x tantalum, 4x oxygen', color: 0x2B2B2B, formula: 'Nb2Ta2O4', iconSet: 'METALLIC', noDecomp: true },
     { name: 'cerium_oxide', components: '1x cerium, 2x oxygen', color: 0xF5DEB3, formula: 'CeO2', iconSet: 'DULL' },
+    
+    { name: 'thorium_oxide', components: '1x thorium, 2x oxygen', color: 0xe8e8e8, formula: 'ThO2', iconSet: 'DULL' }
 ];
 
 const newOres = [
@@ -579,18 +598,19 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES)
     });
 
+    
     event.create("hepatizon")
         .color(0x715A7C)
         .dust()
-        .components('2x copper, 1x cobalt, 1x NetherQuartz')
+        .components('2x copper', '1x cobalt', '1x nether_quartz')
         .ingot()
         .fluid()
         .iconSet(GTMaterialIconSet.METALLIC)
-
+    
     event.create("amethyst_bronze")
         .color(0xEBC4DB)
         .dust()
-        .components('1x copper, 1x amethyst')
+        .components('1x copper', '1x amethyst')
         .ingot()
         .fluid()
         .iconSet(GTMaterialIconSet.METALLIC)
@@ -1004,13 +1024,14 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         activeFlagsM.remove(GTMaterialFlags.FLAMMABLE)
         let material = materialO
         if (bTemp) {
+            let bVolts = getCoilVoltage(bTemp);
             let mbp = new BlastProperty
             mbp.setBlastTemperature(bTemp);
             mbp.setDurationOverride(1200);
-            mbp.setEUtOverride(volts);
-            mbp.setGasTier(getGasTier(volts));
+            mbp.setEUtOverride(bVolts);
+            mbp.setGasTier(getGasTier(bVolts));
             mbp.setVacuumDurationOverride(120);
-            mbp.setVacuumEUtOverride(volts);
+            mbp.setVacuumEUtOverride(bVolts);
             material.setProperty(PropertyKey.BLAST, mbp)
         }
 
@@ -1270,19 +1291,20 @@ StartupEvents.registry('block', event => {
         { id: 'router_casing', name: 'Router Casing', tex: 'modularrouters:block/modular_router_side' },
 
         // Power & Processing        
-        { id: 'dimensional_casing', name: 'Dimensional Casing', tex: 'gtceu:block/casings/solid/machine_casing_stable_titanium', color: '0xE0B0FF' },
-        { id: 'xenomorphic_data_frame', name: 'Xenomorphic Data-Frame', tex: 'fluxnetworks:block/flux_block', color: '0xFF0000' },
+        { id: 'dimensional_casing', name: 'Dimensional Casing', tex: 'gtceu:block/casings/solid/machine_casing_stable_titanium' },
+        { id: 'xenomorphic_data_frame', name: 'Xenomorphic Data-Frame', tex: 'fluxnetworks:block/flux_block' },
         { id: 'industrial_pylon_casing', name: 'Industrial Pylon Casing', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel' },
 
         // Magic & Biological
-        { id: 'slate_casing', name: 'Slate Casing', tex: 'bloodmagic:block/largebloodstonebrick', color: '0xD3D3D3' },
-        { id: 'rune_casing', name: 'Rune Casing', tex: 'bloodmagic:block/blankrune', color: '#D3D3D3' },
-        { id: 'reinforced_rune_casing', name: 'Reinforced Rune Casing', tex: 'bloodmagic:block/masterritualstone', color: '0x5A5A5A' },
-        { id: 'ritual_casing', name: 'Ritual Casing', tex: 'bloodmagic:block/ritualstone', color: '#5F9EA0' },
-        { id: 'hexagonal_bio_composite', name: 'Hexagonal Bio-Composite', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel', color: '0xFF8C00' },
-        { id: 'magical_bio_composite', name: 'Magical Bio-Composite', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel', color: '0xFF8C00' },
+        { id: 'slate_casing', name: 'Slate Casing', tex: 'bloodmagic:block/largebloodstonebrick' },
+        { id: 'rune_casing', name: 'Rune Casing', tex: 'bloodmagic:block/blankrune' },
+        { id: 'reinforced_rune_casing', name: 'Reinforced Rune Casing', tex: 'bloodmagic:block/masterritualstone' },
+        { id: 'ritual_casing', name: 'Ritual Casing', tex: 'bloodmagic:block/ritualstone' },
+        { id: 'hexagonal_bio_composite', name: 'Hexagonal Bio-Composite', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel' },
+        { id: 'magical_bio_composite', name: 'Magical Bio-Composite', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel' },
 
-        { id: 'alchemical_casing', name: 'Alchemical Casing', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel', color: '0xFF8C00' },
+        { id: 'alchemical_casing', name: 'Alchemical Casing', tex: 'gtceu:block/casings/solid/machine_casing_clean_stainless_steel' },
+        { id: 'fission_casing', name: 'Fission Casing', tex: 'gtceu:block/casings/solid/machine_casing_inert_ptfe' }
     ];
     const coils = [
         //'draconium', 'wyvern', 'draconic', 'chaotic'
@@ -1427,6 +1449,7 @@ StartupEvents.postInit(event => {
     TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
     TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
     TagPrefix.block.setIgnored(GTMaterials.get('niter'), 'thermal:niter_block');
+
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
@@ -1586,7 +1609,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
     TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
     TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
-    TagPrefix.block.setIgnored(GTMaterials.get('niter'), 'thermal:niter_block');
+    TagPrefix.block.setIgnored(GTMaterials.get('niter'), 'thermal:niter_block');    
 
     // Dust
     TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');

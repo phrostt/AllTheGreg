@@ -1,6 +1,6 @@
 StartupEvents.registry('item', event => {
 
-	const oreChunk = (id, iTexture, iColor) => {	
+	/*const oreChunk = (id, iTexture, iColor) => {	
 		event.create(`${id}_chunk`)			
 			.displayName(`${id.charAt(0).toUpperCase() + id.slice(1)} Chunk`)
 			//.glow(true) 			
@@ -8,13 +8,13 @@ StartupEvents.registry('item', event => {
 			.texture('layer0', 'thermal_extra:item/iron_ore_chunk')
 			//.texture('layer1', iTexture)
 			.color(0, iColor)
-	}
+	}*/
 
-	oreChunk('demonite',		'bloodmagic:item/rawdemonite', 			0x7BA4B1)
-	oreChunk('iesnium',			'occultism:item/raw_iesnium', 			0x7FA9C1)
-	oreChunk('allthemodium',	'allthemodium:item/allthemodium_ingot',	0xF9D71C)
-	oreChunk('vibranium', 		'allthemodium:item/vibranium_ingot', 	0x51FF00)
-	oreChunk('unobtainium', 	'allthemodium:item/unobtainium_ingot', 	0x8C00FF)
+	//oreChunk('demonite',		'bloodmagic:item/rawdemonite', 			0x7BA4B1)
+	//oreChunk('iesnium',			'occultism:item/raw_iesnium', 			0x7FA9C1)
+	//oreChunk('allthemodium',	'allthemodium:item/allthemodium_ingot',	0xF9D71C)
+	//oreChunk('vibranium', 		'allthemodium:item/vibranium_ingot', 	0x51FF00)
+	//oreChunk('unobtainium', 	'allthemodium:item/unobtainium_ingot', 	0x8C00FF)
 
 
 
@@ -63,7 +63,7 @@ StartupEvents.registry('item', event => {
 	event.create('gtceu:blank_slate_casing')
         .displayName('Blank Slate Casing')
         .texture('bloodmagic:item/blankslate')
-		.color(0, 0x660000) 		
+		.color(0, 0xff4d4d)
 		.tooltip('§7Blood soaked slate ready for imbuing.');
 
     event.create('gtceu:crystallized_seed')
@@ -136,6 +136,21 @@ StartupEvents.registry('item', event => {
         .color(0, 0xA8E6C8)
         .rarity('SUPREME')
         .tooltip('§7A schematic for a Tier 4 Rocket, capable of reaching Glacio.')
+
+    event.create('gtceu:thorium_single')
+        .displayName('Single Thorium Fuel Cell')                
+        .rarity('RARE')
+        .tooltip('§7A Single thorium fuel cell.')
+    
+    event.create('gtceu:thorium_double')
+        .displayName('Double Thorium Fuel Cell')                
+        .rarity('RARE')
+        .tooltip('§7A Double thorium fuel cell.')
+    
+    event.create('gtceu:thorium_quad')
+        .displayName('Quad Thorium Fuel Cell')                
+        .rarity('RARE')
+        .tooltip('§7A Quad thorium fuel cell.')
         
 })
 ItemEvents.modification(event => {

@@ -312,9 +312,9 @@ ServerEvents.recipes(allthemods => {
     //crucibleMelt('kubejs:iesnium_chunk',     		'gtceu:molten_iesnium',            90,     150000,     'hv',   true);
 
     // End Game Ores - Gated behind IV Tier
-    crucibleMelt('kubejs:allthemodium_chunk', 		'allthemodium:molten_allthemodium', 90,     150000,     'iv',   true);
-    crucibleMelt('kubejs:vibranium_chunk',      	'allthemodium:molten_vibranium',    90,     150000,     'iv',   true);
-    crucibleMelt('kubejs:unobtainium_chunk',    	'allthemodium:molten_unobtainium',  90,     150000,     'iv',   true);
+    //crucibleMelt('kubejs:allthemodium_chunk', 		'allthemodium:molten_allthemodium', 90,     150000,     'iv',   true);
+    //crucibleMelt('kubejs:vibranium_chunk',      	'allthemodium:molten_vibranium',    90,     150000,     'iv',   true);
+    //crucibleMelt('kubejs:unobtainium_chunk',    	'allthemodium:molten_unobtainium',  90,     150000,     'iv',   true);
 	
 
 	fluidmix('primordial_plasma', 			'gtceu:liquid_draconic_essence',		1000, '#forge:blue_ice', 					1000, 'gtceu:primordial_sanguine_plasma', 1000 );	

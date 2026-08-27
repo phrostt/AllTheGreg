@@ -11,6 +11,17 @@ ServerEvents.recipes(event => {
         { ore: 'bedrockium', weight: 1 }
     ];
 
+    event.custom({
+        type: 'occultism:miner',
+        ingredient: {
+            item: 'occultism:miner_ancient_eldritch'
+        },
+        result: {
+            item: `occultism:chalk_void`
+        },
+        weight: 20
+    }).id(`occultism:void_chalk`)
+
     customOres.forEach(entry => {
         let ore = entry.ore;
         let weight = entry.weight;
@@ -48,8 +59,8 @@ ServerEvents.recipes(event => {
         },
         weight: 20
     }).id(`gtceu:element_blank`)
-    
-    
+
+
     event.custom({
         type: 'occultism:miner',
         ingredient: {
@@ -60,5 +71,5 @@ ServerEvents.recipes(event => {
         },
         weight: 5
     }).id(`occultism:master_miner_mining_dim_core`)
-    
+
 })

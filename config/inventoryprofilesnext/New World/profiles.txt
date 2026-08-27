@@ -356,3 +356,19 @@ profile Saved activate HOT8
 	HOT7
 		"botania:manasteel_ingot"
 
+profile Saved activate HOT1
+	HOT1
+		"allthemodium:vibranium_pickaxe" -> "Enchantments" : [{id:"minecraft:silk_touch",lvl:1}]
+	HOT2
+		"gtceu:damascus_steel_wrench"
+	HOT3
+		"gtceu:terminal"
+	HOT4
+		"tconstruct:sword"
+	HOT5
+		"croptopia:beef_wellington"
+	HOT6
+		"minecraft:stone"
+	CHEST
+		"sophisticatedbackpacks:backpack"
+

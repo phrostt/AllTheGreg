@@ -114,5 +114,11 @@ ServerEvents.recipes(allthemods => {
         .duration(500)
         .EUt(512);
 
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:thorium_oxide')
+        .itemInputs('#forge:dusts/thorium')
+        .inputFluids('#forge:oxygen 2000')
+        .itemOutputs('3x gtceu:thorium_oxide_dust')
+        .duration(500)
+        .EUt(32768);
     
 });

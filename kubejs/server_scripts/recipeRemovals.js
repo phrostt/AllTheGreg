@@ -11,8 +11,8 @@ ServerEvents.recipes(allthemods => {
     let beeRemoves = [];
 
     let beeMaterials = [
-        'arsenic', 'gallium', 'hafnium',
-        'iodine', 'magnesium', 'manganese', 'mercury', 'niobium',
+        'arsenic', 'gallium', 'hafnium', 'chromium', 'samarium', 'lanthanum', 'lutetium',
+        'iodine', 'magnesium', 'manganese', 'mercury', 'niobium', 'protactinium',
         'nitrogen', 'scandium', 'tantalum', 'tellurium', 'thallium', 'titanium',
         'redstone', 'francium', 'astatine'
     ];
@@ -56,11 +56,21 @@ ServerEvents.recipes(allthemods => {
 
         'wirelesschargers:basic_wireless_player_charger', 'wirelesschargers:advanced_wireless_player_charger',
         'wirelesschargers:basic_wireless_block_charger', 'wirelesschargers:advanced_wireless_block_charger',
+        'gtceu:smelting/smelt_dust_germanium_to_ingot', 
 
         // --- Ad Astra ---        
         'ad_astra:rocket_fin', 'ad_astra:rocket_nose_cone', 'ad_astra:engine_frame',
         'ad_astra:steel_engine', 'ad_astra:desh_engine', 'ad_astra:ostrum_engine', 'ad_astra:calorite_engine',
         'ad_astra:steel_tank', 'ad_astra:desh_tank', 'ad_astra:ostrum_tank', 'ad_astra:calorite_tank',
+        'chemlib:lutetium_ingot_from_smelting_lutetium_dust', 'chemlib:lutetium_ingot_from_blasting_lutetium_dust',
+        'enderio:smelting/chemlib/lutetium_ingot_from_smelting_lutetium_dust',
+        'chemlib:protactinium_ingot_from_smelting_protactinium_dust',
+        'chemlib:protactinium_ingot_from_blasting_protactinium_dust',
+        'enderio:smelting/chemlib/protactinium_ingot_from_smelting_protactinium_dust',
+        'chemlib:germanium_ingot_from_smelting_germanium_dust',
+        'chemlib:germanium_ingot_from_blasting_germanium_dust',
+        'enderio:smelting/chemlib/germanium_ingot_from_smelting_germanium_dust',
+        'enderio:smelting/gtceu/smelting/smelt_dust_germanium_to_ingot'
     ];
     
     const globalRemoves2 = [

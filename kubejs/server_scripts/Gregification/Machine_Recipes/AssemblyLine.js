@@ -1259,4 +1259,59 @@ ServerEvents.recipes(allthemods => {
         32768,
         "quarryplus:mover", 128
     );
+
+
+    addAssemblyLine(
+        "gtceu:thorium_single",
+        [
+            "8x #forge:dusts/thorium_oxide",
+            "4x #forge:rods/graphite",
+            '8x #forge:plates/potassium_calcium_orthosilicate'
+        ],
+        [
+            "#forge:hop_graphite 1000",
+            "#forge:selenium 1000",
+            "#forge:beryllium 1000"
+
+        ],
+        1200,
+        32768,
+        "#forge:dusts/thorium_oxide"
+    );
+
+    addAssemblyLine(
+        "gtceu:thorium_double",
+        [
+            "2x gtceu:thorium_single",
+            "4x #forge:rods/graphite",
+            '8x #forge:plates/potassium_calcium_orthosilicate'
+        ],
+        [
+            "#forge:hop_graphite 1000",
+            "#forge:selenium 1000",
+            "#forge:beryllium 1000"
+
+        ],
+        1200,
+        32768,
+        "gtceu:thorium_single"
+    );
+
+    addAssemblyLine(
+        "gtceu:thorium_quad",
+        [
+            "2x gtceu:thorium_double",
+            "4x #forge:rods/graphite",
+            '8x #forge:plates/potassium_calcium_orthosilicate'
+        ],
+        [
+            "#forge:hop_graphite 1000",
+            "#forge:selenium 1000",
+            "#forge:beryllium 1000"
+
+        ],
+        1200,
+        32768,
+        "gtceu:thorium_double"
+    );
 });

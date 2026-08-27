@@ -55,7 +55,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
     allthemods.create('baryonic_separator')
         .category('baryonic_separator')
         .setEUIO('in')
-        .setMaxIOSize(2, 6, 0, 0)
+        .setMaxIOSize(3, 6, 3, 3)
         .setSound(GTSoundEntries.SCIENCE)
         .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, FillDirection.LEFT_TO_RIGHT)
 

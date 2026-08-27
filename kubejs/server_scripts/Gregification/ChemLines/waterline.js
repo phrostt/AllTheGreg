@@ -108,7 +108,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(EUStage7);
         
     allthemods.recipes.gtceu.baryonic_separator('gregification:quark_separation')
-        .itemInputs(['#forge:small_dusts/infinity', '#forge:small_dusts/draconium_awakened'])
+        .inputFluids(['#forge:deuterium 1000', '#forge:hydrogen 1000'])
         .chancedOutput('gtceu:up_quark', 5000, 0)
         .chancedOutput('gtceu:down_quark', 5000, 0)
         .chancedOutput('gtceu:top_quark', 5000, 0)

@@ -146,6 +146,7 @@ ServerEvents.recipes(allthemods => {
         let bPetal = `gtceu:${tData.tier}_petal_apothecary`;
         let bRunic = `gtceu:${tData.tier}_runic_altar`;
         let bInfuser = `gtceu:${tData.tier}_mana_infuser`;
+        let bPortal = `gtceu:${tData.tier}_alfheim_trader`;
         let bPool = `gtceu:${tData.tier}_mana_pool`;
         let aChamber = `gtceu:${tData.tier}_imbument_chamber`;
         let baChamber = `gtceu:${tData.tier}_alchemical_workbench`;
@@ -202,6 +203,7 @@ ServerEvents.recipes(allthemods => {
                 tierValues[tData.t - 1],
                 600
             );     
+            
 
             addAssembler(
                 [
@@ -226,7 +228,20 @@ ServerEvents.recipes(allthemods => {
                 bPool,
                 tierValues[tData.t - 1],
                 600
-            );    
+            );   
+             
+
+            addAssembler(
+                [
+                    'botania:alfheim_portal', '2x botania:natura_pylon', hull, pump, `2x ${circuit}`, `4x ${plate}`, `2x ${motor}`
+                ],
+                [
+                    '#forge:mana_essence 36800'                    
+                ],
+                bPortal,
+                tierValues[tData.t - 1],
+                600
+            ); 
 
             addAssembler(
                 [

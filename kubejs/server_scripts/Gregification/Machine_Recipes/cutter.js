@@ -70,6 +70,6 @@ ServerEvents.recipes(allthemods => {
     addCutter('gtceu:empowered_ram_wafer', '6x gtceu:empowered_ram_chip', tiers['UV'], 900, 150, null, CleanroomType.STERILE_CLEANROOM)
 
     //blank slate
-    addCutter('gtceu:slate_casing', '9x gtceu:blank_slate_casing', tiers['LV'], 500, 250, ['bloodmagic:life_essence_fluid 100', 'gtceu:sanguine_concentrate 50'])
+    addCutter('gtceu:slate_casing', '9x gtceu:blank_slate_casing', tiers['LV'], 500, 250)
 
 });

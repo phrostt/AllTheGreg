@@ -38,7 +38,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('petal_apothecary')
         .category('petal_apothecary')
         .setEUIO('in')
-        .setMaxIOSize(12, 3, 1, 0)
+        .setMaxIOSize(12, 3, 3, 3)
         .setSound(GTSoundEntries.COOLING)
         .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
         .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
@@ -46,7 +46,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('runic_altar')
         .category('runic_altar')
         .setEUIO('in')
-        .setMaxIOSize(12, 6, 1, 0)
+        .setMaxIOSize(12, 6, 3, 3)
         .setSound(GTSoundEntries.ASSEMBLER)
         .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
         .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
@@ -54,7 +54,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('mana_infuser')
         .category('mana_infuser')
         .setEUIO('in')
-        .setMaxIOSize(12, 6, 1, 0)
+        .setMaxIOSize(12, 6, 3, 3)
         .setSound(GTSoundEntries.ASSEMBLER)
         .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
         .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
@@ -62,17 +62,26 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('mana_pool')
         .category('mana_pool')
         .setEUIO('in')
-        .setMaxIOSize(3, 3, 1, 0)
+        .setMaxIOSize(3, 3, 3, 3)
         .setSound(GTSoundEntries.ASSEMBLER)
         .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
         .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
+    
+    event.create('alfheim_trader')
+        .category('alfheim_trader')
+        .setEUIO('in')
+        .setMaxIOSize(3, 3, 3, 3)
+        .setSound(GTSoundEntries.ASSEMBLER)
+        .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
+
 })
  
 
 GTCEuStartupEvents.registry("gtceu:machine", event => {
     event.create('botanical_factory', 'multiblock')              
         .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes('petal_apothecary', 'runic_altar', 'mana_infuser', 'mana_pool')
+        .recipeTypes('petal_apothecary', 'runic_altar', 'mana_infuser', 'mana_pool', 'alfheim_trader')
         .appearanceBlock(GTBlocks.CASING_STAINLESS_CLEAN)
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()
@@ -203,6 +212,15 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             builder
                 .rotationState(RotationState.NON_Y_AXIS)
                 .recipeType("mana_pool")
+                .workableTieredHullModel("gtceu:block/machines/assembler")
+        );
+
+    event.create("alfheim_trader", "simple")
+        .tiers(GTValues.HV, GTValues.EV, GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
+        .definition((tier, builder) =>
+            builder
+                .rotationState(RotationState.NON_Y_AXIS)
+                .recipeType("alfheim_trader")
                 .workableTieredHullModel("gtceu:block/machines/assembler")
         );   
 });
