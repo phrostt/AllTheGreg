@@ -87,6 +87,14 @@ StartupEvents.registry('item', event => {
         { name: 'charm', description: '§eLuminous second-generation quark.', rarity: 'gold' }
     ];
 
+    event.create('gtceu:preon')
+            .displayName('Preon')
+            .rarity('ie_masterwork')
+
+    event.create('gtceu:plutonic_quark')
+            .displayName('Plutonic Quark')
+            .rarity('ie_masterwork')
+
     quarks.forEach(quark => {
         event.create(`gtceu:${quark.name}_quark`)
             .displayName(`${quark.name.charAt(0).toUpperCase() + quark.name.slice(1)} Quark`)

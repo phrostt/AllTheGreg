@@ -198,7 +198,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         );   
 
     event.create("mana_infuser", "simple")
-        .tiers(GTValues.HV, GTValues.EV, GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
+        .tiers(GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
         .definition((tier, builder) =>
             builder
                 .rotationState(RotationState.NON_Y_AXIS)

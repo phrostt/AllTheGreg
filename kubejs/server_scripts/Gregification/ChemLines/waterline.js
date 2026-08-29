@@ -117,6 +117,18 @@ ServerEvents.recipes(allthemods => {
         .duration(duration)
         .EUt(EUStage7);
 
+    allthemods.recipes.gtceu.baryonic_separator('gregification:preon_separation')
+        .itemInputs(['#forge:small_dusts/protactinium', '#forge:small_dusts/francium'])
+        .chancedOutput('gtceu:preon', 50, 0)
+        .duration(duration)
+        .EUt(EUStage7);
+    
+    allthemods.recipes.gtceu.baryonic_separator('gregification:plutonic_quark_separation')
+        .itemInputs(['#forge:small_dusts/tenebrium', '#forge:small_dusts/bedrockium'])
+        .chancedOutput('gtceu:plutonic_quark', 250, 0)
+        .duration(duration)
+        .EUt(EUStage7);
+
     allthemods.recipes.gtceu.hydro_electromagnetic_separator('gregificatoion:hydro_electromagnetic_separator/liquid_air_separation')
         .itemInputs()
         .inputFluids('gtceu:liquid_air 13000')

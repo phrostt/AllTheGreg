@@ -13,6 +13,40 @@ ServerEvents.recipes(allthemods => {
         }
     };
 
+    //soc circuits
+    addCircuitAssembler(
+        [
+            'gtceu:soc',
+            'ae2:printed_calculation_processor'
+        ],
+        'gtceu:soldering_alloy 72',
+        '4x ae2:calculation_processor',
+        8192,
+        120
+    )
+
+    addCircuitAssembler(
+        [
+            'gtceu:soc',
+            'ae2:printed_logic_processor'
+        ],
+        'gtceu:soldering_alloy 72',
+        '4x ae2:logic_processor',
+        8192,
+        120
+    )
+
+    addCircuitAssembler(
+        [
+            'gtceu:soc',
+            'ae2:printed_engineering_processor'
+        ],
+        'gtceu:soldering_alloy 72',
+        '4x ae2:engineering_processor',
+        8192,
+        120
+    )
+
     addCircuitAssembler(
         [
             '2x #forge:plates/red_alloy',

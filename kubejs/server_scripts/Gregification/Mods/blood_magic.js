@@ -30,10 +30,21 @@ ServerEvents.recipes(allthemods => {
         'CTC',
         'NCN'
     ], {
-        N: '#forge:plates/steel',
-        C: 'minecraft:stone',
-        T: '#forge:plates/gold'
+        N: '#forge:plates/manasteel',
+        C: 'pneumaticcraft:compressed_stone',
+        T: 'bloodmagic:blankslate'
     }).id('gtceu:rune_casing');
+
+    allthemods.shaped('bloodmagic:blankrune', [
+        'NCN',
+        'BTB',
+        'NCN'
+    ], {
+        B: '#forge:plates/gold',
+        C: 'elementalcraft:contained_crystal',
+        N: '#forge:plates/compressed_iron',
+        T: 'gtceu:rune_casing'
+    }).id('gtceu:blank_rune');
 
 
     runePairs.forEach(([rName, rID]) => {

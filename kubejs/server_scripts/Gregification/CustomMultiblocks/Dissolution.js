@@ -108,7 +108,7 @@ ServerEvents.recipes(allthemods => {
         //'industrialforegoing:speed_addon_2',
         Item.of('industrialforegoing:speed_addon_2', '{TitaniumAugment:{Speed:3.0f}}'),
         [
-            'industrialforegoing:pink_slime 1000',
+            '#forge:pink_slime 1000',
             'gtceu:lubricant 1000'
         ],
         null,
@@ -195,7 +195,7 @@ ServerEvents.recipes(allthemods => {
         //'industrialforegoing:efficiency_addon_2',
         Item.of('industrialforegoing:efficiency_addon_2', '{TitaniumAugment:{Efficiency:0.8f}}'),
         [
-            'industrialforegoing:pink_slime 1000',
+            '#forge:pink_slime 1000',
             'gtceu:nitrogen 1000'
         ],
         null,
@@ -283,7 +283,7 @@ ServerEvents.recipes(allthemods => {
         //'industrialforegoing:processing_addon_2',
         Item.of('industrialforegoing:processing_addon_2', '{TitaniumAugment:{Processing:3.0f}}'),
         [
-            'industrialforegoing:pink_slime 1000',
+            '#forge:pink_slime 1000',
             'gtceu:sulfuric_acid 1000'
         ],
         null,
@@ -367,7 +367,7 @@ ServerEvents.recipes(allthemods => {
             voltage = 'MV';
             duration = 2000;
         } else if (index < 6) { // Tiers 4-6
-            mainFluid = 'industrialforegoing:pink_slime 1000';
+            mainFluid = '#forge:pink_slime 1000';
             voltage = 'HV';
             duration = 4000;
         } else if (index < 9) { // Tiers 7-9
@@ -599,7 +599,7 @@ ServerEvents.recipes(allthemods => {
             '1x #forge:slimeballs'
         ],
         'industrialforegoing:pink_slime_ingot',
-        'industrialforegoing:pink_slime 1000',
+        '#forge:pink_slime 1000',
         null,
         'HV',
         100
@@ -616,7 +616,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         'industrialforegoing:machine_frame_simple',
-        'industrialforegoing:pink_slime 1000',
+        '#forge:pink_slime 1000',
         null,
         'HV',
         600

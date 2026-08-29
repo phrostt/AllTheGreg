@@ -43,7 +43,7 @@
     
     allthemods.recipes.gtceu.liquifier('blood')
         .itemInputs('evilcraft:condensed_blood')
-        .inputFluids('gtceu:distilled_water 500')
+        .inputFluids('gtceu:water_stage_1 500')
         .outputFluids('gtceu:sanguine_concentrate 500')
         .duration(100)
         .EUt(512)

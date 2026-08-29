@@ -39,7 +39,7 @@ ServerEvents.recipes(allthemods => {
     //chaos shard crystal_growth_chamber recipe
 
     allthemods.recipes.gtceu.magnetic_containment_chamber('gregification:concentrated_dark_matter_synthesis')
-        .itemInputs('#forge:dusts/caesium')
+        .itemInputs('#forge:dusts/caesium', '2x gtceu:plutonic_quark')
         .inputFluids('#forge:purest_water 1000')
         .outputFluids('gtceu:concentrated_dark_matter 10')
         .duration(10000)

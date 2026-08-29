@@ -266,7 +266,8 @@ ServerEvents.recipes(allthemods => {
                 tierValues[tData.t - 1],
                 600
             );    
-                
+            
+            if (tData.t >= 5){
             addAssembler(
                 [
                     'botania:terra_plate', hull, `2x ${pump}`, piston, `2x ${circuit}`, `2x ${plate}`
@@ -277,7 +278,7 @@ ServerEvents.recipes(allthemods => {
                 bInfuser,
                 tierValues[tData.t - 1],
                 600
-            );                
+            );}
         }
 
         if (tData.t >= 6 && tData.t <= 8) {

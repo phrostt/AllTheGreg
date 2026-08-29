@@ -70,7 +70,9 @@ ServerEvents.recipes(allthemods => {
         'chemlib:germanium_ingot_from_smelting_germanium_dust',
         'chemlib:germanium_ingot_from_blasting_germanium_dust',
         'enderio:smelting/chemlib/germanium_ingot_from_smelting_germanium_dust',
-        'enderio:smelting/gtceu/smelting/smelt_dust_germanium_to_ingot'
+        'enderio:smelting/gtceu/smelting/smelt_dust_germanium_to_ingot',
+
+        'bloodmagic:blood_rune_blank'
     ];
     
     const globalRemoves2 = [
