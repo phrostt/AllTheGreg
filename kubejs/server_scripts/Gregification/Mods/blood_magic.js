@@ -97,8 +97,8 @@ ServerEvents.recipes(allthemods => {
         // @ts-ignore
         allthemods.remove({ id: `bloodmagic:blood_rune_${rID}` });
         addAssembler(
-            ['4x #forge:plates/manasteel', 'occultism:spirit_attuned_gem', 'pneumaticcraft:compressed_stone', 'gtceu:rune_casing', 'evilcraft:dark_gem'],
-            null,
+            ['bloodmagic:blankrune', 'botania:rune_mana', 'occultism:spirit_attuned_gem', 'evilcraft:dark_gem', '#forge:frames/steel'],
+            'gtceu:sanguine_concentrate 2500',
             `bloodmagic:${rName}rune`,
             32,
             30,
