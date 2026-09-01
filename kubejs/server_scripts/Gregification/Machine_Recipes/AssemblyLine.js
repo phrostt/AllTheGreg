@@ -74,19 +74,21 @@ ServerEvents.recipes(allthemods => {
     //draconic evolution - bacterial vat
     addAssemblyLine('gtceu:bacterial_vat',
         [
-            '#forge:frames/ferrognetic',
-            '4x draconicevolution:chaotic_core',
+            'gtceu:luv_machine_hull',
+            '8x #forge:frames/ferrognetic',
             '4x #gtceu:circuits/luv',
-            '4x #forge:plates/alloy_atomic'
+            '4x #forge:rods/protactinium',
+            '32x gtceu:plascrete'
+            
         ],
         [
-            'gtceu:aetheric_sanguine_singularity 32000',
-            'gtceu:super_coolant 64000'
+            '#forge:selenium 1000',
+            '#forge:lubricant 1000'
 
         ],
         mekLong,
         32768,
-        'draconicevolution:chaos_shard'
+        '#forge:rods/protactinium'
     );
 
     

@@ -75,9 +75,9 @@ ServerEvents.recipes(allthemods => {
             "drainRate": drain
         }).id(`allthemods:bloodmagic/altar/${output.replace(':', '/')}`);
     };
-    const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program) => {
+    const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program, rID) => {
 
-        const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
+        const outputID = rID ? rID : itemsOut.replace(/[^a-z0-9]/gi, '_');
         let recipe = allthemods.recipes.gtceu.assembler(`gregification:assembler/${outputID}`)
             .itemInputs(itemsIn)
             .itemOutputs(itemsOut)
@@ -103,6 +103,15 @@ ServerEvents.recipes(allthemods => {
             32,
             30,
             index + 1)
+        
+        addAssembler(
+            '#forge:altar_runes',
+            'gtceu:sanguine_concentrate 2500',
+            `bloodmagic:${rName}rune`,
+            32,
+            30,
+            index + 1,
+            `${rName}rune_conversion`)
 
     });
     

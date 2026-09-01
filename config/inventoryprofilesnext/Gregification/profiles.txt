@@ -28,3 +28,77 @@ profile Saved activate HOT9
 	FEET
 		"pneumaticcraft:compressed_iron_boots"
 
+profile Saved activate HOT9
+	HOT1
+		"tconstruct:cleaver"
+	HOT2
+		"tconstruct:pickaxe"
+	HOT3
+		"gtceu:hv_titanium_wire_cutter"
+	HOT4
+		"gtceu:hv_titanium_screwdriver"
+	HOT5
+		"gtceu:hv_titanium_wrench"
+	HOT6
+		"bloodmagic:sacrificialdagger"
+	HOT7
+		"patchouli:guide_book"
+	HEAD
+		"minecraft:diamond_helmet" -> "Enchantments" : [{id:"naturesaura:aura_mending",lvl:1}]
+	CHEST
+		"minecraft:diamond_chestplate" -> "Enchantments" : [{id:"ars_nouveau:mana_regen",lvl:3},{id:"minecraft:protection",lvl:3}]
+	LEGS
+		"minecraft:diamond_leggings" -> "Enchantments" : [{id:"ars_nouveau:mana_regen",lvl:3},{id:"minecraft:fire_protection",lvl:3}]
+	FEET
+		"minecraft:diamond_boots" -> "Enchantments" : [{id:"ensorcellation:magic_protection",lvl:3},{id:"naturesaura:aura_mending",lvl:1},{id:"tombstone:soulbound",lvl:1}]
+
+profile Saved activate HOT6
+	HOT1
+		"tconstruct:cleaver"
+	HOT2
+		"tconstruct:pickaxe"
+	HOT3
+		"botania:twig_wand"
+	HOT4
+		"botania:livingrock"
+	HOT5
+		"minecraft:redstone"
+	HOT6
+		"minecraft:iron_ingot"
+	HOT7
+		"minecraft:string"
+	HOT8
+		"minecraft:feather"
+	HEAD
+		"minecraft:diamond_helmet" -> "Enchantments" : [{id:"minecraft:respiration",lvl:4},{id:"ars_nouveau:mana_regen",lvl:4},{id:"ars_nouveau:mana_boost",lvl:4},{id:"minecraft:blast_protection",lvl:5},{id:"evilcraft:vengeance",lvl:1}]
+	CHEST
+		"minecraft:diamond_chestplate" -> "Enchantments" : [{id:"ars_nouveau:mana_regen",lvl:3},{id:"minecraft:protection",lvl:3}]
+	LEGS
+		"minecraft:diamond_leggings" -> "Enchantments" : [{id:"ars_nouveau:mana_regen",lvl:3},{id:"minecraft:fire_protection",lvl:3}]
+	FEET
+		"minecraft:diamond_boots" -> "Enchantments" : [{id:"ensorcellation:magic_protection",lvl:3},{id:"naturesaura:aura_mending",lvl:1},{id:"tombstone:soulbound",lvl:1}]
+
+profile Saved activate HOT1
+	HOT1
+		"tconstruct:cleaver"
+	HOT2
+		"tconstruct:pickaxe"
+	HOT3
+		"gtceu:hv_titanium_wire_cutter"
+	HOT4
+		"gtceu:hv_titanium_screwdriver"
+	HOT5
+		"gtceu:hv_titanium_wrench"
+	HOT6
+		"bloodmagic:sacrificialdagger"
+	HOT7
+		"bloodmagic:soulsword" -> "Enchantments" : [{id:"tombstone:ruthless_strike",lvl:3},{id:"minecraft:looting",lvl:2}]
+	HOT8
+		"bloodmagic:soulgemcommon"
+	CHEST
+		"minecraft:diamond_chestplate" -> "Enchantments" : [{id:"ensorcellation:magic_protection",lvl:3}]
+	LEGS
+		"minecraft:diamond_leggings" -> "Enchantments" : [{id:"ensorcellation:magic_protection",lvl:3},{id:"ars_nouveau:mana_regen",lvl:3},{id:"apotheosis:rebounding",lvl:1}]
+	FEET
+		"minecraft:diamond_boots" -> "Enchantments" : [{id:"minecraft:depth_strider",lvl:2}]
+

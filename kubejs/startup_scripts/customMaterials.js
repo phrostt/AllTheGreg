@@ -251,7 +251,8 @@ const chalks = [
 ]
 
 const fluids = [
-    //{ name: 'molten_iesnium', color: 0x6E0099, temp: 1300, iconSet: 'METALLIC' },
+    { name: 'sugar_water', components: '4x sugar, 1x distilled_water', color: 0xE8D9A0, iconSet: 'FLUID' },
+    
     { name: 'cognizant_sanguine_ichor', color: 0x6A0DAD, temp: 300, iconSet: 'FLUID' },
     { name: 'stellar_sanguine_plasma', color: 0xE0FFFF, temp: 300, iconSet: 'FLUID' },
     { name: 'resonant_sanguine_void', color: 0x191970, temp: 300, iconSet: 'FLUID' },
@@ -264,9 +265,7 @@ const fluids = [
     { name: 'liquid_vengeance', color: 0xB197C2, temp: 200, iconSet: 'FLUID' },
     { name: 'saturated_life_fertilizer', color: 0x4CAF50, temp: 200, iconSet: 'FLUID' },
     { name: 'liquid_fertilizer', color: 0x241105, temp: 200, iconSet: 'FLUID' },
-    //{ name: 'molten_demonite', color: 0x7BA4B1, temp: 2500, iconSet: 'METALLIC' },
-
-    //{ name: 'liquid_rotten_flesh', color: 0x934537, temp: 2500, iconSet: 'FLUID' },        
+        
     { name: 'picoline', color: 0x9E9B54, components: '6x carbon, 7x hydrogen, 1x nitrogen', formula: 'C6H7N', iconSet: 'FLUID' },
     { name: 'cyanopyridine', color: 0x4A6B82, components: '6x carbon, 4x hydrogen, 2x nitrogen', formula: 'C6H4N2', iconSet: 'FLUID' },
     { name: 'acetaldehyde', color: 0xC2B280, components: '1x ethylene, 1x oxygen', formula: 'C2H4O', iconSet: 'FLUID' },
@@ -338,6 +337,7 @@ const fluids = [
     { name: 'final_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 13x sodium, 5x sulfur, 23x oxygen, 6x hydrogen', color: 0x8C7B6A, iconSet: 'FLUID', noDecomp: true },
     { name: 'rare_earth_leach_residue', components: '1x lanthanum, 1x magnesium, 3x oxygen, 3x hydrogen', color: 0xB8A8C8, iconSet: 'FLUID', noDecomp: true },
     { name: 'alfheim_portal_fluid', color: 0x66FF33, iconSet: 'FLUID', noDecomp: true },
+    { name: 'tetrachloroethylene', components: '4x chlorine, 2x carbon', formula: 'C2Cl4', color: 0xF0F4F8, iconSet: 'FLUID' }
     
 ];
 

@@ -35,19 +35,21 @@ StartupEvents.registry('item', event => {
             .displayName('Rainbow Chalk');
 
 
+    const toTitleCase = (str) => str.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
     chalks.forEach(chalk => {
         // Pure chalk
         event.create(`occultism:chalk_${chalk.name}`)
             .texture('layer0', 'occultism:item/chalk_base')
             .color(0, chalk.hex)
-            .displayName(`${chalk.name.charAt(0).toUpperCase() + chalk.name.slice(1)} Chalk`);
+            .displayName(`${toTitleCase(chalk.name)} Chalk`);
 
         // Impure chalk
         event.create(`occultism:chalk_${chalk.name}_impure`)
             .texture('layer0', 'occultism:item/chalk_base')
             .texture('layer1', 'occultism:item/chalk_base_impure')
             .color(0, chalk.hex)
-            .displayName(`Impure ${chalk.name.charAt(0).toUpperCase() + chalk.name.slice(1)} Chalk`);
+            .displayName(`Impure ${toTitleCase(chalk.name)} Chalk`);
     });
 
     const mats = [

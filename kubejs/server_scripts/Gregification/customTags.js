@@ -29,6 +29,18 @@ ServerEvents.tags('item', allthemods => {
 	allthemods.add('occultism:miner/eldritch', 'occultism:miner_ancient_eldritch')
 	allthemods.add('occultism:miners/eldritch', 'occultism:miner_ancient_eldritch')
 
+	allthemods.add('forge:altar_runes',
+		'bloodmagic:speedrune',
+		'bloodmagic:sacrificerune',
+		'bloodmagic:selfsacrificerune',
+		'bloodmagic:dislocationrune',
+		'bloodmagic:altarcapacityrune',
+		'bloodmagic:bettercapacityrune',
+		'bloodmagic:orbcapacityrune',
+		'bloodmagic:accelerationrune',
+		'bloodmagic:chargingrune'
+	);
+
 	allthemods.add('gtceu:transistors', 'pneumaticcraft:transistor')
     allthemods.add('gtceu:capacitors', 'pneumaticcraft:capacitor')
 	allthemods.add('forge:ingots/cupronickel', 'alltheores:constantan_ingot')

@@ -66,7 +66,7 @@ ServerEvents.recipes(allthemods => {
 
 
     addEBF(
-        ['16x gtceu:caesium_dust', '4x #forge:ingots/hop_graphite', '64x #forge:dusts/silicon'],
+        ['16x #forge:dusts/caesium', '8x #forge:dusts/hop_graphite', '4x #forge:dusts/rubidium'],
         null,
         'gtceu:atomic_boule',
         null,

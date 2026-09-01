@@ -205,9 +205,10 @@ ServerEvents.recipes(allthemods => {
             );     
             
 
+            if (tData.t >= 4){
             addAssembler(
                 [
-                    'bloodmagic:alchemicalreactionchamber', 'bloodmagic:alchemytable', hull, `2x ${pump}`, piston, `2x ${circuit}`, `4x ${plate}`
+                    'bloodmagic:alchemicalreactionchamber', '2x #forge:frames/hellforged', 'bloodmagic:alchemytable', hull, `2x ${pump}`, piston, `2x ${circuit}`, `4x ${plate}`
                 ],
                 [
                     '#forge:sanguine_concentrate 1440'
@@ -215,7 +216,7 @@ ServerEvents.recipes(allthemods => {
                 baChamber,
                 tierValues[tData.t - 1],
                 600
-            );     
+            );}
             
 
             addAssembler(

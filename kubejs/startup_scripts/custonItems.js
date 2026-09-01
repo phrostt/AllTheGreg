@@ -95,6 +95,10 @@ StartupEvents.registry('item', event => {
             .displayName('Plutonic Quark')
             .rarity('ie_masterwork')
 
+    event.create('gtceu:bacteria_gene_sample')
+        .displayName('Gene Sample (Bacteria)')
+        .texture('gendustry:item/gene_sample'); // reuse visual only - confirm real path
+
     quarks.forEach(quark => {
         event.create(`gtceu:${quark.name}_quark`)
             .displayName(`${quark.name.charAt(0).toUpperCase() + quark.name.slice(1)} Quark`)

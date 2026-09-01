@@ -64,20 +64,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:slate_casing',
         32, 200
     );
-    //ritual casing
-    addAssembler(
-        [
-            'gtceu:lv_machine_casing',
-            'botania:rune_fire',
-            'botania:rune_water',
-            'botania:rune_earth',
-            'botania:rune_air',
-            '4x gtceu:manasteel_plate'
-        ],
-        null, // No fluid required for this assembly
-        'gtceu:ritual_casing',
-        32, 400
-    );
+    
     //ritual stone
     addAssembler(
         [

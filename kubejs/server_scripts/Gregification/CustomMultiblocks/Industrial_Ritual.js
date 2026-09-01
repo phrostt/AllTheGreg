@@ -303,8 +303,8 @@ ServerEvents.recipes(allthemods => {
     };
 
     allthemods.shaped('gtceu:industrial_ritual_machine', ['GCS', 'PMP', 'SCG'], {
-        S: 'gtceu:steel_plate',
-        G: '#forge:gears/iesnium',
+        S: 'gtceu:deorum_plate',
+        G: '#forge:gears/terrasteel',
         C: '#gtceu:circuits/hv',
         P: 'gtceu:hv_electric_pump',
         M: 'gtceu:hv_machine_hull'
@@ -392,7 +392,7 @@ ServerEvents.recipes(allthemods => {
             let combinedFluids = [];
 
             if (ritual.fluids && ritual.fluids.length > 0) {
-                let ritualFluids = ritual.fluids.map(f => Fluid.of(f.fluid, (f.amount / 100 * 12)));
+                let ritualFluids = ritual.fluids.map(f => Fluid.of(f.fluid, (f.amount / 100 * 4)));
                 combinedFluids = combinedFluids.concat(ritualFluids);
             }            
 
@@ -488,6 +488,10 @@ ServerEvents.recipes(allthemods => {
     addRitual(['gtceu:luv_machine_hull', 'justdirethings:gooblock_tier3', 'bloodmagic:demonslate', '#forge:frames/alfsteel', '4x minecraft:echo_shard', '4x minecraft:sculk', '2x minecraft:sculk_shrieker'], 'justdirethings:gooblock_tier4', 'fatmas_incentivized_attraction');
     addRitual(['16x bloodmagic:etherealslate', '4x #forge:gears/alfsteel', '8x #forge:plates/selenium', '#forge:frames/draconium_awakened', '#forge:rods/long/iesnium', '#forge:gems/soul'], 'bmaddon:blood_generator', 'ronazas_contract')
 
+    //ritual casing
+    addRitual(['#forge:frames/drenched_iron', 'botania:rune_fire', 'botania:rune_water', 'botania:rune_earth', 'botania:rune_air', '4x #forge:plates/deorum'], 'gtceu:ritual_casing', 'strigeors_higher_binding')
+    
+
 
     let i = 0;
 
@@ -550,17 +554,9 @@ ServerEvents.recipes(allthemods => {
     // Weather, Traders, Transport Items) were tested and found broken - they likely
     // need additional bound-target NBT we haven't reverse-engineered yet.
 
-    addRitual(
-        ['#forge:raw_materials/iron', '#forge:raw_materials/gold', '#forge:raw_materials/copper', '#forge:raw_materials/silver'],
-        Item.of('occultism:spawn_egg/foliot', '{spiritJob:{factoryId:"occultism:crush_tier1"},spiritMaxAge:32400,spiritAge:0}').strongNBT(),
-        'aviars_circle',
-        60,
-        'Ritual_summon_crush_tier1'
-    );
-
-    addRitual(
+        addRitual(
         ['#forge:dusts/iron', '#forge:dusts/gold', '#forge:dusts/copper', '#forge:dusts/silver'],
-        Item.of('occultism:spawn_egg/djinni', '{spiritJob:{factoryId:"occultism:crush_tier2"},spiritMaxAge:-1,spiritAge:0}').strongNBT(),
+        Item.of('occultism:spawn_egg/djinni', '{EntityTag:{spiritJob:{factoryId:"occultism:crush_tier2",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'ophyx_calling',
         90,
         'Ritual_summon_crush_tier2'
@@ -568,7 +564,7 @@ ServerEvents.recipes(allthemods => {
 
     addRitual(
         ['#forge:gems/diamond', '#forge:dusts/iesnium', '#forge:dusts/iesnium', '#forge:gems/emerald'],
-        Item.of('occultism:spawn_egg/afrit', '{spiritJob:{factoryId:"occultism:crush_tier3"},spiritMaxAge:-1,spiritAge:0}').strongNBT(),
+        Item.of('occultism:spawn_egg/afrit', '{EntityTag:{spiritJob:{factoryId:"occultism:crush_tier3",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'posucs_convocation',
         120,
         'Ritual_summon_crush_tier3'
@@ -576,7 +572,7 @@ ServerEvents.recipes(allthemods => {
 
     addRitual(
         ['#forge:storage_blocks/diamond', 'minecraft:ghast_tear', '#forge:storage_blocks/iesnium', '#forge:storage_blocks/emerald'],
-        Item.of('occultism:spawn_egg/marid', '{spiritJob:{factoryId:"occultism:crush_tier4"},spiritMaxAge:-1,spiritAge:0}').strongNBT(),
+        Item.of('occultism:spawn_egg/marid', '{EntityTag:{spiritJob:{factoryId:"occultism:crush_tier4",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'fatmas_incentivized_attraction',
         150,
         'Ritual_summon_crush_tier4'
@@ -584,7 +580,7 @@ ServerEvents.recipes(allthemods => {
 
     addRitual(
         ['occultism:otherworld_sapling', 'minecraft:oak_sapling', 'minecraft:birch_sapling', 'minecraft:spruce_sapling', '#forge:tools/metal/axes'],
-        Item.of('occultism:spawn_egg/foliot', '{spiritJob:{factoryId:"occultism:lumberjack"},spiritMaxAge:-1,spiritAge:0}').strongNBT(),
+        Item.of('occultism:spawn_egg/foliot', '{EntityTag:{spiritJob:{factoryId:"occultism:lumberjack",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'aviars_circle',
         60,
         'Ritual_summon_lumberjack'
@@ -592,7 +588,7 @@ ServerEvents.recipes(allthemods => {
 
     addRitual(
         ['minecraft:torch', '#minecraft:saplings', 'minecraft:wheat', '#forge:dyes/yellow'],
-        Item.of('occultism:spawn_egg/djinni', '{spiritJob:{factoryId:"occultism:day_time"},spiritMaxAge:5,spiritAge:0}').strongNBT(),
+        Item.of('occultism:spawn_egg/djinni', '{EntityTag:{spiritJob:{factoryId:"occultism:day_time",conversionTimer:0},spiritMaxAge:5,spiritAge:0}}').strongNBT(),
         'ophyx_calling',
         60,
         'Ritual_summon_day_time'
@@ -600,7 +596,7 @@ ServerEvents.recipes(allthemods => {
 
     addRitual(
         ['#minecraft:beds', 'minecraft:rotten_flesh', '#forge:bones', '#forge:dyes/black'],
-        Item.of('occultism:spawn_egg/djinni', '{spiritJob:{factoryId:"occultism:night_time"},spiritMaxAge:5,spiritAge:0}').strongNBT(),
+        Item.of('occultism:spawn_egg/djinni', '{EntityTag:{spiritJob:{factoryId:"occultism:night_time",conversionTimer:0},spiritMaxAge:5,spiritAge:0}}').strongNBT(),
         'ophyx_calling',
         60,
         'Ritual_summon_night_time'
