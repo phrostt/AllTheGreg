@@ -38,6 +38,16 @@ var ourMaterial = false;
 /** This function is called when mod is being constructed */
 function init()
 {
+    panel()
+        .name("cadmium_pannel")
+        .height(8 / 16.0)
+        .generation("131072")
+        .capacity("10000000")
+        .transfer("256000")
+    .buildAndRegister()
+        .langBuilder()
+            .put(english, "Cadmium Solar Panel")
+    .build();
 	// Example: (textures are extracted in /textures/ by default), uncomment to try it out! (Requires game restart)
 
     /* Comment Start
@@ -67,6 +77,7 @@ function init()
 		.build(2);
 
     Comment end*/
+    
 }
 
 /*

@@ -29,6 +29,8 @@ ServerEvents.tags('item', allthemods => {
 	allthemods.add('occultism:miner/eldritch', 'occultism:miner_ancient_eldritch')
 	allthemods.add('occultism:miners/eldritch', 'occultism:miner_ancient_eldritch')
 
+	allthemods.add('forge:wax', 'forbidden_arcanus:wax')
+
 	allthemods.add('forge:altar_runes',
 		'bloodmagic:speedrune',
 		'bloodmagic:sacrificerune',

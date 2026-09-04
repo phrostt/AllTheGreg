@@ -120,5 +120,19 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('3x gtceu:thorium_oxide_dust')
         .duration(500)
         .EUt(32768);
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:strontium_aluminate')
+        .itemInputs(['#forge:dusts/strontium_carbonate', '2x #forge:dusts/aluminium_hydroxide'])
+        .itemOutputs('gtceu:strontium_aluminate_dust')
+        .outputFluids(['gtceu:carbon_dioxide 1000', 'minecraft:water 3000'])
+        .duration(200)
+        .EUt(32768);
+
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:strontium_ferrite')
+        .itemInputs(['4x #forge:dusts/carbon', '3x #forge:dusts/nickel_zinc_ferrite', '#forge:dusts/strontium_carbonate'])
+        .itemOutputs(['gtceu:strontium_ferrite_dust', '3x gtceu:zincite_dust', '3x gtceu:nickel_dust'])
+        .outputFluids('gtceu:carbon_monoxide 5000')
+        .duration(200)
+        .EUt(32768);
     
 });

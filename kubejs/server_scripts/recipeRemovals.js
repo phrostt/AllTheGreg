@@ -14,7 +14,7 @@ ServerEvents.recipes(allthemods => {
         'arsenic', 'gallium', 'hafnium', 'chromium', 'samarium', 'lanthanum', 'lutetium',
         'iodine', 'magnesium', 'manganese', 'mercury', 'niobium', 'protactinium',
         'nitrogen', 'scandium', 'tantalum', 'tellurium', 'thallium', 'titanium',
-        'redstone', 'francium', 'astatine'
+        'redstone', 'francium', 'astatine', 'gadolinium'
     ];
    
 
@@ -78,7 +78,28 @@ ServerEvents.recipes(allthemods => {
         'chemlib:rubidium_ingot_from_blasting_rubidium_dust',
         'enderio:smelting/chemlib/rubidium_ingot_from_smelting_rubidium_dust',        
 
-        'bloodmagic:blood_rune_blank'
+        'bloodmagic:blood_rune_blank', 'rftoolsutility:screen_controller', 'integrateddynamics:crafting/part_display_panel',
+        
+        
+        'industrialforegoing:fluid_extractor',
+        'industrialforegoing:latex_processing_unit', 'industrialforegoing:dissolution_chamber', 'industrialforegoing:plant_gatherer',
+        'industrialforegoing:sewer', 'industrialforegoing:sewage_composter', 'industrialforegoing:plant_sower',
+        'industrialforegoing:mob_slaughter_factory', 'industrialforegoing:animal_rancher', 'industrialforegoing:animal_feeder',
+        'industrialforegoing:animal_baby_separator', 'industrialforegoing:resourceful_furnace', 'industrialforegoing:sludge_refiner',
+        'industrialforegoing:water_condensator', 'industrialforegoing:block_placer', 'industrialforegoing:block_breaker',
+        'industrialforegoing:fluid_collector', 'industrialforegoing:fluid_placer', 'industrialforegoing:dye_mixer',
+        'industrialforegoing:spores_recreator', 'industrialforegoing:bioreactor', 'industrialforegoing:biofuel_generator',
+
+        'industrialforegoing:plant_fertilizer', 'industrialforegoing:hydroponic_bed', 'industrialforegoing:simulated_hydroponic_bed', 'industrialforegoing:marine_fisher',
+        'industrialforegoing:laser_drill', 'industrialforegoing:fermentation_station', 'industrialforegoing:mob_detector',
+
+        'industrialforegoing:mob_crusher', 'industrialforegoing:mob_duplicator',
+        'industrialforegoing:material_stonework_factory', 'industrialforegoing:potion_brewer', 'industrialforegoing:ore_laser_drill', 'industrialforegoing:fluid_laser_base',
+        'industrialforegoing:washing_factory', 'industrialforegoing:fluid_sieving_machine', 'industrialforegoing:stasis_chamber', 'industrialforegoing:enchantment_sorter',
+        'industrialforegoing:enchantment_applicator', 'industrialforegoing:enchantment_extractor', 'industrialforegoing:enchantment_factory', 'industrialforegoing:infinity_charger',
+
+        'industrialforegoing:wither_builder', 'industrialforegoing:black_hole_controller',
+
     ];
     
     const globalRemoves2 = [

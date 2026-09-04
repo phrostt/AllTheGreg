@@ -11,7 +11,7 @@ ServerEvents.recipes(allthemods => {
 		D: 'evilcraft:dark_gem',
 		E: '#forge:plates/deorum',
         P: 'gtceu:mv_electric_pump',
-        G: 'gtceu:silver_plate'
+        G: '#forge:plates/silver'
     }).id('gregification:shaped/blood_infuser');
     	
 	//purifier
@@ -24,7 +24,7 @@ ServerEvents.recipes(allthemods => {
         D: 'minecraft:cauldron',                 
         E: '#forge:plates/deorum',               
         P: 'gtceu:mv_electric_pump',             
-        G: 'gtceu:silver_plate'                  
+        G: '#forge:plates/silver'
     }).id('gregification:shaped/purifier');      
 	
 	//pedestal

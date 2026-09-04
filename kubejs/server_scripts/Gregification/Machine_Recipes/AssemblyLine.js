@@ -812,7 +812,7 @@ ServerEvents.recipes(allthemods => {
     addAssemblyLine('mekanism:sps_casing',
         [
             '4x mekanism:hdpe_sheet',
-            '#forge:frames/ferrognetic',
+            '#forge:frames/strontium_aluminate',
             '4x mekanism:pellet_polonium',
             '4x mekanism:pellet_plutonium',
             '4x #forge:plates/scandium',
@@ -898,6 +898,7 @@ ServerEvents.recipes(allthemods => {
             '2x mekanism:ultimate_chemical_tank',
             '2x mekanism:ultimate_control_circuit',
             '2x #forge:plates/alloy_atomic',
+            '4x #forge:rods/cadmium',
             '#gtceu:circuits/luv'
 
         ],

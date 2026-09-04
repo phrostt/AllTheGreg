@@ -365,13 +365,31 @@ ServerEvents.recipes(allthemods => {
 
     //dielectric paste
     allthemods.recipes.gtceu.mixer('gregification:dielectric_paste')
-    .itemInputs(
-        '4x #forge:dusts/carbon',            // Conductive base
-        '4x #forge:dusts/clay',              // Ceramic base
-        '2x #forge:dusts/obsidian'           // Dielectric reinforcement
-    )
-    .inputFluids('gtceu:rubber 144')    // EV Binder
-    .itemOutputs('24x powah:dielectric_paste')
-    .duration(200)
-    .EUt(512);
+        .itemInputs(
+            '4x #forge:dusts/carbon',            // Conductive base
+            '4x #forge:dusts/clay',              // Ceramic base
+            '2x #forge:dusts/obsidian'           // Dielectric reinforcement
+        )
+        .inputFluids('gtceu:rubber 144')    // EV Binder
+        .itemOutputs('24x powah:dielectric_paste')
+        .duration(200)
+        .EUt(512);
+
+    allthemods.recipes.gtceu.mixer('gregification:cadmium_telluride')
+        .itemInputs(['#forge:dusts/cadmium', '#forge:dusts/tellurium'])
+        .itemOutputs('gtceu:cadmium_telluride_dust')
+        .duration(200)
+        .EUt(32768);
+
+    allthemods.recipes.gtceu.mixer('gregification:cadmium_selenide')
+        .itemInputs(['#forge:dusts/cadmium', '#forge:dusts/selenium'])
+        .itemOutputs('gtceu:cadmium_selenide_dust')
+        .duration(200)
+        .EUt(8192);
+
+    allthemods.recipes.gtceu.mixer('gregification:cadmium_copper')
+        .itemInputs(['#forge:dusts/cadmium', '9x #forge:dusts/copper'])
+        .itemOutputs('gtceu:cadmium_copper_dust')
+        .duration(200)
+        .EUt(131072);
 });

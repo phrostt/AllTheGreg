@@ -33,7 +33,7 @@ ServerEvents.recipes(allthemods => {
 	], {
 		C: '#gtceu:circuits/hv',
 		P: '#forge:plates/dark_steel',
-		W: '#forge:fine_wires/energetic_alloy',
+		W: '#forge:foils/cadmium_selenide',
 		S: 'gtceu:hv_sensor'
 	});
 })

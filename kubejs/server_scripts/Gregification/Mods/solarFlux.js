@@ -334,6 +334,25 @@ ServerEvents.recipes(allthemods => {
         panelDuration
     );
 
+    // cadmium
+    addAssembler(
+        [
+            'solarflux:photovoltaic_cell_5',
+            '4x solarflux:sp_8',
+            'gtceu:luv_machine_hull',
+            '2x #gtceu:circuits/luv',
+            '2x solarflux:ender_glass',
+            '4x #gtceu:wires/hex/cadmium_copper',
+            '8x gtceu:hv_cadmium_battery',
+            '2x gtceu:selenium_rectifier'
+        ],
+        '#forge:soldering_alloy 288',
+        '2x solarflux:sp_custom_cadmium_pannel',
+        tiers.LuV,
+        panelDuration
+    );
+
+
     // Draconic
     addAssembler(
         [

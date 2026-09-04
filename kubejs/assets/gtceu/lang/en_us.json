@@ -593,5 +593,12 @@
     "material.gtceu.thorium_oxide": "Thorium Oxide",
     "material.gtceu.phantom_membrane": "Phantom Membrane",
     "material.gtceu.tetrachloroethylene": "Tetrachloroethylene",
-    "material.gtceu.sugar_water": "Sugar Water"
+    "material.gtceu.sugar_water": "Sugar Water",
+    "material.gtceu.cadmium_telluride": "Cadmium Telluride",
+    "material.gtceu.cadmium_selenide": "Cadmium Selenide",
+    "material.gtceu.woods_alloy": "Woods Alloy",
+    "material.gtceu.cadmium_copper": "Cadmium Copper",
+    "material.gtceu.strontium_aluminate": "Strontium Aluminate",
+    "material.gtceu.strontium_ferrite": "Strontium Ferrite"
+
 }

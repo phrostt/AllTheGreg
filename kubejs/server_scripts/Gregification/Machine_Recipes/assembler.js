@@ -120,7 +120,7 @@ ServerEvents.recipes(allthemods => {
     addAssembler(
         [
             "gtceu:magical_bio_composite",
-            "endertanks:ender_bucket",
+            "gtceu:aluminium_drum",
             "#forge:frames/terrasteel",
             "4x #forge:plates/pink_slime",
             "4x minecraft:blaze_rod",
@@ -764,6 +764,42 @@ ServerEvents.recipes(allthemods => {
         'wirelesschargers:advanced_wireless_block_charger', 
         2048, 600, 2);
 
-    
+    addAssembler(
+        [
+            'rftoolsbase:machine_frame',            
+            '4x #forge:dusts/redstone',
+            '4x gtceu:tempered_glass',
+            '4x #forge:plates/cadmium_selenide'
+            
+        ], 
+        'gtceu:polytetrafluoroethylene 144', 
+        'rftoolsutility:screen_controller', 
+        2048, 200);
+
+    addAssembler(
+        [
+            '2x integrateddynamics:part_static_light_panel',
+            '2x integrateddynamics:variable_transformer_output',
+            '4x #forge:foils/cadmium_selenide'
+            
+        ], 
+        'gtceu:polytetrafluoroethylene 144', 
+        'integrateddynamics:part_display_panel', 
+        2048, 200);
+
+    addAssembler(
+        [
+            
+            '4x #forge:foils/cadmium_selenide',
+            '2x #forge:gears/diamond',
+            '4x #forge:plates/gadolinium',
+            '4x #forge:plastic',
+            '2x #gtceu:circuits/iv'
+            
+        ], 
+        'gtceu:polytetrafluoroethylene 288', 
+        'industrialforegoing:hydroponic_simulation_processor', 
+        8192, 200);
+
     
 });

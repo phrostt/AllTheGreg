@@ -76,8 +76,9 @@ const materialsGem = [
 
 //needs proper unification
 const otherElements = [
-    //need to make sure each 1 of these is useful by checking usage on its dust[
+    //need to make sure each 1 of these is useful by checking usage on its dust[    
     { name: 'radium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true },
+    { name: 'gadolinium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cIngot: true },
     { name: 'rhenium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true },
     { name: 'astatine', namespace: 'chemlib', oItems: ['dust'], cBlast: 9000, cIngot: true },
     { name: 'graphite', cBlast: 3600, cVolt: 2048, cIngot: true },
@@ -221,7 +222,6 @@ const modalloys = [
     { name: 'thorium_berkelium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '2x thorium, 1x berkelium', voltage: 131072, superconductor: true, cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
     { name: 'potassium_calcium_orthosilicate', color: 0xDAA520, iconSet: 'METALLIC', components: '2x potassium, 1x calcium, 1x silicon, 4x oxygen', cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1200, power: 850, efficiency: 17.0, durability: 400000 } },
     { name: 'bedrockium', color: 0x101010, iconSet: 'METALLIC' },
-
 ];
 
 const gasses = [
@@ -230,7 +230,7 @@ const gasses = [
     { name: 'carbon_tetroxide', components: '1x carbon, 4x oxygen', color: 0x36454F, iconSet: 'METALLIC', noDecomp: true },
     { name: 'compressed_air', color: 0x80C8F0, temp: 2500, iconSet: 'FLUID' },
     { name: 'terrazine', color: 0x4B0082, iconSet: 'RADIOACTIVE' }
-]
+];
 const chalks = [
     { name: 'white_chalk', color: 0xFFFFFF, iconSet: 'FLUID' },
     { name: 'yellow_chalk', color: 0xFFD700, iconSet: 'FLUID' },
@@ -248,7 +248,7 @@ const chalks = [
     { name: 'brown_chalk', color: 0x8B4513, iconSet: 'FLUID' },
     { name: 'green_chalk', color: 0x008000, iconSet: 'FLUID' },
     { name: 'black_chalk', color: 0x000000, iconSet: 'FLUID' }
-]
+];
 
 const fluids = [
     { name: 'sugar_water', components: '4x sugar, 1x distilled_water', color: 0xE8D9A0, iconSet: 'FLUID' },
@@ -653,7 +653,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
     
-    let materialBuilder
+    let materialBuilder;
 
     materialBuilder = event.create('drenched_iron')
         .ingot()
@@ -864,6 +864,62 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.DIAMOND)
         .components('1x potassium', '1x nitrogen', '3x oxygen');
 
+
+        
+    //{ name: 'woods_alloy', color: 0xB0B8C0, iconSet: 'METALLIC', components: '2x bismuth, 1x lead, 1x tin, 1x cadmium', formula: 'Bi2PbSnCd' },
+    
+
+    materialBuilder = event.create('cadmium_copper')
+        .ingot()
+        .dust()
+        .fluid()
+        .color(0xC97A4A)
+        .formula("Cu9Cd")
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .components('9x copper', '1x cadmium')
+        .cableProperties(getVoltage(128), 2, 1, false)
+        .flags(GTMaterialFlags.GENERATE_FINE_WIRE);
+
+    materialBuilder = event.create('cadmium_telluride')
+        .ingot()
+        .dust()
+        .fluid()
+        .color(0x2B2B2B)
+        .formula("CdTe")
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .components('1x cadmium', '1x tellurium')
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL);
+
+    materialBuilder = event.create('cadmium_selenide')
+        .ingot()
+        .dust()
+        .fluid()    
+        .color(0xD94D1A)
+        .formula("CdSe")
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .components('1x cadmium', '1x selenium')
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL);
+
+    materialBuilder = event.create('strontium_aluminate')
+        .ingot()
+        .dust()
+        .fluid()
+        .color(0xF0EDE0)
+        .formula("SrAl2O4")
+        .iconSet(GTMaterialIconSet.DULL)
+        .components('1x strontium', '2x aluminium', '4x oxygen')
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD);
+
+    materialBuilder = event.create('strontium_ferrite')
+        .ingot()
+        .dust()
+        .fluid()
+        .color(0x3C3C3C)
+        .formula("SrFe12O19")
+        .iconSet(GTMaterialIconSet.DULL)
+        .components('1x strontium', '12x iron', '19x oxygen')
+        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_RING);
+
     //extreme reactors
     erMaterials.forEach(mat => {
         event.create(mat.name)
@@ -1009,6 +1065,11 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
     GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
     
+    let cadmium = GTMaterials.get('cadmium')
+        cadmium.addFlags(GTMaterialFlags.GENERATE_ROD);
+        if (!cadmium.hasProperty(PropertyKey.INGOT)) {
+            cadmium.setProperty(PropertyKey.INGOT, new IngotProperty())
+        }
     
 
         
@@ -1461,6 +1522,7 @@ StartupEvents.postInit(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');    
     TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
+    TagPrefix.dust.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
     
 
     // Gear
@@ -1490,8 +1552,7 @@ StartupEvents.postInit(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:ingot_iron_compressed');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:ingot_hop_graphite');
     TagPrefix.ingot.setIgnored(GTMaterials.get('pink_slime'), 'industrialforegoing:pink_slime_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('deorum'), 'forbidden_arcanus:deorum_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
+    TagPrefix.ingot.setIgnored(GTMaterials.get('deorum'), 'forbidden_arcanus:deorum_ingot');    
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
@@ -1621,6 +1682,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
     TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
+    TagPrefix.dust.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
     
 
     // Gear
@@ -1651,8 +1713,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:ingot_hop_graphite');
     TagPrefix.ingot.setIgnored(GTMaterials.get('pink_slime'), 'industrialforegoing:pink_slime_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
-    //TagPrefix.ingot.setIgnored(GTMaterials.get('deorum'), 'forbidden_arcanus:deorum_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
+    //TagPrefix.ingot.setIgnored(GTMaterials.get('deorum'), 'forbidden_arcanus:deorum_ingot');    
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
@@ -1696,6 +1757,9 @@ GTCEuStartupEvents.materialModification(event => {
     
 
     //ore biproducts
+
+    
+
     newOres.forEach(mat => {
         let material = GTMaterials.get(mat.name);
 
@@ -1728,12 +1792,36 @@ GTCEuStartupEvents.materialModification(event => {
 
     let javaList = new ArrayList();
     javaList.add(GTMaterials.get('ruthenium'));
-
     let ore_prop = new OreProperty();
     ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-
     osmiridium.setProperty(PropertyKey.ORE, ore_prop);
 
+    
+    javaList = new ArrayList();    
+    javaList.add(GTMaterials.RareEarth);
+    javaList.add(GTMaterials.Gadolinium);
+    javaList.add(GTMaterials.Neodymium);
+    
+    let monazite = GTMaterials.get('monazite');    
+    monazite.removeProperty(PropertyKey.ORE);    
+    
+    ore_prop = new OreProperty();
+    ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+    monazite.setProperty(PropertyKey.ORE, ore_prop);
+
+    javaList = new ArrayList();    
+    javaList.add(GTMaterials.RareEarth);
+    javaList.add(GTMaterials.Gadolinium);
+    javaList.add(GTMaterials.Neodymium);
+    
+    let bastnasite = GTMaterials.get('bastnasite');    
+    bastnasite.removeProperty(PropertyKey.ORE);    
+    
+    ore_prop = new OreProperty();
+    ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+    bastnasite.setProperty(PropertyKey.ORE, ore_prop);
+    
+    
     netherstar.setProperty(PropertyKey.ORE, new OreProperty());
     etrium.setProperty(PropertyKey.ORE, new OreProperty());
 

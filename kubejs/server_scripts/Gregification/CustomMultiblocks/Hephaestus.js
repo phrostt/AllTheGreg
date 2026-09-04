@@ -164,7 +164,7 @@ ServerEvents.recipes(allthemods => {
     hephaestus(
         [
             "evilcraft:garmonbozia",
-            "2x forbidden_arcanus:wax",
+            "#forge:wax",
             "#forge:ingots/dark_steel",
             "#forge:ingots/pink_slime",
             "#forge:ingots/alfsteel",

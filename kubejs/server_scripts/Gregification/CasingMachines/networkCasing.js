@@ -344,11 +344,11 @@ ServerEvents.recipes(allthemods => {
         'GLP',
         'HPW'
     ], {
-        H: '#forge:plates/hellforged',
+        H: '#forge:plates/diamond',
         P: '#forge:plates/energetic_alloy',
         G: 'pneumaticcraft:glycerol', 
         L: '#gtceu:circuits/mv',        
-		W: 'gtceu:iesnium_single_wire'
+		W: 'gtceu:lumium_single_wire'
     }).id('gregification:ae2/materials/cardspeed');
 	
 	//integrated dynamics variable store
@@ -457,12 +457,12 @@ ServerEvents.recipes(allthemods => {
 
     //sensor    
     addAssembler(
-        [
-            'ae2:quartz_fiber',
-            '#gtceu:circuits/mv',
-            'gtceu:mv_sensor',
-            'gtceu:mv_emitter',
-            '4x gtceu:fine_fluix_wire'
+        [            
+            '#gtceu:circuits/iv',
+            'gtceu:iv_sensor',
+            'gtceu:iv_emitter',
+            '4x gtceu:fine_fluix_wire',
+            '2x #forge:foils/cadmium_selenide'
         ],
         'gtceu:soldering_alloy 72',
         '2x ae2:wireless_receiver',

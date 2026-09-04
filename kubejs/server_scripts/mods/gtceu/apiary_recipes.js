@@ -76,7 +76,7 @@ ServerEvents.recipes(allthemods => {
         // Modified logic: Only generate specific circuit tiers
         //const circuitTiers = [1, 5, 10, 20, 30];
         
-        const circuitTiers = [1];
+        const circuitTiers = [5];
 
         circuitTiers.forEach(i => {
             let recipeBuilder = allthemods.recipes.gtceu.apiary_ii(id + '/circuit_' + i.toString())
