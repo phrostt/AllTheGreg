@@ -22,4 +22,11 @@ ServerEvents.recipes(allthemods => {
         .duration(20) // Takes 1 second
         .EUt(32) // LV tier energy
         .circuit(1);
+
+    allthemods.recipes.gtceu.fluid_solidifier('gregification_hardened_blood')
+        .notConsumable('gtceu:block_casting_mold')
+        .inputFluids('#forge:sanguine_concentrate 1000')
+        .itemOutputs('evilcraft:hardened_blood')
+        .duration(200)
+        .EUt(512)
 });

@@ -81,7 +81,7 @@ ServerEvents.recipes(allthemods => {
         'bloodmagic:blood_rune_blank', 'rftoolsutility:screen_controller', 'integrateddynamics:crafting/part_display_panel',
         
         
-        'industrialforegoing:fluid_extractor',
+        'industrialforegoing:fluid_extractor', 'industrialforegoing:hydroponic_simulation_processor',
         'industrialforegoing:latex_processing_unit', 'industrialforegoing:dissolution_chamber', 'industrialforegoing:plant_gatherer',
         'industrialforegoing:sewer', 'industrialforegoing:sewage_composter', 'industrialforegoing:plant_sower',
         'industrialforegoing:mob_slaughter_factory', 'industrialforegoing:animal_rancher', 'industrialforegoing:animal_feeder',
@@ -94,11 +94,12 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:laser_drill', 'industrialforegoing:fermentation_station', 'industrialforegoing:mob_detector',
 
         'industrialforegoing:mob_crusher', 'industrialforegoing:mob_duplicator',
-        'industrialforegoing:material_stonework_factory', 'industrialforegoing:potion_brewer', 'industrialforegoing:ore_laser_drill', 'industrialforegoing:fluid_laser_base',
+        'industrialforegoing:material_stonework_factory', 'industrialforegoing:potion_brewer', 'industrialforegoing:ore_laser_base', 'industrialforegoing:fluid_laser_base',
         'industrialforegoing:washing_factory', 'industrialforegoing:fluid_sieving_machine', 'industrialforegoing:stasis_chamber', 'industrialforegoing:enchantment_sorter',
         'industrialforegoing:enchantment_applicator', 'industrialforegoing:enchantment_extractor', 'industrialforegoing:enchantment_factory', 'industrialforegoing:infinity_charger',
 
-        'industrialforegoing:wither_builder', 'industrialforegoing:black_hole_controller',
+        'industrialforegoing:wither_builder', 'industrialforegoing:black_hole_controller', 
+        'fluxnetworks:flux_dust'
 
     ];
     

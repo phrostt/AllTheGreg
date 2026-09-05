@@ -163,6 +163,10 @@ StartupEvents.registry('item', event => {
         .displayName('Quad Thorium Fuel Cell')                
         .rarity('RARE')
         .tooltip('§7A Quad thorium fuel cell.')
+
+    event.create('gtceu:samarium_cobalt_magnetic_rotor')
+        .displayName('Samarium Cobalt Magnetic Rotor')
+        .tooltip('§7A Samarium Cobalt Magnetic Rotor.')
         
 })
 ItemEvents.modification(event => {

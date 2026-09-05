@@ -60,8 +60,7 @@ ServerEvents.recipes(allthemods => {
     addMixer(
         [
             '3x #forge:dusts/cobalt',
-            'minecraft:ancient_debris'
-
+            '#forge:dusts/debris'
         ],
         '4x gtceu:manyullyn_dust',
         'hv',
@@ -375,21 +374,33 @@ ServerEvents.recipes(allthemods => {
         .duration(200)
         .EUt(512);
 
-    allthemods.recipes.gtceu.mixer('gregification:cadmium_telluride')
+    allthemods.recipes.gtceu.mixer('gregification:cadmium_telluride_dust')
         .itemInputs(['#forge:dusts/cadmium', '#forge:dusts/tellurium'])
         .itemOutputs('gtceu:cadmium_telluride_dust')
         .duration(200)
         .EUt(32768);
 
-    allthemods.recipes.gtceu.mixer('gregification:cadmium_selenide')
+    allthemods.recipes.gtceu.mixer('gregification:cadmium_selenide_dust')
         .itemInputs(['#forge:dusts/cadmium', '#forge:dusts/selenium'])
-        .itemOutputs('gtceu:cadmium_selenide_dust')
+        .itemOutputs('2x gtceu:cadmium_selenide_dust')
         .duration(200)
         .EUt(8192);
 
-    allthemods.recipes.gtceu.mixer('gregification:cadmium_copper')
+    allthemods.recipes.gtceu.mixer('gregification:cadmium_copper_dust')
         .itemInputs(['#forge:dusts/cadmium', '9x #forge:dusts/copper'])
-        .itemOutputs('gtceu:cadmium_copper_dust')
+        .itemOutputs('10x gtceu:cadmium_copper_dust')
         .duration(200)
         .EUt(131072);
+
+    allthemods.recipes.gtceu.mixer('gregification:samarium_cobalt_dust')
+        .itemInputs(['#forge:dusts/samarium', '4x #forge:dusts/cobalt'])
+        .itemOutputs('5x gtceu:samarium_cobalt_dust')
+        .duration(200)
+        .EUt(32768);
+
+    allthemods.recipes.gtceu.mixer('gregification:netherite_dust')
+        .itemInputs(['4x #forge:dusts/debris', '4x #forge:dusts/gold'])
+        .itemOutputs('alltheores:netherite_dust')
+        .duration(100)
+        .EUt(512);
 });

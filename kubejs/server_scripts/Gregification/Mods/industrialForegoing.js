@@ -256,64 +256,64 @@ ServerEvents.recipes(allthemods => {
 
     const ifMachines = [
         // --- Pity -> HV ---
-        { name: 'industrialforegoing:fluid_extractor', components: ['2x pump', 'piston', '4x small_gear'], tier: 1 },
-        { name: 'industrialforegoing:latex_processing_unit', components: ['pump', 'piston', 'conveyor', '4x plastic'], tier: 1 },
-        //{ name: 'industrialforegoing:dissolution_chamber', components: [], tier: 1 },
-        { name: 'industrialforegoing:plant_gatherer', components: ['generator', 'sensor', '4x gear', '4x small_gear', '4x plastic'], tier: 1 },
-        { name: 'industrialforegoing:sewer', components: ['4x pump', '8x plastic', '2x piston', '2x small_gear'], other: ['gtceu:steel_drum'], tier: 1 },
-        { name: 'industrialforegoing:sewage_composter', components: ['pump', 'conveyor', '4x plastic', '2x small_gear'], other: ['gtceu:steel_drum'], tier: 1 },
-        { name: 'industrialforegoing:plant_sower', components: ['sensor', 'emitter', '4x small_gear', '2x piston', '2x conveyor'], tier: 1 },
-        { name: 'industrialforegoing:mob_slaughter_factory', components: ['4x gear', 'generator', 'frame', '2x pump'], tier: 1 },
-        { name: 'industrialforegoing:animal_rancher', components: ['frame', 'sensor', 'emitter', '2x conveyor', '2x piston'], other: ['2x #forge:tools/shears'], tier: 1 },
-        { name: 'industrialforegoing:animal_feeder', components: ['frame', 'conveyor', '2x piston', '2x gear', '2x plastic'], tier: 1 },
-        { name: 'industrialforegoing:animal_baby_separator', components: ['2x conveyor', 'sensor', 'generator', '2x piston', '8x plastic'], tier: 1 },
-        { name: 'industrialforegoing:resourceful_furnace', components: ['frame', 'small_gear', '4x plastic'], other: ['2x minecraft:furnace'], tier: 1 },
-        { name: 'industrialforegoing:sludge_refiner', components: ['2x small_gear', 'pump', 'piston', 'conveyor', '4x plastic'], other: ['gtceu:cupronickel_coil_block'], tier: 1 },
-        { name: 'industrialforegoing:water_condensator', components: ['frame', 'pump', '2x small_gear', '2x plastic'], other: ['gtceu:steel_drum'], tier: 1 },
-        { name: 'industrialforegoing:block_placer', components: ['frame', 'emitter', 'conveyor', '2x piston', '4x plastic'], other: ['gtceu:steel_crate'], tier: 1 },
-        { name: 'industrialforegoing:block_breaker', components: ['frame', 'generator', 'conveyor', '2x piston', '4x plastic'], other: ['gtceu:steel_crate'], tier: 1 },
-        { name: 'industrialforegoing:fluid_collector', components: ['frame', 'pump', 'emitter', 'conveyor', '4x plastic'], other: ['gtceu:steel_drum'], tier: 1 },
-        { name: 'industrialforegoing:fluid_placer', components: ['frame', 'pump', 'generator', 'conveyor', '4x plastic'], other: ['gtceu:steel_drum'], tier: 1 },
-        { name: 'industrialforegoing:dye_mixer', components: ['4x small_gear', '2x piston', '2x conveyor'], tier: 1 },
-        { name: 'industrialforegoing:spores_recreator', components: ['frame', '4x gear', '2x conveyor'], other: ['gtceu:steel_crate', 'reliquary:fertile_lily_pad'], tier: 1 },
-        { name: 'industrialforegoing:bioreactor', components: ['frame', '2x gear', '2x pump'], other:['4x #forge:plates/diamond', 'gtceu:steel_drum'], tier: 1 },
-        { name: 'industrialforegoing:biofuel_generator', components: ['frame', '2x gear', '2x conveyor'], other:['4x #forge:plates/diamond', 'gtceu:steel_crate'], tier: 1 },
+        { name: 'industrialforegoing:fluid_extractor', components: ['2x pump', 'piston', '4x small_gear'], tier: 'hv' },
+        { name: 'industrialforegoing:latex_processing_unit', components: ['pump', 'piston', 'conveyor', '4x plastic'], tier: 'hv' },
+        //{ name: 'industrialforegoing:dissolution_chamber', components: [], tier: 'hv' },
+        { name: 'industrialforegoing:plant_gatherer', components: ['generator', 'sensor', '4x gear', '4x small_gear', '4x plastic'], tier: 'hv' },
+        { name: 'industrialforegoing:sewer', components: ['4x pump', '8x plastic', '2x piston', '2x small_gear'], other: ['gtceu:steel_drum'], tier: 'hv' },
+        { name: 'industrialforegoing:sewage_composter', components: ['pump', 'conveyor', '4x plastic', '2x small_gear'], other: ['gtceu:steel_drum'], tier: 'hv' },
+        { name: 'industrialforegoing:plant_sower', components: ['sensor', 'emitter', '4x small_gear', '2x piston', '2x conveyor'], tier: 'hv' },
+        { name: 'industrialforegoing:mob_slaughter_factory', components: ['4x gear', 'generator', 'frame', '2x pump'], tier: 'hv' },
+        { name: 'industrialforegoing:animal_rancher', components: ['frame', 'sensor', 'emitter', '2x conveyor', '2x piston'], other: ['2x #forge:tools/shears'], tier: 'hv' },
+        { name: 'industrialforegoing:animal_feeder', components: ['frame', 'conveyor', '2x piston', '2x gear', '2x plastic'], tier: 'hv' },
+        { name: 'industrialforegoing:animal_baby_separator', components: ['2x conveyor', 'sensor', 'generator', '2x piston', '8x plastic'], tier: 'hv' },
+        { name: 'industrialforegoing:resourceful_furnace', components: ['frame', 'small_gear', '4x plastic'], other: ['2x minecraft:furnace'], tier: 'hv' },
+        { name: 'industrialforegoing:sludge_refiner', components: ['2x small_gear', 'pump', 'piston', 'conveyor', '4x plastic'], other: ['gtceu:cupronickel_coil_block'], tier: 'hv' },
+        { name: 'industrialforegoing:water_condensator', components: ['frame', 'pump', '2x small_gear', '2x plastic'], other: ['gtceu:steel_drum'], tier: 'hv' },
+        { name: 'industrialforegoing:block_placer', components: ['frame', 'emitter', 'conveyor', '2x piston', '4x plastic'], other: ['gtceu:steel_crate'], tier: 'hv' },
+        { name: 'industrialforegoing:block_breaker', components: ['frame', 'generator', 'conveyor', '2x piston', '4x plastic'], other: ['gtceu:steel_crate'], tier: 'hv' },
+        { name: 'industrialforegoing:fluid_collector', components: ['frame', 'pump', 'emitter', 'conveyor', '4x plastic'], other: ['gtceu:steel_drum'], tier: 'hv' },
+        { name: 'industrialforegoing:fluid_placer', components: ['frame', 'pump', 'generator', 'conveyor', '4x plastic'], other: ['gtceu:steel_drum'], tier: 'hv' },
+        { name: 'industrialforegoing:dye_mixer', components: ['4x small_gear', '2x piston', '2x conveyor'], tier: 'hv' },
+        { name: 'industrialforegoing:spores_recreator', components: ['frame', '4x gear', '2x conveyor'], other: ['gtceu:steel_crate', 'reliquary:fertile_lily_pad'], tier: 'hv' },
+        { name: 'industrialforegoing:bioreactor', components: ['frame', '2x gear', '2x pump'], other:['4x #forge:plates/diamond', 'gtceu:steel_drum'], tier: 'hv' },
+        { name: 'industrialforegoing:biofuel_generator', components: ['frame', '2x gear', '2x conveyor'], other:['4x #forge:plates/diamond', 'gtceu:steel_crate'], tier: 'hv' },
 
         // --- Simple -> EV ---
-        { name: 'industrialforegoing:plant_fertilizer', components: ['2x small_gear', '2x plastic', 'generator', '2x motor', 'pump'], other: ['gtceu:aluminium_drum'], tier: 2 },
-        { name: 'industrialforegoing:hydroponic_bed', components: ['2x gear', '2x plastic', 'sensor', 'emitter', '4x motor', 'pump'], tier: 2 },
-        { name: 'industrialforegoing:simulated_hydroponic_bed', components: ['2x gear', '4x plastic', '2x small_gear', 'generator', '2x motor', '2x pump'], other: ['industrialforegoing:hydroponic_simulation_processor'], tier: 2 },
-        { name: 'industrialforegoing:marine_fisher', components: ['4x small_gear', '4x plastic', 'sensor'], other: ['aquaculture:diamond_fishing_rod'], tier: 2 },
-        { name: 'industrialforegoing:fermentation_station', components: ['4x pump', '2x small_gear', '4x plastic'], other: 'gtceu:aluminium_drum', tier: 2 },
-        { name: 'industrialforegoing:mob_detector', components: ['sensor', '6x plastic', '2x small_gear'], other: ['2x minecraft:observer'], tier: 2 },
+        { name: 'industrialforegoing:plant_fertilizer', components: ['2x small_gear', '2x plastic', 'generator', '2x motor', 'pump'], other: ['gtceu:aluminium_drum'], tier: 'ev' },
+        { name: 'industrialforegoing:hydroponic_bed', components: ['2x gear', '2x plastic', 'sensor', 'emitter', '4x motor', 'pump'], tier: 'ev' },        
+        { name: 'industrialforegoing:marine_fisher', components: ['4x small_gear', '4x plastic', 'sensor'], other: ['aquaculture:diamond_fishing_rod'], tier: 'ev' },
+        { name: 'industrialforegoing:fermentation_station', components: ['4x pump', '2x small_gear', '4x plastic'], other: 'gtceu:aluminium_drum', tier: 'ev' },
+        { name: 'industrialforegoing:mob_detector', components: ['sensor', '6x plastic', '2x small_gear'], other: ['2x minecraft:observer'], tier: 'ev' },
 
         // --- Advanced -> IV ---
-        { name: 'industrialforegoing:mob_crusher', components: ['2x frame', '4x gear', '2x pump', '2x conveyor', 'sensor', 'emitter', 'generator'], other:['2x gtceu:diamond_grinding_head', '2x #forge:gears/pink_slime'], tier: 3 },
-        { name: 'industrialforegoing:mob_duplicator', components: ['frame', '4x generator', '2x pump'], other: ['4x #forge:gears/terrasteel', '4x #forge:plates/iesnium'], tier: 3 },
-        { name: 'industrialforegoing:material_stonework_factory', components: ['frame', '5x conveyor', 'robot', '4x piston'], other: ['4x #forge:gears/pink_slime', '4x #forge:rods/terrasteel'], tier: 3 },
-        { name: 'industrialforegoing:potion_brewer', components: ['2x pump', '2x motor', '2x gear', '4x plastic'], other:['gtceu:stainless_steel_drum'], tier: 3 },
-        { name: 'industrialforegoing:washing_factory', components: ['4x pump', 'sensor', '4x gear', '2x robot'], other: ['gtceu:stainless_steel_drum'], tier: 3 },
-        { name: 'industrialforegoing:fluid_sieving_machine', components: ['frame', '2x pump', '2x motor', '2x small_gear'], other: ['gtceu:stainless_steel_drum'], tier: 3 },
-        { name: 'industrialforegoing:stasis_chamber', components: ['frame', '2x generator', '2x emitter', 'sensor', '4x gear'], other: ['4x minecraft:ghast_tear'], tier: 3 },
-        { name: 'industrialforegoing:enchantment_sorter', components: ['frame', '2x sensor', '4x gear', 'conveyor', 'piston'], other:['gtceu:stainless_steel_crate'], tier: 3 },
-        { name: 'industrialforegoing:enchantment_applicator', components: ['frame', '2x emitter', '4x gear', 'conveyor', 'piston'], other:['irons_spellbooks:arcane_anvil'], tier: 3 },
-        { name: 'industrialforegoing:enchantment_extractor', components: ['frame', '2x robot', '4x gear', 'conveyor', 'piston'], other:['gtceu:stainless_steel_crate'], tier: 3 },
-        { name: 'industrialforegoing:enchantment_factory', components: ['frame', '2x robot', '4x gear', '2x piston'], other: ['2x #forge:gears/allthemodium'], tier: 3 },
-        { name: 'industrialforegoing:infinity_charger', components: ['robot', '2x gear', '2x piston'], other: ['4x #gtceu:batteries/iv'], tier: 3 },
+        { name: 'industrialforegoing:mob_crusher', components: ['4x gear', '2x pump', '2x conveyor', 'sensor', 'generator'], other:['2x gtceu:diamond_grinding_head', '2x #forge:gears/pink_slime'], tier: 'iv' },
+        { name: 'industrialforegoing:mob_duplicator', components: ['frame', '4x generator', '2x pump'], other: ['4x #forge:gears/terrasteel', '4x #forge:plates/iesnium'], tier: 'iv' },
+        { name: 'industrialforegoing:material_stonework_factory', components: ['frame', '5x conveyor', 'robot', '4x piston'], other: ['4x #forge:gears/pink_slime', '4x #forge:rods/terrasteel'], tier: 'iv' },
+        { name: 'industrialforegoing:potion_brewer', components: ['2x pump', '2x motor', '2x gear', '4x plastic'], other:['gtceu:stainless_steel_drum'], tier: 'iv' },
+        { name: 'industrialforegoing:washing_factory', components: ['4x pump', 'sensor', '4x gear', '2x robot'], other: ['gtceu:stainless_steel_drum'], tier: 'iv' },
+        { name: 'industrialforegoing:fluid_sieving_machine', components: ['frame', '2x pump', '2x motor', '2x small_gear'], other: ['gtceu:stainless_steel_drum'], tier: 'iv' },
+        { name: 'industrialforegoing:stasis_chamber', components: ['frame', '2x generator', '2x emitter', 'sensor', '4x gear'], other: ['4x minecraft:ghast_tear'], tier: 'iv' },
+        { name: 'industrialforegoing:enchantment_sorter', components: ['frame', '2x sensor', '4x gear', 'conveyor', 'piston'], other:['gtceu:stainless_steel_crate'], tier: 'iv' },
+        { name: 'industrialforegoing:enchantment_applicator', components: ['frame', '2x emitter', '4x gear', 'conveyor', 'piston'], other:['irons_spellbooks:arcane_anvil'], tier: 'iv' },
+        { name: 'industrialforegoing:enchantment_extractor', components: ['frame', '2x robot', '4x gear', 'conveyor', 'piston'], other:['gtceu:stainless_steel_crate'], tier: 'iv' },
+        { name: 'industrialforegoing:enchantment_factory', components: ['frame', '2x robot', '4x gear', '2x piston'], other: ['2x #forge:gears/allthemodium'], tier: 'iv' },
+        { name: 'industrialforegoing:infinity_charger', components: ['robot', '2x gear', '2x piston'], other: ['4x #gtceu:batteries/iv'], tier: 'iv' },
+        { name: 'industrialforegoing:simulated_hydroponic_bed', components: ['2x gear', '4x plastic', '2x small_gear', 'generator', '2x motor', '2x pump'], other: ['industrialforegoing:hydroponic_simulation_processor'], tier: 'iv' },
 
         // --- Supreme -> LuV ---
-        { name: 'industrialforegoing:wither_builder', components: ['frame','5x emitter', 'generator', '2x conveyor', '2x motor'], other: ['8x minecraft:nether_star', '2x #forge:gears/vibranium'], tier: 4 },
-        { name: 'industrialforegoing:black_hole_controller', components: ['frame', '2x generator', '4x conveyor', '4x motor', '4x piston'], tier: 4 },
-        { name: 'industrialforegoing:ore_laser_drill', components: ['frame', '4x gear', '2x motor', 'piston'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_crate'], tier: 4 },
-        { name: 'industrialforegoing:fluid_laser_base', components: ['frame', '4x gear', '2x pump'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_drum'], tier: 4 },
-        { name: 'industrialforegoing:laser_drill', components: ['4x gear', '4x small_gear', '8x motor', '2x piston'], other: ['mekanism:laser'], tier: 4 },
+        { name: 'industrialforegoing:wither_builder', components: ['frame','5x emitter', 'generator', '2x conveyor', '2x motor'], other: ['8x minecraft:nether_star', '2x #forge:gears/vibranium'], tier: 'luv' },
+        { name: 'industrialforegoing:black_hole_controller', components: ['frame', '2x generator', '4x conveyor', '4x motor', '4x piston'], tier: 'luv' },
+        { name: 'industrialforegoing:ore_laser_base', components: ['frame', '4x gear', '2x motor', 'piston'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_crate'], tier: 'luv' },
+        { name: 'industrialforegoing:fluid_laser_base', components: ['frame', '4x gear', '2x pump'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_drum'], tier: 'luv' },
+        { name: 'industrialforegoing:laser_drill', components: ['4x gear', '4x small_gear', '8x motor', '2x piston'], other: ['mekanism:laser'], tier: 'luv' },
     ];
 
     const ifTierData = {
-        1: { metal: 'stainless_steel', metal2: 'compressed_iron', magical: 'manasteel', polymer: 'gtceu:polyethylene', duration: 200, eu: GTValues.VA[GTValues.HV] },
-        2: { metal: 'titanium', metal2: 'graphite', magical: 'hellforged', polymer: 'gtceu:polyvinyl_chloride', duration: 300, eu: GTValues.VA[GTValues.EV] },
-        3: { metal: 'tungstensteel', metal2: 'draconium', magical: 'terrasteel', polymer: 'gtceu:polytetrafluoroethylene', duration: 400, eu: GTValues.VA[GTValues.IV] },
-        4: { metal: 'rhodium_plated_palladium', metal2: 'draconium_awakened', magical: 'ferrognetic', polymer: 'gtceu:polybenzimidazole', duration: 500, eu: GTValues.VA[GTValues.LuV] },
+        hv:  { base: 'industrialforegoing:machine_frame_pity', metal: 'stainless_steel', metal2: 'compressed_iron', magical: 'manasteel', polymer: 'gtceu:polyethylene', duration: 200, eu: GTValues.VA[GTValues.HV] },
+        ev:  { base: 'industrialforegoing:machine_frame_simple', metal: 'titanium', metal2: 'graphite', magical: 'hellforged', polymer: 'gtceu:polyvinyl_chloride', duration: 300, eu: GTValues.VA[GTValues.EV] },
+        iv:  { base: 'industrialforegoing:machine_frame_advanced', metal: 'tungsten_steel', metal2: 'draconium', magical: 'terrasteel', polymer: 'gtceu:polytetrafluoroethylene', duration: 400, eu: GTValues.VA[GTValues.IV] },
+        luv: { base: 'industrialforegoing:machine_frame_supreme', metal: 'rhodium_plated_palladium', metal2: 'draconium_awakened', magical: 'ferrognetic', polymer: 'gtceu:polybenzimidazole', duration: 500, eu: GTValues.VA[GTValues.LuV] },
     };
 
     const generateIfRecipe = (allthemods, machine) => {
@@ -326,7 +326,7 @@ ServerEvents.recipes(allthemods => {
 
         let hull = `gtceu:${machine.tier}_machine_hull`;
         let plate = `#forge:plates/${tierData.metal}`;
-        let circuit = `gtceu:${machine.tier}_circuit`;
+        let circuit = `#gtceu:circuits/${machine.tier}`;
         let conveyor = `gtceu:${machine.tier}_conveyor_module`;
         let piston = `gtceu:${machine.tier}_electric_piston`;
         let motor = `gtceu:${machine.tier}_electric_motor`;
@@ -370,7 +370,8 @@ ServerEvents.recipes(allthemods => {
             return entry;
         };
         let baseItems = [
-            hull,
+            ifTierData[machine.tier].base,
+            //hull,
             '2x ' + circuit,
             '4x ' + plate,
         ];
@@ -381,6 +382,8 @@ ServerEvents.recipes(allthemods => {
         let items = baseItems.concat(extraItems).concat(otherItems);
 
         let cleanId = machine.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        
+        //console.error(machine.name + ': ' + items.join(', '));
 
         allthemods.recipes.gtceu.assembler(`gregification/if/${cleanId}`)
             .itemInputs(items)

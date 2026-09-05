@@ -911,6 +911,24 @@ ServerEvents.recipes(allthemods => {
         32768
     );
 
+    //here
+    addAssemblyLine('gtceu:gadolinium_casing',
+        [
+            'gtceu:uv_machine_hull',
+            'gtceu:samarium_cobalt_magnetic_rotor',
+            '12x #forge:plates/gadolinium',
+            '12x #forge:plates/strontium_ferrite'
+        ],
+        [
+            'gtceu:polybenzimidazole 1440',
+            '#forge:lubricant 1440',
+            '#forge:soldering_alloy 1440'
+        ],
+        mekLong,
+        524288,
+        'gtceu:samarium_cobalt_magnetic_rotor'
+    );
+
     //mekanism - mekasuit helm
     addAssemblyLine('mekanism:mekasuit_helmet',
         [

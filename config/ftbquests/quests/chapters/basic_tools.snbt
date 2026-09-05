@@ -1493,30 +1493,6 @@
 		}
 		{
 			dependencies: ["5151CDD8FCDE7A07"]
-			id: "7CFEE836C68B3903"
-			optional: true
-			rewards: [{
-				id: "27CE1AC9F42F9781"
-				type: "xp"
-				xp: 10
-			}]
-			subtitle: "{atm9.quest.tools.subt.damage7_5}"
-			tasks: [{
-				id: "6ACBFDD957AE32EB"
-				item: {
-					Count: 1
-					id: "undergarden:utherium_sword"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 0.5d
-			y: 7.5d
-		}
-		{
-			dependencies: ["5151CDD8FCDE7A07"]
 			id: "2D0AFABAD80A1DB5"
 			optional: true
 			rewards: [{
@@ -3232,54 +3208,6 @@
 			}]
 			x: 4.0d
 			y: -2.5d
-		}
-		{
-			dependencies: ["5151CDD8FCDE7A07"]
-			id: "2D7A71D073AB0858"
-			optional: true
-			rewards: [{
-				id: "7902279A74B88768"
-				type: "xp"
-				xp: 10
-			}]
-			subtitle: "{atm9.quest.tools.subt.damage7}"
-			tasks: [{
-				id: "2FE31B231DC2C034"
-				item: {
-					Count: 1
-					id: "minecolonies:chiefsword"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 0.0d
-			y: 7.0d
-		}
-		{
-			dependencies: ["5151CDD8FCDE7A07"]
-			id: "0AAF48DD0C557CF9"
-			optional: true
-			rewards: [{
-				id: "5C0E5E865DCBB0A7"
-				type: "xp"
-				xp: 10
-			}]
-			subtitle: "{atm9.quest.tools.subt.damage5_8}"
-			tasks: [{
-				id: "39EB9CD1DEE828CA"
-				item: {
-					Count: 1
-					id: "everythingcopper:copper_sword"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 1.5d
-			y: 5.5d
 		}
 		{
 			dependencies: ["5151CDD8FCDE7A07"]

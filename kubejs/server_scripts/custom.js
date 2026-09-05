@@ -402,7 +402,15 @@ ServerEvents.recipes(allthemods => {
 		"energy": 20000
 	}).id('gregification:centrifuge/fertilizer_refining');
 	
-	
+	allthemods.smelting('minecraft:netherite_scrap', '#forge:dusts/debris')
+        .id('gregification:debris_dust_smelting')
+        .xp(1.0)
+        .cookingTime(200)
+    
+    allthemods.blasting('minecraft:netherite_scrap', '#forge:dusts/debris')
+        .id('gregification:debris_dust_blasting')
+        .xp(1.0)
+        .cookingTime(100)
 });
 
 

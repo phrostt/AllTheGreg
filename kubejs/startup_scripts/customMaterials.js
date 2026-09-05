@@ -15,6 +15,9 @@ const FluidBuilder = Java.loadClass('com.gregtechceu.gtceu.api.fluids.FluidBuild
 const GTValues = Java.loadClass('com.gregtechceu.gtceu.api.GTValues')
 const MaterialStack = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialStack')
 
+const ToolProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty');
+
+
 const singularityMetals = ['iron', 'copper', 'silver', 'gold', 'lead', 'tin', 'platinum', 'nickel', 'zinc', 'brass', 'bronze', 'invar', 'steel']
 
 //need to utilize
@@ -172,9 +175,9 @@ const modalloys = [
     { name: 'iesnium', ore: true,element: 'iesnium', color: 0x9FD1FF, iconSet: 'METALLIC', voltage: 512, loss: 1 },
 
     // --- AllTheModium End-Game Gating ---
-    { name: 'allthemodium', ore: true, element: 'allthemodium', color: 0xFAD64A, iconSet: 'METALLIC', voltage: 32768, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-    { name: 'vibranium', ore: true, element: 'vibranium', color: 0x6DFF6D, iconSet: 'METALLIC', voltage: 131072, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-    { name: 'unobtainium', ore: true, element: 'unobtainium', color: 0xA336FF, iconSet: 'METALLIC', voltage: 524288, superconductor: true, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'allthemodium', ore: true, element: 'allthemodium', color: 0xFAD64A, iconSet: 'METALLIC', voltage: 32768, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'vibranium', ore: true, element: 'vibranium', color: 0x6DFF6D, iconSet: 'METALLIC', voltage: 131072, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'unobtainium', ore: true, element: 'unobtainium', color: 0xA336FF, iconSet: 'METALLIC', voltage: 524288, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
 
     // --- Draconic Evolution ---
     { name: 'draconium', ore: true, element: 'draconium', color: 0x502C6C, iconSet: 'SHINY', voltage: 8192, loss: 1, cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
@@ -618,7 +621,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     
     event.create("manyullyn")
         .color(0xC097F0)
-        .dust()        
+        .dust()
+        .components('1x debris', '3x cobalt')
         .ingot()
         .fluid()
         .iconSet(GTMaterialIconSet.METALLIC)
@@ -654,6 +658,11 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         );
     
     let materialBuilder;
+
+    materialBuilder = event.create('debris')        
+        .color(0x6E5A52)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .ore(2, 1)
 
     materialBuilder = event.create('drenched_iron')
         .ingot()
@@ -1257,7 +1266,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .color(0x8C7B4A)
         .iconSet(GTMaterialIconSet.METALLIC)
         .formula('SmCo5')
-        //.components('1x samarium, 5x cobalt')
+        .components('1x samarium', '5x cobalt')
         .flags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.DISABLE_DECOMPOSITION);
 
 
@@ -1375,6 +1384,15 @@ StartupEvents.registry('block', event => {
         { name: 'chaotic', displayName: 'Chaotic Casing' },
 
     ]
+
+    let block = event.create(`gtceu:gadolinium_casing`)
+            // @ts-ignore
+            .displayName('Gadolinium Casing')
+            .textureAll(`gtceu:block/casings/gadolinium_casing/gadolinium_casing`)
+            .hardness(5.0)
+            .resistance(10.0)
+            .soundType('metal')
+            .tagBlock('gtceu:casings');
 
     coils.forEach(coil => {
         let block = event.create(`gtceu:${coil.name}_casing`)
@@ -1593,6 +1611,9 @@ StartupEvents.postInit(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('calorite'), 'ad_astra:raw_calorite');
 
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('iridium'), 'alltheores:raw_iridium');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('debris'), 'minecraft:ancient_debris');
+
 
 });
 
@@ -1753,6 +1774,9 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('calorite'), 'ad_astra:raw_calorite');
 
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('iridium'), 'alltheores:raw_iridium');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('debris'), 'minecraft:ancient_debris');
+
     // Fluid    
     
 
@@ -1785,11 +1809,9 @@ GTCEuStartupEvents.materialModification(event => {
 
             material.setProperty(PropertyKey.ORE, ore_prop);
         }
-    });
-    let osmiridium = GTMaterials.get('osmiridium');
-    let netherstar = GTMaterials.get('nether_star')
-    let etrium = GTMaterials.get('etrium');  
+    });    
 
+    let osmiridium = GTMaterials.get('osmiridium');
     let javaList = new ArrayList();
     javaList.add(GTMaterials.get('ruthenium'));
     let ore_prop = new OreProperty();
@@ -1820,14 +1842,73 @@ GTCEuStartupEvents.materialModification(event => {
     ore_prop = new OreProperty();
     ore_prop['setOreByProducts(java.util.Collection)'](javaList);
     bastnasite.setProperty(PropertyKey.ORE, ore_prop);
+
+
+    javaList = new ArrayList();    
+    javaList.add(GTMaterials.OsmiumTetroxide);
+    javaList.add(GTMaterials.RhodiumSulfate);
+    let iridium = GTMaterials.get('iridium');
+    //iridium.removeProperty(PropertyKey.ORE);        
+    ore_prop = new OreProperty();
+    ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+    iridium.setProperty(PropertyKey.ORE, ore_prop);
     
-    
+
+    let netherstar = GTMaterials.get('nether_star')
+    let etrium = GTMaterials.get('etrium');  
+
     netherstar.setProperty(PropertyKey.ORE, new OreProperty());
     etrium.setProperty(PropertyKey.ORE, new OreProperty());
+
+    
+    let debris = GTMaterials.get('debris');    
+    debris.removeProperty(PropertyKey.ORE);
+    debris.setProperty(PropertyKey.ORE, new OreProperty());
+
 
     GTMaterials.get('desh').setProperty(PropertyKey.ORE, new OreProperty());
     GTMaterials.get('ostrum').setProperty(PropertyKey.ORE, new OreProperty());
     GTMaterials.get('calorite').setProperty(PropertyKey.ORE, new OreProperty());
+
+    const toolTypes = [
+ 
+    ];
+    
+    function overwriteToolStats(materialName, speed, damage, durability, harvestLevel) {
+        let mat = GTMaterials.get(materialName);
+        
+        if (mat != null) {            
+            if (mat.hasProperty(PropertyKey.TOOL)) {
+                mat.removeProperty(PropertyKey.TOOL);
+            }                
+            let newProps = ToolProperty.Builder.of(speed, damage, durability, harvestLevel, 
+                [                    
+                    GTToolType.PICKAXE, 
+                    GTToolType.AXE, 
+                    GTToolType.SHOVEL, 
+                    GTToolType.HOE, 
+                    GTToolType.SWORD, 
+                    GTToolType.KNIFE, 
+                    GTToolType.HARD_HAMMER,
+                    GTToolType.CROWBAR,                     
+                    GTToolType.SPADE,
+                    GTToolType.BUTCHERY_KNIFE,
+                    GTToolType.FILE,
+                    GTToolType.MORTAR,
+                    GTToolType.MINING_HAMMER,
+                    GTToolType.SAW  
+                ]
+            )
+            .unbreakable()                                
+            .build();            
+            mat.setProperty(PropertyKey.TOOL, newProps);                
+        }
+    }
+    
+    overwriteToolStats('allthemodium', 16.0, 6.0, 0, 5);    
+    overwriteToolStats('vibranium', 20.0, 8.0, 0, 6);    
+    overwriteToolStats('unobtainium', 24.0, 10.0, 0, 7);
+    
 });
 
 const dimensions = [

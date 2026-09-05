@@ -801,5 +801,15 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:hydroponic_simulation_processor', 
         8192, 200);
 
-    
+    addAssembler(
+        [
+            
+            'gtceu:long_magnetic_samarium_cobalt_rod',
+            '4x #forge:rings/strontium_ferrite',
+            '64x #forge:fine_wires/cadmium_copper'            
+        ], 
+        '#forge:polybenzimidazole 288', 
+        'gtceu:samarium_cobalt_magnetic_rotor', 
+        8192, 60);
+
 });
