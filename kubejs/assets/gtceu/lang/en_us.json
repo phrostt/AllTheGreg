@@ -624,5 +624,7 @@
     "material.gtceu.polyurethane_resin": "Polyurethane Resin",
     "material.gtceu.maleic_anhydride": "Maleic Anhydride",
     "material.gtceu.butanol": "Butanol",
-    "material.gtceu.kevlar_carbon_fiber_mesh": "Kevlar Carbon Fiber Mesh"
+    "material.gtceu.kevlar_carbon_fiber_mesh": "Kevlar Carbon Fiber Mesh",
+    "material.gtceu.kevlar": "Kevlar"
+
 }

@@ -87,10 +87,6 @@ StartupEvents.registry('item', event => {
         { name: 'charm', description: '§eLuminous second-generation quark.', rarity: 'gold' }
     ];
 
-    event.create('gtceu:kevlar')
-            .displayName('Kevlar')
-            .tooltip('§9Lightweight ballistic material used in advanced crafting.')
-            .rarity('ie_masterwork')
 
     event.create('gtceu:preon')
             .displayName('Preon')

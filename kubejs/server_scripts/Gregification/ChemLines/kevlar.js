@@ -203,7 +203,7 @@ ServerEvents.recipes(event => {
     event.recipes.gtceu.chemical_bath('gregification:kevlar/composite_plate')
         .itemInputs('#forge:plates/kevlar_carbon_fiber_mesh')
         .inputFluids('#forge:polyurethane_resin 500')
-        .itemOutputs('gtceu:kevlar')
+        .itemOutputs('gtceu:kevlar_plate')
         .duration(400)
         .EUt(2048);
 });

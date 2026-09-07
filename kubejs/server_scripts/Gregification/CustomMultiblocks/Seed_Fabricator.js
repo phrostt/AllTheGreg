@@ -1,7 +1,7 @@
 ServerEvents.recipes(allthemods => {
 
     // MACHINE CONTROLLER
-    allthemods.recipes.gtceu.assembler(`gregification:gtceu:seed_fabricator`)
+    allthemods.recipes.gtceu.assembler(`gregification:seed_fabricator`)
         .itemInputs([
             'mysticalagriculture:infusion_altar',
             'gtceu:iv_machine_hull',
@@ -9,15 +9,15 @@ ServerEvents.recipes(allthemods => {
             '2x #gtceu:circuits/iv',
             '4x gtceu:iv_electric_pump',
             '4x #forge:rods/swift_alloy',
-            '16x #gtceu:wires/hex/cadmium_copper'            
+            '16x #gtceu:wires/hex/cadmium_copper'
         ])
-        .itemOutput('gtceu:seed_fabricator')        
+        .itemOutputs('gtceu:seed_fabricator')        
         .inputFluids('#forge:polybenzimidazole 1440', '#forge:selenium 1000')
         .duration(600)
         .EUt(8192)
         .circuit(1);
 
-    allthemods.recipes.gtceu.assembler(`gregification:gtceu:awakening_altar`)
+    allthemods.recipes.gtceu.assembler(`gregification:awakening_altar`)
         .itemInputs([
             'mysticalagriculture:awakening_altar',
             'gtceu:iv_machine_hull',
@@ -27,7 +27,7 @@ ServerEvents.recipes(allthemods => {
             '4x #forge:rods/swift_alloy',
             '16x #gtceu:wires/hex/cadmium_copper'            
         ])
-        .itemOutput('gtceu:awakening_altar')        
+        .itemOutputs('gtceu:awakening_altar')        
         .inputFluids('#forge:polybenzimidazole 1440', '#forge:selenium 1000')
         .duration(600)
         .EUt(8192)
