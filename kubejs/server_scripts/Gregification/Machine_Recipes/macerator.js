@@ -26,18 +26,18 @@ ServerEvents.recipes(allthemods => {
                 .itemOutputs('gtceu:wheat_dust')
                 .duration(80)
                 .EUt(32)
-                .circuit(1)
+                .circuit(1);
 
         allthemods.recipes.gtceu.macerator('arcane_crystal_dust')
                 .itemInputs('forbidden_arcanus:arcane_crystal')
                 .itemOutputs('2x forbidden_arcanus:arcane_crystal_dust')
                 .duration(100)
-                .EUt(128)                
+                .EUt(128);
         
         allthemods.recipes.gtceu.macerator('thorn_rose_dust')
                 .itemInputs('twilightforest:thorn_rose')
                 .itemOutputs('gtceu:thorn_rose_dust')
                 .duration(800)
-                .EUt(524288)                
+                .EUt(524288);
                 
 });

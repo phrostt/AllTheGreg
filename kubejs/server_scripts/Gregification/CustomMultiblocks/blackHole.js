@@ -123,34 +123,35 @@ ServerEvents.recipes(allthemods => {
         'gtceu:black_hole',
         [
             'gtceu:uev_machine_hull',
-            '4x gtceu:uev_electric_piston',
-            '2x gtceu:uev_electric_motor',
-            '8x gtceu:long_magnetic_eternium_rod',
-            '64x gtceu:fine_alltheneutronium_wire',
-            '8x #gtceu:circuits/uev'
+            '4x gtceu:zpm_electric_piston',
+            '2x gtceu:zpm_electric_motor',
+            '8x gtceu:long_magnetic_samarium_cobalt_rod',
+            '64x gtceu:fine_atm_star_wire',
+            '8x #gtceu:circuits/zpm'
         ],
         [
             '#forge:lubricant 2880',
             '#forge:soldering_alloy 2880'            
         ],
         1200,
-        GTValues.V[GTValues.UEV],
-        'gtceu:uev_compressor',
+        GTValues.V[GTValues.ZPM],
+        'gtceu:zpm_compressor',
         64
     )
-    blackHole(['allthecompressed:cobblestone_6x', '#forge:frames/alfsteel'],'#forge:concentrated_dark_matter 1', 'gtceu:small_bedrockium_dust', null, 2097152, 1200, 'bedrockium_compression')
+    blackHole(['allthecompressed:diamond_block_3x', '#forge:frames/alfsteel', '6x #forge:plates/strontium_aluminate', '12x #forge:plates/fluorozirconic_composite'], null , 'gtceu:bedrockium_dust', null, 131072, 1200, 'bedrockium_compression')
+    blackHole(['#forge:frames/bedrockium', '6x #forge:plates/rheni_zirconium_alloy', '12x #forge:rods/potassium_calcium_orthosilicate'], null , 'gtceu:core_singularity', null, 131072, 1200, 'core_singularity')
 
-    blackHole('4000x gtceu:beryllium_ingot', null, 'gtceu:beryllium_singularity', null, 524288, 1200, 'beryllium_singularity')
+    blackHole(['#forge:singularities/core', '4000x gtceu:beryllium_ingot'], null, 'gtceu:beryllium_singularity', null, 131072, 1200, 'beryllium_singularity')
 
-    blackHole('8000x elementalcraft:fire_shard',    '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 1200, 'fire_singularity')
-    blackHole('8000x elementalcraft:air_shard',     '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 1200, 'air_singularity')
-    blackHole('8000x elementalcraft:earth_shard',   '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 1200, 'earth_singularity')
-    blackHole('8000x elementalcraft:water_shard',   '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 1200, 'water_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:fire_shard'],    '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 131072, 1200, 'fire_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:air_shard'],     '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 131072, 1200, 'air_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:earth_shard'],   '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 131072, 1200, 'earth_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:water_shard'],   '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 131072, 1200, 'water_singularity')
 
-    blackHole('4000x elementalcraft:powerful_fire_shard',  '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 524288, 600, 'powerful_fire_singularity')
-    blackHole('4000x elementalcraft:powerful_air_shard',   '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 524288, 600, 'powerful_air_singularity')
-    blackHole('4000x elementalcraft:powerful_earth_shard', '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 524288, 600, 'powerful_earth_singularity')
-    blackHole('4000x elementalcraft:powerful_water_shard', '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 524288, 600, 'powerful_water_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_fire_shard'],  '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 131072, 600, 'powerful_fire_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_air_shard'],   '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 131072, 600, 'powerful_air_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_earth_shard'], '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 131072, 600, 'powerful_earth_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_water_shard'], '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 131072, 600, 'powerful_water_singularity')
 
-    blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:purest_water 32000000' , null, 'gtceu:fifth_element 14400', 524288, 1200, 'fifth_element')
+    blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:concentrated_dark_matter 10' , null, 'gtceu:fifth_element 14400', 131072, 1200, 'fifth_element')
 })

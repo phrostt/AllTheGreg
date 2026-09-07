@@ -31,7 +31,8 @@ ServerEvents.recipes(allthemods => {
     )
 
     //singulairty
-    addMixer(
+    //here - needs a recipe
+    /*addMixer(
         [
             '#forge:singularities/enderium',
             '#forge:singularities/end_steel',            
@@ -43,7 +44,7 @@ ServerEvents.recipes(allthemods => {
         '64x gtceu:singularity_alloy_dust',
         'uix',
         500
-    )
+    )*/
 
     addMixer(
         [
@@ -122,7 +123,8 @@ ServerEvents.recipes(allthemods => {
     //demonic alloy
     addMixer(
         [
-            '#forge:singularities/vibrant_alloy',
+            //here - add a component
+            //'#forge:singularities/vibrant_alloy',
             '3x #forge:dusts/demon',
             '3x #forge:dusts/tenebrium',
             '3x #forge:dusts/caesium',
@@ -400,6 +402,12 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.mixer('gregification:netherite_dust')
         .itemInputs(['4x #forge:dusts/debris', '4x #forge:dusts/gold'])
+        .itemOutputs('alltheores:netherite_dust')
+        .duration(100)
+        .EUt(512);
+
+    allthemods.recipes.gtceu.mixer('gregification:netherite_dust_from_scrap')
+        .itemInputs(['4x minecraft:netherite_scrap', '4x #forge:dusts/gold'])
         .itemOutputs('alltheores:netherite_dust')
         .duration(100)
         .EUt(512);

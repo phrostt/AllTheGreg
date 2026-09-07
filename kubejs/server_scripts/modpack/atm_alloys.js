@@ -5,6 +5,7 @@ ServerEvents.recipes(allthemods => {
 //Powah
 //
 // ATM-Vibranium Ingot
+/*
   allthemods.custom({
     type: 'powah:energizing',
     ingredients: [
@@ -75,7 +76,7 @@ allthemods.custom({
   energy: '8100000000',
   result: Item.of('allthemodium:unobtainium_vibranium_alloy_block').toJson()
 }).id(`allthemods:energizing/allthemodium_unobtainium_vibranium_alloy_block`)
-  
+*/
 // Unobtainium-Vibranium Awakened Block
   allthemods.custom({
   "type": "mysticalagriculture:awakening",

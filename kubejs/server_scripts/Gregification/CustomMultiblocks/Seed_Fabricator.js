@@ -1,13 +1,37 @@
 ServerEvents.recipes(allthemods => {
 
     // MACHINE CONTROLLER
-    allthemods.shaped('gtceu:seed_fabricator', ['SCS', 'PMP', 'SCS'], {
-        S: 'gtceu:stainless_steel_plate',
-        C: '#gtceu:circuits/hv',
-        P: 'gtceu:hv_electric_pump',
-        M: 'gtceu:hv_machine_hull'
-    }).id('allthemods:gtceu/shaped/seed_fabricator');
+    allthemods.recipes.gtceu.assembler(`gregification:gtceu:seed_fabricator`)
+        .itemInputs([
+            'mysticalagriculture:infusion_altar',
+            'gtceu:iv_machine_hull',
+            '4x #forge:plates/hafnium',
+            '2x #gtceu:circuits/iv',
+            '4x gtceu:iv_electric_pump',
+            '4x #forge:rods/swift_alloy',
+            '16x #gtceu:wires/hex/cadmium_copper'            
+        ])
+        .itemOutput('gtceu:seed_fabricator')        
+        .inputFluids('#forge:polybenzimidazole 1440', '#forge:selenium 1000')
+        .duration(600)
+        .EUt(8192)
+        .circuit(1);
 
+    allthemods.recipes.gtceu.assembler(`gregification:gtceu:awakening_altar`)
+        .itemInputs([
+            'mysticalagriculture:awakening_altar',
+            'gtceu:iv_machine_hull',
+            '4x #forge:plates/hafnium',
+            '2x #gtceu:circuits/iv',
+            '4x gtceu:iv_electric_pump',
+            '4x #forge:rods/swift_alloy',
+            '16x #gtceu:wires/hex/cadmium_copper'            
+        ])
+        .itemOutput('gtceu:awakening_altar')        
+        .inputFluids('#forge:polybenzimidazole 1440', '#forge:selenium 1000')
+        .duration(600)
+        .EUt(8192)
+        .circuit(2);
 
     // DATA MAPS & FUNCTION
     const TIER = {
@@ -23,7 +47,7 @@ ServerEvents.recipes(allthemods => {
         s: 'mysticalagriculture:soulium_seed_base'
     };
 
-    allthemods.remove({ type: 'mysticalagriculture:infusion', output: /mysticalagriculture:.*_seeds/ });    
+    allthemods.remove({ type: 'mysticalagriculture:infusion', output: /mysticalagriculture:.*_seeds/ });
     allthemods.remove({ id: /allthemods:mysticalagriculture\/.*_seeds\/infusion/ });
     allthemods.remove({ id: /^mysticalagriculture:.*_seeds_infusion$/ });
 
@@ -47,7 +71,7 @@ ServerEvents.recipes(allthemods => {
                 // It's a single ITEM ID.
                 itemsToCheck = [catalyst];
             }
-        } 
+        }
 
         // --- STEP 2: Scan for a Compressed Variant ---
         // We loop through every item found in Step 1. 
@@ -75,7 +99,7 @@ ServerEvents.recipes(allthemods => {
         }
         //let water = Fluid.of(`gtceu:water_stage_1`, tKey * 1000);
         let water = Fluid.of(`gtceu:water_stage_${tKey}`, 1000);
-        let fluids = [Fluid.of('gtceu:saturated_tau', 1000),Fluid.of('gtceu:saturated_life_fertilizer', 1000), water]
+        let fluids = [Fluid.of('gtceu:saturated_tau', 1000), Fluid.of('gtceu:saturated_life_fertilizer', 1000), water]
 
         // --- STEP 4: Register Recipe ---
         allthemods.recipes.gtceu.seed_fabricator(recipeId)

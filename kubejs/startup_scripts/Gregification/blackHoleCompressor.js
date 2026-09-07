@@ -29,7 +29,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
 			.aisle('    CCCCC    ', '    GGCGG    ', '    GGCGG    ', '   CCCKCCC   ', '   GGGCGGG   ', '      C      ', '             ', '             ', '             ') //6
             .where('K', Predicates.controller(Predicates.blocks(definition.get())))                        
             //.where('O', Predicates.heatingCoils())
-            .where('A', Predicates.blocks('allthecompressed:atm_star_block_1x'))				
+            .where('A', Predicates.blocks('draconicevolution:awakened_draconium_block'))				
             .where('L', Predicates.blocks('gtceu:superconducting_coil'))
             .where('G', Predicates.blocks('gtceu:fusion_glass'))            
             .where('C', Predicates.blocks('gtceu:inert_machine_casing')

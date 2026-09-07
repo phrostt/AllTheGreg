@@ -18,7 +18,7 @@ const MaterialStack = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.ma
 const ToolProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty');
 
 
-const singularityMetals = ['iron', 'copper', 'silver', 'gold', 'lead', 'tin', 'platinum', 'nickel', 'zinc', 'brass', 'bronze', 'invar', 'steel']
+//const singularityMetals = ['iron', 'copper', 'silver', 'gold', 'lead', 'tin', 'platinum', 'nickel', 'zinc', 'brass', 'bronze', 'invar', 'steel']
 
 //need to utilize
 const erMaterials = [
@@ -601,8 +601,14 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES)
     });
 
+    let materialBuilder;
+
+    materialBuilder = event.create('debris')        
+        .color(0x6E5A52)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .ore(2, 1)
     
-    event.create("hepatizon")
+    materialBuilder = event.create("hepatizon")
         .color(0x715A7C)
         .dust()
         .components('2x copper', '1x cobalt', '1x nether_quartz')
@@ -610,7 +616,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .fluid()
         .iconSet(GTMaterialIconSet.METALLIC)
     
-    event.create("amethyst_bronze")
+    materialBuilder = event.create("amethyst_bronze")
         .color(0xEBC4DB)
         .dust()
         .components('1x copper', '1x amethyst')
@@ -619,7 +625,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.METALLIC)
         
     
-    event.create("manyullyn")
+    materialBuilder = event.create("manyullyn")
         .color(0xC097F0)
         .dust()
         .components('1x debris', '3x cobalt')
@@ -627,42 +633,42 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .fluid()
         .iconSet(GTMaterialIconSet.METALLIC)
 
-        
+    materialBuilder = event.create('core')
+        .color(0x989CAB)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .flags(
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
 
-    event.create("elemental_fire")
+    materialBuilder = event.create("elemental_fire")
         .color(0xD55642)
         .iconSet(GTMaterialIconSet.SHINY)
         .flags(
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
     
-    event.create("elemental_water")
+    materialBuilder = event.create("elemental_water")
         .color(0xB7B5ED)
         .iconSet(GTMaterialIconSet.SHINY)
         .flags(
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
     
-    event.create("elemental_air")
+    materialBuilder = event.create("elemental_air")
         .color(0xE3E3BF)
         .iconSet(GTMaterialIconSet.SHINY)
         .flags(
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
     
-    event.create("elemental_earth")
+    materialBuilder = event.create("elemental_earth")
         .color(0x289C2B)
         .iconSet(GTMaterialIconSet.SHINY)
         .flags(
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
     
-    let materialBuilder;
-
-    materialBuilder = event.create('debris')        
-        .color(0x6E5A52)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .ore(2, 1)
+    
 
     materialBuilder = event.create('drenched_iron')
         .ingot()
@@ -940,7 +946,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             .flags(
                 GTMaterialFlags.GENERATE_PLATE,
                 // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
+                //CMMEMaterialFlags.GENERATE_SINGULARITY
                 //need to add singularity recipes
             );
     });
@@ -967,7 +973,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_PLATE,
                 GTMaterialFlags.GENERATE_LENS,
                 // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
+                //CMMEMaterialFlags.GENERATE_SINGULARITY
             );
         }
         else {
@@ -988,7 +994,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_BOLT_SCREW,
                 GTMaterialFlags.GENERATE_FRAME,
                 // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
+                //CMMEMaterialFlags.GENERATE_SINGULARITY
             );
         }
     });
@@ -1002,7 +1008,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.RADIOACTIVE)
         .flags(
             // @ts-ignore
-            CMMEMaterialFlags.GENERATE_SINGULARITY
+            //CMMEMaterialFlags.GENERATE_SINGULARITY
         );
 
     //antimatter
@@ -1034,7 +1040,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_BOLT_SCREW,
                 GTMaterialFlags.GENERATE_FRAME,
                 // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
+                //CMMEMaterialFlags.GENERATE_SINGULARITY
             )
     });
 
@@ -1070,9 +1076,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .formula('Th:CaF2');
 
 
-    GTMaterials.get('beryllium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
-    GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
+    //moved from here
+    
     
     let cadmium = GTMaterials.get('cadmium')
         cadmium.addFlags(GTMaterialFlags.GENERATE_ROD);
@@ -1141,7 +1146,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_ROUND,
                 GTMaterialFlags.GENERATE_FINE_WIRE,                
                 // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
+                //CMMEMaterialFlags.GENERATE_SINGULARITY
             )
         }
 
@@ -1189,7 +1194,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.GENERATE_BOLT_SCREW,
 
                 // @ts-ignore
-                CMMEMaterialFlags.GENERATE_SINGULARITY
+                //CMMEMaterialFlags.GENERATE_SINGULARITY
             );
 
         if (mat.magnetic) {
@@ -1235,9 +1240,9 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
 
 
-    singularityMetals.forEach(mat => {
-        GTMaterials.get(mat).addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    });
+    //singularityMetals.forEach(mat => {
+    //    GTMaterials.get(mat).addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    //});
 
 
     naqStages.forEach(mat => {
@@ -1908,6 +1913,14 @@ GTCEuStartupEvents.materialModification(event => {
     overwriteToolStats('allthemodium', 16.0, 6.0, 0, 5);    
     overwriteToolStats('vibranium', 20.0, 8.0, 0, 6);    
     overwriteToolStats('unobtainium', 24.0, 10.0, 0, 7);
+
+    GTMaterials.get('beryllium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('allthemodium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('vibranium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('unobtainium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('lapotron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
+    GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
     
 });
 

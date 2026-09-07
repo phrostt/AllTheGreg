@@ -1,6 +1,6 @@
 ServerEvents.recipes(allthemods => {
     const EUSimple = 2048;
-    const EUComplex = 524296; //UV Tier
+    const EUComplex = 131072; //UV Tier
 
 allthemods.recipes.gtceu.mixer('gregification:soul_essence_synthesis')
         .itemInputs('#forge:dusts/soul', '#forge:dusts/source', '#forge:dusts/mana_essence', '#forge:dusts/sculk')

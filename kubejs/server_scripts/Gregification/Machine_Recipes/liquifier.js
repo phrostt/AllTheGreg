@@ -36,14 +36,14 @@
     
     allthemods.recipes.gtceu.liquifier('poison')
         .itemInputs('evilcraft:poison_sac')
-        .inputFluids('gtceu:purest_water 250')
+        .inputFluids('#forge:water_stage_2 500')
         .outputFluids('evilcraft:poison 250')
         .duration(100)
         .EUt(2048)
     
     allthemods.recipes.gtceu.liquifier('blood')
         .itemInputs('evilcraft:condensed_blood')
-        .inputFluids('gtceu:water_stage_1 500')
+        .inputFluids('#forge:water_stage_1 500')
         .outputFluids('gtceu:sanguine_concentrate 500')
         .duration(100)
         .EUt(512)

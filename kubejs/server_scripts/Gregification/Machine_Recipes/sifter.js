@@ -14,5 +14,5 @@ ServerEvents.recipes(allthemods => {
                 .itemOutputs('gtceu:wheat_dust')
                 .duration(80)
                 .EUt(32)
-                .circuit(2)                
+                .circuit(2);
 });

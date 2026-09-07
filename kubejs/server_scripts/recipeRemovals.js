@@ -99,7 +99,7 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:enchantment_applicator', 'industrialforegoing:enchantment_extractor', 'industrialforegoing:enchantment_factory', 'industrialforegoing:infinity_charger',
 
         'industrialforegoing:wither_builder', 'industrialforegoing:black_hole_controller', 
-        'fluxnetworks:flux_dust'
+        'fluxnetworks:flux_dust', 'mob_grinding_utils:recipe_mob_swab'
 
     ];
     
@@ -466,6 +466,8 @@ ServerEvents.recipes(allthemods => {
     allthemods.remove({ type: 'ad_astra:compressing' });
     allthemods.remove({ type: 'draconicevolution:fusion_crafting' });
     allthemods.remove({ type: 'mysticalagriculture:soul_extraction' });
+    allthemods.remove({ type: 'powah:energizing' });
+    allthemods.remove({ type: 'elementalcraft:crystallization' });
 
     // Input Removals
     allthemods.remove({ input: '#alltheores:ore_hammers' });

@@ -87,8 +87,22 @@ StartupEvents.registry('item', event => {
         { name: 'charm', description: '§eLuminous second-generation quark.', rarity: 'gold' }
     ];
 
+    event.create('gtceu:kevlar')
+            .displayName('Kevlar')
+            .tooltip('§9Lightweight ballistic material used in advanced crafting.')
+            .rarity('ie_masterwork')
+
     event.create('gtceu:preon')
             .displayName('Preon')
+            .rarity('ie_masterwork')
+
+    event.create('gtceu:eldritch_cloth')
+            .displayName('Eldritch Cloth')
+            .rarity('ie_masterwork')
+            .glow(true);
+    
+    event.create('gtceu:tachyon')
+            .displayName('Tachyon')
             .rarity('ie_masterwork')
 
     event.create('gtceu:plutonic_quark')
@@ -127,6 +141,8 @@ StartupEvents.registry('item', event => {
         .color(0, 0x3FA9A0)
         .rarity('COMMON')
         .tooltip('§7A schematic for a Tier 1 Rocket, capable of reaching the Moon.')
+
+   
 
     event.create('gtceu:tier_2_rocket_schematic')
         .displayName('Tier 2 Rocket Schematic')

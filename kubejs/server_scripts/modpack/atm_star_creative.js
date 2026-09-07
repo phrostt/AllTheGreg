@@ -3,6 +3,7 @@
 //  Authored by Mitchell52, EnigmaQuip
 
 ServerEvents.recipes(allthemods => {
+  /*
   function pressure(inputs, result, rCount, pressure) {
     allthemods.custom({
       type: 'pneumaticcraft:pressure_chamber',
@@ -224,7 +225,7 @@ ServerEvents.recipes(allthemods => {
     { 'type': 'pneumaticcraft:stacked_item', 'item': 'pneumaticcraft:compressed_iron_block', 'count': 64 },
     { 'type': 'pneumaticcraft:stacked_item', 'item': 'pneumaticcraft:compressed_iron_block', 'count': 64 }
   ], 'pneumaticcraft:creative_compressed_iron_block', 1, 4.9)
-
+*/
 
 })
 

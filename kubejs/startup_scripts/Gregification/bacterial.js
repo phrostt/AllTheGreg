@@ -26,7 +26,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
 GTCEuStartupEvents.registry('gtceu:machine', allthemods => {  
     allthemods.create('bacterial_vat', 'multiblock')        
         .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes('bacterial_vat', 'bacterial_growth_chamber', 'crystal_growth_chamber')
+        .recipeTypes('bacterial_vat', 'bacterial_growth_chamber', 'crystal_growth_chamber')        
         .machine((holder) => new CoilWorkableElectricMultiblockMachine(holder))
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_PERFECT, (machine, recipe) => GTRecipeModifiers.ebfOverclock(machine, recipe)])
         .appearanceBlock(GTBlocks.CASING_PTFE_INERT)
