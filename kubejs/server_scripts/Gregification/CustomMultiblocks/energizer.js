@@ -138,37 +138,6 @@ ServerEvents.recipes(allthemods => {
         50000
     );
 
-    //creative
-    addEnergize(
-        ['create:flywheel', 'allthetweaks:atm_star', 'createaddition:alternator'],
-        'createaddition:creative_energy',
-        10000000
-    );
-
-    addEnergize(
-        ['4x integrateddynamics:energy_battery', 'allthetweaks:atm_star'],
-        'integrateddynamics:energy_battery_creative',
-        10000000
-    );
-
-    addEnergize(
-        ['4x mekanism:creative_energy_cube', 'allthetweaks:atm_star'],
-        Item.of('mekanism:creative_energy_cube', '{mekData:{EnergyContainers:[{Container:0b,stored:"18446744073709551615.9999"}]}}'),
-        10000000,
-        'mekanism_creative_energy_cube'
-    );
-
-    addEnergize(
-        ['4x megacells:mega_energy_cell', 'allthetweaks:atm_star'],
-        'ae2:creative_energy_cell',
-        10000000
-    );
-
-    addEnergize(
-        ['4x powah:energy_cell_nitro', 'allthetweaks:atm_star'],
-        'powah:energy_cell_creative',
-        10000000
-    );
 
     
 

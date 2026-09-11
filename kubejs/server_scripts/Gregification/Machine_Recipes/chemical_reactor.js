@@ -89,17 +89,17 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:saturated_life_fertilizer')
         .itemInputs('#forge:dusts/picolinic_acid')
-        .inputFluids('gtceu:liquid_fertilizer 500','gtceu:sanguine_concentrate 500', 'gtceu:copper_ii_sulfate 432')
+        .inputFluids('gtceu:liquid_fertilizer 500', 'gtceu:sanguine_concentrate 500', 'gtceu:copper_ii_sulfate 432')
         .outputFluids('gtceu:saturated_life_fertilizer 1000')
         .duration(100)
-        .EUt(512);    
+        .EUt(512);
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:recycled_organic_matter')
-        .inputFluids('gtceu:rotten_flesh 1000','#forge:meat 1000', 'gtceu:water_stage_2 1000')
+        .inputFluids('gtceu:rotten_flesh 1000', '#forge:meat 1000', 'gtceu:water_stage_2 1000')
         .outputFluids('gtceu:recycled_organic_matter 2000')
         .duration(600)
         .EUt(2048);
-    
+
     allthemods.recipes.gtceu.chemical_reactor('gregification:super_coolant')
         .itemInputs('ad_astra:ice_shard', '#forge:dusts/blue_ice')
         .inputFluids('#forge:blue_ice 1000')
@@ -134,5 +134,19 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:carbon_monoxide 5000')
         .duration(200)
         .EUt(32768);
-    
+        
+    allthemods.recipes.gtceu.large_chemical_reactor('gregification:artificial_cerebrospinal_fluid')
+        .itemInputs('2x #forge:dusts/sodium', '#forge:dusts/potassium', '#forge:dusts/calcium', '#forge:dusts/magnesium')
+        .inputFluids('#forge:distilled_water 6000', '#forge:glycerol 2000')
+        .outputFluids('gtceu:artificial_cerebrospinal_fluid 1000')
+        .duration(200)
+        .EUt(32768); // LuV
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:tetrachloroethylene')
+        .itemInputs('2x #forge:dusts/carbon')
+        .inputFluids('#forge:chlorine 4000')
+        .outputFluids('gtceu:tetrachloroethylene 3000')
+        .duration(250)
+        .EUt(512);
+        
 });

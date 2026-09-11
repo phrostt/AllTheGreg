@@ -148,17 +148,33 @@ ServerEvents.recipes(allthemods => {
     //---LASER IO---
     replaceShaped("laserio:laser_connector", null,
         [
-            'GPG',
-            'FAC',
-            'PPP'
+            'PFP',
+            'GAG',
+            'PCP'
 
         ],
         {
-            P: "#forge:plates/enderium",
+            P: "#forge:plates/lumium",
             C: "laserio:logic_chip",
             F: "gtceu:iv_field_generator",
-            A: "#forge:frames/terrasteel",
-            G: "#forge:gears/pink_slime"
+            A: "gtceu:iv_machine_hull",
+            G: "gtceu:laminated_glass"            
+        }
+    )
+
+    replaceShaped("laserio:laser_connector_advanced", null,
+        [
+            'PDP',
+            'WLW',
+            'PWP'
+
+        ],
+        {
+            L: "laserio:laser_connector",
+            P: "#forge:plates/enderium",
+            W: "#forge:foils/cadmium_selenide",
+            D: "#forge:lenses/diamond"
+            
         }
     )
 

@@ -56,7 +56,7 @@ StartupEvents.registry('item', event => {
         {id: 'cruelty_essence', name: 'Cruelty Essence'},
         {id: 'cursed_honey', name: 'Cursed Honey'},
         {id: 'demonic_meat', name: 'Demonic Meat'},
-        {id: 'dragonyst_dust', name: 'Dragonyst Duust'},
+        {id: 'dragonyst_dust', name: 'Dragonyst Dust'},
         {id: 'gray_paste', name: 'Gray Paste'},
         {id: 'marid_essence', name: 'Marid Essence'},
         {id: 'nature_paste', name: 'Nature Paste'},

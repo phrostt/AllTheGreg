@@ -356,18 +356,17 @@ ServerEvents.recipes(allthemods => {
 		[
 			'4x productivebees:upgrade_productivity_3',
 			'minecraft:heart_of_the_sea',			
-			'productivebees:upgrade_comb_block',
-			'gtceu:hexagonal_bio_composite',
-			'gtceu:magical_bio_composite',
+			'productivebees:upgrade_comb_block',			
 			'evilcraft:garmonbozia',
 			'bloodmagic:demonslate',
 			'4x #forge:plates/hop_graphite',
 			'8x #forge:screws/terrasteel'
 		],
 		[
-			'gtceu:sanguine_concentrate 16000',
+			'#forge:sanguine_concentrate 16000',
 			'#forge:lubricant 16000',
-			'#forge:honey 16000'
+			'#forge:honey 16000',
+			'#forge:dna_omega 1'
 		],
 		'productivebees:upgrade_productivity_4', 
 		null, 

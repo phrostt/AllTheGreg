@@ -601,6 +601,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 GTMaterialFlags.EXCLUDE_BLOCK_CRAFTING_RECIPES)
     });
 
+    //custom flags
+    const glycerol = GTMaterials.get('glycerol');
+    //glycerol.setProperty(PropertyKey.DUST, new DustProperty());      
+    glycerol.setProperty(PropertyKey.GEM, new GemProperty());
+    glycerol.addFlags(GTMaterialFlags.CRYSTALLIZABLE);
+            
+
     let materialBuilder;
 
     materialBuilder = event.create('debris')        
@@ -831,7 +838,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
 
-    event.create('thorn_rose')
+    materialBuilder = event.create('thorn_rose')
         .dust()
         .color('0xAB3236')
         .iconSet(GTMaterialIconSet.WOOD)
@@ -934,6 +941,61 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.DULL)
         .components('1x strontium', '12x iron', '19x oxygen')
         .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_RING);
+    
+    materialBuilder = event.create('bio_organic_pulp')
+        .dust()
+        .color(0x7A6248)        
+        .iconSet(GTMaterialIconSet.DULL);
+        
+    materialBuilder = event.create('microbial_biomass')
+        .fluid()
+        .color(0x556B2F)        
+        .iconSet(GTMaterialIconSet.FLUID);
+
+    materialBuilder = event.create('nucleic_acid_mixture')
+        .fluid()
+        .color(0x4682B4)        
+        .iconSet(GTMaterialIconSet.FLUID);
+    
+    materialBuilder = event.create('enzyme_solution')
+        .fluid()
+        .color(0x9370DB)        
+        .iconSet(GTMaterialIconSet.FLUID);
+    
+    materialBuilder = event.create('concentrated_liquid_dna')
+        .fluid()
+        .color(0xFF69B4)        
+        .iconSet(GTMaterialIconSet.SHINY);
+
+    materialBuilder = event.create('dna_productivity')
+        .fluid()
+        .color(0x00d200)
+        .iconSet(GTMaterialIconSet.SHINY);
+
+    materialBuilder = event.create('dna_tolerance')
+        .fluid()
+        .color(0x0000d6)
+        .iconSet(GTMaterialIconSet.SHINY);
+
+    materialBuilder = event.create('dna_behavior')
+        .fluid()
+        .color(0xd8d800)
+        .iconSet(GTMaterialIconSet.SHINY);
+
+    materialBuilder = event.create('dna_endurance')
+        .fluid()
+        .color(0x00ccd3)
+        .iconSet(GTMaterialIconSet.SHINY);
+
+    materialBuilder = event.create('dna_omega')
+        .fluid()        
+        .color(0xa45a26)
+        .iconSet(GTMaterialIconSet.SHINY);
+
+    materialBuilder = event.create('dna_mutation')
+        .fluid()        
+        .color(0x66008a)
+        .iconSet(GTMaterialIconSet.SHINY);
 
     //extreme reactors
     erMaterials.forEach(mat => {
@@ -1156,14 +1218,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     otherElements.forEach(mat => {
         let material = GTMaterials.get(mat.name);
         modifyElement(material, mat.name, mat.cBlast, mat.cVolt, mat.oGem, mat.cPolymer, mat.cIngot)        
-    });
-
-
-
-    const glycerol = GTMaterials.get('glycerol');
-    //glycerol.setProperty(PropertyKey.DUST, new DustProperty());      
-    glycerol.setProperty(PropertyKey.GEM, new GemProperty());
-    glycerol.addFlags(GTMaterialFlags.CRYSTALLIZABLE);
+    });    
 
     modalloys.forEach(mat => {
 
@@ -1914,6 +1969,7 @@ GTCEuStartupEvents.materialModification(event => {
     overwriteToolStats('vibranium', 20.0, 8.0, 0, 6);    
     overwriteToolStats('unobtainium', 24.0, 10.0, 0, 7);
 
+    //singularities
     GTMaterials.get('beryllium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
     GTMaterials.get('allthemodium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
     GTMaterials.get('vibranium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
@@ -1921,6 +1977,12 @@ GTCEuStartupEvents.materialModification(event => {
     GTMaterials.get('lapotron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
     GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
     GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
+
+    GTMaterials.get('hellforged').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('iesnium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('compressed_iron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('source').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('mana_essence').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
     
 });
 

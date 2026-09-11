@@ -92,20 +92,5 @@ ServerEvents.recipes(allthemods => {
             index + 1
         );
     });
-    
-    // 5. WAYSTONES (EV Tier)
-    addAssembler(
-        [
-            'gtceu:dimensional_casing',
-            'waystones:warp_stone',
-            'gtceu:ev_emitter',
-            'gtceu:ev_sensor',
-            '4x #forge:plates/lumium',
-            '4x #forge:plates/terrasteel'
-        ],
-        'gtceu:argon 1000',
-        'waystones:waystone',
-        1920,
-        600
-    );
+        
 });

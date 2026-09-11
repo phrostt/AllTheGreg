@@ -304,9 +304,9 @@ ServerEvents.recipes(allthemods => {
         // --- Supreme -> LuV ---
         { name: 'industrialforegoing:wither_builder', components: ['frame','5x emitter', 'generator', '2x conveyor', '2x motor'], other: ['8x minecraft:nether_star', '2x #forge:gears/vibranium'], tier: 'luv' },
         { name: 'industrialforegoing:black_hole_controller', components: ['frame', '2x generator', '4x conveyor', '4x motor', '4x piston'], tier: 'luv' },
-        { name: 'industrialforegoing:ore_laser_base', components: ['frame', '4x gear', '2x motor', 'piston'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_crate'], tier: 'luv' },
-        { name: 'industrialforegoing:fluid_laser_base', components: ['frame', '4x gear', '2x pump'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_drum'], tier: 'luv' },
-        { name: 'industrialforegoing:laser_drill', components: ['4x gear', '4x small_gear', '8x motor', '2x piston'], other: ['mekanism:laser'], tier: 'luv' },
+        //{ name: 'industrialforegoing:ore_laser_base', components: ['frame', '4x gear', '2x motor', 'piston'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_crate'], tier: 'luv' },
+        //{ name: 'industrialforegoing:fluid_laser_base', components: ['frame', '4x gear', '2x pump'], other: ['2x #forge:gears/allthemodium','gtceu:titanium_drum'], tier: 'luv' },
+        //{ name: 'industrialforegoing:laser_drill', components: ['4x gear', '4x small_gear', '8x motor', '2x piston'], other: ['mekanism:laser'], tier: 'luv' },
     ];
 
     const ifTierData = {

@@ -1,4 +1,14 @@
 //@ts-check
+ServerEvents.tags('block', event => {
+    event.get('mekanism:cardboard_blacklist')
+        .add('#forge:mod_id/waystones');
+});
+
+ServerEvents.tags('block_entity_type', event => {
+    event.get('mekanism:cardboard_blacklist')
+        .add('#forge:mod_id/waystones');
+});
+
 ServerEvents.recipes(allthemods => {
 
     /*allthemods.forEachRecipe({ type: 'productivebees:centrifuge' }, recipe => {        
@@ -6,8 +16,9 @@ ServerEvents.recipes(allthemods => {
         console.error(String(recipe.id));    
     });*/
 
+    allthemods.remove({ output: /^ironjetpacks:.*/ })
     
-
+    
     let beeRemoves = [];
 
     let beeMaterials = [
@@ -99,7 +110,8 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:enchantment_applicator', 'industrialforegoing:enchantment_extractor', 'industrialforegoing:enchantment_factory', 'industrialforegoing:infinity_charger',
 
         'industrialforegoing:wither_builder', 'industrialforegoing:black_hole_controller', 
-        'fluxnetworks:flux_dust', 'mob_grinding_utils:recipe_mob_swab'
+        'fluxnetworks:flux_dust', 'mob_grinding_utils:recipe_mob_swab',
+        'waystones:warp_stone', 'waystones:sharestone', 'advanced_ae:quantumcore'
 
     ];
     
@@ -201,7 +213,7 @@ ServerEvents.recipes(allthemods => {
         // --- Pipez & LaserIO ---
         'pipez:item_pipe', 'pipez:fluid_pipe', 'pipez:gas_pipe', 'pipez:energy_pipe', 'pipez:universal_pipe',
         'pipez:basic_upgrade', 'pipez:improved_upgrade', 'pipez:advanced_upgrade', 'pipez:ultimate_upgrade',
-        'laserio:laser_connector', 'laserio:laser_node', 'laserio:logic_chip_raw',
+        'laserio:laser_connector', 'laserio:laser_node', 'laserio:logic_chip_raw', 'laserio:laser_connector_advanced',
 
         // --- Misc Utilities & Villagers ---
         'enderchests:ender_pouch', 'enderchests:ender_bag', 'enderchests:ender_chest', 'minecraft:ender_chest',

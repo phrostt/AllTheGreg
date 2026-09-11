@@ -138,10 +138,24 @@ ServerEvents.recipes(allthemods => {
         'gtceu:zpm_compressor',
         64
     )
+ 
+    blackHole(['#forge:singularities/core', '4000x evilcraft:garmonbozia'], null, 'gtceu:garmonbozia_singularity', null, 131072, 1200, 'garmonbozia_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/mana_essence'], null, 'gtceu:mana_essence_singularity', null, 131072, 1200, 'mana_essence_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/source'], null, 'gtceu:source_singularity', null, 131072, 1200, 'source_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/lapotron'], null, 'gtceu:lapotron_singularity', null, 131072, 1200, 'lapotron_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/iesnium'], null, 'gtceu:iesnium_singularity', null, 131072, 1200, 'iesnium_singularity')    
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/hellforged'], null, 'gtceu:hellforged_singularity', null, 131072, 1200, 'hellforged_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/allthemodium'], null, 'gtceu:allthemodium_singularity', null, 131072, 1200, 'allthemodium_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/vibranium'], null, 'gtceu:vibranium_singularity', null, 131072, 1200, 'vibranium_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/unobtainium'], null, 'gtceu:unobtainium_singularity', null, 131072, 1200, 'unobtainium_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/compressed_iron'], null, 'gtceu:compressed_iron_singularity', null, 131072, 1200, 'compressed_iron_singularity')    
+
+    //here - add signualrity recipes
     blackHole(['allthecompressed:diamond_block_3x', '#forge:frames/alfsteel', '6x #forge:plates/strontium_aluminate', '12x #forge:plates/fluorozirconic_composite'], null , 'gtceu:bedrockium_dust', null, 131072, 1200, 'bedrockium_compression')
     blackHole(['#forge:frames/bedrockium', '6x #forge:plates/rheni_zirconium_alloy', '12x #forge:rods/potassium_calcium_orthosilicate'], null , 'gtceu:core_singularity', null, 131072, 1200, 'core_singularity')
 
     blackHole(['#forge:singularities/core', '4000x gtceu:beryllium_ingot'], null, 'gtceu:beryllium_singularity', null, 131072, 1200, 'beryllium_singularity')
+    
 
     blackHole(['#forge:singularities/core','8000x elementalcraft:fire_shard'],    '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 131072, 1200, 'fire_singularity')
     blackHole(['#forge:singularities/core','8000x elementalcraft:air_shard'],     '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 131072, 1200, 'air_singularity')

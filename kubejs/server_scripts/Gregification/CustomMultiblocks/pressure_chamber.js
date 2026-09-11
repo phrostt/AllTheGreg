@@ -137,24 +137,6 @@ ServerEvents.recipes(allthemods => {
         40,
     );
 
-    //creative compressor
-    addPC(
-        ['64x pneumaticcraft:advanced_pressure_tube',
-            '64x pneumaticcraft:advanced_pressure_tube',
-            '64x pneumaticcraft:advanced_pressure_tube',
-            '64x pneumaticcraft:advanced_pressure_tube',
-            'pneumaticcraft:advanced_liquid_compressor',
-            'pneumaticcraft:flux_compressor',
-            'pneumaticcraft:advanced_air_compressor',
-            'pneumaticcraft:electrostatic_compressor',
-            'allthetweaks:atm_star'],
-        'pneumaticcraft:creative_compressor',
-        'gtceu:compressed_air 10000',
-        null,
-        'IV',
-        4000,
-        'creative_compressor'
-    );
 
     //flour
     addPC(
@@ -245,24 +227,6 @@ ServerEvents.recipes(allthemods => {
         80,
     );
 
-    //creative compressed iron block
-    addPC(
-        ['64x #forge:storage_blocks/compressed_iron',
-            '64x #forge:storage_blocks/compressed_iron',
-            '64x #forge:storage_blocks/compressed_iron',
-            '64x #forge:storage_blocks/compressed_iron',
-            '64x #forge:storage_blocks/compressed_iron',
-            '64x #forge:storage_blocks/compressed_iron',
-            '64x #forge:storage_blocks/compressed_iron',
-            '64x #forge:storage_blocks/compressed_iron',
-            'allthetweaks:atm_star'],
-        'pneumaticcraft:creative_compressed_iron_block',
-        'gtceu:compressed_air 10000',
-        null,
-        'IV',
-        4000,
-        'creative_compressed_iron_block'
-    );
 
     //turbine blade
     addPC(

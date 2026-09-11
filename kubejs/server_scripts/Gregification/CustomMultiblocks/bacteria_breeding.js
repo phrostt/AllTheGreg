@@ -208,7 +208,7 @@ ServerEvents.recipes(allthemods => {
             parent: 'EColi',
             children: [],
             origin: null,
-            catalyst: 'silentgear:fine_silk'
+            catalyst: '#forge:dusts/demon'
             //uses: used to make a new type of fiber for textiles - which in turn can be used for mekasuit construction (padding material)
         },
 
@@ -328,7 +328,7 @@ ServerEvents.recipes(allthemods => {
     // --- Bacterial Vat: duplication only, for any strain ---
     bacteriaStrains.forEach(function (strain) {
         let tierData = vatTiers[strain.bTier];
-        let items = ['gtceu:petri_dish', bacteriaItems[strain.nbt]];
+        let items = ['gtceu:petri_dish'];
         let fluids = [tierData.fluid + ' 1000'];
 
         if (strain.catalyst) {
@@ -340,6 +340,7 @@ ServerEvents.recipes(allthemods => {
         }
 
         let recipe = allthemods.recipes.gtceu.bacterial_vat('bacteria/duplicate/' + strain.nbt.toLowerCase())
+            .notConsumable(bacteriaItems[strain.nbt])
             .itemInputs(items)
             .chancedInput('#forge:rods/protactinium', 1000, 0)
             .inputFluids(fluids)

@@ -1,3 +1,4 @@
+const $SizedIngredient = Java.loadClass('com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredient');
 const TIME = {
     short: 600,
     medium: 800,
@@ -17,7 +18,11 @@ ServerEvents.recipes(allthemods => {
     }
 
     const gtRecipe = (recipeType, inputs, fluidIn, outputs, fluidOut, eu, duration, temp, customID, program) => {
-        let generatedId = customID || `gregification:${outputs[0].replace(/^\d+x\s+/, '').replace(':', '_')}`;
+
+        let firstOutput = Array.isArray(outputs) ? outputs[0] : outputs;
+        let generatedId = customID || `gregification:${firstOutput.toString().replace(/^\d+[x ]\s*/, '').split(':').pop().replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase()}`;
+
+        //let generatedId = customID || `gregification:${outputs[0].replace(/^\d+x\s+/, '').replace(':', '_')}`;
 
         let recipe = allthemods.recipes.gtceu[recipeType](generatedId)
             .itemInputs(inputs)
@@ -86,31 +91,34 @@ ServerEvents.recipes(allthemods => {
     });
 
 
-    const gtRecipeResearch = (recipeType, outputs, inputs, fluids, duration, eu, researchItem, CWUt, customID) => {
+    const gtRecipeResearch = (recipeType, outputs, inputs, fluids, duration, eu, researchItem, CWUt, customID, rID) => {
 
-        let generatedId = customID || `gregification:${outputs[0].replace(/^\d+x\s+/, '').replace(':', '_')}`;
+
+        let firstOutput = Array.isArray(outputs) ? outputs[0] : outputs;
+        let generatedId = customID || `gregification:${firstOutput.toString().replace(/^\d+[x ]\s*/, '').split(':').pop().replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase()}`;        
         let recipe = allthemods.recipes.gtceu[recipeType](generatedId)
             .itemOutputs(outputs)
             .itemInputs(inputs)
             .duration(duration)
             .EUt(eu);
 
-        if (fluids){
+        if (fluids) {
             recipe.inputFluids(fluids);
         }
-        
+
         if (researchItem) {
             if (CWUt) {
                 recipe.stationResearch(b =>
                     b.researchStack(researchItem)
+                        .researchId(rID)
                         .EUt(eu / 4)
-                        .CWUt(CWUt)                        
+                        .CWUt(CWUt)
                 );
             }
             else {
                 recipe.scannerResearch(researchItem);
             }
-        }        
+        }
     };
 
 
@@ -208,56 +216,36 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.shapeless('gtceu:blueprint_blank', ['minecraft:paper', '#forge:small_dusts/lapis']).id('gregification:blank_blueprint')
 
-    /*allthemods.recipes.gtceu.prototype_assembler('gregification:test')
-            .itemInputs(drone)
-            .chancedOutput('allthemodium:unobtainium_upgrade_smithing_template', 1500, 500)
-            .inputFluids('#forge:kerosene 4000')
-            .duration(10000)
-            .EUt(524288)
-            .circuit(13);
 
-    allthemods.recipes.gtceu.prototype_assembler('gregification:mekasuit_helmet_test')
-        .itemOutputs('mekanism:mekasuit_helmet')
-        .itemInputs([
-            'allthemodium:unobtainium_helmet',
-            'mekanism:ultimate_control_circuit',
-            '#gtceu:circuits/luv',
-            '5x mekanism:hdpe_sheet',
-            '5x mekanism:pellet_polonium',
-            'mekanism:ultimate_induction_cell',
-            '4x #forge:plates/scandium',
-            '5x #forge:dense_plates/gaia',
-            '5x #forge:plates/kevlar'
-        ])
-        .inputFluids('#forge:europium 720')
-        .duration(6000)
-        .EUt(131072)
-        .stationResearch(b => b
-            .researchStack('gtceu:blueprint_mekasuit')
-            .EUt(131072 / 4)
-            .CWUt(16)
-        );
-    */
-    const createModelBlueprints = (machineID, creature, BPitemID, output, inputs, fluids, duration, EUt, CWU, customID, skipBlueprints) => {
+    const createModelBlueprints = (machineID, creature, BPitemID, outputs, inputs, fluids, duration, EUt, CWU, customID, skipBlueprints) => {
         const scanEU = 8192;
         const scanDuration = 200;
         const fraculatorEU = 131072;
         const fraculatorDuration = 600;
-        const generatedId = customID || `gregification:${output[0].replace(/^\d+x\s+/, '').replace(':', '_')}`;
+        //const generatedId = customID || `gregification:${output[0].replace(/^\d+x\s+/, '').replace(':', '_')}`;
         const creativeBlueprint = `gtceu:blueprint_${BPitemID}`;
 
+        let firstOutput = Array.isArray(outputs) ? outputs[0] : outputs;
+        let generatedId = customID || `gregification:${firstOutput.toString().replace(/^\d+[x ]\s*/, '').split(':').pop().replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase()}`;
+
+        let cModel
         if (!skipBlueprints) {
-            
-            //self aware model
-            const model = Item.of('hostilenetworks:data_model', `{data_model:{data:1254,id:"hostilenetworks:${creature}"}}`).strongNBT();
-            
+
+            //self aware model            
+            if (creature[0] == '~') {cModel = `twilightforest/${creature.slice(1)}`;}
+            else if (creature[0] == '-') {cModel = `allthemodium/${creature.slice(1)}`;}
+            else {cModel = creature;}
+                                      
+            const model = Item.of('hostilenetworks:data_model', `{data_model:{data:1254,id:"hostilenetworks:${cModel}"}}`).strongNBT();
+
             //model predicate for scanner
             const modelPredicate = NBTPredicates.all(
-                NBTPredicates.eqString('data_model.id', `hostilenetworks:${creature}`),
+                NBTPredicates.eqString('data_model.id', `hostilenetworks:${cModel}`),
                 NBTPredicates.gte('data_model.data', 1254)
             );
-            
-            
+
+            if (creature[0] == '~' || creature[0] == '-') {creature = creature.slice(1);}                        
+
             let createDisplayParts = creature.split('_');
             let createDisplay = '';
             for (let i = 0; i < createDisplayParts.length; i++) {
@@ -275,12 +263,16 @@ ServerEvents.recipes(allthemods => {
                 ]).strongNBT();
 
             //datastick from scanner
-            allthemods.recipes.gtceu.scanner(`${generatedId}_scanner`)
+
+            const bacteria = Item.of('gtceu:bacteria_colony_dust', '{bacteriaSpecies:"PichiaPastoris"}').strongNBT()
+            allthemods.recipes.gtceu.neuro_interface(`${generatedId}_neural_interface`)
+                .itemInputs(bacteria)
                 .inputItemNbtPredicate(model, modelPredicate)
+                .inputFluids('#forge:artificial_cerebrospinal_fluid 1000')
                 .itemOutputs(modelCertificate)
                 .duration(scanDuration)
                 .EUt(scanEU);
-            
+
 
             //datastick + blank blueprint for item blueprint
             allthemods.recipes.gtceu.psycho_fraculator(`${generatedId}_fraculation`)
@@ -290,24 +282,21 @@ ServerEvents.recipes(allthemods => {
                 .inputFluids('#forge:mind_control_serum 100')
                 .duration(fraculatorDuration)
                 .EUt(fraculatorEU);
-        };        
-                               
+        };
+
         gtRecipeResearch(
             machineID,
-            output,
+            outputs,
             inputs,
             fluids,
             duration,
             EUt,
             creativeBlueprint,
             CWU,
-            customID
-        );        
+            customID,
+            BPitemID
+        );
     };
-
-    
-
-    
 
     createModelBlueprints('prototype_assembler', 'warden', 'mekasuit', ['mekanism:mekasuit_helmet'],
         [
@@ -326,7 +315,7 @@ ServerEvents.recipes(allthemods => {
         131072,
         16
     );
-   
+
     createModelBlueprints('prototype_assembler', 'warden', 'mekasuit', ['mekanism:mekasuit_bodyarmor'],
         [
             'allthemodium:unobtainium_chestplate',
@@ -342,7 +331,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:europium 1152',
         6000,
         131072,
-        16,null,true
+        16, null, true
     );
 
     createModelBlueprints('prototype_assembler', 'warden', 'mekasuit', ['mekanism:mekasuit_pants'],
@@ -360,7 +349,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:europium 1008',
         6000,
         131072,
-        16,null,true
+        16, null, true
     );
 
     createModelBlueprints('prototype_assembler', 'warden', 'mekasuit', ['mekanism:mekasuit_boots'],
@@ -378,7 +367,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:europium 576',
         6000,
         131072,
-        16,null,true
+        16, null, true
     );
 
     createModelBlueprints('prototype_assembler', 'zombie', 'mob_swab', ['mob_grinding_utils:mob_swab'],
@@ -406,6 +395,35 @@ ServerEvents.recipes(allthemods => {
         32
     );
 
+    createModelBlueprints('prototype_assembler', 'enderman', 'waystone', ['waystones:waystone'],
+        [
+            'gtceu:dimensional_casing',
+            'waystones:warp_stone',
+            'gtceu:luv_emitter',
+            'gtceu:luv_sensor',
+            '4x #forge:plates/terrasteel',
+            'bloodmagic:etherealslate'
+
+        ],
+        '#forge:argon 6000',
+        600,
+        32768, null
+    );
+
+    createModelBlueprints('prototype_assembler', 'enderman', 'waystone', ['waystones:warp_stone'],
+        [
+            '4x #forge:exquisite_gems/amethyst',
+            '16x #gtceu:wires/hex/enderium',
+            '4x #forge:plates/emerald',
+            '#forge:frames/alfsteel',
+            'occultism:witherite_dust'
+
+        ],
+        '#forge:ender 6000',
+        600,
+        32768, null, null, true
+    );
+
     let elementHolder;
     elements.forEach(element => {
         elementHolder = Item.of('elementalcraft:creative_container', `{BlockEntityTag:{element_storage:{element_amount:1000000,element_capacity:1000000,element_type:"${element}"}}}`).strongNBT();
@@ -421,7 +439,310 @@ ServerEvents.recipes(allthemods => {
             131072,
             'elementalcraft:creative_container',
             32,
-            `gregification:creative_container_${element}`
+            `gregification:creative_container_${element}`,'creative_container'
         );
     })
+
+    createModelBlueprints('prototype_assembler', 'wither', 'laser_drill', ['industrialforegoing:laser_drill'],
+        [
+            'industrialforegoing:machine_frame_supreme',
+            '2x #gtceu:circuits/luv',
+            '4x #forge:gears/ferrognetic',
+            '4x #forge:small_gears/vibranium',
+            '6x #forge:double_plates/cadmium_selenide',
+            '16x #gtceu:wires/quadruple/cadmium_copper',
+            'laserio:laser_connector_advanced',
+            '64x gtceu:germanium_diode'
+        ],
+        ['#forge:polybenzimidazole 1000', 'industrialforegoing:ether_gas 1000'],
+        6000,
+        32768, 8
+    );
+
+    createModelBlueprints('prototype_assembler', 'wither', 'laser_drill', ['industrialforegoing:ore_laser_base'],
+        [
+            'industrialforegoing:machine_frame_supreme',
+            'gtceu:titanium_crate',
+            '2x #gtceu:circuits/luv',
+            '#forge:frames/draconium_awakened',
+            '4x gtceu:luv_electric_motor',
+            'gtceu:luv_electric_piston',
+            '4x #forge:gears/ferrognetic',
+            '4x #forge:small_gears/vibranium',
+            '6x #forge:double_plates/cadmium_selenide'
+        ],
+        ['#forge:polybenzimidazole 1000', 'industrialforegoing:ether_gas 1000'],
+        6000,
+        32768, 8, null, true
+    );
+
+    createModelBlueprints('prototype_assembler', 'wither', 'laser_drill', ['industrialforegoing:fluid_laser_base'],
+        [
+            'industrialforegoing:machine_frame_supreme',
+            'gtceu:titanium_drum',
+            '2x #gtceu:circuits/luv',
+            '#forge:frames/draconium_awakened',
+            '4x gtceu:luv_electric_motor',
+            'gtceu:luv_electric_pump',
+            '4x #forge:gears/ferrognetic',
+            '4x #forge:small_gears/vibranium',
+            '6x #forge:double_plates/cadmium_selenide'
+        ],
+        ['#forge:polybenzimidazole 1000', 'industrialforegoing:ether_gas 1000'],
+        6000,
+        32768, 8, null, true
+    );
+
+    createModelBlueprints('prototype_assembler', 'elder_guardian', 'quantum_computer', ['advanced_ae:quantum_core'],
+        [
+            'advanced_ae:quantum_unit',
+            'advanced_ae:quantum_accelerator',
+            'advanced_ae:quantum_storage_256',
+            '8x ae2:singularity',
+            '8x advanced_ae:shattered_singularity',
+            '64x gtceu:germanium_diode',
+            '#forge:frames/strontium_aluminate'
+        ],
+        ['advanced_ae:quantum_infusion_source 10000', '#forge:polybenzimidazole 1440'],
+        6000,
+        32768, 8
+    );
+
+
+    const jUnobtainium = Item.of('ironjetpacks:jetpack', { Id: "ironjetpacks:unobtainium", Throttle: 1.0 }).strongNBT()
+    const jCreative = Item.of('ironjetpacks:jetpack', { Id: "ironjetpacks:creative", Throttle: 1.0 }).strongNBT()
+
+    const jCell = Item.of('ironjetpacks:cell', { Id: "ironjetpacks:creative" }).strongNBT()
+    const jThruster = Item.of('ironjetpacks:thruster', { Id: "ironjetpacks:creative" }).strongNBT()
+    const jCapacitor = Item.of('ironjetpacks:capacitor', { Id: "ironjetpacks:creative" }).strongNBT()
+
+
+    allthemods.recipes.gtceu.assembler(`gregification:creative_jetpacks/creative_cell`)
+        .itemInputs('powah:battery_nitro', '6x #forge:plates/cadmium_telluride', '16x #forge:fine_wires/alloy_atomic', '4x #gtceu:circuits/zpm')
+        .itemOutputs(jCell)
+        .inputFluids('#forge:polybenzimidazole 1000')
+        .duration(400)
+        .EUt(32768);
+
+    allthemods.recipes.gtceu.assembler(`gregification:creative_jetpacks/creative_thruster`)
+        .itemInputs('ad_astra:steel_engine', '4x mekanism:ultimate_induction_cell', '4x #gtceu:circuits/zpm', '4x #forge:rods/strontium_aluminate')
+        .itemOutputs(jThruster)
+        .inputFluids('#forge:polybenzimidazole 1000')
+        .duration(400)
+        .EUt(32768);
+
+    allthemods.recipes.gtceu.assembler(`gregification:creative_jetpacks/creative_capacitor`)
+        .itemInputs($SizedIngredient.create(jCell, 3), '#forge:singularities/lapotron', '4x #forge:plates/fireite', 'gtceu:empty_tier_ii_battery')
+        .itemOutputs(jCapacitor)
+        .inputFluids('#forge:polybenzimidazole 1000')
+        .duration(400)
+        .EUt(32768);
+
+    createModelBlueprints('prototype_assembler', 'blaze', 'flight_module', jCreative,
+        [
+            jUnobtainium,
+            $SizedIngredient.create(jThruster, 2),
+            jCapacitor,
+            'allthetweaks:atm_star'
+        ],
+        null,
+        6000,
+        32768, 16, 'creative_jetpack'
+    );
+
+    createModelBlueprints('prototype_assembler', 'blaze', 'cake', 'create:creative_blaze_cake',
+        [
+            'create:blaze_cake',
+            'mysticalexpansion:divinium_coal_block',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:chocolate 1024000',
+        6000,
+        32768, 16
+    );
+
+    createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'botania:creative_pool',
+        [
+            'botania:fabulous_pool',
+            '64x botania:rune_pride',
+            '64x botania:rune_wrath',
+            '64x botania:rune_envy',
+            '64x botania:rune_gluttony',
+            '64x botania:rune_lust',
+            '64x botania:rune_sloth',
+            '64x botania:rune_greed',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:mana_essence 1024000',
+        6000,
+        32768, 16
+    );
+
+    const fullTablet = Item.of('botania:mana_tablet', '{mana:500000}').strongNBT();
+    const manaTablet = Item.of('botania:mana_tablet', '{creative:1b,mana:500000}').strongNBT();
+    createModelBlueprints('prototype_assembler', '~death_tome', 'font', manaTablet,
+        [
+            fullTablet,
+            '64x botania:rune_pride',
+            '64x botania:rune_wrath',
+            '64x botania:rune_envy',
+            '64x botania:rune_gluttony',
+            '64x botania:rune_lust',
+            '64x botania:rune_sloth',
+            '64x botania:rune_greed',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:mana_essence 1024000',
+        6000,
+        32768, 16, 'creative_mana_tablet', true
+    );
+
+
+    createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'appbot:creative_mana_cell',
+        [
+            'botania:creative_pool',
+            '#forge:singularities/mana_essence',
+            'ae2additions:super_cell_component_65m',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:mana_essence 1024000',
+        6000,
+        32768, 16,null,true
+    );
+
+    createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'bloodmagic:activationcrystalcreative',
+        [
+            '#forge:singularities/hellforged',
+            'bloodmagic:activationcrystalweak',
+            '64x bloodmagic:etherealslate',            
+            '64x #forge:exquisite_gems/demon',
+            '64x #forge:exquisite_gems/corrosive',
+            '64x #forge:exquisite_gems/destructive',
+            '64x #forge:exquisite_gems/steadfast',
+            '64x #forge:exquisite_gems/vengeful',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:saturated_tau 1024000',
+        6000,
+        32768, 16, null, true
+    );
+
+    createModelBlueprints('prototype_assembler', 'iron_golem', 'crux', 'pneumaticcraft:creative_compressed_iron_block',
+        [
+            '2x #forge:singularities/compressed_iron',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:plastic 1024000',
+        6000,
+        32768, 16
+    );
+    createModelBlueprints('prototype_assembler', 'iron_golem', 'crux', 'pneumaticcraft:creative_compressor',
+        [
+            '4x pneumaticcraft:creative_compressed_iron_block',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:plastic 1024000',
+        6000,
+        32768, 16, null, true
+    );
+
+    const creativeSpellBook = Item.of('ars_nouveau:creative_spell_book', '{mode:0.0d,spells:"intangible,ignite,flare,strength,craft,cold_snap,rune,snare,slowfall,freeze,split,crush,smelt,summon_steed,accelerate,summon_vex,lightning,grow,dampen,touch,invisibility,extract,delay,light,duration_down,exchange,place_block,summon_wolves,shield,conjure_water,cut,harm,interact,blink,amplify,phantom_block,fell,extend_time,heal,leap,redstone_signal,pierce,harvest,fortune,break,pickup,launch,dispel,haste,ender_inventory,pull,explosion,fangs,aoe,gravity,self,aquatic,projectile,wither,gust"}')
+    createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'ars_nouveau:creative_source_jar',
+        [
+            '#forge:singularities/source',
+            '64x #forge:exquisite_gems/source',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:source 1024000',
+        6000,
+        32768, 16, null, true
+    );
+
+    createModelBlueprints('prototype_assembler', '~death_tome', 'font', creativeSpellBook,
+        [
+            'ars_nouveau:creative_source_jar',
+            '#forge:singularities/source',
+            'ars_nouveau:archmage_spell_book',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:source 1024000',
+        6000,
+        32768, 16, 'creative_spell_book', true
+    );
+
+    createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'arseng:creative_source_cell',
+        [
+            'ars_nouveau:creative_source_jar',
+            '#forge:singularities/source',
+            'ae2additions:super_cell_component_65m',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:source 1024000',
+        6000,
+        32768, 16, null, true
+    );
+
+    
+    createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:rf_coil_creative_augment',
+        [
+            '16x thermal_extra:abyssal_rf_coil_augment',
+            '64x #forge:plates/unobtainium',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:lubricant 1024000',
+        6000,
+        32768,8
+    );
+
+    createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:machine_efficiency_creative_augment',
+        [
+            '16x thermal_extra:abyssal_machine_efficiency_augment',
+            '64x #forge:plates/unobtainium',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:lubricant 1024000',
+        6000,
+        32768,8,null,true
+    );
+
+    createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:fluid_tank_creative_augment',
+        [
+            '16x thermal_extra:abyssal_fluid_tank_augment',
+            '64x #forge:plates/unobtainium',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:lubricant 1024000',
+        6000,
+        32768,8,null,true
+    );
+
+    createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:machine_catalyst_creative_augment',
+        [
+            '16x thermal_extra:abyssal_machine_catalyst_augment',
+            '64x #forge:plates/unobtainium',
+            'allthetweaks:atm_star'
+        ],
+        '#forge:lubricant 1024000',
+        6000,
+        32768,8,null,true
+    );
+
+    createModelBlueprints('prototype_assembler', 'spider', 'blood', 'evilcraft:creative_blood_drop',
+        [
+            '#forge:singularities/garmonbozia',            
+            'allthetweaks:atm_star'
+        ],
+        '#forge:sanguine_concentrate 1024000',
+        6000,
+        32768,8
+    );
+
+    createModelBlueprints('prototype_assembler', '-piglich', 'energey_core', 'minecraft:acacia_boat',
+        [
+            'allthetweaks:atm_star'
+        ],
+        null,
+        6000,
+        32768,8
+    );
 });
