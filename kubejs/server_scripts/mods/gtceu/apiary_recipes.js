@@ -215,7 +215,10 @@ ServerEvents.recipes(allthemods => {
             let flowerThing
             let flowerArray = []
             if (beeData != null) { 
-                if (beeData.hasOwnProperty('flowerFluid')) {
+                if (beeType == "hyper_experience") {                    
+                    flower = "minecraft:experience_bottle"
+                }                
+                else if (beeData.hasOwnProperty('flowerFluid')) {
                     flower = beeData.flowerFluid
                     if (beeType == "oily") { 
                         flower = "thermal:crude_oil"

@@ -216,6 +216,10 @@
     "ench": true,
     "spawner": true
   },
+  "immersiveconvergence": {
+    "lines": true,
+    "status": true
+  },
   "functionalstorage": {
     "armory": true
   },
@@ -274,8 +278,5 @@
     "infused_farmland": true,
     "crop": true,
     "inferium_crop": true
-  },
-  "immersivetechnology": {
-    "display": true
   }
 }

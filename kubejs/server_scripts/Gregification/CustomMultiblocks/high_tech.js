@@ -737,7 +737,7 @@ ServerEvents.recipes(allthemods => {
         32768,8
     );
 
-    createModelBlueprints('prototype_assembler', '-piglich', 'energey_core', 'minecraft:acacia_boat',
+    createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'minecraft:acacia_boat',
         [
             'allthetweaks:atm_star'
         ],

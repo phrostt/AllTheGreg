@@ -1,9 +1,9 @@
 
 #Options shared by all boiler types
 [boiler_shared]
-	#Target heat level for full operation when a recipe does not specify its own requirement (applies to all boilers).
-	#Range: 0.0 ~ 1.7976931348623157E308
-	default_working_heat = 100.0
+	#Target heat level for full operation when a recipe does not specify its own requirement (applies to all boilers). 600 is the lowest accepted value; anything below is reset to 600.
+	#Range: 600.0 ~ 1.7976931348623157E308
+	default_working_heat = 600.0
 
 #Solar Tower settings
 [solar_tower]

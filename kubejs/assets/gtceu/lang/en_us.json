@@ -647,6 +647,12 @@
     "material.gtceu.dna_behavior": "DNA Behavior",
     "material.gtceu.dna_endurance": "DNA Endurance",
     "material.gtceu.dna_omega": "DNA Omega",
-    "material.gtceu.dna_mutation": "DNA Mutation"
+    "material.gtceu.dna_mutation": "DNA Mutation",
+    "material.gtceu.rocket_fuel_stage_1": "Rocket Fuel Stage 1",
+    "material.gtceu.rocket_fuel_stage_2": "Rocket Fuel Stage 2",
+    "material.gtceu.rocket_fuel_stage_3": "Rocket Fuel Stage 3",
+    "material.gtceu.rocket_fuel_stage_4": "Rocket Fuel Stage 4",
+    "material.gtceu.bio_organic_nanocomposite": "Bio Organic Nanocomposite",
+    "material.gtceu.spent_nuclear_waste": "Spent Nuclear Waste"
 }
  

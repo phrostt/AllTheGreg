@@ -340,7 +340,13 @@ const fluids = [
     { name: 'final_rare_earth_sulfate', components: '1x yttrium, 1x cerium, 13x sodium, 5x sulfur, 23x oxygen, 6x hydrogen', color: 0x8C7B6A, iconSet: 'FLUID', noDecomp: true },
     { name: 'rare_earth_leach_residue', components: '1x lanthanum, 1x magnesium, 3x oxygen, 3x hydrogen', color: 0xB8A8C8, iconSet: 'FLUID', noDecomp: true },
     { name: 'alfheim_portal_fluid', color: 0x66FF33, iconSet: 'FLUID', noDecomp: true },
-    { name: 'tetrachloroethylene', components: '4x chlorine, 2x carbon', formula: 'C2Cl4', color: 0xF0F4F8, iconSet: 'FLUID' }
+    { name: 'tetrachloroethylene', components: '4x chlorine, 2x carbon', formula: 'C2Cl4', color: 0xF0F4F8, iconSet: 'FLUID' },
+
+    { name: 'rocket_fuel_stage_1', color: 0x8A9A5B, iconSet: 'FLUID' },
+    { name: 'rocket_fuel_stage_2', color: 0xE8F4F8, iconSet: 'FLUID' },
+    { name: 'rocket_fuel_stage_3', color: 0xC4D7D1, iconSet: 'FLUID' },
+    { name: 'rocket_fuel_stage_4', color: 0xFFF176, iconSet: 'FLUID' }    
+
     
 ];
 
@@ -610,10 +616,24 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     let materialBuilder;
 
+    
+    materialBuilder = event.create('spent_nuclear_waste')
+        .fluid()
+        .color(0x8B9A46)
+        .iconSet(GTMaterialIconSet.RADIOACTIVE);
+
+    materialBuilder = event.create('bio_organic_nanocomposite')
+        .ingot()
+        .dust()
+        .fluid()
+        .color(0x3D5C42)
+        .iconSet(GTMaterialIconSet.DULL)
+        .flags(GTMaterialFlags.GENERATE_PLATE);
+
     materialBuilder = event.create('debris')        
         .color(0x6E5A52)
         .iconSet(GTMaterialIconSet.METALLIC)
-        .ore(2, 1)
+        .ore(2, 1);
     
     materialBuilder = event.create("hepatizon")
         .color(0x715A7C)
@@ -621,7 +641,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .components('2x copper', '1x cobalt', '1x nether_quartz')
         .ingot()
         .fluid()
-        .iconSet(GTMaterialIconSet.METALLIC)
+        .iconSet(GTMaterialIconSet.METALLIC);
     
     materialBuilder = event.create("amethyst_bronze")
         .color(0xEBC4DB)
@@ -629,7 +649,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .components('1x copper', '1x amethyst')
         .ingot()
         .fluid()
-        .iconSet(GTMaterialIconSet.METALLIC)
+        .iconSet(GTMaterialIconSet.METALLIC);
         
     
     materialBuilder = event.create("manyullyn")
@@ -638,7 +658,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .components('1x debris', '3x cobalt')
         .ingot()
         .fluid()
-        .iconSet(GTMaterialIconSet.METALLIC)
+        .iconSet(GTMaterialIconSet.METALLIC);
 
     materialBuilder = event.create('core')
         .color(0x989CAB)

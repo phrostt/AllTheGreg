@@ -6,7 +6,13 @@ ServerEvents.recipes(allthemods => {
 
     const bacteriaChainStrains = [
         { nbt: 'PichiaPastoris', name: 'Pichia Pastoris' },
-        { nbt: 'ApisSymbiont', name: 'Apis Symbiont' }
+        { nbt: 'ApisSymbiont', name: 'Apis Symbiont' },
+        { nbt: 'Saccharomyces', name: 'Saccharomyces cerevisiae' },
+        { nbt: 'Methanogenesis', name: 'Methanogenesis Dominus' },
+        { nbt: 'DeinococcusRadiodurans', name: 'Deinococcus radiodurans' },
+        { nbt: 'Sphingomonas', name: 'Sphingomonas' },
+        { nbt: 'Rhizobacterium', name: 'Nitrogen-Fixing Rhizobacteria' },
+        { nbt: 'Desulfovibrio', name: 'Desulfovibrio' }
     ];
 
     const bacteriaStageItems = (strain) => {
@@ -97,7 +103,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(LUV);
 
     let inputStrain = Item.of('gtceu:bacteria_colony_dust', '{bacteriaSpecies:"ApisSymbiont"}').strongNBT();
-    allthemods.recipes.gtceu.mixer (`gregification:bacteria/substrate`)
+    allthemods.recipes.gtceu.mixer(`gregification:bacteria/substrate`)
         .itemInputs(inputStrain, '#forge:dusts/treated_wood')
         .inputFluids('#forge:sugar_water 1000')
         .itemOutputs('#forge:dusts/bio_organic_pulp')
@@ -138,7 +144,8 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.gene_sequencer(`gregification:sequencer`)
         .itemInputs('#forge:tiny_dusts/platinum')
-        .inputFluids('#forge:concentrated_liquid_dna 100')        
+        .inputFluids('#forge:concentrated_liquid_dna 10')
+        .chancedOutput('gtceu:dna', 50, 50)
         .chancedFluidOutput('gtceu:dna_tolerance 100', 50, 50)
         .chancedFluidOutput('gtceu:dna_productivity 100', 50, 50)
         .chancedFluidOutput('gtceu:dna_behavior 100', 50, 50)
@@ -147,7 +154,7 @@ ServerEvents.recipes(allthemods => {
         .chancedFluidOutput('gtceu:dna_mutation 10', 50, 50)
         .duration(DUR)
         .EUt(LUV);
-    
+
     allthemods.recipes.gtceu.canner(`gregification:sequencer/productivity`)
         .itemInputs('gtceu:glass_vial')
         .inputFluids('#forge:dna_productivity 100')
@@ -160,7 +167,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:dna_tolerance 100')
         .itemOutputs(tolerance)
         .duration(DUR)
-        .EUt(LUV);    
+        .EUt(LUV);
 
     allthemods.recipes.gtceu.canner(`gregification:sequencer/behavior`)
         .itemInputs('gtceu:glass_vial')
@@ -174,13 +181,76 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:dna_endurance 100')
         .itemOutputs(endurance)
         .duration(DUR)
-        .EUt(LUV);    
+        .EUt(LUV);
 
     allthemods.recipes.gtceu.assembler(`gregification:sequencer/mutation`)
-        .itemInputs('gtceu:treated_wood_pressure_plate')
+        .itemInputs('gtceu:treated_wood_pressure_plate', 'allthetweaks:atm_star')
         .inputFluids('#forge:dna_mutation 100')
         .itemOutputs(Item.of('forestry:frame_creative', '{force_mutations:1b}').strongNBT())
         .duration(DUR)
-        .EUt(LUV);    
+        .EUt(LUV);
 
+    allthemods.recipes.gtceu.chemical_reactor(`gregification:chemical_reactor/bio_organic_nanocomposite`)
+        .itemInputs('#forge:dusts/potassium_calcium_orthosilicate', Item.of('gtceu:bacteria_colony_dust', '{bacteriaSpecies:"Rhizobacterium"}').strongNBT())
+        .inputFluids('#forge:osmium 144')
+        .itemOutputs('gtceu:bio_organic_nanocomposite_dust')
+        .duration(200)
+        .EUt(8192);
+
+    const rocketTiers = [
+        { nbt: 'Saccharomyces', catalyst: '#forge:dusts/coke', eu: 8192 },
+        { nbt: 'Methanogenesis', catalyst: '#forge:dusts/naquadah', eu: 32768 },
+        { nbt: 'DeinococcusRadiodurans', catalyst: '#forge:dusts/enriched_naquadah', eu: 131072 },
+        { nbt: 'Sphingomonas', catalyst: '#forge:dusts/naquadria', eu: 524288 }
+    ];
+
+    rocketTiers.forEach((rocket, index) => {
+        let baseFuel;
+        if (index == 0) {
+            baseFuel = '#forge:rocket_fuel';
+        }
+        else {
+            baseFuel = `#forge:rocket_fuel_stage_${index}`;
+        }
+        let fuelStrain = Item.of('gtceu:bacteria_colony_dust', `{bacteriaSpecies:"${rocket.nbt}"}`).strongNBT();
+        allthemods.recipes.gtceu.chemical_reactor(`gregification:chemical_reactor/rocket_fuel_stage_${index + 1}`)
+            .itemInputs(fuelStrain, rocket.catalyst)
+            .inputFluids(`${baseFuel} 1000`)
+            .outputFluids(`gtceu:rocket_fuel_stage_${index + 1} 100`)
+            .duration(600)
+            .EUt(rocket.eu);
+    });
+
+    
+    let desulfovibrioStrain = Item.of('gtceu:bacteria_colony_dust', '{bacteriaSpecies:"Desulfovibrio"}').strongNBT();
+
+    allthemods.recipes.gtceu.centrifuge('bacteria/process/spent_nuclear_waste')
+        .itemInputs(desulfovibrioStrain)
+        .inputFluids('#forge:spent_nuclear_waste 1000')
+        .chancedOutput('gtceu:caesium_dust', 2000, 0)
+        .chancedOutput('gtceu:thorium_dust', 2000, 0)
+        .chancedOutput('gtceu:uranium_dust', 3000, 0)
+        .chancedOutput('chemlib:protactinium_dust', 2500, 0)
+        .chancedOutput('gtceu:strontium_sulfide_dust', 1000, 0)
+        .chancedOutput('gtceu:plutonium_241_dust', 500, 0)
+        .duration(600)
+        .EUt(32768);
+
+    const rotary = (gas, fluid, amount) => {
+        // Gas -> Liquid
+        allthemods.custom({
+            "type": "mekanism:rotary",
+            "fluidInput": { "amount": amount, "fluid": fluid },
+            "gasOutput": { "amount": amount, "gas": gas }
+        }).id(`gregification:rotary/decondensing/${gas.split(':')[1]}`);
+
+        // Liquid -> Gas
+        allthemods.custom({
+            "type": "mekanism:rotary",
+            "gasInput": { "amount": amount, "gas": gas },
+            "fluidOutput": { "amount": amount, "fluid": fluid }
+        }).id(`gregification:rotary/condensing/${gas.split(':')[1]}`);
+    };
+
+    rotary('mekanism:spent_nuclear_waste', 'gtceu:spent_nuclear_waste', 100)
 });

@@ -181,8 +181,6 @@
 	["Stargate Journey Common Config"."Stargate Network Config"]
 
 		["Stargate Journey Common Config"."Stargate Network Config".server]
-			#Stargate Network will use addresses from datapacks
-			use_datapack_addresses = true
 			#Stargate Network will generate random Solar System for each dimension not registered through a datapack
 			generate_random_solar_systems = true
 			#Stargate Network will randomize addresses based on the world seed
@@ -191,6 +189,8 @@
 			disable_dhd_preference = false
 			#Stargates Network will prioritize Primary Stargates
 			primary_stargate = false
+			#Stargate Network will use addresses from datapacks
+			use_datapack_addresses = true
 
 	["Stargate Journey Common Config"."Generation Config"]
 
@@ -304,9 +304,6 @@
 			#Durability of the Netherite Iris
 			#Range: > 1
 			netherite_iris_durability = 16384
-			#Durability of the Naquadah Alloy Iris
-			#Range: > 1
-			naquadah_alloy_iris_durability = 8192
 			#Durability of the Trinium Iris
 			#Range: > 1
 			trinium_iris_durability = 16384
@@ -316,6 +313,9 @@
 			#Durability of the Steel Iris
 			#Range: > 1
 			steel_iris_durability = 4096
+			#Durability of the Naquadah Alloy Iris
+			#Range: > 1
+			naquadah_alloy_iris_durability = 8192
 
 	["Stargate Journey Common Config"."Transmission Config"]
 

@@ -185,7 +185,7 @@ ServerEvents.recipes(allthemods => {
             children: [],
             origin: null,
             catalyst: 'forestry:ambrosia'
-            //uses: for bee mutations - this can be further "refined" to yield bee traits for both forestry and productive bees
+            //uses: for bee mutations - creative frame from forestry and 4 different genomes from productive bees
         },
 
         {
@@ -209,7 +209,7 @@ ServerEvents.recipes(allthemods => {
             children: [],
             origin: null,
             catalyst: '#forge:dusts/demon'
-            //uses: used to make a new type of fiber for textiles - which in turn can be used for mekasuit construction (padding material)
+            //uses: neural interface with models to make neurons - done
         },
 
         {
@@ -245,7 +245,7 @@ ServerEvents.recipes(allthemods => {
             children: [],
             origin: null,
             catalyst: '#forge:dusts/alfsteel'
-            //uses: component for omega upgrade
+            //uses: no use still
         },
 
         // --- Tier 3 ---

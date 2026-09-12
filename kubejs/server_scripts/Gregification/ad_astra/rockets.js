@@ -118,7 +118,7 @@ ServerEvents.recipes(allthemods => {
 
         
     allthemods.recipes.gtceu.assembly_line ('tier_1_rocket')
-        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:steel_tank', '4x ad_astra:steel_engine', '16x #forge:plates/tungsten_steel', '16x #forge:plates/end_steel', '16x #gtceu:circuits/iv'])
+        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:steel_tank', '4x ad_astra:steel_engine', '16x #forge:plates/tungsten_steel', '16x #forge:plates/end_steel', '16x #forge:plates/bio_organic_nanocomposite', '16x #gtceu:circuits/iv'])
         .inputFluids('#forge:polytetrafluoroethylene 5000')
         .inputFluids('#forge:lubricant 5000')
         .itemOutputs('ad_astra:tier_1_rocket')
@@ -127,7 +127,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(ivTier);
     
     allthemods.recipes.gtceu.assembly_line ('tier_2_rocket')
-        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:desh_tank', '4x ad_astra:desh_engine', '16x #forge:plates/rhodium_plated_palladium', '16x #forge:plates/desh', '16x #gtceu:circuits/luv'])
+        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:desh_tank', '4x ad_astra:desh_engine', '16x #forge:plates/rhodium_plated_palladium', '16x #forge:plates/desh', '32x #forge:plates/bio_organic_nanocomposite', '16x #gtceu:circuits/luv'])
         .inputFluids('#forge:polytetrafluoroethylene 5000')
         .inputFluids('#forge:lubricant 5000')
         .itemOutputs('ad_astra:tier_2_rocket')
@@ -136,7 +136,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(luvTier);
 
     allthemods.recipes.gtceu.assembly_line ('tier_3_rocket')
-        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:ostrum_tank', '4x ad_astra:ostrum_engine', '16x #forge:plates/naquadah_alloy', '16x #forge:plates/ostrum', '16x #gtceu:circuits/zpm'])
+        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:ostrum_tank', '4x ad_astra:ostrum_engine', '16x #forge:plates/naquadah_alloy', '16x #forge:plates/ostrum', '48x #forge:plates/bio_organic_nanocomposite', '16x #gtceu:circuits/zpm'])
         .inputFluids('#forge:polybenzimidazole 5000')
         .inputFluids('#forge:lubricant 5000')
         .itemOutputs('ad_astra:tier_3_rocket')
@@ -145,7 +145,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(zpmTier);
 
     allthemods.recipes.gtceu.assembly_line ('tier_4_rocket')
-        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:calorite_tank', '4x ad_astra:calorite_engine', '16x #forge:plates/darmstadtium', '16x #forge:plates/calorite', '16x #gtceu:circuits/uv'])
+        .itemInputs(['ad_astra:rocket_nose_cone', '4x ad_astra:rocket_fin', '4x ad_astra:calorite_tank', '4x ad_astra:calorite_engine', '16x #forge:plates/darmstadtium', '16x #forge:plates/calorite', '64x #forge:plates/bio_organic_nanocomposite', '16x #gtceu:circuits/uv'])
         .inputFluids('#forge:polybenzimidazole 5000')
         .inputFluids('#forge:lubricant 5000')
         .itemOutputs('ad_astra:tier_4_rocket')

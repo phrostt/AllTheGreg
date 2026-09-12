@@ -1,0 +1,25 @@
+{
+    "type": "productivebees:centrifuge",
+    "ingredient": {
+        "type": "forge:nbt",
+        "item": "productivebees:configurable_honeycomb",
+        "nbt": {
+            "EntityTag": {
+                "type": "productivebees:hyper_experience"
+            }
+        }
+    },
+    "outputs": [
+        {
+            "item": {
+                "item": "create_enchantment_industry:super_experience_nugget"
+            },
+            "chance": 100
+        },
+        {
+            "item": {
+                "tag": "forge:wax"
+            }
+        }
+    ]
+}

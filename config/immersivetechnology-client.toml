@@ -10,8 +10,6 @@
 	steam_turbine_renderer = true
 	#This controls if the animations and special client rendering applies to the Solar Reflector (Default: true).
 	solar_reflector_renderer = true
-	#Disables most lighting code for certain models that are rendered dynamically (TESR). May improve FPS. Affects various multiblocks.
-	disableFancyTESR = false
 
 #Solar Reflector options
 [solar_reflector]
