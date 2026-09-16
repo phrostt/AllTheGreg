@@ -326,7 +326,9 @@ ServerEvents.recipes(allthemods => {
             '2x #gtceu:circuits/luv',
             '2x solarflux:ender_glass',
             'draconicevolution:wyvern_core',
-            '2x draconicevolution:wyvern_energy_core'
+            '2x draconicevolution:wyvern_energy_core',
+            '2x gtceu:selenium_rectifier',
+            '8x #forge:foils/cadmium_telluride'
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_de.wyvern',
@@ -334,6 +336,7 @@ ServerEvents.recipes(allthemods => {
         panelDuration
     );
 
+    /*
     // cadmium
     addAssembler(
         [
@@ -342,15 +345,14 @@ ServerEvents.recipes(allthemods => {
             'gtceu:luv_machine_hull',
             '2x #gtceu:circuits/luv',
             '2x solarflux:ender_glass',
-            '4x #gtceu:wires/hex/cadmium_copper',
-            '8x gtceu:hv_cadmium_battery',
+            '4x #gtceu:wires/hex/cadmium_copper',            
             '2x gtceu:selenium_rectifier'
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_custom_cadmium_pannel',
         tiers.LuV,
         panelDuration
-    );
+    );*/
 
 
     // Draconic
@@ -362,7 +364,9 @@ ServerEvents.recipes(allthemods => {
             '2x #gtceu:circuits/luv',
             '2x solarflux:ender_glass',
             'draconicevolution:awakened_core',
-            '2x draconicevolution:draconic_energy_core'
+            '2x draconicevolution:draconic_energy_core',
+            '2x gtceu:selenium_rectifier',
+            '8x #forge:foils/cadmium_telluride'
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_de.draconic',
@@ -379,7 +383,9 @@ ServerEvents.recipes(allthemods => {
             '2x #gtceu:circuits/zpm',
             '2x solarflux:blazing_coating',
             'draconicevolution:chaotic_core',
-            '2x draconicevolution:chaotic_energy_core'
+            '2x draconicevolution:chaotic_energy_core',            
+            '8x #forge:foils/cadmium_telluride',
+            '8x gtceu:germanium_diode'
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_de.chaotic',

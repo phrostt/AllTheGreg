@@ -480,6 +480,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.remove({ type: 'mysticalagriculture:soul_extraction' });
     allthemods.remove({ type: 'powah:energizing' });
     allthemods.remove({ type: 'elementalcraft:crystallization' });
+    allthemods.remove({ type: 'mysticalagriculture:awakening' })
 
     // Input Removals
     allthemods.remove({ input: '#alltheores:ore_hammers' });

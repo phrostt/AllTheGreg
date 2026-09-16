@@ -122,6 +122,67 @@ ServerEvents.recipes(allthemods => {
     };
 
 
+    
+    allthemods.shaped(
+        'gtceu:gene_sequencer',
+        [
+            'CPC',
+            'PHV',
+            'CPC'
+        ],
+        {
+            C: '#gtceu:circuits/iv',
+            H: 'gtceu:iv_machine_hull',
+            P: 'gtceu:iv_electric_pump',
+            V: 'gtceu:iv_conveyor_module'
+        }
+    )
+
+    allthemods.shaped(
+        'gtceu:prototype_assembler',
+        [
+            'PCP',
+            'MHM',
+            'PCP'
+        ],
+        {
+            C: '#gtceu:circuits/iv',
+            H: 'gtceu:iv_machine_hull',
+            P: '#forge:plates/tungsten_steel',
+            M: 'gtceu:iv_electric_motor'
+        }
+    )
+
+    allthemods.shaped(
+        'gtceu:psycho_fraculator',
+        [
+            'PAP',
+            'CHC',
+            'PVP'
+        ],
+        {
+            C: '#gtceu:circuits/luv',
+            H: 'gtceu:luv_machine_hull',
+            P: '#forge:plates/iridium',
+            V: 'gtceu:luv_electric_pump',
+            A: 'gtceu:advanced_computer_casing'
+        }
+    )
+
+    allthemods.shaped('gtceu:neuro_interface',
+        [
+            'PAP',
+            'CHC',
+            'PAP'
+        ],
+        {
+            C: '#gtceu:circuits/luv',
+            P: '#forge:plates/iridium',
+            H: 'gtceu:luv_machine_hull',
+            A: 'gtceu:advanced_computer_casing'
+        }
+    )
+
 
 
     //chaos shard crystal_growth_chamber recipe
@@ -736,13 +797,84 @@ ServerEvents.recipes(allthemods => {
         6000,
         32768,8
     );
-
-    createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'minecraft:acacia_boat',
+    
+    
+    let cube = Item.of('mekanism:creative_energy_cube', '{mekData:{EnergyContainers:[{Container:0b,stored:"18446744073709551615.9999"}]}}').strongNBT();
+    
+    createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', cube,
         [
-            'allthetweaks:atm_star'
+            'allthetweaks:atm_star',
+            Ingredient.of('mekanism:ultimate_energy_cube', 1),
+            '4x #forge:singularities/lapotron',
+            '64x #gtceu:circuits/uv',
+            '16x #forge:plates/strontium_aluminate',
+            '16x gtceu:selenium_rectifier',
+            '64x gtceu:germanium_diode'
         ],
-        null,
+        '#forge:etrium 1024000',
         6000,
-        32768,8
+        32768,32,'mekanism_cube'
     );
+
+    createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'createaddition:creative_energy',
+        [
+            'allthetweaks:atm_star',
+            'createaddition:alternator',
+            '4x #forge:singularities/lapotron',
+            '64x #gtceu:circuits/uv',
+            '16x #forge:plates/strontium_aluminate',
+            '16x gtceu:selenium_rectifier',
+            '64x gtceu:germanium_diode'
+        ],
+        '#forge:etrium 1024000',
+        6000,
+        32768,32,null,true
+    );
+
+    createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'ae2:creative_energy_cell',
+        [
+            'allthetweaks:atm_star',
+            'ae2:energy_acceptor',
+            '4x #forge:singularities/lapotron',
+            '64x #gtceu:circuits/uv',
+            '16x #forge:plates/strontium_aluminate',
+            '16x gtceu:selenium_rectifier',
+            '64x gtceu:germanium_diode'
+        ],
+        '#forge:etrium 1024000',
+        6000,
+        32768,32,null,true
+    );
+
+    createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'integrateddynamics:energy_battery_creative',
+        [
+            'allthetweaks:atm_star',
+            'integrateddynamics:crystalized_menril_block',
+            '4x #forge:singularities/lapotron',
+            '64x #gtceu:circuits/uv',
+            '16x #forge:plates/strontium_aluminate',
+            '16x gtceu:selenium_rectifier',
+            '64x gtceu:germanium_diode'
+        ],
+        '#forge:etrium 1024000',
+        6000,
+        32768,32,null,true
+    );
+
+    createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'powah:energy_cell_creative',
+        [            
+            'allthetweaks:atm_star',
+            'powah:energy_cell_nitro',
+            '4x #forge:singularities/lapotron',
+            '64x #gtceu:circuits/uv',
+            '16x #forge:plates/strontium_aluminate',
+            '16x gtceu:selenium_rectifier',
+            '64x gtceu:germanium_diode'
+        ],
+        '#forge:etrium 1024000',
+        6000,
+        32768,32,null,true
+    );
+
+
 });

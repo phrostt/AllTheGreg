@@ -78,6 +78,7 @@ allthemods.custom({
 }).id(`allthemods:energizing/allthemodium_unobtainium_vibranium_alloy_block`)
 */
 // Unobtainium-Vibranium Awakened Block
+/*
   allthemods.custom({
   "type": "mysticalagriculture:awakening",
   "essences": [
@@ -119,7 +120,7 @@ allthemods.custom({
 	Item.of('allthemodium:unobtainium_vibranium_alloy_block', "{HideFlags:1,display:{Name:'[{\"text\":\"Awakened Unobtainium-Vibranium Alloy Block\",\"italic\":false}]'}}").enchant('unbreaking', 1).toJson()
 
 }).id(`allthemods:awakening/awakened_unobtainium_vibranium_alloy_block`)
-
+*/
 //Botania
 //
 //allthemodium-vibranium ingot

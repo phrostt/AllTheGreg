@@ -4,7 +4,7 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('gtceu:thorium_single')
         .itemOutputs('chemlib:protactinium_dust')
         .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:xenon 2000', 'gtceu:radioactive_bioresidue 2000'])
+        .outputFluids(['gtceu:radon 2000', 'gtceu:radioactive_bioresidue 2000'])
         .duration(1500)
         .EUt(-131072);
 
@@ -12,7 +12,7 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('gtceu:thorium_double')
         .itemOutputs('2x chemlib:protactinium_dust')
         .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:xenon 4000', 'gtceu:radioactive_bioresidue 4000'])
+        .outputFluids(['gtceu:radon 4000', 'gtceu:radioactive_bioresidue 4000'])
         .duration(3150)
         .EUt(-131072);
 
@@ -20,9 +20,34 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('gtceu:thorium_quad')
         .itemOutputs('4x chemlib:protactinium_dust')
         .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:xenon 8000', 'gtceu:radioactive_bioresidue 8000'])
+        .outputFluids(['gtceu:radon 8000', 'gtceu:radioactive_bioresidue 8000'])
         .duration(6500)
         .EUt(-131072);
+
+    
+    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/single_berkelium_cell')
+        .itemInputs('gtceu:thorium_berkelium_single')
+        .itemOutputs('2x chemlib:protactinium_dust')
+        .inputFluids('gtceu:distilled_water 16000')
+        .outputFluids(['gtceu:xenon 2000', 'gtceu:radioactive_bioresidue 2000'])
+        .duration(1500)
+        .EUt(-524288);
+
+    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/double_berkelium_cell')
+        .itemInputs('gtceu:thorium_berkelium_double')
+        .itemOutputs('4x chemlib:protactinium_dust')
+        .inputFluids('gtceu:distilled_water 16000')
+        .outputFluids(['gtceu:xenon 4000', 'gtceu:radioactive_bioresidue 4000'])
+        .duration(3150)
+        .EUt(-524288);
+
+    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/quad_berkelium_cell')
+        .itemInputs('gtceu:thorium_berkelium_quad')
+        .itemOutputs('8x chemlib:protactinium_dust')
+        .inputFluids('gtceu:distilled_water 16000')
+        .outputFluids(['gtceu:xenon 8000', 'gtceu:radioactive_bioresidue 8000'])
+        .duration(6500)
+        .EUt(-524288);
 
     allthemods.recipes.gtceu.assembly_line('gregification:craft_thorium_reactor')
         .itemInputs(

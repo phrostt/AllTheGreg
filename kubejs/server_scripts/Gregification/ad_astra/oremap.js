@@ -82,7 +82,8 @@ GTCEuServerEvents.oreVeins(event => {
         ['columbite_tantalite', 'microlite', 'wodginite'],        // Nb/Ta minerals
         ['bismuthinite', 'bismite', 'bismutite'],                 // bismuth minerals
         ['thorianite', 'thorite'],                                // thorium minerals        
-        ['hellish', 'terraria', 'coagulite']                                   // flavor/lore ores
+        ['hellish', 'terraria', 'coagulite'],                                   // flavor/lore ores
+        ['radio_thoric_phosphate']
     ];
 
     const marsOreGroups = [
@@ -107,8 +108,7 @@ GTCEuServerEvents.oreVeins(event => {
     const glacioOreGroups = [
         ['germanite', 'renierite', 'argyrodite'],        // germanium minerals
         ['rhenite', 'tarkianite'],                        // rhenium minerals
-        ['rubicline', 'rhodizite'],        
-        ['radio_thoric_phosphate'],
+        ['rubicline', 'rhodizite'],                
         ['tenebrius', 'etrium', 'chaotic']                // flavor/lore ores
     ];
 

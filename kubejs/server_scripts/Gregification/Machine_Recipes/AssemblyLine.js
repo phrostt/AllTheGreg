@@ -1263,4 +1263,58 @@ ServerEvents.recipes(allthemods => {
         32768,
         "gtceu:thorium_double"
     );
+
+    addAssemblyLine(
+        "gtceu:thorium_berkelium_single",
+        [
+            "8x #forge:dusts/thorium_berkelium_alloy",
+            "4x #forge:rods/tellurium",
+            '8x #forge:plates/potassium_calcium_orthosilicate'
+        ],
+        [
+            "#forge:hop_graphite 1000",
+            "#forge:gadolinium 1000",
+            "#forge:beryllium 1000"
+
+        ],
+        1200,
+        131072,
+        "#forge:dusts/thorium_berkelium_alloy",32
+    );
+
+    addAssemblyLine(
+        "gtceu:thorium_berkelium_double",
+        [
+            "2x gtceu:thorium_berkelium_single",
+            "4x #forge:rods/tellurium",
+            '8x #forge:plates/potassium_calcium_orthosilicate'
+        ],
+        [
+            "#forge:hop_graphite 1000",
+            "#forge:gadolinium 1000",
+            "#forge:beryllium 1000"
+
+        ],
+        1200,
+        131072,
+        "gtceu:thorium_berkelium_single"
+    );
+
+    addAssemblyLine(
+        "gtceu:thorium_berkelium_quad",
+        [
+            "2x gtceu:thorium_berkelium_double",
+            "4x #forge:rods/tellurium",
+            '8x #forge:plates/potassium_calcium_orthosilicate'
+        ],
+        [
+            "#forge:hop_graphite 1000",
+            "#forge:gadolinium 1000",
+            "#forge:beryllium 1000"
+
+        ],
+        1200,
+        131072,
+        "gtceu:thorium_berkelium_double"
+    );
 });

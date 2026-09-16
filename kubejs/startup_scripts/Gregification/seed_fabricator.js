@@ -2,14 +2,14 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
     allthemods.create('seed_fabricator')
         .category('seed_fabricator')
         .setEUIO('in') // Machine takes power IN
-        .setMaxIOSize(9, 1, 3, 3) // 4 Item In, 1 Item Out, 2 Fluid In
+        .setMaxIOSize(9, 1, 3, 3)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)	
 
     allthemods.create('awakening_altar')
         .category('awakening_altar')
         .setEUIO('in') // Machine takes power IN
-        .setMaxIOSize(8, 3, 3, 3) // 4 Item In, 1 Item Out, 2 Fluid In
+        .setMaxIOSize(8, 3, 6, 3)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.CHEMICAL)	
 })

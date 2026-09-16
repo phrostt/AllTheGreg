@@ -180,6 +180,21 @@ StartupEvents.registry('item', event => {
         .rarity('RARE')
         .tooltip('§7A Quad thorium fuel cell.')
 
+    event.create('gtceu:thorium_berkelium_single')
+        .displayName('Single Thorium Berkelium Fuel Cell')
+        .rarity('RARE')
+        .tooltip('§7A Single thorium berkelium fuel cell.')
+
+    event.create('gtceu:thorium_berkelium_double')
+        .displayName('Double Thorium Berkelium Fuel Cell')
+        .rarity('RARE')
+        .tooltip('§7A Double thorium berkelium fuel cell.')
+
+    event.create('gtceu:thorium_berkelium_quad')
+        .displayName('Quad Thorium Berkelium Fuel Cell')
+        .rarity('RARE')
+        .tooltip('§7A Quad thorium berkelium fuel cell.')
+
     event.create('gtceu:samarium_cobalt_magnetic_rotor')
         .displayName('Samarium Cobalt Magnetic Rotor')
         .tooltip('§7A Samarium Cobalt Magnetic Rotor.')

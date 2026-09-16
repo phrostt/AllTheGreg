@@ -419,8 +419,10 @@
     "block.gtceu.prototype_assembler": "Prototype Assembler",
     "gtceu.prototype_research_station": "Prototype Research Station",
     "block.gtceu.prototype_research_station": "Prototype Research Station",
-    "gtceu.neuro_interface": "Neural Interface",
-    "block.gtceu.neuro_interface": "Neural Interface",
+    "gtceu.neuro_interface": "Neuro Interface",
+    "block.gtceu.neuro_interface": "Neuro Interface",
+    "gtceu.awakening_altar": "Awakening Altar",
+    "block.gtceu.awakening_altar": "Awakening Altar",
     "material.gtceu.ionized_oxygen": "Ionized Oxygen",
     "material.gtceu.inert_gas_mixture": "Inert Gas Mixture",
     "material.gtceu.ostrum": "Ostrum",
@@ -498,7 +500,7 @@
     "gtceu.jei.ore_vein.glacio_germanite_renierite_argyrodite": "Germanium Deposit",
     "gtceu.jei.ore_vein.glacio_rhenite_tarkianite": "Rhenium Deposit",
     "gtceu.jei.ore_vein.glacio_rubicline_rhodizite": "Rubicline-Rhodizite Deposit",
-    "gtceu.jei.ore_vein.glacio_radio_thoric_phosphate": "Radio-Thoric Phosphate Deposit",
+    "gtceu.jei.ore_vein.moon_radio_thoric_phosphate": "Radio-Thoric Phosphate Deposit",
     "gtceu.jei.ore_vein.glacio_tenebrius_etrium_chaotic": "Tenebrius-Etrium Deposit",
     "gtceu.jei.ore_vein.moon_apatite_vein": "Moon Apatite Vein",
     "gtceu.jei.ore_vein.moon_cassiterite_vein": "Moon Cassiterite Vein",
@@ -653,6 +655,15 @@
     "material.gtceu.rocket_fuel_stage_3": "Rocket Fuel Stage 3",
     "material.gtceu.rocket_fuel_stage_4": "Rocket Fuel Stage 4",
     "material.gtceu.bio_organic_nanocomposite": "Bio Organic Nanocomposite",
-    "material.gtceu.spent_nuclear_waste": "Spent Nuclear Waste"
+    "material.gtceu.spent_nuclear_waste": "Spent Nuclear Waste",
+    "material.gtceu.fire_essence": "Fire Essence",
+    "material.gtceu.water_essence": "Water Essence",
+    "material.gtceu.air_essence": "Air Essence",
+    "material.gtceu.earth_essence": "Earth Essence",
+    "material.gtceu.fiery": "Fiery",
+    "material.gtceu.carminite": "Carminite",
+    "material.gtceu.steeleaf": "Steeleaf",
+    "material.gtceu.knightmetal": "Knightmetal"
+
 }
  

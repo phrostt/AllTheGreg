@@ -138,6 +138,12 @@ ServerEvents.recipes(allthemods => {
         'gtceu:zpm_compressor',
         64
     )
+
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/carminite'], null, 'gtceu:carminite_singularity', null, 131072, 1200, 'carminite_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/steeleaf'], null, 'gtceu:steeleaf_singularity', null, 131072, 1200, 'steeleaf_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/fiery'], null, 'gtceu:fiery_singularity', null, 131072, 1200, 'fiery_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/knightmetal'], null, 'gtceu:knightmetal_singularity', null, 131072, 1200, 'knightmetal_singularity')
+
  
     blackHole(['#forge:singularities/core', '4000x evilcraft:garmonbozia'], null, 'gtceu:garmonbozia_singularity', null, 131072, 1200, 'garmonbozia_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:gems/mana_essence'], null, 'gtceu:mana_essence_singularity', null, 131072, 1200, 'mana_essence_singularity')

@@ -1,6 +1,6 @@
 ServerEvents.recipes(allthemods => {
     const RadioEUSimple = 512;
-    const RadioEUComplex = 131072; //ZPM
+    const RadioEUComplex = 32768; //ZPM
     // --- Radioactive Chain ---
 
     // Step 1: Chemical Bath

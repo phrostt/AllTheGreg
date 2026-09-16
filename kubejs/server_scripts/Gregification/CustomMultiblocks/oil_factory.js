@@ -27,6 +27,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:toluene 500'
         ])
         // TODO: carbon dust item output, chance-weighted ~655%
+        .addData('ebf_temp', 7100)
         .duration(TIME.medium)  // TODO: set real duration
         .EUt(EUStage3)          // TODO: set real EU/t tier
         .circuit(1);
@@ -53,6 +54,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:toluene 670'
         ])
         // TODO: carbon dust item output, chance-weighted ~315%
+        .addData('ebf_temp', 7100)
         .duration(TIME.medium)  // TODO: set real duration
         .EUt(EUStage3)          // TODO: set real EU/t tier
         .circuit(2);
@@ -78,6 +80,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:toluene 90',
             'gtceu:butane 2200'
         ])
+        .addData('ebf_temp', 7100)
         .duration(TIME.medium)  // TODO: set real duration
         .EUt(EUStage3)          // TODO: set real EU/t tier
         .circuit(3);
@@ -104,6 +107,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:butane 11000',
             'gtceu:hydrogen 16000'
         ])
+        .addData('ebf_temp', 7100)
         .duration(TIME.medium)  // TODO: set real duration
         .EUt(EUStage3)          // TODO: set real EU/t tier
         .circuit(4);

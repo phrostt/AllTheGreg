@@ -4,6 +4,7 @@
 ServerEvents.recipes(allthemods => {
 	
 // Twilight Mini Structure
+/*
 	allthemods.custom({
 	"type": "mysticalagriculture:awakening",
 	"essences": [
@@ -45,6 +46,7 @@ ServerEvents.recipes(allthemods => {
     "item": "twilightforest:twilight_portal_miniature_structure"
 	}
 	}).id(`allthemods:awakening/twilight_portal_miniature_structure`)
+  */
 
 // Mini Nether
 	allthemods.shaped('allthetweaks:mini_nether', ['ADA', 'BCB', 'AEA'], {
