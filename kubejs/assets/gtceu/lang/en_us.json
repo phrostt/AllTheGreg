@@ -421,8 +421,10 @@
     "block.gtceu.prototype_research_station": "Prototype Research Station",
     "gtceu.neuro_interface": "Neuro Interface",
     "block.gtceu.neuro_interface": "Neuro Interface",
-    "gtceu.awakening_altar": "Awakening Altar",
+    "gtceu.awakening_altar": "Awakening Altar",    
     "block.gtceu.awakening_altar": "Awakening Altar",
+    "gtceu.super_critical_heat_exchanger": "Super Critical Heat Exchanger",    
+    "block.gtceu.super_critical_heat_exchanger": "Super Critical Heat Exchanger",
     "material.gtceu.ionized_oxygen": "Ionized Oxygen",
     "material.gtceu.inert_gas_mixture": "Inert Gas Mixture",
     "material.gtceu.ostrum": "Ostrum",
@@ -663,7 +665,9 @@
     "material.gtceu.fiery": "Fiery",
     "material.gtceu.carminite": "Carminite",
     "material.gtceu.steeleaf": "Steeleaf",
-    "material.gtceu.knightmetal": "Knightmetal"
-
+    "material.gtceu.knightmetal": "Knightmetal",
+    "material.gtceu.thallium_sulfide": "Thallium Sulfide",
+    "material.gtceu.thallium_sulfate": "Thallium Sulfate",
+    "material.gtceu.thallium_carbonate": "Thallium Carbonate"    
 }
  

@@ -139,6 +139,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:carbon_monoxide 1000')
         .duration(Duration)
         .EUt(EUMercuryVenus);
+    
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:arsenic_acid_chemical_reactor')
         .itemInputs('4x #forge:dusts/carbon')
@@ -156,6 +157,34 @@ ServerEvents.recipes(allthemods => {
         .duration(Duration)
         .EUt(512);
 
+    allthemods.recipes.gtceu.chemical_reactor('gregification:thallium_sulfate_chemical_reactor')
+        .itemInputs('#forge:dusts/thallium_oxide')
+        .inputFluids('#forge:sulfuric_acid 1000')
+        .itemOutputs('gtceu:thallium_sulfate_dust')
+        .outputFluids('minecraft:water 1000')
+        .duration(Duration)
+        .EUt(EUMercuryVenus);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:thallium_carbonate_chemical_reactor')
+        .itemInputs(['2x #forge:dusts/thallium', '#forge:dusts/soda_ash'])
+        .itemOutputs(['gtceu:thallium_carbonate_dust', '2x gtceu:sodium_dust'])
+        .duration(Duration)
+        .EUt(EUMercuryVenus);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:thallium_sulfide_chemical_reactor')
+        .itemInputs(['#forge:dusts/thallium_carbonate', '#forge:dusts/sodium_sulfide'])
+        .itemOutputs(['gtceu:thallium_sulfide_dust', 'gtceu:soda_ash_dust'])
+        .duration(Duration)
+        .EUt(EUMercuryVenus);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:thallium_sulfide_to_thallium_sulfate')
+        .itemInputs('#forge:dusts/thallium_sulfide')
+        .inputFluids('#forge:hydrogen_peroxide 4000')
+        .itemOutputs('gtceu:thallium_sulfate_dust')
+        .outputFluids('minecraft:water 4000')
+        .duration(Duration)
+        .EUt(EUMercuryVenus);
+
     //hutchinsonite    
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:hutchinsonite_chemical_reactor') 
         .itemInputs(['2x #forge:dusts/hutchinsonite', '2x #forge:dusts/sodium_iodide'])
@@ -164,6 +193,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids(['gtceu:arsenic_acid 10000', 'gtceu:hydrogen_sulfide 18000'])        
         .duration(Duration)
         .EUt(EUMercuryVenus);
+
     
     // Scandium
     //thortveitite

@@ -1,6 +1,13 @@
 
 
 GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
+    allthemods.create('super_critical_heat_exchanger')
+        .category('super_critical_heat_exchanger')
+        .setEUIO('in')
+        .setMaxIOSize(6, 6, 6, 6) // Item In, Item Out, Fluid In, Fluid Out
+        .setProgressBar(GuiTextures.COMPRESSOR_OVERLAY, FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.COOLING)
+
     allthemods.create('drone_station')
         .category('drone_station')
         .setEUIO('in') // Machine takes power IN
@@ -55,6 +62,23 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', allthemods => {
 
 })
 GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
+
+    allthemods.create('super_critical_heat_exchanger', 'multiblock')
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('super_critical_heat_exchanger')
+        //.appearanceBlock(GTBlocks.CASING_ALUMINIUM_FROSTPROOF)
+        .appearanceBlock(() => Block.getBlock('gtceu:gadolinium_casing'))        
+        .recipeModifiers([GTRecipeModifiers.OC_PERFECT])
+        .pattern(definition => FactoryBlockPattern.start()            
+            .aisle('K')            
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))                                    
+            .build()
+        )
+        .workableCasingModel(
+            'gtceu:block/casings/solid/machine_casing_frost_proof',
+            'gtceu:block/multiblock/vacuum_freezer'            
+        )
+
     allthemods.create('drone_station', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType('drone_station')

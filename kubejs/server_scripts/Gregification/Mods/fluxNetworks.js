@@ -18,6 +18,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:iv_machine_casing',
 		'#forge:frames/enderium',
         '4x #forge:plates/draconium',
+		'4x #forge:plates/gadolinium',
 		'4x #forge:rods/hop_graphite',
 		'4x #forge:screws/end_steel',
         'gtceu:iv_field_generator',
@@ -36,7 +37,8 @@ ServerEvents.recipes(allthemods => {
 			'gtceu:computer_monitor_cover',
 			'4x fluxnetworks:flux_core',
 			'2x #gtceu:circuits/iv',			
-			'4x #forge:plates/draconium',		
+			'4x #forge:plates/draconium',
+			'4x #forge:plates/gadolinium',
 			'#forge:frames/hop_graphite'
 			
 		],
@@ -53,6 +55,7 @@ ServerEvents.recipes(allthemods => {
 			'2x fluxnetworks:flux_core',
 			'gtceu:iv_sensor',
 			'2x #forge:plates/enderium',
+			'4x #forge:rods/gadolinium',
 			'4x #forge:screws/draconium'
 			
 		],
@@ -69,6 +72,7 @@ ServerEvents.recipes(allthemods => {
 			'2x fluxnetworks:flux_core',
 			'gtceu:iv_emitter',
 			'2x #forge:plates/enderium',
+			'4x #forge:rods/gadolinium',
 			'4x #forge:screws/draconium'
 		],
 		'gtceu:polytetrafluoroethylene 144',

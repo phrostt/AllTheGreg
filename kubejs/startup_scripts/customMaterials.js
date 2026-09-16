@@ -426,6 +426,9 @@ const dusts = [
     { name: 'thallium_iodide', components: '1x thallium, 1x iodine', color: 0xFFF200, formula: 'TlI', iconSet: 'METALLIC', noDecomp: true },
     { name: 'sodium_iodide', components: '1x sodium, 1x iodine', color: 0xFFFFFF, formula: 'NaI', iconSet: 'DULL' },
     { name: 'thallium_oxide', components: '2x thallium, 1x oxygen', color: 0x3B2F2F, formula: 'Tl2O', iconSet: 'DULL', noDecomp: true },
+    { name: 'thallium_sulfide', components: '2x thallium, 1x sulfur', formula: 'Tl2S', color: 0x2C2C2C, iconSet: 'METALLIC', noDecomp: true },
+    { name: 'thallium_sulfate', components: '2x thallium, 1x sulfur, 4x oxygen', formula: 'Tl2SO4', color: 0xFFFFFF, iconSet: 'DULL', noDecomp: true },
+    { name: 'thallium_carbonate', components: '2x thallium, 1x carbon, 3x oxygen', formula: 'Tl2CO3', color: 0xFFFFFF, iconSet: 'DULL', noDecomp: true },
     { name: 'lead_chloride', components: '1x lead, 2x chlorine', color: 0xFFFFFF, formula: 'PbCl2', iconSet: 'DULL' },
     { name: 'scandium_oxide', components: '2x scandium, 3x oxygen', color: 0xFFFFFF, formula: 'Sc2O3', iconSet: 'DULL' },
     { name: 'beryllium_oxide', components: '1x beryllium, 1x oxygen', color: 0xFFFFFF, formula: 'BeO', iconSet: 'DULL', noDecomp: true },
@@ -443,7 +446,6 @@ const dusts = [
     { name: 'tantalum_pentachloride', components: '1x tantalum, 5x chlorine', color: 0xF5DEB3, formula: 'TaCl5', iconSet: 'DULL', fluid: true, noDecomp: true },
     { name: 'niobium_tantalum_residue', components: '2x niobium, 2x tantalum, 4x oxygen', color: 0x2B2B2B, formula: 'Nb2Ta2O4', iconSet: 'METALLIC', noDecomp: true },
     { name: 'cerium_oxide', components: '1x cerium, 2x oxygen', color: 0xF5DEB3, formula: 'CeO2', iconSet: 'DULL' },
-
     { name: 'thorium_oxide', components: '1x thorium, 2x oxygen', color: 0xe8e8e8, formula: 'ThO2', iconSet: 'DULL' }
 ];
 
@@ -643,7 +645,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     materialBuilder = event.create('earth_essence')
         .fluid()
-        .dust()
+        .gem()
         .color(0xD7D34C)
         .iconSet(GTMaterialIconSet.FLUID);
     

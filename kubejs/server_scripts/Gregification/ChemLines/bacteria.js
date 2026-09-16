@@ -12,7 +12,8 @@ ServerEvents.recipes(allthemods => {
         { nbt: 'DeinococcusRadiodurans', name: 'Deinococcus radiodurans' },
         { nbt: 'Sphingomonas', name: 'Sphingomonas' },
         { nbt: 'Rhizobacterium', name: 'Nitrogen-Fixing Rhizobacteria' },
-        { nbt: 'Desulfovibrio', name: 'Desulfovibrio' }
+        { nbt: 'Desulfovibrio', name: 'Desulfovibrio' },
+        { nbt: 'Clostridium', name: 'Clostridium Cellulose-Alpha' }
     ];
 
     const bacteriaStageItems = (strain) => {
@@ -253,4 +254,5 @@ ServerEvents.recipes(allthemods => {
     };
 
     rotary('mekanism:spent_nuclear_waste', 'gtceu:spent_nuclear_waste', 10)
+    
 });

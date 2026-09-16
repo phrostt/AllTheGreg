@@ -26,7 +26,11 @@ ServerEvents.recipes(allthemods => {
         { input: "gtceu:rubber_sapling", output: "thermal:rubberwood_sapling", energy: 128 },
         { input: "minecraft:red_mushroom", output: "minecraft:brown_mushroom", energy: 128 },
         { input: "minecraft:brown_mushroom", output: "minecraft:red_mushroom", energy: 128 },
-        { input: "#forge:seeds", output: "gtceu:crystallized_seed", energy: 2048 }
+        { input: "#forge:seeds", output: "gtceu:crystallized_seed", energy: 2048 },
+        { input: "elementalcraft:pristine_fire_gem", output: "gtceu:exquisite_fire_essence_gem", energy: 512 },
+        { input: "elementalcraft:pristine_water_gem", output: "gtceu:exquisite_water_essence_gem", energy: 512 },
+        { input: "elementalcraft:pristine_air_gem", output: "gtceu:exquisite_air_essence_gem", energy: 512 },
+        { input: "elementalcraft:pristine_earth_gem", output: "gtceu:exquisite_earth_essence_gem", energy: 512 }
     ]
 
     const reconstruction = (input, output, fluidIn, voltage, duration) => {

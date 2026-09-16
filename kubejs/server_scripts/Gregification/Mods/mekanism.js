@@ -203,4 +203,24 @@ ServerEvents.recipes(allthemods => {
         });
     });
 
+
+    //structural glass
+    allthemods.recipes.gtceu.forming_press('gregification:mekanism/structural_glass')
+    .itemInputs([
+        '2x gtceu:laminated_glass',
+        '4x #forge:dusts/thallium_carbonate'
+    ])
+    .itemOutputs('mekanism:structural_glass')
+    .duration(200)
+    .EUt(8192);
+
+    allthemods.recipes.gtceu.forming_press('gregification:mekanism/reactor_glass')
+    .itemInputs([
+        'mekanism:structural_glass',
+        '2x #forge:dusts/thallium_carbonate'
+    ])
+    .itemOutputs('mekanismgenerators:reactor_glass')
+    .duration(400)
+    .EUt(8192);
+
 })

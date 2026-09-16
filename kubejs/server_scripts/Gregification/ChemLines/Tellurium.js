@@ -63,6 +63,4 @@ ServerEvents.recipes(allthemods => {
         .blastFurnaceTemp(7200)
         .duration(200)
         .EUt(TelluriumEUComplex);
-
-    
 });

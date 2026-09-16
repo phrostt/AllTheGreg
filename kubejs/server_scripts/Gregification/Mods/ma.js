@@ -165,5 +165,32 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
+    let  Clostridium = Item.of('gtceu:bacteria_colony_dust', '{bacteriaSpecies:"Clostridium"}').strongNBT();
 
+    allthemods.recipes.gtceu.mixer(`allthemods:gregification/assembler/red_fertilizer_x4`)
+        .itemInputs(Clostridium, '#forge:dusts/phosphorus_pentoxide', '#forge:dusts/calcium_nitrate', '#forge:dusts/thallium_sulfate', '#forge:dusts/potassium_carbonate')
+        .itemOutputs('4x farmingforblockheads:red_fertilizer')
+        .inputFluids('#forge:liquid_fertilizer 1000')
+        .duration(120)
+        .EUt(512);
+
+    // better recipe
+    allthemods.recipes.gtceu.mixer(`allthemods:gregification/assembler/red_fertilizer_16x`)
+        .itemInputs(Clostridium, '#forge:dusts/phosphorus_pentoxide', '#forge:dusts/calcium_nitrate', '#forge:dusts/thallium_sulfate', '#forge:dusts/potash', '#forge:dusts/iron_hydroxide')
+        .itemOutputs('16x farmingforblockheads:red_fertilizer')
+        .inputFluids('#forge:liquid_fertilizer 1000')
+        .duration(120)
+        .EUt(2048);
+
+    //esences
+    essences.forEach(essence => {
+        allthemods.recipes.gtceu.gem_polisher(`${essence}_to_shard`)
+            .itemInputs(`#forge:gems/${essence}_essence`)
+            .chancedInput('gtceu:polishing_wheel', 1000, 0)
+            .inputFluids('gtceu:distilled_water 288')
+            .itemOutputs(`elementalcraft:${essence}_shard`)
+            .duration(150)
+            .EUt(512);
+    });
+    
 });

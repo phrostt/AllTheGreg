@@ -1,9 +1,6 @@
 ServerEvents.recipes(allthemods => {
 	
-	// 1. Metals & Basics
-    allthemods.smelting('alltheores:iridium_ingot', 'alltheores:iridium_dust').id('sanguine:smelting/iridium');
-    allthemods.blasting('alltheores:iridium_ingot', 'alltheores:iridium_dust').id('sanguine:blasting/iridium');
-	
+		
 	//atm star componenets
 	allthemods.shapeless(
         'kubejs:quantum_sentient_circuit', 

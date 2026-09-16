@@ -67,7 +67,7 @@ ServerEvents.recipes(allthemods => {
 
         'wirelesschargers:basic_wireless_player_charger', 'wirelesschargers:advanced_wireless_player_charger',
         'wirelesschargers:basic_wireless_block_charger', 'wirelesschargers:advanced_wireless_block_charger',
-        'gtceu:smelting/smelt_dust_germanium_to_ingot', 
+        'gtceu:smelting/smelt_dust_germanium_to_ingot', 'farmingforblockheads:red_fertilizer', 'mekanism:structural_glass', 'mekanismgenerators:reactor/glass',
 
         // --- Ad Astra ---        
         'ad_astra:rocket_fin', 'ad_astra:rocket_nose_cone', 'ad_astra:engine_frame',
