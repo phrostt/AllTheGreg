@@ -252,5 +252,5 @@ ServerEvents.recipes(allthemods => {
         }).id(`gregification:rotary/condensing/${gas.split(':')[1]}`);
     };
 
-    rotary('mekanism:spent_nuclear_waste', 'gtceu:spent_nuclear_waste', 100)
+    rotary('mekanism:spent_nuclear_waste', 'gtceu:spent_nuclear_waste', 10)
 });
