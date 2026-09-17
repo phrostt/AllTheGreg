@@ -4,11 +4,11 @@
 ServerEvents.recipes(allthemods => {
   allthemods.remove({ id: 'tiab:time_in_a_bottle' })
   allthemods.shaped('tiab:time_in_a_bottle', ['UUU', 'DCD', 'LBL'], {
-    U: '#forge:ingots/unobtainium',
-    D: 'mysticalagriculture:speed_iii_augment',
-    L: 'minecraft:lapis_lazuli',
-    C: 'productivebees:upgrade_time',
-    B: 'minecraft:experience_bottle'
+    U: '#forge:plates/unobtainium',
+    D: 'mysticalexpansion:divinium_essence',
+    L: '#forge:plates/radium',
+    C: 'gtceu:tachyon',
+    B: 'allthetweaks:atm_star'
   })
 })
 

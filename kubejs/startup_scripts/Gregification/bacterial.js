@@ -39,7 +39,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
 			.aisle('CCCCCCC', 'G     G', 'G     G', 'G     G', 'CCCCCCC')
             .aisle('CCCKCCC', 'GGGGGGG', 'GGGGGGG', 'GGGGGGG', 'CCCCCCC')            
             //.where('D', Predicates.blocks('gtceu:rtm_alloy_coil_block'))	                        
-            .where('D', Predicates.heatingCoils())           
+            .where('D', Predicates.heatingCoils())
             .where('K', Predicates.controller(Predicates.blocks(definition.get())))
             .where('G', Predicates.blocks('gtceu:cleanroom_glass'))
             .where('C', Predicates.blocks(GTBlocks.CASING_PTFE_INERT.get())
