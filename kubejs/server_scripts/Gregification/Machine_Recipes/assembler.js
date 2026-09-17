@@ -812,4 +812,36 @@ ServerEvents.recipes(allthemods => {
         'gtceu:samarium_cobalt_magnetic_rotor', 
         8192, 60);
 
+    //soul extractor
+    addAssembler(
+        [
+            "gtceu:hexagonal_bio_composite",
+            "#forge:frames/draconium",
+            "4x #gtceu:circuits/iv",
+            "4x gtceu:iv_electric_pump",
+            "4x gtceu:iv_electric_piston"
+
+        ],            
+        "#forge:polytetrafluoroethylene 576",
+        "gtceu:soul_extractor",
+        512,
+        6000
+    );
+
+    //hephaestus forge
+    addAssemblyLine(
+        [
+            "gtceu:hexagonal_bio_composite",            
+            "4x #forge:plates/ferrognetic",
+            "#forge:frames/draconium",
+            "4x #gtceu:circuits/luv",
+            "4x gtceu:iv_electric_pump",
+            "4x gtceu:iv_electric_piston"
+
+        ],
+        "#forge:polytetrafluoroethylene 576",
+        "gtceu:hephaestus_forge",
+        512,
+        6000
+    );
 });

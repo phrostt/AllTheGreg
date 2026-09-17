@@ -291,8 +291,7 @@ const fluids = [
     { name: 'essence_of_destruction', color: 0x2F4F4F, iconSet: 'FLUID' },
     { name: 'stable_life_essence', color: 0xFF69B4, iconSet: 'FLUID' },
     { name: 'saturated_tau', color: 0xFF8C00, iconSet: 'FLUID' },
-    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },
-    { name: 'aureal', color: 0xA1C2F7, iconSet: 'FLUID' },
+    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },    
     { name: 'liquid_chaos', color: 0x111111, iconSet: 'FLUID' },
     { name: 'radioactive_acetate_slurry', color: 0x99FF33, iconSet: 'RADIOACTIVE' },
     { name: 'mixed_radioactive_concentrate', color: 0xCCFF66, iconSet: 'FLUID' },
@@ -623,7 +622,63 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
 
     let materialBuilder;
+    
 
+    materialBuilder = event.create('aureal')
+        .fluid()
+        .gem()
+        .color(0xA1C2F7)
+        .iconSet(GTMaterialIconSet.SHINY);        
+
+    materialBuilder = event.create('energized_steel')
+        .fluid()
+        .ingot()
+        .color(0xceb08a)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+
+    materialBuilder = event.create('blazing_crystal')
+        .fluid()
+        .gem()
+        .color(0xf06223)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+
+    materialBuilder = event.create('niotic_crystal')
+        .fluid()
+        .gem()
+        .color(0x00e3fc)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+
+    materialBuilder = event.create('spirited_crystal')
+        .fluid()
+        .gem()
+        .color(0x00fc00)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+
+    materialBuilder = event.create('nitro_crystal')
+        .fluid()
+        .gem()
+        .color(0x970000)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
 
     materialBuilder = event.create('fire_essence')
         .fluid()
@@ -1714,6 +1769,7 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('water_essence'), 'mysticalagriculture:water_essence');
     TagPrefix.gem.setIgnored(GTMaterials.get('air_essence'), 'mysticalagriculture:air_essence');
     TagPrefix.gem.setIgnored(GTMaterials.get('earth_essence'), 'mysticalagriculture:earth_essence');
+    
 
 
     // Ingot
@@ -1730,6 +1786,12 @@ StartupEvents.postInit(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('plastic'), 'industrialforegoing:plastic');
     TagPrefix.ingot.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
     TagPrefix.ingot.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ingot');
+
+    TagPrefix.ingot.setIgnored(GTMaterials.get('energized_steel'), 'powah:steel_energized');
+    TagPrefix.gem.setIgnored(GTMaterials.get('blazing_crystal'), 'powah:crystal_blazing');
+    TagPrefix.gem.setIgnored(GTMaterials.get('niotic_crystal'), 'powah:crystal_niotic');
+    TagPrefix.gem.setIgnored(GTMaterials.get('spirited_crystal'), 'powah:crystal_spirited');
+    TagPrefix.gem.setIgnored(GTMaterials.get('nitro_crystal'), 'powah:crystal_nitro');
 
     // Nugget
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
@@ -1885,6 +1947,8 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('air_essence'), 'mysticalagriculture:air_essence');
     TagPrefix.gem.setIgnored(GTMaterials.get('earth_essence'), 'mysticalagriculture:earth_essence');
 
+    
+
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_reinforced'), 'mekanism:alloy_reinforced');
@@ -1898,6 +1962,12 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
     TagPrefix.ingot.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ingot');
+    
+    TagPrefix.ingot.setIgnored(GTMaterials.get('energized_steel'), 'powah:steel_energized');
+    TagPrefix.gem.setIgnored(GTMaterials.get('blazing_crystal'), 'powah:crystal_blazing');
+    TagPrefix.gem.setIgnored(GTMaterials.get('niotic_crystal'), 'powah:crystal_niotic');
+    TagPrefix.gem.setIgnored(GTMaterials.get('spirited_crystal'), 'powah:crystal_spirited');
+    TagPrefix.gem.setIgnored(GTMaterials.get('nitro_crystal'), 'powah:crystal_nitro');
 
     // Nugget
     TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');

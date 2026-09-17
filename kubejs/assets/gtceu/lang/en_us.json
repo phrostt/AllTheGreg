@@ -668,6 +668,11 @@
     "material.gtceu.knightmetal": "Knightmetal",
     "material.gtceu.thallium_sulfide": "Thallium Sulfide",
     "material.gtceu.thallium_sulfate": "Thallium Sulfate",
-    "material.gtceu.thallium_carbonate": "Thallium Carbonate"    
+    "material.gtceu.thallium_carbonate": "Thallium Carbonate",
+    "material.gtceu.energized_steel": "Energized Steel",
+    "material.gtceu.blazing_crystal": "Blazing Crystal",
+    "material.gtceu.niotic_crystal": "Niotic Crystal",
+    "material.gtceu.spirited_crystal": "Spirited Crystal",
+    "material.gtceu.nitro_crystal": "Nitro Crystal"
 }
  

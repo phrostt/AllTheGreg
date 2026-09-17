@@ -93,46 +93,9 @@ ServerEvents.recipes(allthemods => {
 
     
 
-    //hephaestus forge
-    addAssemblyLine("gtceu:hephaestus_forge",
-        [
-            "gtceu:hexagonal_bio_composite",
-            "forbidden_arcanus:hephaestus_forge",
-            "4x #forge:plates/ferrognetic",
-            "#forge:frames/alfsteel",
-            "4x #gtceu:circuits/luv",
-            "4x gtceu:luv_electric_pump",
-            "4x gtceu:luv_electric_piston"
+    
 
-        ],
-        [
-            "#forge:soul 1000",
-            "gtceu:saturated_tau 10000"
-        ],
-        mekLong,
-        32768,
-        "forbidden_arcanus:hephaestus_forge"
-    );
-
-    //soul extractor
-    addAssemblyLine("gtceu:soul_extractor",
-        [
-            "gtceu:hexagonal_bio_composite",
-            "#forge:frames/draconium_awakened",
-            "4x #gtceu:circuits/luv",
-            "4x gtceu:luv_electric_pump",
-            "4x gtceu:luv_electric_piston"
-
-        ],
-        [
-            "#forge:saturated_tau 10000",
-            '#forge:sanguine_concentrate 10000',
-            "#forge:polytetrafluoroethylene 576"
-        ],
-        mekLong,
-        32768,
-        "forbidden_arcanus:soul_extractor"
-    );
+    
 
     //mekanism - steel casing
     addAssemblyLine('mekanism:steel_casing',

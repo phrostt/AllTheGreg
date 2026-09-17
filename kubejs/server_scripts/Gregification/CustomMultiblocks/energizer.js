@@ -259,11 +259,11 @@ ServerEvents.recipes(allthemods => {
 
     const capacitors = [
         {tier: 'basic', voltage: 'lv', mat: '#forge:plates/steel', capacitor: ''}, 
-        {tier: 'hardened', voltage: 'mv', mat: 'powah:steel_energized', capacitor: ''}, 
-        {tier: 'blazing', voltage: 'hv', mat: 'powah:crystal_blazing', capacitor: 'smd_'}, 
-        {tier: 'niotic', voltage: 'ev', mat: 'powah:crystal_niotic', capacitor: 'smd_'}, 
-        {tier: 'spirited', voltage: 'iv', mat: 'powah:crystal_spirited', capacitor: 'advanced_smd_'}, 
-        {tier: 'nitro', voltage: 'luv', mat: 'powah:crystal_nitro', capacitor: 'advanced_smd_'}
+        {tier: 'hardened', voltage: 'mv', mat: '#forge:plates/energized_steel', capacitor: ''}, 
+        {tier: 'blazing', voltage: 'hv', mat: '#forge:plates/blazing_crystal', capacitor: 'smd_'}, 
+        {tier: 'niotic', voltage: 'ev', mat: '#forge:plates/niotic_crystal', capacitor: 'smd_'}, 
+        {tier: 'spirited', voltage: 'iv', mat: '#forge:plates/spirited_crystal', capacitor: 'advanced_smd_'}, 
+        {tier: 'nitro', voltage: 'luv', mat: '#forge:plates/nitro_crystal', capacitor: 'advanced_smd_'}
     ];
     capacitors.forEach((tier, index) => {
         

@@ -144,7 +144,14 @@ ServerEvents.recipes(allthemods => {
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/fiery'], null, 'gtceu:fiery_singularity', null, 131072, 1200, 'fiery_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/knightmetal'], null, 'gtceu:knightmetal_singularity', null, 131072, 1200, 'knightmetal_singularity')
 
- 
+
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/blazing_crystal'], null, 'gtceu:blazing_crystal_singularity', null, 131072, 1200, 'blazing_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/niotic_crystal'], null, 'gtceu:niotic_crystal_singularity', null, 131072, 1200, 'niotic_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/spirited_crystal'], null, 'gtceu:spirited_crystal_singularity', null, 131072, 1200, 'spirited_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/nitro_crystal'], null, 'gtceu:nitro_crystal_singularity', null, 131072, 1200, 'nitro_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/energized_steel'], null, 'gtceu:energized_steel_singularity', null, 131072, 1200, 'energized_steel_singularity')
+
+
     blackHole(['#forge:singularities/core', '4000x evilcraft:garmonbozia'], null, 'gtceu:garmonbozia_singularity', null, 131072, 1200, 'garmonbozia_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:gems/mana_essence'], null, 'gtceu:mana_essence_singularity', null, 131072, 1200, 'mana_essence_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:gems/source'], null, 'gtceu:source_singularity', null, 131072, 1200, 'source_singularity')

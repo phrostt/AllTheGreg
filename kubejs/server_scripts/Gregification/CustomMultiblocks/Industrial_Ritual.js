@@ -487,7 +487,7 @@ ServerEvents.recipes(allthemods => {
     addRitual(['gtceu:iv_machine_hull', 'justdirethings:gooblock_tier2', 'bloodmagic:infusedslate', '#forge:frames/terrasteel', '4x minecraft:dragon_breath', 'gtceu:quantum_eye'], 'justdirethings:gooblock_tier3', 'tibiras_attraction');
     addRitual(['gtceu:luv_machine_hull', 'justdirethings:gooblock_tier3', 'bloodmagic:demonslate', '#forge:frames/alfsteel', '4x minecraft:echo_shard', '4x minecraft:sculk', '2x minecraft:sculk_shrieker'], 'justdirethings:gooblock_tier4', 'fatmas_incentivized_attraction');
     addRitual(['16x bloodmagic:etherealslate', '4x #forge:gears/alfsteel', '8x #forge:plates/selenium', '#forge:frames/draconium_awakened', '#forge:rods/long/iesnium', '#forge:gems/soul'], 'bmaddon:blood_generator', 'ronazas_contract')
-
+    addRitual(['forbidden_arcanus:aureal_bottle', '4x #forge:dusts/hellforged', '#bloodmagic:crystals/demon','8x forbidden_arcanus:spawner_scrap', 'occultism:spirit_attuned_gem'],'gtceu:exquisite_aureal_gem', 'kandras_open_conjure')
     //ritual casing
     addRitual(['#forge:frames/drenched_iron', 'botania:rune_fire', 'botania:rune_water', 'botania:rune_earth', 'botania:rune_air', '4x #forge:plates/deorum'], 'gtceu:ritual_casing', 'strigeors_higher_binding')
     
