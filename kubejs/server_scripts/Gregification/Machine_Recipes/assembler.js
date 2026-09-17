@@ -829,7 +829,7 @@ ServerEvents.recipes(allthemods => {
     );
 
     //hephaestus forge
-    addAssemblyLine(
+    addAssembler(
         [
             "gtceu:hexagonal_bio_composite",            
             "4x #forge:plates/ferrognetic",

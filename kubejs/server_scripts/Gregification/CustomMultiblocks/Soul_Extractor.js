@@ -90,7 +90,7 @@ ServerEvents.recipes(allthemods => {
     });
 
     soulExtractor(['forbidden_arcanus:soul_extractor', '128x minecraft:soul_sand'], 'gtceu:water_stage_3 2000', '128x forbidden_arcanus:soulless_sand', 'gtceu:soul 2000', 800, EUStage3)
-    soulExtractor(["128x minecraft:ghast_tear", "128x #forge:dusts/redstone", "128x #forge:dusts/glowstone"], 'gtceu:water_stage_3 5000', null, 'gtceu:aureal 5000', 800, EUStage3)
+    soulExtractor(["128x minecraft:ghast_tear", "128x #forge:dusts/redstone", "128x #forge:dusts/glowstone"], 'gtceu:water_stage_4 16000', null, 'gtceu:aureal 5000', 800, EUStage4)
     
 
     allthemods.recipes.gtceu.hydro_electromagnetic_separator('dragon_heart')

@@ -1,0 +1,18 @@
+filename = 'GregTech-Construct-3.11.2.180.jar'
+name = 'GregTech-Construct'
+side = 'server'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'GregTech-Construct-3.11.2.180.jar'
+
+[download]
+hash = '1375bf5193fb2478c3fd31a616d02887bde8102a'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8437786
+project-id = 1313873

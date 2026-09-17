@@ -621,4 +621,10 @@ ServerEvents.recipes(allthemods => {
         'ronazas_contract',
         180
     );
+
+    addRitual(
+        ['#forge:dusts/gunpowder', '#forge:dyes/gray', 'minecraft:phantom_membrane', '#forge:ingots/clay'],
+        'occultism:gray_paste',
+        'strigeors_higher_binding',
+    );
 });

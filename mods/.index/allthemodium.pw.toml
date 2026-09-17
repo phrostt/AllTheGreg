@@ -1,0 +1,25 @@
+filename = 'allthemodium-1.20.1-47.1.25-2.5.7.jar'
+name = 'Allthemodium'
+side = ''
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'allthemodium-1.20.1-47.1.25-2.5.7.jar'
+
+[download]
+hash = 'c67fb337f052705a34de76252149224e2e62c2f2'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7142820
+project-id = 364466
+
+[[x-prismlauncher-dependencies]]
+addonId = '388172'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '405593'
+type = 'REQUIRED'

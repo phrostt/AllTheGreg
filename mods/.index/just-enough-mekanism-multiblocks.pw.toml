@@ -1,0 +1,45 @@
+filename = 'JustEnoughMekanismMultiblocks-1.20.1-4.24.jar'
+name = 'Just Enough Mekanism Multiblocks'
+side = ''
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '1.20.1-4.24'
+
+[download]
+hash = '205b28e155d1654b9fb5ca703b4cf16a92f0433f'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 8811293
+project-id = 898746
+
+[[x-prismlauncher-dependencies]]
+addonId = '238222'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1230085'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1060096'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '268560'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '602409'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '268566'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1026040'
+type = 'OPTIONAL'
