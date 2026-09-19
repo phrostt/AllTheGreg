@@ -88,14 +88,14 @@ ServerEvents.recipes(allthemods => {
 
     //ostrum
     allthemods.recipes.gtceu.assembler('ostrum_engine')
-        .itemInputs(['ad_astra:engine_frame','8x #forge:gears/naquadah_alloy', '16x #forge:plates/thallium', '4x #forge:rods/ostrum'])
+        .itemInputs(['ad_astra:engine_frame','8x #forge:gears/naquadah_alloy', '16x #forge:plates/scandium', '4x #forge:rods/ostrum'])
         .inputFluids('#forge:polybenzimidazole 2000')
         .itemOutputs('ad_astra:ostrum_engine')
         .duration(partDuration)
         .EUt(zpmTier);
 
     allthemods.recipes.gtceu.assembler('ostrum_tank')
-        .itemInputs(['2x gtceu:tungsten_steel_drum', '8x #forge:plates/ostrum', '4x #forge:rods/thallium'])
+        .itemInputs(['2x gtceu:tungsten_steel_drum', '8x #forge:plates/ostrum', '4x #forge:rods/scandium'])
         .inputFluids('#forge:polybenzimidazole 1000')
         .itemOutputs('ad_astra:ostrum_tank')
         .duration(partDuration)
@@ -103,14 +103,14 @@ ServerEvents.recipes(allthemods => {
 
     //calorite
     allthemods.recipes.gtceu.assembler('calorite_engine')
-        .itemInputs(['ad_astra:engine_frame','8x #forge:gears/darmstadtium', '16x #forge:plates/rubidium', '4x #forge:rods/calorite'])
+        .itemInputs(['ad_astra:engine_frame','8x #forge:gears/darmstadtium', '16x #forge:plates/thallium', '4x #forge:rods/calorite'])
         .inputFluids('#forge:polybenzimidazole 2000')
         .itemOutputs('ad_astra:calorite_engine')
         .duration(partDuration)
         .EUt(uvTier);
 
     allthemods.recipes.gtceu.assembler('calorite_tank')
-        .itemInputs(['2x gtceu:tungsten_steel_drum', '8x #forge:plates/calorite', '4x #forge:rods/rubidium'])
+        .itemInputs(['2x gtceu:tungsten_steel_drum', '8x #forge:plates/calorite', '4x #forge:rods/thallium'])
         .inputFluids('#forge:polybenzimidazole 1000')
         .itemOutputs('ad_astra:calorite_tank')
         .duration(partDuration)

@@ -109,7 +109,7 @@ ServerEvents.recipes(allthemods => {
 
     allthemods.recipes.gtceu.hydro_electromagnetic_separator('saturated_tau')
         .itemInputs('bloodmagic:strong_tau')
-        .inputFluids('gtceu:water_stage_1 1000')        
+        .inputFluids('gtceu:water_stage_2 1000')        
         .outputFluids('gtceu:saturated_tau 1000')
         .duration(100)
         .EUt(EUStage1);

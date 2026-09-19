@@ -11,7 +11,8 @@ const customBlueprints = [
     { id: 'flight_module', grants: ['Creative Jetpack'] },
     { id: 'energy_core', grants: ['Creative Energy Cell', 'Creative Energy Cube', 'Creative Generator', 'Creative Energy Battery', 'Energy Cell (Creative)'] },
     { id: 'thermal', grants: ['Creative RF Coil', 'Creative Flux Efficiency', 'Creative Tank Construction', 'Creative Reclamation Chamber'] }, //death_tome
-    { id: 'blood', grants: ['Creative Blood Drop'] } //spider
+    { id: 'blood', grants: ['Creative Blood Drop'] },
+    { id: 'outworld', grants: ['Chaotic Sword', 'Chaotic Pickaxe', 'Chaotic Shovel', 'Chaotic Axe', 'Chaotic Hoe', 'Chaotic Bow', 'Chaotic Chestpiece'] } //spider
 ];
 
 const quarks = [

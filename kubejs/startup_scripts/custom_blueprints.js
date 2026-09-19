@@ -8,13 +8,14 @@ StartupEvents.registry('item', allthemods => {
         {id: 'waystone', name: 'Waystone'},                         //done
         {id: 'quantum_computer', name: 'Quantum Computer'},         //done
         {id: 'laser_drill', name: 'Laser Drill'},                   //done
-        {id: 'font', name: 'Font'},
-        {id: 'cake', name: 'Cake'},
-        {id: 'flight_module', name: 'Flight Module'},
-        {id: 'energy_core', name: 'Energy Core'},
-        {id: 'crux', name: 'Crux'},        
-        {id: 'thermal', name: 'Thermal'},
-        {id: 'blood', name: 'Blood-Stained'}
+        {id: 'font', name: 'Font'},                                 //done
+        {id: 'cake', name: 'Cake'},                                 //done
+        {id: 'flight_module', name: 'Flight Module'},               //done
+        {id: 'energy_core', name: 'Energy Core'},                   //done
+        {id: 'crux', name: 'Crux'},                                 //done
+        {id: 'thermal', name: 'Thermal'},                           //done
+        {id: 'blood', name: 'Blood-Stained'},                       //done
+        {id: 'outworld', name: 'Outworld'}                          //done
     ];
 
     

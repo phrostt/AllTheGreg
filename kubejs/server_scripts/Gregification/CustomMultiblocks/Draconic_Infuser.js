@@ -38,12 +38,21 @@ ServerEvents.recipes(allthemods => {
         let index = tierOrder.indexOf(tier);
         let sameOrHigherTiers = tierOrder.slice(index);
 
+        if (tier == TIER.chaotic){
+                inputs.push('8x #forge:plates/rubidium');
+                inputs.push('8x #forge:small_gears/strontium');
+                inputs.push('64x #forge:foils/thallium');
+            }
         sameOrHigherTiers.forEach(t => {
-            let recipe = allthemods.recipes.gtceu[`draconic_infuser_${t}`](id)
+            let recipe = allthemods.recipes.gtceu[`draconic_infuser_${t}`](id)            
                 .itemInputs(inputs)
                 .itemOutputs(outputs)
                 .duration(duration)
                 .EUt(eu);
+
+            if (tier == TIER.chaotic){
+                recipe.notConsumable('gtceu:blueprint_outworld');
+            }
 
             if (fluidIn && fluidIn.length > 0) {
                 recipe.inputFluids(fluidIn);
@@ -326,7 +335,7 @@ ServerEvents.recipes(allthemods => {
         { out: 'draconicevolution:chaotic_shovel', in: 'draconicevolution:draconic_shovel' },
         { out: 'draconicevolution:chaotic_axe', in: 'draconicevolution:draconic_axe' },
         { out: 'draconicevolution:chaotic_hoe', in: 'draconicevolution:draconic_hoe' },
-        { out: 'draconicevolution:chaotic_bow', in: 'draconicevolution:draconic_bow' },
+        { out: 'draconicevolution:chaotic_bow', in: 'draconicevolution:draconic_bow' }
         { out: 'draconicevolution:chaotic_chestpiece', in: 'draconicevolution:draconic_chestpiece' }
     ];
     chaoticGear.forEach(gear => {
@@ -337,7 +346,7 @@ ServerEvents.recipes(allthemods => {
                 'draconicevolution:chaotic_core',
                 'draconicevolution:chaotic_energy_core'
             ],
-            [],
+            ['#forge:gadolinium 64000'],
             [gear.out],
             [],
             TIER.chaotic,
