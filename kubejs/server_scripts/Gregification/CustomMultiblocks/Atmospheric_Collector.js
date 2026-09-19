@@ -118,6 +118,6 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.gtceu.atmospheric_collector('gregification:terrazine')
         .outputFluids('gtceu:terrazine 100')
         .circuit(30)
-        .duration(collectorDuration).EUt(collectorEU).dimension('ad_astra:glacio'); 
+        .duration(collectorDuration).EUt(collectorEU).dimension('ad_astra:moon'); 
 
 });

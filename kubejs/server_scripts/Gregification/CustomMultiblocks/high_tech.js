@@ -289,8 +289,8 @@ ServerEvents.recipes(allthemods => {
         let firstOutput = Array.isArray(outputs) ? outputs[0] : outputs;
         let generatedId = customID || `gregification:${firstOutput.toString().replace(/^\d+[x ]\s*/, '').split(':').pop().replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase()}`;
 
-        let cModel
-        if (skipBlueprints >= 1) {
+        let cModel        
+        if (skipBlueprints != 1) {
 
             //self aware model            
             if (creature[0] == '~') {cModel = `twilightforest/${creature.slice(1)}`;}
@@ -345,8 +345,8 @@ ServerEvents.recipes(allthemods => {
                 .EUt(fraculatorEU);
         };
         
-        //just creating the blueprint, skipping the rest of the process if skipBlueprints is not 1
-        if (skipBlueprints == 1) {
+        //just creating the blueprint, skipping the rest of the process if skipBlueprints is not 0
+        if (skipBlueprints != 2) {
             gtRecipeResearch(
                 machineID,
                 outputs,
@@ -377,7 +377,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:europium 720',
         6000,
         131072,
-        16
+        16,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'warden', 'mekasuit', ['mekanism:mekasuit_bodyarmor'],
@@ -434,6 +434,20 @@ ServerEvents.recipes(allthemods => {
         16, null, 1
     );
 
+    createModelBlueprints('prototype_assembler', 'warden', 'mekasuit', ['mekanism:meka_tool'],
+        [
+            'allthemodium:alloy_paxel',
+            'mekanism:atomic_disassembler',
+            '#forge:singularities/unobtainium',
+            '4x mekanism:supercharged_coil',
+            '16x #gtceu:circuits/zpm'
+        ],
+        '#forge:antimatter 576',
+        6000,
+        131072,
+        16, null, 1
+    );
+
     createModelBlueprints('prototype_assembler', 'zombie', 'mob_swab', ['mob_grinding_utils:mob_swab'],
         [
             '#forge:rods/long/fireite',
@@ -441,7 +455,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         600,
-        131072
+        131072,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'ender_dragon', 'creative_container', ['elementalcraft:creative_container'],
@@ -456,7 +470,7 @@ ServerEvents.recipes(allthemods => {
         null,
         6000,
         131072,
-        32
+        32,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'enderman', 'waystone', ['waystones:waystone'],
@@ -471,7 +485,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:argon 6000',
         600,
-        32768, null
+        32768, null,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'enderman', 'waystone', ['waystones:warp_stone'],
@@ -520,7 +534,7 @@ ServerEvents.recipes(allthemods => {
         ],
         ['#forge:polybenzimidazole 1000', 'industrialforegoing:ether_gas 1000'],
         6000,
-        32768, 8
+        32768, 8,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'wither', 'laser_drill', ['industrialforegoing:ore_laser_base'],
@@ -569,7 +583,7 @@ ServerEvents.recipes(allthemods => {
         ],
         ['advanced_ae:quantum_infusion_source 10000', '#forge:polybenzimidazole 1440'],
         6000,
-        32768, 8
+        32768, 8,null,0
     );
 
 
@@ -611,7 +625,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         6000,
-        32768, 16, 'creative_jetpack'
+        32768, 16, 'creative_jetpack',0
     );
 
     createModelBlueprints('prototype_assembler', 'blaze', 'cake', 'create:creative_blaze_cake',
@@ -622,7 +636,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:chocolate 1024000',
         6000,
-        32768, 16
+        32768, 16,null,0
     );
 
     createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'botania:creative_pool',
@@ -639,7 +653,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:mana_essence 1024000',
         6000,
-        32768, 16
+        32768, 16,null,0
     );
 
     const fullTablet = Item.of('botania:mana_tablet', '{mana:500000}').strongNBT();
@@ -698,7 +712,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:plastic 1024000',
         6000,
-        32768, 16
+        32768, 16,null,0
     );
     createModelBlueprints('prototype_assembler', 'iron_golem', 'crux', 'pneumaticcraft:creative_compressor',
         [
@@ -755,7 +769,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:lubricant 1024000',
         6000,
-        32768,8
+        32768,8,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:machine_efficiency_creative_augment',
@@ -798,7 +812,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:sanguine_concentrate 1024000',
         6000,
-        32768,8
+        32768,8,null,0
     );
     
     
@@ -816,7 +830,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:etrium 1024000',
         6000,
-        32768,32,'mekanism_cube'
+        32768,32,'mekanism_cube',0
     );
 
     createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'createaddition:creative_energy',
@@ -883,7 +897,7 @@ ServerEvents.recipes(allthemods => {
         null,
         null,
         6000,
-        32768,32,null,2
+        32768,32,"chaotic_blueprint",2
     );
 
 

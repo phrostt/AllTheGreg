@@ -18,6 +18,12 @@ StartupEvents.registry('item', event => {
 
 
 
+    event.create('gtceu:atomic_core')        
+        .displayName('Atomic Core')
+        .tooltip('Atomic Core')
+        .rarity('ie_masterwork')
+
+
     event.create('cosmic_void')
         .texture('kubejs:item/micro_universe_catalyst')
         .displayName('Cosmic Void')

@@ -55,6 +55,17 @@ ServerEvents.recipes(event => {
             item: 'occultism:miner_ancient_eldritch'
         },
         result: {
+            item: 'gtceu:atomic_core'
+        },
+        weight: 20
+    }).id(`gtceu:atomic_core`)
+
+    event.custom({
+        type: 'occultism:miner',
+        ingredient: {
+            item: 'occultism:miner_ancient_eldritch'
+        },
+        result: {
             item: 'gtceu:element_blank'
         },
         weight: 20

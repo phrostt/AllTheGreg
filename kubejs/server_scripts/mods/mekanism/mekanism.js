@@ -3,13 +3,22 @@
 
 ServerEvents.recipes(allthemods => {
   allthemods.remove({ id: 'mekanism:atomic_disassembler' })
-  allthemods.shaped('mekanism:atomic_disassembler', ['ITI', 'IAI', ' P '], {
-    I: 'mekanism:alloy_infused',
-    T: 'mekanism:energy_tablet',
-    A: 'mekanism:alloy_atomic',
-    P: 'allthemodium:allthemodium_pickaxe'
-  })
+  allthemods.shaped('mekanism:atomic_disassembler', 
+    [
+      'ITI', 
+      'IAI', 
+      ' P '
+    ], 
+    {
+      I: 'mekanism:alloy_atomic',
+      T: 'mekanism:energy_tablet',
+      A: '#gtceu:circuits/zpm',
+      P: 'gtceu:atomic_core'
+    }
+  )
+  
   allthemods.remove({ id: 'mekanism:meka_tool' })
+  /*
   allthemods.shaped('mekanism:meka_tool', ['UCU', 'TDT', 'PBP'], {
     U: 'mekanism:ultimate_control_circuit',
     C: 'mekanism:configurator',
@@ -17,7 +26,7 @@ ServerEvents.recipes(allthemods => {
     D: 'mekanism:atomic_disassembler',
     B: 'mekanism:basic_induction_cell',
     P: 'mekanism:pellet_polonium'
-  })
+  })*/
   allthemods.remove({ id: 'mekanism:upgrade/anchor' })
 
   // remove combiner recipes for ores

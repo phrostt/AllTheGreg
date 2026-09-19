@@ -1,5 +1,5 @@
 const customBlueprints = [
-    { id: 'mekasuit', grants: ['MekaSuit Helmet', 'MekaSuit Bodyarmor', 'MekaSuit Pants', 'MekaSuit Boots'] },
+    { id: 'mekasuit', grants: ['MekaSuit Helmet', 'MekaSuit Bodyarmor', 'MekaSuit Pants', 'MekaSuit Boots', 'Meka Tool'] },
     { id: 'waystone', grants: ['Waystone', 'Warp Stone'] },
     { id: 'laser_drill', grants: ['Laser Drill', 'Ore Laser Base', 'Fluid Laser Base'] },
     { id: 'font', grants: ['Creative Mana Pool', 'Creative Mana Tablet', 'Creative ME Mana Cell', 'Creative Activation Crystal', 'Creative Source Jar', 'Creative Spell Book', 'Creative ME Source Cell'] },
@@ -12,7 +12,7 @@ const customBlueprints = [
     { id: 'energy_core', grants: ['Creative Energy Cell', 'Creative Energy Cube', 'Creative Generator', 'Creative Energy Battery', 'Energy Cell (Creative)'] },
     { id: 'thermal', grants: ['Creative RF Coil', 'Creative Flux Efficiency', 'Creative Tank Construction', 'Creative Reclamation Chamber'] }, //death_tome
     { id: 'blood', grants: ['Creative Blood Drop'] },
-    { id: 'outworld', grants: ['Chaotic Sword', 'Chaotic Pickaxe', 'Chaotic Shovel', 'Chaotic Axe', 'Chaotic Hoe', 'Chaotic Bow', 'Chaotic Chestpiece'] } //spider
+    { id: 'outworld', grants: ['Chaotic Items'] } //ender dragon
 ];
 
 const quarks = [
@@ -67,7 +67,8 @@ ItemEvents.tooltip(event => {
             let species = nbt.getString('bacteriaSpecies');
             let readableName = species.replace(/([A-Z])/g, ' $1').trim();
             text.add(Text.of('Bacterial Culture Data').aqua());
-            text.add(Text.of(`Strain: ${readableName}`).white());                  
+            text.add(Text.of(`Strain: ${readableName}`).white());
+
         }
     });
 });

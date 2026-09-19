@@ -70,7 +70,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:smelting/smelt_dust_germanium_to_ingot', 'farmingforblockheads:red_fertilizer', 'mekanism:structural_glass', 'mekanismgenerators:reactor/glass',
         'productivebees:upgrades/time',
         'powah:crafting/capacitor_basic', 'powah:crafting/capacitor_hardened', 'powah:crafting/capacitor_blazing',
-        'powah:crafting/capacitor_niotic', 'powah:crafting/capacitor_spirited', 'powah:crafting/capacitor_nitro',
+        'powah:crafting/capacitor_niotic', 'powah:crafting/capacitor_spirited', 'powah:crafting/capacitor_nitro',        
 
         // --- Ad Astra ---        
         'ad_astra:rocket_fin', 'ad_astra:rocket_nose_cone', 'ad_astra:engine_frame',

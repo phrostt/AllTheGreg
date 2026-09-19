@@ -36,7 +36,7 @@
     
     allthemods.recipes.gtceu.liquifier('poison')
         .itemInputs('evilcraft:poison_sac')
-        .inputFluids('#forge:water_stage_2 500')
+        .inputFluids('#forge:water_stage_4 500')
         .outputFluids('evilcraft:poison 250')
         .duration(100)
         .EUt(2048)
