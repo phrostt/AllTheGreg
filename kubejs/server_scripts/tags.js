@@ -29,6 +29,15 @@ ServerEvents.tags('item', allthemods => {
     'mysticalagriculture:unobtainium_seeds',
     'mysticalagriculture:vibranium_seeds',
   ])
+
+  allthemods.add('forge:blood_orb', [
+    'bloodmagic:weakbloodorb',
+    'bloodmagic:apprenticebloodorb',
+    'bloodmagic:magicianbloodorb',
+    'bloodmagic:masterbloodorb',
+    'bloodmagic:archmagebloodorb'
+  ])
+
   allthemods.add('forge:dusts', 'alltheores:netherite_dust')
   allthemods.add('forge:dusts/netherite', 'alltheores:netherite_dust')
 

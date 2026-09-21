@@ -23,6 +23,11 @@ StartupEvents.registry('item', event => {
         .tooltip('Atomic Core')
         .rarity('ie_masterwork')
 
+    event.create('gtceu:blood_coated_blade')        
+        .displayName('Blood Coated Blade')
+        .tooltip('A blade coated with the essence of blood.')
+        .rarity('ie_masterwork')
+
     event.create('gtceu:thermal_spark')        
         .displayName('Thermal Spark')
         .tooltip('Thermal Spark')

@@ -15,17 +15,17 @@ ServerEvents.recipes(allthemods => {
     // --- MOB GRINDING UTILS ---    
     addAssembler(
         [
-            'gtceu:hv_machine_casing',
-            '4x gtceu:stainless_steel_buzz_saw_blade',
-            '2x gtceu:hv_electric_motor',
-            '2x #gtceu:circuits/hv'
+            'gtceu:ev_machine_casing',
+            '4x gtceu:blood_coated_blade',
+            '4x gtceu:hv_electric_motor',
+            '2x #gtceu:circuits/ev'
         ],
         '#forge:lubricant 1000', 
         'mob_grinding_utils:saw',         
-        512, // HV Tier
-        1200  // 60 Seconds
+        2048,
+        1200
     );
-	
+    	
 	addAssembler(
         [
             'gtceu:mv_machine_casing',
