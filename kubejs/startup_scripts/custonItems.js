@@ -23,6 +23,11 @@ StartupEvents.registry('item', event => {
         .tooltip('Atomic Core')
         .rarity('ie_masterwork')
 
+    event.create('gtceu:thermal_spark')        
+        .displayName('Thermal Spark')
+        .tooltip('Thermal Spark')
+        .rarity('ie_masterwork')
+
 
     event.create('cosmic_void')
         .texture('kubejs:item/micro_universe_catalyst')

@@ -246,7 +246,7 @@ ServerEvents.recipes(allthemods => {
     addEnergize(
         [
             'botania:corporea_spark',
-            '#forge:exquisite_gems/nitro',
+            '#forge:exquisite_gems/nitro_crystal',            
             '4x #forge:rounds/pink_slime',
             '#forge:rings/draconium_awakened'
         ],
