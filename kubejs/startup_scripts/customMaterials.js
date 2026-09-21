@@ -589,7 +589,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         let materialBuilder = event.create(mat.name)
             //@ts-ignore                                                   
             //this works to register as a gas
-            //.fluid()            
+            .fluid()
             .gas()
             .color(mat.color)
             .iconSet(GTMaterialIconSet[mat.iconSet || GTMaterialIconSet.FLUID])

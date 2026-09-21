@@ -39,4 +39,5 @@ ServerEvents.recipes(allthemods => {
 		E: 'gtceu:elemental_earth_singularity',
 		B: 'gtceu:element_blank'
 	}).id('gregification:element_earth');
+	
 });

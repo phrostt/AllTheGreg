@@ -364,6 +364,18 @@ ServerEvents.recipes(allthemods => {
         500
     )
 
+    addMixer(
+        [
+            'botania:rune_wrath',
+            'occultism:demonic_meat',
+            'forbidden_arcanus:golden_dragon_scale',
+            'gtceu:quantum_star'
+        ],
+        '4x evilcraft:vengeance_essence',
+        'ev',
+        250
+    )
+
     //dielectric paste
     allthemods.recipes.gtceu.mixer('gregification:dielectric_paste')
         .itemInputs(

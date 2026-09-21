@@ -651,7 +651,7 @@ ServerEvents.recipes(allthemods => {
 
     //thermal machine frame
     addAssembler([
-        "#forge:frames/selenium",
+        "gtceu:thermal_spark",
         "4x #forge:plates/tungsten_steel",
         "4x #forge:screws/terrasteel",
         "8x #forge:small_gears/plastic",

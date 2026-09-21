@@ -243,6 +243,19 @@ ServerEvents.recipes(allthemods => {
         'blazing_bee'
     );
 
+    addEnergize(
+        [
+            'botania:corporea_spark',
+            '#forge:exquisite_gems/nitro',
+            '4x #forge:rounds/pink_slime',
+            '#forge:rings/draconium_awakened'
+        ],
+        'gtceu:thermal_spark',
+        2000000,
+        5,
+        'thermal_spark'
+    )
+
     const addAssembler = (inputs, output, fluid, duration, eu, rID) => {
         let firstOutput = Array.isArray(output) ? output[0] : output;
         let generatedId = rID || `gregification:${firstOutput.toString().replace(/^\d+[x ]\s*/, '').split(':').pop().replace(/[^a-zA-Z0-9_]/g, '_').toLowerCase()}`;
@@ -281,4 +294,6 @@ ServerEvents.recipes(allthemods => {
         voltages[index]
     )
     });    
+
+
 });

@@ -320,7 +320,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
             .aisle('         ', '         ', 'F       F', '         ', '         ', '         ', 'F   F   F')
             .aisle('  BBBBB  ', '  BGGGB  ', 'F BGGGB F', '  BGGGB  ', '  BBBBB  ', '         ', 'F   F   F')
             .aisle('  BBBBB  ', 'C G   G C', 'C G   G C', 'C G   G C', '  BBBBB  ', '         ', 'F   F   F')
-            .aisle('  BBBBB  ', 'C G   G C', 'C G   G C', 'C G   G C', '  BBBBB  ', 'F   F   F', 'FFFFFFFFF')
+            .aisle('  BBBBB  ', 'C G   G C', 'C G   G C', 'C G   G C', 'F BBBBB F', 'F   F   F', 'FFFFFFFFF')
             .aisle('  BBBBB  ', 'C G   G C', 'C G   G C', 'C G   G C', '  BBBBB  ', '         ', 'F   F   F')
             .aisle('  BBBBB  ', '  BGGGB  ', 'F BGGGB F', '  BGGGB  ', '  BBBBB  ', '         ', 'F   F   F')
             .aisle('         ', '         ', 'F       F', '         ', '         ', '         ', 'F   F   F')

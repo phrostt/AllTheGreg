@@ -135,6 +135,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs()
         .outputFluids('gtceu:ionized_oxygen 3000', 'gtceu:inert_gas_mixture 10000')
         .duration(duration)
+        .circuit(1)
         .EUt(EUStage1);
 
     allthemods.recipes.gtceu.chemical_reactor('gregificatoion:chemical_reactor/ozone')

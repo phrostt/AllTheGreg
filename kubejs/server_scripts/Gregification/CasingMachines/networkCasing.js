@@ -395,11 +395,37 @@ ServerEvents.recipes(allthemods => {
         [
             '16x #forge:fine_wires/fluix'
         ],
-        'gtceu:rubber 144',
+        '#forge:rubber 144',
         'ae2:fluix_glass_cable',
         128,
         100,
         'fluix_from_rubber',
+        1
+    )
+
+    addAssembler(
+        [
+            '16x #forge:fine_wires/fluix'
+        ],
+        '#forge:silicone_rubber 288',
+        '2x ae2:fluix_glass_cable',
+        128,
+        100,
+        'fluix_from_silicone',
+        1
+    )
+
+    //frluix wire
+    addAssembler(
+        [
+            '16x #forge:fine_wires/fluix',
+            '2x #forge:foils/polyvinyl_chloride'
+        ],
+        '#forge:styrene_butadiene_rubber 288',
+        '4x ae2:fluix_glass_cable',
+        128,
+        100,
+        'fluix_from_rubber_styrene',
         1
     )
     
