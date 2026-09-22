@@ -218,8 +218,12 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .aisle('CCRLRCC', 'G     G', 'CRRRRRC')
             .aisle('CCCCCCC', 'G     G', 'CRRRRRC')
             .aisle('CCCKCCC', 'CGGGGGC', 'CCCCCCC')
+            .where('G', Predicates.blocks('botania:bifrost_perm'))
+            .where('R', Predicates.blocks('botania:livingrock'))
+            .where('L', Predicates.blocks('minecraft:lapis_block'))
+            .where('P', Predicates.blocks('botania:terra_plate'))
             .where('K', Predicates.controller(Predicates.blocks(definition.get())))                                                                        
-            .where('C', Predicates.blocks('gtceu:inert_machine_casing')
+            .where('C', Predicates.blocks('gtceu:robust_machine_casing')
 				.or(Predicates.autoAbilities(definition.getRecipeTypes()))	
 				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
                 .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
@@ -229,7 +233,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         )
 		.workableCasingModel(
             'gtceu:block/casings/solid/machine_casing_robust_tungstensteel',
-            'gtceu:block/machines/assembler'
+            'gtceu:block/multiblock/assembly_line'
         )		
     
     event.create("mana_pool", "simple")

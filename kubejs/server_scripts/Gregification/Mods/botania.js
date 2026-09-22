@@ -585,16 +585,10 @@ ServerEvents.recipes(allthemods => {
         .EUt(512);
     });
     
-    addAssembler(
-        [
-            'botania:terra_plate', 'gtceu:iv_machine_hull', '2x gtceu:iv_electric_pump', '2x gtceu:iv_electric_piston', '2x #gtceu:circuits/iv', '8x #forge:plates/semi_stable_clathrate'
-        ],
-        [
-            '#forge:mana_essence 9200'
-        ],
-        'gtceu:mana_infuser',
-        8129,
-        600
-    );
-            
+    allthemods.recipes.gtceu.assembler('gregification/mana_infuser')
+        .itemInputs('gtceu:iv_machine_hull', '2x gtceu:iv_electric_pump', '2x gtceu:iv_electric_piston', '2x #gtceu:circuits/iv', '8x #forge:plates/semi_stable_clathrate')                    
+        .itemOutputs('gtceu:mana_infuser')
+        .inputFluids('#forge:mana_essence 9200')
+        .duration(8129)
+        .EUt(600);            
 });
