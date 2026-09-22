@@ -832,7 +832,7 @@ ServerEvents.recipes(allthemods => {
     addAssembler(
         [
             "gtceu:hexagonal_bio_composite",            
-            "4x #forge:plates/ferrognetic",
+            "4x #forge:plates/stabilized_clathrate",
             "#forge:frames/draconium",
             "4x #gtceu:circuits/iv",
             "4x gtceu:iv_electric_pump",

@@ -353,7 +353,8 @@ const fluids = [
     { name: 'ethylene_oxide', components:'1x ethylene, 1x oxygen', formula: 'C2H4O', color: 0xEAF2F8, iconSet: 'FLUID' },    
     { name: 'phenylacetaldehyde', components: '1x phenyl, 1x acetaldehyde', formula: 'C8H8O', color: 0xFFF5D6, iconSet: 'FLUID' },
     { name: 'phenylalanine_nitrile', components: '9x carbon, 10x hydrogen, 2x nitrogen', formula: 'C9H10N2', color: 0xD4A373, iconSet: 'FLUID', noDecomp: true },    
-    { name: 'phenolic_resin', components: '7x carbon, 6x hydrogen, 2x oxygen', formula: 'C7H6O2', color: 0x5C2E16, iconSet: 'FLUID', noDecomp: true }
+    { name: 'phenolic_resin', components: '7x carbon, 6x hydrogen, 2x oxygen', formula: 'C7H6O2', color: 0x5C2E16, iconSet: 'FLUID', noDecomp: true },
+    
 
 
 
@@ -654,12 +655,34 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .dust()
         .ingot()
         .color(0x8FFFD7)
-        .iconSet(GTMaterialIconSet.FLUID)
+        .iconSet(GTMaterialIconSet.METALLIC)
         .flags(
             GTMaterialFlags.GENERATE_PLATE,
             GTMaterialFlags.NO_SMELTING,
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
+
+    materialBuilder = event.create('stabilized_clathrate')
+        .dust()
+        .ingot()
+        .color(0xB1AAA6)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.NO_SMELTING,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
+
+    materialBuilder = event.create('semi_stable_clathrate')        
+        .dust()
+        .ingot()
+        .color(0x8FFFD7)
+        .iconSet(GTMaterialIconSet.FLUID)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.NO_SMELTING,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );    
 
 
     materialBuilder = event.create('aureal')

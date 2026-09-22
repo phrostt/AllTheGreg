@@ -178,7 +178,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:ferrognetic_mixture",
         400,
-        32768,
+        8192,
         null
     )
 

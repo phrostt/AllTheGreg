@@ -20,6 +20,7 @@ const kevlarFluids = [
     { name: 'methylamine', components: '1x ammonia', color: 0xE0E0D0, iconSet: 'FLUID', formula: 'CH5N' },
     { name: 'gamma_butyrolactone', color: 0xEEE8D0, iconSet: 'FLUID', formula: 'C4H6O2' },
     { name: 'n_methylpyrrolidone', components: '1x methylamine, 1x gamma_butyrolactone', color: 0xF5EED8, iconSet: 'FLUID', formula: 'C5H9NO' },
+    { name: 'tetrahydrofuran', components: '1x gamma_butyrolactone, 1x water', formula: 'C4H8O', iconSet: 'FLUID', color: 0xE8F4F8, noDecomp: true },
 
     // --- Final polymer ---
     { name: 'liquid_crystal_kevlar', components: '1x para_phenylenediamine, 1x terephthaloyl_chloride', color: 0xC8A030, iconSet: 'FLUID', noDecomp: true },

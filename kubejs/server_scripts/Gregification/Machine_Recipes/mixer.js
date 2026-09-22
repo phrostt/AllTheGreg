@@ -335,6 +335,19 @@ ServerEvents.recipes(allthemods => {
         100
     );
 
+    //stabilized clathrate
+    addMixer(
+        [            
+            '#forge:dusts/semi_stable_clathrate',
+            '#forge:dusts/gadolinium',
+            '#forge:dusts/ender_pearl',
+            
+        ],
+        'gtceu:stabilized_clathrate_dust',
+        '2048',
+        100
+    );
+
     //eternium
     addMixer(
         [
