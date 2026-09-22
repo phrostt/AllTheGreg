@@ -584,7 +584,17 @@ ServerEvents.recipes(allthemods => {
         .duration(10)
         .EUt(512);
     });
-
     
-        
+    addAssembler(
+        [
+            'botania:terra_plate', 'gtceu:iv_machine_hull', '2x gtceu:iv_electric_pump', '2x gtceu:iv_electric_piston', '2x #gtceu:circuits/iv', '8x #forge:plates/semi_stable_clathrate'
+        ],
+        [
+            '#forge:mana_essence 9200'
+        ],
+        'gtceu:mana_infuser',
+        8129,
+        600
+    );
+            
 });

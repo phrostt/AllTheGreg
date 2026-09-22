@@ -139,6 +139,7 @@ ServerEvents.recipes(allthemods => {
         64
     )
 
+
     blackHole(['#forge:singularities/core', '4000x #forge:gems/carminite'], null, 'gtceu:carminite_singularity', null, 131072, 1200, 'carminite_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/steeleaf'], null, 'gtceu:steeleaf_singularity', null, 131072, 1200, 'steeleaf_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/fiery'], null, 'gtceu:fiery_singularity', null, 131072, 1200, 'fiery_singularity')
@@ -150,6 +151,7 @@ ServerEvents.recipes(allthemods => {
     blackHole(['#forge:singularities/core', '4000x #forge:gems/spirited_crystal'], null, 'gtceu:spirited_crystal_singularity', null, 131072, 1200, 'spirited_crystal_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:gems/nitro_crystal'], null, 'gtceu:nitro_crystal_singularity', null, 131072, 1200, 'nitro_crystal_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/energized_steel'], null, 'gtceu:energized_steel_singularity', null, 131072, 1200, 'energized_steel_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/semi_stable_clathrate'], null, 'gtceu:semi_stable_clathrate_singularity', null, 131072, 1200, 'semi_stable_clathrate_singularity')
 
 
     blackHole(['#forge:singularities/core', '4000x evilcraft:garmonbozia'], null, 'gtceu:garmonbozia_singularity', null, 131072, 1200, 'garmonbozia_singularity')

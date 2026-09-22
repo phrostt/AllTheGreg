@@ -145,7 +145,7 @@ ServerEvents.recipes(allthemods => {
 
         let bPetal = `gtceu:${tData.tier}_petal_apothecary`;
         let bRunic = `gtceu:${tData.tier}_runic_altar`;
-        let bInfuser = `gtceu:${tData.tier}_mana_infuser`;
+        //let bInfuser = `gtceu:${tData.tier}_mana_infuser`;
         let bPortal = `gtceu:${tData.tier}_alfheim_trader`;
         let bPool = `gtceu:${tData.tier}_mana_pool`;
         let aChamber = `gtceu:${tData.tier}_imbument_chamber`;
@@ -266,20 +266,7 @@ ServerEvents.recipes(allthemods => {
                 bRunic,
                 tierValues[tData.t - 1],
                 600
-            );    
-            
-            if (tData.t >= 5){
-            addAssembler(
-                [
-                    'botania:terra_plate', hull, `2x ${pump}`, piston, `2x ${circuit}`, `2x ${plate}`
-                ],
-                [
-                    '#forge:mana_essence 9200'
-                ],
-                bInfuser,
-                tierValues[tData.t - 1],
-                600
-            );}
+            );                            
         }
 
         if (tData.t >= 6 && tData.t <= 8) {

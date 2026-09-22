@@ -652,8 +652,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     materialBuilder = event.create('semi_stable_clathrate')        
         .dust()
+        .ingot()
         .color(0x8FFFD7)
-        .iconSet(GTMaterialIconSet.FLUID);
+        .iconSet(GTMaterialIconSet.FLUID)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            CMMEMaterialFlags.GENERATE_SINGULARITY
+        );
 
 
     materialBuilder = event.create('aureal')

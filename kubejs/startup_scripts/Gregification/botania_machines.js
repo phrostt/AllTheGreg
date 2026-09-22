@@ -54,7 +54,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
     event.create('mana_infuser')
         .category('mana_infuser')
         .setEUIO('in')
-        .setMaxIOSize(12, 6, 3, 3)
+        .setMaxIOSize(9, 6, 1, 0)
         .setSound(GTSoundEntries.ASSEMBLER)
         .setSlotOverlay(false, true, GuiTextures.FLUID_TANK_OVERLAY)        
         .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLER, FillDirection.LEFT_TO_RIGHT)
@@ -197,14 +197,40 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
                 .workableTieredHullModel("gtceu:block/machines/assembler")
         );   
 
-    event.create("mana_infuser", "simple")
+    /*event.create("mana_infuser", "simple")
         .tiers(GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
         .definition((tier, builder) =>
             builder
                 .rotationState(RotationState.NON_Y_AXIS)
                 .recipeType("mana_infuser")                
                 .workableTieredHullModel("gtceu:block/machines/assembler")
-        );   
+        );*/
+    event.create('mana_infuser', 'multiblock')        
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType('mana_infuser')         
+        .appearanceBlock(GTBlocks.CASING_TUNGSTENSTEEL_ROBUST)
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
+        .pattern(definition => FactoryBlockPattern.start()                                            
+            .aisle('CCCCCCC', 'CGGGGGC', 'CCCCCCC')
+            .aisle('CCCCCCC', 'G     G', 'CRRRRRC')
+            .aisle('CCRLRCC', 'G     G', 'CRRRRRC')
+            .aisle('CCLRLCC', 'G  P  G', 'CRRRRRC')
+            .aisle('CCRLRCC', 'G     G', 'CRRRRRC')
+            .aisle('CCCCCCC', 'G     G', 'CRRRRRC')
+            .aisle('CCCKCCC', 'CGGGGGC', 'CCCCCCC')
+            .where('K', Predicates.controller(Predicates.blocks(definition.get())))                                                                        
+            .where('C', Predicates.blocks('gtceu:inert_machine_casing')
+				.or(Predicates.autoAbilities(definition.getRecipeTypes()))	
+				.or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))				
+			)
+            .where(' ', Predicates.any()) 
+            .build()
+        )
+		.workableCasingModel(
+            'gtceu:block/casings/solid/machine_casing_robust_tungstensteel',
+            'gtceu:block/machines/assembler'
+        )		
     
     event.create("mana_pool", "simple")
         .tiers(GTValues.HV, GTValues.EV, GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
@@ -224,3 +250,4 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
                 .workableTieredHullModel("gtceu:block/machines/assembler")
         );   
 });
+
