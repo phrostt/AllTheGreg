@@ -55,7 +55,7 @@ ServerEvents.recipes(allthemods => {
     )
 
     addEBF(
-        ['16x gtceu:empowered_polymer_dust', '4x #forge:ingots/draconium_awakened', '4x #forge:dusts/enriched_naquadah'],
+        ['16x #forge:dusts/organic_polymer', '4x #forge:ingots/draconium_awakened', '4x #forge:dusts/enriched_naquadah'],
         null,
         'gtceu:empowered_boule',
         null,

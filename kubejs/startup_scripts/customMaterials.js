@@ -454,8 +454,9 @@ const dusts = [
     { name: 'niobium_tantalum_residue', components: '2x niobium, 2x tantalum, 4x oxygen', color: 0x2B2B2B, formula: 'Nb2Ta2O4', iconSet: 'METALLIC', noDecomp: true },
     { name: 'cerium_oxide', components: '1x cerium, 2x oxygen', color: 0xF5DEB3, formula: 'CeO2', iconSet: 'DULL' },
     { name: 'thorium_oxide', components: '1x thorium, 2x oxygen', color: 0xe8e8e8, formula: 'ThO2', iconSet: 'DULL' },
-    { name: 'phenyl', components: '6x carbon, 5x hydrogen', formula: 'C6H5', color: 0x3A3A3A, iconSet: 'DUST' },
+    { name: 'phenyl', components: '6x carbon, 5x hydrogen', formula: 'C6H5', color: 0x3A3A3A, iconSet: 'DULL' },
     { name: 'phenylalanine', components: '9x carbon, 11x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C9H11NO2', color: 0xF8F9FA, iconSet: 'DULL', noDecomp: true },    
+
 
 ];
 

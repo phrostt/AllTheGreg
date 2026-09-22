@@ -41,4 +41,18 @@ ServerEvents.recipes(allthemods => {
         .duration(300)
         .EUt(phenylalanineEU);
 
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/zinc_phenol')
+        .itemInputs('#forge:dusts/zinc')
+        .inputFluids('#forge:phenol 1000')
+        .itemOutputs(['gtceu:zincite_dust', 'gtceu:phenyl_dust'])
+        .outputFluids('gtceu:hydrogen 1000')
+        .duration(300)
+        .EUt(phenylalanineEU);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/phenolic_resin')
+        .itemInputs('#forge:dusts/phenyl')
+        .inputFluids(['#forge:formaldehyde 1000', '#forge:oxygen 1000'])
+        .outputFluids(['gtceu:phenolic_resin 1000', 'gtceu:hydrogen 1000'])
+        .duration(300)
+        .EUt(phenylalanineEU);
 });

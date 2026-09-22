@@ -359,7 +359,7 @@ ServerEvents.recipes(allthemods => {
 			'productivebees:upgrade_comb_block',			
 			'evilcraft:garmonbozia',
 			'bloodmagic:demonslate',
-			'4x #forge:plates/hop_graphite',
+			'4x #forge:plates/kevlar',
 			'8x #forge:screws/terrasteel'
 		],
 		[
