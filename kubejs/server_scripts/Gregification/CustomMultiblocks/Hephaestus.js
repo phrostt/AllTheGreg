@@ -167,9 +167,9 @@ ServerEvents.recipes(allthemods => {
             "#forge:wax",
             "#forge:ingots/dark_steel",
             "#forge:ingots/pink_slime",
-            "#forge:ingots/alfsteel",
             "#forge:ingots/hellforged",
-            "#forge:ingots/iesnium"
+            "#forge:ingots/iesnium",
+            "#forge:ingots/elementium",
         ],
         [
             "gtceu:aureal 100",

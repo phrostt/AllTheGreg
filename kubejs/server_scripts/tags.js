@@ -8,6 +8,7 @@ ServerEvents.tags('item', allthemods => {
   allthemods.add('minecraft:boats', /byg:\w+?_boat/)
   allthemods.add('minecraft:chest_boats', /byg:.+?_chest_boat/)
   allthemods.add('forge:plastic', 'pneumaticcraft:plastic')
+  allthemods.add('forge:wax', 'forestry:beeswax')
   allthemods.add('forge:foils/polyethylene', 'mekanism:hdpe_pellet')
 
   allthemods.add('forge:dusts/ender', 'ae2:ender_dust')

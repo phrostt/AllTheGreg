@@ -657,6 +657,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.FLUID)
         .flags(
             GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.NO_SMELTING,
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
 

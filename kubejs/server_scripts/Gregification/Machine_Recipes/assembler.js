@@ -834,7 +834,7 @@ ServerEvents.recipes(allthemods => {
             "gtceu:hexagonal_bio_composite",            
             "4x #forge:plates/ferrognetic",
             "#forge:frames/draconium",
-            "4x #gtceu:circuits/luv",
+            "4x #gtceu:circuits/iv",
             "4x gtceu:iv_electric_pump",
             "4x gtceu:iv_electric_piston"
 
