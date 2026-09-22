@@ -207,9 +207,9 @@ ServerEvents.recipes(allthemods => {
         .duration(400)
         .EUt(2048);
 
-    allthemods.recipes.gtceu.chemical_reactor('gregification:kevlar/tetrahydrofuran')
-        .inputFluids(['#forge:butyrolactone 1000', '#forge:water 1000'])
-        .outputFluids(['gtceu:tetrahydrofuran 1000', 'gtceu:oxygen 2000'])
+    allthemods.recipes.gtceu.chemical_reactor('gregification:tetrahydrofuran')
+        .inputFluids(['#forge:gamma_butyrolactone 1000', '#forge:hydrogen 4000'])
+        .outputFluids(['gtceu:tetrahydrofuran 1000', 'minecraft:water 1000'])
         .duration(200)
         .EUt(2048);
 });

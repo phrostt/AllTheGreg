@@ -324,29 +324,9 @@ ServerEvents.recipes(allthemods => {
     );
 
     //enderium
-    addMixer(
-        [
-            '#forge:dusts/diamond',
-            '3x #forge:dusts/lead',
-            '2x #forge:dusts/ender_pearl'
-        ],
-        '6x alltheores:enderium_dust',
-        '8192',
-        100
-    );
+    
 
-    //stabilized clathrate
-    addMixer(
-        [            
-            '#forge:dusts/semi_stable_clathrate',
-            '#forge:dusts/gadolinium',
-            '#forge:dusts/ender_pearl',
-            
-        ],
-        'gtceu:stabilized_clathrate_dust',
-        '2048',
-        100
-    );
+
 
     //eternium
     addMixer(
@@ -442,4 +422,13 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('gtceu:semi_stable_clathrate_dust')
         .duration(100)
         .EUt(512);
-});
+    
+    //stabilized clathrate
+    allthemods.recipes.gtceu.mixer('gregification:stabilized_clathrate')
+        .itemInputs(['#forge:dusts/semi_stable_clathrate','#forge:dusts/gadolinium','#forge:dusts/ender_pearl'])
+        .itemOutputs('gtceu:stabilized_clathrate_dust')
+        .inputFluids('#forge:tetrahydrofuran 1000')
+        .duration(2048)
+        .EUt(100);
+        
+    });

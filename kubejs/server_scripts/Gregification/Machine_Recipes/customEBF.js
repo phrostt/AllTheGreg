@@ -2,17 +2,17 @@
 // priority: -1000
 ServerEvents.recipes(allthemods => {
 
-    const addEBF = (itemsIn, fluidIn, itemsOut, fluidOut, temp, duration, eu) => {
+    const addEBF = (itemsIn, fluidIn, itemsOut, fluidOut, temp, duration, eu, program, rID) => {
         const source = Array.isArray(itemsOut) ? itemsOut[0] : itemsOut;
         const outputID = String(source || "unknown").replace(/[^a-z0-9]/gi, '_');
         //const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
-        let recipe = allthemods.recipes.gtceu.electric_blast_furnace(`gregification:blasting/${outputID}_blasting`)
+        let recipe = allthemods.recipes.gtceu.electric_blast_furnace(`gregification:blasting/${rID || outputID}_blasting`)
             .itemInputs(itemsIn)
             .itemOutputs(itemsOut)
             .blastFurnaceTemp(temp)
             .duration(duration)
             .EUt(eu);
-
+        if (program) { recipe.circuit(program) }        
         if (fluidIn) { recipe.inputFluids(fluidIn) }
         if (fluidOut) { recipe.outputFluids(fluidOut) }
     };
@@ -97,13 +97,61 @@ ServerEvents.recipes(allthemods => {
         512
     );
 
-        addEBF(['#forge:dusts/semi_stable_clathrate','evilcraft:vengeance_essence'],
+    addEBF(['#forge:dusts/semi_stable_clathrate','evilcraft:vengeance_essence'],
         '#forge:water_stage_2 2000',
         'evilcraft:garmonbozia',
         null,
         5700,
         2000,
-        512
+        2048,3
     );
+
+    addEBF('#forge:dusts/semi_stable_clathrate',
+        null,
+        'gtceu:semi_stable_clathrate_ingot',
+        null,
+        5700,
+        5000,
+        2048,
+        1
+    );
+
+    
+    addEBF('#forge:dusts/semi_stable_clathrate',
+        '#forge:water_stage_2 2000',
+        'gtceu:semi_stable_clathrate_ingot',
+        null,
+        5700,
+        2500,
+        2048,
+        2,
+        'semi_stable_clathrate_2'
+    );
+
+
+    addEBF('#forge:dusts/stabilized_clathrate',
+        null,
+        'gtceu:stabilized_clathrate_ingot',
+        null,
+        5700,
+        6000,
+        2048,
+        1
+    );
+
+    
+    addEBF('#forge:dusts/stabilized_clathrate',
+        '#forge:water_stage_2 2000',
+        'gtceu:stabilized_clathrate_ingot',
+        null,
+        5700,
+        3000,
+        2048,
+        2,
+        'stabilized_clathrate_2'
+    );
+
+    
+    
 
 });

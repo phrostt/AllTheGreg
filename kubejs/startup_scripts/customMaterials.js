@@ -671,17 +671,6 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             GTMaterialFlags.GENERATE_PLATE,
             GTMaterialFlags.NO_SMELTING,
             CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('semi_stable_clathrate')        
-        .dust()
-        .ingot()
-        .color(0x8FFFD7)
-        .iconSet(GTMaterialIconSet.FLUID)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.NO_SMELTING,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
         );    
 
 
