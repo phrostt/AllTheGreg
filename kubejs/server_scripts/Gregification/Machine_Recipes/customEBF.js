@@ -101,7 +101,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:water_stage_2 2000',
         'evilcraft:garmonbozia',
         null,
-        5700,
+        5400,
         2000,
         2048,3
     );
@@ -110,7 +110,7 @@ ServerEvents.recipes(allthemods => {
         null,
         'gtceu:semi_stable_clathrate_ingot',
         null,
-        5700,
+        5400,
         5000,
         2048,
         1
@@ -121,7 +121,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:water_stage_2 2000',
         'gtceu:semi_stable_clathrate_ingot',
         null,
-        5700,
+        5400,
         2500,
         2048,
         2,
@@ -133,7 +133,7 @@ ServerEvents.recipes(allthemods => {
         null,
         'gtceu:stabilized_clathrate_ingot',
         null,
-        5700,
+        5400,
         6000,
         2048,
         1
@@ -144,7 +144,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:water_stage_2 2000',
         'gtceu:stabilized_clathrate_ingot',
         null,
-        5700,
+        5400,
         3000,
         2048,
         2,

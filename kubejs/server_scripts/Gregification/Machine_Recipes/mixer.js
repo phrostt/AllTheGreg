@@ -420,7 +420,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.gtceu.mixer('gregification:semi_stable_clathrate')
         .itemInputs(['#forge:dusts/vibrant_crystal', '#forge:dusts/pulsating_crystal'])
         .itemOutputs('gtceu:semi_stable_clathrate_dust')
-        .duration(100)
+        .duration(2048)
         .EUt(512);
     
     //stabilized clathrate
@@ -430,5 +430,5 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:tetrahydrofuran 1000')
         .duration(2048)
         .EUt(100);
-        
+
     });
