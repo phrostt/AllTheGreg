@@ -15,7 +15,7 @@ GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT])
         .pattern(definition => FactoryBlockPattern.start()            
             .aisle('RRRRR', 'R   R', 'R   R', 'R   R', 'RRRRR')
-			.aisle('RCCCR', ' CBC ', ' CBC ', ' CBC ', ' CCC ')
+			.aisle('RCCCR', ' CBC ', ' CBC ', ' CBC ', 'RCCCR ')
 			.aisle('RCCCR', ' B B ', ' BIB ', ' B B ', 'RCCCR')
 			.aisle('RCCCR', ' CBC ', ' CKC ', ' CBC ', 'RCCCR')
             .aisle('RRRRR', 'R   R', 'R   R', 'R   R', 'RRRRR')

@@ -1,0 +1,44 @@
+ServerEvents.recipes(allthemods => {
+    const phenylalanineEU = 2048;
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/ethylene_oxide')
+        .notConsumable('#forge:dusts/silver')
+        .inputFluids('#forge:ethylene 1000', '#forge:oxygen 1000')
+        .outputFluids('gtceu:ethylene_oxide 1000')
+        .duration(300)
+        .EUt(phenylalanineEU);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/phenylacetaldehyde')
+        .inputFluids(['#forge:benzene 1000', '#forge:ethylene_oxide 1000'])
+        .outputFluids(['gtceu:phenylacetaldehyde 1000', 'gtceu:hydrogen 2000'])
+        .duration(300)
+        .EUt(phenylalanineEU);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/phenyl_dust')
+        .notConsumable('#forge:dusts/platinum')
+        .inputFluids(['#forge:chlorobenzene 1000', '#forge:hydrogen 1000'])
+        .itemOutputs('gtceu:phenyl_dust')
+        .outputFluids('gtceu:hydrochloric_acid 1000')
+        .duration(300)
+        .EUt(phenylalanineEU);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/phenylacetaldehyde_from_phenyl')
+        .itemInputs('#forge:dusts/phenyl')
+        .inputFluids('#forge:acetaldehyde 1000')
+        .outputFluids(['gtceu:phenylacetaldehyde 1000', 'gtceu:hydrogen 1000'])
+        .duration(300)
+        .EUt(phenylalanineEU);
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/phenylalanine_nitrile')
+        .inputFluids(['#forge:phenylacetaldehyde 1000', '#forge:ammonia 1000', '#forge:hydrogen_cyanide 1000'])
+        .outputFluids(['gtceu:phenylalanine_nitrile 1000', 'minecraft:water 1000'])
+        .duration(300)
+        .EUt(phenylalanineEU);
+
+
+    allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/phenylalanine')
+        .inputFluids(['#forge:phenylalanine_nitrile 1000', '#forge:hydrochloric_acid 1000', '#forge:water 2000'])
+        .itemOutputs(['gtceu:ammonium_chloride_dust', 'gtceu:phenylalanine_dust'])
+        .duration(300)
+        .EUt(phenylalanineEU);
+
+});

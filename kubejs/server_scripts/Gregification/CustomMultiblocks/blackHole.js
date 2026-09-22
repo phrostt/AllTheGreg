@@ -162,8 +162,7 @@ ServerEvents.recipes(allthemods => {
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/vibranium'], null, 'gtceu:vibranium_singularity', null, 131072, 1200, 'vibranium_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/unobtainium'], null, 'gtceu:unobtainium_singularity', null, 131072, 1200, 'unobtainium_singularity')
     blackHole(['#forge:singularities/core', '4000x #forge:ingots/compressed_iron'], null, 'gtceu:compressed_iron_singularity', null, 131072, 1200, 'compressed_iron_singularity')    
-
-    //here - add signualrity recipes
+    
     blackHole(['allthecompressed:diamond_block_3x', '#forge:frames/alfsteel', '6x #forge:plates/strontium_aluminate', '12x #forge:plates/fluorozirconic_composite'], null , 'gtceu:bedrockium_dust', null, 131072, 1200, 'bedrockium_compression')
     blackHole(['#forge:frames/bedrockium', '6x #forge:plates/rheni_zirconium_alloy', '12x #forge:rods/potassium_calcium_orthosilicate'], null , 'gtceu:core_singularity', null, 131072, 1200, 'core_singularity')
 

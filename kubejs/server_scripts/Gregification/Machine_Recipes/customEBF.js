@@ -102,7 +102,7 @@ ServerEvents.recipes(allthemods => {
         'evilcraft:garmonbozia',
         null,
         5700,
-        1000,
+        2000,
         512
     );
 

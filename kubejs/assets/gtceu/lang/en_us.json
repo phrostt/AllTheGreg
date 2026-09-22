@@ -178,7 +178,7 @@
     "material.gtceu.singularity_alloy": "Singularity Alloy",
     "material.gtceu.absolute_alloy": "Absolute Alloy",
     "material.gtceu.chaos_plastic": "Chaos Plastic",
-    "material.gtceu.empowered_polymer": "Bio-Etheric Polymer",
+    "material.gtceu.organic_polymer": "Organic Polymer",
     "material.gtceu.deorum_alloy": "Steadfast Naquadria Deorum Trinium",
     "material.gtceu.cosmic_matter": "Cosmic Matter",
     "material.gtceu.eternal": "Eternal",
@@ -676,7 +676,12 @@
     "material.gtceu.nitro_crystal": "Nitro Crystal",
     "material.gtceu.pulsating_crystal": "Pulsating Crystal",
     "material.gtceu.vibrant_crystal": "Vibrant Crystal",
-    "material.gtceu.semi_stable_clathrate": "Semi Stable Clathrate"
+    "material.gtceu.semi_stable_clathrate": "Semi Stable Clathrate",
+    "material.gtceu.phenylacetaldehyde": "Phenylacetaldehyde",
+    "material.gtceu.phenyl": "Phenyl",
+    "material.gtceu.phenylalanine": "Phenylalanine",
+    "material.gtceu.phenylalanine_nitrile": "Phenylalanine Nitrile",
+    "material.gtceu.phenolic_resin": "Phenolic Resin"
     
 }
  

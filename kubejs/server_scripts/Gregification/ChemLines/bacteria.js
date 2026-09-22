@@ -1,6 +1,6 @@
 ServerEvents.recipes(allthemods => {
 
-
+ 
     const LUV = 32768; // matches your getVoltage() LuV tier
     const DUR = 200;
 
@@ -13,7 +13,8 @@ ServerEvents.recipes(allthemods => {
         { nbt: 'Sphingomonas', name: 'Sphingomonas' },
         { nbt: 'Rhizobacterium', name: 'Nitrogen-Fixing Rhizobacteria' },
         { nbt: 'Desulfovibrio', name: 'Desulfovibrio' },
-        { nbt: 'Clostridium', name: 'Clostridium Cellulose-Alpha' }
+        { nbt: 'Clostridium', name: 'Clostridium Cellulose-Alpha' },
+        { nbt: 'CaulobacterCrescentus', name: 'Caulobacter crescentus' }
     ];
 
     const bacteriaStageItems = (strain) => {
@@ -254,5 +255,12 @@ ServerEvents.recipes(allthemods => {
     };
 
     rotary('mekanism:spent_nuclear_waste', 'gtceu:spent_nuclear_waste', 10)
+
+    allthemods.recipes.gtceu.large_chemical_reactor(`gregification:chemical_reactor/bio_organic_nanocomposite`)
+        .itemInputs('#forge:dusts/phenylalanine', Item.of('gtceu:bacteria_colony_dust', '{bacteriaSpecies:"CaulobacterCrescentus"}').strongNBT())
+        .inputFluids('#forge:phenolic_resin 1440')
+        .outputFluids('gtceu:organic_polymer 1440')
+        .duration(300)
+        .EUt(32768);
     
 });

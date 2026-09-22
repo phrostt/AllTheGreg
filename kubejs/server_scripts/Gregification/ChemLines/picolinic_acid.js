@@ -24,10 +24,10 @@ ServerEvents.recipes(allthemods => {
         .duration(duration)
         .EUt(EUSimple);
 
-allthemods.recipes.gtceu.chemical_reactor('allthemods:chemical_reactor/acetaldehyde')
-    .inputFluids('#forge:ethanol 1000', '#forge:oxygen 1000')
-    .outputFluids('gtceu:acetaldehyde 1000')
-    .duration(300)
-    .EUt(512);
+    allthemods.recipes.gtceu.chemical_reactor('allthemods:chemical_reactor/acetaldehyde')
+        .inputFluids('#forge:ethanol 1000', '#forge:oxygen 1000')
+        .outputFluids('gtceu:acetaldehyde 1000')
+        .duration(300)
+        .EUt(512);
 
 });

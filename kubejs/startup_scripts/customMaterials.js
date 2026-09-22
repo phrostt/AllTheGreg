@@ -348,7 +348,15 @@ const fluids = [
     { name: 'rocket_fuel_stage_1', color: 0x8A9A5B, iconSet: 'FLUID' },
     { name: 'rocket_fuel_stage_2', color: 0xE8F4F8, iconSet: 'FLUID' },
     { name: 'rocket_fuel_stage_3', color: 0xC4D7D1, iconSet: 'FLUID' },
-    { name: 'rocket_fuel_stage_4', color: 0xFFF176, iconSet: 'FLUID' }
+    { name: 'rocket_fuel_stage_4', color: 0xFFF176, iconSet: 'FLUID' },
+
+    { name: 'ethylene_oxide', components:'1x ethylene, 1x oxygen', formula: 'C2H4O', color: 0xEAF2F8, iconSet: 'FLUID' },    
+    { name: 'phenylacetaldehyde', components: '1x phenyl, 1x acetaldehyde', formula: 'C8H8O', color: 0xFFF5D6, iconSet: 'FLUID' },
+    { name: 'phenylalanine_nitrile', components: '9x carbon, 10x hydrogen, 2x nitrogen', formula: 'C9H10N2', color: 0xD4A373, iconSet: 'FLUID', noDecomp: true },    
+    { name: 'phenolic_resin', components: '7x carbon, 6x hydrogen, 2x oxygen', formula: 'C7H6O2', color: 0x5C2E16, iconSet: 'FLUID', noDecomp: true }
+
+
+
 
 
 ];
@@ -369,7 +377,7 @@ const getCoilVoltage = (coil) => {
 
 const polymers = [
     { name: "chaos_plastic", color: 0x222222 },
-    { name: "empowered_polymer", color: 0x647B82 },
+    { name: "organic_polymer", color: 0x647B82 },
     { name: 'fluorozirconic_composite', color: 0x4DD0E1, components: '1x zirconium, 6x fluorine, 2x carbon' },
     { name: 'fifth_element', components: '1x elemental_water, 1x elemental_fire, 1x elemental_air, 1x elemental_earth', color: 0xFF6600 },
 ];
@@ -445,7 +453,10 @@ const dusts = [
     { name: 'tantalum_pentachloride', components: '1x tantalum, 5x chlorine', color: 0xF5DEB3, formula: 'TaCl5', iconSet: 'DULL', fluid: true, noDecomp: true },
     { name: 'niobium_tantalum_residue', components: '2x niobium, 2x tantalum, 4x oxygen', color: 0x2B2B2B, formula: 'Nb2Ta2O4', iconSet: 'METALLIC', noDecomp: true },
     { name: 'cerium_oxide', components: '1x cerium, 2x oxygen', color: 0xF5DEB3, formula: 'CeO2', iconSet: 'DULL' },
-    { name: 'thorium_oxide', components: '1x thorium, 2x oxygen', color: 0xe8e8e8, formula: 'ThO2', iconSet: 'DULL' }
+    { name: 'thorium_oxide', components: '1x thorium, 2x oxygen', color: 0xe8e8e8, formula: 'ThO2', iconSet: 'DULL' },
+    { name: 'phenyl', components: '6x carbon, 5x hydrogen', formula: 'C6H5', color: 0x3A3A3A, iconSet: 'DUST' },
+    { name: 'phenylalanine', components: '9x carbon, 11x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C9H11NO2', color: 0xF8F9FA, iconSet: 'DULL', noDecomp: true },    
+
 ];
 
 const newOres = [
