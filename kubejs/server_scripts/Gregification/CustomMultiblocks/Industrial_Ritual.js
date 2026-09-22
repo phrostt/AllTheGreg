@@ -547,14 +547,9 @@ ServerEvents.recipes(allthemods => {
     });
 
     //console.error (`[ritual_auto_import] Finished processing ${i} occultism:ritual recipes.`);
+    
 
-    // --- Confirmed-working spirit summon rituals ---
-    // Every job below was manually tested via spawn egg and confirmed to actually
-    // function (crush, chop, or flip day/night). Jobs NOT included here (Cleaner,
-    // Weather, Traders, Transport Items) were tested and found broken - they likely
-    // need additional bound-target NBT we haven't reverse-engineered yet.
-
-        addRitual(
+    addRitual(
         ['#forge:dusts/iron', '#forge:dusts/gold', '#forge:dusts/copper', '#forge:dusts/silver'],
         Item.of('occultism:spawn_egg/djinni', '{EntityTag:{spiritJob:{factoryId:"occultism:crush_tier2",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'ophyx_calling',
@@ -626,5 +621,5 @@ ServerEvents.recipes(allthemods => {
         ['#forge:dusts/gunpowder', '#forge:dyes/gray', 'minecraft:phantom_membrane', '#forge:ingots/clay'],
         'occultism:gray_paste',
         'strigeors_higher_binding',
-    );
+    );    
 });

@@ -14,7 +14,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
 
 GTCEuStartupEvents.registry("gtceu:machine", event => {
     event.create("alchemical_workbench", "simple")
-        .tiers(GTValues.HV, GTValues.EV, GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
+        .tiers(GTValues.EV, GTValues.IV, GTValues.LuV, GTValues.ZPM, GTValues.UV)
         .definition((tier, builder) =>
             builder
                 .rotationState(RotationState.NON_Y_AXIS)

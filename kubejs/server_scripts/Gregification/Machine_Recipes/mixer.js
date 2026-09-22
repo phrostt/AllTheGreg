@@ -423,4 +423,10 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('alltheores:netherite_dust')
         .duration(100)
         .EUt(512);
+
+    allthemods.recipes.gtceu.mixer('gregification:semi_stable_clathrate')
+        .itemInputs(['#forge:dusts/vibrant_crystal', '#forge:dusts/pulsating_crystal'])
+        .itemOutputs('gtceu:semi_stable_clathrate_dust')
+        .duration(100)
+        .EUt(512);
 });

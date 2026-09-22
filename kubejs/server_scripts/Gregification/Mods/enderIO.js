@@ -72,15 +72,15 @@ ServerEvents.recipes(allthemods => {
     
     allthemods.recipes.gtceu.autoclave('gregification:autoclave/pulsating_crystal')
         .itemInputs("gtceu:exquisite_diamond_gem")
-        .inputFluids("gtceu:pulsating_alloy 1000")
+        .inputFluids("#forge:molten_enderium 1296")
         .itemOutputs('enderio:pulsating_crystal')
         .duration(600)
-        .EUt(8192);
+        .EUt(2048);
         
     allthemods.recipes.gtceu.autoclave('gregification:autoclave/vibrant_crystal')
         .itemInputs("gtceu:exquisite_emerald_gem")
-        .inputFluids("gtceu:pulsating_alloy 1000")
+        .inputFluids("#forge:molten_lumium 1296")
         .itemOutputs('enderio:vibrant_crystal')
         .duration(600)
-        .EUt(8192);
+        .EUt(2048);
 });

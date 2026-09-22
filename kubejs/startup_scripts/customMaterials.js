@@ -623,6 +623,26 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     let materialBuilder;
     
+    
+
+    materialBuilder = event.create('pulsating_crystal')
+        .gem()
+        .dust()
+        .color(0x79ffff)
+        .iconSet(GTMaterialIconSet.SHINY);
+
+    materialBuilder = event.create('vibrant_crystal')
+        .gem()
+        .dust()
+        .color(0xa4ffaf)
+        .iconSet(GTMaterialIconSet.SHINY);
+
+
+    materialBuilder = event.create('semi_stable_clathrate')        
+        .dust()
+        .color(0x8FFFD7)
+        .iconSet(GTMaterialIconSet.FLUID);
+
 
     materialBuilder = event.create('aureal')
         .fluid()
@@ -1769,6 +1789,9 @@ StartupEvents.postInit(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('water_essence'), 'mysticalagriculture:water_essence');
     TagPrefix.gem.setIgnored(GTMaterials.get('air_essence'), 'mysticalagriculture:air_essence');
     TagPrefix.gem.setIgnored(GTMaterials.get('earth_essence'), 'mysticalagriculture:earth_essence');
+
+    TagPrefix.gem.setIgnored(GTMaterials.get('pulsating_crystal'), 'enderio:pulsating_crystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('vibrant_crystal'), 'enderio:vibrant_crystal');
     
 
 
@@ -1946,6 +1969,9 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.gem.setIgnored(GTMaterials.get('water_essence'), 'mysticalagriculture:water_essence');
     TagPrefix.gem.setIgnored(GTMaterials.get('air_essence'), 'mysticalagriculture:air_essence');
     TagPrefix.gem.setIgnored(GTMaterials.get('earth_essence'), 'mysticalagriculture:earth_essence');
+
+    TagPrefix.gem.setIgnored(GTMaterials.get('pulsating_crystal'), 'enderio:pulsating_crystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('vibrant_crystal'), 'enderio:vibrant_crystal');
 
     
 

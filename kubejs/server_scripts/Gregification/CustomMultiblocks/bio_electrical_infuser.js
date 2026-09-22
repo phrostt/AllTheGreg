@@ -13,7 +13,7 @@ ServerEvents.recipes(allthemods => {
         S: 'gtceu:ev_sensor',
         R: 'gtceu:ev_robot_arm',
         P: 'gtceu:ev_electric_pump',
-        B: 'evilcraft:garmonbozia'           // From your uploaded image
+        B: 'evilcraft:garmonbozia'
     }).id('allthemods:shaped/bio_electrical_infuser_controller');
 	
 	

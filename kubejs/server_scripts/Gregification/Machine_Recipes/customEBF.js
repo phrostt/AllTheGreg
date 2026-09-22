@@ -97,4 +97,13 @@ ServerEvents.recipes(allthemods => {
         512
     );
 
+        addEBF(['#forge:dusts/semi_stable_clathrate','evilcraft:vengeance_essence'],
+        '#forge:water_stage_2 2000',
+        'evilcraft:garmonbozia',
+        null,
+        5700,
+        1000,
+        512
+    );
+
 });

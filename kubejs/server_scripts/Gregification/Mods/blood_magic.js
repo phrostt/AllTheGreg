@@ -118,5 +118,11 @@ ServerEvents.recipes(allthemods => {
     
     bloodAltar(allthemods, 'gtceu:blank_slate_casing', 'bloodmagic:blankslate', 0, 1000, 5, 5)
 
+    let recipe;
+    recipe = allthemods.recipes.gtceu.alchemical_workbench('gregification:alchemical_workbench/gilded_blackstone')
+        .itemInputs('minecraft:blackstone', '4x #forge:plates/gold')
+        .itemOutputs('minecraft:gilded_blackstone')
+        .duration(30)
+        .EUt(128);
         
 })
