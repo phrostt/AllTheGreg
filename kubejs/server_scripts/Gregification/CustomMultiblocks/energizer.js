@@ -25,7 +25,7 @@ ServerEvents.recipes(allthemods => {
         allthemods.recipes.gtceu.industrial_energizer(`gregification:energizer/${outputID}`)
             .itemInputs(inputs)
             .itemOutputs(output)
-            .EUt(32)
+            .EUt(voltages[tier])
             .duration(duration)
             .addData('ebf_temp', tempTiers[tier]);
     };

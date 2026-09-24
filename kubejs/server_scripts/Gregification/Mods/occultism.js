@@ -148,7 +148,8 @@ ServerEvents.recipes(allthemods => {
             [
                 'gtceu:tungsten_carbide_buzz_saw_blade',
                 '4x #forge:plates/unobtainium',
-                '4x #forge:plates/vibranium'
+                '4x #forge:plates/vibranium',
+                '4x #forge:plates/nitro_crystal'
             ])
         .itemOutputs('gtceu:blood_coated_blade')
         .inputFluids('#forge:sanguine_concentrate 64000')
