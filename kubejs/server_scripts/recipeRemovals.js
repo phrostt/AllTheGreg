@@ -59,6 +59,64 @@ ServerEvents.recipes(allthemods => {
     const beeRemovals = beeRemoves.map(recipeId => ({ id: recipeId }));    
     allthemods.remove(beeRemovals);
 
+    const powahRemoves = [
+        'powah:crafting/energy_cell_starter', 'powah:crafting/energy_cell_basic', 'powah:crafting/energy_cell_hardened',
+        'powah:crafting/energy_cell_blazing', 'powah:crafting/energy_cell_niotic', 'powah:crafting/energy_cell_spirited', 
+        'powah:crafting/energy_cell_nitro', 'powah:crafting/energy_cell_basic_2',
+
+        'powah:crafting/ender_cell_starter', 'powah:crafting/ender_cell_basic', 'powah:crafting/ender_cell_hardened',
+        'powah:crafting/ender_cell_blazing', 'powah:crafting/ender_cell_niotic', 'powah:crafting/ender_cell_spirited', 
+        'powah:crafting/ender_cell_nitro',
+
+        'powah:crafting/ender_gate_starter', 'powah:crafting/ender_gate_basic', 'powah:crafting/ender_gate_hardened',
+        'powah:crafting/ender_gate_blazing', 'powah:crafting/ender_gate_niotic', 'powah:crafting/ender_gate_spirited', 
+        'powah:crafting/ender_gate_nitro',
+
+        'powah:crafting/cable_starter', 'powah:crafting/cable_basic', 'powah:crafting/cable_hardened',
+        'powah:crafting/cable_blazing', 'powah:crafting/cable_niotic', 'powah:crafting/cable_spirited', 
+        'powah:crafting/cable_nitro', 'powah:crafting/cable_basic_2', 'powah:crafting/cable_hardened_2',
+        'powah:crafting/cable_blazing_2', 'powah:crafting/cable_niotic_2', 'powah:crafting/cable_spirited_2', 
+        'powah:crafting/cable_nitro_2',
+
+        'powah:crafting/energizing_rod_starter', 'powah:crafting/energizing_rod_basic', 'powah:crafting/energizing_rod_hardened',
+        'powah:crafting/energizing_rod_blazing', 'powah:crafting/energizing_rod_niotic', 'powah:crafting/energizing_rod_spirited', 
+        'powah:crafting/energizing_rod_nitro',
+
+        'powah:crafting/furnator_starter', 'powah:crafting/furnator_basic', 'powah:crafting/furnator_hardened',
+        'powah:crafting/furnator_blazing', 'powah:crafting/furnator_niotic', 'powah:crafting/furnator_spirited', 
+        'powah:crafting/furnator_nitro',
+        
+        'powah:crafting/magmator_starter', 'powah:crafting/magmator_basic', 'powah:crafting/magmator_hardened',
+        'powah:crafting/magmator_blazing', 'powah:crafting/magmator_niotic', 'powah:crafting/magmator_spirited', 
+        'powah:crafting/magmator_nitro',
+
+        'powah:crafting/thermo_generator_starter', 'powah:crafting/thermo_generator_basic', 'powah:crafting/thermo_generator_hardened',
+        'powah:crafting/thermo_generator_blazing', 'powah:crafting/thermo_generator_niotic', 'powah:crafting/thermo_generator_spirited', 
+        'powah:crafting/thermo_generator_nitro',
+
+
+        'powah:crafting/solar_panel_starter', 'powah:crafting/solar_panel_basic', 'powah:crafting/solar_panel_hardened',
+        'powah:crafting/solar_panel_blazing', 'powah:crafting/solar_panel_niotic', 'powah:crafting/solar_panel_spirited', 
+        'powah:crafting/solar_panel_nitro',
+
+        'powah:crafting/reactor_starter', 'powah:crafting/reactor_basic', 'powah:crafting/reactor_hardened',
+        'powah:crafting/reactor_blazing', 'powah:crafting/reactor_niotic', 'powah:crafting/reactor_spirited', 
+        'powah:crafting/reactor_nitro',
+
+        'powah:crafting/player_tranmitter_starter', 'powah:crafting/player_tranmitter_basic', 'powah:crafting/player_tranmitter_hardened',
+        'powah:crafting/player_tranmitter_blazing', 'powah:crafting/player_tranmitter_niotic', 'powah:crafting/player_tranmitter_spirited', 
+        'powah:crafting/player_tranmitter_nitro',
+
+        'powah:crafting/energy_hopper_starter', 'powah:crafting/energy_hopper_basic', 'powah:crafting/energy_hopper_hardened',
+        'powah:crafting/energy_hopper_blazing', 'powah:crafting/energy_hopper_niotic', 'powah:crafting/energy_hopper_spirited', 
+        'powah:crafting/energy_hopper_nitro',
+
+        'powah:crafting/energy_discharger_starter', 'powah:crafting/energy_discharger_basic', 'powah:crafting/energy_discharger_hardened',
+        'powah:crafting/energy_discharger_blazing', 'powah:crafting/energy_discharger_niotic', 'powah:crafting/energy_discharger_spirited', 
+        'powah:crafting/energy_discharger_nitro',
+
+
+    ]
     const globalRemoves3 = [
         'productivebees:centrifuge/gems/honeycomb_ruby', 'productivebees:centrifuge/gems/honeycomb_ruby_block',
         'sanguine_networks:virtual_sacrificer', 'industrialforegoingsouls:soul_laser_base', 'industrialforegoingsouls:soul_surge',
@@ -425,6 +483,9 @@ ServerEvents.recipes(allthemods => {
 
     const removalObjects3 = globalRemoves3.map(recipeId => ({ id: recipeId }));
     allthemods.remove(removalObjects3);
+
+    const powahObjects = powahRemoves.map(recipeId => ({ id: recipeId }));
+    allthemods.remove(powahObjects);
 
     // 2. --- DYNAMIC MATERIAL REMOVALS (Optimized) ---
 

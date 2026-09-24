@@ -999,6 +999,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             GTMaterialFlags.GENERATE_SMALL_GEAR,
             GTMaterialFlags.GENERATE_FOIL);
 
+    /*
+    copied from nomi striclty for lurning purposes
     materialBuilder = event.create("sculk_alloy")
         .ingot()
         .liquid(new GTFluidBuilder().state(GTFluidState.LIQUID).customStill())
@@ -1016,7 +1018,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             GTMaterialFlags.GENERATE_GEAR,
             GTMaterialFlags.GENERATE_SMALL_GEAR,
             GTMaterialFlags.GENERATE_FOIL);
-
+    */
     materialBuilder = event.create('garmonbozia')
         // @ts-ignore
         .gem()

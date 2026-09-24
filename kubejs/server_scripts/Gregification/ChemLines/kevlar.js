@@ -170,12 +170,14 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:benzene 1000', '#forge:oxygen 3000')
         .outputFluids('gtceu:maleic_anhydride 1000')
         .duration(200)
+        .circuit(3)
         .EUt(512); // HV
 
     allthemods.recipes.gtceu.chemical_reactor('gregification:kevlar/gamma_butyrolactone')
         .inputFluids('#forge:maleic_anhydride 1000', '#forge:hydrogen 3000')
         .outputFluids('gtceu:gamma_butyrolactone 1000', 'minecraft:water 1000')
         .duration(300)
+        .circuit(3)
         .EUt(512); // HV
 
 
@@ -183,6 +185,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:propene 1000', '#forge:carbon_monoxide 1000', '#forge:hydrogen 1000')
         .outputFluids('gtceu:butyraldehyde 1000')
         .duration(200)
+        .circuit(3)
         .EUt(512); // HV
 
 

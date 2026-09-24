@@ -82,7 +82,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:sea_prism",
         1200,
-        32768,
+        8192,
         "forbidden_arcanus:elementarium"
     )
 
@@ -100,7 +100,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:smelter_prism",
         1200,
-        32768,
+        8192,
         "forbidden_arcanus:elementarium"
     )
 
@@ -119,7 +119,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:terrastomp_prism",
         1200,
-        32768,
+        8192,
         "forbidden_arcanus:elementarium"
     )
 
@@ -138,7 +138,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:whirlwind_prism",
         1200,
-        32768,
+        8192,
         "forbidden_arcanus:elementarium"
     )
 

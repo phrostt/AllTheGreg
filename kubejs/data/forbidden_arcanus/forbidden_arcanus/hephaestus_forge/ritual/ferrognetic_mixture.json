@@ -1,64 +1,43 @@
 {
-  "additional_requirements": {    
-    "forge_tier": 5
-  },
   "essences": {
-    "aureal": 100,
-    "blood": 2000,
+    "aureal": 0,
+    "blood": 0,
     "experience": 0,
-    "souls": 20
-  },  
+    "souls": 0
+  },
   "inputs": [
     {
-      "amount": 1,
+      "amount": 0,
       "ingredient": {
-        "item": "evilcraft:garmonbozia"
+        "item": "minecraft:clay_ball"
       }
     },
     {
-      "amount": 2,
+      "amount": 0,
       "ingredient": {
         "item": "forbidden_arcanus:wax"
       }
     },
     {
-      "amount": 1,
+      "amount": 0,
       "ingredient": {
-        "tag": "forge:ingots/dark_steel"
-      }
-    },
-	{
-      "amount": 1,
-      "ingredient": {
-        "tag": "forge:ingots/pink_slime"
+        "item": "minecraft:slime_ball"
       }
     },
     {
-      "amount": 1,
+      "amount": 0,
       "ingredient": {
-        "tag": "forge:ingots/elementium"
-      }
-    },
-    {
-      "amount": 1,
-      "ingredient": {
-        "tag": "forge:ingots/hellforged"
-      }
-    },
-    {
-      "amount": 1,
-      "ingredient": {
-        "tag": "forge:ingots/iesnium"
+        "item": "minecraft:iron_ingot"
       }
     }
   ],
   "main_ingredient": {
-    "tag": "forge:ingots/naquabranium"
+    "item": "minecraft:lodestone"
   },
   "result": {
     "type": "forbidden_arcanus:create_item",
     "result_item": {
-      "Count": 1,
+      "Count": 0,
       "id": "forbidden_arcanus:ferrognetic_mixture"
     }
   }

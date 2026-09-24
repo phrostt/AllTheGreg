@@ -1,6 +1,9 @@
 {
   "additional_requirements": {
-    "forge_tier": 3
+    "enhancers": [
+      "forbidden_arcanus:elementarium"
+    ],
+    "forge_tier": 2
   },
   "essences": {
     "aureal": 0,
@@ -12,24 +15,30 @@
     {
       "amount": 0,
       "ingredient": {
-        "item": "forbidden_arcanus:xpetrified_orb"
+        "item": "minecraft:flint"
       }
     },
     {
       "amount": 0,
       "ingredient": {
-        "item": "forbidden_arcanus:stellarite_piece"
+        "item": "minecraft:dripstone_block"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": {
+        "item": "minecraft:pointed_dripstone"
       }
     }
   ],
   "main_ingredient": {
-    "item": "minecraft:diamond"
+    "item": "minecraft:diamond_block"
   },
   "result": {
     "type": "forbidden_arcanus:create_item",
     "result_item": {
       "Count": 0,
-      "id": "forbidden_arcanus:eternal_stella"
+      "id": "forbidden_arcanus:terrastomp_prism"
     }
   }
 }

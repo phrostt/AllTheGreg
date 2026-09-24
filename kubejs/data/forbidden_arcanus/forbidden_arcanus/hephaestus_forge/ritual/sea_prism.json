@@ -1,5 +1,8 @@
 {
   "additional_requirements": {
+    "enhancers": [
+      "forbidden_arcanus:elementarium"
+    ],
     "forge_tier": 3
   },
   "essences": {
@@ -12,24 +15,30 @@
     {
       "amount": 0,
       "ingredient": {
-        "item": "forbidden_arcanus:xpetrified_orb"
+        "item": "minecraft:prismarine_shard"
       }
     },
     {
       "amount": 0,
       "ingredient": {
-        "item": "forbidden_arcanus:stellarite_piece"
+        "item": "minecraft:scute"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": {
+        "item": "minecraft:lapis_lazuli"
       }
     }
   ],
   "main_ingredient": {
-    "item": "minecraft:diamond"
+    "item": "minecraft:heart_of_the_sea"
   },
   "result": {
     "type": "forbidden_arcanus:create_item",
     "result_item": {
       "Count": 0,
-      "id": "forbidden_arcanus:eternal_stella"
+      "id": "forbidden_arcanus:sea_prism"
     }
   }
 }

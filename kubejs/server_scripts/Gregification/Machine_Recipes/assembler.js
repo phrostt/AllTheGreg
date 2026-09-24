@@ -815,17 +815,20 @@ ServerEvents.recipes(allthemods => {
     //soul extractor
     addAssembler(
         [
-            "gtceu:hexagonal_bio_composite",
+            "gtceu:hexagonal_bio_composite",            
+            "4x #forge:plates/stabilized_clathrate",
             "#forge:frames/draconium",
-            "4x #gtceu:circuits/iv",
-            "4x gtceu:iv_electric_pump",
-            "4x gtceu:iv_electric_piston"
+            "2x #gtceu:circuits/iv",
+            "2x gtceu:iv_electric_pump",
+            "2x gtceu:iv_electric_piston",
+            'forbidden_arcanus:soul_extractor'
 
         ],            
         "#forge:polytetrafluoroethylene 576",
         "gtceu:soul_extractor",
-        512,
-        6000
+        2048,
+        6000,
+        2
     );
 
     //hephaestus forge
@@ -834,14 +837,16 @@ ServerEvents.recipes(allthemods => {
             "gtceu:hexagonal_bio_composite",            
             "4x #forge:plates/stabilized_clathrate",
             "#forge:frames/draconium",
-            "4x #gtceu:circuits/iv",
-            "4x gtceu:iv_electric_pump",
-            "4x gtceu:iv_electric_piston"
+            "2x #gtceu:circuits/iv",
+            "2x gtceu:iv_electric_pump",
+            "2x gtceu:iv_electric_piston",
+            'irons_spellbooks:arcane_anvil'
 
         ],
         "#forge:polytetrafluoroethylene 576",
         "gtceu:hephaestus_forge",
-        512,
-        6000
+        2048,
+        6000,
+        1
     );
 });

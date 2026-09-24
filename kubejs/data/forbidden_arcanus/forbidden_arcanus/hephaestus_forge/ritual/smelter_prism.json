@@ -1,6 +1,8 @@
 {
   "additional_requirements": {
-    "forge_tier": 3
+    "enhancers": [
+      "forbidden_arcanus:elementarium"
+    ]
   },
   "essences": {
     "aureal": 0,
@@ -12,24 +14,27 @@
     {
       "amount": 0,
       "ingredient": {
-        "item": "forbidden_arcanus:xpetrified_orb"
+        "item": "minecraft:coal"
       }
     },
     {
       "amount": 0,
       "ingredient": {
-        "item": "forbidden_arcanus:stellarite_piece"
+        "item": "minecraft:blaze_powder"
       }
     }
   ],
   "main_ingredient": {
-    "item": "minecraft:diamond"
+    "item": "forbidden_arcanus:arcane_crystal_block"
   },
   "result": {
     "type": "forbidden_arcanus:create_item",
     "result_item": {
       "Count": 0,
-      "id": "forbidden_arcanus:eternal_stella"
+      "id": "forbidden_arcanus:smelter_prism",
+      "tag": {
+        "Damage": 0
+      }
     }
   }
 }
