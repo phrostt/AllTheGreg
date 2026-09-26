@@ -118,6 +118,9 @@ ServerEvents.recipes(allthemods => {
 
     ]
     const globalRemoves3 = [
+        'thermal:augments/upgrade_augment_1', 'thermal:augments/upgrade_augment_2', 'thermal:augments/upgrade_augment_3',
+        'thermal_extra:crafting/abyssal_integral_component', 'thermal_extra:crafting/dragonsteel_integral_component',
+        'thermal:rf_coil', 'thermal:redstone_servo', 
         'productivebees:centrifuge/gems/honeycomb_ruby', 'productivebees:centrifuge/gems/honeycomb_ruby_block',
         'sanguine_networks:virtual_sacrificer', 'industrialforegoingsouls:soul_laser_base', 'industrialforegoingsouls:soul_surge',
         'industrialforegoingsouls:soul_network_pipe', 'ad_astra:launch_pad', 'ad_astra:oxygen_loader', 'ad_astra:fuel_refinery',

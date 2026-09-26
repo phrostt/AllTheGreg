@@ -783,6 +783,7 @@ ServerEvents.recipes(allthemods => {
         32768,8,null,1
     );
 
+    /*
     createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:fluid_tank_creative_augment',
         [
             '16x thermal_extra:abyssal_fluid_tank_augment',
@@ -792,7 +793,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:lubricant 1024000',
         6000,
         32768,8,null,1
-    );
+    );*/
 
     createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:machine_catalyst_creative_augment',
         [

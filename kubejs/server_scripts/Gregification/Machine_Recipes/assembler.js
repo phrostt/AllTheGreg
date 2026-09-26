@@ -849,4 +849,115 @@ ServerEvents.recipes(allthemods => {
         6000,
         1
     );
+
+     //rf coil
+    addAssembler(
+        [
+            '4x #forge:plates/redstone',
+            '2x #forge:rods/tungsten_steel',
+            '4x #forge:plates/nitro_crystal',
+            '2x gtceu:hpic_chip'
+        ],
+        '#forge:soldering_alloy 288',
+        'thermal:rf_coil',
+        8192,
+        200
+    );
+
+    
+    
+    //redstone servo
+    addAssembler(
+        [
+            '2x gtceu:iv_electric_piston',
+            '2x gtceu:iv_electric_motor',
+            '4x #forge:plates/redstone',
+            '4x #forge:plates/nitro_crystal'
+        ],
+        '#forge:soldering_alloy 288',
+        'thermal:redstone_servo',
+        8192,
+        200
+    );
+
+    addAssembler(
+        [
+            '2x gtceu:ev_electric_motor',
+            '4x #forge:gears/signalum',
+            '4x #forge:plates/invar',
+            'gtceu:tempered_glass',
+            '4x #forge:plates/blazing_crystal',
+            '2x #gtceu:circuits/ev'
+        ],
+        '#forge:soldering_alloy 288',
+        'thermal:upgrade_augment_1',
+        2048,
+        200
+    );
+
+    addAssembler(
+        [
+            '2x gtceu:iv_electric_motor',
+            '4x #forge:gears/lumium',
+            '4x #forge:plates/electrum',
+            'gtceu:laminated_glass',
+            '4x #forge:plates/niotic_crystal',
+            '2x #gtceu:circuits/iv',
+            'thermal:upgrade_augment_1'
+        ],
+        '#forge:soldering_alloy 288',
+        'thermal:upgrade_augment_2',
+        8192,
+        200
+    );
+
+    addAssembler(
+        [
+            '2x gtceu:luv_electric_motor',
+            '4x #forge:gears/enderium',
+            '4x #forge:plates/osmiridium',
+            'gtceu:fusion_glass',
+            '4x #forge:plates/spirited_crystal',
+            '2x #gtceu:circuits/luv',
+            'thermal:upgrade_augment_2'
+        ],
+        '#forge:soldering_alloy 288',
+        'thermal:upgrade_augment_3',
+        32768,
+        200
+    );
+
+    addAssembler(
+        [
+            '2x gtceu:zpm_electric_motor',
+            '4x #forge:gears/dragonsteel',
+            '4x thermal_extra:ancient_dust',
+            'gtceu:fusion_glass',
+            '4x #forge:plates/nitro_crystal',
+            '2x #gtceu:circuits/zpm',
+            'thermal:upgrade_augment_3'
+        ],
+        '#forge:soldering_alloy 288',
+        'thermal_extra:upgrade_augment',
+        131072,
+        200
+    );
+
+    addAssembler(
+        [
+            '2x gtceu:zpm_electric_motor',
+            '4x #forge:gears/abyssal',
+            '4x thermal_extra:ancient_dust',
+            'gtceu:fusion_glass',
+            '4x #forge:plates/nitro_crystal',
+            '2x #gtceu:circuits/zpm',
+            'thermal_extra:upgrade_augment',
+            'gtceu:thermal_spark'
+        ],
+        '#forge:soldering_alloy 288',
+        'thermal_extra:abyssal_upgrade_augment',
+        131072,
+        200
+    );
+
 });

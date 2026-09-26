@@ -63,6 +63,7 @@ ServerEvents.recipes(allthemods => {
         { tier: 2, lp: 4000, input: 'minecraft:glass_bottle', output: 'bloodmagic:alchemy_flask' },
         { tier: 2, lp: 3000, input: 'minecraft:iron_sword', output: 'bloodmagic:daggerofsacrifice' },
         { tier: 2, lp: 2000, input: 'bloodmagic:blankslate', output: 'bloodmagic:reinforcedslate' },
+        { tier: 2, lp: 2000, input: '#forge:altar_runes', output: 'bmaddon:blood_altar_tier_card_2' },
 
         // Tier 3
         { tier: 3, lp: 1000, input: '#forge:storage_blocks/lapis', output: 'bloodmagic:waterscribetool' },
@@ -72,20 +73,29 @@ ServerEvents.recipes(allthemods => {
         { tier: 3, lp: 1000, input: 'minecraft:ghast_tear', output: 'bloodmagic:airscribetool' },
         { tier: 3, lp: 5000, input: 'bloodmagic:reinforcedslate', output: 'bloodmagic:infusedslate' },
         { tier: 3, lp: 25000, input: '#forge:storage_blocks/gold', output: 'bloodmagic:magicianbloodorb' },
+        { tier: 3, lp: 5000, input: 'ae2:capacity_card', output: 'bmaddon:blood_altar_parallel_card' },
+        { tier: 3, lp: 5000, input: 'bmaddon:blood_altar_tier_card_2', output: 'bmaddon:blood_altar_tier_card_3' },
 
         // Tier 4
-        { tier: 4, lp: 10000, input: 'bloodmagic:teleposerfocus', output: 'bloodmagic:enhancedteleposerfocus' },
+        { tier: 4, lp: 10000, input: 'bloodmagic:teleposerfocus', output: 'bloodmagic:enhancedteleposerfocus' }, 
         { tier: 4, lp: 2000, input: 'minecraft:ender_pearl', output: 'bloodmagic:enhancedteleposerfocus', ID: 'teleposerfocus' },
-        { tier: 4, lp: 30000, input: 'bloodmagic:demonslate', output: 'bloodmagic:etherealslate' },
         { tier: 4, lp: 10000, input: 'bloodmagic:rawdemoniteblock', output: 'bloodmagic:bleedingedge' },
-        { tier: 4, lp: 80000, input: '#forge:storage_blocks/hellforged', output: 'bloodmagic:archmagebloodorb' },
         { tier: 4, lp: 15000, input: 'bloodmagic:infusedslate', output: 'bloodmagic:demonslate' },
         { tier: 4, lp: 2000, input: '#forge:storage_blocks/coal', output: 'bloodmagic:duskscribetool' },
         { tier: 4, lp: 40000, input: 'bloodmagic:weakbloodshard', output: 'bloodmagic:masterbloodorb' },
         { tier: 4, lp: 10000, input: beeHematophagous, output: beeRegenerative, ID: 'beeRegenerative'},
+        { tier: 4, lp: 10000, input: 'bmaddon:blood_altar_tier_card_3', output: 'bmaddon:blood_altar_tier_card_4' },
+        { tier: 4, lp: 10000, input: 'ae2:speed_card', output: 'bmaddon:blood_magic_speed_card' },
 
         // Tier 5
         { tier: 5, lp: 1000, input: '#forge:dusts/terraria', output: 'gtceu:sanguine_terraria_dust' },
+        { tier: 5, lp: 80000, input: '#forge:storage_blocks/hellforged', output: 'bloodmagic:archmagebloodorb' },
+        { tier: 5, lp: 30000, input: 'bloodmagic:demonslate', output: 'bloodmagic:etherealslate' },
+        { tier: 5, lp: 20000, input: 'bmaddon:blood_altar_tier_card_4', output: 'bmaddon:blood_altar_tier_card_5', ID: 'blood_altar_tier_card_5' },//done
+        { tier: 5, lp: 20000, input: 'ae2:molecular_assembler', output: 'bmaddon:blood_altar_assembler', ID: 'blood_altar_assembler' },//done
+
+        // Tier 6
+        { tier: 6, lp: 120000, input: '#forge:exquisite_gems/nitro_crystal', output: 'gtceu:technomancy_orb', ID: 'technomancy_orb' },//done
     ];
     sanguineRitualRecipes.forEach(ritual => {
         sanguineRitual(ritual.input, ritual.lp, ritual.output, null, ritual.tier, ritual.ID)

@@ -310,6 +310,23 @@ ServerEvents.recipes(allthemods => {
         explosive: 'bloodmagic:hellforged_explosive_cell',
         reverter: 'bloodmagic:sanguinereverter'
     };
+        const BLOOD_ORB_TIERS = {
+        1: 'bloodmagic:weakbloodorb',
+        2: 'bloodmagic:apprenticebloodorb',
+        3: 'bloodmagic:magicianbloodorb',
+        4: 'bloodmagic:masterbloodorb',
+        5: 'bloodmagic:archmagebloodorb',
+        6: 'gtceu:technomancy_orb'
+    };
+     const EUTiers = {
+        1: 32,     //lv
+        2: 128,    //mv
+        3: 512,    //hv
+        4: 2048,   //ev   
+        5: 8192,   //iv
+        6: 32768,   //luv
+        7: 131072   //zpm
+    };
 
     allthemods.forEachRecipe({ type: 'bloodmagic:arc' }, rawRecipe => {
         let safeID = rawRecipe.getId().toString().replace(/[^a-z0-9]/gi, '_');
@@ -414,12 +431,7 @@ ServerEvents.recipes(allthemods => {
 
 
 
-    const BLOOD_ORB_TIERS = {
-        1: 'bloodmagic:weakbloodorb',
-        2: 'bloodmagic:apprenticebloodorb',
-        3: 'bloodmagic:magicianbloodorb',
-        4: 'bloodmagic:masterbloodorb'
-    };
+
 
     allthemods.forEachRecipe({ type: 'bloodmagic:alchemytable' }, rawRecipe => {
         let safeID = rawRecipe.getId().toString().replace(/[^a-z0-9]/gi, '_');
@@ -459,12 +471,14 @@ ServerEvents.recipes(allthemods => {
 
             // --- Blood orb tier as non-consumed requirement ---
             let orbItem = BLOOD_ORB_TIERS[Math.round(recipe.upgradeLevel || 1)];
+            [Math.round(recipe.upgradeLevel || 1)];
+            let altarVoltage = EUTiers[Math.round(recipe.upgradeLevel || 3)];
 
             let builder = allthemods.recipes.gtceu.alchemical_workbench(safeID)
                 .itemInputs(inputItems)
                 .itemOutputs(outputItem)
                 .duration(duration)
-                .EUt(runicVoltage);
+                .EUt(altarVoltage);
 
             if (syphonAmount > 0) {
                 builder.inputFluids([`gtceu:sanguine_concentrate ${syphonAmount}`]);
@@ -483,11 +497,19 @@ ServerEvents.recipes(allthemods => {
         }
     });
 
+    allthemods.recipes.gtceu.alchemical_workbench('gregification:thermal_spark')
+        .itemInputs('botania:corporea_spark','#forge:exquisite_gems/nitro_crystal','4x #forge:rounds/pink_slime','#forge:rings/draconium_awakened')
+        .notConsumable('gtceu:technomancy_orb')
+        .itemOutputs('gtceu:thermal_spark')
+        .duration(1000)
+        .EUt(EUTiers[6]);
+
     const CATALYST_ITEM_IDS = {
         'botania:alchemy_catalyst': 'botania:alchemy_catalyst',
         'botania:conjuration_catalyst': 'botania:conjuration_catalyst'
     };
  
+
     allthemods.forEachRecipe({ type: 'botania:mana_infusion' }, rawRecipe => {
         let baseSafeID = rawRecipe.getId().toString().replace(/[^a-z0-9]/gi, '_');
         try {
@@ -551,6 +573,8 @@ ServerEvents.recipes(allthemods => {
             console.error(`FAILED recipe ID: ${baseSafeID} — ${err}`);
         }
     });
+
+    
  
     // --- Manasteel bee - manual, NBT-based, excluded from the automated loop above ---
     allthemods.recipes.gtceu.mana_pool('bacteria_mana_pool_manasteel_bee')

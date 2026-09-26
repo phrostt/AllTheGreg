@@ -95,14 +95,13 @@ ServerEvents.recipes(allthemods => {
         //previous tier recipe        
         allthemods.shaped(`powah:ender_gate_${tier}`, [
             'PCO',
-            'TSF',
+            'TST',
             'OAP'
         ], {
             P: `#forge:plates/${powahMats[index]}`,
             O: `#forge:plates/${machinePlates[index]}`,
             C: 'powah:ender_core',
-            S: previous,
-            F: `gtceu:${euTier}_field_generator`,            
+            S: previous,            
             T: `#gtceu:circuits/${euTier}`,
             A: `powah:energy_cable_${tier}`
         }).id(`gregification:powah/ender_gate_${tier}_2`);

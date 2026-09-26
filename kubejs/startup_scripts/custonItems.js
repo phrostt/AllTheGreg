@@ -18,6 +18,12 @@ StartupEvents.registry('item', event => {
 
 
 
+
+    event.create('gtceu:technomancy_orb')
+        .displayName('Technomancy Orb')
+        .tooltip('Orb of Technomantic Ascendancy')
+        .rarity('ie_masterwork')
+
     event.create('gtceu:atomic_core')        
         .displayName('Atomic Core')
         .tooltip('Atomic Core')

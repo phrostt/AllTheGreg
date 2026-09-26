@@ -5,12 +5,7 @@ const rodMetalsATM = [ 'allthemodium', 'vibranium', 'unobtainium' ];
 ServerEvents.recipes(allthemods => {
 
 
-    const replaceShaped = (recipeID, itemID, schema, ingredients) => {
-        
-        // @ts-ignore
-        allthemods.shaped(itemID || recipeID, schema, ingredients).id(recipeID);
 
-    }
 
     const addCentrifugeChanced = (itemsIn, fluidIn, itemsOut, chancedItems, fluidOut, eu, duration, ID) => {
         // Generate a base ID using the first item of the guaranteed outputs
@@ -81,30 +76,6 @@ ServerEvents.recipes(allthemods => {
         'bituminous_sand_processing'
     );
 
-    //rf coil
-    replaceShaped("thermal:rf_coil", null, 
-        ['ROR',
-         'PHP',
-         'ROR'],
-        {
-            R: "#forge:plates/redstone",
-            O: "#forge:rods/tungsten_steel",
-            P: "#forge:plates/plastic",
-            H: "gtceu:hpic_chip"
-        }
-    );
-    
-    //redstone servo
-    replaceShaped("thermal:redstone_servo", null,
-        ['RPR',
-         'SMS',
-         'RPR'],
-        {
-            P: "gtceu:iv_electric_piston",
-            M: "gtceu:iv_electric_motor",
-            R: "#forge:plates/redstone",
-            S: "#forge:plates/plastic"
-        }
-    );
+   
     
 });
