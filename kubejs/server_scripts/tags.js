@@ -36,7 +36,8 @@ ServerEvents.tags('item', allthemods => {
     'bloodmagic:apprenticebloodorb',
     'bloodmagic:magicianbloodorb',
     'bloodmagic:masterbloodorb',
-    'bloodmagic:archmagebloodorb'
+    'bloodmagic:archmagebloodorb',
+    'gtceu:technomancy_orb'
   ])
 
   allthemods.add('forge:dusts', 'alltheores:netherite_dust')

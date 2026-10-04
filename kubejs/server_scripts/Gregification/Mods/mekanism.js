@@ -46,13 +46,14 @@ ServerEvents.recipes(allthemods => {
             '#forge:circuits/basic',
             '#gtceu:circuits/luv',
             'mekanism:energy_tablet',
-            '4x #forge:plates/ferrognetic'
+            '4x #forge:plates/ferrognetic',
+            '4x #forge:plates/hafnium'
         ],
         [
             '#forge:argon 1000'
         ],
         'mekanism:basic_tier_installer',
-        32768,
+        8192,
         600
     );
 
@@ -62,7 +63,8 @@ ServerEvents.recipes(allthemods => {
             '#forge:circuits/advanced',
             '#gtceu:circuits/luv',
             'mekanism:energy_tablet',
-            '4x #forge:plates/alloy_infused'
+            '4x #forge:plates/alloy_infused',
+            '4x #forge:plates/scandium'            
         ],
         [
             '#forge:neon 1000'
@@ -78,13 +80,14 @@ ServerEvents.recipes(allthemods => {
             '#forge:circuits/elite',
             '#gtceu:circuits/luv',
             'mekanism:energy_tablet',
-            '4x #forge:plates/alloy_reinforced'
+            '4x #forge:plates/alloy_reinforced',
+            '4x #forge:plates/thallium'
         ],
         [
             '#forge:xenon 1000'
         ],
         'mekanism:elite_tier_installer',
-        32768,
+        131072,
         600
     );
 
@@ -94,13 +97,14 @@ ServerEvents.recipes(allthemods => {
             '#forge:circuits/ultimate',
             '#gtceu:circuits/luv',
             'mekanism:energy_tablet',
-            '4x #forge:plates/alloy_atomic'
+            '4x #forge:plates/alloy_atomic',
+            '4x #forge:plates/rubidium'
         ],
         [
             '#forge:radon 1000'
         ],
         'mekanism:ultimate_tier_installer',
-        32768,
+        524288,
         600
     );
 
@@ -109,7 +113,7 @@ ServerEvents.recipes(allthemods => {
         [
             '4x #forge:plates/osmium',
             '2x #forge:circuits/ultimate',
-            '2x #forge:plates/alloy_atomic',
+            '2x #forge:plates/alloy_infused',
             'mekanism:energy_tablet'
         ],
         [
@@ -125,7 +129,7 @@ ServerEvents.recipes(allthemods => {
         [
             '4x #forge:plates/gold',
             '2x #forge:circuits/ultimate',
-            '2x #forge:plates/alloy_atomic',
+            '2x #forge:plates/alloy_infused',
             'mekanism:energy_tablet'
         ],
         [
@@ -141,7 +145,7 @@ ServerEvents.recipes(allthemods => {
         [
             '4x #forge:plates/tin',
             '2x #forge:circuits/ultimate',
-            '2x #forge:plates/alloy_atomic',
+            '2x #forge:plates/alloy_infused',
             'mekanism:energy_tablet'
         ],
         [
@@ -157,13 +161,29 @@ ServerEvents.recipes(allthemods => {
         [
             '4x #forge:plates/steel',
             '2x #forge:circuits/ultimate',
-            '2x #forge:plates/alloy_atomic',
+            '2x #forge:plates/alloy_infused',
             'mekanism:energy_tablet'
         ],
         [
             'gtceu:polytetrafluoroethylene 100'
         ],
         'mekanism:upgrade_gas',
+        32768,
+        600
+    );
+
+     //upgrade muffler
+    addAssembler(
+        [
+            '4x #forge:plates/stainless_steel',
+            '2x #forge:circuits/ultimate',
+            '2x #forge:plates/alloy_infused',
+            'mekanism:energy_tablet'
+        ],
+        [
+            'gtceu:polytetrafluoroethylene 100'
+        ],
+        'mekanism:upgrade_muffling',
         32768,
         600
     );

@@ -365,7 +365,7 @@ ServerEvents.recipes(allthemods => {
         'mekanism:crusher', 'mekanism:osmium_compressor', 'mekanism:combiner', 'mekanism:purification_chamber', 'mekanism:chemical_injection_chamber',
         'mekanism:precision_sawmill', 'mekanism:metallurgic_infuser', 'mekanism:sps_casing', 'mekanism:sps_port', 'mekanism:energy_tablet',
         'mekanism:mekasuit_helmet', 'mekanism:mekasuit_bodyarmor', 'mekanism:mekasuit_pants', 'mekanism:mekasuit_boots', 'mekanism:tier_installer/basic',
-        'mekanism:tier_installer/advanced', 'mekanism:tier_installer/elite', 'mekanism:tier_installer/ultimate', 'mekanism:upgrade/speed',
+        'mekanism:tier_installer/advanced', 'mekanism:tier_installer/elite', 'mekanism:tier_installer/ultimate', 'mekanism:upgrade/speed', 'mekanism:upgrade/muffling',
         'mekanism:upgrade/energy', 'mekanism:upgrade/filter', 'mekanism:upgrade/gas', 'mekanism:module_base',
         'mekanismgenerators:reactor/controller', 'mekanismgenerators:reactor/frame', 'mekanismgenerators:reactor/port',
         'mekanismgenerators:fission_reactor/casing', 'mekanismgenerators:fission_reactor/port', 'mekanismgenerators:fission_reactor/fuel_assembly',

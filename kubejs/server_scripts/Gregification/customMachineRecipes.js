@@ -690,7 +690,7 @@ ServerEvents.recipes(allthemods => {
         { id: 'cryogenic_unit', tier: 'uv', fluid: true, extra: ['2x #forge:rotors/strontium', '4x ad_astra:ice_shard', '4x #forge:gears/gadolinium'], extraFluids: ['#forge:blue_ice 16000', '#forge:tellurium 2000'] },
  
         // UHV tier -> assembly_line (2 extra fluids)
-        { id: 'baryonic_separator', tier: 'uhv', fluid: false, extra: ['4x gtceu:superconducting_coil', '4x #forge:plates/rubidium'], extraFluids: ['#forge:naquadria 2000', '#forge:rubidium 2000'] },
+        { id: 'baryonic_separator', tier: 'zpm', fluid: false, extra: ['4x gtceu:superconducting_coil', '4x #forge:plates/scandium'], extraFluids: ['#forge:naquadria 2000', '#forge:rubidium 2000'] },
         { id: 'baryonic_stabilizer', tier: 'uhv', fluid: true, extra: ['4x gtceu:fusion_coil', '4x #forge:gears/rubidium'], extraFluids: ['#forge:naquadria 2000', '#forge:rubidium 2000'] },
         { id: 'magnetic_containment_chamber', tier: 'uhv', fluid: true, extra: ['4x #forge:gears/francium', '4x #forge:plates/germanium'], extraFluids: ['#forge:selenium 2000', '#forge:radium 2000'] },
     ];

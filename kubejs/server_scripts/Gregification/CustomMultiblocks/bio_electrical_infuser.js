@@ -360,7 +360,8 @@ ServerEvents.recipes(allthemods => {
 			'evilcraft:garmonbozia',
 			'bloodmagic:demonslate',
 			'4x #forge:plates/kevlar',
-			'8x #forge:screws/terrasteel'
+			'8x #forge:screws/terrasteel',
+			'gtceu:tachyon'
 		],
 		[
 			'#forge:sanguine_concentrate 16000',

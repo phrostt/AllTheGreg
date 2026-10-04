@@ -26,7 +26,7 @@ ServerEvents.recipes(allthemods => {
     
     allthemods.recipes.gtceu.centrifuge('gregification:tenebrius_dust_processing')
         .itemInputs('#forge:dusts/purified_tenebrius')
-        .chancedOutput('gtceu:small_tenebrium_dust', 1500, 1500)
+        .chancedOutput('gtceu:small_tenebrium_dust', 5000, 1500)
         .duration(800)
         .EUt(TenebriumEU);
 });
