@@ -479,6 +479,26 @@ const dusts = [
     { name: 'tantalum_bio_ash',  color: 0x6E7682, iconSet: 'DULL', noDecomp: true },
     { name: 'caesium_bio_ash',   color: 0x8E8C9E, iconSet: 'DULL', noDecomp: true },
     { name: 'antimony_bio_ash',  color: 0x5A5856, iconSet: 'DULL', noDecomp: true },
+    { name: 'selenium_bio_ash',  color: 0x8A5F52, iconSet: 'DULL', noDecomp: true },
+    { name: 'tellurium_bio_ash', color: 0x7F7A62, iconSet: 'DULL', noDecomp: true },
+    { name: 'lutetium_bio_ash',  color: 0x7D7F8C, iconSet: 'DULL', noDecomp: true },
+    { name: 'hafnium_bio_ash',   color: 0x86787A, iconSet: 'DULL', noDecomp: true },
+    { name: 'samarium_bio_ash',  color: 0x8C7C5E, iconSet: 'DULL', noDecomp: true },
+    { name: 'scandium_bio_ash',  color: 0x7C8590, iconSet: 'DULL', noDecomp: true },
+    { name: 'boron_bio_ash',     color: 0x8B8475, iconSet: 'DULL', noDecomp: true },
+    { name: 'uranium_bio_ash',   color: 0x7E8A55, iconSet: 'DULL', noDecomp: true },
+    { name: 'manganese_bio_ash', color: 0x6E5E66, iconSet: 'DULL', noDecomp: true },
+    { name: 'magnesium_bio_ash', color: 0x7F8A78, iconSet: 'DULL', noDecomp: true },
+    { name: 'lithium_bio_ash',   color: 0x8E7276, iconSet: 'DULL', noDecomp: true },
+    { name: 'nickel_bio_ash',    color: 0x6F8070, iconSet: 'DULL', noDecomp: true },
+    { name: 'zinc_bio_ash',      color: 0x7C8086, iconSet: 'DULL', noDecomp: true },
+    { name: 'tin_bio_ash',       color: 0x828079, iconSet: 'DULL', noDecomp: true },
+    { name: 'cobalt_bio_ash',    color: 0x5E6A82, iconSet: 'DULL', noDecomp: true },
+    { name: 'copper_bio_ash',    color: 0x8A6E5A, iconSet: 'DULL', noDecomp: true },
+    { name: 'lead_bio_ash',      color: 0x67667A, iconSet: 'DULL', noDecomp: true },
+    { name: 'chromium_bio_ash',  color: 0x7A5C5C, iconSet: 'DULL', noDecomp: true },
+    { name: 'silver_bio_ash',    color: 0x8C8E92, iconSet: 'DULL', noDecomp: true },
+    { name: 'titanium_bio_ash',  color: 0x7E7A86, iconSet: 'DULL', noDecomp: true }
 
 
 ];
