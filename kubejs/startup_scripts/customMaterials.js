@@ -498,6 +498,7 @@ const dusts = [
     { name: 'lead_bio_ash',      color: 0x67667A, iconSet: 'DULL', noDecomp: true },
     { name: 'chromium_bio_ash',  color: 0x7A5C5C, iconSet: 'DULL', noDecomp: true },
     { name: 'silver_bio_ash',    color: 0x8C8E92, iconSet: 'DULL', noDecomp: true },
+    { name: 'iron_bio_ash', color: 0x7A5E50, iconSet: 'DULL', noDecomp: true },
     { name: 'titanium_bio_ash',  color: 0x7E7A86, iconSet: 'DULL', noDecomp: true }
 
 

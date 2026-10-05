@@ -23,6 +23,13 @@ StartupEvents.registry('item', event => {
         .displayName('Technomancy Orb')
         .tooltip('Orb of Technomantic Ascendancy')
         .rarity('ie_masterwork')
+        
+    
+    event.create('gtceu:agarwood')
+        .displayName('Agarwood')
+        .tooltip('Aromatic wood used in incense and rituals.')
+        .rarity('ie_masterwork')
+        .texture('immersiveengineering:item/stick_treated');
 
     event.create('gtceu:camphor_incense')
         .displayName('Camphor Incense')
