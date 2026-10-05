@@ -24,6 +24,11 @@ StartupEvents.registry('item', event => {
         .tooltip('Orb of Technomantic Ascendancy')
         .rarity('ie_masterwork')
 
+    event.create('gtceu:camphor_incense')
+        .displayName('Camphor Incense')
+        .tooltip('Incense made from camphor.')
+        .rarity('ie_masterwork')
+
     event.create('gtceu:atomic_core')        
         .displayName('Atomic Core')
         .tooltip('Atomic Core')

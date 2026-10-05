@@ -100,4 +100,9 @@ ServerEvents.recipes(allthemods => {
             .itemOutputs('2x gtceu:wood_dust')
             .duration(duration).EUt(EUSimple);
     });
+
+    allthemods.recipes.gtceu.mixer('gregification:camphor_incense')
+        .itemInputs('#forge:dusts/camphor', '2x #forge:dusts/wood', '#forge:dusts/charcoal', 'botania:incense_stick')
+        .itemOutputs('gtceu:camphor_incense')
+        .duration(duration).EUt(EUSimple);
 });

@@ -310,7 +310,7 @@ ServerEvents.recipes(allthemods => {
         explosive: 'bloodmagic:hellforged_explosive_cell',
         reverter: 'bloodmagic:sanguinereverter'
     };
-        const BLOOD_ORB_TIERS = {
+    const BLOOD_ORB_TIERS = {
         1: 'bloodmagic:weakbloodorb',
         2: 'bloodmagic:apprenticebloodorb',
         3: 'bloodmagic:magicianbloodorb',
