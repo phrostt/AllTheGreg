@@ -66,7 +66,7 @@ ServerEvents.recipes(allthemods => {
     );
 
     addEnergize(
-        'minecraft:diamond',
+        '#forge:gems/diamond',
         'powah:crystal_niotic',
         300000,
         2
@@ -80,7 +80,7 @@ ServerEvents.recipes(allthemods => {
     );
 
     addEnergize(
-        'minecraft:emerald',
+        '#forge:gems/emerald',
         'powah:crystal_spirited',
         400000,
         3
@@ -241,6 +241,36 @@ ServerEvents.recipes(allthemods => {
         2000000,
         6,
         'blazing_bee'
+    );
+
+    addEnergize(
+        '#forge:exquisite_gems/diamond',
+        'powah:crystal_niotic',
+        200000,
+        2,
+        'exquisite_diamond'
+    );
+    addEnergize(
+        '#forge:exquisite_gems/emerald',
+        'powah:crystal_spirited',
+        300000,
+        3,
+        'exquisite_emerald'
+    );
+
+    addEnergize(
+        '#forge:flawless_gems/diamond',
+        'powah:crystal_niotic',
+        250000,
+        2,
+        'flawless_diamond'
+    );
+    addEnergize(
+        '#forge:flawless_gems/emerald',
+        'powah:crystal_spirited',
+        350000,
+        3,
+        'flawless_emerald'
     );
 
 

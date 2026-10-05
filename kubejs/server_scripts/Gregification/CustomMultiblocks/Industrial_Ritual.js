@@ -23,7 +23,8 @@ ServerEvents.recipes(allthemods => {
         candle: '#minecraft:candles',
         crystal: 'occultism:spirit_attuned_crystal',
         skull: 'minecraft:skeleton_skull',
-        wither: 'minecraft:wither_skeleton_skull'
+        wither: 'minecraft:wither_skeleton_skull',
+        incense: 'gtceu:camphor_incense'
     };
 
     const rituals = [
@@ -34,6 +35,9 @@ ServerEvents.recipes(allthemods => {
                 { fluid: chalks.pink, amount: 400 },
                 { fluid: chalks.light_blue, amount: 400 },
                 { fluid: chalks.green, amount: 800 }
+            ],
+            items: [
+                { item: regalia.incense, amount: 8 },
             ]
         },
 
@@ -54,7 +58,7 @@ ServerEvents.recipes(allthemods => {
                 { item: 'minecraft:amethyst_cluster', amount: 1 },
                 { item: 'minecraft:iron_bars', amount: 1 },
                 { item: 'minecraft:lightning_rod', amount: 1 },
-                { item: 'minecraft:end_rod', amount: 1 }
+                { item: 'minecraft:end_rod', amount: 1 },                
             ]
         },
 
@@ -74,6 +78,7 @@ ServerEvents.recipes(allthemods => {
                 { item: regalia.crystal, amount: 8 },
                 { item: regalia.skull, amount: 8 },
                 { item: regalia.wither, amount: 4 },
+                { item: regalia.incense, amount: 8 }
             ]
         },
 
@@ -160,6 +165,7 @@ ServerEvents.recipes(allthemods => {
                 { item: regalia.crystal, amount: 8 },
                 { item: regalia.skull, amount: 8 },
                 { item: regalia.wither, amount: 4 },
+                { item: regalia.incense, amount: 8 }
             ]
         },
 
@@ -235,6 +241,7 @@ ServerEvents.recipes(allthemods => {
                 { item: regalia.crystal, amount: 8 },
                 { item: regalia.skull, amount: 8 },
                 { item: regalia.wither, amount: 4 },
+                { item: regalia.incense, amount: 8 }
             ]
         },
 

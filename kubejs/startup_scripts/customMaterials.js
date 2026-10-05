@@ -468,6 +468,17 @@ const dusts = [
     { name: 'aluminium_chloride', components: '1x aluminium, 3x chlorine', formula: 'AlCl3', color: 0xF5F5F0, iconSet: 'DULL' },
     { name: 'isoborneol', components: '10x carbon, 18x hydrogen, 1x oxygen', formula: 'C10H18O', color: 0xF8F8F2, iconSet: 'DULL', noDecomp: true }, 
     { name: 'camphor', components: '10x carbon, 16x hydrogen, 1x oxygen', formula: 'C10H16O', color: 0xE8F0EA, iconSet: 'GLASS', noDecomp: true },
+    { name: 'pgm_bio_ash',        color: 0x8A8676, iconSet: 'DULL', noDecomp: true },
+    { name: 'rare_earth_bio_ash', color: 0x857C8A, iconSet: 'DULL', noDecomp: true },
+    { name: 'radium_bio_ash',     color: 0x7D8A6E, iconSet: 'DULL', noDecomp: true }, 
+    { name: 'indium_bio_ash', color: 0x6E6C86, iconSet: 'DULL', noDecomp: true },   
+    { name: 'amygdalin', components: '20x carbon, 27x hydrogen, 1x nitrogen, 11x oxygen', formula: 'C20H27NO11', color: 0xEFE4CC, iconSet: 'DULL', noDecomp: true },
+    { name: 'iodine_bio_ash',    color: 0x6F5F7E, iconSet: 'DULL', noDecomp: true },
+    { name: 'strontium_bio_ash', color: 0x8E6F6A, iconSet: 'DULL', noDecomp: true },
+    { name: 'rhenium_bio_ash',   color: 0x7E8288, iconSet: 'DULL', noDecomp: true },
+    { name: 'tantalum_bio_ash',  color: 0x6E7682, iconSet: 'DULL', noDecomp: true },
+    { name: 'caesium_bio_ash',   color: 0x8E8C9E, iconSet: 'DULL', noDecomp: true },
+    { name: 'antimony_bio_ash',  color: 0x5A5856, iconSet: 'DULL', noDecomp: true },
 
 
 ];

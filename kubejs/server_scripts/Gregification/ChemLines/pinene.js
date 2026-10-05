@@ -105,4 +105,25 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('#forge:dusts/camphor', '2x #forge:dusts/wood', '#forge:dusts/charcoal', 'botania:incense_stick')
         .itemOutputs('gtceu:camphor_incense')
         .duration(duration).EUt(EUSimple);
+
+    const gumTrees = [
+        {name: 'rainbow_gum', amount: 350},
+        {name: 'rose_gum', amount: 150},
+        {name: 'swamp_gum', amount: 500}
+    ];
+    const oilSources = [
+        { suffix: 'leaves',  count: 4 },
+        { suffix: 'sapling', count: 2 }
+    ];
+
+    gumTrees.forEach(tree => {
+        oilSources.forEach(src => {
+            let item = `productivetrees:${tree.name}_${src.suffix}`;
+            allthemods.recipes.gtceu.chemical_reactor(`gregification:eucalyptus_oil_from_${tree.name}_${src.suffix}`)
+                .itemInputs(`${src.count}x ${item}`)
+                .inputFluids('#forge:steam 1000')
+                .outputFluids(`gtceu:eucalyptus_oil ${tree.amount}`)
+                .duration(duration).EUt(EUSimple);
+        });
+    });
 });

@@ -697,6 +697,17 @@
     "material.gtceu.exo_pinane_dimer": "Exo Pinane Dimer",
     "material.gtceu.terpene_jet_fuel": "Terpene Jet Fuel",
     "material.gtceu.boron_slurry_fuel": "Boron Slurry Fuel",
-    "material.gtceu.aluminium_chloride": "Aluminium Chloride"
+    "material.gtceu.aluminium_chloride": "Aluminium Chloride",
+    "material.gtceu.pgm_bio_ash": "PGM Bio Ash",
+    "material.gtceu.rare_earth_bio_ash": "Rare Earth Bio Ash",
+    "material.gtceu.radium_bio_ash": "Radium Bio Ash",    
+    "material.gtceu.amygdalin": "Amygdalin",
+    "material.gtceu.indium_bio_ash": "Indium Bio Ash",
+    "material.gtceu.iodine_bio_ash": "Iodine Bio Ash",
+    "material.gtceu.strontium_bio_ash": "Strontium Bio Ash",
+    "material.gtceu.rhenium_bio_ash": "Rhenium Bio Ash",
+    "material.gtceu.tantalum_bio_ash": "Tantalum Bio Ash",
+    "material.gtceu.caesium_bio_ash": "Caesium Bio Ash",
+    "material.gtceu.antimony_bio_ash": "Antimony Bio Ash"    
 }
  
