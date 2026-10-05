@@ -134,7 +134,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:carbon_monoxide 5000')
         .duration(200)
         .EUt(32768);
-        
+
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:artificial_cerebrospinal_fluid')
         .itemInputs('2x #forge:dusts/sodium', '#forge:dusts/potassium', '#forge:dusts/calcium', '#forge:dusts/magnesium')
         .inputFluids('#forge:distilled_water 6000', '#forge:glycerol 2000')
@@ -148,5 +148,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:tetrachloroethylene 3000')
         .duration(250)
         .EUt(512);
-        
+
+
+
 });

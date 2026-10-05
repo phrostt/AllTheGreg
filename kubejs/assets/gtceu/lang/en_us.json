@@ -683,7 +683,20 @@
     "material.gtceu.phenylalanine_nitrile": "Phenylalanine Nitrile",
     "material.gtceu.phenolic_resin": "Phenolic Resin",
     "material.gtceu.stabilized_clathrate": "Stabilized Clathrate",
-    "material.gtceu.tetrahydrofuran": "Tetrahydrofuran"
-    
+    "material.gtceu.tetrahydrofuran": "Tetrahydrofuran",
+    "material.gtceu.eucalyptus_oil": "Eucalyptus Oil",
+    "material.gtceu.cineole": "Cineole",
+    "material.gtceu.cineole_phosphate": "Cineole Phosphate",
+    "material.gtceu.pinene": "Pinene",
+    "material.gtceu.pinene_dimer": "Pinene Dimer",
+    "material.gtceu.hydrogenated_pinene_dimer": "Hydrogenated Pinene Dimer",
+    "material.gtceu.isobornyl_acetate": "Isobornyl Acetate",
+    "material.gtceu.camphene": "Camphene",
+    "material.gtceu.isoborneol": "Isoborneol",
+    "material.gtceu.camphor": "Camphor",
+    "material.gtceu.exo_pinane_dimer": "Exo Pinane Dimer",
+    "material.gtceu.terpene_jet_fuel": "Terpene Jet Fuel",
+    "material.gtceu.boron_slurry_fuel": "Boron Slurry Fuel",
+    "material.gtceu.aluminium_chloride": "Aluminium Chloride"
 }
  

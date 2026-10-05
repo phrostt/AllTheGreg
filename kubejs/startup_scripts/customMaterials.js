@@ -319,7 +319,7 @@ const fluids = [
     { name: 'empowered_oil', color: 0xFFA500, iconSet: 'FLUID', burnTime: 40 },
 
     { name: 'poison_agent', color: 0x4A154B, iconSet: 'FLUID' },
-    { name: 'paralytic_agent', color: 0x2D0C35, iconSet: 'FLUID', nodecomp: true },
+    { name: 'paralytic_agent', color: 0x2D0C35, iconSet: 'FLUID', noDecomp: true },
     { name: 'mind_control_serum', components: '1x terrazine, 1x mind_numbing_agent', color: 0x00FFFF, iconSet: 'FLUID' },
     { name: 'concentrated_dark_matter', components: '1x caesium, 1x water', color: 0x1A0033, iconSet: 'FLUID', noDecomp: true },
 
@@ -354,11 +354,17 @@ const fluids = [
     { name: 'phenylacetaldehyde', components: '1x phenyl, 1x acetaldehyde', formula: 'C8H8O', color: 0xFFF5D6, iconSet: 'FLUID' },
     { name: 'phenylalanine_nitrile', components: '9x carbon, 10x hydrogen, 2x nitrogen', formula: 'C9H10N2', color: 0xD4A373, iconSet: 'FLUID', noDecomp: true },    
     { name: 'phenolic_resin', components: '7x carbon, 6x hydrogen, 2x oxygen', formula: 'C7H6O2', color: 0x5C2E16, iconSet: 'FLUID', noDecomp: true },
+    { name: 'eucalyptus_oil', color: 0xD4E8A8, iconSet: 'FLUID', noDecomp: true },
+    { name: 'cineole', components: '10x carbon, 18x hydrogen, 1x oxygen', formula: 'C10H18O', color: 0xEAF6E4, iconSet: 'FLUID' },
+    { name: 'pinene', components: '10x carbon, 16x hydrogen', formula: 'C10H16', color: 0xF2F0D8, iconSet: 'FLUID' },    
     
-
-
-
-
+    
+    { name: 'exo_pinane_dimer', components: '20x carbon, 36x hydrogen', formula: 'C20H36', color: 0xF7EFC8, iconSet: 'FLUID', noDecomp: true },
+    { name: 'terpene_jet_fuel', color: 0xE8C547, iconSet: 'FLUID', noDecomp: true },
+    { name: 'boron_slurry_fuel', color: 0x5E5A3A, iconSet: 'FLUID', noDecomp: true },
+    { name: 'pinene_dimer', components: '20x carbon, 32x hydrogen', formula: 'C20H32', color: 0xD9C27A, iconSet: 'FLUID', noDecomp: true },
+    { name: 'hydrogenated_pinene_dimer', components: '20x carbon, 36x hydrogen', formula: 'C20H36', color: 0xF0E6B8, iconSet: 'FLUID', noDecomp: true },
+    { name: 'isobornyl_acetate', components: '12x carbon, 20x hydrogen, 2x oxygen', formula: 'C12H20O2', color: 0xEDE8D0, iconSet: 'FLUID', noDecomp: true }
 
 ];
 
@@ -457,6 +463,11 @@ const dusts = [
     { name: 'thorium_oxide', components: '1x thorium, 2x oxygen', color: 0xe8e8e8, formula: 'ThO2', iconSet: 'DULL' },
     { name: 'phenyl', components: '6x carbon, 5x hydrogen', formula: 'C6H5', color: 0x3A3A3A, iconSet: 'DULL' },
     { name: 'phenylalanine', components: '9x carbon, 11x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C9H11NO2', color: 0xF8F9FA, iconSet: 'DULL', noDecomp: true },    
+    { name: 'cineole_phosphate', components: '10x carbon, 21x hydrogen, 5x oxygen, 1x phosphorus', formula: '(C10H18O)(H3PO4)', color: 0xF8F6EE, iconSet: 'DULL', noDecomp: true },
+    { name: 'camphene', components: '10x carbon, 16x hydrogen', formula: 'C10H16', color: 0xF5F5EE, iconSet: 'DULL', noDecomp: true },
+    { name: 'aluminium_chloride', components: '1x aluminium, 3x chlorine', formula: 'AlCl3', color: 0xF5F5F0, iconSet: 'DULL' },
+    { name: 'isoborneol', components: '10x carbon, 18x hydrogen, 1x oxygen', formula: 'C10H18O', color: 0xF8F8F2, iconSet: 'DULL', noDecomp: true }, 
+    { name: 'camphor', components: '10x carbon, 16x hydrogen, 1x oxygen', formula: 'C10H16O', color: 0xFFFFFF, iconSet: 'GLASS', noDecomp: true },
 
 
 ];
