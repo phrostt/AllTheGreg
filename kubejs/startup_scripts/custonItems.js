@@ -29,7 +29,6 @@ StartupEvents.registry('item', event => {
         .displayName('Agarwood')
         .tooltip('Aromatic wood used in incense and rituals.')
         .rarity('ie_masterwork')
-        .texture('immersiveengineering:item/stick_treated');
 
     event.create('gtceu:camphor_incense')
         .displayName('Camphor Incense')
