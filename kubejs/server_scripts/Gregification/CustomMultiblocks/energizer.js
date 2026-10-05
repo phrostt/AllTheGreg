@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const beeRedstone = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:redstone"}}').strongNBT();
     const beeSpirited = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:spirited_crystal"}}').strongNBT();
     const beeBlazingCrystal = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:blazing_crystal"}}').strongNBT();
@@ -13,7 +13,7 @@ ServerEvents.recipes(allthemods => {
     const beeGold = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:gold"}}').strongNBT();
 
     const tempTiers = [1800, 2700, 3600, 4500, 5400, 7200, 9001, 10800];
-    const voltages = [32, 128, 512, 2048, 8192, 32768, 131072, 524288];
+    const voltages = [LV, MV, HV, EV, IV, LuV, ZPM, UV];
 
     const addEnergize = (inputs, output, energyFE, tier, ID) => {
 
@@ -290,12 +290,12 @@ ServerEvents.recipes(allthemods => {
     };
 
     const capacitors = [
-        {tier: 'basic', voltage: 'lv', mat: '#forge:plates/steel', capacitor: ''}, 
-        {tier: 'hardened', voltage: 'mv', mat: '#forge:plates/energized_steel', capacitor: ''}, 
-        {tier: 'blazing', voltage: 'hv', mat: '#forge:plates/blazing_crystal', capacitor: 'smd_'}, 
-        {tier: 'niotic', voltage: 'ev', mat: '#forge:plates/niotic_crystal', capacitor: 'smd_'}, 
-        {tier: 'spirited', voltage: 'iv', mat: '#forge:plates/spirited_crystal', capacitor: 'advanced_smd_'}, 
-        {tier: 'nitro', voltage: 'luv', mat: '#forge:plates/nitro_crystal', capacitor: 'advanced_smd_'}
+        {tier: 'basic', eu: LV, voltage: 'lv', mat: '#forge:plates/steel', capacitor: ''}, 
+        {tier: 'hardened', eu: MV, voltage: 'mv', mat: '#forge:plates/energized_steel', capacitor: ''}, 
+        {tier: 'blazing', eu: HV, voltage: 'hv', mat: '#forge:plates/blazing_crystal', capacitor: 'smd_'}, 
+        {tier: 'niotic', eu: EV, voltage: 'ev', mat: '#forge:plates/niotic_crystal', capacitor: 'smd_'}, 
+        {tier: 'spirited', eu: IV, voltage: 'iv', mat: '#forge:plates/spirited_crystal', capacitor: 'advanced_smd_'}, 
+        {tier: 'nitro', eu: LuV, voltage: 'luv', mat: '#forge:plates/nitro_crystal', capacitor: 'advanced_smd_'}
     ];
     capacitors.forEach((tier, index) => {
         
@@ -310,7 +310,7 @@ ServerEvents.recipes(allthemods => {
         `powah:capacitor_${tier.tier}`,
         null,
         index*100,
-        voltages[index]
+        tier.eu
     )
     });    
 

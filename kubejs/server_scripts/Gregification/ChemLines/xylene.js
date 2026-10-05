@@ -1,7 +1,7 @@
 ServerEvents.recipes(allthemods => {
-
-    const EUSimple = 2048; //ev
-    const umEUComplex = 32768; //luv
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const EUSimple = EV; //ev
+    const umEUComplex = LuV; //luv
 
     // --- xylene chain ---
     // Step 1: Large Chemical Reactor

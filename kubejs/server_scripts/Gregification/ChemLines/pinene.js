@@ -1,7 +1,8 @@
 ServerEvents.recipes(allthemods => {
-    const EUSimple = 512;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const EUSimple = HV;
     const duration = 300;
-    const EUComplex = 8192;
+    const EUComplex = IV;
     allthemods.recipes.gtceu.chemical_reactor('gregification:pinene_dimerization')
         .inputFluids('#forge:pinene 2000')
         .itemInputs('#forge:dusts/clay')

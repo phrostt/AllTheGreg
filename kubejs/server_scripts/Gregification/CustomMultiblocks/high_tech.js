@@ -6,9 +6,11 @@ const TIME = {
     very_long: 1200
 };
 
+
 const $ResearchManager = Java.loadClass('com.gregtechceu.gtceu.utils.ResearchManager');
 
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     let t = GTRecipeTypes.get('prototype_assembler');
     if (t) {
         t.setHasResearchSlot(true);
@@ -192,7 +194,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:purest_water 1000')
         .outputFluids('gtceu:concentrated_dark_matter 10')
         .duration(10000)
-        .EUt(524296);
+        .EUt(UV);
 
 
     const drone = Item.of('pneumaticcraft:collector_drone', 4, '{"pneumaticcraft:air":120000}').strongNBT();
@@ -202,7 +204,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('gtceu:tier_1_rocket_schematic', 1500, 500)
         .inputFluids('#forge:kerosene 4000')
         .duration(10000)
-        .EUt(8192)
+        .EUt(IV)
         .circuit(1);
 
     allthemods.recipes.gtceu.drone_station('gregification:tier_2_rocket_schematic_from_drone')
@@ -210,7 +212,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('gtceu:tier_2_rocket_schematic', 1500, 500)
         .inputFluids(['#forge:kerosene 4000', '#forge:hafnium 1440'])
         .duration(10000)
-        .EUt(32768)
+        .EUt(LuV)
         .circuit(2);
 
     allthemods.recipes.gtceu.drone_station('gregification:tier_3_rocket_schematic_from_drone')
@@ -218,7 +220,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('gtceu:tier_3_rocket_schematic', 1500, 500)
         .inputFluids(['#forge:kerosene 4000', '#forge:scandium 1440'])
         .duration(10000)
-        .EUt(131072)
+        .EUt(ZPM)
         .circuit(3);
 
     allthemods.recipes.gtceu.drone_station('gregification:tier_4_rocket_schematic_from_drone')
@@ -226,7 +228,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('gtceu:tier_4_rocket_schematic', 1500, 500)
         .inputFluids(['#forge:kerosene 4000', '#forge:thallium 1440'])
         .duration(10000)
-        .EUt(524288)
+        .EUt(UV)
         .circuit(4);
 
     allthemods.recipes.gtceu.hydro_electromagnetic_separator('gregificatoion:hydro_electromagnetic_separator/chaos_shards')
@@ -234,7 +236,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('gtceu:water_stage_6 100')
         .chancedOutput('draconicevolution:small_chaos_frag', 5000, 500)
         .duration(400)
-        .EUt(524288);
+        .EUt(UV);
 
 
     allthemods.recipes.gtceu.drone_station('gregification:allthemodium_upgrade')
@@ -242,7 +244,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('allthemodium:allthemodium_upgrade_smithing_template', 1500, 500)
         .inputFluids(['#forge:kerosene 4000', '#forge:hafnium 1440'])
         .duration(10000)
-        .EUt(32768)
+        .EUt(LuV)
         .circuit(11);
 
     allthemods.recipes.gtceu.drone_station('gregification:vibranium_upgrade')
@@ -250,7 +252,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('allthemodium:vibranium_upgrade_smithing_template', 1500, 500)
         .inputFluids(['#forge:kerosene 4000', '#forge:scandium 1440'])
         .duration(10000)
-        .EUt(131072)
+        .EUt(ZPM)
         .circuit(12);
 
     allthemods.recipes.gtceu.drone_station('gregification:unobtainium_upgrade')
@@ -258,7 +260,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('allthemodium:unobtainium_upgrade_smithing_template', 1500, 500)
         .inputFluids(['#forge:kerosene 4000', '#forge:thallium 1440'])
         .duration(10000)
-        .EUt(524288)
+        .EUt(UV)
         .circuit(13);
 
 
@@ -272,16 +274,16 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('forbidden_arcanus:maledictus_pact', 100, 500)
         .inputFluids('#forge:kerosene 10000')
         .duration(10000)
-        .EUt(32768)
+        .EUt(LuV)
         .circuit(5);
 
     allthemods.shapeless('gtceu:blueprint_blank', ['minecraft:paper', '#forge:small_dusts/lapis']).id('gregification:blank_blueprint')
 
 
     const createModelBlueprints = (machineID, creature, BPitemID, outputs, inputs, fluids, duration, EUt, CWU, customID, skipBlueprints) => {
-        const scanEU = 8192;
+        const scanEU = IV;
         const scanDuration = 200;
-        const fraculatorEU = 131072;
+        const fraculatorEU = ZPM;
         const fraculatorDuration = 600;
         //const generatedId = customID || `gregification:${output[0].replace(/^\d+x\s+/, '').replace(':', '_')}`;
         const creativeBlueprint = `gtceu:blueprint_${BPitemID}`;
@@ -376,7 +378,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:europium 720',
         6000,
-        131072,
+        ZPM,
         16,null,0
     );
 
@@ -394,7 +396,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:europium 1152',
         6000,
-        131072,
+        ZPM,
         16, null, 1
     );
 
@@ -412,7 +414,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:europium 1008',
         6000,
-        131072,
+        ZPM,
         16, null, 1
     );
 
@@ -430,7 +432,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:europium 576',
         6000,
-        131072,
+        ZPM,
         16, null, 1
     );
 
@@ -444,7 +446,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:antimatter 576',
         6000,
-        131072,
+        ZPM,
         16, null, 1
     );
 
@@ -455,7 +457,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         600,
-        131072,null,0
+        ZPM,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'ender_dragon', 'creative_container', ['elementalcraft:creative_container'],
@@ -469,7 +471,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         6000,
-        131072,
+        ZPM,
         32,null,0
     );
 
@@ -485,7 +487,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:argon 6000',
         600,
-        32768, null,null,0
+        LuV, null,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'enderman', 'waystone', ['waystones:warp_stone'],
@@ -499,7 +501,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:ender 6000',
         600,
-        32768, null, null, 1
+        LuV, null, null, 1
     );
 
     let elementHolder;
@@ -514,7 +516,7 @@ ServerEvents.recipes(allthemods => {
             ],
             null,
             6000,
-            131072,
+            ZPM,
             'elementalcraft:creative_container',
             32,
             `gregification:creative_container_${element}`,'creative_container'
@@ -534,7 +536,7 @@ ServerEvents.recipes(allthemods => {
         ],
         ['#forge:polybenzimidazole 1000', 'industrialforegoing:ether_gas 1000'],
         6000,
-        32768, 8,null,0
+        ZPM, 8,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'wither', 'laser_drill', ['industrialforegoing:ore_laser_base'],
@@ -551,7 +553,7 @@ ServerEvents.recipes(allthemods => {
         ],
         ['#forge:polybenzimidazole 1000', 'industrialforegoing:ether_gas 1000'],
         6000,
-        32768, 8, null, 1
+        LuV, 8, null, 1
     );
 
     createModelBlueprints('prototype_assembler', 'wither', 'laser_drill', ['industrialforegoing:fluid_laser_base'],
@@ -568,7 +570,7 @@ ServerEvents.recipes(allthemods => {
         ],
         ['#forge:polybenzimidazole 1000', 'industrialforegoing:ether_gas 1000'],
         6000,
-        32768, 8, null, 1
+        LuV, 8, null, 1
     );
 
     createModelBlueprints('prototype_assembler', 'elder_guardian', 'quantum_computer', ['advanced_ae:quantum_core'],
@@ -583,7 +585,7 @@ ServerEvents.recipes(allthemods => {
         ],
         ['advanced_ae:quantum_infusion_source 10000', '#forge:polybenzimidazole 1440'],
         6000,
-        32768, 8,null,0
+        LuV, 8,null,0
     );
 
 
@@ -600,21 +602,21 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs(jCell)
         .inputFluids('#forge:polybenzimidazole 1000')
         .duration(400)
-        .EUt(32768);
+        .EUt(LuV);
 
     allthemods.recipes.gtceu.assembler(`gregification:creative_jetpacks/creative_thruster`)
         .itemInputs('ad_astra:steel_engine', '4x mekanism:ultimate_induction_cell', '4x #gtceu:circuits/zpm', '4x #forge:rods/strontium_aluminate')
         .itemOutputs(jThruster)
         .inputFluids('#forge:polybenzimidazole 1000')
         .duration(400)
-        .EUt(32768);
+        .EUt(LuV);
 
     allthemods.recipes.gtceu.assembler(`gregification:creative_jetpacks/creative_capacitor`)
         .itemInputs($SizedIngredient.create(jCell, 3), '#forge:singularities/lapotron', '4x #forge:plates/fireite', 'gtceu:empty_tier_ii_battery')
         .itemOutputs(jCapacitor)
         .inputFluids('#forge:polybenzimidazole 1000')
         .duration(400)
-        .EUt(32768);
+        .EUt(LuV);
 
     createModelBlueprints('prototype_assembler', 'blaze', 'flight_module', jCreative,
         [
@@ -625,7 +627,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         6000,
-        32768, 16, 'creative_jetpack',0
+        LuV, 16, 'creative_jetpack',0
     );
 
     createModelBlueprints('prototype_assembler', 'blaze', 'cake', 'create:creative_blaze_cake',
@@ -636,7 +638,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:chocolate 1024000',
         6000,
-        32768, 16,null,0
+        LuV, 16,null,0
     );
 
     createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'botania:creative_pool',
@@ -653,7 +655,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:mana_essence 1024000',
         6000,
-        32768, 16,null,0
+        LuV, 16,null,0
     );
 
     const fullTablet = Item.of('botania:mana_tablet', '{mana:500000}').strongNBT();
@@ -672,7 +674,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:mana_essence 1024000',
         6000,
-        32768, 16, 'creative_mana_tablet', 1
+        LuV, 16, 'creative_mana_tablet', 1
     );
 
 
@@ -685,7 +687,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:mana_essence 1024000',
         6000,
-        32768, 16,null,1
+        LuV, 16,null,1
     );
 
     createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'bloodmagic:activationcrystalcreative',
@@ -702,7 +704,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:saturated_tau 1024000',
         6000,
-        32768, 16, null, 1
+        LuV, 16, null, 1
     );
 
     createModelBlueprints('prototype_assembler', 'iron_golem', 'crux', 'pneumaticcraft:creative_compressed_iron_block',
@@ -712,7 +714,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:plastic 1024000',
         6000,
-        32768, 16,null,0
+        LuV, 16,null,0
     );
     createModelBlueprints('prototype_assembler', 'iron_golem', 'crux', 'pneumaticcraft:creative_compressor',
         [
@@ -721,7 +723,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:plastic 1024000',
         6000,
-        32768, 16, null, 1
+        LuV, 16, null, 1
     );
 
     const creativeSpellBook = Item.of('ars_nouveau:creative_spell_book', '{mode:0.0d,spells:"intangible,ignite,flare,strength,craft,cold_snap,rune,snare,slowfall,freeze,split,crush,smelt,summon_steed,accelerate,summon_vex,lightning,grow,dampen,touch,invisibility,extract,delay,light,duration_down,exchange,place_block,summon_wolves,shield,conjure_water,cut,harm,interact,blink,amplify,phantom_block,fell,extend_time,heal,leap,redstone_signal,pierce,harvest,fortune,break,pickup,launch,dispel,haste,ender_inventory,pull,explosion,fangs,aoe,gravity,self,aquatic,projectile,wither,gust"}')
@@ -733,7 +735,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:source 1024000',
         6000,
-        32768, 16, null, 1
+        LuV, 16, null, 1
     );
 
     createModelBlueprints('prototype_assembler', '~death_tome', 'font', creativeSpellBook,
@@ -745,7 +747,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:source 1024000',
         6000,
-        32768, 16, 'creative_spell_book', 1
+        LuV, 16, 'creative_spell_book', 1
     );
 
     createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'arseng:creative_source_cell',
@@ -757,7 +759,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:source 1024000',
         6000,
-        32768, 16, null, 1
+        LuV, 16, null, 1
     );
 
     
@@ -769,7 +771,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:lubricant 1024000',
         6000,
-        32768,8,null,0
+        LuV,8,null,0
     );
 
     createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:machine_efficiency_creative_augment',
@@ -780,7 +782,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:lubricant 1024000',
         6000,
-        32768,8,null,1
+        LuV,8,null,1
     );
 
     /*
@@ -792,7 +794,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:lubricant 1024000',
         6000,
-        32768,8,null,1
+        LuV,8,null,1
     );*/
 
     createModelBlueprints('prototype_assembler', 'witch', 'thermal', 'thermal:machine_catalyst_creative_augment',
@@ -803,7 +805,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:lubricant 1024000',
         6000,
-        32768,8,null,1
+        LuV,8,null,1
     );
 
     createModelBlueprints('prototype_assembler', 'spider', 'blood', 'evilcraft:creative_blood_drop',
@@ -813,7 +815,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:sanguine_concentrate 1024000',
         6000,
-        32768,8,null,0
+        LuV,8,null,0
     );
     
     
@@ -831,7 +833,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:etrium 1024000',
         6000,
-        32768,32,'mekanism_cube',0
+        LuV,32,'mekanism_cube',0
     );
 
     createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'createaddition:creative_energy',
@@ -846,7 +848,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:etrium 1024000',
         6000,
-        32768,32,null,1
+        LuV,32,null,1
     );
 
     createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'ae2:creative_energy_cell',
@@ -861,7 +863,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:etrium 1024000',
         6000,
-        32768,32,null,1
+        LuV,32,null,1
     );
 
     createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'integrateddynamics:energy_battery_creative',
@@ -876,7 +878,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:etrium 1024000',
         6000,
-        32768,32,null,1
+        LuV,32,null,1
     );
 
     createModelBlueprints('prototype_assembler', '-piglich', 'energy_core', 'powah:energy_cell_creative',
@@ -891,14 +893,14 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:etrium 1024000',
         6000,
-        32768,32,null,1
+        LuV,32,null,1
     );
 
     createModelBlueprints('prototype_assembler', 'ender_dragon', 'outworld', null,
         null,
         null,
         6000,
-        32768,32,"chaotic_blueprint",2
+        LuV,32,"chaotic_blueprint",2
     );
 
 

@@ -1,4 +1,5 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addCircuitAssembler = (itemsIn, fluidIn, itemsOut, eu, duration) => {
         const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
 
@@ -21,7 +22,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         '4x ae2:calculation_processor',
-        8192,
+        IV,
         120
     )
 
@@ -32,7 +33,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         '4x ae2:logic_processor',
-        8192,
+        IV,
         120
     )
 
@@ -43,7 +44,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         '4x ae2:engineering_processor',
-        8192,
+        IV,
         120
     )
 
@@ -57,7 +58,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         'ae2:cell_component_1k',
-        32,
+        LV,
         120
     )
 
@@ -72,7 +73,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         'ae2:cell_component_4k',
-        32,
+        LV,
         120
     )
 
@@ -87,7 +88,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         'ae2:cell_component_16k',
-        128,
+        MV,
         120
     )
 
@@ -103,7 +104,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         'ae2:cell_component_64k',
-        128,
+        MV,
         120
     )
 
@@ -119,7 +120,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         'ae2:cell_component_256k',
-        512,
+        HV,
         120
     )
 });

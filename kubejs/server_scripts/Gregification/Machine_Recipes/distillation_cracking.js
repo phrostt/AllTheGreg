@@ -1,11 +1,11 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     allthemods.recipes.gtceu.distillery('refine_seed_oil')
         .inputFluids('#forge:seed_oil 100')
         .outputFluids('gtceu:refined_seed_oil 100')
         .circuit(1)
         .duration(600)
-        .EUt(2048);
+        .EUt(EV);
         
     allthemods.recipes.gtceu.cracker('steam_crack_kerosene')
         .inputFluids(
@@ -15,7 +15,7 @@ ServerEvents.recipes(allthemods => {
             ])
         .outputFluids('gtceu:gt_cracked_kerosene 1000')
         .duration(120)
-        .EUt(512);
+        .EUt(HV);
 
     allthemods.recipes.gtceu.cracker('steam_crack_lpg')
         .inputFluids(
@@ -25,7 +25,7 @@ ServerEvents.recipes(allthemods => {
             ])
         .outputFluids('gtceu:gt_cracked_lpg 1000')
         .duration(120)
-        .EUt(512);
+        .EUt(HV);
 
 
     allthemods.recipes.gtceu.distillation_tower('cracker_lpg')
@@ -38,7 +38,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:hydrogen 150'
         ])
         .duration(160)
-        .EUt(512);
+        .EUt(HV);
 
     allthemods.recipes.gtceu.distillation_tower('cracker_kerosene')
         .inputFluids('gtceu:gt_cracked_kerosene 1000')
@@ -48,5 +48,5 @@ ServerEvents.recipes(allthemods => {
             'gtceu:hydrogen 200'
         ])
         .duration(160)
-        .EUt(512);
+        .EUt(HV);
 });

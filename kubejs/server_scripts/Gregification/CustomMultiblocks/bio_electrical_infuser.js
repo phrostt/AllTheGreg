@@ -1,6 +1,6 @@
 ServerEvents.recipes(allthemods => {
 	// bio-infuser
-	
+	const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 	
 
     allthemods.shaped('gtceu:bio_electrical_infuser', [
@@ -37,7 +37,7 @@ ServerEvents.recipes(allthemods => {
 	addBioInfuser ( 
 		['gtceu:magical_bio_composite', '4x #forge:plates/titanium', '2x gtceu:ev_electric_motor', '2x gtceu:ev_electric_pump', '2x #forge:plates/terrasteel', '2x #forge:plates/vibrant_alloy', '8x #forge:screws/soularium', '4x #forge:small_gears/hellforged'],
 		['gtceu:glue 1000', 'gtceu:sanguine_concentrate 1000', '#forge:creosote 1000', '#forge:lubricant 1000', 'gtceu:saturated_tau 1000'],
-		'gtceu:hexagonal_bio_composite', null, 8192, 1200);	
+		'gtceu:hexagonal_bio_composite', null, IV, 1200);	
 		
 		allthemods.remove({ 
 			output: /productivebees:.*_beehive/ 
@@ -112,7 +112,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'productivebees:powered_centrifuge', 
         null, 
-        1920,
+        EV,
         1200
     );
 	
@@ -135,7 +135,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'productivebees:heated_centrifuge', 
         null, 
-        7680,
+        IV,
         2400        
     );
 	
@@ -158,7 +158,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'productivebees:bottler', 
         null, 
-        1920,
+        EV,
         800        
     );
 	
@@ -182,7 +182,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'productivebees:breeding_chamber', 
         null, 
-        7680, 2400
+        IV, 2400
     );
 	
 	//incubator
@@ -203,7 +203,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'productivebees:incubator', 
         null, 
-        7680,
+        IV,
         2400        
     );
 	
@@ -243,7 +243,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'productivebees:gene_indexer', 
         null, 
-        7680,
+        IV,
         2400,
     );
 	
@@ -371,7 +371,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'productivebees:upgrade_productivity_4', 
 		null, 
-		30720, // LuV Tier Power
+		LuV, // LuV Tier Power
 		4800   // Extended duration for the ultimate upgrade
 	);
 	
@@ -392,7 +392,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:reinforced_rune_casing', 
 		null, 
-		2048,
+		EV,
 		1000
 	);
 });

@@ -1,4 +1,5 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addMA = (itemsIn, fluidIn, itemsOut, eu, duration, rID) => {        
         const outputID = rID || itemsOut.replace(/[^a-z0-9]/gi, '_');
         let recipe = allthemods.recipes.gtceu.awakening_altar(`allthemods:assembler/${outputID}`)
@@ -42,7 +43,7 @@ ServerEvents.recipes(allthemods => {
                 `#forge:earth_essence ${quantity}`
             ],
             `mysticalagriculture:awakened_supremium_${item}`,
-            8192,
+            IV,
             200
         )
     });
@@ -60,7 +61,7 @@ ServerEvents.recipes(allthemods => {
                 `#forge:earth_essence ${quantity}`
             ],
             `mysticalagradditions:awakened_supremium_paxel`,
-            8192,
+            IV,
             200
         );
 
@@ -76,7 +77,7 @@ ServerEvents.recipes(allthemods => {
             `#forge:earth_essence ${quantity2}`
         ],        
         awakenedSupremiumBee,
-        8192,
+        IV,
         200,
         'awakened_supremeium_bee'
     );
@@ -93,7 +94,7 @@ ServerEvents.recipes(allthemods => {
             `#forge:earth_essence ${quantity2}`
         ],        
         'mysticalagriculture:awakened_supremium_block',
-        8192,
+        IV,
         200
     );
 
@@ -111,7 +112,7 @@ ServerEvents.recipes(allthemods => {
             `#forge:earth_essence ${quantity2}`
         ],        
         awakenedBlock,
-        8192,
+        IV,
         200,
         'awakened_unobtainium_vibranium_alloy_block'
     );
@@ -130,7 +131,7 @@ ServerEvents.recipes(allthemods => {
             `#forge:earth_essence ${quantity2}`
         ],        
         'twilightforest:twilight_portal_miniature_structure',
-        8192,
+        IV,
         200
     );
 
@@ -172,7 +173,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('4x farmingforblockheads:red_fertilizer')
         .inputFluids('#forge:liquid_fertilizer 1000')
         .duration(120)
-        .EUt(512);
+        .EUt(HV);
 
     // better recipe
     allthemods.recipes.gtceu.mixer(`allthemods:gregification/assembler/red_fertilizer_16x`)
@@ -180,7 +181,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('16x farmingforblockheads:red_fertilizer')
         .inputFluids('#forge:liquid_fertilizer 1000')
         .duration(120)
-        .EUt(2048);
+        .EUt(EV);
 
     //esences
     essences.forEach(essence => {
@@ -190,7 +191,7 @@ ServerEvents.recipes(allthemods => {
             .inputFluids('gtceu:distilled_water 288')
             .itemOutputs(`elementalcraft:${essence}_shard`)
             .duration(150)
-            .EUt(512);
+            .EUt(HV);
     });
     
 });

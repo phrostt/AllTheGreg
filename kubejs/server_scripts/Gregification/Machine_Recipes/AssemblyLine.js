@@ -1,5 +1,6 @@
 ServerEvents.recipes(allthemods => {
-    const tiers = {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    /*const tiers = {
         ULV: 8,
         LV: 32,
         MV: 128,
@@ -15,8 +16,8 @@ ServerEvents.recipes(allthemods => {
         UXV: 134217728,
         OpV: 536870912,
         MAX: 2147483647
-    };
-    const alchemistryEU = 524288;
+    };*/
+
     const mekShort = 100;
     const mekLong = 1000;
     
@@ -67,7 +68,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:super_coolant 64000',
         ],
         mekLong,
-        32768,
+        LuV,
         "allthemodium:allthemodium_hoe"
     );
 
@@ -87,7 +88,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         mekLong,
-        32768,
+        LuV,
         '#forge:rods/protactinium'
     );
 
@@ -111,7 +112,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 288'
         ],
         mekShort,
-        32768,
+        LuV,
         'thermal:machine_frame'
     );
 
@@ -129,7 +130,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - enrichment chamber
@@ -148,7 +149,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - rotary condensentrator
@@ -166,7 +167,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - chemical oxidier
@@ -184,7 +185,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - chemical infuser
@@ -203,7 +204,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - electrolytic separator
@@ -223,7 +224,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - chemical dissolution chamber
@@ -242,7 +243,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - chemical washer
@@ -261,7 +262,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - teleporter
@@ -280,7 +281,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
         //mekanism - teleporter frame
@@ -297,7 +298,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - teleportation core
@@ -313,7 +314,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - digital miner
@@ -332,7 +333,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - logistical sorter
@@ -350,7 +351,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - electric pump
@@ -368,7 +369,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - chemical crystallizer
@@ -387,7 +388,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - pressurised reaction chamber
@@ -406,7 +407,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - mekanism:isotopic centrifuge
@@ -425,7 +426,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - resistive heater
@@ -444,7 +445,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - antiprotonic nucleosynthesizer
@@ -464,7 +465,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - pigment extractor
@@ -482,7 +483,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - pigment mixer
@@ -501,7 +502,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - basic energy cube
@@ -518,7 +519,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1000'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - advanced energy cube
@@ -535,7 +536,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1000'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - elite energy cube
@@ -552,7 +553,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1000'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - ultimate energy cube
@@ -569,7 +570,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1000'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     
@@ -592,7 +593,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - osmium compressor
@@ -611,7 +612,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - combiner
@@ -630,7 +631,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768,
+        LuV,
         null
     );
 
@@ -648,7 +649,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - chemical injection chamber
@@ -667,7 +668,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - precision sawmill
@@ -686,7 +687,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - metallurgic infuser
@@ -706,7 +707,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - fusion reactor controller
@@ -728,7 +729,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768,
+        LuV,
         'gtceu:luv_fusion_reactor',
         16
     );
@@ -748,7 +749,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768,
+        LuV,
     );
 
     //mekanism - fusion reactor port
@@ -768,7 +769,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - sps casing
@@ -789,7 +790,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768,
+        LuV,
         'mekanismgenerators:fusion_reactor_controller',
         16
     );
@@ -812,7 +813,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - fission reactor casing
@@ -830,7 +831,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768,
+        LuV,
         '#forge:ingots/plutonium'
     );
 
@@ -851,7 +852,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //mekanism - fission fuel assembly
@@ -871,7 +872,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        32768
+        LuV
     );
 
     //here
@@ -888,7 +889,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 1440'
         ],
         mekLong,
-        524288,
+        UV,
         'gtceu:samarium_cobalt_magnetic_rotor'
     );
 
@@ -911,7 +912,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 1440'
         ],
         2400,
-        tiers['UV'],
+        UV,
         'gtceu:uv_reconstructor'
     );
 
@@ -930,7 +931,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        alchemistryEU,
+        UV,
         'gtceu:hexagonal_bio_composite'
     );
 
@@ -951,7 +952,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
 
     //compactor
@@ -970,7 +971,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
 
     //combiner
@@ -990,7 +991,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
 
     //disolver
@@ -1010,7 +1011,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
 
     //liquifier
@@ -1031,7 +1032,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
 
     //fission controller
@@ -1050,7 +1051,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 576'
         ],
         1200,
-        alchemistryEU,
+        UV,
         "mekanismgenerators:fission_fuel_assembly"
     );
 
@@ -1069,7 +1070,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 576'
         ],
         1200,
-        alchemistryEU,
+        UV,
         'gtceu:zpm_fusion_reactor', 16
     );
 
@@ -1087,7 +1088,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
 
     //fission core
@@ -1104,7 +1105,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
     
     //fusion core
@@ -1121,7 +1122,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:tritanium 144'
         ],
         1200,
-        alchemistryEU
+        UV
     );
 
     //chunk destroyer
@@ -1145,7 +1146,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        131072,
+        ZPM,
         "quarryplus:quarry", 128
     );
 
@@ -1168,7 +1169,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        32768,
+        LuV,
         "quarryplus:mover", 128
     );
 
@@ -1187,7 +1188,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        32768,
+        LuV,
         "#forge:dusts/thorium_oxide"
     );
 
@@ -1205,7 +1206,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        32768,
+        LuV,
         "gtceu:thorium_single"
     );
 
@@ -1223,7 +1224,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        32768,
+        LuV,
         "gtceu:thorium_double"
     );
 
@@ -1241,7 +1242,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        131072,
+        ZPM,
         "#forge:dusts/thorium_berkelium_alloy",32
     );
 
@@ -1259,7 +1260,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        131072,
+        ZPM,
         "gtceu:thorium_berkelium_single"
     );
 
@@ -1277,7 +1278,7 @@ ServerEvents.recipes(allthemods => {
 
         ],
         1200,
-        131072,
+        ZPM,
         "gtceu:thorium_berkelium_double"
     );
 });

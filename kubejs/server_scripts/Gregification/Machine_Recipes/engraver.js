@@ -1,21 +1,5 @@
 ServerEvents.recipes(allthemods => {
-    const tiers = {
-        ULV: 8,
-        LV: 32,
-        MV: 128,
-        HV: 512,
-        EV: 2048,
-        IV: 8192,
-        LuV: 32768,
-        ZPM: 131072,
-        UV: 524288,
-        UHV: 2097152,
-        UEV: 8388608,
-        UIV: 33554432,
-        UXV: 134217728,
-        OpV: 536870912,
-        MAX: 2147483647
-    };
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 
     const tierValues = [32, 128, 512, 2048, 8192, 32768, 131072, 524288, 2097152, 8388608, 33554432, 134217728, 536870912, 2147483647];
 
@@ -37,7 +21,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:lenses/destructive',
         'gtceu:empowered_ram_wafer',
         900,
-        tiers['UV']
+        UV
     );
 
     addLaserEngraver(
@@ -45,7 +29,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:lenses/destructive',
         'gtceu:germanium_diode_wafer',
         900,
-        tiers['ZPM']
+        ZPM
     );
 
     addLaserEngraver(
@@ -53,7 +37,7 @@ ServerEvents.recipes(allthemods => {
         '#forge:lenses/destructive',
         'gtceu:atomic_clock_wafer',
         900,
-        tiers['ZPM']
+        ZPM
     );
 
     const socs = [

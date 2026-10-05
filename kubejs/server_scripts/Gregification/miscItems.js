@@ -6,6 +6,46 @@ ServerEvents.recipes(allthemods => {
     }
   
 
+    allthemods.shaped('gtceu:element_fire', [
+		' E ',
+		'EBE',
+		' E '
+	], {
+		// We use .weakNBT() so it doesn't matter if the energy levels don't match exactly
+		E: 'gtceu:elemental_fire_singularity',
+		B: 'gtceu:element_blank'
+	}).id('gregification:element_fire');
+
+    allthemods.shaped('gtceu:element_water', [
+		' E ',
+		'EBE',
+		' E '
+	], {
+		// We use .weakNBT() so it doesn't matter if the energy levels don't match exactly
+		E: 'gtceu:elemental_water_singularity',
+		B: 'gtceu:element_blank'
+	}).id('gregification:element_water');
+
+    allthemods.shaped('gtceu:element_air', [
+		' E ',
+		'EBE',
+		' E '
+	], {
+		// We use .weakNBT() so it doesn't matter if the energy levels don't match exactly
+		E: 'gtceu:elemental_air_singularity',
+		B: 'gtceu:element_blank'
+	}).id('gregification:element_air');
+
+    allthemods.shaped('gtceu:element_earth', [
+		' E ',
+		'EBE',
+		' E '
+	], {
+		// We use .weakNBT() so it doesn't matter if the energy levels don't match exactly
+		E: 'gtceu:elemental_earth_singularity',
+		B: 'gtceu:element_blank'
+	}).id('gregification:element_earth');
+
     allthemods.shaped('projecte:philosophers_stone',
         [
             'PEP',
@@ -213,6 +253,44 @@ ServerEvents.recipes(allthemods => {
         {
             G: 'minecraft:flint',
             S: '#forge:plates/steel'
+        }
+    );
+
+    replaceShaped('minecraft:cauldron',null,
+        [
+            'I I',
+            'I I',
+            'III'
+        ],
+        {            
+            I: '#forge:plates/steel'
+        }
+    );
+
+    replaceShaped('minecraft:enchanting_table',null,
+        [
+            ' R ',
+            'ORO',
+            'SSS'
+        ],
+        {      
+            R: 'minecraft:blaze_rod',
+            S: '#forge:plates/steel',
+            O: '#forge:plates/obsidian'
+        }
+    );
+    
+
+    replaceShaped('minecraft:brewing_stand',null,
+        [
+            ' M ',
+            'DOD',
+            'OOO'
+        ],
+        {      
+            M: 'botania:rune_mana',      
+            D: '#forge:exquisite_gems/diamond',
+            O: '#forge:plates/obsidian'
         }
     );
     

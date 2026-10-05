@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     // MACHINE CONTROLLER
     allthemods.recipes.gtceu.assembler(`gregification:seed_fabricator`)
         .itemInputs([
@@ -14,7 +14,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('gtceu:seed_fabricator')        
         .inputFluids('#forge:polybenzimidazole 1440', '#forge:selenium 1000')
         .duration(600)
-        .EUt(8192)
+        .EUt(IV)
         .circuit(1);
 
     allthemods.recipes.gtceu.assembler(`gregification:awakening_altar`)
@@ -30,17 +30,17 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('gtceu:awakening_altar')        
         .inputFluids('#forge:polybenzimidazole 1440', '#forge:selenium 1000')
         .duration(600)
-        .EUt(8192)
+        .EUt(IV)
         .circuit(2);
 
     // DATA MAPS & FUNCTION
     const TIER = {
-        1: { eu: 512, dur: 100, item: 'mysticalagriculture:inferium_essence' },
-        2: { eu: 2048, dur: 150, item: 'mysticalagriculture:prudentium_essence' },
-        3: { eu: 8192, dur: 200, item: 'mysticalagriculture:tertium_essence' },
-        4: { eu: 32768, dur: 300, item: 'mysticalagriculture:imperium_essence' },
-        5: { eu: 131072, dur: 400, item: 'mysticalagriculture:supremium_essence' },
-        6: { eu: 524288, dur: 600, item: 'mysticalagradditions:insanium_essence' }
+        1: { eu: HV, dur: 100, item: 'mysticalagriculture:inferium_essence' },
+        2: { eu: EV, dur: 150, item: 'mysticalagriculture:prudentium_essence' },
+        3: { eu: IV, dur: 200, item: 'mysticalagriculture:tertium_essence' },
+        4: { eu: LuV, dur: 300, item: 'mysticalagriculture:imperium_essence' },
+        5: { eu: ZPM, dur: 400, item: 'mysticalagriculture:supremium_essence' },
+        6: { eu: UV, dur: 600, item: 'mysticalagradditions:insanium_essence' }
     };
     const BASE = {
         r: 'mysticalagriculture:prosperity_seed_base',

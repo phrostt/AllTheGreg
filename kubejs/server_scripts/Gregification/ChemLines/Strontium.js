@@ -1,7 +1,8 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     // --- Strontium Chain ---
-    const StrontiumEUSimple = 512; //LuV
-    const StrontiumEUComplex = 32768; //LuV
+    const StrontiumEUSimple = HV;
+    const StrontiumEUComplex = LuV;
     // Step 1: Blast Furnace
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:strontium_sulfide_smelting')
         .itemInputs('#forge:dusts/celestite', '#forge:dusts/carbon')

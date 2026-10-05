@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     // ---- Moon ----
     event.recipes.industrialforegoing.laser_drill_ore(
         'gtceu:raw_clausthalite',

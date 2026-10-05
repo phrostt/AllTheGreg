@@ -1,6 +1,6 @@
 //@ts-check
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     
     const replaceShaped = (recipeID, itemID, schema, ingredients) => {
         allthemods.remove({ id: recipeID });
@@ -75,12 +75,12 @@ ServerEvents.recipes(allthemods => {
         .inputFluids("#forge:enderium 1296")
         .itemOutputs('enderio:pulsating_crystal')
         .duration(600)
-        .EUt(2048);
+        .EUt(EV);
         
     allthemods.recipes.gtceu.autoclave('gregification:autoclave/vibrant_crystal')
         .itemInputs("gtceu:exquisite_emerald_gem")
         .inputFluids("#forge:lumium 1296")
         .itemOutputs('enderio:vibrant_crystal')
         .duration(600)
-        .EUt(2048);
+        .EUt(EV);
 });

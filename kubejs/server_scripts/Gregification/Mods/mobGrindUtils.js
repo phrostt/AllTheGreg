@@ -1,4 +1,5 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 	const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration) => {		
 		
 		const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');		
@@ -22,7 +23,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:lubricant 1000', 
         'mob_grinding_utils:saw',         
-        2048,
+        EV,
         1200
     );
     	
@@ -38,7 +39,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 144',
         'gtceu:magical_bio_composite',
-        128, // MV Voltage
+        MV, // MV Voltage
         600  // 30 Seconds
     );
 	

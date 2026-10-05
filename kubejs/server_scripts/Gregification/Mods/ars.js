@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 
     const fire = 'ars_nouveau:fire_essence';
     const air = 'ars_nouveau:air_essence';
@@ -57,7 +57,7 @@ ServerEvents.recipes(allthemods => {
             .itemInputs(mat.input)
             .inputFluids(`#forge:source ${mat.source}`,)
             .itemOutputs(mat.output)
-            .EUt(2048)            
+            .EUt(EV)            
             .duration(300)
     });
 
@@ -67,14 +67,14 @@ ServerEvents.recipes(allthemods => {
         allthemods.recipes.gtceu.imbument_chamber(`gregification:craft_essence_${essence}`)
             .inputFluids('#forge:source 2500',)
             .itemOutputs(`ars_nouveau:${essence}_essence`)
-            .EUt(2048)
+            .EUt(EV)
             .circuit(index + 1)
             .duration(300)
     });
     allthemods.recipes.gtceu.imbument_chamber(`gregification:craft_anima`)
         .inputFluids('#forge:source 3500',)
         .itemOutputs('ars_elemental:anima_essence')
-        .EUt(2048)
+        .EUt(EV)
         .circuit(10)
         .duration(300);
 });

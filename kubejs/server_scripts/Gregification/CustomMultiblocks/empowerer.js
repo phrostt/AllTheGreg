@@ -1,5 +1,6 @@
 
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const empowerer = (inputs, fluidIn, outputs, fluidOut, eu, duration, customID, program) => {
         let id;
         if (customID) {
@@ -37,7 +38,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:empowered_oil 4000',
         'gtceu:empowered_restonia_gem',        
         null,
-        32768,
+        LuV,
         300, null
     );
 
@@ -51,7 +52,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:empowered_oil 4000',
         'gtceu:empowered_palis_gem',
         null,
-        32768,
+        LuV,
         300, null
     );
 
@@ -65,7 +66,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:empowered_oil 4000',
         'gtceu:empowered_enori_gem',
         null,
-        32768,
+        LuV,
         300, null
     );
 
@@ -79,7 +80,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:empowered_oil 4000',
         'gtceu:empowered_void_crystal_gem',
         null,
-        32768,
+        LuV,
         300, null
     );
 
@@ -93,7 +94,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:empowered_oil 4000',
         'gtceu:empowered_diamatine_gem',
         null,
-        32768,
+        LuV,
         300, null
     );
 
@@ -107,7 +108,7 @@ ServerEvents.recipes(allthemods => {
         'gtceu:empowered_oil 4000',
         'gtceu:empowered_emeradic_gem',
         null,
-        32768,
+        LuV,
         300, null
     );
 
@@ -119,7 +120,7 @@ ServerEvents.recipes(allthemods => {
         null,
         'gtceu:empowered_seed',
         null,
-        32768,
+        LuV,
         300, null
     );
 });

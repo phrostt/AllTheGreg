@@ -23,7 +23,7 @@ const basicPairs = [
 
 ServerEvents.recipes(allthemods => {
 
-    
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 
     allthemods.shaped('gtceu:rune_casing', [
         'NCN',
@@ -100,7 +100,7 @@ ServerEvents.recipes(allthemods => {
             ['bloodmagic:blankrune', 'botania:rune_mana', 'occultism:spirit_attuned_gem', 'evilcraft:dark_gem', '#forge:frames/steel'],
             'gtceu:sanguine_concentrate 2500',
             `bloodmagic:${rName}rune`,
-            32,
+            LV,
             30,
             index + 1)
         
@@ -108,7 +108,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:altar_runes',
             'gtceu:sanguine_concentrate 2500',
             `bloodmagic:${rName}rune`,
-            32,
+            LV,
             30,
             index + 1,
             `${rName}rune_conversion`)
@@ -123,6 +123,6 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('minecraft:blackstone', '4x #forge:plates/gold')
         .itemOutputs('minecraft:gilded_blackstone')
         .duration(30)
-        .EUt(128);
+        .EUt(MV);
         
 })

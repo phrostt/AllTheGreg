@@ -1,22 +1,5 @@
 ServerEvents.recipes(allthemods => {
-    const tiers = {
-        ULV: 8,
-        LV: 32,
-        MV: 128,
-        HV: 512,
-        EV: 2048,
-        IV: 8192,
-        LuV: 32768,
-        ZPM: 131072,
-        UV: 524288,
-        UHV: 2097152,
-        UEV: 8388608,
-        UIV: 33554432,
-        UXV: 134217728,
-        OpV: 536870912,
-        MAX: 2147483647
-    };
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const cellDuration = 600;
     const mirrorDuration = 200;
     const upgradeDuration = 400;
@@ -48,7 +31,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:mirror',
-        tiers.MV,
+        MV,
         mirrorDuration        
     );
 
@@ -62,7 +45,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polytetrafluoroethylene 288',
         '2x solarflux:emerald_glass',
-        tiers.IV,
+        IV,
         mirrorDuration
     );
 
@@ -76,7 +59,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polybenzimidazole 288',
         '2x solarflux:ender_glass',
-        tiers.LuV,
+        LuV,
         mirrorDuration
     );
 
@@ -91,7 +74,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polybenzimidazole 288',
         '2x solarflux:blazing_coating',
-        tiers.ZPM,
+        ZPM,
         mirrorDuration
     );
 
@@ -105,7 +88,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         '1x solarflux:photovoltaic_cell_1',
-        tiers.MV,
+        MV,
         cellDuration,
         1
     );
@@ -121,7 +104,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         '1x solarflux:photovoltaic_cell_2',
-        tiers.HV,
+        HV,
         cellDuration,
         2
     );
@@ -137,7 +120,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyvinyl_chloride 288',
         '1x solarflux:photovoltaic_cell_3',
-        tiers.EV,
+        EV,
         cellDuration,
         3
     );
@@ -153,7 +136,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polytetrafluoroethylene 288',
         '1x solarflux:photovoltaic_cell_4',
-        tiers.IV,
+        IV,
         cellDuration,
         4
     );
@@ -169,7 +152,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polybenzimidazole 288',
         '1x solarflux:photovoltaic_cell_5',
-        tiers.LuV,
+        LuV,
         cellDuration,
         5
     );
@@ -185,7 +168,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polybenzimidazole 288',
         '1x solarflux:photovoltaic_cell_6',
-        tiers.ZPM,
+        ZPM,
         cellDuration,
         6
     );
@@ -201,7 +184,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_1',
-        tiers.MV,
+        MV,
         panelDuration
     );
     
@@ -217,7 +200,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_2',
-        tiers.HV,
+        HV,
         panelDuration
     );
 
@@ -233,7 +216,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_3',
-        tiers.HV,
+        HV,
         panelDuration
     );
 
@@ -249,7 +232,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_4',
-        tiers.EV,
+        EV,
         panelDuration
     );
 
@@ -265,7 +248,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_5',
-        tiers.EV,
+        EV,
         panelDuration
     );
 
@@ -281,7 +264,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_6',
-        tiers.IV,
+        IV,
         panelDuration
     );
 
@@ -297,7 +280,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_7',
-        tiers.IV,
+        IV,
         panelDuration
     );
 
@@ -313,7 +296,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_8',
-        tiers.LuV,
+        LuV,
         panelDuration
     );
 
@@ -332,7 +315,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_de.wyvern',
-        tiers.LuV,
+        LuV,
         panelDuration
     );
 
@@ -350,7 +333,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_custom_cadmium_pannel',
-        tiers.LuV,
+        LuV,
         panelDuration
     );*/
 
@@ -370,7 +353,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_de.draconic',
-        tiers.ZPM,
+        ZPM,
         panelDuration
     );
 
@@ -389,7 +372,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         '2x solarflux:sp_de.chaotic',
-        tiers.ZPM,
+        ZPM,
         panelDuration
     );
 
@@ -402,7 +385,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         '2x solarflux:blank_upgrade',
-        tiers.MV,
+        MV,
         upgradeDuration
     );
 
@@ -416,7 +399,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polytetrafluoroethylene 288',
         'solarflux:efficiency_upgrade',        
-        tiers.IV,
+        IV,
         upgradeDuration
     );
 
@@ -430,7 +413,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         'solarflux:transfer_rate_upgrade',
-        tiers.HV,
+        HV,
         upgradeDuration
     );
 
@@ -444,7 +427,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         'solarflux:capacity_upgrade',
-        tiers.EV,
+        EV,
         upgradeDuration
     );
 
@@ -458,7 +441,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         'solarflux:traversal_upgrade',
-        tiers.EV,
+        EV,
         upgradeDuration,
         1
     );
@@ -473,7 +456,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         'solarflux:dispersive_upgrade',
-        tiers.EV,
+        EV,
         upgradeDuration,
         2
     );
@@ -487,7 +470,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         'solarflux:block_charging_upgrade',
-        tiers.EV,
+        EV,
         upgradeDuration,
         3
     );
@@ -502,7 +485,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         'solarflux:furnace_upgrade',
-        tiers.HV,
+        HV,
         upgradeDuration
     );
 
@@ -516,7 +499,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polyethylene 288',
         'solarflux:ae2/energy_upgrade',
-        tiers.HV,
+        HV,
         upgradeDuration
     );
 
@@ -530,7 +513,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:polytetrafluoroethylene 288',
         'solarflux:twilightforest/twilight_upgrade',
-        tiers.IV,
+        IV,
         upgradeDuration,        
     );
 

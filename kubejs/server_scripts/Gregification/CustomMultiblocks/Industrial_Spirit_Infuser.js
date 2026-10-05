@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     allthemods.shaped('gtceu:industrial_spirit_infuser', [
         'PCP',
         'FHD',
@@ -51,20 +51,20 @@ ServerEvents.recipes(allthemods => {
     ];
     
     chalks.forEach(chalk => {
-        addSpiritInfuser([`occultism:chalk_${chalk}_impure`], null, `occultism:chalk_${chalk}`, null, 128, 200);
+        addSpiritInfuser([`occultism:chalk_${chalk}_impure`], null, `occultism:chalk_${chalk}`, null, MV, 200);
     });
 
-    addSpiritInfuser(["botania:mana_diamond"], null, 'occultism:spirit_attuned_gem', null, 128, 20);
-    addSpiritInfuser(["occultism:demons_dream_essence"], null, 'occultism:otherworld_essence', null, 128, 20);
-    addSpiritInfuser(["minecraft:oak_sapling"], null, 'occultism:otherworld_sapling_natural', null, 128, 20);
+    addSpiritInfuser(["botania:mana_diamond"], null, 'occultism:spirit_attuned_gem', null, MV, 20);
+    addSpiritInfuser(["occultism:demons_dream_essence"], null, 'occultism:otherworld_essence', null, MV, 20);
+    addSpiritInfuser(["minecraft:oak_sapling"], null, 'occultism:otherworld_sapling_natural', null, MV, 20);
 
-    addSpiritInfuser(["occultism:otherworld_log"], null, 'occultism:otherworld_ashes', null, 128, 20);
-    addSpiritInfuser(["minecraft:andesite"], null, 'occultism:otherstone', null, 128, 20);
+    addSpiritInfuser(["occultism:otherworld_log"], null, 'occultism:otherworld_ashes', null, MV, 20);
+    addSpiritInfuser(["minecraft:andesite"], null, 'occultism:otherstone', null, MV, 20);
 
-    addSpiritInfuser(["minecraft:black_dye"], null, 'occultism:purified_ink', null, 128, 40);
-    addSpiritInfuser(["minecraft:book"], null, 'occultism:taboo_book', null, 128, 40);
-    addSpiritInfuser(["minecraft:writable_book"], null, 'occultism:book_of_binding_empty', null, 128, 40);
-    addSpiritInfuser(["minecraft:feather"], null, 'occultism:awakened_feather', null, 128, 40);
+    addSpiritInfuser(["minecraft:black_dye"], null, 'occultism:purified_ink', null, MV, 40);
+    addSpiritInfuser(["minecraft:book"], null, 'occultism:taboo_book', null, MV, 40);
+    addSpiritInfuser(["minecraft:writable_book"], null, 'occultism:book_of_binding_empty', null, MV, 40);
+    addSpiritInfuser(["minecraft:feather"], null, 'occultism:awakened_feather', null, MV, 40);
 
-    addSpiritInfuser([Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:silver"}}').strongNBT()], null, [Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:iesnium"}}')], null, 2048, 600, 'iesnium_bee');
+    addSpiritInfuser([Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:silver"}}').strongNBT()], null, [Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:iesnium"}}')], null, EV, 600, 'iesnium_bee');
 });

@@ -1,15 +1,13 @@
 ServerEvents.recipes(allthemods => {
     // --- 1. VOLTAGE MAP ---
-    const tiers = {
-        ULV: 8, LV: 32, MV: 128, HV: 512, EV: 2048,
-        IV: 8192, LuV: 32768, ZPM: 131072, UV: 524288
-    };
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+
 
     // --- 2. HELPER: LATEX SYNTHESIZER ---    
 
 
     // --- 3. HELPER: DISSOLUTION CHAMBER ---    
-    const addDissolution = (itemsIn, itemOut, fluidIn, fluidOut, tier, duration, customID) => {
+    const addDissolution = (itemsIn, itemOut, fluidIn, fluidOut, eu, duration, customID) => {
         let outputID = '';
 
         if (customID) {
@@ -25,7 +23,7 @@ ServerEvents.recipes(allthemods => {
             outputID = 'dissolution_' + Math.floor(Math.random() * 1000);
         }
 
-        let voltage = tiers[tier] || 32;
+        let voltage = eu || LV;
 
         let recipe = allthemods.recipes.gtceu.industrial_dissolution_chamber(`gregification:dissolution/${outputID}`)
             .duration(duration)
@@ -69,7 +67,7 @@ ServerEvents.recipes(allthemods => {
                 'gtceu:distilled_water 1000'
             ],
             null,
-            'EV',
+            EV,
             2000
         );
     });
@@ -90,7 +88,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:lubricant 1000'
         ],
         null,
-        'MV',
+        MV,
         2000,
         'speed_addon_1'
     );
@@ -112,7 +110,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:lubricant 1000'
         ],
         null,
-        'HV',
+        HV,
         4000,
         'speed_addon_2'
     );
@@ -134,7 +132,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:lubricant 1000'
         ],
         null,
-        'EV',
+        EV,
         6000,
         'speed_addon_3'
     );
@@ -157,7 +155,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:lubricant 1000'
         ],
         null,
-        'IV',
+        IV,
         8000,
         'speed_addon_4'
     );
@@ -177,7 +175,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:nitrogen 1000'
         ],
         null,
-        'MV',
+        MV,
         2000,
         'efficiency_addon_1'
     );
@@ -199,7 +197,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:nitrogen 1000'
         ],
         null,
-        'HV',
+        HV,
         4000,
         'efficiency_addon_2'
     );
@@ -221,7 +219,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:nitrogen 1000'
         ],
         null,
-        'EV',
+        EV,
         6000,
         'efficiency_addon_3'
     );
@@ -244,7 +242,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:nitrogen 1000'
         ],
         null,
-        'IV',
+        IV,
         8000,
         'efficiency_addon_4'
     );
@@ -265,7 +263,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:sulfuric_acid 1000'
         ],
         null,
-        'MV',
+        MV,
         2000,
         'processing_addon_1'
     );
@@ -287,7 +285,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:sulfuric_acid 1000'
         ],
         null,
-        'HV',
+        HV,
         4000,
         'processing_addon_2'
     );
@@ -309,7 +307,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:sulfuric_acid 1000'
         ],
         null,
-        'EV',
+        EV,
         6000,
         'processing_addon_3'
     );
@@ -332,7 +330,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:sulfuric_acid 1000'
         ],
         null,
-        'IV',
+        IV,
         8000,
         'processing_addon_4'
     );
@@ -359,28 +357,33 @@ ServerEvents.recipes(allthemods => {
 
         // 4. Determine Fluids & Voltage Tier
         let mainFluid = '';
-        let voltage = '';
+        let voltage = 0;
+        let tier = '';
         let duration = 0;
 
         if (index < 3) {        // Tiers 1-3
             mainFluid = 'industrialforegoing:latex 1000';
-            voltage = 'MV';
+            voltage = MV;
+            tier = 'MV';
             duration = 2000;
         } else if (index < 6) { // Tiers 4-6
             mainFluid = '#forge:pink_slime 1000';
-            voltage = 'HV';
+            voltage = HV;
+            tier = 'HV';
             duration = 4000;
         } else if (index < 9) { // Tiers 7-9
             mainFluid = 'industrialforegoing:ether_gas 1000';
-            voltage = 'EV';
+            voltage = EV;
+            tier = 'EV';
             duration = 6000;
         } else {                // Tiers 10-12
             mainFluid = 'gtceu:saturated_tau 1000';
-            voltage = 'IV';
+            voltage = IV;
+            tier = 'IV';
             duration = 8000;
         }
 
-        let vLower = voltage.toLowerCase();
+        let vLower = tier.toLowerCase();
         let customRecipeID = `range_addon_${index}`;
 
         // --- THE MAGIC LINE ---
@@ -413,7 +416,7 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:pink_slime',
         'industrialforegoing:pink_slime 300',
         null,
-        'HV',
+        HV,
         200
     );
 
@@ -423,7 +426,7 @@ ServerEvents.recipes(allthemods => {
         'minecraft:experience_bottle',
         '#forge:experience 250',
         null,
-        'MV',
+        MV,
         100
     );
 
@@ -443,7 +446,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polyethylene 2000' // High Plastic Cost
         ],
         null,
-        'IV',
+        IV,
         1200
     );
 
@@ -460,7 +463,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('industrialforegoing:infinity_drill', '{CanCharge:1b,Energy:0L,Fluid:{Amount:0,FluidName:"biofuel"},Selected:"POOR",Special:0b}'),
         'industrialforegoing:ether_gas 1000',
         null,
-        'IV',
+        IV,
         6000,
         'infinity_drill'
     );
@@ -478,7 +481,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('industrialforegoing:infinity_saw', '{CanCharge:1b,Energy:0L,Fluid:{Amount:0,FluidName:"biofuel"},Selected:"POOR",Special:0b}'),
         'industrialforegoing:ether_gas 1000',
         null,
-        'IV',
+        IV,
         6000,
         'infinity_saw_blade'
     );
@@ -496,7 +499,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('industrialforegoing:infinity_hammer', '{Beheading:0,CanCharge:1b,Energy:0L,Fluid:{Amount:0,FluidName:"biofuel"},Selected:"POOR",Special:0b}'),
         'industrialforegoing:ether_gas 1000',
         null,
-        'IV',
+        IV,
         6000,
         'infinity_hammer'
     );
@@ -514,7 +517,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('industrialforegoing:infinity_trident', '{CanCharge:1b,Channeling:0b,Energy:0L,Fluid:{Amount:0,FluidName:"biofuel"},Loyalty:0,Riptide:0,Selected:"POOR",Special:0b}'),
         'industrialforegoing:ether_gas 1000',
         null,
-        'IV',
+        IV,
         6000,
         'infinity_trident'
     );
@@ -532,7 +535,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('industrialforegoing:infinity_backpack', '{CanCharge:1b,Energy:0L,Selected:"POOR",Special:0b}'),
         'industrialforegoing:ether_gas 1000',
         null,
-        'IV',
+        IV,
         6000,
         'infinity_backpack'
     );
@@ -550,7 +553,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('industrialforegoing:infinity_launcher', '{CanCharge:1b,Energy:0L,Fluid:{Amount:0,FluidName:"biofuel"},Plunger:0,Selected:"POOR",Special:0b}'),
         'industrialforegoing:ether_gas 1000',
         null,
-        'IV',
+        IV,
         6000,
         'infinity_launcher'
     );
@@ -570,7 +573,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:nitrobenzene 1000'            // Explosive Fluid
         ],
         null,
-        'IV',
+        IV,
         8000,
         'infinity_nuke'
     );
@@ -587,7 +590,7 @@ ServerEvents.recipes(allthemods => {
         ['industrialforegoing:sludge 1000',
             'industrialforegoing:meat 1000'],
         null,
-        'HV',
+        HV,
         200
     );
 
@@ -601,7 +604,7 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:pink_slime_ingot',
         '#forge:pink_slime 1000',
         null,
-        'HV',
+        HV,
         100
     );
 
@@ -618,7 +621,7 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:machine_frame_simple',
         '#forge:pink_slime 1000',
         null,
-        'HV',
+        HV,
         600
     );
 
@@ -634,7 +637,7 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:machine_frame_advanced',
         'industrialforegoing:ether_gas 1000',      // Fluid: Pink Slime
         null,
-        'EV',
+        EV,
         800
     );
 
@@ -651,7 +654,7 @@ ServerEvents.recipes(allthemods => {
         'industrialforegoing:machine_frame_supreme',
         'gtceu:saturated_tau 1000',       // Fluid: Ether Gas
         null,
-        'IV',
+        IV,
         1000
     );
 });

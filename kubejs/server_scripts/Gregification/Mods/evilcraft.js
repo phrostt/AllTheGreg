@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 
 	//blood infuser
 	allthemods.shaped('evilcraft:blood_infuser', [

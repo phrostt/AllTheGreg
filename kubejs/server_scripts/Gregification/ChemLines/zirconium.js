@@ -1,6 +1,7 @@
 ServerEvents.recipes(allthemods => {
-    const zEU = 131072;
-    const zEU2 = 8192;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA;
+    const zEU = ZPM;
+    const zEU2 = IV;
     // Recipe 1: Zircon Roasting
     // Converts Zircon and Quicklime into Calcium Zirconate and Wollastonite
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:zircon_roasting')

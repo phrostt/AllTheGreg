@@ -1,7 +1,8 @@
 ServerEvents.recipes(allthemods => {
-    const EUSimple = 512;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const EUSimple = HV;
     const duration = 300;
-    const EUComplex = 524296; //UV Tier
+    const EUComplex = UV; //UV Tier
     // Step 1: 2x Acetaldehyde + 2x Formaldehyde + 1x Ammonia -> 1x Picoline + 4x Water
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:chemical_reactor/picoline')
         .inputFluids('#forge:acetaldehyde 2000', '#forge:formaldehyde 2000', '#forge:ammonia 1000')
@@ -27,7 +28,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.gtceu.chemical_reactor('allthemods:chemical_reactor/acetaldehyde')
         .inputFluids('#forge:ethanol 1000', '#forge:oxygen 1000')
         .outputFluids('gtceu:acetaldehyde 1000')
-        .duration(300)
-        .EUt(512);
+        .duration(duration)
+        .EUt(EUSimple);
 
 });

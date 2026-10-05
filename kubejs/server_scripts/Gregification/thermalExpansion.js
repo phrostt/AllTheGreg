@@ -3,7 +3,7 @@ const rodMetals = ['iron', 'gold', 'copper', 'tin', 'lead', 'silver', 'nickel', 
 const rodMetalsATM = [ 'allthemodium', 'vibranium', 'unobtainium' ];
 
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 
 
 
@@ -71,7 +71,7 @@ ServerEvents.recipes(allthemods => {
             ['gtceu:carbon_dust', 1000, 500], // 10% base, 5% bonus
         ],
         'gtceu:oil 1000',                              // Fluid Out
-        128,                                // EUt
+        MV,                                // EUt
         1200,                                // duration
         'bituminous_sand_processing'
     );

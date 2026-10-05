@@ -1,13 +1,13 @@
 ServerEvents.recipes(allthemods => {
-
-    const EUStage1 = 512; //hv
-    const EUStage2 = 2048; //ev
-    const EUStage3 = 8192; //iv
-    const EUStage4 = 32768; //luv
-    const EUStage5 = 524288; //zpm
-    const EUStage6 = 2097152; //uv
-    const EUStage7 = 8388608; //uhv
-    const EUStage8 = 33554432; //uev
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const EUStage1 = MV; //hv
+    const EUStage2 = EV; //ev
+    const EUStage3 = IV; //iv
+    const EUStage4 = LuV; //luv
+    const EUStage5 = ZPM; //zpm
+    const EUStage6 = UV; //uv
+    const EUStage7 = UHV; //uhv
+    const EUStage8 = UEV; //uev
 
     const soulExtractor = (inputs, fluidIn, outputs, fluidOut, duration, eu, cID) => {
 

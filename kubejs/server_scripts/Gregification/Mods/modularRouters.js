@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-	
+	const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 	const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration) => {		
 		
 		const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');		
@@ -26,7 +26,7 @@ ServerEvents.recipes(allthemods => {
     ],
     'gtceu:polytetrafluoroethylene 144',     
     'gtceu:router_casing',
-    2048,                                    
+    EV,                                    
     600
 	);
 	
@@ -41,7 +41,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:polytetrafluoroethylene 144',     
 		'modularrouters:modular_router',
-		2048,                                    
+		EV,                                    
 		600
 	);
 	

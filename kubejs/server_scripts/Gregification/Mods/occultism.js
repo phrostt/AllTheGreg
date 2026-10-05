@@ -4,6 +4,7 @@
 // Verify both assumptions against 2-3 entries in-game before trusting the full list.
 
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const customOres = [
         { ore: 'hellish', weight: 500 },
         { ore: 'terraria', weight: 500 },
@@ -128,10 +129,10 @@ ServerEvents.recipes(allthemods => {
         }
 
         switch (data.tier) {
-            case 1: bio_recipe.notConsumable('evilcraft:promise_tier_1'); bio_recipe.EUt(2048); break;
-            case 2: bio_recipe.notConsumable('evilcraft:promise_tier_2'); bio_recipe.EUt(8192); break;
-            case 3: bio_recipe.notConsumable('evilcraft:promise_tier_3'); bio_recipe.EUt(32768); break;
-            default: bio_recipe.EUt(512); break;
+            case 1: bio_recipe.notConsumable('evilcraft:promise_tier_1'); bio_recipe.EUt(EV); break;
+            case 2: bio_recipe.notConsumable('evilcraft:promise_tier_2'); bio_recipe.EUt(IV); break;
+            case 3: bio_recipe.notConsumable('evilcraft:promise_tier_3'); bio_recipe.EUt(LuV); break;
+            default: bio_recipe.EUt(HV); break;
         }
     });
 
@@ -141,7 +142,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:sanguine_concentrate 10000')
         .duration(1000)
         .notConsumable('evilcraft:promise_tier_2')
-        .EUt(8192)
+        .EUt(IV)
 
     allthemods.recipes.gtceu.bio_electrical_infuser('gregification:bio_electrical_infuser/blood_coated_blade')
         .itemInputs(
@@ -155,7 +156,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:sanguine_concentrate 64000')
         .notConsumable('evilcraft:promise_tier_3')
         .duration(1000)
-        .EUt(8192)
+        .EUt(IV)
 
 
 })

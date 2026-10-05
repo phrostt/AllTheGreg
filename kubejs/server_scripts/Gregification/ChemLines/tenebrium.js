@@ -1,6 +1,7 @@
 ServerEvents.recipes(allthemods => {
-    let TenebriumEU = 8388608
-    let otherEU = 2097152
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    let TenebriumEU = UV;
+    
     allthemods.recipes.gtceu.sifter('gregification:tenebrius_sifting')
         .itemInputs('gtceu:tenebrius_dust')
         .itemOutputs('gtceu:unrefined_tenebrius_dust')

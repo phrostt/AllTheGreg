@@ -1,22 +1,7 @@
 //@ts-check
-const tier = {
-    ULV: 8,
-    LV: 32,
-    MV: 128,
-    HV: 512,
-    EV: 2048,
-    IV: 8192,
-    LuV: 32768,
-    ZPM: 131072,
-    UV: 524288,
-    UHV: 2097152,
-    UEV: 8388608,
-    UIV: 33554432,
-    UXV: 134217728,
-    OpV: 536870912,
-    MAX: 2147483647
-};
+
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 
     const addChemical = (itemsIn, fluidsIn, itemsOut, fluidsOut, eu, duration, rID, program) => {
 
@@ -27,7 +12,7 @@ ServerEvents.recipes(allthemods => {
         if (itemsIn) { recipe.itemInputs(itemsIn) }
         if (fluidsIn) { recipe.inputFluids(fluidsIn) }
         recipe.duration(duration)
-        recipe.EUt(tier[eu]);
+        recipe.EUt(eu);
         if (program) {
             recipe.circuit(program)
         }
@@ -44,7 +29,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         'gtceu:chaos_plastic 1000',
-        'IV',
+        IV,
         6000,
         'chaos_plastic'
     );
@@ -62,7 +47,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:carbon_monoxide 2000',
             'gtceu:germanium_tetrachloride 1000'
         ],
-        'IV',
+        IV,
         200,
         'germanium_tetrachloride'
     );
@@ -78,76 +63,76 @@ ServerEvents.recipes(allthemods => {
             '4x gtceu:salt_dust'
         ],
         null,
-        'IV',
+        IV,
         200,
         'cerium_reprocessing'
     );
 
-    addChemical('#forge:seeds', '#forge:seed_oil 1000', null, 'gtceu:refined_seed_oil 1000', 'EV', 600, 'seed_oil')
-    addChemical('gtceu:crystallized_seed', 'gtceu:refined_seed_oil 1000', null, 'gtceu:crystallized_oil 1000', 'EV', 600, 'refined_seed_oil')
-    addChemical('gtceu:empowered_seed', 'gtceu:crystallized_oil 1000', null, 'gtceu:empowered_oil 1000', 'EV', 600, 'empowered_seed_oil')
+    addChemical('#forge:seeds', '#forge:seed_oil 1000', null, 'gtceu:refined_seed_oil 1000', EV, 600, 'seed_oil')
+    addChemical('gtceu:crystallized_seed', 'gtceu:refined_seed_oil 1000', null, 'gtceu:crystallized_oil 1000', EV, 600, 'refined_seed_oil')
+    addChemical('gtceu:empowered_seed', 'gtceu:crystallized_oil 1000', null, 'gtceu:empowered_oil 1000', EV, 600, 'empowered_seed_oil')
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:saturated_life_fertilizer')
         .itemInputs('#forge:dusts/picolinic_acid')
         .inputFluids('gtceu:liquid_fertilizer 500', 'gtceu:sanguine_concentrate 500', 'gtceu:copper_ii_sulfate 432')
         .outputFluids('gtceu:saturated_life_fertilizer 1000')
         .duration(100)
-        .EUt(512);
+        .EUt(HV);
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:recycled_organic_matter')
         .inputFluids('gtceu:rotten_flesh 1000', '#forge:meat 1000', 'gtceu:water_stage_2 1000')
         .outputFluids('gtceu:recycled_organic_matter 2000')
         .duration(600)
-        .EUt(2048);
+        .EUt(EV);
 
     allthemods.recipes.gtceu.chemical_reactor('gregification:super_coolant')
         .itemInputs('ad_astra:ice_shard', '#forge:dusts/blue_ice')
         .inputFluids('#forge:blue_ice 1000')
         .outputFluids('gtceu:super_coolant 1000')
         .duration(500)
-        .EUt(512);
+        .EUt(HV);
 
     allthemods.recipes.gtceu.chemical_reactor('gregification:copper_ii_sulfate')
         .itemInputs('#forge:dusts/copper', '#forge:dusts/sulfur')
         .inputFluids('#forge:oxygen 4000')
         .itemOutputs('6x gtceu:copper_ii_sulfate_dust')
         .duration(500)
-        .EUt(512);
+        .EUt(HV);
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:thorium_oxide')
         .itemInputs('#forge:dusts/thorium')
         .inputFluids('#forge:oxygen 2000')
         .itemOutputs('3x gtceu:thorium_oxide_dust')
         .duration(500)
-        .EUt(32768);
+        .EUt(LuV);
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:strontium_aluminate')
         .itemInputs(['#forge:dusts/strontium_carbonate', '2x #forge:dusts/aluminium_hydroxide'])
         .itemOutputs('gtceu:strontium_aluminate_dust')
         .outputFluids(['gtceu:carbon_dioxide 1000', 'minecraft:water 3000'])
         .duration(200)
-        .EUt(32768);
+        .EUt(LuV);
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:strontium_ferrite')
         .itemInputs(['4x #forge:dusts/carbon', '3x #forge:dusts/nickel_zinc_ferrite', '#forge:dusts/strontium_carbonate'])
         .itemOutputs(['gtceu:strontium_ferrite_dust', '3x gtceu:zincite_dust', '3x gtceu:nickel_dust'])
         .outputFluids('gtceu:carbon_monoxide 5000')
         .duration(200)
-        .EUt(32768);
+        .EUt(LuV);
 
     allthemods.recipes.gtceu.large_chemical_reactor('gregification:artificial_cerebrospinal_fluid')
         .itemInputs('2x #forge:dusts/sodium', '#forge:dusts/potassium', '#forge:dusts/calcium', '#forge:dusts/magnesium')
         .inputFluids('#forge:distilled_water 6000', '#forge:glycerol 2000')
         .outputFluids('gtceu:artificial_cerebrospinal_fluid 1000')
         .duration(200)
-        .EUt(32768); // LuV
+        .EUt(LuV); // LuV
 
     allthemods.recipes.gtceu.chemical_reactor('gregification:tetrachloroethylene')
         .itemInputs('2x #forge:dusts/carbon')
         .inputFluids('#forge:chlorine 4000')
         .outputFluids('gtceu:tetrachloroethylene 3000')
         .duration(250)
-        .EUt(512);
+        .EUt(HV);
 
 
 

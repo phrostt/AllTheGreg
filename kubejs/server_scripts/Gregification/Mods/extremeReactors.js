@@ -1,6 +1,6 @@
 //@ts-check
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program) => {
 
         const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
@@ -42,7 +42,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polyethylene 576',
             `bigreactors:${controller.item}`,
-            2048, 2000,
+            EV, 2000,
             index + 1
         );
     });
@@ -67,7 +67,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 576',
             `bigreactors:${controller.item}`,
-            8192, 2000,
+            IV, 2000,
             index + 3
         );
     });
@@ -89,7 +89,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polyethylene 288',
             `bigreactors:${controller.item}`,
-            2048, 1000,
+            EV, 1000,
             index + 1
         );
     });
@@ -113,7 +113,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 288',
             `bigreactors:${controller.item}`,
-            8192, 1000,
+            IV, 1000,
             index + 3
         );
     });
@@ -129,7 +129,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'bigreactors:basic_reactorcontrolrod',
-        2048, 1000
+        EV, 1000
     );
     addAssembler(
         [
@@ -141,7 +141,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reinforced_reactorcontrolrod',
-        8192, 1000
+        IV, 1000
     );
 
     // --- FUEL RODS ---
@@ -155,7 +155,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'bigreactors:basic_reactorfuelrod',
-        2048, 1000
+        EV, 1000
     );
     addAssembler(
         [
@@ -167,7 +167,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reinforced_reactorfuelrod',
-        8192, 1000
+        IV, 1000
     );
 
     // --- ACCESS PORTS ---
@@ -183,7 +183,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'bigreactors:basic_reactorsolidaccessport',
-        2048, 1000
+        EV, 1000
     );
 
     const injectors = [
@@ -205,7 +205,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 144',
             `bigreactors:${controller.item}`,
-            8192, 1000,
+            IV, 1000,
             index + 1
         );
     });
@@ -228,7 +228,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polyethylene 288',
             `bigreactors:${controller.item}`,
-            2048, 1000,
+            EV, 1000,
             index + 10
         );
     });
@@ -258,7 +258,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 288',
             `bigreactors:${controller.item}`,
-            8192, 1000,
+            IV, 1000,
             index + 12
         );
     });
@@ -277,7 +277,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'bigreactors:basic_turbinerotorbearing',
-        2048, 1000
+        EV, 1000
     );
     addAssembler(
         [
@@ -290,7 +290,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reinforced_turbinerotorbearing',
-        8192, 1000
+        IV, 1000
     );
 
     // --- COLLECTOR ---
@@ -306,7 +306,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reprocessorcollector',
-        8192, 1000
+        IV, 1000
     );
 
     // --- SHAFT ---
@@ -321,7 +321,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'bigreactors:basic_turbinerotorshaft',
-        2048, 1000
+        EV, 1000
     );
     addAssembler(
         [
@@ -334,7 +334,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reinforced_turbinerotorshaft',
-        8192, 1000
+        IV, 1000
     );
 
     // --- BLADE ---
@@ -347,7 +347,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'bigreactors:basic_turbinerotorblade',
-        2048, 1000
+        EV, 1000
     );
     addAssembler(
         [
@@ -359,7 +359,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polytetrafluoroethylene 144',
         'bigreactors:reinforced_turbinerotorblade',
-        8192, 1000,
+        IV, 1000,
     );
 
     // --- POWER TAPS ---
@@ -383,7 +383,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polyethylene 288',
             `bigreactors:${controller.item}`,
-            2048, 1000,
+            EV, 1000,
             index + 1
         );
     });
@@ -412,7 +412,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 288',
             `bigreactors:${controller.item}`,
-            8192, 1000,
+            IV, 1000,
             index + 5
         );
     });
@@ -435,7 +435,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polyethylene 288',
             `bigreactors:${controller.item}`,
-            2048, 1000,
+            EV, 1000,
             index + 10
         );
     });
@@ -459,7 +459,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 288',
             `bigreactors:${controller.item}`,
-            8192, 1000,
+            IV, 1000,
             index + 13
         );
     });
@@ -475,7 +475,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 288',
         'bigreactors:basic_reactorredstoneport',
-        2048, 1000,
+        EV, 1000,
         1
     );
 
@@ -489,7 +489,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 288',
         'bigreactors:basic_turbineredstoneport',
-        2048, 1000,
+        EV, 1000,
         2
     );
 
@@ -510,7 +510,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 288',
             `bigreactors:${controller.item}`,
-            8192, 1000,
+            IV, 1000,
             index + 2
         );
     });
@@ -536,7 +536,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polytetrafluoroethylene 288',
             `bigreactors:${controller.item}`,
-            8192, 1000,
+            IV, 1000,
             index + 2
         );
     });      

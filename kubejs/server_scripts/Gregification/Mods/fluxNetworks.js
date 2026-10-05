@@ -1,4 +1,5 @@
 ServerEvents.recipes(allthemods => {
+	const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 	const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration) => {		
 		
 		const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');		
@@ -26,7 +27,7 @@ ServerEvents.recipes(allthemods => {
     ],
     'gtceu:polytetrafluoroethylene 576',
     'gtceu:flux_casing',
-    8192,
+    IV,
     800
 	);
 
@@ -44,7 +45,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:soldering_alloy 288',
 		'fluxnetworks:flux_controller',
-		8192,
+		IV,
 		600
 	);
 
@@ -61,7 +62,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:polytetrafluoroethylene 144',
 		'fluxnetworks:flux_plug',
-		8192,
+		IV,
 		300
 	);
 
@@ -77,7 +78,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:polytetrafluoroethylene 144',
 		'fluxnetworks:flux_point',
-		8192,
+		IV,
 		300
 	);
 		
@@ -91,7 +92,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:polytetrafluoroethylene 144',
 		'fluxnetworks:basic_flux_storage',
-		8192,
+		IV,
 		200
 	);
 })

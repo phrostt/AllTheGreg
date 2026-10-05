@@ -1,6 +1,6 @@
 ServerEvents.recipes(allthemods => {
 	
-		
+	const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 	//atm star componenets
 	allthemods.shapeless(
         'kubejs:quantum_sentient_circuit', 
@@ -85,7 +85,7 @@ ServerEvents.recipes(allthemods => {
 			.inputFluids(`${fluidIn} ${fluidInA}`)
 			.outputFluids(`${fluidOut} ${fluidOutA}`)
 			.duration(150)
-			.EUt(8192);
+			.EUt(IV);
 	};
 	
 	const fluidmix = (id, fluidIn1, fluidA1, fluidIn2, fluidA2, fluidOut, fAmount, energy) => {
@@ -110,7 +110,7 @@ ServerEvents.recipes(allthemods => {
             ])
         .outputFluids(`${fluidOut} ${fAmount}`)
         .duration(150)
-        .EUt(8192);
+        .EUt(IV);
 	};
 	
 	const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration) => {		
@@ -141,7 +141,7 @@ ServerEvents.recipes(allthemods => {
 		
 		// 2. GTCEu Extractor
 		if (addToExtractor) {
-			const tiers = { 'ulv': 8, 'lv': 32, 'mv': 128, 'hv': 512, 'ev': 2048, 'iv': 8192, 'luv': 32768 };
+			const tiers = { 'ulv': ULV, 'lv': LV, 'mv': MV, 'hv': HV, 'ev': EV, 'iv': IV, 'luv': LuV };
 			let voltage = tiers[tier.toLowerCase()] || 32;
 
 			allthemods.recipes.gtceu.extractor(`allthemods:extractor/${idName}`)
@@ -248,7 +248,7 @@ ServerEvents.recipes(allthemods => {
         .itemInputs('8x alltheores:peridot_dust')
         .itemOutputs('2x gtceu:magnesium_dust', 'gtceu:silicon_dust', 'gtceu:olivine_dust')
         .outputFluids(Fluid.of('gtceu:oxygen', 4000))
-        .duration(400).EUt(32);
+        .duration(400).EUt(LV);
     	
 	//plastic unification
     allthemods.custom({
@@ -266,7 +266,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:compressed_air 100')
         .circuit(5)
         .duration(200)
-        .EUt(128);
+        .EUt(MV);
 
 	
 	rotary('kubejs:saturated_tau_gas', 'gtceu:saturated_tau', 1);

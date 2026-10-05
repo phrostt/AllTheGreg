@@ -1,5 +1,6 @@
 ServerEvents.recipes(allthemods => {
-    const tiers = {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    /*const tiers = {
         ULV: 8,
         LV: 32,
         MV: 128,
@@ -15,7 +16,7 @@ ServerEvents.recipes(allthemods => {
         UXV: 134217728,
         OpV: 536870912,
         MAX: 2147483647
-    };
+    };*/
     const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program) => {
 
         const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
@@ -42,7 +43,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:chaos_plastic 144',
         '16x gtceu:germanium_diode',
-        tiers['ZPM'],
+        ZPM,
         80
     );
     //atomic clock wafer
@@ -54,7 +55,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:chaos_plastic 144',
         '16x gtceu:atomic_clock',
-        tiers['ZPM'],
+        ZPM,
         80
     );
     //slate casing
@@ -62,7 +63,7 @@ ServerEvents.recipes(allthemods => {
         ['4x gtceu:compressed_iron_plate', '4x minecraft:stone', 'gtceu:lv_machine_casing'],
         'gtceu:sanguine_concentrate 2500',
         'gtceu:slate_casing',
-        32, 200
+        LV, 200
     );
     
     //ritual stone
@@ -74,7 +75,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         '4x bloodmagic:ritualstone',
-        32, 300
+        LV, 300
     );
 
     //ender chest
@@ -92,7 +93,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         "enderchests:ender_chest",
-        2048,
+        EV,
         600,
         1
     );
@@ -111,7 +112,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         "minecraft:ender_chest",
-        2048,
+        EV,
         600,
         2
     );
@@ -131,10 +132,10 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         "endertanks:ender_tank",
-        2048,
+        EV,
         600,
         3
-    )
+    );
 
     // Xenomorphic Data Frame
     // Tier: HV (Late MV/Early HV transition)
@@ -149,7 +150,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:sanguine_concentrate',
         'gtceu:xenomorphic_data_frame',
-        512,
+        HV,
         600
     );
 
@@ -167,7 +168,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'hostilenetworks:sim_chamber',
-        512,                                        // HV Voltage
+        HV,                                        // HV Voltage
         600
     );
 
@@ -182,7 +183,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'sanguine_networks:virtual_sacrificer',
-        512,                                        // HV Voltage
+        HV,                                        // HV Voltage
         600
     );
 
@@ -200,7 +201,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         'industrialforegoingsouls:soul_surge',
-        8192,                                        // IV Voltage
+        IV,                                        // IV Voltage
         600
     );
 
@@ -214,7 +215,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 144',
         '8x industrialforegoingsouls:soul_network_pipe',
-        8192,
+        IV,
         60
     );
 
@@ -232,7 +233,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polytetrafluoroethylene 288',
         'industrialforegoingsouls:soul_laser_base',
-        8192,
+        IV,
         600
     );
 
@@ -251,7 +252,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:polyethylene 288',
         'hostilenetworks:loot_fabricator',
-        512,
+        HV,
         600
     );
 
@@ -266,7 +267,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:rubber 144',
         'powah:dielectric_casing',
-        1920,
+        EV,
         400
     );
 
@@ -282,7 +283,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:rubber 576',
         'powah:energizing_orb',
-        1920,
+        EV,
         1200
     );
 
@@ -299,7 +300,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 288',
         'gtceu:industrial_pylon_casing',
-        8192,
+        IV,
         400
     );
 
@@ -315,7 +316,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 288',           // IV Tier Soldering
         'pylons:harvester_pylon',
-        8192,                                  // IV Voltage
+        IV,                                  // IV Voltage
         600                                    // 30 Seconds
     );
 
@@ -330,7 +331,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 288',
         'pylons:expulsion_pylon',
-        8192,
+        IV,
         600
     );
 
@@ -345,7 +346,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 288',
         'pylons:infusion_pylon',
-        8192,
+        IV,
         600
     );
 
@@ -360,7 +361,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 288',
         'pylons:interdiction_pylon',
-        8192,
+        IV,
         600
     );
 
@@ -375,7 +376,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "#forge:lubricant 1000",
         "quarryplus:mining_well",
-        2048,
+        EV,
         1200
     );
 
@@ -389,7 +390,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "#forge:lubricant 1000",
         "quarryplus:mini_quarry",
-        2048,
+        EV,
         1200
     );
 
@@ -403,7 +404,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "gtceu:polytetrafluoroethylene 576",
         "quarryplus:solid_fuel_quarry",
-        8192,
+        IV,
         1200
 
     );
@@ -419,7 +420,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "gtceu:polybenzimidazole 576",
         "quarryplus:quarry",
-        32768,
+        LuV,
         1200
     );
 
@@ -433,7 +434,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "#forge:lubricant 1000",
         "quarryplus:pump_plus",
-        2048,
+        EV,
         1200
     );
 
@@ -448,7 +449,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "gtceu:polytetrafluoroethylene 576",
         "quarryplus:adv_pump",
-        8192,
+        IV,
         1200
     );
 
@@ -465,7 +466,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "gtceu:polybenzimidazole 576",
         "quarryplus:exp_pump",
-        32768,
+        LuV,
         1200
     );
 
@@ -479,7 +480,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         "quarryplus:fuel_module_normal",
-        32768,
+        LuV,
         600,
         2
     );
@@ -494,7 +495,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         "quarryplus:filter_module",
-        32768,
+        LuV,
         600,
         1
     );
@@ -511,7 +512,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         "quarryplus:flex_marker",
-        2048,
+        EV,
         600
     );
 
@@ -526,7 +527,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "#forge:lubricant 1000",
         "quarryplus:placer_plus",
-        2048,
+        EV,
         600
     );
 
@@ -541,7 +542,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "gtceu:polytetrafluoroethylene 288",
         'quarryplus:status_checker',
-        2048,
+        EV,
         600
     );
 
@@ -555,7 +556,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "gtceu:polytetrafluoroethylene 288",
         "quarryplus:y_setter",
-        2048,
+        EV,
         600
     );
 
@@ -569,7 +570,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "#forge:lubricant 1000",
         "quarryplus:filler",
-        2048,
+        EV,
         600
     );
 
@@ -587,7 +588,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "gtceu:polybenzimidazole 576",
         "quarryplus:mover",
-        8192,
+        IV,
         1200
     );
 
@@ -600,7 +601,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 144',
         'gtceu:selenium_rectifier',
-        8192,
+        IV,
         200
     );
 
@@ -614,12 +615,12 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:bronze 288',
         'gtceu:polishing_wheel',
-        512,
+        HV,
         60
     );
 
     addAssembler(
-        ['3x minecraft:glass'], ['minecraft:water 1000'], '16x croptopia:water_bottle', 32, 360);
+        ['3x minecraft:glass'], ['minecraft:water 1000'], '16x croptopia:water_bottle', LV, 360);
 
 
     const dynamos = [
@@ -643,7 +644,7 @@ ServerEvents.recipes(allthemods => {
             ],
             "#forge:lubricant 1000",
             dynamo.name,
-            512,
+            HV,
             1200,
             index + 1
         );
@@ -659,7 +660,7 @@ ServerEvents.recipes(allthemods => {
         "2x gtceu:iv_electric_piston"],
         "gtceu:polytetrafluoroethylene 144",
         "thermal:machine_frame",
-        8192, 600
+        IV, 600
     );
 
     addAssembler(
@@ -674,7 +675,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:lubricant 4000'            
         ],
         'pneumaticcraft:collector_drone',
-        8192, 600
+        IV, 600
     );
 
     //conduits
@@ -707,7 +708,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:conduit_binder 864',
             `8x enderio:${conduit.conduit}_conduit`,
-            128,
+            MV,
             100
         )
     })
@@ -723,7 +724,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         null, 
         'wirelesschargers:basic_wireless_player_charger', 
-        512, 200, 1);
+        HV, 200, 1);
 
     //wirelesschargers:advanced_wireless_player_charger
     addAssembler(
@@ -736,7 +737,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         null, 
         'wirelesschargers:advanced_wireless_player_charger', 
-        2048, 600, 2);
+        EV, 600, 2);
 
     //wirelesschargers:basic_wireless_block_charger
     addAssembler(
@@ -749,7 +750,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         null, 
         'wirelesschargers:basic_wireless_block_charger', 
-        512, 200, 1);
+        HV, 200, 1);
 
     //wirelesschargers:advanced_wireless_block_charger
     addAssembler(
@@ -762,7 +763,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         null, 
         'wirelesschargers:advanced_wireless_block_charger', 
-        2048, 600, 2);
+        EV, 600, 2);
 
     addAssembler(
         [
@@ -774,7 +775,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         'gtceu:polytetrafluoroethylene 144', 
         'rftoolsutility:screen_controller', 
-        2048, 200);
+        EV, 200);
 
     addAssembler(
         [
@@ -785,7 +786,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         'gtceu:polytetrafluoroethylene 144', 
         'integrateddynamics:part_display_panel', 
-        2048, 200);
+        EV, 200);
 
     addAssembler(
         [
@@ -799,7 +800,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         'gtceu:polytetrafluoroethylene 288', 
         'industrialforegoing:hydroponic_simulation_processor', 
-        8192, 200);
+        IV, 200);
 
     addAssembler(
         [
@@ -810,7 +811,7 @@ ServerEvents.recipes(allthemods => {
         ], 
         '#forge:polybenzimidazole 288', 
         'gtceu:samarium_cobalt_magnetic_rotor', 
-        8192, 60);
+        IV, 60);
 
     //soul extractor
     addAssembler(
@@ -826,7 +827,7 @@ ServerEvents.recipes(allthemods => {
         ],            
         "#forge:polytetrafluoroethylene 576",
         "gtceu:soul_extractor",
-        2048,
+        EV,
         6000,
         2
     );
@@ -845,7 +846,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "#forge:polytetrafluoroethylene 576",
         "gtceu:hephaestus_forge",
-        2048,
+        EV,
         6000,
         1
     );
@@ -860,7 +861,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         'thermal:rf_coil',
-        8192,
+        IV,
         200
     );
 
@@ -876,7 +877,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         'thermal:redstone_servo',
-        8192,
+        IV,
         200
     );
 
@@ -891,7 +892,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         'thermal:upgrade_augment_1',
-        2048,
+        EV,
         200
     );
 
@@ -907,7 +908,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         'thermal:upgrade_augment_2',
-        8192,
+        IV,
         200
     );
 
@@ -923,7 +924,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         'thermal:upgrade_augment_3',
-        32768,
+        LuV,
         200
     );
 
@@ -939,7 +940,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         'thermal_extra:upgrade_augment',
-        131072,
+        ZPM,
         200
     );
 
@@ -956,7 +957,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:soldering_alloy 288',
         'thermal_extra:abyssal_upgrade_augment',
-        131072,
+        ZPM,
         200
     );
 

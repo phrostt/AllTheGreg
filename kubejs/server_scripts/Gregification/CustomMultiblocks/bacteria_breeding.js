@@ -1,4 +1,5 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const vatCoils = {
         rtm_alloy: 4500,
         hssg: 5400,
@@ -9,10 +10,10 @@ ServerEvents.recipes(allthemods => {
     };
 
     const vatTiers = {
-        1: { fluid: 'gtceu:sugar_water', coil: vatCoils.rtm_alloy, chance: 35, volts: 8192 },
-        2: { fluid: 'gtceu:raw_growth_medium', coil: vatCoils.hssg, chance: 25, volts: 32768 },
-        3: { fluid: 'gtceu:sterilized_growth_medium', coil: vatCoils.naquadah, chance: 15, volts: 131072 },
-        4: { fluid: '#forge:naquadria_awakened', coil: vatCoils.trinium, chance: 10, volts: 524288 }
+        1: { fluid: 'gtceu:sugar_water', coil: vatCoils.rtm_alloy, chance: 35, volts: IV },
+        2: { fluid: 'gtceu:raw_growth_medium', coil: vatCoils.hssg, chance: 25, volts: LuV },
+        3: { fluid: 'gtceu:sterilized_growth_medium', coil: vatCoils.naquadah, chance: 15, volts: ZPM },
+        4: { fluid: '#forge:naquadria_awakened', coil: vatCoils.trinium, chance: 10, volts: UV }
     };
 
     const bacteriaStrains = [

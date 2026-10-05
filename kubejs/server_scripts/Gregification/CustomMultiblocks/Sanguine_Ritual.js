@@ -1,5 +1,6 @@
 
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const beeNomad = 'productivebees:spawn_egg_nomad_bee'
 	const beeHematophagous = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:hematophagous"}}').strongNBT();
     const beeRegenerative = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:regenerative"}}').strongNBT();	
@@ -12,12 +13,12 @@ ServerEvents.recipes(allthemods => {
         .EUt(512);
     
     const tiers = {
-        1: 128,    //mv
-        2: 512,    //hv
-        3: 2048,   //ev   
-        4: 8192,   //iv
-        5: 32768,   //luv
-        6: 131072   //zpm
+        1: MV,    //mv
+        2: HV,    //hv
+        3: EV,   //ev   
+        4: IV,   //iv
+        5: LuV,   //luv
+        6: ZPM   //zpm
     };
     const sanguineRitual = (inputs, fluidIn, output, fluidOut, eu, ID, program) => {
 

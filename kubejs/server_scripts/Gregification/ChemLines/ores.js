@@ -1,8 +1,9 @@
 ServerEvents.recipes(allthemods => {
-    const EUMoon = 8192;
-    const EUMars = 32768;
-    const EUMercuryVenus = 131072;
-    const EUGlacio = 524288;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const EUMoon = IV;
+    const EUMars = LuV;
+    const EUMercuryVenus = ZPM;
+    const EUGlacio = UV;
     const tempMoon = 4500;
     const tempMars = 5400;
     const tempMercuryVenus = 7200;

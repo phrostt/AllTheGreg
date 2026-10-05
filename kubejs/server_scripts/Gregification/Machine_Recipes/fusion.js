@@ -1,20 +1,4 @@
-    const tiers = {
-        ULV: 8,
-        LV: 32,
-        MV: 128,
-        HV: 512,
-        EV: 2048,
-        IV: 8192,
-        LuV: 32768,
-        ZPM: 131072,
-        UV: 524288,
-        UHV: 2097152,
-        UEV: 8388608,
-        UIV: 33554432,
-        UXV: 134217728,
-        OpV: 536870912,
-        MAX: 2147483647
-    };
+    
 
     const stages = {
         1: 100000,
@@ -22,6 +6,7 @@
         3: 1048576
     }
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     
     /**
      * Helper to add GTCEu Fusion Reactor Recipes 
@@ -52,7 +37,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:liquid_chaos 72'
         ],
         'gtceu:naquadria_stage_2 72',
-        tiers['LuV'],
+        LuV,
         20,
         stages[1]
     )
@@ -64,7 +49,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:liquid_chaos 72'
         ],
         'gtceu:naquadria_stage_3 72',
-        tiers['ZPM'],
+        ZPM,
         20,
         stages[2]
     )
@@ -76,7 +61,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polonium 72'
         ],
         'gtceu:naquadria_stage_4 72',
-        tiers['UV'],
+        UV,
         20,
         stages[3]
     )
@@ -88,7 +73,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:antimatter 72'
         ],
         'gtceu:naquadria_awakened 72',
-        tiers['UIV'],
+        UIV,
         20,
         stages[3]
     )

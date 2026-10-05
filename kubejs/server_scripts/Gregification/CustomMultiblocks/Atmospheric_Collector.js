@@ -1,5 +1,6 @@
 ServerEvents.recipes(allthemods => {   
-    const collectorEU = 8192;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const collectorEU = IV;
     const collectorDuration = 600;
     
     //overworld

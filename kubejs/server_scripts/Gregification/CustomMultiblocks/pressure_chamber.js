@@ -1,9 +1,6 @@
 ServerEvents.recipes(allthemods => {
-    const tiers = {
-        ULV: 8, LV: 32, MV: 128, HV: 512, EV: 2048,
-        IV: 8192, LuV: 32768, ZPM: 131072, UV: 524288
-    };
-    const addPC = (itemsIn, itemOut, fluidIn, fluidOut, tier, duration, customID, program) => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const addPC = (itemsIn, itemOut, fluidIn, fluidOut, eu, duration, customID, program) => {
 
         let outputID = '';
 
@@ -20,7 +17,7 @@ ServerEvents.recipes(allthemods => {
             outputID = 'dissolution_' + Math.floor(Math.random() * 1000);
         }
 
-        let voltage = tiers[tier] || 32;
+        let voltage = eu;
 
         let recipe = allthemods.recipes.gtceu.industrial_pressure_chamber(`gregification:dissolution/${outputID}`)
             .duration(duration)
@@ -44,7 +41,7 @@ ServerEvents.recipes(allthemods => {
         '4x pneumaticcraft:compressed_iron_block',
         'gtceu:compressed_air 2000',
         null,
-        'EV',
+        EV,
         200,
         null,
         1
@@ -56,7 +53,7 @@ ServerEvents.recipes(allthemods => {
         '32x pneumaticcraft:ingot_iron_compressed',
         'gtceu:compressed_air 2000',
         null,
-        'EV',
+        EV,
         200,
         null,
         1
@@ -68,7 +65,7 @@ ServerEvents.recipes(allthemods => {
         '4x gtceu:wrought_iron_block',
         'gtceu:compressed_air 2000',
         null,
-        'EV',
+        EV,
         200,
         null,
         2
@@ -80,7 +77,7 @@ ServerEvents.recipes(allthemods => {
         '32x gtceu:wrought_iron_ingot',
         'gtceu:compressed_air 2000',
         null,
-        'EV',
+        EV,
         200,
         null,
         2
@@ -92,7 +89,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:compressed_iron"}}').strongNBT(),
         'gtceu:compressed_air 1000',
         null,
-        'EV',
+        EV,
         2000,
         'compressed_bee'
     );
@@ -103,7 +100,7 @@ ServerEvents.recipes(allthemods => {
         '4x minecraft:slime_ball',
         ['gtceu:compressed_air 100', '#forge:milk 100'],
         null,
-        'EV',
+        EV,
         20,
     );
 
@@ -113,7 +110,7 @@ ServerEvents.recipes(allthemods => {
         '16x minecraft:ice',
         'gtceu:compressed_air 100',
         null,
-        'EV',
+        EV,
         40,
     );
 
@@ -123,7 +120,7 @@ ServerEvents.recipes(allthemods => {
         '16x minecraft:packed_ice',
         'gtceu:compressed_air 100',
         null,
-        'EV',
+        EV,
         40,
     );
 
@@ -133,7 +130,7 @@ ServerEvents.recipes(allthemods => {
         '4x minecraft:blue_ice',
         'gtceu:compressed_air 100',
         null,
-        'EV',
+        EV,
         40,
     );
 
@@ -144,7 +141,7 @@ ServerEvents.recipes(allthemods => {
         '24x pneumaticcraft:wheat_flour',
         'gtceu:compressed_air 1000',
         null,
-        'EV',
+        EV,
         10,
     );
 
@@ -154,7 +151,7 @@ ServerEvents.recipes(allthemods => {
         '24x pneumaticcraft:sourdough',
         ['pneumaticcraft:yeast_culture 4000', 'gtceu:compressed_air 1000'],
         null,
-        'EV',
+        EV,
         10,
     );
 
@@ -164,7 +161,7 @@ ServerEvents.recipes(allthemods => {
         '32x pneumaticcraft:compressed_stone',
         'gtceu:compressed_air 1000',
         null,
-        'EV',
+        EV,
         80,
     );
 
@@ -174,7 +171,7 @@ ServerEvents.recipes(allthemods => {
         '8x pneumaticcraft:transistor',
         'gtceu:compressed_air 1000',
         null,
-        'EV',
+        EV,
         80,
     );
 
@@ -184,7 +181,7 @@ ServerEvents.recipes(allthemods => {
         '8x pneumaticcraft:capacitor',
         'gtceu:compressed_air 1000',
         null,
-        'EV',
+        EV,
         80,
     );
 
@@ -202,7 +199,7 @@ ServerEvents.recipes(allthemods => {
         'allthetweaks:pulsating_black_hole',
         'gtceu:compressed_air 10000',
         null,
-        'IV',
+        IV,
         4000,
         'pulsating_black_hole'
     );
@@ -213,7 +210,7 @@ ServerEvents.recipes(allthemods => {
         null,
         ['gtceu:iron_iii_chloride 1000', '#forge:plastic 2000', 'gtceu:hydrochloric_acid 2000', 'gtceu:compressed_air 1000'],
         'pneumaticcraft:etching_acid 1000',
-        'EV',
+        EV,
         40,
     );
 
@@ -223,7 +220,7 @@ ServerEvents.recipes(allthemods => {
         '8x pneumaticcraft:empty_pcb',
         'gtceu:compressed_air 1000',
         null,
-        'EV',
+        EV,
         80,
     );
 
@@ -234,7 +231,7 @@ ServerEvents.recipes(allthemods => {
         'pneumaticcraft:turbine_blade',
         'gtceu:compressed_air 100',
         null,
-        'EV',
+        EV,
         40,
     );
 
@@ -244,7 +241,7 @@ ServerEvents.recipes(allthemods => {
         'minecraft:diamond',
         'gtceu:compressed_air 1000',
         null,
-        'EV',
+        EV,
         80,
     );
 
@@ -254,7 +251,7 @@ ServerEvents.recipes(allthemods => {
         'pneumaticcraft:solar_wafer',
         'gtceu:compressed_air 500',
         null,
-        'EV',
+        EV,
         40,
     );
 });

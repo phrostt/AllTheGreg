@@ -118,6 +118,15 @@ ServerEvents.recipes(allthemods => {
 
     ]
     const globalRemoves3 = [
+        // --- Misc Utilities & Villagers ---
+        'enderchests:ender_pouch', 'enderchests:ender_bag', 'enderchests:ender_chest', 'minecraft:ender_chest',
+        'endertanks:bucket', 'endertanks:tank', 'entangled:block', 'entangled:item',
+        'easy_villagers:trader', 'easy_villagers:auto_trader', 'easy_villagers:farmer', 'easy_villagers:breeder',
+        'easy_villagers:converter', 'easy_villagers:iron_farm', 'easy_villagers:incubator',
+        'allthemodium:teleport_pad', 'minecraft:flint_and_steel', 'farmingforblockheads:market',
+        'minecraft:cauldron', 'minecraft:brewing_stand', 'minecraft:enchanting_table', 'blue_skies:enchanting_table_compat',
+        'gtceu:assembler/enchanting_Table', 'gtceu:assembler/cauldron','gtceu:assembler/brewing_stand',
+
         'thermal:augments/upgrade_augment_1', 'thermal:augments/upgrade_augment_2', 'thermal:augments/upgrade_augment_3',
         'thermal_extra:crafting/abyssal_integral_component', 'thermal_extra:crafting/dragonsteel_integral_component',
         'thermal:rf_coil', 'thermal:redstone_servo', 
@@ -235,6 +244,7 @@ ServerEvents.recipes(allthemods => {
         "thermal:dynamo_lapidary", "thermal:dynamo_disenchantment", "thermal:dynamo_gourmand", 'thermal:rf_coil', 'thermal:redstone_servo',
 
         // --- Functional Storage (Drawers & Fluids) ---
+        'functionalstorage:framed_1', 'functionalstorage:framed_2', 'functionalstorage:framed_4',
         'functionalstorage:oak_1', 'functionalstorage:oak_2', 'functionalstorage:oak_4',
         'functionalstorage:spruce_1', 'functionalstorage:spruce_2', 'functionalstorage:spruce_4',
         'functionalstorage:birch_1', 'functionalstorage:birch_2', 'functionalstorage:birch_4',
@@ -247,7 +257,9 @@ ServerEvents.recipes(allthemods => {
         'functionalstorage:cherry_1', 'functionalstorage:cherry_2', 'functionalstorage:cherry_4',
         'functionalstorage:fluid_1', 'functionalstorage:fluid_2', 'functionalstorage:fluid_4',
         'functionalstorage:compacting_drawer', 'functionalstorage:armory_cabinet',
+        'functionalstorage:framed_simple_compacting_drawer', 'functionalstorage:compacting_framed_drawer', 'functionalstorage:framed_simple_compacting_drawer',
         'functionalstorage:storage_controller', 'functionalstorage:controller_extension',
+        'functionalstorage:framed_storage_controller', 'functionalstorage:framed_controller_extension',
 
         // --- Functional Storage Upgrades ---
         'functionalstorage:pusher_upgrade', 'functionalstorage:puller_upgrade', 'functionalstorage:collector_upgrade',
@@ -277,14 +289,7 @@ ServerEvents.recipes(allthemods => {
         // --- Pipez & LaserIO ---
         'pipez:item_pipe', 'pipez:fluid_pipe', 'pipez:gas_pipe', 'pipez:energy_pipe', 'pipez:universal_pipe',
         'pipez:basic_upgrade', 'pipez:improved_upgrade', 'pipez:advanced_upgrade', 'pipez:ultimate_upgrade',
-        'laserio:laser_connector', 'laserio:laser_node', 'laserio:logic_chip_raw', 'laserio:laser_connector_advanced',
-
-        // --- Misc Utilities & Villagers ---
-        'enderchests:ender_pouch', 'enderchests:ender_bag', 'enderchests:ender_chest', 'minecraft:ender_chest',
-        'endertanks:bucket', 'endertanks:tank', 'entangled:block', 'entangled:item',
-        'easy_villagers:trader', 'easy_villagers:auto_trader', 'easy_villagers:farmer', 'easy_villagers:breeder',
-        'easy_villagers:converter', 'easy_villagers:iron_farm', 'easy_villagers:incubator',
-        'allthemodium:teleport_pad', 'minecraft:flint_and_steel', 'farmingforblockheads:market',
+        'laserio:laser_connector', 'laserio:laser_node', 'laserio:logic_chip_raw', 'laserio:laser_connector_advanced',        
 
         // --- Project E ---
         'projecte:philosophers_stone', 'projecte:philosophers_stone_alt',

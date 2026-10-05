@@ -1,21 +1,5 @@
 ServerEvents.recipes(allthemods => {
-    const tiers = {
-        ULV: 8,
-        LV: 32,
-        MV: 128,
-        HV: 512,
-        EV: 2048,
-        IV: 8192,
-        LuV: 32768,
-        ZPM: 131072,
-        UV: 524288,
-        UHV: 2097152,
-        UEV: 8388608,
-        UIV: 33554432,
-        UXV: 134217728,
-        OpV: 536870912,
-        MAX: 2147483647
-    };
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addCutter = (itemsIn, itemsOut, eu, duration, offset, customFluid, cleanRoom) => {
         // 1. Clean the ID: remove quantity, namespace, and illegal chars
         const cleanName = String(itemsOut)
@@ -64,12 +48,12 @@ ServerEvents.recipes(allthemods => {
         });
     };
 
-    addCutter('gtceu:empowered_boule', '128x gtceu:empowered_wafer', tiers['UV'], 6000, 1500, null, CleanroomType.STERILE_CLEANROOM)
-    addCutter('gtceu:germanium_boule', '4x gtceu:germanium_wafer', tiers['ZPM'], 6000, 1500, null, CleanroomType.STERILE_CLEANROOM)
-    addCutter('gtceu:atomic_boule', '4x gtceu:atomic_wafer', tiers['ZPM'], 6000, 1500, null, CleanroomType.STERILE_CLEANROOM)
-    addCutter('gtceu:empowered_ram_wafer', '6x gtceu:empowered_ram_chip', tiers['UV'], 900, 150, null, CleanroomType.STERILE_CLEANROOM)
+    addCutter('gtceu:empowered_boule', '128x gtceu:empowered_wafer', UV, 6000, 1500, null, CleanroomType.STERILE_CLEANROOM)
+    addCutter('gtceu:germanium_boule', '4x gtceu:germanium_wafer', ZPM, 6000, 1500, null, CleanroomType.STERILE_CLEANROOM)
+    addCutter('gtceu:atomic_boule', '4x gtceu:atomic_wafer', ZPM, 6000, 1500, null, CleanroomType.STERILE_CLEANROOM)
+    addCutter('gtceu:empowered_ram_wafer', '6x gtceu:empowered_ram_chip', UV, 900, 150, null, CleanroomType.STERILE_CLEANROOM)
 
     //blank slate
-    addCutter('gtceu:slate_casing', '9x gtceu:blank_slate_casing', tiers['LV'], 500, 250)
+    addCutter('gtceu:slate_casing', '9x gtceu:blank_slate_casing', LV, 500, 250)
 
 });

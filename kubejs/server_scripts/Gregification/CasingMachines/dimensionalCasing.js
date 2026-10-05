@@ -8,7 +8,7 @@ const quarryCards = [
 ]
 
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program) => {
         const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
         let recipe = allthemods.recipes.gtceu.assembler(`allthemods:assembler/${outputID}`)
@@ -37,7 +37,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:reinforced_epoxy_resin 288',
         'gtceu:dimensional_casing',
-        1920,
+        EV,
         400
     )
     
@@ -52,7 +52,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 144',
         'rftoolsbase:machine_frame',
-        1920,
+        EV,
         200
     );
 
@@ -69,7 +69,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:lubricant 1000',
         'rftoolsbuilder:builder',
-        1920,
+        EV,
         600
     );
 
@@ -87,7 +87,7 @@ ServerEvents.recipes(allthemods => {
             ],
             'gtceu:polybenzimidazole 576',
             `rftoolsbuilder:${card.shape}`,
-            8192,
+            IV,
             1200,
             index + 1
         );

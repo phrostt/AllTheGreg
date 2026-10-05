@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/single_cell')
         .itemInputs('gtceu:thorium_single')
         .itemOutputs('chemlib:protactinium_dust')
@@ -64,6 +64,6 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:soldering_alloy 1000')
         .scannerResearch('gtceu:thorium_single')
         .duration(600)
-        .EUt(32768);
+        .EUt(LuV);
 });
 

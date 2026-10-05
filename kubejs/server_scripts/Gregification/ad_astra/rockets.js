@@ -6,11 +6,12 @@ ServerEvents.recipes(allthemods => {
     //'ad_astra:rocket_fin', 'ad_astra:rocket_nose_cone',
     //'ad_astra:steel_engine','ad_astra:desh_engine', 'ad_astra:ostrum_engine','ad_astra:calorite_engine', 
     //'ad_astra:steel_tank','ad_astra:desh_tank', 'ad_astra:ostrum_tank','ad_astra:calorite_tank', 
-
-    const ivTier = 8192;
-    const luvTier = 32768;
-    const zpmTier = 131072;
-    const uvTier = 524288;
+    
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const ivTier = IV;
+    const luvTier = LuV;
+    const zpmTier = ZPM;
+    const uvTier = UV;
     const partDuration = 200;
     const rocketDuration = 2000;
 

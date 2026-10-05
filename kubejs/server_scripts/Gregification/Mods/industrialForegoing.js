@@ -1,6 +1,7 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program) => {
-
+        
         const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
 
         let recipe = allthemods.recipes.gtceu.assembler(`gregification:assembler/${outputID}`)
@@ -28,7 +29,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 144',
         'gtceu:industrial_dissolution_chamber',
-        512,
+        HV,
         600
 
     )
@@ -46,7 +47,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 288',
         'gtceu:latex_synthesizer',
-        2048,
+        EV,
         600
 
     )
@@ -79,7 +80,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:supreme_black_hole_unit',
-        GTValues.VA[GTValues.LuV],
+        LuV,
         600,
         1
     )
@@ -98,7 +99,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:supreme_black_hole_tank',
-        GTValues.VA[GTValues.LuV],
+        LuV,
         600,
         2
     )
@@ -119,7 +120,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:advanced_black_hole_unit',
-        GTValues.VA[GTValues.IV],
+        IV,
         600,
         1
     )
@@ -138,7 +139,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:advanced_black_hole_tank',
-        GTValues.VA[GTValues.IV],
+        IV,
         600,
         2
     )
@@ -159,7 +160,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:simple_black_hole_unit',
-        GTValues.VA[GTValues.EV],
+        EV,
         600,
         1
     )
@@ -178,7 +179,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:simple_black_hole_tank',
-        GTValues.VA[GTValues.EV],
+        EV,
         600,
         2
     )
@@ -199,7 +200,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:pity_black_hole_unit',
-        GTValues.VA[GTValues.HV],
+        HV,
         600,
         1
     )
@@ -218,7 +219,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:soldering_alloy 288'
         ],
         'industrialforegoing:pity_black_hole_tank',
-        GTValues.VA[GTValues.HV],
+        HV,
         600,
         2
     )
@@ -310,10 +311,10 @@ ServerEvents.recipes(allthemods => {
     ];
 
     const ifTierData = {
-        hv:  { base: 'industrialforegoing:machine_frame_pity', metal: 'stainless_steel', metal2: 'compressed_iron', magical: 'manasteel', polymer: 'gtceu:polyethylene', duration: 200, eu: GTValues.VA[GTValues.HV] },
-        ev:  { base: 'industrialforegoing:machine_frame_simple', metal: 'titanium', metal2: 'graphite', magical: 'hellforged', polymer: 'gtceu:polyvinyl_chloride', duration: 300, eu: GTValues.VA[GTValues.EV] },
-        iv:  { base: 'industrialforegoing:machine_frame_advanced', metal: 'tungsten_steel', metal2: 'draconium', magical: 'terrasteel', polymer: 'gtceu:polytetrafluoroethylene', duration: 400, eu: GTValues.VA[GTValues.IV] },
-        luv: { base: 'industrialforegoing:machine_frame_supreme', metal: 'rhodium_plated_palladium', metal2: 'draconium_awakened', magical: 'ferrognetic', polymer: 'gtceu:polybenzimidazole', duration: 500, eu: GTValues.VA[GTValues.LuV] },
+        hv:  { base: 'industrialforegoing:machine_frame_pity', metal: 'stainless_steel', metal2: 'compressed_iron', magical: 'manasteel', polymer: 'gtceu:polyethylene', duration: 200, eu: HV },
+        ev:  { base: 'industrialforegoing:machine_frame_simple', metal: 'titanium', metal2: 'graphite', magical: 'hellforged', polymer: 'gtceu:polyvinyl_chloride', duration: 300, eu: EV },
+        iv:  { base: 'industrialforegoing:machine_frame_advanced', metal: 'tungsten_steel', metal2: 'draconium', magical: 'terrasteel', polymer: 'gtceu:polytetrafluoroethylene', duration: 400, eu: IV },
+        luv: { base: 'industrialforegoing:machine_frame_supreme', metal: 'rhodium_plated_palladium', metal2: 'draconium_awakened', magical: 'ferrognetic', polymer: 'gtceu:polybenzimidazole', duration: 500, eu: LuV },
     };
 
     const generateIfRecipe = (allthemods, machine) => {

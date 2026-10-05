@@ -1,7 +1,7 @@
   ServerEvents.recipes(allthemods => {
-
-    const RheniumEUSimple = 512;
-    const RheniumEUComplex = 32768; //LuV
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA;
+    const RheniumEUSimple = HV;
+    const RheniumEUComplex = LuV; //LuV
     // ==========================================
     // THE 4-STEP RHENIUM EXTRACTION CHAIN
     // ==========================================

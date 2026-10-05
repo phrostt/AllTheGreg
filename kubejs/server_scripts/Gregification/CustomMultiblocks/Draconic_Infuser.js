@@ -1,8 +1,9 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const TIER = {
-        wyvern: 8192,
-        draconic: 32768,
-        chaotic: 131072
+        wyvern: IV,
+        draconic: LuV,
+        chaotic: ZPM
     };
 
     const TIME = {
@@ -104,7 +105,7 @@ ServerEvents.recipes(allthemods => {
         [
         ],
         TIME.very_long,
-        32768,
+        LuV,
         "draconicevolution:dragon_heart"
     );
 
@@ -123,7 +124,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:selenium 576'
         ],
         TIME.medium,
-        32768,
+        LuV,
         'draconicevolution:crafting_core');
 
     //wyvern controller
@@ -144,7 +145,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:liquid_dragon_breath 2000'
         ],
         TIME.medium,
-        32768,
+        LuV,
         'gtceu:draconic_infuser_draconium');
 
     //draconic controller
@@ -165,7 +166,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:liquid_dragon_breath 2000'
         ],
         TIME.medium,
-        32768,
+        LuV,
         'gtceu:draconic_infuser_wyvern');
 
     //chaotic controller
@@ -186,7 +187,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:liquid_dragon_breath 2000'
         ],
         TIME.medium,
-        32768,
+        ZPM,
         'gtceu:draconic_infuser_draconic');
 
 
@@ -205,7 +206,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:liquid_dragon_breath 2000'
         ],
         TIME.medium,
-        32768,
+        LuV,
         '#forge:frames/desh'
     );
     //error is here
@@ -226,7 +227,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:liquid_dragon_breath 2000'
         ],
         TIME.medium,
-        32768,
+        LuV,
         'gtceu:draconium_casing'
     );
 
@@ -245,7 +246,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:liquid_dragon_breath 2000'
         ],
         TIME.medium,
-        32768,
+        LuV,
         'gtceu:wyvern_casing'
     );
 
@@ -264,7 +265,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:liquid_dragon_breath 2000'
         ],
         TIME.medium,
-        32768,
+        LuV,
         'gtceu:draconic_casing'
     )
 

@@ -1,6 +1,7 @@
 ServerEvents.recipes(allthemods => {
-    const RadioEUSimple = 512;
-    const RadioEUComplex = 32768; //ZPM
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const RadioEUSimple = HV;
+    const RadioEUComplex = LuV;
     // --- Radioactive Chain ---
 
     // Step 1: Chemical Bath

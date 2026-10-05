@@ -1,21 +1,5 @@
 ServerEvents.recipes(allthemods => {
-    const tiers = {
-        ULV: 8,
-        LV: 32,
-        MV: 128,
-        HV: 512,
-        EV: 2048,
-        IV: 8192,
-        LuV: 32768,
-        ZPM: 131072,
-        UV: 524288,
-        UHV: 2097152,
-        UEV: 8388608,
-        UIV: 33554432,
-        UXV: 134217728,
-        OpV: 536870912,
-        MAX: 2147483647
-    };    
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA   
     const blackHole = (inputs, fluidIn, outputs, fluidOut, eu, duration, customID, program) => {
 
     let id;
@@ -134,52 +118,52 @@ ServerEvents.recipes(allthemods => {
             '#forge:soldering_alloy 2880'            
         ],
         1200,
-        GTValues.V[GTValues.ZPM],
+        ZPM,
         'gtceu:zpm_compressor',
         64
     )
 
 
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/carminite'], null, 'gtceu:carminite_singularity', null, 131072, 1200, 'carminite_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/steeleaf'], null, 'gtceu:steeleaf_singularity', null, 131072, 1200, 'steeleaf_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/fiery'], null, 'gtceu:fiery_singularity', null, 131072, 1200, 'fiery_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/knightmetal'], null, 'gtceu:knightmetal_singularity', null, 131072, 1200, 'knightmetal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/carminite'], null, 'gtceu:carminite_singularity', null, ZPM, 1200, 'carminite_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/steeleaf'], null, 'gtceu:steeleaf_singularity', null, ZPM, 1200, 'steeleaf_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/fiery'], null, 'gtceu:fiery_singularity', null, ZPM, 1200, 'fiery_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/knightmetal'], null, 'gtceu:knightmetal_singularity', null, ZPM, 1200, 'knightmetal_singularity')
 
 
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/blazing_crystal'], null, 'gtceu:blazing_crystal_singularity', null, 131072, 1200, 'blazing_crystal_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/niotic_crystal'], null, 'gtceu:niotic_crystal_singularity', null, 131072, 1200, 'niotic_crystal_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/spirited_crystal'], null, 'gtceu:spirited_crystal_singularity', null, 131072, 1200, 'spirited_crystal_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/nitro_crystal'], null, 'gtceu:nitro_crystal_singularity', null, 131072, 1200, 'nitro_crystal_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/energized_steel'], null, 'gtceu:energized_steel_singularity', null, 131072, 1200, 'energized_steel_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/stabilized_clathrate'], null, 'gtceu:stabilized_clathrate_singularity', null, 131072, 1200, 'stabilized_clathrate_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/blazing_crystal'], null, 'gtceu:blazing_crystal_singularity', null, ZPM, 1200, 'blazing_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/niotic_crystal'], null, 'gtceu:niotic_crystal_singularity', null, ZPM, 1200, 'niotic_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/spirited_crystal'], null, 'gtceu:spirited_crystal_singularity', null, ZPM, 1200, 'spirited_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/nitro_crystal'], null, 'gtceu:nitro_crystal_singularity', null, ZPM, 1200, 'nitro_crystal_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/energized_steel'], null, 'gtceu:energized_steel_singularity', null, ZPM, 1200, 'energized_steel_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/stabilized_clathrate'], null, 'gtceu:stabilized_clathrate_singularity', null, ZPM, 1200, 'stabilized_clathrate_singularity')
 
 
-    blackHole(['#forge:singularities/core', '4000x evilcraft:garmonbozia'], null, 'gtceu:garmonbozia_singularity', null, 131072, 1200, 'garmonbozia_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/mana_essence'], null, 'gtceu:mana_essence_singularity', null, 131072, 1200, 'mana_essence_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/source'], null, 'gtceu:source_singularity', null, 131072, 1200, 'source_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:gems/lapotron'], null, 'gtceu:lapotron_singularity', null, 131072, 1200, 'lapotron_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/iesnium'], null, 'gtceu:iesnium_singularity', null, 131072, 1200, 'iesnium_singularity')    
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/hellforged'], null, 'gtceu:hellforged_singularity', null, 131072, 1200, 'hellforged_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/allthemodium'], null, 'gtceu:allthemodium_singularity', null, 131072, 1200, 'allthemodium_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/vibranium'], null, 'gtceu:vibranium_singularity', null, 131072, 1200, 'vibranium_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/unobtainium'], null, 'gtceu:unobtainium_singularity', null, 131072, 1200, 'unobtainium_singularity')
-    blackHole(['#forge:singularities/core', '4000x #forge:ingots/compressed_iron'], null, 'gtceu:compressed_iron_singularity', null, 131072, 1200, 'compressed_iron_singularity')    
+    blackHole(['#forge:singularities/core', '4000x evilcraft:garmonbozia'], null, 'gtceu:garmonbozia_singularity', null, ZPM, 1200, 'garmonbozia_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/mana_essence'], null, 'gtceu:mana_essence_singularity', null, ZPM, 1200, 'mana_essence_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/source'], null, 'gtceu:source_singularity', null, ZPM, 1200, 'source_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:gems/lapotron'], null, 'gtceu:lapotron_singularity', null, ZPM, 1200, 'lapotron_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/iesnium'], null, 'gtceu:iesnium_singularity', null, ZPM, 1200, 'iesnium_singularity')    
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/hellforged'], null, 'gtceu:hellforged_singularity', null, ZPM, 1200, 'hellforged_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/allthemodium'], null, 'gtceu:allthemodium_singularity', null, ZPM, 1200, 'allthemodium_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/vibranium'], null, 'gtceu:vibranium_singularity', null, ZPM, 1200, 'vibranium_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/unobtainium'], null, 'gtceu:unobtainium_singularity', null, ZPM, 1200, 'unobtainium_singularity')
+    blackHole(['#forge:singularities/core', '4000x #forge:ingots/compressed_iron'], null, 'gtceu:compressed_iron_singularity', null, ZPM, 1200, 'compressed_iron_singularity')    
     
-    blackHole(['allthecompressed:diamond_block_3x', '#forge:frames/alfsteel', '6x #forge:plates/strontium_aluminate', '12x #forge:plates/fluorozirconic_composite'], null , 'gtceu:bedrockium_dust', null, 131072, 1200, 'bedrockium_compression')
-    blackHole(['#forge:frames/bedrockium', '6x #forge:plates/rheni_zirconium_alloy', '12x #forge:rods/potassium_calcium_orthosilicate'], null , 'gtceu:core_singularity', null, 131072, 1200, 'core_singularity')
+    blackHole(['allthecompressed:diamond_block_3x', '#forge:frames/alfsteel', '6x #forge:plates/strontium_aluminate', '12x #forge:plates/fluorozirconic_composite'], null , 'gtceu:bedrockium_dust', null, ZPM, 1200, 'bedrockium_compression')
+    blackHole(['#forge:frames/bedrockium', '6x #forge:plates/rheni_zirconium_alloy', '12x #forge:rods/potassium_calcium_orthosilicate'], null , 'gtceu:core_singularity', null, ZPM, 1200, 'core_singularity')
 
-    blackHole(['#forge:singularities/core', '4000x gtceu:beryllium_ingot'], null, 'gtceu:beryllium_singularity', null, 131072, 1200, 'beryllium_singularity')
+    blackHole(['#forge:singularities/core', '4000x gtceu:beryllium_ingot'], null, 'gtceu:beryllium_singularity', null, ZPM, 1200, 'beryllium_singularity')
     
 
-    blackHole(['#forge:singularities/core','8000x elementalcraft:fire_shard'],    '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 131072, 1200, 'fire_singularity')
-    blackHole(['#forge:singularities/core','8000x elementalcraft:air_shard'],     '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 131072, 1200, 'air_singularity')
-    blackHole(['#forge:singularities/core','8000x elementalcraft:earth_shard'],   '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 131072, 1200, 'earth_singularity')
-    blackHole(['#forge:singularities/core','8000x elementalcraft:water_shard'],   '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 131072, 1200, 'water_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:fire_shard'],    '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, ZPM, 1200, 'fire_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:air_shard'],     '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, ZPM, 1200, 'air_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:earth_shard'],   '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, ZPM, 1200, 'earth_singularity')
+    blackHole(['#forge:singularities/core','8000x elementalcraft:water_shard'],   '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, ZPM, 1200, 'water_singularity')
 
-    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_fire_shard'],  '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, 131072, 600, 'powerful_fire_singularity')
-    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_air_shard'],   '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, 131072, 600, 'powerful_air_singularity')
-    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_earth_shard'], '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, 131072, 600, 'powerful_earth_singularity')
-    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_water_shard'], '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, 131072, 600, 'powerful_water_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_fire_shard'],  '#forge:sanguine_concentrate 32000000', 'gtceu:elemental_fire_singularity', null, ZPM, 600, 'powerful_fire_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_air_shard'],   '#forge:source 32000000', 'gtceu:elemental_air_singularity', null, ZPM, 600, 'powerful_air_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_earth_shard'], '#forge:experience 32000000', 'gtceu:elemental_earth_singularity', null, ZPM, 600, 'powerful_earth_singularity')
+    blackHole(['#forge:singularities/core','4000x elementalcraft:powerful_water_shard'], '#forge:mana_essence 32000000', 'gtceu:elemental_water_singularity', null, ZPM, 600, 'powerful_water_singularity')
 
-    blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:concentrated_dark_matter 10' , null, 'gtceu:fifth_element 14400', 131072, 1200, 'fifth_element')
+    blackHole(['gtceu:element_fire','gtceu:element_water','gtceu:element_earth','gtceu:element_air'],'#forge:concentrated_dark_matter 10' , null, 'gtceu:fifth_element 14400', ZPM, 1200, 'fifth_element')
 })

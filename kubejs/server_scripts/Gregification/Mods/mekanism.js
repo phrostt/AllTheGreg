@@ -1,6 +1,7 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program) => {
-
+        
         const outputID = itemsOut.replace(/[^a-z0-9]/gi, '_');
 
         let recipe = allthemods.recipes.gtceu.assembler(`gregification:assembler/${outputID}`)
@@ -23,7 +24,7 @@ ServerEvents.recipes(allthemods => {
         ])
         .itemOutputs('mekanism:energy_tablet')
         .duration(200)
-        .EUt(512);
+        .EUt(HV);
 
 
     //module base
@@ -36,7 +37,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         'mekanism:module_base',
-        32768,
+        LuV,
         600
     );
 
@@ -53,7 +54,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:argon 1000'
         ],
         'mekanism:basic_tier_installer',
-        8192,
+        IV,
         600
     );
 
@@ -70,7 +71,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:neon 1000'
         ],
         'mekanism:advanced_tier_installer',
-        32768,
+        LuV,
         600
     );
 
@@ -87,7 +88,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:xenon 1000'
         ],
         'mekanism:elite_tier_installer',
-        131072,
+        ZPM,
         600
     );
 
@@ -104,7 +105,7 @@ ServerEvents.recipes(allthemods => {
             '#forge:radon 1000'
         ],
         'mekanism:ultimate_tier_installer',
-        524288,
+        UV,
         600
     );
 
@@ -120,7 +121,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polytetrafluoroethylene 100'
         ],
         'mekanism:upgrade_speed',
-        32768,
+        LuV,
         600
     );
 
@@ -136,7 +137,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polytetrafluoroethylene 100'
         ],
         'mekanism:upgrade_energy',
-        32768,
+        LuV,
         600
     );
 
@@ -152,7 +153,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polytetrafluoroethylene 100'
         ],
         'mekanism:upgrade_filter',
-        32768,
+        LuV,
         600
     );
 
@@ -168,7 +169,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polytetrafluoroethylene 100'
         ],
         'mekanism:upgrade_gas',
-        32768,
+        LuV,
         600
     );
 
@@ -184,7 +185,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polytetrafluoroethylene 100'
         ],
         'mekanism:upgrade_muffling',
-        32768,
+        LuV,
         600
     );
 
@@ -232,7 +233,7 @@ ServerEvents.recipes(allthemods => {
     ])
     .itemOutputs('mekanism:structural_glass')
     .duration(200)
-    .EUt(8192);
+    .EUt(IV);
 
     allthemods.recipes.gtceu.forming_press('gregification:mekanism/reactor_glass')
     .itemInputs([
@@ -241,6 +242,6 @@ ServerEvents.recipes(allthemods => {
     ])
     .itemOutputs('mekanismgenerators:reactor_glass')
     .duration(400)
-    .EUt(8192);
+    .EUt(IV);
 
 })

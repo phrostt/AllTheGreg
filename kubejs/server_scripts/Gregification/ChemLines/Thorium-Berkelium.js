@@ -1,6 +1,7 @@
 ServerEvents.recipes(allthemods => {
-    const eut = 131072;
-    const eut2 = 8192;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const eut = ZPM;
+    const eut2 = IV;
 
  
 

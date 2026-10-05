@@ -1,11 +1,8 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    
 
-    const tiers = {
-        ULV: 8, LV: 32, MV: 128, HV: 512, EV: 2048,
-        IV: 8192, LuV: 32768, ZPM: 131072, UV: 524288
-    };
-
-    const addLatex = (itemsIn, itemOut, fluidIn, fluidOut, tier, duration, program) => {
+    const addLatex = (itemsIn, itemOut, fluidIn, fluidOut, eu, duration, program) => {
         let outputID = '';
 
         if (itemOut) {
@@ -20,7 +17,7 @@ ServerEvents.recipes(allthemods => {
 
         if (program) outputID += `_config_${program}`;
 
-        let voltage = tiers[tier] || 32;
+        let voltage = eu;
 
         let recipe = allthemods.recipes.gtceu.latex_synthesizer(`gregification:latex/${outputID}`)
             .duration(duration)
@@ -43,7 +40,7 @@ ServerEvents.recipes(allthemods => {
         '80x industrialforegoing:tinydryrubber',
         'minecraft:water 40000',
         null,
-        'HV',
+        HV,
         200,
         1
     );
@@ -54,7 +51,7 @@ ServerEvents.recipes(allthemods => {
         null,
         'minecraft:water 60000',
         'industrialforegoing:latex 60000',
-        'HV',
+        HV,
         800,
         2
     );

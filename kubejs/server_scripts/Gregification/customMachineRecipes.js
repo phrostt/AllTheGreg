@@ -1,6 +1,6 @@
 //@ts-check
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const tiers = {
         ULV: 8,
         LV: 32,
@@ -18,7 +18,7 @@ ServerEvents.recipes(allthemods => {
         OpV: 536870912,
         MAX: 2147483647
     };
-    const tierValues = [32, 128, 512, 2048, 8192, 32768, 131072, 524288, 2097152, 8388608, 33554432, 134217728, 536870912, 2147483647];
+    const tierValues = [LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX];
 
     const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, program) => {
 
@@ -113,7 +113,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polytetrafluoroethylene 576'
         ],
         'gtceu:empowerer',
-        2048,
+        EV,
         1200
     )
 
@@ -133,7 +133,7 @@ ServerEvents.recipes(allthemods => {
             'gtceu:polybenzimidazole 1152'
         ],
         1200,
-        32768,
+        LuV,
         'gtceu:vacuum_freezer'
     )
 
@@ -690,7 +690,7 @@ ServerEvents.recipes(allthemods => {
         { id: 'cryogenic_unit', tier: 'uv', fluid: true, extra: ['2x #forge:rotors/strontium', '4x ad_astra:ice_shard', '4x #forge:gears/gadolinium'], extraFluids: ['#forge:blue_ice 16000', '#forge:tellurium 2000'] },
  
         // UHV tier -> assembly_line (2 extra fluids)
-        { id: 'baryonic_separator', tier: 'zpm', fluid: false, extra: ['4x gtceu:superconducting_coil', '4x #forge:plates/scandium'], extraFluids: ['#forge:naquadria 2000', '#forge:rubidium 2000'] },
+        { id: 'baryonic_separator', tier: 'uhv', fluid: false, extra: ['4x gtceu:superconducting_coil', '4x #forge:plates/rubidium'], extraFluids: ['#forge:naquadria 2000', '#forge:rubidium 2000'] },
         { id: 'baryonic_stabilizer', tier: 'uhv', fluid: true, extra: ['4x gtceu:fusion_coil', '4x #forge:gears/rubidium'], extraFluids: ['#forge:naquadria 2000', '#forge:rubidium 2000'] },
         { id: 'magnetic_containment_chamber', tier: 'uhv', fluid: true, extra: ['4x #forge:gears/francium', '4x #forge:plates/germanium'], extraFluids: ['#forge:selenium 2000', '#forge:radium 2000'] },
     ];

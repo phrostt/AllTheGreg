@@ -1,5 +1,6 @@
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    
     const chalks = {
         white: 'gtceu:white_chalk',
         orange: 'gtceu:orange_chalk',
@@ -359,6 +360,7 @@ ServerEvents.recipes(allthemods => {
         }
         
     };*/
+    
     const addRitual = (customInputs, output, ritualName, duration, customId) => {
         const ritual = rituals.find(r => r.name === ritualName);
 
@@ -367,10 +369,11 @@ ServerEvents.recipes(allthemods => {
             return;
         }
 
-        const baseEu = 128;
+        
         const baseDuration = (duration) ? duration * 20 : 100;
 
-        const eu = baseEu * Math.pow(4, ritual.tier - 1);
+        
+        const eu = GTValues.VA[ritual.tier + 1];
         const finalDuration = baseDuration * ritual.tier;
 
         const baseID = customId
@@ -457,7 +460,7 @@ ServerEvents.recipes(allthemods => {
     addRitual(['minecraft:gilded_blackstone', 'minecraft:warped_fungus', 'minecraft:crimson_fungus', 'minecraft:quartz'], 'occultism:demonic_meat', 'odus_open_convocation');
     addRitual(['3x #minecraft:leaves', '3x #forge:saplings', '3x #forge:seeds'], 'occultism:nature_paste', 'eziveus_spectral_complustion');
 
-    const chalkEU = 128;
+    const chalkEU = MV;
     const chalkDuration = 100;
     const base = 'occultism:chalk_white_impure';
     const impureChalks = [

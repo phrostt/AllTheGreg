@@ -1,7 +1,7 @@
 ServerEvents.recipes(allthemods => {
-
-    const TelluriumEUSimple = 512; //LuV
-    const TelluriumEUComplex = 32768; //ZPM
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const TelluriumEUSimple = HV;
+    const TelluriumEUComplex = LuV;
 
     // --- Tellurium Chain ---
 

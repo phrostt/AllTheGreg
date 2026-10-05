@@ -1,23 +1,23 @@
 ServerEvents.recipes(allthemods => {
     const $SizedIngredient = Java.loadClass('com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredient');
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const tiers = [
-        { level: 1, tier: 'wood', volts: 32, prefix: 'lv', fluid: '#forge:soldering_alloy', coil: 'ironjetpacks:basic_coil', wire: 'red_alloy' },
-        { level: 1, tier: 'stone', volts: 32, prefix: 'lv', fluid: '#forge:soldering_alloy', coil: 'ironjetpacks:basic_coil', wire: 'red_alloy' },
-        { level: 1, tier: 'copper', volts: 32, prefix: 'lv', fluid: '#forge:soldering_alloy', coil: 'ironjetpacks:basic_coil', wire: 'red_alloy' },
-        { level: 1, tier: 'bronze', volts: 128, prefix: 'mv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:basic_coil', wire: 'cadmium_copper' },
-        { level: 1, tier: 'iron', volts: 128, prefix: 'mv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:basic_coil', wire: 'cadmium_copper' },
-        { level: 1, tier: 'silver', volts: 128, prefix: 'mv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:basic_coil', wire: 'cadmium_copper' },
-        { level: 2, tier: 'invar', volts: 512, prefix: 'hv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:advanced_coil', wire: 'dark_steel' },
-        { level: 2, tier: 'gold', volts: 512, prefix: 'hv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:advanced_coil', wire: 'dark_steel' },
-        { level: 2, tier: 'electrum', volts: 512, prefix: 'hv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:advanced_coil', wire: 'dark_steel' },
-        { level: 3, tier: 'steel', volts: 2048, prefix: 'ev', fluid: '#forge:tetrachloroethylene', coil: 'ironjetpacks:elite_coil', wire: 'end_steel' },
-        { level: 3, tier: 'platinum', volts: 2048, prefix: 'ev', fluid: '#forge:tetrachloroethylene', coil: 'ironjetpacks:elite_coil', wire: 'end_steel' },
-        { level: 3, tier: 'diamond', volts: 8192, prefix: 'iv', fluid: '#forge:polytetrafluoroethylene', coil: 'ironjetpacks:elite_coil', wire: 'vibrant_alloy' },
-        { level: 3, tier: 'emerald', volts: 8192, prefix: 'iv', fluid: '#forge:polytetrafluoroethylene', coil: 'ironjetpacks:elite_coil', wire: 'vibrant_alloy' },
-        { level: 4, tier: 'allthemodium', volts: 32768, prefix: 'luv', fluid: '#forge:polybenzimidazole', coil: 'ironjetpacks:ultimate_coil', wire: 'alloy_infused' },
-        { level: 4, tier: 'vibranium', volts: 32768, prefix: 'luv', fluid: '#forge:polybenzimidazole', coil: 'ironjetpacks:ultimate_coil', wire: 'alloy_infused' },
-        { level: 4, tier: 'unobtainium', volts: 32768, prefix: 'luv', fluid: '#forge:polybenzimidazole', coil: 'ironjetpacks:ultimate_coil', wire: 'alloy_infused' }
+        { level: 1, tier: 'wood', volts: LV, prefix: 'lv', fluid: '#forge:soldering_alloy', coil: 'ironjetpacks:basic_coil', wire: 'red_alloy' },
+        { level: 1, tier: 'stone', volts: LV, prefix: 'lv', fluid: '#forge:soldering_alloy', coil: 'ironjetpacks:basic_coil', wire: 'red_alloy' },
+        { level: 1, tier: 'copper', volts: LV, prefix: 'lv', fluid: '#forge:soldering_alloy', coil: 'ironjetpacks:basic_coil', wire: 'red_alloy' },
+        { level: 1, tier: 'bronze', volts: MV, prefix: 'mv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:basic_coil', wire: 'cadmium_copper' },
+        { level: 1, tier: 'iron', volts: MV, prefix: 'mv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:basic_coil', wire: 'cadmium_copper' },
+        { level: 1, tier: 'silver', volts: MV, prefix: 'mv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:basic_coil', wire: 'cadmium_copper' },
+        { level: 2, tier: 'invar', volts: HV, prefix: 'hv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:advanced_coil', wire: 'dark_steel' },
+        { level: 2, tier: 'gold', volts: HV, prefix: 'hv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:advanced_coil', wire: 'dark_steel' },
+        { level: 2, tier: 'electrum', volts: HV, prefix: 'hv', fluid: '#forge:polyethylene', coil: 'ironjetpacks:advanced_coil', wire: 'dark_steel' },
+        { level: 3, tier: 'steel', volts: EV, prefix: 'ev', fluid: '#forge:tetrachloroethylene', coil: 'ironjetpacks:elite_coil', wire: 'end_steel' },
+        { level: 3, tier: 'platinum', volts: EV, prefix: 'ev', fluid: '#forge:tetrachloroethylene', coil: 'ironjetpacks:elite_coil', wire: 'end_steel' },
+        { level: 3, tier: 'diamond', volts: IV, prefix: 'iv', fluid: '#forge:polytetrafluoroethylene', coil: 'ironjetpacks:elite_coil', wire: 'vibrant_alloy' },
+        { level: 3, tier: 'emerald', volts: IV, prefix: 'iv', fluid: '#forge:polytetrafluoroethylene', coil: 'ironjetpacks:elite_coil', wire: 'vibrant_alloy' },
+        { level: 4, tier: 'allthemodium', volts: LuV, prefix: 'luv', fluid: '#forge:polybenzimidazole', coil: 'ironjetpacks:ultimate_coil', wire: 'alloy_infused' },
+        { level: 4, tier: 'vibranium', volts: LuV, prefix: 'luv', fluid: '#forge:polybenzimidazole', coil: 'ironjetpacks:ultimate_coil', wire: 'alloy_infused' },
+        { level: 4, tier: 'unobtainium', volts: LuV, prefix: 'luv', fluid: '#forge:polybenzimidazole', coil: 'ironjetpacks:ultimate_coil', wire: 'alloy_infused' }
     ];
 
     tiers.forEach((tier, index) => {
@@ -87,7 +87,7 @@ ServerEvents.recipes(allthemods => {
         )
         .itemOutputs('ironjetpacks:basic_coil')        
         .duration(400)
-        .EUt(32);
+        .EUt(LV);
 
     allthemods.recipes.gtceu.assembler(`gregification:strap`)
         .itemInputs(
@@ -96,7 +96,7 @@ ServerEvents.recipes(allthemods => {
         )
         .itemOutputs('ironjetpacks:strap')
         .duration(400)
-        .EUt(32);
+        .EUt(LV);
 
     allthemods.recipes.gtceu.assembler(`gregification:advanced_coil`)
         .itemInputs(
@@ -107,7 +107,7 @@ ServerEvents.recipes(allthemods => {
         )
         .itemOutputs('ironjetpacks:advanced_coil')
         .duration(400)
-        .EUt(128);
+        .EUt(MV);
     
     allthemods.recipes.gtceu.assembler(`gregification:elite_coil`)
         .itemInputs(
@@ -118,7 +118,7 @@ ServerEvents.recipes(allthemods => {
         )
         .itemOutputs('ironjetpacks:elite_coil')
         .duration(400)
-        .EUt(512);
+        .EUt(HV);
     
     allthemods.recipes.gtceu.assembler(`gregification:ultimate_coil`)
         .itemInputs(
@@ -129,5 +129,5 @@ ServerEvents.recipes(allthemods => {
         )
         .itemOutputs('ironjetpacks:ultimate_coil')
         .duration(400)
-        .EUt(2048);
+        .EUt(EV);
 });

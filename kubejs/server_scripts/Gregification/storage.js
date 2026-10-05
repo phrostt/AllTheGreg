@@ -7,9 +7,17 @@ ServerEvents.recipes(allthemods => {
         allthemods.shaped(itemID || recipeID, schema, ingredients).id(recipeID);
     }
     
-    const materials = ['oak', 'spruce', 'birch', 'jungle', 'acacia', 'dark_oak', 'crimson', 'warped', 'mangrove', 'cherry']
+    const materials = ['oak', 'spruce', 'birch', 'jungle', 'acacia', 'dark_oak', 'crimson', 'warped', 'mangrove', 'cherry', 'framed']
 
     materials.forEach((wood) => {
+        const mat = (() => {
+        switch(wood) {
+            case 'framed':            
+                return '#forge:plates/aluminium';
+            default:
+                return `minecraft:${wood}_planks`;
+        }
+        })();
         replaceShaped(`functionalstorage:${wood}_1`, null,
             [
                 'PLP',
@@ -19,7 +27,7 @@ ServerEvents.recipes(allthemods => {
             {
                 P: '#forge:plates/steel',
                 C: 'gtceu:bronze_crate',
-                L: `minecraft:${wood}_planks`
+                L: mat
             }
         )
 
@@ -100,6 +108,24 @@ ServerEvents.recipes(allthemods => {
             T: '#forge:ingots/steel'
         }
     );
+
+    replaceShaped('functionalstorage:simple_compacting_drawer', null,
+        [
+            'TPT',
+            'SMS',
+            'PTP'
+        ],
+        {
+            P: 'gtceu:steel_crate',            
+            S: 'gtceu:mv_electric_piston',
+            M: 'gtceu:mv_electric_motor',
+            T: '#forge:ingots/steel'
+        }
+    );
+    
+    allthemods.shapeless('functionalstorage:compacting_framed_drawer', ['functionalstorage:compacting_drawer', '#forge:frames/aluminium']).id('gregification:framed_compacting_drawer');
+    allthemods.shapeless('functionalstorage:framed_simple_compacting_drawer', ['functionalstorage:simple_compacting_drawer', '#forge:frames/aluminium']).id('gregification:framed_simple_compacting_drawer');
+    
 
     replaceShaped('functionalstorage:iron_downgrade', null,
         [
@@ -228,6 +254,8 @@ ServerEvents.recipes(allthemods => {
             
         }
     );
+    
+    allthemods.shapeless('functionalstorage:framed_storage_controller', ['functionalstorage:storage_controller', '#forge:frames/aluminium']).id('gregification:framed_storage_controller');
 
     replaceShaped('functionalstorage:controller_extension', null,
         [
@@ -243,6 +271,9 @@ ServerEvents.recipes(allthemods => {
             
         }
     );
+
+    
+    allthemods.shapeless('functionalstorage:framed_controller_extension', ['functionalstorage:controller_extension', '#forge:frames/aluminium']).id('gregification:framed_controller_extension');
 
     replaceShaped('apotheosis:salvaging_table', null,
         [

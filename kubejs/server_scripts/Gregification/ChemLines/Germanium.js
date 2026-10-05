@@ -1,7 +1,7 @@
 ServerEvents.recipes(allthemods => {
-
-    const GermaniumEUSimple = 128;
-    const GermaniumEUComplex = 32768; //LuV
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const GermaniumEUSimple = MV;
+    const GermaniumEUComplex = LuV; //LuV
 
     allthemods.recipes.gtceu.chemical_reactor('gregification:soda_ash_via_bisulfate')
         .itemInputs('2x #forge:dusts/sodium_bisulfate')

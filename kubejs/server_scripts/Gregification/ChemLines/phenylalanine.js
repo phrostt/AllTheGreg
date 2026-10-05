@@ -1,5 +1,6 @@
 ServerEvents.recipes(allthemods => {
-    const phenylalanineEU = 2048;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const phenylalanineEU = EV;
     allthemods.recipes.gtceu.chemical_reactor('gregification:chemical_reactor/ethylene_oxide')
         .notConsumable('#forge:dusts/silver')
         .inputFluids('#forge:ethylene 1000', '#forge:oxygen 1000')

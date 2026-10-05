@@ -1,7 +1,7 @@
 ServerEvents.recipes(allthemods => {
 
- 
-    const LUV = 32768; // matches your getVoltage() LuV tier
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const LUV = LuV; // matches your getVoltage() LuV tier
     const DUR = 200;
 
     const bacteriaChainStrains = [
@@ -197,13 +197,13 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:osmium 144')
         .itemOutputs('gtceu:bio_organic_nanocomposite_dust')
         .duration(200)
-        .EUt(8192);
+        .EUt(IV);
 
     const rocketTiers = [
-        { nbt: 'Saccharomyces', catalyst: '#forge:dusts/coke', eu: 8192 },
-        { nbt: 'Methanogenesis', catalyst: '#forge:dusts/naquadah', eu: 32768 },
-        { nbt: 'DeinococcusRadiodurans', catalyst: '#forge:dusts/enriched_naquadah', eu: 131072 },
-        { nbt: 'Sphingomonas', catalyst: '#forge:dusts/naquadria', eu: 524288 }
+        { nbt: 'Saccharomyces', catalyst: '#forge:dusts/coke', eu: IV },
+        { nbt: 'Methanogenesis', catalyst: '#forge:dusts/naquadah', eu: LuV },
+        { nbt: 'DeinococcusRadiodurans', catalyst: '#forge:dusts/enriched_naquadah', eu: ZPM },
+        { nbt: 'Sphingomonas', catalyst: '#forge:dusts/naquadria', eu: UV }
     ];
 
     rocketTiers.forEach((rocket, index) => {
@@ -236,7 +236,7 @@ ServerEvents.recipes(allthemods => {
         .chancedOutput('gtceu:strontium_sulfide_dust', 1000, 0)
         .chancedOutput('gtceu:plutonium_241_dust', 500, 0)
         .duration(600)
-        .EUt(32768);
+        .EUt(LuV);
 
     const rotary = (gas, fluid, amount) => {
         // Gas -> Liquid
@@ -261,6 +261,6 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:phenolic_resin 1440')
         .outputFluids('gtceu:organic_polymer 1440')
         .duration(300)
-        .EUt(32768);
+        .EUt(LuV);
     
 });

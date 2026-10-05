@@ -1,7 +1,7 @@
 // @ts-nocheck
 // priority: -1000
 ServerEvents.recipes(allthemods => {
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const addEBF = (itemsIn, fluidIn, itemsOut, fluidOut, temp, duration, eu, program, rID) => {
         const source = Array.isArray(itemsOut) ? itemsOut[0] : itemsOut;
         const outputID = String(source || "unknown").replace(/[^a-z0-9]/gi, '_');
@@ -30,7 +30,7 @@ ServerEvents.recipes(allthemods => {
         null,
         2800,
         400,
-        512
+        HV
     );
 
     //red alloy ingot
@@ -41,7 +41,7 @@ ServerEvents.recipes(allthemods => {
         null,
         1000,
         400,
-        128
+        MV
     );
 
     addEBF(
@@ -51,7 +51,7 @@ ServerEvents.recipes(allthemods => {
         null,
         12600,
         9000,
-        131072
+        ZPM
     )
 
     addEBF(
@@ -61,7 +61,7 @@ ServerEvents.recipes(allthemods => {
         null,
         12600,
         9000,
-        524288
+        UV
     );
 
 
@@ -72,7 +72,7 @@ ServerEvents.recipes(allthemods => {
         null,
         12600,
         9000,
-        131072
+        ZPM
     );
 
     //sky steel
@@ -83,7 +83,7 @@ ServerEvents.recipes(allthemods => {
         null,
         3600,
         400,
-        512
+        HV
     );
 
     //sky insulated resin
@@ -94,7 +94,7 @@ ServerEvents.recipes(allthemods => {
         null,
         3600,
         400,
-        512
+        HV
     );
 
     addEBF(['#forge:dusts/semi_stable_clathrate','evilcraft:vengeance_essence'],
@@ -103,7 +103,7 @@ ServerEvents.recipes(allthemods => {
         null,
         5400,
         2000,
-        2048,3
+        EV,3
     );
 
     addEBF('#forge:dusts/semi_stable_clathrate',
@@ -112,7 +112,7 @@ ServerEvents.recipes(allthemods => {
         null,
         5400,
         5000,
-        2048,
+        EV,
         1
     );
 
@@ -123,7 +123,7 @@ ServerEvents.recipes(allthemods => {
         null,
         5400,
         2500,
-        2048,
+        EV,
         2,
         'semi_stable_clathrate_2'
     );
@@ -135,7 +135,7 @@ ServerEvents.recipes(allthemods => {
         null,
         5400,
         6000,
-        2048,
+        EV,
         1
     );
 
@@ -146,7 +146,7 @@ ServerEvents.recipes(allthemods => {
         null,
         5400,
         3000,
-        2048,
+        EV,
         2,
         'stabilized_clathrate_2'
     );

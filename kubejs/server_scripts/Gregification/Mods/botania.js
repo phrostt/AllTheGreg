@@ -1,4 +1,5 @@
 ServerEvents.recipes(allthemods => {
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const stage1 = 'gtceu:water_stage_1'
     const stage2 = 'gtceu:water_stage_2'
     const stage3 = 'gtceu:water_stage_3'
@@ -10,7 +11,7 @@ ServerEvents.recipes(allthemods => {
         .addData('ebf_temp', 3600)
         .circuit(2)
         .duration(100)
-        .EUt(128);
+        .EUt(MV);
 
     allthemods.recipes.gtceu.mana_converter('eu_to_liquid_mana')
         .inputFluids(`${stage1} 1280}`)
@@ -18,14 +19,14 @@ ServerEvents.recipes(allthemods => {
         .addData('ebf_temp', 3600)
         .circuit(1)
         .duration(100)
-        .EUt(128);
+        .EUt(MV);
 
     allthemods.recipes.gtceu.mana_converter('mana_to_portal_fluid')
         .inputFluids('#forge:mana_essence 1000')
         .outputFluids('gtceu:alfheim_portal_fluid 1000')
         .addData('ebf_temp', 3600)
         .duration(100)
-        .EUt(128);
+        .EUt(MV);
 
     allthemods.recipes.gtceu.mana_burner('coal_to_liquid_mana')
         .itemInputs('#minecraft:coals')
@@ -82,9 +83,9 @@ ServerEvents.recipes(allthemods => {
     const runicDuration = 600;
     const infusionDuration = 1200;
 
-    const petalVoltage = 512;
-    const runicVoltage = 2048;
-    const infusionVoltage = 8192;
+    const petalVoltage = MV;
+    const runicVoltage = EV;
+    const infusionVoltage = IV;
 
     //petal apothecary
     allthemods.forEachRecipe({ type: 'botania:petal_apothecary' }, rawRecipe => {
@@ -159,7 +160,7 @@ ServerEvents.recipes(allthemods => {
             .itemOutputs(outputItems)
             .inputFluids(`gtceu:mana_essence ${manaCost}`)
             .duration(runicDuration)
-            .EUt(512);
+            .EUt(HV);
     });
 
     //mana infuser
@@ -319,13 +320,13 @@ ServerEvents.recipes(allthemods => {
         6: 'gtceu:technomancy_orb'
     };
      const EUTiers = {
-        1: 32,     //lv
-        2: 128,    //mv
-        3: 512,    //hv
-        4: 2048,   //ev   
-        5: 8192,   //iv
-        6: 32768,   //luv
-        7: 131072   //zpm
+        1: LV,     //lv
+        2: MV,    //mv
+        3: HV,    //hv
+        4: EV,   //ev   
+        5: IV,   //iv
+        6: LuV,   //luv
+        7: ZPM   //zpm
     };
 
     allthemods.forEachRecipe({ type: 'bloodmagic:arc' }, rawRecipe => {
@@ -502,7 +503,7 @@ ServerEvents.recipes(allthemods => {
         .notConsumable('gtceu:technomancy_orb')
         .itemOutputs('gtceu:thermal_spark')
         .duration(1000)
-        .EUt(EUTiers[6]);
+        .EUt(LuV);
 
     const CATALYST_ITEM_IDS = {
         'botania:alchemy_catalyst': 'botania:alchemy_catalyst',
@@ -554,7 +555,7 @@ ServerEvents.recipes(allthemods => {
                     .itemOutputs(outputItem)
                     .inputFluids(`gtceu:mana_essence ${manaCost}`)
                     .duration(10)
-                    .EUt(512);
+                    .EUt(HV);
  
                 // --- Catalyst (Alchemy/Conjuration) as a non-consumed second input ---
                 if (recipe.catalyst && recipe.catalyst.block) {
@@ -582,7 +583,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs(manaSteel)
         .inputFluids('gtceu:mana_essence 10000')
         .duration(10)
-        .EUt(512);
+        .EUt(HV);
 
     
     let alfheimRecipes = 
@@ -606,13 +607,13 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs(recipe.output)
         .inputFluids('#forge:alfheim_portal_fluid 1000')
         .duration(10)
-        .EUt(512);
+        .EUt(IV);
     });
     
     allthemods.recipes.gtceu.assembler('gregification/mana_infuser')
         .itemInputs('gtceu:iv_machine_hull', '2x gtceu:iv_electric_pump', '2x gtceu:iv_electric_piston', '2x #gtceu:circuits/iv', '8x #forge:plates/semi_stable_clathrate')                    
         .itemOutputs('gtceu:mana_infuser')
         .inputFluids('#forge:mana_essence 9200')
-        .duration(8129)
-        .EUt(600);            
+        .duration(600)
+        .EUt(IV);            
 });

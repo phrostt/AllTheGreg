@@ -151,86 +151,6 @@ const mekanism = [
 ]
 
 
-const modalloys = [
-    // --- EnderIO Alloys ---
-    { name: 'copper_alloy', components: '1x copper, 1x silicon', color: 0x935B3B, iconSet: 'METALLIC', voltage: 32, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 128 } },
-    { name: 'conductive_alloy', components: '1x iron, 1x redstone', color: 0xF7B066, iconSet: 'METALLIC', voltage: 128, loss: 1, cBlast: { temp: 1700, duration: 400, volts: 128 } },
-    { name: 'energetic_alloy', components: '1x gold, 1x redstone, 1x glowstone', color: 0xFFB933, iconSet: 'METALLIC', voltage: 512, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 128 } },
-    { name: 'vibrant_alloy', components: '1x energetic_alloy, 1x ender_pearl', color: 0xB6F132, iconSet: 'METALLIC', voltage: 2048, loss: 1, cBlast: { temp: 2700, duration: 400, volts: 512 } },
-    { name: 'pulsating_alloy', components: '1x iron, 1x ender_pearl', color: 0x66FF82, iconSet: 'METALLIC', voltage: 2048, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 512 } },
-    { name: 'soularium', components: '1x gold', color: 0x56402C, iconSet: 'METALLIC', voltage: 128, loss: 0, cBlast: { temp: 2700, duration: 400, volts: 512 } },
-    { name: 'dark_steel', components: '1x steel, 1x carbon, 1x obsidian', color: 0x3D3D3D, iconSet: 'METALLIC', voltage: 512, loss: 2, cBlast: { temp: 2700, duration: 400, volts: 512 } },
-    { name: 'end_steel', components: '1x dark_steel, 1x endstone, 1x obsidian', color: 0xE6F1A8, iconSet: 'METALLIC', voltage: 2048, loss: 0, cBlast: { temp: 3600, duration: 400, volts: 2048 } },
-
-    // --- Thermal Alloys ---
-    { name: 'signalum', pipe: true, color: 0xFF5500, iconSet: 'METALLIC', voltage: 128, loss: 1, components: '1x silver, 3x copper, 4x redstone', cBlast: { temp: 1700, duration: 400, volts: 512 } },
-    { name: 'lumium', pipe: true, color: 0xFFFFAA, iconSet: 'METALLIC', voltage: 512, loss: 1, components: '1x silver, 3x tin, 2x glowstone', cBlast: { temp: 1700, duration: 600, volts: 2048 } },
-    { name: 'enderium', pipe: true, color: 0x0B6156, iconSet: 'METALLIC', voltage: 2048, loss: 1, components: '1x diamond, 3x lead, 2x ender_pearl', cBlast: { temp: 2700, duration: 800, volts: 8192 } },
-
-    // --- Botania Metals ---
-    { name: 'manasteel', element: 'manasteel', color: 0x47CCFF, cDust: true, iconSet: 'METALLIC', voltage: 128, loss: 1 },
-    { name: 'elementium', element: 'elementium', color: 0xF687FF, cDust: true, iconSet: 'METALLIC', voltage: 512, loss: 2 },
-    { name: 'terrasteel', element: 'terrasteel', color: 0x34FF23, cDust: true, iconSet: 'METALLIC', voltage: 2048, loss: 2 },
-    { name: 'gaia', element: 'gaia', color: 0xF7A8D8, cDust: true, iconSet: 'METALLIC', voltage: 131072, loss: 2 },
-    { name: 'alfsteel', element: 'alfsteel', color: 0xFD9D32, cDust: true, iconSet: 'METALLIC', voltage: 32768, superconductor: true },
-
-    // --- Magic Gating Materials ---
-    { name: 'hellforged', ore: true, element: 'hellforged', color: 0xC1D5EC, iconSet: 'METALLIC', voltage: 512, loss: 2 },
-    { name: 'iesnium', ore: true, element: 'iesnium', color: 0x9FD1FF, iconSet: 'METALLIC', voltage: 512, loss: 1 },
-
-    // --- AllTheModium End-Game Gating ---
-    { name: 'allthemodium', ore: true, element: 'allthemodium', color: 0xFAD64A, iconSet: 'METALLIC', voltage: 32768, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-    { name: 'vibranium', ore: true, element: 'vibranium', color: 0x6DFF6D, iconSet: 'METALLIC', voltage: 131072, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-    { name: 'unobtainium', ore: true, element: 'unobtainium', color: 0xA336FF, iconSet: 'METALLIC', voltage: 524288, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-
-    // --- Draconic Evolution ---
-    { name: 'draconium', ore: true, element: 'draconium', color: 0x502C6C, iconSet: 'SHINY', voltage: 8192, loss: 1, cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
-    { name: 'draconium_awakened', element: 'draconium_awakened', color: 0xFF6600, iconSet: 'BRIGHT', voltage: 2097152, superconductor: true },
-    { name: 'tenebrium', element: 'tenebrium', color: 0x101010, iconSet: 'METALLIC', voltage: 8388608, superconductor: true },
-
-    // --- Mekanism Processing ---
-    { name: 'refined_obsidian', components: '1x obsidian, 1x diamond', color: 0x5C3854, iconSet: 'SHINY', voltage: 2048, loss: 2 },
-    { name: 'refined_glowstone', components: '1x glowstone, 1x osmium', color: 0xFFE30B, iconSet: 'SHINY', voltage: 2048, loss: 1 },
-    { name: 'alloy_infused', pipe: true, components: '1x iron', color: 0xE61940, iconSet: 'METALLIC', voltage: 32768, loss: 2 },
-    { name: 'alloy_reinforced', pipe: true, components: '1x alloy_infused', color: 0x00F5FF, iconSet: 'METALLIC', voltage: 131072, loss: 2 },
-    { name: 'alloy_atomic', pipe: true, components: '1x alloy_reinforced', color: 0xBF40FF, iconSet: 'METALLIC', voltage: 524288, loss: 2 },
-
-    // --- Tech Automation Basics ---
-    { name: 'compressed_iron', components: '1x iron', color: 0x474747, cDust: true, iconSet: 'METALLIC', voltage: 128, loss: 1 },
-    { name: 'hop_graphite', components: '8x carbon', color: 0x1C1C1C, iconSet: 'DULL', voltage: 8192, loss: 1 },
-
-    // --- Industrial Foregoing & Tech Frames ---
-    { name: 'pink_slime', element: 'pink_slime', components: '2x iron, 2x gold', color: 0xE66EA9, iconSet: 'SHINY', voltage: 512, loss: 2 },
-    { name: 'plastic', color: 0xA9A9A9, iconSet: 'DULL', voltage: 0, loss: 0 },
-    { name: 'deorum', element: 'deorum', components: '4x carbon, 1x gold', color: 0xFFD700, iconSet: 'METALLIC', voltage: 128, loss: 1 },
-    { name: 'ferrognetic', components: '1x garmonbozia, 1x dark_steel, 1x pink_slime, 1x alfsteel, 1x hellforged, 1x iesnium', pipe: true, color: 0xD1D1D1, iconSet: 'METALLIC', voltage: 131072, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
-
-    // --- Advanced Hybrid Materials (Naquadah/ATM) ---
-    { name: 'naquamodium', color: 0xF8FF40, iconSet: 'METALLIC', voltage: 32768, superconductor: true, cDust: true, components: '5x naquadah, 3x allthemodium', cBlast: { temp: 2700, duration: 1200, volts: 512 } },
-    { name: 'naquabranium', color: 0x00FF00, iconSet: 'METALLIC', voltage: 131072, superconductor: true, cDust: true, components: '5x naquadah, 3x vibranium', cBlast: { temp: 3600, duration: 1200, volts: 2048 } },
-    { name: 'naquatainium', color: 0x9D40FF, iconSet: 'METALLIC', voltage: 524288, superconductor: true, cDust: true, components: '5x naquadah, 3x unobtainium', cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
-
-    // --- Cosmic & Singularity End-Game Alloys ---
-    { name: 'eternium', pipe: true, magnetic: true, color: 0x2d7d69, iconSet: 'METALLIC', components: '2x eternal, 4x sculk, 2x ferrognetic, 3x netherite, 5x neutronium', voltage: 8388608, loss: 16, cBlast: { temp: 10800, duration: 1200, volts: 2097152 } },
-    { name: 'cosmic_alloy', pipe: true, color: 0xe4ac29, iconSet: 'METALLIC', components: '3x cosmic_matter, 4x alfsteel, 3x americium, 2x naquadria, 2x nether_star', voltage: 33554432, loss: 16, cBlast: { temp: 12600, duration: 1500, volts: 8388608 } },
-    { name: 'antimatter_alloy', pipe: true, color: 0x8a3947, iconSet: 'METALLIC', components: '3x antimatter, 3x duranium, 2x darmstadtium, 4x iridium', voltage: 134217728, loss: 16, cBlast: { temp: 15300, duration: 2000, volts: 33554432 } },
-    { name: 'singularity_alloy', pipe: true, color: 0xab24a2, iconSet: 'METALLIC', voltage: 536870912, loss: 16, cBlast: { temp: 18900, duration: 2500, volts: 134217728 } },
-    { name: 'absolute_alloy', pipe: true, color: 0xE6F2FF, iconSet: 'METALLIC', voltage: 2147483647, loss: 16, cBlast: { temp: 21600, duration: 3000, volts: 536870912 } },
-
-    // --- Extreme Tech Overhaul (UEV - MAX) ---
-    { name: 'alltheneutronium', pipe: true, color: 0xfcfc3d, iconSet: 'METALLIC', components: '2x naquamodium, 2x neutronium, 1x alloy_infused, 3x corrosive', voltage: 8388608, loss: 0, superconductor: false, cBlast: { temp: 10800, duration: 1200, volts: 32768 }, rotor: { speed: 1200, power: 300, efficiency: 13.0, durability: 655360 } },
-    { name: 'vibtronium', pipe: true, color: 0x72fcb7, iconSet: 'METALLIC', components: '2x naquabranium, 2x alltheneutronium, 1x alloy_reinforced, 3x destructive', voltage: 33554432, loss: 0, superconductor: false, cBlast: { temp: 12600, duration: 1200, volts: 131072 }, rotor: { speed: 1400, power: 400, efficiency: 14.0, durability: 2621440 } },
-    { name: 'unobtronium', pipe: true, color: 0xe782f2, iconSet: 'METALLIC', components: '2x naquatainium, 2x vibtronium, 1x alloy_atomic, 3x vengeful', voltage: 134217728, loss: 0, superconductor: false, cBlast: { temp: 15300, duration: 1200, volts: 524288 }, rotor: { speed: 1600, power: 500, efficiency: 16.0, durability: 10485760 } },
-    { name: 'deorum_alloy', pipe: true, color: 0xCCDD22, iconSet: 'METALLIC', components: '3x naquadria, 2x deorum, 2x trinium, 3x steadfast', voltage: 536870912, loss: 0, superconductor: false, cBlast: { temp: 18900, duration: 1200, volts: 524288 }, rotor: { speed: 1800, power: 600, efficiency: 18.0, durability: 41943040 } },
-    { name: 'demonic_alloy', components: '3x demon, 3x tenebrium, 3x caesium, 3x tritanium, 3x gaia', pipe: true, color: 0x22DDCC, iconSet: 'METALLIC', voltage: 2147483647, loss: 0, superconductor: false, cBlast: { temp: 21600, duration: 1200, volts: 524288 }, rotor: { speed: 2000, power: 800, efficiency: 20.0, durability: 167772160 } },
-
-    { name: 'rhenium_nickel_alloy', color: 0xEAEAEA, iconSet: 'METALLIC', components: '3x rhenium, 1x nickel', voltage: 524288, loss: 2, superconductor: false, cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 800, power: 500, efficiency: 10.0, durability: 163840 } },
-    { name: 'rheni_zirconium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '1x rhenium_nickel_alloy, 1x zirconium', cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
-    { name: 'thorium_berkelium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '2x thorium, 1x berkelium', voltage: 131072, superconductor: true, cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
-    { name: 'potassium_calcium_orthosilicate', color: 0xDAA520, iconSet: 'METALLIC', components: '2x potassium, 1x calcium, 1x silicon, 4x oxygen', cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1200, power: 850, efficiency: 17.0, durability: 400000 } },
-    { name: 'bedrockium', color: 0x101010, iconSet: 'METALLIC' },
-];
-
 const gasses = [
     { name: 'hydrogen_selenide', components: '2x hydrogen, 1x selenium', color: 0xDCDCDC, iconSet: 'METALLIC', formula: 'H2Se' },
     { name: 'ozone', components: '3x oxygen', color: 0x3366FF, formula: 'O3', iconSet: 'FLUID' },
@@ -291,7 +211,7 @@ const fluids = [
     { name: 'essence_of_destruction', color: 0x2F4F4F, iconSet: 'FLUID' },
     { name: 'stable_life_essence', color: 0xFF69B4, iconSet: 'FLUID' },
     { name: 'saturated_tau', color: 0xFF8C00, iconSet: 'FLUID' },
-    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },    
+    { name: 'liquid_dragon_breath', color: 0xe577e3, iconSet: 'FLUID' },
     { name: 'liquid_chaos', color: 0x111111, iconSet: 'FLUID' },
     { name: 'radioactive_acetate_slurry', color: 0x99FF33, iconSet: 'RADIOACTIVE' },
     { name: 'mixed_radioactive_concentrate', color: 0xCCFF66, iconSet: 'FLUID' },
@@ -350,15 +270,15 @@ const fluids = [
     { name: 'rocket_fuel_stage_3', color: 0xC4D7D1, iconSet: 'FLUID' },
     { name: 'rocket_fuel_stage_4', color: 0xFFF176, iconSet: 'FLUID' },
 
-    { name: 'ethylene_oxide', components:'1x ethylene, 1x oxygen', formula: 'C2H4O', color: 0xEAF2F8, iconSet: 'FLUID' },    
+    { name: 'ethylene_oxide', components: '1x ethylene, 1x oxygen', formula: 'C2H4O', color: 0xEAF2F8, iconSet: 'FLUID' },
     { name: 'phenylacetaldehyde', components: '1x phenyl, 1x acetaldehyde', formula: 'C8H8O', color: 0xFFF5D6, iconSet: 'FLUID' },
-    { name: 'phenylalanine_nitrile', components: '9x carbon, 10x hydrogen, 2x nitrogen', formula: 'C9H10N2', color: 0xD4A373, iconSet: 'FLUID', noDecomp: true },    
+    { name: 'phenylalanine_nitrile', components: '9x carbon, 10x hydrogen, 2x nitrogen', formula: 'C9H10N2', color: 0xD4A373, iconSet: 'FLUID', noDecomp: true },
     { name: 'phenolic_resin', components: '7x carbon, 6x hydrogen, 2x oxygen', formula: 'C7H6O2', color: 0x5C2E16, iconSet: 'FLUID', noDecomp: true },
     { name: 'eucalyptus_oil', color: 0xD4E8A8, iconSet: 'FLUID', noDecomp: true },
     { name: 'cineole', components: '10x carbon, 18x hydrogen, 1x oxygen', formula: 'C10H18O', color: 0xEAF6E4, iconSet: 'FLUID' },
-    { name: 'pinene', components: '10x carbon, 16x hydrogen', formula: 'C10H16', color: 0xF2F0D8, iconSet: 'FLUID' },    
-    
-    
+    { name: 'pinene', components: '10x carbon, 16x hydrogen', formula: 'C10H16', color: 0xF2F0D8, iconSet: 'FLUID' },
+
+
     { name: 'exo_pinane_dimer', components: '20x carbon, 36x hydrogen', formula: 'C20H36', color: 0xF7EFC8, iconSet: 'FLUID', noDecomp: true },
     { name: 'terpene_jet_fuel', color: 0xE8C547, iconSet: 'FLUID', noDecomp: true },
     { name: 'boron_slurry_fuel', color: 0x5E5A3A, iconSet: 'FLUID', noDecomp: true },
@@ -462,45 +382,126 @@ const dusts = [
     { name: 'cerium_oxide', components: '1x cerium, 2x oxygen', color: 0xF5DEB3, formula: 'CeO2', iconSet: 'DULL' },
     { name: 'thorium_oxide', components: '1x thorium, 2x oxygen', color: 0xe8e8e8, formula: 'ThO2', iconSet: 'DULL' },
     { name: 'phenyl', components: '6x carbon, 5x hydrogen', formula: 'C6H5', color: 0x3A3A3A, iconSet: 'DULL' },
-    { name: 'phenylalanine', components: '9x carbon, 11x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C9H11NO2', color: 0xF8F9FA, iconSet: 'DULL', noDecomp: true },    
+    { name: 'phenylalanine', components: '9x carbon, 11x hydrogen, 1x nitrogen, 2x oxygen', formula: 'C9H11NO2', color: 0xF8F9FA, iconSet: 'DULL', noDecomp: true },
     { name: 'cineole_phosphate', components: '10x carbon, 21x hydrogen, 5x oxygen, 1x phosphorus', formula: '(C10H18O)(H3PO4)', color: 0xF8F6EE, iconSet: 'DULL', noDecomp: true },
     { name: 'camphene', components: '10x carbon, 16x hydrogen', formula: 'C10H16', color: 0xF5F5EE, iconSet: 'DULL', noDecomp: true },
     { name: 'aluminium_chloride', components: '1x aluminium, 3x chlorine', formula: 'AlCl3', color: 0xF5F5F0, iconSet: 'DULL' },
-    { name: 'isoborneol', components: '10x carbon, 18x hydrogen, 1x oxygen', formula: 'C10H18O', color: 0xF8F8F2, iconSet: 'DULL', noDecomp: true }, 
+    { name: 'isoborneol', components: '10x carbon, 18x hydrogen, 1x oxygen', formula: 'C10H18O', color: 0xF8F8F2, iconSet: 'DULL', noDecomp: true },
     { name: 'camphor', components: '10x carbon, 16x hydrogen, 1x oxygen', formula: 'C10H16O', color: 0xE8F0EA, iconSet: 'GLASS', noDecomp: true },
-    { name: 'pgm_bio_ash',        color: 0x8A8676, iconSet: 'DULL', noDecomp: true },
+    { name: 'pgm_bio_ash', color: 0x8A8676, iconSet: 'DULL', noDecomp: true },
     { name: 'rare_earth_bio_ash', color: 0x857C8A, iconSet: 'DULL', noDecomp: true },
-    { name: 'radium_bio_ash',     color: 0x7D8A6E, iconSet: 'DULL', noDecomp: true }, 
-    { name: 'indium_bio_ash', color: 0x6E6C86, iconSet: 'DULL', noDecomp: true },   
+    { name: 'radium_bio_ash', color: 0x7D8A6E, iconSet: 'DULL', noDecomp: true },
+    { name: 'indium_bio_ash', color: 0x6E6C86, iconSet: 'DULL', noDecomp: true },
     { name: 'amygdalin', components: '20x carbon, 27x hydrogen, 1x nitrogen, 11x oxygen', formula: 'C20H27NO11', color: 0xEFE4CC, iconSet: 'DULL', noDecomp: true },
-    { name: 'iodine_bio_ash',    color: 0x6F5F7E, iconSet: 'DULL', noDecomp: true },
+    { name: 'iodine_bio_ash', color: 0x6F5F7E, iconSet: 'DULL', noDecomp: true },
     { name: 'strontium_bio_ash', color: 0x8E6F6A, iconSet: 'DULL', noDecomp: true },
-    { name: 'rhenium_bio_ash',   color: 0x7E8288, iconSet: 'DULL', noDecomp: true },
-    { name: 'tantalum_bio_ash',  color: 0x6E7682, iconSet: 'DULL', noDecomp: true },
-    { name: 'caesium_bio_ash',   color: 0x8E8C9E, iconSet: 'DULL', noDecomp: true },
-    { name: 'antimony_bio_ash',  color: 0x5A5856, iconSet: 'DULL', noDecomp: true },
-    { name: 'selenium_bio_ash',  color: 0x8A5F52, iconSet: 'DULL', noDecomp: true },
+    { name: 'rhenium_bio_ash', color: 0x7E8288, iconSet: 'DULL', noDecomp: true },
+    { name: 'tantalum_bio_ash', color: 0x6E7682, iconSet: 'DULL', noDecomp: true },
+    { name: 'caesium_bio_ash', color: 0x8E8C9E, iconSet: 'DULL', noDecomp: true },
+    { name: 'antimony_bio_ash', color: 0x5A5856, iconSet: 'DULL', noDecomp: true },
+    { name: 'selenium_bio_ash', color: 0x8A5F52, iconSet: 'DULL', noDecomp: true },
     { name: 'tellurium_bio_ash', color: 0x7F7A62, iconSet: 'DULL', noDecomp: true },
-    { name: 'lutetium_bio_ash',  color: 0x7D7F8C, iconSet: 'DULL', noDecomp: true },
-    { name: 'hafnium_bio_ash',   color: 0x86787A, iconSet: 'DULL', noDecomp: true },
-    { name: 'samarium_bio_ash',  color: 0x8C7C5E, iconSet: 'DULL', noDecomp: true },
-    { name: 'scandium_bio_ash',  color: 0x7C8590, iconSet: 'DULL', noDecomp: true },
-    { name: 'boron_bio_ash',     color: 0x8B8475, iconSet: 'DULL', noDecomp: true },
-    { name: 'uranium_bio_ash',   color: 0x7E8A55, iconSet: 'DULL', noDecomp: true },
+    { name: 'lutetium_bio_ash', color: 0x7D7F8C, iconSet: 'DULL', noDecomp: true },
+    { name: 'hafnium_bio_ash', color: 0x86787A, iconSet: 'DULL', noDecomp: true },
+    { name: 'samarium_bio_ash', color: 0x8C7C5E, iconSet: 'DULL', noDecomp: true },
+    { name: 'scandium_bio_ash', color: 0x7C8590, iconSet: 'DULL', noDecomp: true },
+    { name: 'boron_bio_ash', color: 0x8B8475, iconSet: 'DULL', noDecomp: true },
+    { name: 'uranium_bio_ash', color: 0x7E8A55, iconSet: 'DULL', noDecomp: true },
     { name: 'manganese_bio_ash', color: 0x6E5E66, iconSet: 'DULL', noDecomp: true },
     { name: 'magnesium_bio_ash', color: 0x7F8A78, iconSet: 'DULL', noDecomp: true },
-    { name: 'lithium_bio_ash',   color: 0x8E7276, iconSet: 'DULL', noDecomp: true },
-    { name: 'nickel_bio_ash',    color: 0x6F8070, iconSet: 'DULL', noDecomp: true },
-    { name: 'zinc_bio_ash',      color: 0x7C8086, iconSet: 'DULL', noDecomp: true },
-    { name: 'tin_bio_ash',       color: 0x828079, iconSet: 'DULL', noDecomp: true },
-    { name: 'cobalt_bio_ash',    color: 0x5E6A82, iconSet: 'DULL', noDecomp: true },
-    { name: 'copper_bio_ash',    color: 0x8A6E5A, iconSet: 'DULL', noDecomp: true },
-    { name: 'lead_bio_ash',      color: 0x67667A, iconSet: 'DULL', noDecomp: true },
-    { name: 'chromium_bio_ash',  color: 0x7A5C5C, iconSet: 'DULL', noDecomp: true },
-    { name: 'silver_bio_ash',    color: 0x8C8E92, iconSet: 'DULL', noDecomp: true },
+    { name: 'lithium_bio_ash', color: 0x8E7276, iconSet: 'DULL', noDecomp: true },
+    { name: 'nickel_bio_ash', color: 0x6F8070, iconSet: 'DULL', noDecomp: true },
+    { name: 'zinc_bio_ash', color: 0x7C8086, iconSet: 'DULL', noDecomp: true },
+    { name: 'tin_bio_ash', color: 0x828079, iconSet: 'DULL', noDecomp: true },
+    { name: 'cobalt_bio_ash', color: 0x5E6A82, iconSet: 'DULL', noDecomp: true },
+    { name: 'copper_bio_ash', color: 0x8A6E5A, iconSet: 'DULL', noDecomp: true },
+    { name: 'lead_bio_ash', color: 0x67667A, iconSet: 'DULL', noDecomp: true },
+    { name: 'chromium_bio_ash', color: 0x7A5C5C, iconSet: 'DULL', noDecomp: true },
+    { name: 'silver_bio_ash', color: 0x8C8E92, iconSet: 'DULL', noDecomp: true },
     { name: 'iron_bio_ash', color: 0x7A5E50, iconSet: 'DULL', noDecomp: true },
-    { name: 'titanium_bio_ash',  color: 0x7E7A86, iconSet: 'DULL', noDecomp: true }
+    { name: 'titanium_bio_ash', color: 0x7E7A86, iconSet: 'DULL', noDecomp: true }
 
+];
+const modalloys = [
+    // --- Magic Gating Materials ---
+    { name: 'hellforged', ore: true, element: 'hellforged', color: 0xC1D5EC, iconSet: 'METALLIC', voltage: 512, loss: 2 },
+    { name: 'iesnium', ore: true, element: 'iesnium', color: 0x9FD1FF, iconSet: 'METALLIC', voltage: 512, loss: 1 },
+
+    // --- AllTheModium End-Game Gating ---
+    { name: 'allthemodium', ore: true, element: 'allthemodium', color: 0xFAD64A, iconSet: 'METALLIC', voltage: 32768, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'vibranium', ore: true, element: 'vibranium', color: 0x6DFF6D, iconSet: 'METALLIC', voltage: 131072, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+    { name: 'unobtainium', ore: true, element: 'unobtainium', color: 0xA336FF, iconSet: 'METALLIC', voltage: 524288, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+
+    // --- EnderIO Alloys ---
+    { name: 'copper_alloy', components: '1x copper, 1x silicon', color: 0x935B3B, iconSet: 'METALLIC', voltage: 32, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 128 } },
+    { name: 'conductive_alloy', components: '1x iron, 1x redstone', color: 0xF7B066, iconSet: 'METALLIC', voltage: 128, loss: 1, cBlast: { temp: 1700, duration: 400, volts: 128 } },
+    { name: 'energetic_alloy', components: '1x gold, 1x redstone, 1x glowstone', color: 0xFFB933, iconSet: 'METALLIC', voltage: 512, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 128 } },
+    { name: 'vibrant_alloy', components: '1x energetic_alloy, 1x ender_pearl', color: 0xB6F132, iconSet: 'METALLIC', voltage: 2048, loss: 1, cBlast: { temp: 2700, duration: 400, volts: 512 } },
+    { name: 'pulsating_alloy', components: '1x iron, 1x ender_pearl', color: 0x66FF82, iconSet: 'METALLIC', voltage: 2048, loss: 2, cBlast: { temp: 1700, duration: 400, volts: 512 } },
+    { name: 'soularium', components: '1x gold, 1x soul_sand', color: 0x56402C, iconSet: 'METALLIC', voltage: 128, loss: 0, cBlast: { temp: 2700, duration: 400, volts: 512 } },
+    { name: 'dark_steel', components: '1x steel, 1x carbon, 1x obsidian', color: 0x3D3D3D, iconSet: 'METALLIC', voltage: 512, loss: 2, cBlast: { temp: 2700, duration: 400, volts: 512 } },
+    { name: 'end_steel', components: '1x dark_steel, 1x endstone, 1x obsidian', color: 0xE6F1A8, iconSet: 'METALLIC', voltage: 2048, loss: 0, cBlast: { temp: 3600, duration: 400, volts: 2048 } },
+
+    { name: 'bedrockium', color: 0x101010, iconSet: 'METALLIC', cBlast: { temp: 7200, duration: 1200, volts: 524288 } },
+    // --- Botania Metals ---
+    { name: 'manasteel', element: 'manasteel', color: 0x47CCFF, cDust: true, iconSet: 'METALLIC', voltage: 128, loss: 1 },
+    { name: 'elementium', element: 'elementium', color: 0xF687FF, cDust: true, iconSet: 'METALLIC', voltage: 512, loss: 2 },
+    { name: 'terrasteel', element: 'terrasteel', color: 0x34FF23, cDust: true, iconSet: 'METALLIC', voltage: 2048, loss: 2 },
+    { name: 'gaia', element: 'gaia', color: 0xF7A8D8, cDust: true, iconSet: 'METALLIC', voltage: 131072, loss: 2 },
+    { name: 'alfsteel', element: 'alfsteel', color: 0xFD9D32, cDust: true, iconSet: 'METALLIC', voltage: 32768, superconductor: true },
+
+    { name: 'tenebrium', element: 'tenebrium', color: 0x101010, iconSet: 'METALLIC', voltage: 8388608, superconductor: true },
+
+    // --- Industrial Foregoing & Tech Frames ---
+    { name: 'pink_slime', element: 'pink_slime', components: '2x iron, 2x gold', color: 0xE66EA9, iconSet: 'SHINY', voltage: 512, loss: 2 },
+    { name: 'plastic', color: 0xA9A9A9, iconSet: 'DULL', voltage: 0, loss: 0 },
+    { name: 'deorum', element: 'deorum', components: '4x carbon, 1x gold', color: 0xFFD700, iconSet: 'METALLIC', voltage: 128, loss: 1 },
+    { name: 'ferrognetic', components: '1x garmonbozia, 1x dark_steel, 1x pink_slime, 1x alfsteel, 1x hellforged, 1x iesnium', pipe: true, color: 0xD1D1D1, iconSet: 'METALLIC', voltage: 131072, loss: 1, cBlast: { temp: 5400, duration: 1200, volts: 8192 } },
+
+    // --- Mekanism Processing ---
+    { name: 'refined_obsidian', components: '1x obsidian, 1x diamond', color: 0x5C3854, iconSet: 'SHINY', voltage: 2048, loss: 2 },
+    { name: 'refined_glowstone', components: '1x glowstone, 1x osmium', color: 0xFFE30B, iconSet: 'SHINY', voltage: 2048, loss: 1 },
+    { name: 'alloy_infused', pipe: true, components: '1x iron', color: 0xE61940, iconSet: 'METALLIC', voltage: 32768, loss: 2 },
+    { name: 'alloy_reinforced', pipe: true, components: '1x alloy_infused', color: 0x00F5FF, iconSet: 'METALLIC', voltage: 131072, loss: 2 },
+    { name: 'alloy_atomic', pipe: true, components: '1x alloy_reinforced', color: 0xBF40FF, iconSet: 'METALLIC', voltage: 524288, loss: 2 },
+
+    // --- Advanced Hybrid Materials (Naquadah/ATM) ---
+    { name: 'naquamodium', color: 0xF8FF40, iconSet: 'METALLIC', voltage: 32768, superconductor: true, cDust: true, components: '5x naquadah, 3x allthemodium', cBlast: { temp: 2700, duration: 1200, volts: 512 } },
+    { name: 'naquabranium', color: 0x00FF00, iconSet: 'METALLIC', voltage: 131072, superconductor: true, cDust: true, components: '5x naquadah, 3x vibranium', cBlast: { temp: 3600, duration: 1200, volts: 2048 } },
+    { name: 'naquatainium', color: 0x9D40FF, iconSet: 'METALLIC', voltage: 524288, superconductor: true, cDust: true, components: '5x naquadria, 3x unobtainium', cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
+
+    { name: 'rhenium_nickel_alloy', color: 0xEAEAEA, iconSet: 'METALLIC', components: '3x rhenium, 2x nickel', voltage: 524288, loss: 2, superconductor: false, cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 800, power: 500, efficiency: 10.0, durability: 163840 } },
+    { name: 'rheni_zirconium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '1x rhenium_nickel_alloy, 1x zirconium', cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
+    { name: 'thorium_berkelium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '2x thorium, 1x berkelium', voltage: 131072, superconductor: true, cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
+    { name: 'potassium_calcium_orthosilicate', color: 0xDAA520, iconSet: 'METALLIC', components: '2x potassium, 1x calcium, 1x silicon, 4x oxygen', cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1200, power: 850, efficiency: 17.0, durability: 400000 } },    
+
+    // --- Extreme Tech Overhaul (UEV - MAX) ---
+    { name: 'alltheneutronium', pipe: true, color: 0xfcfc3d, iconSet: 'METALLIC', components: '2x naquamodium, 2x neutronium, 1x alloy_infused, 3x corrosive', voltage: 8388608, loss: 0, superconductor: false, cBlast: { temp: 10800, duration: 1200, volts: 32768 }, rotor: { speed: 1200, power: 300, efficiency: 13.0, durability: 655360 } },
+    { name: 'vibtronium', pipe: true, color: 0x72fcb7, iconSet: 'METALLIC', components: '2x naquabranium, 2x alltheneutronium, 1x alloy_reinforced, 3x destructive', voltage: 33554432, loss: 0, superconductor: false, cBlast: { temp: 12600, duration: 1200, volts: 131072 }, rotor: { speed: 1400, power: 400, efficiency: 14.0, durability: 2621440 } },
+    { name: 'unobtronium', pipe: true, color: 0xe782f2, iconSet: 'METALLIC', components: '2x naquatainium, 2x vibtronium, 1x alloy_atomic, 3x vengeful', voltage: 134217728, loss: 0, superconductor: false, cBlast: { temp: 15300, duration: 1200, volts: 524288 }, rotor: { speed: 1600, power: 500, efficiency: 16.0, durability: 10485760 } },
+    { name: 'deorum_alloy', pipe: true, color: 0xCCDD22, iconSet: 'METALLIC', components: '3x naquadria, 2x deorum, 2x trinium, 3x steadfast', voltage: 536870912, loss: 0, superconductor: false, cBlast: { temp: 18900, duration: 1200, volts: 524288 }, rotor: { speed: 1800, power: 600, efficiency: 18.0, durability: 41943040 } },
+    { name: 'demonic_alloy', components: '3x demon, 3x tenebrium, 3x caesium, 3x tritanium, 3x gaia', pipe: true, color: 0x22DDCC, iconSet: 'METALLIC', voltage: 2147483647, loss: 0, superconductor: false, cBlast: { temp: 21600, duration: 1200, volts: 524288 }, rotor: { speed: 2000, power: 800, efficiency: 20.0, durability: 167772160 } },    
+    
+
+    // --- Thermal Alloys ---
+    { name: 'signalum', pipe: true, color: 0xFF5500, iconSet: 'METALLIC', voltage: 128, loss: 1, components: '1x silver, 3x copper, 4x redstone', cBlast: { temp: 1700, duration: 400, volts: 512 } },
+    { name: 'lumium', pipe: true, color: 0xFFFFAA, iconSet: 'METALLIC', voltage: 512, loss: 1, components: '1x silver, 3x tin, 2x glowstone', cBlast: { temp: 1700, duration: 600, volts: 2048 } },
+    { name: 'enderium', pipe: true, color: 0x0B6156, iconSet: 'METALLIC', voltage: 2048, loss: 1, components: '1x diamond, 3x lead, 2x ender_pearl', cBlast: { temp: 2700, duration: 800, volts: 8192 } },
+
+        // --- Draconic Evolution ---
+    { name: 'draconium', ore: true, element: 'draconium', color: 0x502C6C, iconSet: 'SHINY', voltage: 8192, loss: 1, cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
+    { name: 'draconium_awakened', element: 'draconium_awakened', color: 0xFF6600, iconSet: 'BRIGHT', voltage: 2097152, superconductor: true },  
+
+    // --- Tech Automation Basics ---
+    { name: 'compressed_iron', components: '1x iron', color: 0x474747, cDust: true, iconSet: 'METALLIC', voltage: 128, loss: 1 },
+    { name: 'hop_graphite', components: '8x carbon', color: 0x1C1C1C, iconSet: 'DULL', voltage: 8192, loss: 1 },
+        
+    // --- Cosmic & Singularity End-Game Alloys ---
+    { name: 'eternium', pipe: true, magnetic: true, color: 0x2d7d69, iconSet: 'METALLIC', components: '2x eternal, 4x sculk, 2x ferrognetic, 3x netherite, 5x neutronium', voltage: 8388608, loss: 16, cBlast: { temp: 10800, duration: 1200, volts: 2097152 } },
+    { name: 'cosmic_alloy', pipe: true, color: 0xe4ac29, iconSet: 'METALLIC', components: '3x cosmic_matter, 4x alfsteel, 3x americium, 2x naquadria, 2x nether_star', voltage: 33554432, loss: 16, cBlast: { temp: 12600, duration: 1500, volts: 8388608 } },
+    { name: 'antimatter_alloy', pipe: true, color: 0x8a3947, iconSet: 'METALLIC', components: '3x antimatter, 3x duranium, 2x darmstadtium, 4x iridium, 5x etrium', voltage: 134217728, loss: 16, cBlast: { temp: 15300, duration: 2000, volts: 33554432 } },
+    { name: 'singularity_alloy', pipe: true, color: 0xab24a2, iconSet: 'METALLIC', components: '8x bedrockium, 5x stabilized_clathrate, 4x thorium_berkelium_alloy, 1x tachyon, 7x californium', voltage: 536870912, loss: 16, cBlast: { temp: 18900, duration: 2500, volts: 134217728 } },
+    { name: 'absolute_alloy', pipe: true, color: 0xE6F2FF, iconSet: 'METALLIC', components: '3x strontium, 2x unobtronium, 4x tellurium, 4x radium, 8x tenebrium', voltage: 2147483647, loss: 16, cBlast: { temp: 21600, duration: 3000, volts: 536870912 } },    
 
 ];
 
@@ -670,16 +671,23 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     });
 
     //custom flags
-    const glycerol = GTMaterials.get('glycerol');
-    //glycerol.setProperty(PropertyKey.DUST, new DustProperty());      
+    const glycerol = GTMaterials.get('glycerol');    
     glycerol.setProperty(PropertyKey.GEM, new GemProperty());
     glycerol.addFlags(GTMaterialFlags.CRYSTALLIZABLE);
-
-
-
+    
     let materialBuilder;
-    
-    
+
+    materialBuilder = event.create('soul_sand')
+        .dust()
+        .color(0x5A4232)
+        .iconSet(GTMaterialIconSet.DULL);
+
+    materialBuilder = event.create('tachyon')
+        .gem()
+        .dust()
+        .color(0x394d55)
+        .iconSet(GTMaterialIconSet.SHINY);
+
 
     materialBuilder = event.create('pulsating_crystal')
         .gem()
@@ -694,7 +702,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .iconSet(GTMaterialIconSet.SHINY);
 
 
-    materialBuilder = event.create('semi_stable_clathrate')        
+    materialBuilder = event.create('semi_stable_clathrate')
         .dust()
         .ingot()
         .color(0x8FFFD7)
@@ -702,7 +710,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .flags(
             GTMaterialFlags.GENERATE_PLATE,
             GTMaterialFlags.NO_SMELTING,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
+            CMMEMaterialFlags.GENERATE_SINGULARITY,
+            GTMaterialFlags.DISABLE_DECOMPOSITION
         );
 
     materialBuilder = event.create('stabilized_clathrate')
@@ -713,15 +722,16 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .flags(
             GTMaterialFlags.GENERATE_PLATE,
             GTMaterialFlags.NO_SMELTING,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );    
+            CMMEMaterialFlags.GENERATE_SINGULARITY,
+            GTMaterialFlags.DISABLE_DECOMPOSITION
+        );
 
 
     materialBuilder = event.create('aureal')
         .fluid()
         .gem()
         .color(0xA1C2F7)
-        .iconSet(GTMaterialIconSet.SHINY);        
+        .iconSet(GTMaterialIconSet.SHINY);
 
     materialBuilder = event.create('energized_steel')
         .fluid()
@@ -796,7 +806,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .gem()
         .color(0xD7D34C)
         .iconSet(GTMaterialIconSet.FLUID);
-    
+
 
     materialBuilder = event.create('knightmetal')
         .ingot()
@@ -821,8 +831,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .flags(
             CMMEMaterialFlags.GENERATE_SINGULARITY
         );
-        
-    
+
+
     materialBuilder = event.create('carminite')
         .gem()
         .color(0xD74C4C)
@@ -856,6 +866,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .components('2x copper', '1x cobalt', '1x nether_quartz')
         .ingot()
         .fluid()
+        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
         .iconSet(GTMaterialIconSet.METALLIC);
 
     materialBuilder = event.create("amethyst_bronze")
@@ -1462,7 +1473,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         let materialBuilder = event.create(mat.name)
 
 
-            // @ts-ignore            
+            // @ts-ignore
             .ingot()
             .fluid()
             .color(mat.color)
@@ -1489,6 +1500,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
                 //CMMEMaterialFlags.GENERATE_SINGULARITY
             );
 
+        if (mat.formula)
+            materialBuilder.formula(mat.formula);
         if (mat.magnetic) {
             //materialBuilder.flags(GTMaterialFlags.IS_MAGNETIC)
             let magneticBuilder = event.create(`magnetic_${mat.name}`)
@@ -1838,6 +1851,7 @@ StartupEvents.postInit(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
     TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
+    TagPrefix.dust.setIgnored(GTMaterials.get('soul_sand'), 'thermal_extra:soul_sand_dust');
 
 
     // Gear
@@ -1867,7 +1881,8 @@ StartupEvents.postInit(event => {
 
     TagPrefix.gem.setIgnored(GTMaterials.get('pulsating_crystal'), 'enderio:pulsating_crystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('vibrant_crystal'), 'enderio:vibrant_crystal');
-    
+    TagPrefix.gem.setIgnored(GTMaterials.get('tachyon'), 'gtceu:tachyon');
+
 
 
     // Ingot
@@ -2017,6 +2032,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
     TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
     TagPrefix.dust.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
+    TagPrefix.dust.setIgnored(GTMaterials.get('soul_sand'), 'thermal_extra:soul_sand_dust');
 
 
     // Gear
@@ -2047,8 +2063,9 @@ GTCEuStartupEvents.materialModification(event => {
 
     TagPrefix.gem.setIgnored(GTMaterials.get('pulsating_crystal'), 'enderio:pulsating_crystal');
     TagPrefix.gem.setIgnored(GTMaterials.get('vibrant_crystal'), 'enderio:vibrant_crystal');
+    TagPrefix.gem.setIgnored(GTMaterials.get('tachyon'), 'gtceu:tachyon');
 
-    
+
 
     // Ingot
     TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');
@@ -2063,7 +2080,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
     TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
     TagPrefix.ingot.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ingot');
-    
+
     TagPrefix.ingot.setIgnored(GTMaterials.get('energized_steel'), 'powah:steel_energized');
     TagPrefix.gem.setIgnored(GTMaterials.get('blazing_crystal'), 'powah:crystal_blazing');
     TagPrefix.gem.setIgnored(GTMaterials.get('niotic_crystal'), 'powah:crystal_niotic');

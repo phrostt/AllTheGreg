@@ -1,5 +1,6 @@
 ServerEvents.recipes(allthemods => {   
-    const minerEU = 2048;
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
+    const minerEU = EV;
     const minerDuration = 600;
 
 

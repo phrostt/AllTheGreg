@@ -1,5 +1,5 @@
 ServerEvents.recipes(allthemods => {
-	
+	const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
 	const addAssembler = (itemsIn, fluidIn, itemsOut, eu, duration, rID, program) => {				
         let outputID
         if (rID){outputID = rID}
@@ -33,7 +33,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 144',
         'gtceu:network_casing',
-        128, // MV Voltage
+        MV, // MV Voltage
         600  // 30 Seconds
     );
 		
@@ -47,7 +47,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:soldering_alloy 244',
 		'ae2:controller',
-		128, 600
+		MV, 600
 	);
 	
 	//ae2 interface	
@@ -294,8 +294,8 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:soldering_alloy 144',
 		'expatternprovider:assembler_matrix_frame',
-		128, // EV Voltage
-		600   // 20 Seconds
+		MV,
+		600
 	);
 	
 	//ae2 matrix wall	
@@ -308,8 +308,8 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 144',
         'expatternprovider:assembler_matrix_wall',
-        128, // HV Voltage
-        600  // 15 Seconds
+        MV,
+        600
     );
 	
 	//ae2 basic card	
@@ -318,8 +318,7 @@ ServerEvents.recipes(allthemods => {
         'GLP',
         'GPW'
     ], {
-        G: '#forge:plates/gold',
-        P: '#forge:plates/aluminum',
+        G: '#forge:plates/gold',        
         L: '#gtceu:circuits/mv',
 		P: 'ae2:calculation_processor',
 		W: 'gtceu:compressed_iron_single_wire'		
@@ -361,7 +360,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:polyethylene 144',
 		'integrateddynamics:variablestore',
-		2048,
+		EV,
 		400
 	);
 	
@@ -375,7 +374,7 @@ ServerEvents.recipes(allthemods => {
 		],
 		'gtceu:soldering_alloy 144',
 		'integrateddynamics:logic_programmer',
-		2048,
+		EV,
 		600
 	);
 
@@ -385,7 +384,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('gtceu:distilled_water 100')
         .itemOutputs('ae2:certus_quartz_crystal')
         .duration(60)
-        .EUt(32);
+        .EUt(LV);
 
     //1k cell    
     
@@ -397,7 +396,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:rubber 144',
         'ae2:fluix_glass_cable',
-        128,
+        MV,
         100,
         'fluix_from_rubber',
         1
@@ -409,7 +408,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:silicone_rubber 288',
         '2x ae2:fluix_glass_cable',
-        128,
+        MV,
         100,
         'fluix_from_silicone',
         1
@@ -423,7 +422,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:styrene_butadiene_rubber 288',
         '4x ae2:fluix_glass_cable',
-        128,
+        MV,
         100,
         'fluix_from_rubber_styrene',
         1
@@ -439,7 +438,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:rubber 144',
         '3x ae2:quartz_fiber',
-        128,
+        MV,
         100,
         'fiber_from_rubber'
     )
@@ -451,7 +450,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:silicone_rubber 72',
         '3x ae2:quartz_fiber',
-        128,
+        MV,
         100,
         'fiber_from_silicone'
     )
@@ -463,7 +462,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:styrene_butadiene_rubber 36',
         '3x ae2:quartz_fiber',
-        128,
+        MV,
         100,
         'fiber_from_styrene'
     )
@@ -477,7 +476,7 @@ ServerEvents.recipes(allthemods => {
         ],
         null,
         '8x ae2:fluix_covered_cable',
-        128,
+        MV,
         100   
     )
 
@@ -492,7 +491,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         '2x ae2:wireless_receiver',
-        128,
+        MV,
         200
     )
 
@@ -505,7 +504,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',
         '2x ae2:formation_core',
-        128,
+        MV,
         200
     )
 
@@ -518,7 +517,7 @@ ServerEvents.recipes(allthemods => {
         ],
         'gtceu:soldering_alloy 72',        
         '2x ae2:annihilation_core',
-        128,
+        MV,
         200
     )
 

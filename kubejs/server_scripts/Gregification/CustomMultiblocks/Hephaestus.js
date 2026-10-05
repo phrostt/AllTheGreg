@@ -1,6 +1,6 @@
 ServerEvents.recipes(allthemods => {
 
-
+    const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
     const hephaestus = (inputs, fluids, outputs, duration, eu, nonConsumables, customID, program) => {
 
         let id
@@ -63,7 +63,7 @@ ServerEvents.recipes(allthemods => {
             //"forbidden_arcanus:growing_edelwood",
             sapling,
             120,
-            8192, [], null, index
+            IV, [], null, index
         )
     });
 
@@ -82,7 +82,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:sea_prism",
         1200,
-        8192,
+        IV,
         "forbidden_arcanus:elementarium"
     )
 
@@ -100,7 +100,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:smelter_prism",
         1200,
-        8192,
+        IV,
         "forbidden_arcanus:elementarium"
     )
 
@@ -119,7 +119,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:terrastomp_prism",
         1200,
-        8192,
+        IV,
         "forbidden_arcanus:elementarium"
     )
 
@@ -138,7 +138,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:whirlwind_prism",
         1200,
-        8192,
+        IV,
         "forbidden_arcanus:elementarium"
     )
 
@@ -156,7 +156,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:eternal_stella",
         1200,
-        32768,
+        LuV,
         null
     )
 
@@ -178,7 +178,7 @@ ServerEvents.recipes(allthemods => {
         ],
         "forbidden_arcanus:ferrognetic_mixture",
         400,
-        8192,
+        IV,
         null
     )
 
@@ -196,7 +196,7 @@ ServerEvents.recipes(allthemods => {
         ],
         Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:stellarite"}}').strongNBT(),
         1200,
-        32768,
+        LuV,
         null,
         "stellarite_bee"
     )
