@@ -383,31 +383,23 @@ ServerEvents.recipes(allthemods => {
         // --- Program 1: normal recipe, uses the ritual's own liquid chalk costs ---
         {
             let recipe = allthemods.recipes.gtceu.industrial_ritual_machine(`gregification:ritual/${baseID}`)
+                .circuit(1)
                 .itemOutputs(output)
+                .itemInputs(customInputs)
                 .duration(finalDuration)
-                .EUt(eu)
-                .circuit(1);
-
-            let combinedItems = [].concat(customInputs);
+                .EUt(eu);
 
             if (ritual.items && ritual.items.length > 0) {
-                let ritualItemsList = ritual.items.map(i => `${i.amount}x ${i.item}`);
-                combinedItems = combinedItems.concat(ritualItemsList);
+                ritual.items.forEach(i => {
+                    recipe.notConsumable(Item.of(i.item, i.amount));
+                });
             }
-
-            if (combinedItems.length > 0) {
-                recipe.itemInputs(combinedItems);
-            }
-
-            let combinedFluids = [];
 
             if (ritual.fluids && ritual.fluids.length > 0) {
-                let ritualFluids = ritual.fluids.map(f => Fluid.of(f.fluid, (f.amount / 100 * 4)));
-                combinedFluids = combinedFluids.concat(ritualFluids);
-            }            
-
-            if (combinedFluids.length > 0) {
-                recipe.inputFluids(combinedFluids);
+                ritual.fluids.forEach(f => {
+                    let fluidAmount = (f.amount / 100) * 4;
+                    recipe.inputFluids(Fluid.of(f.fluid, fluidAmount));
+                });
             }
         }
 
@@ -415,11 +407,17 @@ ServerEvents.recipes(allthemods => {
         //     supplied as a non-consumed (reusable) first input instead ---
         {
             let recipe2 = allthemods.recipes.gtceu.industrial_ritual_machine(`gregification:ritual/${baseID}_rainbow`)
+                .circuit(2)
                 .itemOutputs(output)
+                .itemInputs(customInputs)
                 .duration(finalDuration)
-                .EUt(eu)
-                .circuit(2);
-
+                .EUt(eu);
+            if (ritual.items && ritual.items.length > 0) {
+                ritual.items.forEach(i => {
+                    recipe2.notConsumable(Item.of(i.item, i.amount));
+                });
+            }
+            /*
             let combinedItems2 = [].concat(customInputs);
 
             if (ritual.items && ritual.items.length > 0) {
@@ -429,7 +427,7 @@ ServerEvents.recipes(allthemods => {
 
             if (combinedItems2.length > 0) {
                 recipe2.itemInputs(combinedItems2);
-            }
+            }*/
 
             recipe2.notConsumable('occultism:chalk_rainbow');
         }
@@ -631,5 +629,6 @@ ServerEvents.recipes(allthemods => {
         ['#forge:dusts/gunpowder', '#forge:dyes/gray', 'minecraft:phantom_membrane', '#forge:ingots/clay'],
         'occultism:gray_paste',
         'strigeors_higher_binding',
+        120
     );    
 });

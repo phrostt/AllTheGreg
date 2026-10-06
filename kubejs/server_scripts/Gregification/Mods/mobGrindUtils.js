@@ -16,14 +16,14 @@ ServerEvents.recipes(allthemods => {
     // --- MOB GRINDING UTILS ---    
     addAssembler(
         [
-            'gtceu:ev_machine_casing',
+            'gtceu:magical_bio_composite',
             '4x gtceu:blood_coated_blade',
-            '4x gtceu:hv_electric_motor',
-            '2x #gtceu:circuits/ev'
+            '4x gtceu:iv_electric_motor',
+            '2x #gtceu:circuits/iv'
         ],
         '#forge:lubricant 1000', 
         'mob_grinding_utils:saw',         
-        EV,
+        IV,
         1200
     );
     	

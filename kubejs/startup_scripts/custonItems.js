@@ -233,8 +233,15 @@ StartupEvents.registry('item', event => {
         .tooltip('§7A Samarium Cobalt Magnetic Rotor.')
 
 })
-ItemEvents.modification(event => {
-    event.modify('forestry:bee_drone_ge', item => {
+
+
+ItemEvents.modification(allthemods => {
+    
+    allthemods.modify('occultism:soul_gem', item => {
+        item.maxStackSize = 4;        
+    });
+
+    allthemods.modify('forestry:bee_drone_ge', item => {
         item.burnTime = 800
     })
-})
+});
