@@ -1380,37 +1380,39 @@ const oreSetups = {
     debris: null,
 };
 const allOrePrefixes = [
+    
     'ore', 'oreDeepslate', 'oreNetherrack', 'oreEndstone',
-    'oreSand', 'oreRedSand', 'oreGravel', 'oreTuff', 'oreBasalt', 'oreBlackstone',
-    'moon', 'mars', 'venus', 'mercury', 'glacio'
+    'oreSand', 'oreRedSand', 'oreGravel', 'oreTuff', 'oreBasalt', 'oreBlackstone',    
+    'oreGranite', 'oreDiorite', 'oreAndesite', 'oreRedGranite', 'oreMarble',
+
 ];
 
-// ---------- Helpers ----------
+const debug = false;
+const setupOres = (matName, variants) => {    
 
-const setupOres = (matName, variants) => {
     let mat = GTMaterials.get(matName);
-    if (!mat) return;
-
+    if (!mat) return;    
     allOrePrefixes.forEach(prefixStr => {
         let prefixObj;
     
         try {            
             prefixObj = TagPrefix[prefixStr];
         } catch (e) {            
+            if (debug){console.warn(`[GTORE] ${matName} Prefix object not found for prefix ${prefixStr}`);}
             return; 
         }
 
         if (!prefixObj){
-            console.warn(`[GTORE] ${matName} Prefix object not found for prefix ${prefixStr}`);
+            if (debug){console.warn(`[GTORE] ${matName} Prefix object not found for prefix ${prefixStr}`);}
             return;
         } 
         
         if (variants && variants[prefixStr]) {
             prefixObj.setIgnored(mat, variants[prefixStr]);
-            console.warn(`[GTORE] Setting ignored for material ${matName} with prefix ${prefixStr} and variant ${variants[prefixStr]}`);
+            if (debug){console.warn(`[GTORE] Setting ignored for material ${matName} with prefix ${prefixStr} and variant ${variants[prefixStr]}`);}
         } else {
             prefixObj.setIgnored(mat);
-            //console.warn(`[GTORE] Setting ignored for material ${matName} with prefix ${prefixStr} and no specific variant`);
+            if (debug){console.warn(`[GTORE] Setting ignored for material ${matName} with prefix ${prefixStr} and no specific variant`);}
         }
     });
 };
@@ -1540,8 +1542,7 @@ const applyUnification = () => {
             if (mat) prefix.setIgnored(mat, entries[matName]);
         });
     });
-
-    Object.keys(oreSetups).forEach(matName => setupOres(matName, oreSetups[matName]));
+    
 };
 
 
@@ -1563,14 +1564,21 @@ GTCEuStartupEvents.registry('gtceu:world_gen_layer', event => {
             `ad_astra:glacio_stone`,
             `ad_astra:glacio_ice`,
         )
-        .dimensions(`ad_astra:glacio`);
+        .dimensions(`ad_astra:glacio`);    
 });
 
 StartupEvents.postInit(event => {
     applyUnification();
 });
 
+
 GTCEuStartupEvents.materialModification(event => {
+    
+    applyUnification();
+    registerNewOres();
+    Object.keys(oreSetups).forEach(matName => setupOres(matName, oreSetups[matName]));
+
+    
 
     addOreProcessing('osmiridium', ['ruthenium']);
     addOreProcessing('monazite', ['rare_earth', 'gadolinium', 'neodymium']);
@@ -1597,9 +1605,6 @@ GTCEuStartupEvents.materialModification(event => {
     addOreProcessing('ferricore', ['iron', 'nickel', 'ferricore']);
     addOreProcessing('blazegold', ['gold', 'blaze', 'ferricore']);
     addOreProcessing('eclipsealloy', ['blazegold', 'ender_pearl', 'obsidian']);
-
-    applyUnification();
-    registerNewOres();
 
 
     overwriteToolStats('allthemodium', 16.0, 6.0, 0, 5);
