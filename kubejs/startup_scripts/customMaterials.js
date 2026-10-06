@@ -104,7 +104,7 @@ const otherElements = [
 ];
 
 
-const twilight = ['fiery', 'steeleaf', 'knightmetal']
+const twilight = ['fiery', 'steeleaf', 'knightmetal'];
 
 const unification = [
     //twilight
@@ -152,12 +152,12 @@ const unification = [
     { name: 'ferricore', oItems: ['ingot', 'block'], namespace: 'justdirethings' },
     { name: 'blazegold', oItems: ['ingot', 'block'], namespace: 'justdirethings' },
     { name: 'eclipsealloy', oItems: ['ingot', 'block'], namespace: 'justdirethings' },
-]
+];
 
 const mekanism = [
     { name: 'refined_obsidian', oItems: ['nugget', 'ingot', 'block'], namespace: 'mekanism' },
     { name: 'refined_glowstone', oItems: ['nugget', 'ingot', 'block'], namespace: 'mekanism' }
-]
+];
 
 
 const gasses = [
@@ -297,6 +297,71 @@ const fluids = [
 
 ];
 
+const modifyElement = (materialO, materialN, bTemp, volts, gem, polymer, ingot) => {
+    let mrp = GTMaterials.get(materialN).getFlags()
+    let mmaterialClass = mrp.getClass()
+    // @ts-ignore
+    let flagsFieldM = mmaterialClass.getDeclaredField("flags")
+    flagsFieldM.setAccessible(true)
+    let activeFlagsM = flagsFieldM.get(mrp)
+    activeFlagsM.remove(GTMaterialFlags.NO_SMELTING)
+    activeFlagsM.remove(GTMaterialFlags.FLAMMABLE)
+    let material = materialO
+    if (bTemp) {
+        let bVolts = getCoilVoltage(bTemp);
+        let mbp = new BlastProperty
+        mbp.setBlastTemperature(bTemp);
+        mbp.setDurationOverride(1200);
+        mbp.setEUtOverride(bVolts);
+        mbp.setGasTier(getGasTier(bVolts));
+        mbp.setVacuumDurationOverride(120);
+        mbp.setVacuumEUtOverride(bVolts);
+        material.setProperty(PropertyKey.BLAST, mbp)
+    }
+
+    // @ts-ignore
+    if (volts) { material.setProperty(PropertyKey.WIRE, new WireProperties(volts, 1, 0)) }
+    if (polymer == true) { material.setProperty(PropertyKey.POLYMER, new PolymerProperty()) }
+    if (ingot == true) {
+        if (!material.hasProperty(PropertyKey.INGOT)) {
+            material.setProperty(PropertyKey.INGOT, new IngotProperty())
+        }
+
+    }
+
+    material.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()))
+
+    if (gem == true) {
+        if (!material.hasProperty(PropertyKey.INGOT)) {
+            material.setProperty(PropertyKey.GEM, new GemProperty())
+        }
+
+    }
+    if (ingot == true || gem == true || polymer == true) {
+        material.addFlags(
+            GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.GENERATE_DENSE,
+            GTMaterialFlags.GENERATE_ROD,
+            GTMaterialFlags.GENERATE_LONG_ROD,
+            GTMaterialFlags.GENERATE_GEAR,
+            GTMaterialFlags.GENERATE_SMALL_GEAR,
+            GTMaterialFlags.GENERATE_BOLT_SCREW,
+            GTMaterialFlags.GENERATE_FOIL,
+            GTMaterialFlags.GENERATE_FRAME,
+            GTMaterialFlags.GENERATE_RING,
+            GTMaterialFlags.GENERATE_SPRING,
+            GTMaterialFlags.GENERATE_SPRING_SMALL,
+            GTMaterialFlags.GENERATE_ROTOR,
+            GTMaterialFlags.GENERATE_ROUND,
+            GTMaterialFlags.GENERATE_FINE_WIRE,
+            // @ts-ignore
+            //CMMEMaterialFlags.GENERATE_SINGULARITY
+        )
+    }
+
+
+};
+
 const getCoilVoltage = (coil) => {
     switch (coil) {
         case 1800: return 128;
@@ -309,6 +374,30 @@ const getCoilVoltage = (coil) => {
         case 10800: return 2097152;
         default: return 8388608;
     }
+};
+const getVoltage = (v) => {
+    if (v <= 8) return GTValues.V[GTValues.ULV];
+    if (v <= 32) return GTValues.V[GTValues.LV];
+    if (v <= 128) return GTValues.V[GTValues.MV];
+    if (v <= 512) return GTValues.V[GTValues.HV];
+    if (v <= 2048) return GTValues.V[GTValues.EV];
+    if (v <= 8192) return GTValues.V[GTValues.IV];
+    if (v <= 32768) return GTValues.V[GTValues.LuV];
+    if (v <= 131072) return GTValues.V[GTValues.ZPM];
+    if (v <= 524288) return GTValues.V[GTValues.UV];
+    if (v <= 2097152) return GTValues.V[GTValues.UHV];
+    if (v <= 8388608) return GTValues.V[GTValues.UEV];
+    if (v <= 33554432) return GTValues.V[GTValues.UIV];
+    if (v <= 134217728) return GTValues.V[GTValues.UXV];
+    if (v <= 536870912) return GTValues.V[GTValues.OpV];
+    return GTValues.V[GTValues.MAX];
+};
+const getGasTier = (voltage) => {
+    if (voltage <= 512) return GasTier.LOW;       // LV - MV
+    if (voltage <= 8192) return GasTier.MID;      // HV - IV
+    if (voltage <= 32768) return GasTier.HIGH;    // LuV - ZPM
+    if (voltage <= 131072) return GasTier.HIGHER; // UV - UHV
+    return GasTier.HIGHEST;                       // UEV+
 };
 
 const polymers = [
@@ -431,6 +520,7 @@ const dusts = [
     { name: 'titanium_bio_ash', color: 0x7E7A86, iconSet: 'DULL', noDecomp: true }
 
 ];
+
 const modalloys = [
     // --- Magic Gating Materials ---
     { name: 'hellforged', ore: true, element: 'hellforged', color: 0xC1D5EC, iconSet: 'METALLIC', voltage: 512, loss: 2 },
@@ -622,37 +712,151 @@ const newOres = [
     // --- Silent Gear / Just Dire Things ores ---    
 ];
 
+const customMatsToRegister = [
+
+    { name: 'debris', color: 0x6E5A52, iconSet: 'METALLIC', ore: true },
+    { name: 'crimson_iron', color: 0xee4f7f, iconSet: 'METALLIC', ore: true },
+    { name: 'ferricore', color: 0xb1e5db, iconSet: 'METALLIC', ingot: true, ore: true },
+    { name: 'blazegold', color: 0xe68e52, iconSet: 'SHINY', ingot: true, ore: true },
+    { name: 'eclipsealloy', color: 0x586e75, iconSet: 'SHINY', ingot: true, ore: true },
+    { name: 'coagulite', color: 0x5C0A0A, iconSet: 'METALLIC', gem: true, ore: true, noDecomp: true },
+    { name: 'azure_silver', color: 0xDE81E6, iconSet: 'METALLIC', ore: true },
+    { name: 'mithril', color: 0x99D9D9, iconSet: 'METALLIC', dust: true, ingot: true, ore: true },
+
+    { name: 'soul_sand', color: 0x5A4232, iconSet: 'DULL', dust: true },
+    { name: 'tachyon', color: 0x394d55, iconSet: 'SHINY', gem: true, dust: true },
+    { name: 'pulsating_crystal', color: 0x79ffff, iconSet: 'SHINY', gem: true, dust: true },
+    { name: 'vibrant_crystal', color: 0xa4ffaf, iconSet: 'SHINY', gem: true, dust: true },
+    { name: 'aureal', color: 0xA1C2F7, iconSet: 'SHINY', fluid: true, gem: true },
+    { name: 'fire_essence', color: 0xD74C4C, iconSet: 'FLUID', fluid: true, gem: true },
+    { name: 'water_essence', color: 0x4C7DD7, iconSet: 'FLUID', fluid: true, gem: true },
+    { name: 'air_essence', color: 0xD7D34C, iconSet: 'FLUID', fluid: true, gem: true },
+    { name: 'earth_essence', color: 0xD7D34C, iconSet: 'FLUID', fluid: true, gem: true },
+    { name: 'spent_nuclear_waste', color: 0x53D74C, iconSet: 'RADIOACTIVE', fluid: true },
+
+    { name: 'semi_stable_clathrate', color: 0x8FFFD7, iconSet: 'METALLIC', dust: true, ingot: true, flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, CMMEMaterialFlags.GENERATE_SINGULARITY, GTMaterialFlags.DISABLE_DECOMPOSITION] },
+    { name: 'stabilized_clathrate', color: 0xB1AAA6, iconSet: 'METALLIC', dust: true, ingot: true, flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, CMMEMaterialFlags.GENERATE_SINGULARITY, GTMaterialFlags.DISABLE_DECOMPOSITION] },
+    { name: 'energized_steel', color: 0xceb08a, iconSet: 'SHINY', fluid: true, ingot: true, flags: [GTMaterialFlags.GENERATE_PLATE, CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'blazing_crystal', color: 0xf06223, iconSet: 'SHINY', fluid: true, gem: true, flags: [GTMaterialFlags.GENERATE_PLATE, CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'niotic_crystal', color: 0x00e3fc, iconSet: 'SHINY', fluid: true, gem: true, flags: [GTMaterialFlags.GENERATE_PLATE, CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'spirited_crystal', color: 0x00fc00, iconSet: 'SHINY', fluid: true, gem: true, flags: [GTMaterialFlags.GENERATE_PLATE, CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'nitro_crystal', color: 0x970000, iconSet: 'SHINY', fluid: true, gem: true, flags: [GTMaterialFlags.GENERATE_PLATE, CMMEMaterialFlags.GENERATE_SINGULARITY] },
+
+    { name: 'knightmetal', color: 0xe4f9cb, iconSet: 'METALLIC', ingot: true, flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'steeleaf', color: 0x518539, iconSet: 'METALLIC', ingot: true, flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'fiery', color: 0x5b2b19, iconSet: 'METALLIC', ingot: true, flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'carminite', color: 0xD74C4C, iconSet: 'RUBY', gem: true, flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+
+    { name: 'bio_organic_nanocomposite', color: 0x3D5C42, iconSet: 'DULL', ingot: true, dust: true, fluid: true, flags: [GTMaterialFlags.GENERATE_PLATE] },
+
+    { name: 'hepatizon', color: 0x715A7C, iconSet: 'METALLIC', dust: true, ingot: true, fluid: true, components: ['2x copper', '1x cobalt', '1x nether_quartz'], flags: [GTMaterialFlags.DISABLE_DECOMPOSITION] },
+    { name: 'amethyst_bronze', color: 0xEBC4DB, iconSet: 'METALLIC', dust: true, ingot: true, fluid: true, components: ['1x copper', '1x amethyst'] },
+    { name: 'manyullyn', color: 0xC097F0, iconSet: 'METALLIC', dust: true, ingot: true, fluid: true, components: ['1x debris', '3x cobalt'] },
+
+    { name: 'core', color: 0x989CAB, iconSet: 'METALLIC', flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'elemental_fire', color: 0xD55642, iconSet: 'SHINY', flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'elemental_water', color: 0xB7B5ED, iconSet: 'SHINY', flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'elemental_air', color: 0xE3E3BF, iconSet: 'SHINY', flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'elemental_earth', color: 0x289C2B, iconSet: 'SHINY', flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+
+    { name: 'drenched_iron', color: 0x5490CF, iconSet: 'METALLIC', ingot: true, dust: true, fluid: true, ore: true, element: 'iron', flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_BOLT_SCREW, GTMaterialFlags.GENERATE_ROUND, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_DENSE, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_FOIL] },
+    { name: 'swift_alloy', color: 0xEBB760, iconSet: 'METALLIC', ingot: true, dust: true, fluid: true, ore: true, flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_BOLT_SCREW, GTMaterialFlags.GENERATE_ROUND, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_DENSE, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_FOIL] },
+    { name: 'fireite', color: 0x5C0A0A, iconSet: 'METALLIC', ingot: true, dust: true, fluid: true, ore: true, flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_BOLT_SCREW, GTMaterialFlags.GENERATE_ROUND, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_DENSE, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_FOIL] },
+
+    { name: 'chaos_shard', color: 0x090909, iconSet: 'RADIOACTIVE', gem: true },
+    { name: 'unrefined_tenebrius', color: 0x101010, iconSet: 'RADIOACTIVE', dust: true, fluid: true, element: 'tenebrium' },
+    { name: 'purified_tenebrius', color: 0x101010, iconSet: 'RADIOACTIVE', dust: true, fluid: true, element: 'tenebrium' },
+    { name: 'refined_tenebrius', color: 0x101010, iconSet: 'RADIOACTIVE', dust: true, fluid: true, gem: true, element: 'tenebrium' },
+
+    { name: 'garmonbozia', color: '0xFFFBD0', iconSet: 'SHINY', gem: true, dust: true, fluid: true, element: 'garmonbozia', flags: [CMMEMaterialFlags.GENERATE_SINGULARITY] },
+    { name: 'thorn_rose', color: '0xAB3236', iconSet: 'WOOD', dust: true },
+    { name: 'platinum_rhenium_catalyst', color: '0x8B8C8E', iconSet: 'DULL', dust: true, fluid: true, polymer: true, ingot: true, components: ['1x platinum', '1x aluminium', '1x rhenium'], flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.DISABLE_DECOMPOSITION] },
+
+    { name: 'blue_ice', color: '0x739BD0', iconSet: 'GLASS', dust: true, fluid: true },
+    { name: 'packed_ice', color: '0xA5C2F5', iconSet: 'GLASS', dust: true, fluid: true },
+    { name: 'rotten_flesh', color: '0x934537', iconSet: 'FLUID', fluid: true, ingot: true },
+    { name: 'recycled_organic_matter', color: '0x6E6259', iconSet: 'FLUID', fluid: true },
+
+    { name: 'niter', color: 0xF7F5F0, iconSet: 'DIAMOND', dust: true, gem: true, formula: 'KNO3', components: ['1x potassium', '1x nitrogen', '3x oxygen'] },
+    { name: 'cadmium_copper', color: 0xC97A4A, iconSet: 'METALLIC', ingot: true, dust: true, fluid: true, formula: 'Cu9Cd', components: ['9x copper', '1x cadmium'], cable: { voltage: 128, amperage: 2, loss: 1, insurmountable: false }, flags: [GTMaterialFlags.GENERATE_FINE_WIRE] },
+    { name: 'cadmium_telluride', color: 0x2B2B2B, iconSet: 'METALLIC', ingot: true, dust: true, fluid: true, formula: 'CdTe', components: ['1x cadmium', '1x tellurium'], flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL] },
+    { name: 'cadmium_selenide', color: 0xD94D1A, iconSet: 'METALLIC', ingot: true, dust: true, fluid: true, formula: 'CdSe', components: ['1x cadmium', '1x selenium'], flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL] },
+    { name: 'strontium_aluminate', color: 0xF0EDE0, iconSet: 'DULL', ingot: true, dust: true, fluid: true, formula: 'SrAl2O4', components: ['1x strontium', '2x aluminium', '4x oxygen'], flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD] },
+    { name: 'strontium_ferrite', color: 0x3C3C3C, iconSet: 'DULL', ingot: true, dust: true, fluid: true, formula: 'SrFe12O19', components: ['1x strontium', '12x iron', '19x oxygen'], flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_RING] },
+
+    { name: 'bio_organic_pulp', color: 0x7A6248, iconSet: 'DULL', dust: true },
+    { name: 'microbial_biomass', color: 0x556B2F, iconSet: 'FLUID', fluid: true },
+    { name: 'nucleic_acid_mixture', color: 0x4682B4, iconSet: 'FLUID', fluid: true },
+    { name: 'enzyme_solution', color: 0x9370DB, iconSet: 'FLUID', fluid: true },
+    { name: 'concentrated_liquid_dna', color: 0xFF69B4, iconSet: 'SHINY', fluid: true },
+    { name: 'dna_productivity', color: 0x00d200, iconSet: 'SHINY', fluid: true },
+    { name: 'dna_tolerance', color: 0x0000d6, iconSet: 'SHINY', fluid: true },
+    { name: 'dna_behavior', color: 0xd8d800, iconSet: 'SHINY', fluid: true },
+    { name: 'dna_endurance', color: 0x00ccd3, iconSet: 'SHINY', fluid: true },
+    { name: 'dna_omega', color: 0xa45a26, iconSet: 'SHINY', fluid: true },
+    { name: 'dna_mutation', color: 0x66008a, iconSet: 'SHINY', fluid: true },
+
+    { name: 'samarium_cobalt', color: 0x8C7B4A, iconSet: 'METALLIC', dust: true, ingot: true, fluid: true, formula: 'SmCo5', components: ['1x samarium', '5x cobalt'], flags: [GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.DISABLE_DECOMPOSITION] },
+    { name: 'magnetic_samarium_cobalt', color: 0x8C7B4A, iconSet: 'MAGNETIC', dust: true, ingot: true, fluid: true, flags: [GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.IS_MAGNETIC, GTMaterialFlags.DISABLE_DECOMPOSITION] },
+    { name: 'antimatter', color: 0x7d4d88, iconSet: 'RADIOACTIVE', dust: true, fluid: true, element: 'antimatter' },
+    { name: 'cosmic_matter', color: 0x3b004f, iconSet: 'METALLIC', dust: true, ingot: true, fluid: true, element: 'cosmic' },
+    { name: 'thorium_doped_calcium_fluoride', color: 0xFF8C00, iconSet: 'CERTUS', dust: true, gem: true, fluid: true, formula: 'Th:CaF2', flags: [GTMaterialFlags.DISABLE_DECOMPOSITION] },
+    { name: 'mana_essence', color: 0x0099FF, iconSet: 'RADIOACTIVE', gem: true, fluid: true }
+];
 
 GTCEuStartupEvents.registry('gtceu:material', event => {
 
-    const getVoltage = (v) => {
-        if (v <= 8) return GTValues.V[GTValues.ULV];
-        if (v <= 32) return GTValues.V[GTValues.LV];
-        if (v <= 128) return GTValues.V[GTValues.MV];
-        if (v <= 512) return GTValues.V[GTValues.HV];
-        if (v <= 2048) return GTValues.V[GTValues.EV];
-        if (v <= 8192) return GTValues.V[GTValues.IV];
-        if (v <= 32768) return GTValues.V[GTValues.LuV];
-        if (v <= 131072) return GTValues.V[GTValues.ZPM];
-        if (v <= 524288) return GTValues.V[GTValues.UV];
-        if (v <= 2097152) return GTValues.V[GTValues.UHV];
-        if (v <= 8388608) return GTValues.V[GTValues.UEV];
-        if (v <= 33554432) return GTValues.V[GTValues.UIV];
-        if (v <= 134217728) return GTValues.V[GTValues.UXV];
-        if (v <= 536870912) return GTValues.V[GTValues.OpV];
-        return GTValues.V[GTValues.MAX];
-    };
-    const getGasTier = (voltage) => {
-        if (voltage <= 512) return GasTier.LOW;       // LV - MV
-        if (voltage <= 8192) return GasTier.MID;      // HV - IV
-        if (voltage <= 32768) return GasTier.HIGH;    // LuV - ZPM
-        if (voltage <= 131072) return GasTier.HIGHER; // UV - UHV
-        return GasTier.HIGHEST;                       // UEV+
-    };
 
+    let materialBuilder = event.create("infinity")
+        .ingot()
+        .liquid(new GTFluidBuilder().state(GTFluidState.LIQUID).customStill())
+        .element('infinity')
+        .color(0xffffff)
+        .iconSet("infinity")
+        .blastTemp(10800, getGasTier(33554432), 33554432, 600)
+        .flags(
+            GTMaterialFlags.GENERATE_PLATE,
+            GTMaterialFlags.GENERATE_ROD,
+            GTMaterialFlags.GENERATE_LONG_ROD,
+            GTMaterialFlags.GENERATE_RING,
+            GTMaterialFlags.GENERATE_BOLT_SCREW,
+            GTMaterialFlags.GENERATE_ROUND,
+            GTMaterialFlags.GENERATE_FRAME,
+            GTMaterialFlags.GENERATE_DENSE,
+            GTMaterialFlags.GENERATE_GEAR,
+            GTMaterialFlags.GENERATE_SMALL_GEAR,
+            GTMaterialFlags.GENERATE_FOIL);
 
+    customMatsToRegister.forEach(mat => {
+        let icon = GTMaterialIconSet[mat.iconSet];
+        let builder = event.create(mat.name)
+            .color(mat.color)
+            .iconSet(icon);
+        if (mat.dust) builder.dust();
+        if (mat.ingot) builder.ingot();
+        if (mat.gem) builder.gem();
+        if (mat.fluid) builder.fluid();
+        if (mat.ore) builder.ore(2, 1);
+        if (mat.polymer) builder.polymer();
+        if (mat.element) builder.element(mat.element);
+        if (mat.formula) builder.formula(mat.formula);
 
+        if (mat.components) {
+            mat.components.forEach(comp => builder.components(comp));
+        }
 
+        if (mat.cable) {
+            builder.cableProperties(mat.cable.voltage, mat.cable.amperage, mat.cable.loss, mat.cable.insurable || false);
+        }
+
+        if (mat.blast) {
+            builder.blastTemp(mat.blast.temp, getGasTier(mat.blast.gasTier), mat.blast.eut, mat.blast.duration);
+        }
+
+        if (mat.flags && mat.flags.length > 0) {
+            mat.flags.forEach(flag => builder.flags(flag));
+        }
+    });
 
     gasses.forEach(mat => {
         let materialBuilder = event.create(mat.name)
@@ -687,598 +891,11 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     glycerol.setProperty(PropertyKey.GEM, new GemProperty());
     glycerol.addFlags(GTMaterialFlags.CRYSTALLIZABLE);
 
-    let materialBuilder;
-
-    materialBuilder = event.create('soul_sand')
-        .dust()
-        .color(0x5A4232)
-        .iconSet(GTMaterialIconSet.DULL);
-
-    materialBuilder = event.create('tachyon')
-        .gem()
-        .dust()
-        .color(0x394d55)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-
-    materialBuilder = event.create('pulsating_crystal')
-        .gem()
-        .dust()
-        .color(0x79ffff)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('vibrant_crystal')
-        .gem()
-        .dust()
-        .color(0xa4ffaf)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-
-    materialBuilder = event.create('semi_stable_clathrate')
-        .dust()
-        .ingot()
-        .color(0x8FFFD7)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.NO_SMELTING,
-            CMMEMaterialFlags.GENERATE_SINGULARITY,
-            GTMaterialFlags.DISABLE_DECOMPOSITION
-        );
-
-    materialBuilder = event.create('stabilized_clathrate')
-        .dust()
-        .ingot()
-        .color(0xB1AAA6)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.NO_SMELTING,
-            CMMEMaterialFlags.GENERATE_SINGULARITY,
-            GTMaterialFlags.DISABLE_DECOMPOSITION
-        );
-
-
-    materialBuilder = event.create('aureal')
-        .fluid()
-        .gem()
-        .color(0xA1C2F7)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('energized_steel')
-        .fluid()
-        .ingot()
-        .color(0xceb08a)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('blazing_crystal')
-        .fluid()
-        .gem()
-        .color(0xf06223)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('niotic_crystal')
-        .fluid()
-        .gem()
-        .color(0x00e3fc)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('spirited_crystal')
-        .fluid()
-        .gem()
-        .color(0x00fc00)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('nitro_crystal')
-        .fluid()
-        .gem()
-        .color(0x970000)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('fire_essence')
-        .fluid()
-        .gem()
-        .color(0xD74C4C)
-        .iconSet(GTMaterialIconSet.FLUID);
-
-    materialBuilder = event.create('water_essence')
-        .fluid()
-        .gem()
-        .color(0x4C7DD7)
-        .iconSet(GTMaterialIconSet.FLUID);
-
-    materialBuilder = event.create('air_essence')
-        .fluid()
-        .gem()
-        .color(0xD7D34C)
-        .iconSet(GTMaterialIconSet.FLUID);
-
-    materialBuilder = event.create('earth_essence')
-        .fluid()
-        .gem()
-        .color(0xD7D34C)
-        .iconSet(GTMaterialIconSet.FLUID);
-
-
-    materialBuilder = event.create('knightmetal')
-        .ingot()
-        .color(0xe4f9cb)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('steeleaf')
-        .ingot()
-        .color(0x518539)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('fiery')
-        .ingot()
-        .color(0x5b2b19)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-
-    materialBuilder = event.create('carminite')
-        .gem()
-        .color(0xD74C4C)
-        .iconSet(GTMaterialIconSet.RUBY)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-
-    materialBuilder = event.create('spent_nuclear_waste')
-        .fluid()
-        .color(0x53D74C)
-        .iconSet(GTMaterialIconSet.RADIOACTIVE);
-
-    materialBuilder = event.create('bio_organic_nanocomposite')
-        .ingot()
-        .dust()
-        .fluid()
-        .color(0x3D5C42)
-        .iconSet(GTMaterialIconSet.DULL)
-        .flags(GTMaterialFlags.GENERATE_PLATE);
-
-    materialBuilder = event.create('debris')
-        .color(0x6E5A52)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .ore(2, 1);
-
-    materialBuilder = event.create('crimson_iron')
-        .color(0xee4f7f)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .ore(2, 1);
-
-    materialBuilder = event.create('ferricore')
-        .ingot()
-        .color(0xb1e5db)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .ore(2, 1);
-
-    materialBuilder = event.create('blazegold')
-        .ingot()
-        .color(0xe68e52)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .ore(2, 1);
-
-    materialBuilder = event.create('eclipsealloy')
-        .ingot()
-        .color(0x586e75)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .ore(2, 1);
-
-    materialBuilder = event.create("hepatizon")
-        .color(0x715A7C)
-        .dust()
-        .components('2x copper', '1x cobalt', '1x nether_quartz')
-        .ingot()
-        .fluid()
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
-        .iconSet(GTMaterialIconSet.METALLIC);
-
-    materialBuilder = event.create("amethyst_bronze")
-        .color(0xEBC4DB)
-        .dust()
-        .components('1x copper', '1x amethyst')
-        .ingot()
-        .fluid()
-        .iconSet(GTMaterialIconSet.METALLIC);
-
-
-    materialBuilder = event.create("manyullyn")
-        .color(0xC097F0)
-        .dust()
-        .components('1x debris', '3x cobalt')
-        .ingot()
-        .fluid()
-        .iconSet(GTMaterialIconSet.METALLIC);
-
-    materialBuilder = event.create('core')
-        .color(0x989CAB)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create("elemental_fire")
-        .color(0xD55642)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create("elemental_water")
-        .color(0xB7B5ED)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create("elemental_air")
-        .color(0xE3E3BF)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create("elemental_earth")
-        .color(0x289C2B)
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-
-
-    materialBuilder = event.create('drenched_iron')
-        .ingot()
-        .dust()
-        .fluid()
-        .ore(2, 1)
-        .element('iron')
-        .color(0x5490CF)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.GENERATE_ROD,
-            GTMaterialFlags.GENERATE_LONG_ROD,
-            GTMaterialFlags.GENERATE_RING,
-            GTMaterialFlags.GENERATE_BOLT_SCREW,
-            GTMaterialFlags.GENERATE_ROUND,
-            GTMaterialFlags.GENERATE_FRAME,
-            GTMaterialFlags.GENERATE_DENSE,
-            GTMaterialFlags.GENERATE_GEAR,
-            GTMaterialFlags.GENERATE_SMALL_GEAR,
-            GTMaterialFlags.GENERATE_FOIL);
-
-    materialBuilder = event.create('swift_alloy')
-        .ingot()
-        .dust()
-        .fluid()
-        .ore(2, 1)
-        .color(0xEBB760)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.GENERATE_ROD,
-            GTMaterialFlags.GENERATE_LONG_ROD,
-            GTMaterialFlags.GENERATE_RING,
-            GTMaterialFlags.GENERATE_BOLT_SCREW,
-            GTMaterialFlags.GENERATE_ROUND,
-            GTMaterialFlags.GENERATE_FRAME,
-            GTMaterialFlags.GENERATE_DENSE,
-            GTMaterialFlags.GENERATE_GEAR,
-            GTMaterialFlags.GENERATE_SMALL_GEAR,
-            GTMaterialFlags.GENERATE_FOIL);
-
-    materialBuilder = event.create('fireite')
-        .ingot()
-        .dust()
-        .fluid()
-        .ore(2, 1)
-        .color(0x5C0A0A)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.GENERATE_ROD,
-            GTMaterialFlags.GENERATE_LONG_ROD,
-            GTMaterialFlags.GENERATE_RING,
-            GTMaterialFlags.GENERATE_BOLT_SCREW,
-            GTMaterialFlags.GENERATE_ROUND,
-            GTMaterialFlags.GENERATE_FRAME,
-            GTMaterialFlags.GENERATE_DENSE,
-            GTMaterialFlags.GENERATE_GEAR,
-            GTMaterialFlags.GENERATE_SMALL_GEAR,
-            GTMaterialFlags.GENERATE_FOIL);
-
-
-    materialBuilder = event.create('coagulite')
-        .gem()
-        .ore(2, 1)
-        .color(0x5C0A0A)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION);
-
-    materialBuilder = event.create('azure_silver')
-        .ore(2, 1)
-        .color(0xDE81E6)
-        .iconSet(GTMaterialIconSet.METALLIC);
-
-    materialBuilder = event.create('mithril')
-        .ore(2, 1)
-        .dust()
-        .ingot()
-        .color(0x99D9D9)
-        .iconSet(GTMaterialIconSet.METALLIC);
-
-    materialBuilder = event.create("chaos_shard")
-        //.dust()
-        .gem()
-        //.fluid()
-        .color(0x090909)
-        .iconSet(GTMaterialIconSet.RADIOACTIVE);
-
-    materialBuilder = event.create("unrefined_tenebrius")
-        .dust()
-        .fluid()
-        .element('tenebrium')
-        .color(0x101010)
-        .iconSet(GTMaterialIconSet.RADIOACTIVE);
-
-    materialBuilder = event.create("purified_tenebrius")
-        .dust()
-        .fluid()
-        .element('tenebrium')
-        .color(0x101010)
-        .iconSet(GTMaterialIconSet.RADIOACTIVE);
-
-    materialBuilder = event.create("refined_tenebrius")
-        .dust()
-        .fluid()
-        .gem()
-        .element('tenebrium')
-        .color(0x101010)
-        .iconSet(GTMaterialIconSet.RADIOACTIVE);
-
-    materialBuilder = event.create("infinity")
-        .ingot()
-        .liquid(new GTFluidBuilder().state(GTFluidState.LIQUID).customStill())
-        .element('infinity')
-        .color(0xffffff)
-        .iconSet("infinity")
-        .blastTemp(10800, getGasTier(33554432), 33554432, 600)
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.GENERATE_ROD,
-            GTMaterialFlags.GENERATE_LONG_ROD,
-            GTMaterialFlags.GENERATE_RING,
-            GTMaterialFlags.GENERATE_BOLT_SCREW,
-            GTMaterialFlags.GENERATE_ROUND,
-            GTMaterialFlags.GENERATE_FRAME,
-            GTMaterialFlags.GENERATE_DENSE,
-            GTMaterialFlags.GENERATE_GEAR,
-            GTMaterialFlags.GENERATE_SMALL_GEAR,
-            GTMaterialFlags.GENERATE_FOIL);
-
-    /*
-    copied from nomi striclty for lurning purposes
-    materialBuilder = event.create("sculk_alloy")
-        .ingot()
-        .liquid(new GTFluidBuilder().state(GTFluidState.LIQUID).customStill())
-        .color(0xffffff)
-        .iconSet("sculk_alloy")
-        .flags(
-            GTMaterialFlags.GENERATE_PLATE,
-            GTMaterialFlags.GENERATE_ROD,
-            GTMaterialFlags.GENERATE_LONG_ROD,
-            GTMaterialFlags.GENERATE_RING,
-            GTMaterialFlags.GENERATE_BOLT_SCREW,
-            GTMaterialFlags.GENERATE_ROUND,
-            GTMaterialFlags.GENERATE_FRAME,
-            GTMaterialFlags.GENERATE_DENSE,
-            GTMaterialFlags.GENERATE_GEAR,
-            GTMaterialFlags.GENERATE_SMALL_GEAR,
-            GTMaterialFlags.GENERATE_FOIL);
-    */
-    materialBuilder = event.create('garmonbozia')
-        // @ts-ignore
-        .gem()
-        .dust()
-        .fluid()
-        .color('0xFFFBD0')
-        .element('garmonbozia')
-        .iconSet(GTMaterialIconSet.SHINY)
-        .flags(
-            // @ts-ignore                
-            CMMEMaterialFlags.GENERATE_SINGULARITY
-        );
-
-    materialBuilder = event.create('thorn_rose')
-        .dust()
-        .color('0xAB3236')
-        .iconSet(GTMaterialIconSet.WOOD)
-
-    materialBuilder = event.create('platinum_rhenium_catalyst')
-        // @ts-ignore        
-        .dust()
-        .fluid()
-        .polymer()
-        .ingot()
-        .components('1x platinum', '1x aluminium', '1x rhenium')
-        .color('0x8B8C8E')
-        .iconSet(GTMaterialIconSet.DULL)
-        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.DISABLE_DECOMPOSITION);
-
-
-    materialBuilder = event.create('blue_ice')
-        .dust()
-        .fluid()
-        .color('0x739BD0')
-        .iconSet(GTMaterialIconSet.GLASS)
-
-    materialBuilder = event.create('packed_ice')
-        .dust()
-        .fluid()
-        .color('0xA5C2F5')
-        .iconSet(GTMaterialIconSet.GLASS)
-
-    materialBuilder = event.create('rotten_flesh')
-        .fluid()
-        .color('0x934537')
-        .ingot()
-        .iconSet(GTMaterialIconSet.FLUID)
-
-    materialBuilder = event.create('recycled_organic_matter')
-        .fluid()
-        .color('0x6E6259')
-        .iconSet(GTMaterialIconSet.FLUID);
-
-    materialBuilder = event.create('niter')
-        .dust()
-        .gem()
-        .color(0xF7F5F0)
-        .formula("KNO3")
-        .iconSet(GTMaterialIconSet.DIAMOND)
-        .components('1x potassium', '1x nitrogen', '3x oxygen');
-
-
-
-    //{ name: 'woods_alloy', color: 0xB0B8C0, iconSet: 'METALLIC', components: '2x bismuth, 1x lead, 1x tin, 1x cadmium', formula: 'Bi2PbSnCd' },
-
-
-    materialBuilder = event.create('cadmium_copper')
-        .ingot()
-        .dust()
-        .fluid()
-        .color(0xC97A4A)
-        .formula("Cu9Cd")
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .components('9x copper', '1x cadmium')
-        .cableProperties(getVoltage(128), 2, 1, false)
-        .flags(GTMaterialFlags.GENERATE_FINE_WIRE);
-
-    materialBuilder = event.create('cadmium_telluride')
-        .ingot()
-        .dust()
-        .fluid()
-        .color(0x2B2B2B)
-        .formula("CdTe")
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .components('1x cadmium', '1x tellurium')
-        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL);
-
-    materialBuilder = event.create('cadmium_selenide')
-        .ingot()
-        .dust()
-        .fluid()
-        .color(0xD94D1A)
-        .formula("CdSe")
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .components('1x cadmium', '1x selenium')
-        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL);
-
-    materialBuilder = event.create('strontium_aluminate')
-        .ingot()
-        .dust()
-        .fluid()
-        .color(0xF0EDE0)
-        .formula("SrAl2O4")
-        .iconSet(GTMaterialIconSet.DULL)
-        .components('1x strontium', '2x aluminium', '4x oxygen')
-        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_FOIL, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD);
-
-    materialBuilder = event.create('strontium_ferrite')
-        .ingot()
-        .dust()
-        .fluid()
-        .color(0x3C3C3C)
-        .formula("SrFe12O19")
-        .iconSet(GTMaterialIconSet.DULL)
-        .components('1x strontium', '12x iron', '19x oxygen')
-        .flags(GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_RING);
-
-    materialBuilder = event.create('bio_organic_pulp')
-        .dust()
-        .color(0x7A6248)
-        .iconSet(GTMaterialIconSet.DULL);
-
-    materialBuilder = event.create('microbial_biomass')
-        .fluid()
-        .color(0x556B2F)
-        .iconSet(GTMaterialIconSet.FLUID);
-
-    materialBuilder = event.create('nucleic_acid_mixture')
-        .fluid()
-        .color(0x4682B4)
-        .iconSet(GTMaterialIconSet.FLUID);
-
-    materialBuilder = event.create('enzyme_solution')
-        .fluid()
-        .color(0x9370DB)
-        .iconSet(GTMaterialIconSet.FLUID);
-
-    materialBuilder = event.create('concentrated_liquid_dna')
-        .fluid()
-        .color(0xFF69B4)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('dna_productivity')
-        .fluid()
-        .color(0x00d200)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('dna_tolerance')
-        .fluid()
-        .color(0x0000d6)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('dna_behavior')
-        .fluid()
-        .color(0xd8d800)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('dna_endurance')
-        .fluid()
-        .color(0x00ccd3)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('dna_omega')
-        .fluid()
-        .color(0xa45a26)
-        .iconSet(GTMaterialIconSet.SHINY);
-
-    materialBuilder = event.create('dna_mutation')
-        .fluid()
-        .color(0x66008a)
-        .iconSet(GTMaterialIconSet.SHINY);
+    let cadmium = GTMaterials.get('cadmium')
+    cadmium.addFlags(GTMaterialFlags.GENERATE_ROD);
+    if (!cadmium.hasProperty(PropertyKey.INGOT)) {
+        cadmium.setProperty(PropertyKey.INGOT, new IngotProperty())
+    }
 
     //extreme reactors
     erMaterials.forEach(mat => {
@@ -1296,6 +913,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             );
     });
 
+    //gems
     materialsGem.forEach(mat => {
         let materialBuilder = event.create(mat.name)
 
@@ -1345,19 +963,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     });
 
 
-    let mana_essence = event.create('mana_essence')
-        // @ts-ignore
-        .gem()
-        .fluid()
-        .color(0x0099FF)
-        .iconSet(GTMaterialIconSet.RADIOACTIVE)
-        .flags(
-        // @ts-ignore
-        //CMMEMaterialFlags.GENERATE_SINGULARITY
-    );
-
-    //antimatter
-
+    //actually additions
     adMats.forEach(mat => {
         let materialbuilder = event.create(mat.name)
             // @ts-ignore
@@ -1389,120 +995,13 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
             )
     });
 
-
-
-    let antimatter = event.create('antimatter')
-        // @ts-ignore
-        .dust()
-        .element('antimatter')
-        .fluid()
-        .color('0x7d4d88')
-        .iconSet(GTMaterialIconSet.RADIOACTIVE);
-
-
-    let cosmic_matter = event.create('cosmic_matter')
-        // @ts-ignore
-        .dust()
-        .ingot()
-        .fluid()
-        .element('cosmic')
-        .color(0x3b004f)
-        .iconSet(GTMaterialIconSet.METALLIC);
-
-    let thorium_doped = event.create('thorium_doped_calcium_fluoride')
-        // @ts-ignore
-        .dust()
-        .gem()
-        .fluid()
-        .color(0xFF8C00)
-        .iconSet(GTMaterialIconSet.CERTUS)
-        .flags(GTMaterialFlags.DISABLE_DECOMPOSITION)
-        //.components('1x thorium, 1x calcium_fluoride')
-        .formula('Th:CaF2');
-
-
-    //moved from here
-
-
-    let cadmium = GTMaterials.get('cadmium')
-    cadmium.addFlags(GTMaterialFlags.GENERATE_ROD);
-    if (!cadmium.hasProperty(PropertyKey.INGOT)) {
-        cadmium.setProperty(PropertyKey.INGOT, new IngotProperty())
-    }
-
-
-
-
-    const modifyElement = (materialO, materialN, bTemp, volts, gem, polymer, ingot) => {
-        let mrp = GTMaterials.get(materialN).getFlags()
-        let mmaterialClass = mrp.getClass()
-        // @ts-ignore
-        let flagsFieldM = mmaterialClass.getDeclaredField("flags")
-        flagsFieldM.setAccessible(true)
-        let activeFlagsM = flagsFieldM.get(mrp)
-        activeFlagsM.remove(GTMaterialFlags.NO_SMELTING)
-        activeFlagsM.remove(GTMaterialFlags.FLAMMABLE)
-        let material = materialO
-        if (bTemp) {
-            let bVolts = getCoilVoltage(bTemp);
-            let mbp = new BlastProperty
-            mbp.setBlastTemperature(bTemp);
-            mbp.setDurationOverride(1200);
-            mbp.setEUtOverride(bVolts);
-            mbp.setGasTier(getGasTier(bVolts));
-            mbp.setVacuumDurationOverride(120);
-            mbp.setVacuumEUtOverride(bVolts);
-            material.setProperty(PropertyKey.BLAST, mbp)
-        }
-
-        // @ts-ignore
-        if (volts) { material.setProperty(PropertyKey.WIRE, new WireProperties(volts, 1, 0)) }
-        if (polymer == true) { material.setProperty(PropertyKey.POLYMER, new PolymerProperty()) }
-        if (ingot == true) {
-            if (!material.hasProperty(PropertyKey.INGOT)) {
-                material.setProperty(PropertyKey.INGOT, new IngotProperty())
-            }
-
-        }
-
-        material.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()))
-
-        if (gem == true) {
-            if (!material.hasProperty(PropertyKey.INGOT)) {
-                material.setProperty(PropertyKey.GEM, new GemProperty())
-            }
-
-        }
-        if (ingot == true || gem == true || polymer == true) {
-            material.addFlags(
-                GTMaterialFlags.GENERATE_PLATE,
-                GTMaterialFlags.GENERATE_DENSE,
-                GTMaterialFlags.GENERATE_ROD,
-                GTMaterialFlags.GENERATE_LONG_ROD,
-                GTMaterialFlags.GENERATE_GEAR,
-                GTMaterialFlags.GENERATE_SMALL_GEAR,
-                GTMaterialFlags.GENERATE_BOLT_SCREW,
-                GTMaterialFlags.GENERATE_FOIL,
-                GTMaterialFlags.GENERATE_FRAME,
-                GTMaterialFlags.GENERATE_RING,
-                GTMaterialFlags.GENERATE_SPRING,
-                GTMaterialFlags.GENERATE_SPRING_SMALL,
-                GTMaterialFlags.GENERATE_ROTOR,
-                GTMaterialFlags.GENERATE_ROUND,
-                GTMaterialFlags.GENERATE_FINE_WIRE,
-                // @ts-ignore
-                //CMMEMaterialFlags.GENERATE_SINGULARITY
-            )
-        }
-
-
-    }
-
+    //existing elements
     otherElements.forEach(mat => {
         let material = GTMaterials.get(mat.name);
         modifyElement(material, mat.name, mat.cBlast, mat.cVolt, mat.oGem, mat.cPolymer, mat.cIngot)
     });
 
+    //stuff from other mods
     modalloys.forEach(mat => {
 
         let materialBuilder = event.create(mat.name)
@@ -1578,13 +1077,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     });
 
-
-
-    //singularityMetals.forEach(mat => {
-    //    GTMaterials.get(mat).addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    //});
-
-
+    //naquadria plasma
     naqStages.forEach(mat => {
         let materialBuilder = event.create(mat.name)
             // @ts-ignore                                             
@@ -1601,29 +1094,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         }
     });
 
-    //making changes here
 
-
-    let samCoBuilder = event.create('samarium_cobalt')
-        .dust()
-        .ingot()
-        .fluid()
-        .color(0x8C7B4A)
-        .iconSet(GTMaterialIconSet.METALLIC)
-        .formula('SmCo5')
-        .components('1x samarium', '5x cobalt')
-        .flags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.DISABLE_DECOMPOSITION);
-
-
-    // Magnetic variant - same forms, same flags + IS_MAGNETIC
-    event.create('magnetic_samarium_cobalt')
-        .dust()
-        .ingot()
-        .fluid()
-        .color(0x8C7B4A)
-        .iconSet(GTMaterialIconSet['MAGNETIC'])
-        .flags(GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.IS_MAGNETIC, GTMaterialFlags.DISABLE_DECOMPOSITION);
-
+    //custom ores
     newOres.forEach(mat => {
         let materialBuilder = event.create(mat.name)
             .dust()
@@ -1644,6 +1116,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
     });
 
+    //custom dusts
     dusts.forEach(mat => {
         let materialBuilder = event.create(mat.name)
             .dust()
@@ -1659,6 +1132,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
     });
 
+    //custom fluids
     fluids.forEach(mat => {
         let materialBuilder = event.create(mat.name)
             // @ts-ignore               
@@ -1673,6 +1147,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         if (mat.noDecomp) { materialBuilder.flags(GTMaterialFlags.DISABLE_DECOMPOSITION); }
     });
 
+    //custom polymers
     polymers.forEach(mat => {
         let materialBuilder = event.create(mat.name)
             // @ts-ignore            
@@ -1692,6 +1167,8 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         }
         //if (mat.formula) { materialBuilder.formula(mat.formula) }
     });
+
+
 
 });
 
@@ -1890,9 +1367,9 @@ const oreSetups = {
     crimson_iron: { oreNetherrack: 'silentgear:crimson_iron_ore' },
     azure_silver: { oreEndstone: 'silentgear:azure_silver_ore' },
     mithril: { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' },
-    desh: { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' },
-    ostrum: { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' },
-    calorite: { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' },
+    desh: { oreDeepslate: 'ad_astra:deepslate_desh_ore' },
+    ostrum: { oreDeepslate: 'ad_astra:deepslate_ostrum_ore' },
+    calorite: { oreDeepslate: 'ad_astra:deepslate_calorite_ore' },
     ferricore: { ore: 'justdirethings:raw_ferricore_ore' },
     blazegold: { ore: 'justdirethings:raw_blazegold_ore' },
     eclipsealloy: { ore: 'justdirethings:raw_eclipsealloy_ore' },
@@ -1906,10 +1383,13 @@ const oreSetups = {
 // ---------- Helpers ----------
 const getPrefix = (name) => TagPrefix[name] || TagPrefix.get(name);
 
+
 const setupOres = (matName, variants) => {
     let mat = GTMaterials.get(matName);
     if (!mat) return;
-    TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
+    TagPrefix.ORES.keySet().forEach(prefix => {
+        prefix.setIgnored(mat);
+    });
     if (variants) {
         Object.keys(variants).forEach(prefixName => {
             let prefix = getPrefix(prefixName);
@@ -1929,6 +1409,90 @@ const ignoreFromList = (list, buildId) => {
         });
     });
 };
+
+const registerNewOres = () => {
+    newOres.forEach(mat => {
+        let material = GTMaterials.get(mat.name);
+
+        if (material && mat.byproducts) {
+
+            // 1. Create the Java ArrayList using the properly loaded KubeJS 6 class
+            let javaList = new ArrayList();
+            mat.byproducts.forEach(bp => {
+                let gtMat = GTMaterials.get(bp);
+                if (gtMat) {
+                    javaList.add(gtMat);
+                }
+            });
+
+            if (material.hasProperty(PropertyKey.ORE)) {
+                material.removeProperty(PropertyKey.ORE);
+            }
+
+            let ore_prop = new OreProperty();
+
+            // 2. Force Rhino to use the Collection method specifically to avoid ambiguity            
+            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+
+            material.setProperty(PropertyKey.ORE, ore_prop);
+        }
+    });
+};
+
+//adding ore processing for existing ores
+const addOreProcessing = (rawOre, biproducts) => {
+    let material = GTMaterials.get(rawOre);
+    if (!material) return;
+
+    let ore_prop = material.hasProperty(PropertyKey.ORE)
+        ? material.getProperty(PropertyKey.ORE)
+        : new OreProperty();
+
+    if (biproducts && biproducts.length > 0) {
+        let javaList = new ArrayList();
+        biproducts.forEach(bp => {
+            let gtMat = GTMaterials.get(bp);
+            if (gtMat) javaList.add(gtMat);
+        });
+        ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+    }
+
+    if (!material.hasProperty(PropertyKey.ORE)) {
+        material.setProperty(PropertyKey.ORE, ore_prop);
+    }
+};
+
+//atm trio tools
+function overwriteToolStats(materialName, speed, damage, durability, harvestLevel) {
+    let mat = GTMaterials.get(materialName);
+
+    if (mat != null) {
+        if (mat.hasProperty(PropertyKey.TOOL)) {
+            mat.removeProperty(PropertyKey.TOOL);
+        }
+        let newProps = ToolProperty.Builder.of(speed, damage, durability, harvestLevel,
+            [
+                GTToolType.PICKAXE,
+                GTToolType.AXE,
+                GTToolType.SHOVEL,
+                GTToolType.HOE,
+                GTToolType.SWORD,
+                GTToolType.KNIFE,
+                GTToolType.HARD_HAMMER,
+                GTToolType.CROWBAR,
+                GTToolType.SPADE,
+                GTToolType.BUTCHERY_KNIFE,
+                GTToolType.FILE,
+                GTToolType.MORTAR,
+                GTToolType.MINING_HAMMER,
+                GTToolType.SAW
+            ]
+        )
+            .unbreakable()
+            .build();
+        mat.setProperty(PropertyKey.TOOL, newProps);
+    }
+}
 
 // ---------- The shared unification pass ----------
 const applyUnification = () => {
@@ -1963,77 +1527,33 @@ const applyUnification = () => {
     Object.keys(oreSetups).forEach(matName => setupOres(matName, oreSetups[matName]));
 };
 
+
+GTCEuStartupEvents.registry('gtceu:world_gen_layer', event => {
+    const adAstraPlanets = ['moon', 'mars', 'venus', 'mercury'];
+
+    adAstraPlanets.forEach(planet => {
+        event.create(planet)
+            .targets(
+                `ad_astra:${planet}_stone`,
+                `ad_astra:${planet}_sand`,
+
+            )
+            .dimensions(`ad_astra:${planet}`);
+    });
+
+    event.create('glacio')
+        .targets(
+            `ad_astra:glacio_stone`,
+            `ad_astra:glacio_ice`,
+        )
+        .dimensions(`ad_astra:glacio`);
+});
+
 StartupEvents.postInit(event => {
     applyUnification();
-    TagPrefix.ORES.keySet().forEach(p => console.warn(`[ore list] ${p.name}`));
 });
 
 GTCEuStartupEvents.materialModification(event => {
-    
-
-    const setupOres = (matName, variants) => {
-        let mat = GTMaterials.get(matName);
-        if (!mat) return;
-        // 1. Suppress every GT-generated ore block for this material
-        TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
-        // 2. Map the mod's real ore blocks back in
-        if (variants) {
-            Object.keys(variants).forEach(prefix => {
-                let id = variants[prefix];
-                if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
-            });
-        }
-    };
-
-
-    newOres.forEach(mat => {
-        let material = GTMaterials.get(mat.name);
-
-        if (material && mat.byproducts) {
-
-            // 1. Create the Java ArrayList using the properly loaded KubeJS 6 class
-            let javaList = new ArrayList();
-            mat.byproducts.forEach(bp => {
-                let gtMat = GTMaterials.get(bp);
-                if (gtMat) {
-                    javaList.add(gtMat);
-                }
-            });
-
-            if (material.hasProperty(PropertyKey.ORE)) {
-                material.removeProperty(PropertyKey.ORE);
-            }
-
-            let ore_prop = new OreProperty();
-
-            // 2. Force Rhino to use the Collection method specifically to avoid ambiguity            
-            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-
-            material.setProperty(PropertyKey.ORE, ore_prop);
-        }
-    });
-
-    const addOreProcessing = (rawOre, biproducts) => {
-        let material = GTMaterials.get(rawOre);
-        if (!material) return;
-
-        let ore_prop = material.hasProperty(PropertyKey.ORE)
-            ? material.getProperty(PropertyKey.ORE)
-            : new OreProperty();
-
-        if (biproducts && biproducts.length > 0) {
-            let javaList = new ArrayList();
-            biproducts.forEach(bp => {
-                let gtMat = GTMaterials.get(bp);
-                if (gtMat) javaList.add(gtMat);
-            });
-            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-        }
-
-        if (!material.hasProperty(PropertyKey.ORE)) {
-            material.setProperty(PropertyKey.ORE, ore_prop);
-        }
-    };
 
     addOreProcessing('osmiridium', ['ruthenium']);
     addOreProcessing('monazite', ['rare_earth', 'gadolinium', 'neodymium']);
@@ -2062,686 +1582,38 @@ GTCEuStartupEvents.materialModification(event => {
     addOreProcessing('eclipsealloy', ['blazegold', 'ender_pearl', 'obsidian']);
 
     applyUnification();
+    registerNewOres();
 
-    //check here
-    const suppressOnPrefix = (prefixName, links, keep) => {
-        let prefix = TagPrefix.get(prefixName);
-        if (!prefix) {
-            console.warn(`[planet ores] prefix '${prefixName}' NOT FOUND, nothing suppressed`);
-            return;
-        }
-        let count = 0;
-        Object.keys(oreSetups).forEach(matName => {
-            if (keep && keep.includes(matName)) return;
-            let mat = GTMaterials.get(matName);
-            if (!mat) return;
-            let id = links && links[matName];
-            if (id) prefix.setIgnored(mat, id);
-            else prefix.setIgnored(mat);
-            count++;
-        });
-        console.warn(`[planet ores] prefix '${prefixName}' found, ${count} materials handled`);
-    };
-    let p = (name) => TagPrefix.get(name);
-    suppressOnPrefix(p('moon'),    { desh: 'ad_astra:moon_desh_ore' });
-    suppressOnPrefix(p('mars'),    { ostrum: 'ad_astra:mars_ostrum_ore' }, ['draconium']);
-    suppressOnPrefix(p('venus'),   { calorite: 'ad_astra:venus_calorite_ore' });
-    suppressOnPrefix(p('mercury'));
-    suppressOnPrefix(p('glacio'));
-
-    function overwriteToolStats(materialName, speed, damage, durability, harvestLevel) {
-        let mat = GTMaterials.get(materialName);
-
-        if (mat != null) {
-            if (mat.hasProperty(PropertyKey.TOOL)) {
-                mat.removeProperty(PropertyKey.TOOL);
-            }
-            let newProps = ToolProperty.Builder.of(speed, damage, durability, harvestLevel,
-                [
-                    GTToolType.PICKAXE,
-                    GTToolType.AXE,
-                    GTToolType.SHOVEL,
-                    GTToolType.HOE,
-                    GTToolType.SWORD,
-                    GTToolType.KNIFE,
-                    GTToolType.HARD_HAMMER,
-                    GTToolType.CROWBAR,
-                    GTToolType.SPADE,
-                    GTToolType.BUTCHERY_KNIFE,
-                    GTToolType.FILE,
-                    GTToolType.MORTAR,
-                    GTToolType.MINING_HAMMER,
-                    GTToolType.SAW
-                ]
-            )
-                .unbreakable()
-                .build();
-            mat.setProperty(PropertyKey.TOOL, newProps);
-        }
-    }
 
     overwriteToolStats('allthemodium', 16.0, 6.0, 0, 5);
     overwriteToolStats('vibranium', 20.0, 8.0, 0, 6);
     overwriteToolStats('unobtainium', 24.0, 10.0, 0, 7);
 
-    //singularities
-    GTMaterials.get('beryllium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('allthemodium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('vibranium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('unobtainium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('lapotron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
-    GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
-
-    GTMaterials.get('hellforged').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('iesnium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('compressed_iron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('source').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('mana_essence').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-
-});
-
-
-/*
-StartupEvents.postInit(event => {
-    //ad astra
-    adMats.forEach(mat => {
-        TagPrefix.ingot.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_ingot`)
-        TagPrefix.nugget.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_nugget`)
-        TagPrefix.plate.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_plate`)
-        TagPrefix.block.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_block`)
-    });
-
-
-    // extreme reactors
-    erMaterials.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `bigreactors:${mat.name}_${type}`);
-                }
-            });
-        }
-    });
-
-    //mekanism
-    mekanism.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${type}_${mat.name}`);
-                }
-            });
-        }
-    });
-
-
-    otherElements.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${mat.name}_${type}`);
-                }
-            });
-        }
-    });
-
-    //unification
-    unification.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${mat.name}_${type}`);
-                }
-            });
-        }
-    });
-
-
-    dusts.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat) {
-            let ingotItem = Item.of(mat.oItem);
-            let dustItem = Item.of(mat.oDust);
-            let gemItem = Item.of(mat.oGem);
-
-            if (gtMat && !ingotItem.isEmpty()) {
-                TagPrefix.ingot.setIgnored(gtMat, ingotItem.item);
-            }
-            if (gtMat && !dustItem.isEmpty()) {
-                TagPrefix.dust.setIgnored(gtMat, dustItem.item);
-            }
-            if (gtMat && !gemItem.isEmpty()) {
-                TagPrefix.gem.setIgnored(gtMat, gemItem.item);
-            }
-        }
-    });
-
-    chalks.forEach(chalk => {
-        const rawColor = chalk.name.replace('_chalk', '');
-        const color = (rawColor === 'yellow') ? 'gold' : rawColor;
-        //const color = chalk.name.replace('_chalk', '');
-        const gem = `occultism:chalk_${color}`;
-        TagPrefix.gem.setIgnored(GTMaterials.get(chalk.name), gem);
-    });
-
-
-
-    // Block
-    TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
-    TagPrefix.block.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_block');
-    TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
-    TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
-    TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
-    TagPrefix.block.setIgnored(GTMaterials.get('niter'), 'thermal:niter_block');
-
-
-    // Dust
-    TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
-    TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
-    TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
-    TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
-    TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
-    TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
-    TagPrefix.dust.setIgnored(GTMaterials.get('soul_sand'), 'thermal_extra:soul_sand_dust');
-
-
-    // Gear
-    TagPrefix.gear.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_gear');
-
-    // Gem
-    TagPrefix.gem.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_crystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('atm_star'), 'allthetweaks:atm_star');
-    TagPrefix.gem.setIgnored(GTMaterials.get('eternal'), 'forbidden_arcanus:eternal_stella');
-    TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'ars_nouveau:source_gem');
-    TagPrefix.gem.setIgnored(GTMaterials.get('soul'), 'occultism:soul_gem');
-    TagPrefix.gem.setIgnored(GTMaterials.get('glycerol'), 'pneumaticcraft:glycerol');
-    TagPrefix.gem.setIgnored(GTMaterials.get('demon'), 'bloodmagic:defaultcrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('steadfast'), 'bloodmagic:steadfastcrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('corrosive'), 'bloodmagic:corrosivecrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
-    TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
-    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'evilcraft:condensed_blood');
-    TagPrefix.gem.setIgnored(GTMaterials.get('carminite'), 'twilightforest:carminite');
-
-    TagPrefix.gem.setIgnored(GTMaterials.get('fire_essence'), 'mysticalagriculture:fire_essence');
-    TagPrefix.gem.setIgnored(GTMaterials.get('water_essence'), 'mysticalagriculture:water_essence');
-    TagPrefix.gem.setIgnored(GTMaterials.get('air_essence'), 'mysticalagriculture:air_essence');
-    TagPrefix.gem.setIgnored(GTMaterials.get('earth_essence'), 'mysticalagriculture:earth_essence');
-
-    TagPrefix.gem.setIgnored(GTMaterials.get('pulsating_crystal'), 'enderio:pulsating_crystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('vibrant_crystal'), 'enderio:vibrant_crystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('tachyon'), 'gtceu:tachyon');
-
-
-
-    // Ingot
-    TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_reinforced'), 'mekanism:alloy_reinforced');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_infused'), 'mekanism:alloy_infused');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:ingot_iron_compressed');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:ingot_hop_graphite');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('pink_slime'), 'industrialforegoing:pink_slime_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('deorum'), 'forbidden_arcanus:deorum_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('plastic'), 'industrialforegoing:plastic');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ingot');
-
-    TagPrefix.ingot.setIgnored(GTMaterials.get('energized_steel'), 'powah:steel_energized');
-    TagPrefix.gem.setIgnored(GTMaterials.get('blazing_crystal'), 'powah:crystal_blazing');
-    TagPrefix.gem.setIgnored(GTMaterials.get('niotic_crystal'), 'powah:crystal_niotic');
-    TagPrefix.gem.setIgnored(GTMaterials.get('spirited_crystal'), 'powah:crystal_spirited');
-    TagPrefix.gem.setIgnored(GTMaterials.get('nitro_crystal'), 'powah:crystal_nitro');
-
-    // Nugget
-    TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
-    TagPrefix.nugget.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_nugget');
-
-    // Rod
-    TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod');
-
-    // Polymer
-
-    // Ore
-
-    // Raw Ores
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');    
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('uranium'), 'alltheores:raw_uranium');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('zinc'), 'alltheores:raw_zinc');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('osmium'), 'alltheores:raw_osmium');
-
-
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('calorite'), 'ad_astra:raw_calorite');
-
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('iridium'), 'alltheores:raw_iridium');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('debris'), 'minecraft:ancient_debris');
-
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('crimson_iron'), 'silentgear:raw_crimson_iron');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy');
-
-    const ignoreOres = (matName, variants) => {
-    let mat = GTMaterials.get(matName);
-    if (!mat) return;
-    Object.keys(variants).forEach(prefix => {
-        let id = variants[prefix];
-        if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
-    });
-};
-
-    const setupOres = (matName, variants) => {
-        let mat = GTMaterials.get(matName);
-        if (!mat) return;
-        // 1. Suppress every GT-generated ore block for this material
-        TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
-        // 2. Map the mod's real ore blocks back in
-        if (variants) {
-            Object.keys(variants).forEach(prefix => {
-                let id = variants[prefix];
-                if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
-            });
-        }
-    };
-
-    setupOres('draconium', {
-        ore:           'draconicevolution:overworld_draconium_ore',
-        oreDeepslate:  'draconicevolution:deepslate_draconium_ore',
-        oreNetherrack: 'draconicevolution:nether_draconium_ore',
-        oreEndstone:   'draconicevolution:end_draconium_ore'
-    });
-    setupOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
-    setupOres('vibranium',    { oreNetherrack: 'allthemodium:vibranium_ore' });
-    setupOres('unobtainium',  { oreEndstone: 'allthemodium:unobtainium_ore' });
-    setupOres('iesnium',      { oreNetherrack: 'occultism:iesnium_ore' });
-    setupOres('hellforged',   { ore: 'bloodmagic:dungeon_ore' });
-    setupOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
-    setupOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
-    setupOres('mithril',      { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
-    setupOres('desh',         { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
-    setupOres('ostrum',       { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
-    setupOres('calorite',     { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
-    setupOres('ferricore',    { ore: 'justdirethings:raw_ferricore_ore' });
-    setupOres('blazegold',    { ore: 'justdirethings:raw_blazegold_ore' });
-    setupOres('eclipsealloy', { ore: 'justdirethings:raw_eclipsealloy_ore' });
-    setupOres('debris');
-
-    setupOres('osmium');
-    setupOres('zinc',         { ore: 'alltheores:zinc_ore', oreDeepslate: 'alltheores:deepslate_zinc_ore', oreNetherrack: 'alltheores:nether_zinc_ore' });
-    setupOres('uranium',      { ore: 'alltheores:uranium_ore', oreDeepslate: 'alltheores:deepslate_uranium_ore', oreNetherrack: 'alltheores:nether_uranium_ore' });
-    setupOres('iridium',      { ore: 'alltheores:iridium_ore', oreDeepslate: 'alltheores:deepslate_iridium_ore', oreNetherrack: 'alltheores:nether_iridium_ore' });
-
-});
-
-
-GTCEuStartupEvents.materialModification(event => {
-    //ad astra
-    adMats.forEach(mat => {
-        TagPrefix.ingot.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_ingot`)
-        TagPrefix.nugget.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_nugget`)
-        TagPrefix.plate.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_plate`)
-        TagPrefix.block.setIgnored(GTMaterials.get(mat.name), `ad_astra:${mat.name}_block`)
-    });
-
-    // extreme reactors
-    erMaterials.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `bigreactors:${mat.name}_${type}`);
-                }
-            });
-        }
-    });
-
-    unification.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${mat.name}_${type}`);
-                }
-            });
-        }
-    });
-
-    //mekanism
-    mekanism.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${type}_${mat.name}`);
-                }
-            });
-        }
-    });
-
-    otherElements.forEach(mat => {
-        let gtMat = GTMaterials.get(mat.name);
-        if (gtMat && mat.oItems) {
-            mat.oItems.forEach(type => {
-                if (TagPrefix[type]) {
-                    TagPrefix[type].setIgnored(gtMat, `${mat.namespace}:${mat.name}_${type}`);
-                }
-            });
-        }
-    });
-
-    chalks.forEach(chalk => {
-        const color = chalk.name.replace('_chalk', '');
-        const gem = `occultism:chalk_${color}`;
-        TagPrefix.gem.setIgnored(GTMaterials.get(chalk.name), gem);
-    });
-
-    // Block
-    TagPrefix.block.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_block');
-    TagPrefix.block.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_block');
-    TagPrefix.block.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_block');
-    TagPrefix.block.setIgnored(GTMaterials.get('blue_ice'), 'minecraft:blue_ice');
-    TagPrefix.block.setIgnored(GTMaterials.get('packed_ice'), 'minecraft:packed_ice');
-    TagPrefix.block.setIgnored(GTMaterials.get('niter'), 'thermal:niter_block');
-
-    // Dust
-    TagPrefix.dust.setIgnored(GTMaterials.get('refined_obsidian'), 'mekanism:dust_refined_obsidian');
-    TagPrefix.dust.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:dust_hop_graphite');
-    TagPrefix.dust.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:sand_hellforged');
-    TagPrefix.dust.setIgnored(GTMaterials.get('antimatter'), 'mekanism:pellet_antimatter');
-    TagPrefix.dust.setIgnored(GTMaterials.get('garmonbozia'), 'evilcraft:garmonbozia');
-    TagPrefix.dust.setIgnored(GTMaterials.get('niter'), 'thermal:niter_dust');
-    TagPrefix.dust.setIgnored(GTMaterials.get('ferrognetic'), 'forbidden_arcanus:ferrognetic_mixture');
-    TagPrefix.dust.setIgnored(GTMaterials.get('soul_sand'), 'thermal_extra:soul_sand_dust');
-
-
-    // Gear
-    TagPrefix.gear.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:compressed_iron_gear');
-
-    // Gem
-    TagPrefix.gem.setIgnored(GTMaterials.get('glycerol'), 'pneumaticcraft:glycerol');
-    TagPrefix.gem.setIgnored(GTMaterials.get('fluix'), 'ae2:fluix_crystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('atm_star'), 'allthetweaks:atm_star');
-    TagPrefix.gem.setIgnored(GTMaterials.get('eternal'), 'forbidden_arcanus:eternal_stella');
-    TagPrefix.gem.setIgnored(GTMaterials.get('source'), 'ars_nouveau:source_gem');
-    TagPrefix.gem.setIgnored(GTMaterials.get('soul'), 'occultism:soul_gem');
-    TagPrefix.gem.setIgnored(GTMaterials.get('glycerol'), 'pneumaticcraft:glycerol');
-    TagPrefix.gem.setIgnored(GTMaterials.get('demon'), 'bloodmagic:defaultcrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('steadfast'), 'bloodmagic:steadfastcrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('corrosive'), 'bloodmagic:corrosivecrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('vengeful'), 'bloodmagic:vengefulcrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('destructive'), 'bloodmagic:destructivecrystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('niter'), 'thermal:niter');
-    TagPrefix.gem.setIgnored(GTMaterials.get('chaos_shard'), 'draconicevolution:chaos_shard');
-    TagPrefix.gem.setIgnored(GTMaterials.get('coagulite'), 'evilcraft:condensed_blood');
-    TagPrefix.gem.setIgnored(GTMaterials.get('carminite'), 'twilightforest:carminite');
-
-    TagPrefix.gem.setIgnored(GTMaterials.get('fire_essence'), 'mysticalagriculture:fire_essence');
-    TagPrefix.gem.setIgnored(GTMaterials.get('water_essence'), 'mysticalagriculture:water_essence');
-    TagPrefix.gem.setIgnored(GTMaterials.get('air_essence'), 'mysticalagriculture:air_essence');
-    TagPrefix.gem.setIgnored(GTMaterials.get('earth_essence'), 'mysticalagriculture:earth_essence');
-
-    TagPrefix.gem.setIgnored(GTMaterials.get('pulsating_crystal'), 'enderio:pulsating_crystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('vibrant_crystal'), 'enderio:vibrant_crystal');
-    TagPrefix.gem.setIgnored(GTMaterials.get('tachyon'), 'gtceu:tachyon');
-
-
-
-    // Ingot
-    TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_atomic'), 'mekanism:alloy_atomic');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_reinforced'), 'mekanism:alloy_reinforced');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('alloy_infused'), 'mekanism:alloy_infused');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('compressed_iron'), 'pneumaticcraft:ingot_iron_compressed');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('hop_graphite'), 'immersiveengineering:ingot_hop_graphite');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('pink_slime'), 'industrialforegoing:pink_slime_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('rotten_flesh'), 'minecraft:rotten_flesh');
-    //TagPrefix.ingot.setIgnored(GTMaterials.get('deorum'), 'forbidden_arcanus:deorum_ingot');    
-    TagPrefix.ingot.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_ingot');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:ingot_hellforged');
-    TagPrefix.ingot.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ingot');
-
-    TagPrefix.ingot.setIgnored(GTMaterials.get('energized_steel'), 'powah:steel_energized');
-    TagPrefix.gem.setIgnored(GTMaterials.get('blazing_crystal'), 'powah:crystal_blazing');
-    TagPrefix.gem.setIgnored(GTMaterials.get('niotic_crystal'), 'powah:crystal_niotic');
-    TagPrefix.gem.setIgnored(GTMaterials.get('spirited_crystal'), 'powah:crystal_spirited');
-    TagPrefix.gem.setIgnored(GTMaterials.get('nitro_crystal'), 'powah:crystal_nitro');
-
-    // Nugget
-    TagPrefix.nugget.setIgnored(GTMaterials.get('draconium_awakened'), 'draconicevolution:awakened_draconium_nugget');
-    TagPrefix.nugget.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:draconium_nugget');
-
-    // Rod
-    TagPrefix.rod.setIgnored(GTMaterials.get('etrium'), 'ad_astra:etrium_rod');
-
-
-    // Polymer
-
-    // Ore    
-
-
-    // Raw Ores
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');    
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('uranium'), 'alltheores:raw_uranium');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('zinc'), 'alltheores:raw_zinc');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('osmium'), 'alltheores:raw_osmium');
-
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('calorite'), 'ad_astra:raw_calorite');
-
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('iridium'), 'alltheores:raw_iridium');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('debris'), 'minecraft:ancient_debris');
-
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('crimson_iron'), 'silentgear:raw_crimson_iron');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy');
-
-    const setupOres = (matName, variants) => {
-        let mat = GTMaterials.get(matName);
-        if (!mat) return;
-        // 1. Suppress every GT-generated ore block for this material
-        TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
-        // 2. Map the mod's real ore blocks back in
-        if (variants) {
-            Object.keys(variants).forEach(prefix => {
-                let id = variants[prefix];
-                if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
-            });
-        }
-    };
-
-    setupOres('draconium', {
-        ore:           'draconicevolution:overworld_draconium_ore',
-        oreDeepslate:  'draconicevolution:deepslate_draconium_ore',
-        oreNetherrack: 'draconicevolution:nether_draconium_ore',
-        oreEndstone:   'draconicevolution:end_draconium_ore'
-    });
-    setupOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
-    setupOres('vibranium',    { oreNetherrack: 'allthemodium:vibranium_ore' });
-    setupOres('unobtainium',  { oreEndstone: 'allthemodium:unobtainium_ore' });
-    setupOres('iesnium',      { oreNetherrack: 'occultism:iesnium_ore' });
-    setupOres('hellforged',   { ore: 'bloodmagic:dungeon_ore' });
-    setupOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
-    setupOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
-    setupOres('mithril',      { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
-    setupOres('desh',         { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
-    setupOres('ostrum',       { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
-    setupOres('calorite',     { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
-    setupOres('ferricore',    { ore: 'justdirethings:raw_ferricore_ore' });
-    setupOres('blazegold',    { ore: 'justdirethings:raw_blazegold_ore' });
-    setupOres('eclipsealloy', { ore: 'justdirethings:raw_eclipsealloy_ore' });    
-    setupOres('debris');
-        
-    setupOres('osmium');
-    setupOres('zinc',         { ore: 'alltheores:zinc_ore', oreDeepslate: 'alltheores:deepslate_zinc_ore', oreNetherrack: 'alltheores:nether_zinc_ore' });
-    setupOres('uranium',      { ore: 'alltheores:uranium_ore', oreDeepslate: 'alltheores:deepslate_uranium_ore', oreNetherrack: 'alltheores:nether_uranium_ore' });
-    setupOres('iridium',      { ore: 'alltheores:iridium_ore', oreDeepslate: 'alltheores:deepslate_iridium_ore', oreNetherrack: 'alltheores:nether_iridium_ore' });
-    
-    //oreAndesite: '', oreGranite: '', oreDiorite: ''
-
-    // Fluid    
-
-
-    //ore biproducts
-
-
-
-    newOres.forEach(mat => {
-        let material = GTMaterials.get(mat.name);
-
-        if (material && mat.byproducts) {
-
-            // 1. Create the Java ArrayList using the properly loaded KubeJS 6 class
-            let javaList = new ArrayList();
-            mat.byproducts.forEach(bp => {
-                let gtMat = GTMaterials.get(bp);
-                if (gtMat) {
-                    javaList.add(gtMat);
-                }
-            });
-
-            if (material.hasProperty(PropertyKey.ORE)) {
-                material.removeProperty(PropertyKey.ORE);
-            }
-
-            let ore_prop = new OreProperty();
-
-            // 2. Force Rhino to use the Collection method specifically to avoid ambiguity            
-            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-
-            material.setProperty(PropertyKey.ORE, ore_prop);
-        }
-    });
-
-    const addOreProcessing = (rawOre, biproducts) => {
-        let material = GTMaterials.get(rawOre);
-        if (!material) return;
-
-        let ore_prop = material.hasProperty(PropertyKey.ORE)
-            ? material.getProperty(PropertyKey.ORE)
-            : new OreProperty();
-
-        if (biproducts && biproducts.length > 0) {
-            let javaList = new ArrayList();
-            biproducts.forEach(bp => {
-                let gtMat = GTMaterials.get(bp);
-                if (gtMat) javaList.add(gtMat);
-            });
-            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-        }
-
-        if (!material.hasProperty(PropertyKey.ORE)) {
-            material.setProperty(PropertyKey.ORE, ore_prop);
-        }
-    };
-
-    addOreProcessing('osmiridium', ['ruthenium']);
-    addOreProcessing('monazite', ['rare_earth', 'gadolinium', 'neodymium']);
-    addOreProcessing('bastnasite', ['rare_earth', 'gadolinium', 'neodymium']);
-    addOreProcessing('iridium', ['osmium_tetroxide', 'rhodium_sulfate']);
-    addOreProcessing('uranium', ['thorium', 'plutonium']);
-    addOreProcessing('zinc', ['cadmium', 'lead', 'silver']);
-    addOreProcessing('osmium', ['nickel', 'iron'])
-    addOreProcessing('desh', ['ilmenite', 'aluminium', 'iron']);
-    addOreProcessing('ostrum', ['hematite', 'sulfur', 'magnesium']);
-    addOreProcessing('calorite', ['sulfur', 'lead', 'basalt']);
-    addOreProcessing('etrium', ['blue_ice', 'lapis', 'etrium']);
-    addOreProcessing('debris', ['gold', 'sulfur', 'nether_quartz']);
-    addOreProcessing('nether_star', ['nether_quartz', 'glowstone', 'sulfur']);
-
-    addOreProcessing('crimson_iron', ['iron', 'redstone', 'nether_quartz']);
-    addOreProcessing('azure_silver', ['silver', 'lapis', 'ender_pearl']);
-    addOreProcessing('allthemodium', ['gold', 'diamond', 'allthemodium']);
-    addOreProcessing('vibranium', ['allthemodium', 'emerald', 'vibranium']);
-    addOreProcessing('unobtainium', ['vibranium', 'amethyst', 'unobtainium']);
-    addOreProcessing('draconium', ['ender_pearl', 'obsidian', 'draconium']);
-    addOreProcessing('iesnium', ['silver', 'obsidian', 'iesnium']);
-    addOreProcessing('hellforged', ['coagulite', 'gold', 'hellforged']);
-    addOreProcessing('ferricore', ['iron', 'nickel', 'ferricore']);
-    addOreProcessing('blazegold', ['gold', 'blaze', 'ferricore']);
-    addOreProcessing('eclipsealloy', ['blazegold', 'ender_pearl', 'obsidian']);
-
-    const toolTypes = [
-
+    const singularityMaterials = [
+        'beryllium',
+        'allthemodium',
+        'vibranium',
+        'unobtainium',
+        'lapotron',
+        'hellforged',
+        'iesnium',
+        'compressed_iron',
+        'source',
+        'mana_essence'
     ];
 
-    function overwriteToolStats(materialName, speed, damage, durability, harvestLevel) {
-        let mat = GTMaterials.get(materialName);
-
-        if (mat != null) {
-            if (mat.hasProperty(PropertyKey.TOOL)) {
-                mat.removeProperty(PropertyKey.TOOL);
-            }
-            let newProps = ToolProperty.Builder.of(speed, damage, durability, harvestLevel,
-                [
-                    GTToolType.PICKAXE,
-                    GTToolType.AXE,
-                    GTToolType.SHOVEL,
-                    GTToolType.HOE,
-                    GTToolType.SWORD,
-                    GTToolType.KNIFE,
-                    GTToolType.HARD_HAMMER,
-                    GTToolType.CROWBAR,
-                    GTToolType.SPADE,
-                    GTToolType.BUTCHERY_KNIFE,
-                    GTToolType.FILE,
-                    GTToolType.MORTAR,
-                    GTToolType.MINING_HAMMER,
-                    GTToolType.SAW
-                ]
-            )
-                .unbreakable()
-                .build();
-            mat.setProperty(PropertyKey.TOOL, newProps);
-        }
-    }
-
-    overwriteToolStats('allthemodium', 16.0, 6.0, 0, 5);
-    overwriteToolStats('vibranium', 20.0, 8.0, 0, 6);
-    overwriteToolStats('unobtainium', 24.0, 10.0, 0, 7);
-
-    //singularities
-    GTMaterials.get('beryllium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('allthemodium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('vibranium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('unobtainium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('lapotron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    //singularity materials
+    singularityMaterials.forEach(material => {
+        GTMaterials.get(material).addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    });
     GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
     GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
 
-    GTMaterials.get('hellforged').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('iesnium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('compressed_iron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('source').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
-    GTMaterials.get('mana_essence').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+
 
 });
-*/
+
+
 const dimensions = [
     { name: 'bloodmagic:dungeon', displayName: 'Blood Dungeon', icon: 'ad_astra:moon_globe', tier: 4 },
     { name: 'allthemodium:mining', displayName: 'Mining Dimension', icon: 'allthetweaks:atm_star', tier: 0 },
@@ -2780,6 +1652,5 @@ GTCEuStartupEvents.registry("gtceu:dimension_marker", event => {
 GTCEuStartupEvents.registry("gtceu:material_icon_set", event => {
 
     event.create("infinity").parent(GTMaterialIconSet.SHINY)
-    event.create("sculk_alloy").parent(GTMaterialIconSet.SHINY)
 
 })
