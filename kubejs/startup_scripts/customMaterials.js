@@ -2061,7 +2061,24 @@ GTCEuStartupEvents.materialModification(event => {
     addOreProcessing('eclipsealloy', ['blazegold', 'ender_pearl', 'obsidian']);
 
     applyUnification();
-    
+
+    //check here
+    const suppressOnPrefix = (prefix, links, keep) => {
+        Object.keys(oreSetups).forEach(matName => {
+            if (keep && keep.includes(matName)) return;
+            let mat = GTMaterials.get(matName);
+            if (!mat) return;
+            let id = links && links[matName];
+            if (id) prefix.setIgnored(mat, id);
+            else prefix.setIgnored(mat);
+        });
+    };
+    suppressOnPrefix(moonPrefix,  { desh: 'ad_astra:moon_desh_ore' });
+    suppressOnPrefix(marsPrefix,  { ostrum: 'ad_astra:mars_ostrum_ore' }, ['draconium']);
+    suppressOnPrefix(venusPrefix, { calorite: 'ad_astra:venus_calorite_ore' });
+    suppressOnPrefix(mercuryPrefix);
+    suppressOnPrefix(glacioPrefix);
+
     function overwriteToolStats(materialName, speed, damage, durability, harvestLevel) {
         let mat = GTMaterials.get(materialName);
 
