@@ -109,6 +109,7 @@ ServerEvents.recipes(allthemods => {
 
         let inputItem = parseItemRef(data.item);
         let outputItem = parseItemRef(data.result ? data.result.item : null);
+        
 
         if (!outputItem || !inputItem) {
             //console.error(`[bio_electrical_infuser] Skipping ${recipe.id} - non-string item reference`);
@@ -122,7 +123,24 @@ ServerEvents.recipes(allthemods => {
         let bio_recipe = allthemods.recipes.gtceu.bio_electrical_infuser(recipeId)
             .itemInputs(inputItem)
             .itemOutputs(outputItem)
-            .duration(data.duration);            
+            .duration(data.duration);
+        
+        switch (outputItem) {            
+            case 'evilcraft:bowl_of_promises_tier0':
+                bio_recipe.circuit(4);
+                break;
+            case 'evilcraft:bowl_of_promises_tier1':
+                bio_recipe.circuit(1);
+                break;
+            case 'evilcraft:bowl_of_promises_tier2':
+                bio_recipe.circuit(2);
+                break;
+            case 'evilcraft:bowl_of_promises_tier3':
+                bio_recipe.circuit(3);
+                break;
+            default:                
+                break;
+        }
 
         if (data.fluid) {
             bio_recipe.inputFluids(`#forge:sanguine_concentrate ${data.fluid.amount}`);

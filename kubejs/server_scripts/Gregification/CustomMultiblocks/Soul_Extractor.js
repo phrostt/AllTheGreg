@@ -42,6 +42,7 @@ ServerEvents.recipes(allthemods => {
         if (fluidOut && fluidOut.length > 0) {
             recipe.outputFluids(fluidOut);
         }
+        return recipe;
     };
 
     //Item.of('mysticalagriculture:soul_jar', '{Souls:8.0d,Type:"mysticalagriculture:cow"}')
@@ -89,8 +90,9 @@ ServerEvents.recipes(allthemods => {
         soulExtractor([`${soul.amount}x ${soul.item}`], null, [output], null, 600, EUStage1, `${soul.type}_${soul.item.split(':').pop()}`);
     });
 
-    soulExtractor(['forbidden_arcanus:soul_extractor', '128x minecraft:soul_sand'], 'gtceu:water_stage_3 2000', '128x forbidden_arcanus:soulless_sand', 'gtceu:soul 2000', 800, EUStage3)
-    soulExtractor(["128x minecraft:ghast_tear", "128x #forge:dusts/redstone", "128x #forge:dusts/glowstone"], 'gtceu:water_stage_4 16000', null, 'gtceu:aureal 5000', 800, EUStage4)
+    soulExtractor(['forbidden_arcanus:soul_extractor', '128x minecraft:soul_sand'], 'gtceu:water_stage_3 2000', '128x forbidden_arcanus:soulless_sand', 'gtceu:soul 2000', 800, EUStage3);
+    soulExtractor(['128x minecraft:ghast_tear', '128x #forge:dusts/redstone', '128x #forge:dusts/glowstone'], 'gtceu:water_stage_3 16000', null, 'gtceu:aureal 5000', 800, EUStage4, 'gregification:aureal_from_base_materials');
+    
     
 
     allthemods.recipes.gtceu.hydro_electromagnetic_separator('dragon_heart')

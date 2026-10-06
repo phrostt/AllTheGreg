@@ -156,7 +156,7 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('2x gtceu:arsenic_dust')
         .outputFluids(['gtceu:sulfuric_acid 1000', 'gtceu:oxygen 2000'])
         .duration(Duration)
-        .EUt(512);
+        .EUt(HV);
 
     allthemods.recipes.gtceu.chemical_reactor('gregification:thallium_sulfate_chemical_reactor')
         .itemInputs('#forge:dusts/thallium_oxide')

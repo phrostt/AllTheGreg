@@ -81,27 +81,4 @@ ServerEvents.recipes(allthemods => {
             reconstruction(`minecraft:${curItem}`, `minecraft:${nextItem}`, null, 128,20)            
         })
     }
-    /*
-        reconstruction('minecraft:redstone', 'gtceu:restonia_gem', null, 2048)
-        reconstruction('minecraft:lapis_lazuli', 'gtceu:palis_gem', null, 2048)
-        reconstruction('minecraft:iron_ingot', 'gtceu:enori_gem', null, 2048)
-        reconstruction('minecraft:quartz', 'gtceu:black_quartz_gem', null, 2048)
-        reconstruction('minecraft:coal', 'gtceu:void_crystal_gem', null, 2048)
-        reconstruction('minecraft:diamond', 'gtceu:diamatine_gem', null, 2048)
-        reconstruction('minecraft:emerald', 'gtceu:emeradic_gem', null, 2048)
-    
-        reconstruction('#forge:storage_blocks/redstone', 'gtceu:restonia_block', null, 2048)
-        reconstruction('#forge:storage_blocks/lapis', 'gtceu:palis_block', null, 2048)
-        reconstruction('#forge:storage_blocks/iron', 'gtceu:enori_block', null, 2048)
-        reconstruction('#forge:storage_blocks/coal', 'gtceu:void_crystal_block', null, 2048)
-        reconstruction('#forge:storage_blocks/diamond', 'gtceu:diamatine_block', null, 2048)
-        reconstruction('#forge:storage_blocks/emerald', 'gtceu:emeradic_block', null, 2048)
-    
-            reconstruction('thermal:rubberwood_sapling', 'gtceu:rubber_sapling', null, 128)
-            reconstruction('gtceu:rubber_sapling', 'thermal:rubberwood_sapling', null, 128)
-            reconstruction('minecraft:rotten_flesh', 'minecraft:leather', null, 128)
-            reconstruction('#forge:dyes/black', 'minecraft:ink_sac', null, 128)
-            reconstruction('minecraft:red_mushroom', 'minecraft:brown_mushroom', null, 128)
-            reconstruction('#forge:seeds', 'gtceu:crystallized_seed', null, 2048)
-        */
 });

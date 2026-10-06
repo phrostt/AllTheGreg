@@ -48,7 +48,7 @@ ServerEvents.recipes(allthemods => {
         .inputFluids('#forge:cobalt_naphthenate 100', '#forge:p_xylene 1000', '#forge:oxygen 6000')
         .outputFluids('gtceu:terephthalic_acid 1000', 'minecraft:water 2000')
         .duration(150)
-        .EUt(2048); // EV
+        .EUt(EV); // EV
 
     // Terephthalic Acid + Methanol + Sulfuric Acid (catalyst) -> Dimethyl Terephthalate + Diluted Sulfuric Acid
     allthemods.recipes.gtceu.chemical_reactor('gregification:kevlar/dimethyl_terephthalate')

@@ -18,7 +18,7 @@ ServerEvents.recipes(allthemods => {
             .itemInputs(`#forge:gems/${essence}_essence`)
             .outputFluids(`gtceu:${essence}_essence 10`)
             .duration(300)
-            .EUt(128);        
+            .EUt(MV);        
     });
     
 

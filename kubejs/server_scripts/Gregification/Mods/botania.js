@@ -35,7 +35,7 @@ ServerEvents.recipes(allthemods => {
         .addData('ebf_temp', 3600)
         .circuit(1)
         .duration(1600)
-    //.EUt(-512);
+    
 
 
     allthemods.recipes.gtceu.mana_burner('coal_to_source')
@@ -45,7 +45,7 @@ ServerEvents.recipes(allthemods => {
         .addData('ebf_temp', 3600)
         .circuit(2)
         .duration(1600)
-    //.EUt(-512); // Generates HV tier power out
+    
 
     allthemods.recipes.gtceu.mana_burner('cake_to_liquid_mana')
         .itemInputs('minecraft:cake')
@@ -53,7 +53,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:mana_essence 10800')
         .circuit(1)
         .duration(14400)
-    //.EUt(-16);
+    
 
     allthemods.recipes.gtceu.mana_burner('cake_to_source')
         .itemInputs('minecraft:cake')
@@ -61,7 +61,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:source 1800')
         .circuit(2)
         .duration(14400)
-    //.EUt(-16);
+    
 
     allthemods.recipes.gtceu.mana_burner('lava_to_liquid_mana')
         .inputFluids('minecraft:lava 1000')
@@ -69,7 +69,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:mana_essence 320')
         .circuit(1)
         .duration(400)
-    //.EUt(-16);
+    
 
     allthemods.recipes.gtceu.mana_burner('lava_to_source')
         .inputFluids('minecraft:lava 1000')
@@ -77,7 +77,7 @@ ServerEvents.recipes(allthemods => {
         .outputFluids('gtceu:source 50')
         .circuit(2)
         .duration(400)
-    //.EUt(-16);
+    
 
     const petalDuration = 300;
     const runicDuration = 600;

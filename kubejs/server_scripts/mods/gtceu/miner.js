@@ -43,7 +43,7 @@ ServerEvents.recipes((event) => {
         .itemInputs("gtceu:data_stick", "64x gtceu:stone_dust")
         .inputFluids("gtceu:pcb_coolant 100", "gtceu:air 64000")
         .itemOutputs("kubejs:overworld_data")
-        .EUt(32)
+        .EUt(LV)
         .duration(4000)
         .dimension("overworld")
 
@@ -51,7 +51,7 @@ ServerEvents.recipes((event) => {
         .itemInputs("2x gtceu:data_stick", "64x gtceu:netherrack_dust")
         .inputFluids("gtceu:pcb_coolant 200", "gtceu:nether_air 64000")
         .itemOutputs("2x kubejs:nether_data")
-        .EUt(128)
+        .EUt(MV)
         .duration(4000)
         .dimension("the_nether")
 
@@ -59,7 +59,7 @@ ServerEvents.recipes((event) => {
         .itemInputs("4x gtceu:data_stick", "64x gtceu:endstone_dust")
         .inputFluids("gtceu:pcb_coolant 400", "gtceu:ender_air 64000")
         .itemOutputs("4x kubejs:end_data")
-        .EUt(512)
+        .EUt(HV)
         .duration(4000)
         .dimension("the_end")
     

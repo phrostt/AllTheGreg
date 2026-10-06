@@ -4,6 +4,8 @@ ServerEvents.recipes(allthemods => {
     const duration = 300;
     const EUComplex = LuV;
 
+    const demonicWill = Item.of('bloodmagic:basemonstersoul', '{souls:5.0d}').strongNBT();
+
     // Rows WITH ash:    leaves/saplings/fruit -> pyrolyse to bio-ash -> leach (or centrifuge). machine = leach machine override.
     // Rows WITHOUT ash: leaves/saplings/fruit -> one step in `machine` straight to the product.
     const phytomining = [
@@ -76,6 +78,7 @@ ServerEvents.recipes(allthemods => {
         { tree: 'flickering_sun', machine: 'centrifuge', outItem: '4x minecraft:glowstone_dust', eu: EV },
         { tree: 'great_sallow', machine: 'centrifuge',                                     outItem: '2x irons_spellbooks:arcane_essence', eu: IV },
         { tree: 'butternut',    machine: 'centrifuge', fruit: 'productivetrees:butternut', outItem: 'evilcraft:dark_gem',                eu: IV },
+        { tree: 'yew', machine: 'centrifuge', outItem: demonicWill, eu: IV },
     ];
 
     phytomining.forEach(p => {
