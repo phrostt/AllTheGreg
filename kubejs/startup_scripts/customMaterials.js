@@ -14,6 +14,7 @@ const FluidStorageKeys = Java.loadClass('com.gregtechceu.gtceu.api.fluids.store.
 const FluidBuilder = Java.loadClass('com.gregtechceu.gtceu.api.fluids.FluidBuilder')
 const GTValues = Java.loadClass('com.gregtechceu.gtceu.api.GTValues')
 const MaterialStack = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialStack')
+const ArrayList = Java.loadClass('java.util.ArrayList');
 
 const ToolProperty = Java.loadClass('com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty');
 
@@ -124,14 +125,14 @@ const unification = [
     //{ name: 'unobtainium', oItems: ['rod', 'gear', 'plate', 'nugget', block], namespace: 'allthemodium' },
 
     //enderio
-    { name: 'copper_alloy', oItems: ['nugget'], namespace: 'enderio' },
-    { name: 'conductive_alloy', oItems: ['nugget'], namespace: 'enderio' },
-    { name: 'energetic_alloy', oItems: ['nugget'], namespace: 'enderio' },
-    { name: 'vibrant_alloy', oItems: ['nugget'], namespace: 'enderio' },
-    { name: 'pulsating_alloy', oItems: ['nugget'], namespace: 'enderio' },
-    { name: 'soularium', oItems: ['nugget'], namespace: 'enderio' },
-    { name: 'dark_steel', oItems: ['nugget'], namespace: 'enderio' },
-    { name: 'end_steel', oItems: ['nugget'], namespace: 'enderio' },
+    { name: 'copper_alloy', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
+    { name: 'conductive_alloy', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
+    { name: 'energetic_alloy', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
+    { name: 'vibrant_alloy', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
+    { name: 'pulsating_alloy', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
+    { name: 'soularium', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
+    { name: 'dark_steel', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
+    { name: 'end_steel', oItems: ['ingot', 'block', 'nugget'], namespace: 'enderio' },
 
     //botania
     { name: 'manasteel', oItems: ['nugget', 'ingot', 'block'], namespace: 'botania' },
@@ -1777,6 +1778,344 @@ StartupEvents.registry('block', event => {
 });
 
 
+// ---------- Unification data ----------
+const ignoredItems = {
+    block: {
+        compressed_iron: 'pneumaticcraft:compressed_iron_block',
+        draconium_awakened: 'draconicevolution:awakened_draconium_block',
+        draconium: 'draconicevolution:draconium_block',
+        blue_ice: 'minecraft:blue_ice',
+        packed_ice: 'minecraft:packed_ice',
+        niter: 'thermal:niter_block',
+    },
+    dust: {
+        refined_obsidian: 'mekanism:dust_refined_obsidian',
+        hop_graphite: 'immersiveengineering:dust_hop_graphite',
+        draconium_awakened: 'draconicevolution:awakened_draconium_dust',
+        draconium: 'draconicevolution:draconium_dust',
+        fluix: 'ae2:fluix_dust',
+        hellforged: 'bloodmagic:sand_hellforged',
+        antimatter: 'mekanism:pellet_antimatter',
+        garmonbozia: 'evilcraft:garmonbozia',
+        niter: 'thermal:niter_dust',
+        ferrognetic: 'forbidden_arcanus:ferrognetic_mixture',
+        soul_sand: 'thermal_extra:soul_sand_dust',
+    },
+    gear: {
+        compressed_iron: 'pneumaticcraft:compressed_iron_gear',
+    },
+    gem: {
+        fluix: 'ae2:fluix_crystal',
+        atm_star: 'allthetweaks:atm_star',
+        eternal: 'forbidden_arcanus:eternal_stella',
+        source: 'ars_nouveau:source_gem',
+        soul: 'occultism:soul_gem',
+        glycerol: 'pneumaticcraft:glycerol',
+        demon: 'bloodmagic:defaultcrystal',
+        steadfast: 'bloodmagic:steadfastcrystal',
+        corrosive: 'bloodmagic:corrosivecrystal',
+        vengeful: 'bloodmagic:vengefulcrystal',
+        destructive: 'bloodmagic:destructivecrystal',
+        niter: 'thermal:niter',
+        chaos_shard: 'draconicevolution:chaos_shard',
+        coagulite: 'evilcraft:condensed_blood',
+        carminite: 'twilightforest:carminite',
+        fire_essence: 'mysticalagriculture:fire_essence',
+        water_essence: 'mysticalagriculture:water_essence',
+        air_essence: 'mysticalagriculture:air_essence',
+        earth_essence: 'mysticalagriculture:earth_essence',
+        pulsating_crystal: 'enderio:pulsating_crystal',
+        vibrant_crystal: 'enderio:vibrant_crystal',
+        tachyon: 'gtceu:tachyon',
+        blazing_crystal: 'powah:crystal_blazing',
+        niotic_crystal: 'powah:crystal_niotic',
+        spirited_crystal: 'powah:crystal_spirited',
+        nitro_crystal: 'powah:crystal_nitro',
+    },
+    ingot: {
+        alloy_atomic: 'mekanism:alloy_atomic',
+        alloy_reinforced: 'mekanism:alloy_reinforced',
+        alloy_infused: 'mekanism:alloy_infused',
+        compressed_iron: 'pneumaticcraft:ingot_iron_compressed',
+        hop_graphite: 'immersiveengineering:ingot_hop_graphite',
+        pink_slime: 'industrialforegoing:pink_slime_ingot',
+        //deorum: 'forbidden_arcanus:deorum_ingot',
+        draconium_awakened: 'draconicevolution:awakened_draconium_ingot',
+        draconium: 'draconicevolution:draconium_ingot',
+        hellforged: 'bloodmagic:ingot_hellforged',
+        plastic: 'industrialforegoing:plastic',
+        rotten_flesh: 'minecraft:rotten_flesh',
+        mithril: 'irons_spellbooks:mithril_ingot',
+        energized_steel: 'powah:steel_energized',
+    },
+    nugget: {
+        draconium_awakened: 'draconicevolution:awakened_draconium_nugget',
+        draconium: 'draconicevolution:draconium_nugget',
+    },
+    rod: {
+        etrium: 'ad_astra:etrium_rod',
+    },
+    rawOre: {
+        iesnium: 'occultism:raw_iesnium',
+        hellforged: 'bloodmagic:rawdemonite',
+        azure_silver: 'silentgear:raw_azure_silver',
+        mithril: 'irons_spellbooks:raw_mithril',
+        uranium: 'alltheores:raw_uranium',
+        zinc: 'alltheores:raw_zinc',
+        osmium: 'alltheores:raw_osmium',
+        iridium: 'alltheores:raw_iridium',
+        desh: 'ad_astra:raw_desh',
+        ostrum: 'ad_astra:raw_ostrum',
+        calorite: 'ad_astra:raw_calorite',
+        debris: 'minecraft:ancient_debris',
+        crimson_iron: 'silentgear:raw_crimson_iron',
+        ferricore: 'justdirethings:raw_ferricore',
+        blazegold: 'justdirethings:raw_blazegold',
+        eclipsealloy: 'justdirethings:raw_eclipsealloy',
+    },
+};
+
+const oreSetups = {
+    draconium: {
+        ore: 'draconicevolution:overworld_draconium_ore',
+        oreDeepslate: 'draconicevolution:deepslate_draconium_ore',
+        oreNetherrack: 'draconicevolution:nether_draconium_ore',
+        oreEndstone: 'draconicevolution:end_draconium_ore'
+    },
+    allthemodium: { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' },
+    vibranium: { oreNetherrack: 'allthemodium:vibranium_ore' },
+    unobtainium: { oreEndstone: 'allthemodium:unobtainium_ore' },
+    iesnium: { oreNetherrack: 'occultism:iesnium_ore' },
+    hellforged: { ore: 'bloodmagic:dungeon_ore' },
+    crimson_iron: { oreNetherrack: 'silentgear:crimson_iron_ore' },
+    azure_silver: { oreEndstone: 'silentgear:azure_silver_ore' },
+    mithril: { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' },
+    desh: { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' },
+    ostrum: { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' },
+    calorite: { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' },
+    ferricore: { ore: 'justdirethings:raw_ferricore_ore' },
+    blazegold: { ore: 'justdirethings:raw_blazegold_ore' },
+    eclipsealloy: { ore: 'justdirethings:raw_eclipsealloy_ore' },
+    zinc: { ore: 'alltheores:zinc_ore', oreDeepslate: 'alltheores:deepslate_zinc_ore', oreNetherrack: 'alltheores:nether_zinc_ore' },
+    uranium: { ore: 'alltheores:uranium_ore', oreDeepslate: 'alltheores:deepslate_uranium_ore', oreNetherrack: 'alltheores:nether_uranium_ore' },
+    iridium: { ore: 'alltheores:iridium_ore', oreDeepslate: 'alltheores:deepslate_iridium_ore', oreNetherrack: 'alltheores:nether_iridium_ore' },
+    osmium: null,
+    debris: null,
+};
+
+// ---------- Helpers ----------
+const getPrefix = (name) => TagPrefix[name] || TagPrefix.get(name);
+
+const setupOres = (matName, variants) => {
+    let mat = GTMaterials.get(matName);
+    if (!mat) return;
+    TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
+    if (variants) {
+        Object.keys(variants).forEach(prefixName => {
+            let prefix = getPrefix(prefixName);
+            let id = variants[prefixName];
+            if (prefix && !Item.of(id).isEmpty()) prefix.setIgnored(mat, id);
+        });
+    }
+};
+
+// For arrays shaped like { name, oItems: [...] }, with a function building each item ID
+const ignoreFromList = (list, buildId) => {
+    list.forEach(mat => {
+        let gtMat = GTMaterials.get(mat.name);
+        if (!gtMat || !mat.oItems) return;
+        mat.oItems.forEach(type => {
+            if (TagPrefix[type]) TagPrefix[type].setIgnored(gtMat, buildId(mat, type));
+        });
+    });
+};
+
+// ---------- The shared unification pass ----------
+const applyUnification = () => {
+    adMats.forEach(mat => {
+        let m = GTMaterials.get(mat.name);
+        TagPrefix.ingot.setIgnored(m, `ad_astra:${mat.name}_ingot`);
+        TagPrefix.nugget.setIgnored(m, `ad_astra:${mat.name}_nugget`);
+        TagPrefix.plate.setIgnored(m, `ad_astra:${mat.name}_plate`);
+        TagPrefix.block.setIgnored(m, `ad_astra:${mat.name}_block`);
+    });
+
+    ignoreFromList(erMaterials, (mat, type) => `bigreactors:${mat.name}_${type}`);
+    ignoreFromList(mekanism, (mat, type) => `${mat.namespace}:${type}_${mat.name}`);
+    ignoreFromList(otherElements, (mat, type) => `${mat.namespace}:${mat.name}_${type}`);
+    ignoreFromList(unification, (mat, type) => `${mat.namespace}:${mat.name}_${type}`);
+
+    chalks.forEach(chalk => {
+        let rawColor = chalk.name.replace('_chalk', '');
+        let color = (rawColor === 'yellow') ? 'gold' : rawColor;
+        TagPrefix.gem.setIgnored(GTMaterials.get(chalk.name), `occultism:chalk_${color}`);
+    });
+
+    Object.keys(ignoredItems).forEach(prefixName => {
+        let prefix = TagPrefix[prefixName];
+        let entries = ignoredItems[prefixName];
+        Object.keys(entries).forEach(matName => {
+            let mat = GTMaterials.get(matName);
+            if (mat) prefix.setIgnored(mat, entries[matName]);
+        });
+    });
+
+    Object.keys(oreSetups).forEach(matName => setupOres(matName, oreSetups[matName]));
+};
+
+StartupEvents.postInit(event => {
+    applyUnification();
+});
+
+GTCEuStartupEvents.materialModification(event => {
+    
+
+    const setupOres = (matName, variants) => {
+        let mat = GTMaterials.get(matName);
+        if (!mat) return;
+        // 1. Suppress every GT-generated ore block for this material
+        TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
+        // 2. Map the mod's real ore blocks back in
+        if (variants) {
+            Object.keys(variants).forEach(prefix => {
+                let id = variants[prefix];
+                if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
+            });
+        }
+    };
+
+
+    newOres.forEach(mat => {
+        let material = GTMaterials.get(mat.name);
+
+        if (material && mat.byproducts) {
+
+            // 1. Create the Java ArrayList using the properly loaded KubeJS 6 class
+            let javaList = new ArrayList();
+            mat.byproducts.forEach(bp => {
+                let gtMat = GTMaterials.get(bp);
+                if (gtMat) {
+                    javaList.add(gtMat);
+                }
+            });
+
+            if (material.hasProperty(PropertyKey.ORE)) {
+                material.removeProperty(PropertyKey.ORE);
+            }
+
+            let ore_prop = new OreProperty();
+
+            // 2. Force Rhino to use the Collection method specifically to avoid ambiguity            
+            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+
+            material.setProperty(PropertyKey.ORE, ore_prop);
+        }
+    });
+
+    const addOreProcessing = (rawOre, biproducts) => {
+        let material = GTMaterials.get(rawOre);
+        if (!material) return;
+
+        let ore_prop = material.hasProperty(PropertyKey.ORE)
+            ? material.getProperty(PropertyKey.ORE)
+            : new OreProperty();
+
+        if (biproducts && biproducts.length > 0) {
+            let javaList = new ArrayList();
+            biproducts.forEach(bp => {
+                let gtMat = GTMaterials.get(bp);
+                if (gtMat) javaList.add(gtMat);
+            });
+            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+        }
+
+        if (!material.hasProperty(PropertyKey.ORE)) {
+            material.setProperty(PropertyKey.ORE, ore_prop);
+        }
+    };
+
+    addOreProcessing('osmiridium', ['ruthenium']);
+    addOreProcessing('monazite', ['rare_earth', 'gadolinium', 'neodymium']);
+    addOreProcessing('bastnasite', ['rare_earth', 'gadolinium', 'neodymium']);
+    addOreProcessing('iridium', ['osmium_tetroxide', 'rhodium_sulfate']);
+    addOreProcessing('uranium', ['thorium', 'plutonium']);
+    addOreProcessing('zinc', ['cadmium', 'lead', 'silver']);
+    addOreProcessing('osmium', ['nickel', 'iron'])
+    addOreProcessing('desh', ['ilmenite', 'aluminium', 'iron']);
+    addOreProcessing('ostrum', ['hematite', 'sulfur', 'magnesium']);
+    addOreProcessing('calorite', ['sulfur', 'lead', 'basalt']);
+    addOreProcessing('etrium', ['blue_ice', 'lapis', 'etrium']);
+    addOreProcessing('debris', ['gold', 'sulfur', 'nether_quartz']);
+    addOreProcessing('nether_star', ['nether_quartz', 'glowstone', 'sulfur']);
+
+    addOreProcessing('crimson_iron', ['iron', 'redstone', 'nether_quartz']);
+    addOreProcessing('azure_silver', ['silver', 'lapis', 'ender_pearl']);
+    addOreProcessing('allthemodium', ['gold', 'diamond', 'allthemodium']);
+    addOreProcessing('vibranium', ['allthemodium', 'emerald', 'vibranium']);
+    addOreProcessing('unobtainium', ['vibranium', 'amethyst', 'unobtainium']);
+    addOreProcessing('draconium', ['ender_pearl', 'obsidian', 'draconium']);
+    addOreProcessing('iesnium', ['silver', 'obsidian', 'iesnium']);
+    addOreProcessing('hellforged', ['coagulite', 'gold', 'hellforged']);
+    addOreProcessing('ferricore', ['iron', 'nickel', 'ferricore']);
+    addOreProcessing('blazegold', ['gold', 'blaze', 'ferricore']);
+    addOreProcessing('eclipsealloy', ['blazegold', 'ender_pearl', 'obsidian']);
+
+    applyUnification();
+    
+    function overwriteToolStats(materialName, speed, damage, durability, harvestLevel) {
+        let mat = GTMaterials.get(materialName);
+
+        if (mat != null) {
+            if (mat.hasProperty(PropertyKey.TOOL)) {
+                mat.removeProperty(PropertyKey.TOOL);
+            }
+            let newProps = ToolProperty.Builder.of(speed, damage, durability, harvestLevel,
+                [
+                    GTToolType.PICKAXE,
+                    GTToolType.AXE,
+                    GTToolType.SHOVEL,
+                    GTToolType.HOE,
+                    GTToolType.SWORD,
+                    GTToolType.KNIFE,
+                    GTToolType.HARD_HAMMER,
+                    GTToolType.CROWBAR,
+                    GTToolType.SPADE,
+                    GTToolType.BUTCHERY_KNIFE,
+                    GTToolType.FILE,
+                    GTToolType.MORTAR,
+                    GTToolType.MINING_HAMMER,
+                    GTToolType.SAW
+                ]
+            )
+                .unbreakable()
+                .build();
+            mat.setProperty(PropertyKey.TOOL, newProps);
+        }
+    }
+
+    overwriteToolStats('allthemodium', 16.0, 6.0, 0, 5);
+    overwriteToolStats('vibranium', 20.0, 8.0, 0, 6);
+    overwriteToolStats('unobtainium', 24.0, 10.0, 0, 7);
+
+    //singularities
+    GTMaterials.get('beryllium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('allthemodium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('vibranium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('unobtainium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('lapotron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('rhodium_plated_palladium').addFlags(GTMaterialFlags.GENERATE_GEAR);
+    GTMaterials.get('darmstadtium').addFlags(GTMaterialFlags.GENERATE_GEAR);
+
+    GTMaterials.get('hellforged').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('iesnium').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('compressed_iron').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('source').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+    GTMaterials.get('mana_essence').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
+
+});
+
+
+/*
 StartupEvents.postInit(event => {
     //ad astra
     adMats.forEach(mat => {
@@ -2025,12 +2364,6 @@ StartupEvents.postInit(event => {
 
 });
 
-
-
-
-
-
-const ArrayList = Java.loadClass('java.util.ArrayList');
 
 GTCEuStartupEvents.materialModification(event => {
     //ad astra
@@ -2381,7 +2714,7 @@ GTCEuStartupEvents.materialModification(event => {
     GTMaterials.get('mana_essence').addFlags(CMMEMaterialFlags.GENERATE_SINGULARITY);
 
 });
-
+*/
 const dimensions = [
     { name: 'bloodmagic:dungeon', displayName: 'Blood Dungeon', icon: 'ad_astra:moon_globe', tier: 4 },
     { name: 'allthemodium:mining', displayName: 'Mining Dimension', icon: 'allthetweaks:atm_star', tier: 0 },
