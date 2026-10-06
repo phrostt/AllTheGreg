@@ -102,3 +102,27 @@ profile Saved activate HOT1
 	FEET
 		"minecraft:diamond_boots" -> "Enchantments" : [{id:"minecraft:depth_strider",lvl:2}]
 
+profile Saved activate HOT2
+	HOT1
+		"allthemodium:vibranium_sword" -> "Enchantments" : [{id:"minecraft:looting",lvl:5},{id:"minecraft:sharpness",lvl:10},{id:"apotheosis:scavenger",lvl:2},{id:"apotheosis:capturing",lvl:2},{id:"tombstone:decrepitude",lvl:9}]
+	HOT2
+		"allthemodium:vibranium_pickaxe" -> "Enchantments" : [{id:"minecraft:fortune",lvl:5}]
+	HOT3
+		"gtceu:hv_titanium_screwdriver"
+	HOT4
+		"gtceu:hv_titanium_wrench"
+	HOT5
+		"gtceu:hv_titanium_wire_cutter"
+	HOT6
+		"evilcraft:dark_tank"
+	HOT7
+		"evilcraft:dark_tank"
+	HEAD
+		"allthemodium:vibranium_helmet"
+	CHEST
+		"allthemodium:vibranium_chestplate"
+	LEGS
+		"allthemodium:vibranium_leggings"
+	FEET
+		"allthemodium:vibranium_boots"
+

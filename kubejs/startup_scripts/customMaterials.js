@@ -1264,6 +1264,11 @@ const ignoredItems = {
         blue_ice: 'minecraft:blue_ice',
         packed_ice: 'minecraft:packed_ice',
         niter: 'thermal:niter_block',
+        energetic_alloy: 'powah:energetic_alloy_block',
+        blazing_crystal: 'powah:blazing_crystal_block',
+        niotic_crystal: 'powah:niotic_crystal_block',
+        spirited_crystal: 'powah:spirited_crystal_block',
+        nitro_crystal: 'powah:nitro_crystal_block',
     },
     dust: {
         refined_obsidian: 'mekanism:dust_refined_obsidian',
