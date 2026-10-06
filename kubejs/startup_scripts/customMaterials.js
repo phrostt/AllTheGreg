@@ -42,7 +42,7 @@ const naqStages = [
 const adMats = [
     { name: 'etrium', color: 0x5ABFB5, element: 'etrium' },
     { name: 'desh', color: 0xD97B3F, element: 'desh' },
-    { name: 'ostrum', color: 0x8A6E78, eleemnt: 'ostrum' },
+    { name: 'ostrum', color: 0x8A6E78, element: 'ostrum' },
     { name: 'calorite', color: 0xBF2A3C, element: 'calorite' }
 ];
 
@@ -99,6 +99,7 @@ const otherElements = [
     { name: 'rubidium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 7200, cIngot: true },
     { name: 'thallium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true },
     { name: 'protactinium', namespace: 'chemlib', oItems: ['ingot', 'block', 'nugget', 'dust', 'plate'], cBlast: 9000, cIngot: true }
+
 ];
 
 
@@ -142,7 +143,14 @@ const unification = [
 
     { name: 'hepatizon', oItems: ['nugget', 'ingot', 'block'], namespace: 'tconstruct' },
     { name: 'manyullyn', oItems: ['nugget', 'ingot', 'block'], namespace: 'tconstruct' },
-    { name: 'amethyst_bronze', oItems: ['nugget', 'ingot', 'block'], namespace: 'tconstruct' }
+    { name: 'amethyst_bronze', oItems: ['nugget', 'ingot', 'block'], namespace: 'tconstruct' },
+
+    { name: 'crimson_iron', oItems: ['ingot', 'block', 'nugget', 'dust'], namespace: 'silentgear' },
+    { name: 'azure_silver', oItems: ['ingot', 'block', 'nugget', 'dust'], namespace: 'silentgear' },
+
+    { name: 'ferricore', oItems: ['ingot', 'block'], namespace: 'justdirethings' },
+    { name: 'blazegold', oItems: ['ingot', 'block'], namespace: 'justdirethings' },
+    { name: 'eclipsealloy', oItems: ['ingot', 'block'], namespace: 'justdirethings' },
 ]
 
 const mekanism = [
@@ -473,35 +481,35 @@ const modalloys = [
     { name: 'rhenium_nickel_alloy', color: 0xEAEAEA, iconSet: 'METALLIC', components: '3x rhenium, 2x nickel', voltage: 524288, loss: 2, superconductor: false, cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 800, power: 500, efficiency: 10.0, durability: 163840 } },
     { name: 'rheni_zirconium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '1x rhenium_nickel_alloy, 1x zirconium', cBlast: { temp: 5400, duration: 1200, volts: 524288 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
     { name: 'thorium_berkelium_alloy', color: 0x7B1FA2, iconSet: 'METALLIC', components: '2x thorium, 1x berkelium', voltage: 131072, superconductor: true, cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1000, power: 750, efficiency: 15.0, durability: 327680 } },
-    { name: 'potassium_calcium_orthosilicate', color: 0xDAA520, iconSet: 'METALLIC', components: '2x potassium, 1x calcium, 1x silicon, 4x oxygen', cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1200, power: 850, efficiency: 17.0, durability: 400000 } },    
+    { name: 'potassium_calcium_orthosilicate', color: 0xDAA520, iconSet: 'METALLIC', components: '2x potassium, 1x calcium, 1x silicon, 4x oxygen', cBlast: { temp: 7200, duration: 1200, volts: 131072 }, rotor: { speed: 1200, power: 850, efficiency: 17.0, durability: 400000 } },
 
     // --- Extreme Tech Overhaul (UEV - MAX) ---
     { name: 'alltheneutronium', pipe: true, color: 0xfcfc3d, iconSet: 'METALLIC', components: '2x naquamodium, 2x neutronium, 1x alloy_infused, 3x corrosive', voltage: 8388608, loss: 0, superconductor: false, cBlast: { temp: 10800, duration: 1200, volts: 32768 }, rotor: { speed: 1200, power: 300, efficiency: 13.0, durability: 655360 } },
     { name: 'vibtronium', pipe: true, color: 0x72fcb7, iconSet: 'METALLIC', components: '2x naquabranium, 2x alltheneutronium, 1x alloy_reinforced, 3x destructive', voltage: 33554432, loss: 0, superconductor: false, cBlast: { temp: 12600, duration: 1200, volts: 131072 }, rotor: { speed: 1400, power: 400, efficiency: 14.0, durability: 2621440 } },
     { name: 'unobtronium', pipe: true, color: 0xe782f2, iconSet: 'METALLIC', components: '2x naquatainium, 2x vibtronium, 1x alloy_atomic, 3x vengeful', voltage: 134217728, loss: 0, superconductor: false, cBlast: { temp: 15300, duration: 1200, volts: 524288 }, rotor: { speed: 1600, power: 500, efficiency: 16.0, durability: 10485760 } },
     { name: 'deorum_alloy', pipe: true, color: 0xCCDD22, iconSet: 'METALLIC', components: '3x naquadria, 2x deorum, 2x trinium, 3x steadfast', voltage: 536870912, loss: 0, superconductor: false, cBlast: { temp: 18900, duration: 1200, volts: 524288 }, rotor: { speed: 1800, power: 600, efficiency: 18.0, durability: 41943040 } },
-    { name: 'demonic_alloy', components: '3x demon, 3x tenebrium, 3x caesium, 3x tritanium, 3x gaia', pipe: true, color: 0x22DDCC, iconSet: 'METALLIC', voltage: 2147483647, loss: 0, superconductor: false, cBlast: { temp: 21600, duration: 1200, volts: 524288 }, rotor: { speed: 2000, power: 800, efficiency: 20.0, durability: 167772160 } },    
-    
+    { name: 'demonic_alloy', components: '3x demon, 3x tenebrium, 3x caesium, 3x tritanium, 3x gaia', pipe: true, color: 0x22DDCC, iconSet: 'METALLIC', voltage: 2147483647, loss: 0, superconductor: false, cBlast: { temp: 21600, duration: 1200, volts: 524288 }, rotor: { speed: 2000, power: 800, efficiency: 20.0, durability: 167772160 } },
+
 
     // --- Thermal Alloys ---
     { name: 'signalum', pipe: true, color: 0xFF5500, iconSet: 'METALLIC', voltage: 128, loss: 1, components: '1x silver, 3x copper, 4x redstone', cBlast: { temp: 1700, duration: 400, volts: 512 } },
     { name: 'lumium', pipe: true, color: 0xFFFFAA, iconSet: 'METALLIC', voltage: 512, loss: 1, components: '1x silver, 3x tin, 2x glowstone', cBlast: { temp: 1700, duration: 600, volts: 2048 } },
     { name: 'enderium', pipe: true, color: 0x0B6156, iconSet: 'METALLIC', voltage: 2048, loss: 1, components: '1x diamond, 3x lead, 2x ender_pearl', cBlast: { temp: 2700, duration: 800, volts: 8192 } },
 
-        // --- Draconic Evolution ---
+    // --- Draconic Evolution ---
     { name: 'draconium', ore: true, element: 'draconium', color: 0x502C6C, iconSet: 'SHINY', voltage: 8192, loss: 1, cBlast: { temp: 4500, duration: 1200, volts: 8192 } },
-    { name: 'draconium_awakened', element: 'draconium_awakened', color: 0xFF6600, iconSet: 'BRIGHT', voltage: 2097152, superconductor: true },  
+    { name: 'draconium_awakened', element: 'draconium_awakened', color: 0xFF6600, iconSet: 'BRIGHT', voltage: 2097152, superconductor: true },
 
     // --- Tech Automation Basics ---
     { name: 'compressed_iron', components: '1x iron', color: 0x474747, cDust: true, iconSet: 'METALLIC', voltage: 128, loss: 1 },
     { name: 'hop_graphite', components: '8x carbon', color: 0x1C1C1C, iconSet: 'DULL', voltage: 8192, loss: 1 },
-        
+
     // --- Cosmic & Singularity End-Game Alloys ---
     { name: 'eternium', pipe: true, magnetic: true, color: 0x2d7d69, iconSet: 'METALLIC', components: '2x eternal, 4x sculk, 2x ferrognetic, 3x netherite, 5x neutronium', voltage: 8388608, loss: 16, cBlast: { temp: 10800, duration: 1200, volts: 2097152 } },
     { name: 'cosmic_alloy', pipe: true, color: 0xe4ac29, iconSet: 'METALLIC', components: '3x cosmic_matter, 4x alfsteel, 3x americium, 2x naquadria, 2x nether_star', voltage: 33554432, loss: 16, cBlast: { temp: 12600, duration: 1500, volts: 8388608 } },
     { name: 'antimatter_alloy', pipe: true, color: 0x8a3947, iconSet: 'METALLIC', components: '3x antimatter, 3x duranium, 2x darmstadtium, 4x iridium, 5x etrium', voltage: 134217728, loss: 16, cBlast: { temp: 15300, duration: 2000, volts: 33554432 } },
     { name: 'singularity_alloy', pipe: true, color: 0xab24a2, iconSet: 'METALLIC', components: '8x bedrockium, 5x stabilized_clathrate, 4x thorium_berkelium_alloy, 1x tachyon, 7x californium', voltage: 536870912, loss: 16, cBlast: { temp: 18900, duration: 2500, volts: 134217728 } },
-    { name: 'absolute_alloy', pipe: true, color: 0xE6F2FF, iconSet: 'METALLIC', components: '3x strontium, 2x unobtronium, 4x tellurium, 4x radium, 8x tenebrium', voltage: 2147483647, loss: 16, cBlast: { temp: 21600, duration: 3000, volts: 536870912 } },    
+    { name: 'absolute_alloy', pipe: true, color: 0xE6F2FF, iconSet: 'METALLIC', components: '3x strontium, 2x unobtronium, 4x tellurium, 4x radium, 8x tenebrium', voltage: 2147483647, loss: 16, cBlast: { temp: 21600, duration: 3000, volts: 536870912 } },
 
 ];
 
@@ -608,6 +616,9 @@ const newOres = [
 
     //chaos shard
     { name: 'chaotic', iconSet: 'SHINY', color: 0x090909 },
+
+
+    // --- Silent Gear / Just Dire Things ores ---    
 ];
 
 
@@ -671,10 +682,10 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     });
 
     //custom flags
-    const glycerol = GTMaterials.get('glycerol');    
+    const glycerol = GTMaterials.get('glycerol');
     glycerol.setProperty(PropertyKey.GEM, new GemProperty());
     glycerol.addFlags(GTMaterialFlags.CRYSTALLIZABLE);
-    
+
     let materialBuilder;
 
     materialBuilder = event.create('soul_sand')
@@ -858,6 +869,26 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     materialBuilder = event.create('debris')
         .color(0x6E5A52)
         .iconSet(GTMaterialIconSet.METALLIC)
+        .ore(2, 1);
+
+    materialBuilder = event.create('crimson_iron')
+        .color(0xC2324C)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .ore(2, 1);
+
+    materialBuilder = event.create('ferricore')
+        .color(0x7A8B8C)
+        .iconSet(GTMaterialIconSet.METALLIC)
+        .ore(2, 1);
+
+    materialBuilder = event.create('blazegold')
+        .color(0xF2A93B)
+        .iconSet(GTMaterialIconSet.SHINY)
+        .ore(2, 1);
+
+    materialBuilder = event.create('eclipsealloy')
+        .color(0x3B2A5A)
+        .iconSet(GTMaterialIconSet.SHINY)
         .ore(2, 1);
 
     materialBuilder = event.create("hepatizon")
@@ -1916,28 +1947,21 @@ StartupEvents.postInit(event => {
     // Polymer
 
     // Ore
-    TagPrefix.ore.setIgnored(GTMaterials.get('allthemodium'), 'allthemodium:allthemodium_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('vibranium'), 'allthemodium:vibranium_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('unobtainium'), 'allthemodium:unobtainium_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('iesnium'), 'occultism:iesnium_ore');
     TagPrefix.ore.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:dungeon_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy_ore');
 
-    TagPrefix.ore.setIgnored(GTMaterials.get('desh'), 'ad_astra:moon_desh_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:mars_ostrum_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('calorite'), 'ad_astra:venus_calorite_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:azure_silver_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ore');
-    
-    
 
     // Raw Ores
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:end_draconium_ore');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');    
     TagPrefix.rawOre.setIgnored(GTMaterials.get('uranium'), 'alltheores:raw_uranium');
-    
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('zinc'), 'alltheores:raw_zinc');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('osmium'), 'alltheores:raw_osmium');
+
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
@@ -1946,6 +1970,52 @@ StartupEvents.postInit(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iridium'), 'alltheores:raw_iridium');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('debris'), 'minecraft:ancient_debris');
 
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('crimson_iron'), 'silentgear:raw_crimson_iron');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy');
+
+    const ignoreOres = (matName, variants) => {
+    let mat = GTMaterials.get(matName);
+    if (!mat) return;
+    Object.keys(variants).forEach(prefix => {
+        let id = variants[prefix];
+        if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
+    });
+};
+
+    const applyOreVariants = () => {
+        ignoreOres('draconium', {
+            ore:           'draconicevolution:overworld_draconium_ore',
+            oreDeepslate:  'draconicevolution:deepslate_draconium_ore',
+            oreNetherrack: 'draconicevolution:nether_draconium_ore',
+            oreEndstone:   'draconicevolution:end_draconium_ore'
+        });
+        ignoreOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
+        ignoreOres('vibranium',    { oreNetherrack: 'allthemodium:vibranium_ore' });
+        ignoreOres('unobtainium',  { oreEndstone: 'allthemodium:unobtainium_ore' });
+        ignoreOres('iesnium',      { oreNetherrack: 'occultism:iesnium_ore' });
+        ignoreOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
+        ignoreOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
+        ignoreOres('mithril',      { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
+        ignoreOres('desh',         { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
+        ignoreOres('ostrum',       { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
+        ignoreOres('calorite',     { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
+
+        // All The Ores (ATO spells aluminium as "aluminum")
+        const atoOres = { zinc: 'zinc', osmium: 'osmium', uranium: 'uranium', iridium: 'iridium',
+            aluminium: 'aluminum', lead: 'lead', nickel: 'nickel', platinum: 'platinum', silver: 'silver', tin: 'tin' };
+        Object.keys(atoOres).forEach(gt => {
+            let a = atoOres[gt];
+            ignoreOres(gt, {
+                ore:           `alltheores:${a}_ore`,
+                oreDeepslate:  `alltheores:deepslate_${a}_ore`,
+                oreNetherrack: `alltheores:nether_${a}_ore`,
+                oreEndstone:   `alltheores:end_${a}_ore`
+            });
+        });
+    };
+    applyOreVariants();
 
 });
 
@@ -2101,27 +2171,21 @@ GTCEuStartupEvents.materialModification(event => {
 
     // Polymer
 
-    // Ore
-    TagPrefix.ore.setIgnored(GTMaterials.get('allthemodium'), 'allthemodium:allthemodium_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('vibranium'), 'allthemodium:vibranium_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('unobtainium'), 'allthemodium:unobtainium_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('iesnium'), 'occultism:iesnium_ore');
+    // Ore    
     TagPrefix.ore.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:dungeon_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold_ore');
+    TagPrefix.ore.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy_ore');
 
-    TagPrefix.ore.setIgnored(GTMaterials.get('desh'), 'ad_astra:moon_desh_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:mars_ostrum_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('calorite'), 'ad_astra:venus_calorite_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:azure_silver_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ore');
-    
 
     // Raw Ores
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:rawdemonite');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
-    TagPrefix.rawOre.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:end_draconium_ore');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');    
     TagPrefix.rawOre.setIgnored(GTMaterials.get('uranium'), 'alltheores:raw_uranium');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('zinc'), 'alltheores:raw_zinc');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('osmium'), 'alltheores:raw_osmium');
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
@@ -2129,7 +2193,55 @@ GTCEuStartupEvents.materialModification(event => {
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iridium'), 'alltheores:raw_iridium');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('debris'), 'minecraft:ancient_debris');
-    
+
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('crimson_iron'), 'silentgear:raw_crimson_iron');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy');
+
+    const ignoreOres = (matName, variants) => {
+        let mat = GTMaterials.get(matName);
+        if (!mat) return;
+        Object.keys(variants).forEach(prefix => {
+            let id = variants[prefix];
+            if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
+        });
+    };
+
+    const applyOreVariants = () => {
+        ignoreOres('draconium', {
+            ore: 'draconicevolution:overworld_draconium_ore',
+            oreDeepslate: 'draconicevolution:deepslate_draconium_ore',
+            oreNetherrack: 'draconicevolution:nether_draconium_ore',
+            oreEndstone: 'draconicevolution:end_draconium_ore'
+        });
+        ignoreOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
+        ignoreOres('vibranium', { oreNetherrack: 'allthemodium:vibranium_ore' });
+        ignoreOres('unobtainium', { oreEndstone: 'allthemodium:unobtainium_ore' });
+        ignoreOres('iesnium', { oreNetherrack: 'occultism:iesnium_ore' });
+        ignoreOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
+        ignoreOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
+        ignoreOres('mithril', { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
+        ignoreOres('desh', { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
+        ignoreOres('ostrum', { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
+        ignoreOres('calorite', { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
+
+        // All The Ores (ATO spells aluminium as "aluminum")
+        const atoOres = {
+            zinc: 'zinc', osmium: 'osmium', uranium: 'uranium', iridium: 'iridium',
+            aluminium: 'aluminum', lead: 'lead', nickel: 'nickel', platinum: 'platinum', silver: 'silver', tin: 'tin'
+        };
+        Object.keys(atoOres).forEach(gt => {
+            let a = atoOres[gt];
+            ignoreOres(gt, {
+                ore: `alltheores:${a}_ore`,
+                oreDeepslate: `alltheores:deepslate_${a}_ore`,
+                oreNetherrack: `alltheores:nether_${a}_ore`,
+                oreEndstone: `alltheores:end_${a}_ore`
+            });
+        });
+        applyOreVariants();
+    };
 
     // Fluid    
 
@@ -2165,70 +2277,53 @@ GTCEuStartupEvents.materialModification(event => {
         }
     });
 
-    let osmiridium = GTMaterials.get('osmiridium');
-    let javaList = new ArrayList();
-    javaList.add(GTMaterials.get('ruthenium'));
-    let ore_prop = new OreProperty();
-    ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-    osmiridium.setProperty(PropertyKey.ORE, ore_prop);
+    const addOreProcessing = (rawOre, biproducts) => {
+        let material = GTMaterials.get(rawOre);
+        if (!material) return;
 
+        let ore_prop = material.hasProperty(PropertyKey.ORE)
+            ? material.getProperty(PropertyKey.ORE)
+            : new OreProperty();
 
-    javaList = new ArrayList();
-    javaList.add(GTMaterials.RareEarth);
-    javaList.add(GTMaterials.Gadolinium);
-    javaList.add(GTMaterials.Neodymium);
+        if (biproducts && biproducts.length > 0) {
+            let javaList = new ArrayList();
+            biproducts.forEach(bp => {
+                let gtMat = GTMaterials.get(bp);
+                if (gtMat) javaList.add(gtMat);
+            });
+            ore_prop['setOreByProducts(java.util.Collection)'](javaList);
+        }
 
-    let monazite = GTMaterials.get('monazite');
-    monazite.removeProperty(PropertyKey.ORE);
+        if (!material.hasProperty(PropertyKey.ORE)) {
+            material.setProperty(PropertyKey.ORE, ore_prop);
+        }
+    };
 
-    ore_prop = new OreProperty();
-    ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-    monazite.setProperty(PropertyKey.ORE, ore_prop);
+    addOreProcessing('osmiridium', ['ruthenium']);
+    addOreProcessing('monazite', ['rare_earth', 'gadolinium', 'neodymium']);
+    addOreProcessing('bastnasite', ['rare_earth', 'gadolinium', 'neodymium']);
+    addOreProcessing('iridium', ['osmium_tetroxide', 'rhodium_sulfate']);
+    addOreProcessing('uranium', ['thorium', 'plutonium']);
+    addOreProcessing('zinc', ['cadmium', 'lead', 'silver']);
+    addOreProcessing('osmium', ['nickel', 'iron'])
+    addOreProcessing('desh', ['ilmenite', 'aluminium', 'iron']);
+    addOreProcessing('ostrum', ['hematite', 'sulfur', 'magnesium']);
+    addOreProcessing('calorite', ['sulfur', 'lead', 'basalt']);
+    addOreProcessing('etrium', ['blue_ice', 'lapis', 'etrium']);
+    addOreProcessing('debris', ['gold', 'sulfur', 'nether_quartz']);
+    addOreProcessing('nether_star', ['nether_quartz', 'glowstone', 'sulfur']);
 
-    javaList = new ArrayList();
-    javaList.add(GTMaterials.RareEarth);
-    javaList.add(GTMaterials.Gadolinium);
-    javaList.add(GTMaterials.Neodymium);
-
-    let bastnasite = GTMaterials.get('bastnasite');
-    bastnasite.removeProperty(PropertyKey.ORE);
-
-    ore_prop = new OreProperty();
-    ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-    bastnasite.setProperty(PropertyKey.ORE, ore_prop);
-
-
-    javaList = new ArrayList();
-    javaList.add(GTMaterials.OsmiumTetroxide);
-    javaList.add(GTMaterials.RhodiumSulfate);
-    let iridium = GTMaterials.get('iridium');
-    //iridium.removeProperty(PropertyKey.ORE);        
-    ore_prop = new OreProperty();
-    ore_prop['setOreByProducts(java.util.Collection)'](javaList);
-    iridium.setProperty(PropertyKey.ORE, ore_prop);
-
-
-    //adding uranium ore processing and biproducts
-    let uraniumOreProperty = new OreProperty();
-    let listUranium = new ArrayList();
-    listUranium.add(GTMaterials.get('thorium'));
-    listUranium.add(GTMaterials.get('plutonium'));
-    uraniumOreProperty['setOreByProducts(java.util.Collection)'](listUranium);
-    GTMaterials.get('uranium').setProperty(PropertyKey.ORE, uraniumOreProperty);
-
-
-    GTMaterials.get('nether_star').setProperty(PropertyKey.ORE, new OreProperty());
-    GTMaterials.get('etrium').setProperty(PropertyKey.ORE, new OreProperty());
-
-
-    let debris = GTMaterials.get('debris');
-    debris.removeProperty(PropertyKey.ORE);
-    debris.setProperty(PropertyKey.ORE, new OreProperty());
-
-
-    GTMaterials.get('desh').setProperty(PropertyKey.ORE, new OreProperty());
-    GTMaterials.get('ostrum').setProperty(PropertyKey.ORE, new OreProperty());
-    GTMaterials.get('calorite').setProperty(PropertyKey.ORE, new OreProperty());
+    addOreProcessing('crimson_iron', ['iron', 'redstone', 'nether_quartz']);
+    addOreProcessing('azure_silver', ['silver', 'lapis', 'ender_pearl']);
+    addOreProcessing('allthemodium', ['gold', 'diamond', 'allthemodium']);
+    addOreProcessing('vibranium', ['allthemodium', 'emerald', 'vibranium']);
+    addOreProcessing('unobtainium', ['vibranium', 'amethyst', 'unobtainium']);
+    addOreProcessing('draconium', ['ender_pearl', 'obsidian', 'draconium']);
+    addOreProcessing('iesnium', ['silver', 'obsidian', 'iesnium']);
+    addOreProcessing('hellforged', ['coagulite', 'gold', 'hellforged']);
+    addOreProcessing('ferricore', ['iron', 'nickel', 'ferricore']);
+    addOreProcessing('blazegold', ['gold', 'blaze', 'ferricore']);
+    addOreProcessing('eclipsealloy', ['blazegold', 'ender_pearl', 'obsidian']);
 
     const toolTypes = [
 
