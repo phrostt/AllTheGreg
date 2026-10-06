@@ -1965,6 +1965,7 @@ const applyUnification = () => {
 
 StartupEvents.postInit(event => {
     applyUnification();
+    TagPrefix.ORES.keySet().forEach(p => console.warn(`[ore list] ${p.name}`));
 });
 
 GTCEuStartupEvents.materialModification(event => {
@@ -2063,7 +2064,13 @@ GTCEuStartupEvents.materialModification(event => {
     applyUnification();
 
     //check here
-    const suppressOnPrefix = (prefix, links, keep) => {
+    const suppressOnPrefix = (prefixName, links, keep) => {
+        let prefix = TagPrefix.get(prefixName);
+        if (!prefix) {
+            console.warn(`[planet ores] prefix '${prefixName}' NOT FOUND, nothing suppressed`);
+            return;
+        }
+        let count = 0;
         Object.keys(oreSetups).forEach(matName => {
             if (keep && keep.includes(matName)) return;
             let mat = GTMaterials.get(matName);
@@ -2071,13 +2078,16 @@ GTCEuStartupEvents.materialModification(event => {
             let id = links && links[matName];
             if (id) prefix.setIgnored(mat, id);
             else prefix.setIgnored(mat);
+            count++;
         });
+        console.warn(`[planet ores] prefix '${prefixName}' found, ${count} materials handled`);
     };
-    suppressOnPrefix(moonPrefix,  { desh: 'ad_astra:moon_desh_ore' });
-    suppressOnPrefix(marsPrefix,  { ostrum: 'ad_astra:mars_ostrum_ore' }, ['draconium']);
-    suppressOnPrefix(venusPrefix, { calorite: 'ad_astra:venus_calorite_ore' });
-    suppressOnPrefix(mercuryPrefix);
-    suppressOnPrefix(glacioPrefix);
+    let p = (name) => TagPrefix.get(name);
+    suppressOnPrefix(p('moon'),    { desh: 'ad_astra:moon_desh_ore' });
+    suppressOnPrefix(p('mars'),    { ostrum: 'ad_astra:mars_ostrum_ore' }, ['draconium']);
+    suppressOnPrefix(p('venus'),   { calorite: 'ad_astra:venus_calorite_ore' });
+    suppressOnPrefix(p('mercury'));
+    suppressOnPrefix(p('glacio'));
 
     function overwriteToolStats(materialName, speed, damage, durability, harvestLevel) {
         let mat = GTMaterials.get(materialName);
