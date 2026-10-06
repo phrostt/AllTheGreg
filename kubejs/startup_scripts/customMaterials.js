@@ -1542,7 +1542,7 @@ const applyUnification = () => {
             if (mat) prefix.setIgnored(mat, entries[matName]);
         });
     });
-    
+    Object.keys(oreSetups).forEach(matName => setupOres(matName, oreSetups[matName]));
 };
 
 
@@ -1576,7 +1576,7 @@ GTCEuStartupEvents.materialModification(event => {
     
     applyUnification();
     registerNewOres();
-    Object.keys(oreSetups).forEach(matName => setupOres(matName, oreSetups[matName]));
+    
 
     
 
