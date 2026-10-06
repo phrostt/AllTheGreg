@@ -872,22 +872,25 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .ore(2, 1);
 
     materialBuilder = event.create('crimson_iron')
-        .color(0xC2324C)
+        .color(0xee4f7f)
         .iconSet(GTMaterialIconSet.METALLIC)
         .ore(2, 1);
 
     materialBuilder = event.create('ferricore')
-        .color(0x7A8B8C)
+        .ingot()
+        .color(0xb1e5db)
         .iconSet(GTMaterialIconSet.METALLIC)
         .ore(2, 1);
 
     materialBuilder = event.create('blazegold')
-        .color(0xF2A93B)
+        .ingot()
+        .color(0xe68e52)
         .iconSet(GTMaterialIconSet.SHINY)
         .ore(2, 1);
 
     materialBuilder = event.create('eclipsealloy')
-        .color(0x3B2A5A)
+        .ingot()
+        .color(0x586e75)
         .iconSet(GTMaterialIconSet.SHINY)
         .ore(2, 1);
 
@@ -1947,11 +1950,6 @@ StartupEvents.postInit(event => {
     // Polymer
 
     // Ore
-    TagPrefix.ore.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:dungeon_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy_ore');
-
 
     // Raw Ores
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
@@ -1984,38 +1982,46 @@ StartupEvents.postInit(event => {
     });
 };
 
-    const applyOreVariants = () => {
-        ignoreOres('draconium', {
-            ore:           'draconicevolution:overworld_draconium_ore',
-            oreDeepslate:  'draconicevolution:deepslate_draconium_ore',
-            oreNetherrack: 'draconicevolution:nether_draconium_ore',
-            oreEndstone:   'draconicevolution:end_draconium_ore'
-        });
-        ignoreOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
-        ignoreOres('vibranium',    { oreNetherrack: 'allthemodium:vibranium_ore' });
-        ignoreOres('unobtainium',  { oreEndstone: 'allthemodium:unobtainium_ore' });
-        ignoreOres('iesnium',      { oreNetherrack: 'occultism:iesnium_ore' });
-        ignoreOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
-        ignoreOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
-        ignoreOres('mithril',      { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
-        ignoreOres('desh',         { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
-        ignoreOres('ostrum',       { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
-        ignoreOres('calorite',     { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
-
-        // All The Ores (ATO spells aluminium as "aluminum")
-        const atoOres = { zinc: 'zinc', osmium: 'osmium', uranium: 'uranium', iridium: 'iridium',
-            aluminium: 'aluminum', lead: 'lead', nickel: 'nickel', platinum: 'platinum', silver: 'silver', tin: 'tin' };
-        Object.keys(atoOres).forEach(gt => {
-            let a = atoOres[gt];
-            ignoreOres(gt, {
-                ore:           `alltheores:${a}_ore`,
-                oreDeepslate:  `alltheores:deepslate_${a}_ore`,
-                oreNetherrack: `alltheores:nether_${a}_ore`,
-                oreEndstone:   `alltheores:end_${a}_ore`
+    const setupOres = (matName, variants) => {
+        let mat = GTMaterials.get(matName);
+        if (!mat) return;
+        // 1. Suppress every GT-generated ore block for this material
+        TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
+        // 2. Map the mod's real ore blocks back in
+        if (variants) {
+            Object.keys(variants).forEach(prefix => {
+                let id = variants[prefix];
+                if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
             });
-        });
+        }
     };
-    applyOreVariants();
+
+    setupOres('draconium', {
+        ore:           'draconicevolution:overworld_draconium_ore',
+        oreDeepslate:  'draconicevolution:deepslate_draconium_ore',
+        oreNetherrack: 'draconicevolution:nether_draconium_ore',
+        oreEndstone:   'draconicevolution:end_draconium_ore'
+    });
+    setupOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
+    setupOres('vibranium',    { oreNetherrack: 'allthemodium:vibranium_ore' });
+    setupOres('unobtainium',  { oreEndstone: 'allthemodium:unobtainium_ore' });
+    setupOres('iesnium',      { oreNetherrack: 'occultism:iesnium_ore' });
+    setupOres('hellforged',   { ore: 'bloodmagic:dungeon_ore' });
+    setupOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
+    setupOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
+    setupOres('mithril',      { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
+    setupOres('desh',         { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
+    setupOres('ostrum',       { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
+    setupOres('calorite',     { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
+    setupOres('ferricore',    { ore: 'justdirethings:raw_ferricore_ore' });
+    setupOres('blazegold',    { ore: 'justdirethings:raw_blazegold_ore' });
+    setupOres('eclipsealloy', { ore: 'justdirethings:raw_eclipsealloy_ore' });
+    setupOres('debris');
+
+    setupOres('osmium');
+    setupOres('zinc',         { ore: 'alltheores:zinc_ore', oreDeepslate: 'alltheores:deepslate_zinc_ore', oreNetherrack: 'alltheores:nether_zinc_ore' });
+    setupOres('uranium',      { ore: 'alltheores:uranium_ore', oreDeepslate: 'alltheores:deepslate_uranium_ore', oreNetherrack: 'alltheores:nether_uranium_ore' });
+    setupOres('iridium',      { ore: 'alltheores:iridium_ore', oreDeepslate: 'alltheores:deepslate_iridium_ore', oreNetherrack: 'alltheores:nether_iridium_ore' });
 
 });
 
@@ -2172,10 +2178,6 @@ GTCEuStartupEvents.materialModification(event => {
     // Polymer
 
     // Ore    
-    TagPrefix.ore.setIgnored(GTMaterials.get('hellforged'), 'bloodmagic:dungeon_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('ferricore'), 'justdirethings:raw_ferricore_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold_ore');
-    TagPrefix.ore.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy_ore');
 
 
     // Raw Ores
@@ -2199,49 +2201,48 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('blazegold'), 'justdirethings:raw_blazegold');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('eclipsealloy'), 'justdirethings:raw_eclipsealloy');
 
-    const ignoreOres = (matName, variants) => {
+    const setupOres = (matName, variants) => {
         let mat = GTMaterials.get(matName);
         if (!mat) return;
-        Object.keys(variants).forEach(prefix => {
-            let id = variants[prefix];
-            if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
-        });
-    };
-
-    const applyOreVariants = () => {
-        ignoreOres('draconium', {
-            ore: 'draconicevolution:overworld_draconium_ore',
-            oreDeepslate: 'draconicevolution:deepslate_draconium_ore',
-            oreNetherrack: 'draconicevolution:nether_draconium_ore',
-            oreEndstone: 'draconicevolution:end_draconium_ore'
-        });
-        ignoreOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
-        ignoreOres('vibranium', { oreNetherrack: 'allthemodium:vibranium_ore' });
-        ignoreOres('unobtainium', { oreEndstone: 'allthemodium:unobtainium_ore' });
-        ignoreOres('iesnium', { oreNetherrack: 'occultism:iesnium_ore' });
-        ignoreOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
-        ignoreOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
-        ignoreOres('mithril', { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
-        ignoreOres('desh', { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
-        ignoreOres('ostrum', { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
-        ignoreOres('calorite', { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
-
-        // All The Ores (ATO spells aluminium as "aluminum")
-        const atoOres = {
-            zinc: 'zinc', osmium: 'osmium', uranium: 'uranium', iridium: 'iridium',
-            aluminium: 'aluminum', lead: 'lead', nickel: 'nickel', platinum: 'platinum', silver: 'silver', tin: 'tin'
-        };
-        Object.keys(atoOres).forEach(gt => {
-            let a = atoOres[gt];
-            ignoreOres(gt, {
-                ore: `alltheores:${a}_ore`,
-                oreDeepslate: `alltheores:deepslate_${a}_ore`,
-                oreNetherrack: `alltheores:nether_${a}_ore`,
-                oreEndstone: `alltheores:end_${a}_ore`
+        // 1. Suppress every GT-generated ore block for this material
+        TagPrefix.ORES.keySet().forEach(prefix => prefix.setIgnored(mat));
+        // 2. Map the mod's real ore blocks back in
+        if (variants) {
+            Object.keys(variants).forEach(prefix => {
+                let id = variants[prefix];
+                if (TagPrefix[prefix] && !Item.of(id).isEmpty()) TagPrefix[prefix].setIgnored(mat, id);
             });
-        });
-        applyOreVariants();
+        }
     };
+
+    setupOres('draconium', {
+        ore:           'draconicevolution:overworld_draconium_ore',
+        oreDeepslate:  'draconicevolution:deepslate_draconium_ore',
+        oreNetherrack: 'draconicevolution:nether_draconium_ore',
+        oreEndstone:   'draconicevolution:end_draconium_ore'
+    });
+    setupOres('allthemodium', { ore: 'allthemodium:allthemodium_ore', oreDeepslate: 'allthemodium:allthemodium_slate_ore' });
+    setupOres('vibranium',    { oreNetherrack: 'allthemodium:vibranium_ore' });
+    setupOres('unobtainium',  { oreEndstone: 'allthemodium:unobtainium_ore' });
+    setupOres('iesnium',      { oreNetherrack: 'occultism:iesnium_ore' });
+    setupOres('hellforged',   { ore: 'bloodmagic:dungeon_ore' });
+    setupOres('crimson_iron', { oreNetherrack: 'silentgear:crimson_iron_ore' });
+    setupOres('azure_silver', { oreEndstone: 'silentgear:azure_silver_ore' });
+    setupOres('mithril',      { ore: 'irons_spellbooks:mithril_ore', oreDeepslate: 'irons_spellbooks:deepslate_mithril_ore' });
+    setupOres('desh',         { ore: 'ad_astra:moon_desh_ore', oreDeepslate: 'ad_astra:deepslate_desh_ore' });
+    setupOres('ostrum',       { ore: 'ad_astra:mars_ostrum_ore', oreDeepslate: 'ad_astra:deepslate_ostrum_ore' });
+    setupOres('calorite',     { ore: 'ad_astra:venus_calorite_ore', oreDeepslate: 'ad_astra:deepslate_calorite_ore' });
+    setupOres('ferricore',    { ore: 'justdirethings:raw_ferricore_ore' });
+    setupOres('blazegold',    { ore: 'justdirethings:raw_blazegold_ore' });
+    setupOres('eclipsealloy', { ore: 'justdirethings:raw_eclipsealloy_ore' });    
+    setupOres('debris');
+        
+    setupOres('osmium');
+    setupOres('zinc',         { ore: 'alltheores:zinc_ore', oreDeepslate: 'alltheores:deepslate_zinc_ore', oreNetherrack: 'alltheores:nether_zinc_ore' });
+    setupOres('uranium',      { ore: 'alltheores:uranium_ore', oreDeepslate: 'alltheores:deepslate_uranium_ore', oreNetherrack: 'alltheores:nether_uranium_ore' });
+    setupOres('iridium',      { ore: 'alltheores:iridium_ore', oreDeepslate: 'alltheores:deepslate_iridium_ore', oreNetherrack: 'alltheores:nether_iridium_ore' });
+    
+    //oreAndesite: '', oreGranite: '', oreDiorite: ''
 
     // Fluid    
 
