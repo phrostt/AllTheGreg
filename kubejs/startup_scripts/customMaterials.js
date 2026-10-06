@@ -1927,6 +1927,8 @@ StartupEvents.postInit(event => {
     TagPrefix.ore.setIgnored(GTMaterials.get('calorite'), 'ad_astra:venus_calorite_ore');
     TagPrefix.ore.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:azure_silver_ore');
     TagPrefix.ore.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ore');
+    
+    
 
     // Raw Ores
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
@@ -1934,6 +1936,8 @@ StartupEvents.postInit(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:end_draconium_ore');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('uranium'), 'alltheores:raw_uranium');
+    
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
@@ -2109,6 +2113,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.ore.setIgnored(GTMaterials.get('calorite'), 'ad_astra:venus_calorite_ore');
     TagPrefix.ore.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:azure_silver_ore');
     TagPrefix.ore.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:mithril_ore');
+    
 
     // Raw Ores
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iesnium'), 'occultism:raw_iesnium');
@@ -2116,6 +2121,7 @@ GTCEuStartupEvents.materialModification(event => {
     TagPrefix.rawOre.setIgnored(GTMaterials.get('azure_silver'), 'silentgear:raw_azure_silver');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('mithril'), 'irons_spellbooks:raw_mithril');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('draconium'), 'draconicevolution:end_draconium_ore');
+    TagPrefix.rawOre.setIgnored(GTMaterials.get('uranium'), 'alltheores:raw_uranium');
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('desh'), 'ad_astra:raw_desh');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('ostrum'), 'ad_astra:raw_ostrum');
@@ -2123,6 +2129,7 @@ GTCEuStartupEvents.materialModification(event => {
 
     TagPrefix.rawOre.setIgnored(GTMaterials.get('iridium'), 'alltheores:raw_iridium');
     TagPrefix.rawOre.setIgnored(GTMaterials.get('debris'), 'minecraft:ancient_debris');
+    
 
     // Fluid    
 
@@ -2201,11 +2208,17 @@ GTCEuStartupEvents.materialModification(event => {
     iridium.setProperty(PropertyKey.ORE, ore_prop);
 
 
-    let netherstar = GTMaterials.get('nether_star')
-    let etrium = GTMaterials.get('etrium');
+    //adding uranium ore processing and biproducts
+    let uraniumOreProperty = new OreProperty();
+    let listUranium = new ArrayList();
+    listUranium.add(GTMaterials.get('thorium'));
+    listUranium.add(GTMaterials.get('plutonium'));
+    uraniumOreProperty['setOreByProducts(java.util.Collection)'](listUranium);
+    GTMaterials.get('uranium').setProperty(PropertyKey.ORE, uraniumOreProperty);
 
-    netherstar.setProperty(PropertyKey.ORE, new OreProperty());
-    etrium.setProperty(PropertyKey.ORE, new OreProperty());
+
+    GTMaterials.get('nether_star').setProperty(PropertyKey.ORE, new OreProperty());
+    GTMaterials.get('etrium').setProperty(PropertyKey.ORE, new OreProperty());
 
 
     let debris = GTMaterials.get('debris');
