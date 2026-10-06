@@ -1379,25 +1379,42 @@ const oreSetups = {
     osmium: null,
     debris: null,
 };
+const allOrePrefixes = [
+    'ore', 'oreDeepslate', 'oreNetherrack', 'oreEndstone',
+    'oreSand', 'oreRedSand', 'oreGravel', 'oreTuff', 'oreBasalt', 'oreBlackstone',
+    'moon', 'mars', 'venus', 'mercury', 'glacio'
+];
 
 // ---------- Helpers ----------
-const getPrefix = (name) => TagPrefix[name] || TagPrefix.get(name);
-
 
 const setupOres = (matName, variants) => {
     let mat = GTMaterials.get(matName);
     if (!mat) return;
-    TagPrefix.ORES.keySet().forEach(prefix => {
-        prefix.setIgnored(mat);
+
+    allOrePrefixes.forEach(prefixStr => {
+        let prefixObj;
+    
+        try {            
+            prefixObj = TagPrefix[prefixStr];
+        } catch (e) {            
+            return; 
+        }
+
+        if (!prefixObj){
+            console.warn(`[GTORE] ${matName} Prefix object not found for prefix ${prefixStr}`);
+            return;
+        } 
+        
+        if (variants && variants[prefixStr]) {
+            prefixObj.setIgnored(mat, variants[prefixStr]);
+            console.warn(`[GTORE] Setting ignored for material ${matName} with prefix ${prefixStr} and variant ${variants[prefixStr]}`);
+        } else {
+            prefixObj.setIgnored(mat);
+            //console.warn(`[GTORE] Setting ignored for material ${matName} with prefix ${prefixStr} and no specific variant`);
+        }
     });
-    if (variants) {
-        Object.keys(variants).forEach(prefixName => {
-            let prefix = getPrefix(prefixName);
-            let id = variants[prefixName];
-            if (prefix && !Item.of(id).isEmpty()) prefix.setIgnored(mat, id);
-        });
-    }
 };
+
 
 // For arrays shaped like { name, oItems: [...] }, with a function building each item ID
 const ignoreFromList = (list, buildId) => {
