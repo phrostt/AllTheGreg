@@ -125,7 +125,7 @@ ServerEvents.recipes(allthemods => {
         'easy_villagers:converter', 'easy_villagers:iron_farm', 'easy_villagers:incubator',
         'allthemodium:teleport_pad', 'minecraft:flint_and_steel', 'farmingforblockheads:market',
         'minecraft:cauldron', 'minecraft:brewing_stand', 'minecraft:enchanting_table', 'blue_skies:enchanting_table_compat',
-        'gtceu:assembler/enchanting_Table', 'gtceu:assembler/cauldron','gtceu:assembler/brewing_stand',
+        'gtceu:assembler/enchanting_table', 'gtceu:assembler/cauldron','gtceu:assembler/brewing_stand',
 
         'thermal:augments/upgrade_augment_1', 'thermal:augments/upgrade_augment_2', 'thermal:augments/upgrade_augment_3',
         'thermal_extra:crafting/abyssal_integral_component', 'thermal_extra:crafting/dragonsteel_integral_component',

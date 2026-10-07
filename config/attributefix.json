@@ -88,17 +88,6 @@
         "value": 1000
       }
     },
-    "tconstruct:generic.armor_strength": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
     "irons_spellbooks:lightning_magic_resist": {
       "enabled": false,
       "min": {
@@ -108,6 +97,17 @@
       "max": {
         "default": 10,
         "value": 10
+      }
+    },
+    "tconstruct:generic.armor_strength": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 2048
       }
     },
     "ars_nouveau:ars_nouveau.perk.flat_max_mana": {
@@ -429,17 +429,6 @@
         "value": 1024
       }
     },
-    "tconstruct:generic.pre_reduction": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 2048
-      }
-    },
     "irons_spellbooks:lightning_spell_power": {
       "enabled": false,
       "min": {
@@ -449,6 +438,17 @@
       "max": {
         "default": 10,
         "value": 10
+      }
+    },
+    "tconstruct:generic.pre_reduction": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 2048
       }
     },
     "attributeslib:mining_speed": {

@@ -60,7 +60,7 @@ ServerEvents.recipes(allthemods => {
 
         // Tier 2
         { tier: 2, lp: 5000, input: '#forge:storage_blocks/redstone', output: 'bloodmagic:apprenticebloodorb' },
-        { tier: 2, lp: 5000, input: beeNomad, output: beeHematophagous, ID: 'beeHematophagous'},
+        { tier: 2, lp: 5000, input: beeNomad, output: beeHematophagous, ID: 'beehematophagous'},
         { tier: 2, lp: 4000, input: 'minecraft:glass_bottle', output: 'bloodmagic:alchemy_flask' },
         { tier: 2, lp: 3000, input: 'minecraft:iron_sword', output: 'bloodmagic:daggerofsacrifice' },
         { tier: 2, lp: 2000, input: 'bloodmagic:blankslate', output: 'bloodmagic:reinforcedslate' },
@@ -84,7 +84,7 @@ ServerEvents.recipes(allthemods => {
         { tier: 4, lp: 15000, input: 'bloodmagic:infusedslate', output: 'bloodmagic:demonslate' },
         { tier: 4, lp: 2000, input: '#forge:storage_blocks/coal', output: 'bloodmagic:duskscribetool' },
         { tier: 4, lp: 40000, input: 'bloodmagic:weakbloodshard', output: 'bloodmagic:masterbloodorb' },
-        { tier: 4, lp: 10000, input: beeHematophagous, output: beeRegenerative, ID: 'beeRegenerative'},
+        { tier: 4, lp: 10000, input: beeHematophagous, output: beeRegenerative, ID: 'beeregenerative'},
         { tier: 4, lp: 10000, input: 'bmaddon:blood_altar_tier_card_3', output: 'bmaddon:blood_altar_tier_card_4' },
         { tier: 4, lp: 10000, input: 'ae2:speed_card', output: 'bmaddon:blood_magic_speed_card' },
 

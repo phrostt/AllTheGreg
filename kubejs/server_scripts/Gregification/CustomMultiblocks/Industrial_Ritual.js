@@ -544,7 +544,7 @@ ServerEvents.recipes(allthemods => {
             let outputStr = count > 1 ? `${count}x ${outputItem}` : outputItem;
  
             let cleanOutput = outputStr.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            let customId = 'Ritual_' + i + '_' + cleanOutput;
+            let customId = 'ritual_' + i + '_' + cleanOutput;
             i++;
  
             addRitual(customInputs, outputStr, ritualName, recipe.duration, customId);
@@ -562,7 +562,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('occultism:spawn_egg/djinni', '{EntityTag:{spiritJob:{factoryId:"occultism:crush_tier2",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'ophyx_calling',
         90,
-        'Ritual_summon_crush_tier2'
+        'ritual_summon_crush_tier2'
     );
 
     addRitual(
@@ -570,7 +570,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('occultism:spawn_egg/afrit', '{EntityTag:{spiritJob:{factoryId:"occultism:crush_tier3",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'posucs_convocation',
         120,
-        'Ritual_summon_crush_tier3'
+        'ritual_summon_crush_tier3'
     );
 
     addRitual(
@@ -578,7 +578,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('occultism:spawn_egg/marid', '{EntityTag:{spiritJob:{factoryId:"occultism:crush_tier4",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'fatmas_incentivized_attraction',
         150,
-        'Ritual_summon_crush_tier4'
+        'ritual_summon_crush_tier4'
     );
 
     addRitual(
@@ -586,7 +586,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('occultism:spawn_egg/foliot', '{EntityTag:{spiritJob:{factoryId:"occultism:lumberjack",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'aviars_circle',
         60,
-        'Ritual_summon_lumberjack'
+        'ritual_summon_lumberjack'
     );
 
     addRitual(
@@ -594,7 +594,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('occultism:spawn_egg/djinni', '{EntityTag:{spiritJob:{factoryId:"occultism:day_time",conversionTimer:0},spiritMaxAge:5,spiritAge:0}}').strongNBT(),
         'ophyx_calling',
         60,
-        'Ritual_summon_day_time'
+        'ritual_summon_day_time'
     );
 
     addRitual(
@@ -602,7 +602,7 @@ ServerEvents.recipes(allthemods => {
         Item.of('occultism:spawn_egg/djinni', '{EntityTag:{spiritJob:{factoryId:"occultism:night_time",conversionTimer:0},spiritMaxAge:5,spiritAge:0}}').strongNBT(),
         'ophyx_calling',
         60,
-        'Ritual_summon_night_time'
+        'ritual_summon_night_time'
     );
 
     addRitual(
