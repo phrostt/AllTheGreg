@@ -9,7 +9,7 @@
 */
 
 global.mekStackAdditions = [
-  //{material:'iesnium', color:'#7FA9C1', makeDust: false},
+  {material:'iesnium', color:'#7FA9C1', makeDust: false},
   //{material:'demonite', color:'#7BA4B1', makeDust: false},
   {material:'crimson_iron', color:'#fc9aad', makeDust: false},
   {material:'azure_silver', color:'#e89ffc', makeDust: false}

@@ -34,6 +34,7 @@ ServerEvents.recipes(allthemods => {
         D: 'botania:black_petal'
     }).id('allthemods:botania/record_gaia_2')
 
+    /*
     //Blue skies
     allthemods.shaped('blue_skies:blinding_rage',['MC','SD'],{
         M: 'mysticalagriculture:blank_record',
@@ -59,6 +60,7 @@ ServerEvents.recipes(allthemods => {
         S: 'minecraft:cyan_dye',
         D: 'minecraft:magenta_dye'
     }).id('allthemods:blue_skies/population')
+    */
 
     //Twilight
     allthemods.shaped('twilightforest:music_disc_radiance',['MC','SD'],{

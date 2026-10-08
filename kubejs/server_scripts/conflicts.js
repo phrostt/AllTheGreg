@@ -4,7 +4,7 @@
 ServerEvents.recipes(allthemods => {
 
 
-  allthemods.shaped('additional_lights:fire_for_standing_torch_s', ['S', 'C'], { S: '#forge:rods/wooden', C: '#minecraft:coals' })
+  //allthemods.shaped('additional_lights:fire_for_standing_torch_s', ['S', 'C'], { S: '#forge:rods/wooden', C: '#minecraft:coals' })
   allthemods.shaped('ae2:quartz_block', ['CC', 'CC'], { C: 'gtceu:certus_quartz_gem' }).id(`allthemods:ae2/quartz_block`)
 
   allthemods.smelting('gtceu:uraninite_dust', 'gtceu:raw_uraninite').id('atm9:gtceu/smelting_smelt_raw_uraninite_ore_to_ingot')

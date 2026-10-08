@@ -28,13 +28,14 @@ ServerEvents.recipes(allthemods => {
     I: 'allthecompressed:diamond_block_4x'
   }).id('allthemods:allthetweaks/dimensional_seed')
 
+  //cataclysm removed 
     // Withers Compass
     allthemods.shaped('allthetweaks:withers_compass', ['DCD', 'ABA', 'DED'], {
-      A: 'cataclysm:abyssal_sacrifice',
+      A: 'minecraft:barrier',
       B: 'industrialforegoing:wither_builder',
       C: 'deeperdarker:heart_of_the_deep',
       D: 'bloodmagic:speedrune2',
-      E: 'cataclysm:void_forge'
+      E: 'minecraft:barrier'
     }).id('allthemods:allthetweaks/withers_compass')
 
   // Philosopher's Fuel
@@ -50,10 +51,11 @@ ServerEvents.recipes(allthemods => {
   I: 'silentgear:tyrian_steel_block'
   }).id('allthemods:allthetweaks/philosophers_fuel')
 
+  //computer craft removed
   // Improbable Probability Device
   allthemods.shaped('allthetweaks:improbable_probability_device', ['ABA', 'CGE', 'FDF'], {
     A: 'mekanism:pellet_antimatter',
-    B: 'computercraft:pocket_computer_advanced',
+    B: 'minecraft:barrier',
     C: ['extradisks:1048576k_storage_part', 'extradisks:1048576k_fluid_storage_part', 'megacells:cell_component_256m'],
     D: 'advgenerators:power_capacitor_tier3',
     E: 'rftoolsutility:flight_module',
@@ -96,13 +98,14 @@ ServerEvents.recipes(allthemods => {
     ]
   }).id('allthemods:pressure/allthetweaks/pulsating_black_hole')
 
+  //needs corner items
   // Oblivion Shard
   allthemods.shaped('allthetweaks:oblivion_shard', ['UAB', 'ACA', 'BAL'], {
     A: 'forbidden_arcanus:eternal_stella',
     C: Item.of('evilcraft:mace_of_destruction', '{Fluid: {FluidName: "evilcraft:blood", Amount: 4000}}').weakNBT(),
     B: 'evilcraft:piercing_vengeance_focus',
-	U: 'kubejs:cosmic_void',
-	L: 'kubejs:life_essence'
+	  U: 'minecraft:barrier',
+	  L: 'minecraft:barrier'
   }).id('allthemods:allthetweaks/oblivion_shard')
 
   // Creative Essence

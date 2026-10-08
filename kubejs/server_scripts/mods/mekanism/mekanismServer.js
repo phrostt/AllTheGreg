@@ -20,7 +20,7 @@ ServerEvents.recipes(allthemods => {
     }
     let hasDust = !dust.isEmpty()
 
-    if (!Ingredient.of(`#forge:storage_blocks/raw_${material}`).isEmpty()) {
+    if (!Ingredient.of(`#forge:storage_blocks/raw_${material}`).isEmpty()) {      
       allthemods.custom({
         type: 'mekanism:dissolution',
         itemInput: {
@@ -38,6 +38,8 @@ ServerEvents.recipes(allthemods => {
           gas: 'mekanism:sulfuric_acid'
         }
       }).id(`allthemods:processing/${material}/slurry/dirty/from_raw_block`)
+      
+      
       allthemods.custom({
         type: 'mekanism:injecting',
         itemInput: {
@@ -86,7 +88,7 @@ ServerEvents.recipes(allthemods => {
       }
     }
 
-    if (!Ingredient.of(`#forge:ores/${material}`).isEmpty()) {
+    if (!Ingredient.of(`#forge:ores/${material}`).isEmpty()) {            
       allthemods.custom({
         type: 'mekanism:dissolution',
         itemInput: {
@@ -103,7 +105,7 @@ ServerEvents.recipes(allthemods => {
           amount: 1,
           gas: 'mekanism:sulfuric_acid'
         }
-      }).id(`allthemods:processing/${material}/slurry/dirty/from_ore`)
+      }).id(`allthemods:processing/${material}/slurry/dirty/from_ore`)      
       allthemods.custom({
         type: 'mekanism:injecting',
         itemInput: {

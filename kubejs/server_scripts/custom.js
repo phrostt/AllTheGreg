@@ -342,43 +342,6 @@ ServerEvents.recipes(allthemods => {
 	universalCrush('phantom_membrane_dust', 'minecraft:phantom_membrane',	'gtceu:phantom_membrane_dust',	1, 5000,	null, 						0, 		true,	32, 400 );
 
 	
-	allthemods.custom({
-		"type": "thermal_extra:component_assembly",
-		"ingredients": [
-			{ "fluid": "gtceu:primordial_cosmic_soup", "amount": 8000 }, 
-			{ "item": "allthemodium:allthemodium_block" },
-			{ "item": "allthemodium:vibranium_block" },
-			{ "item": "allthemodium:unobtainium_block" },
-			{ "item": "allthemodium:piglich_heart_block" },
-			{ "item": "minecraft:dragon_egg" },
-			{ "item": "mekanism:pellet_antimatter" }
-		],
-		"result": [
-			{ "item": "kubejs:cosmic_void", "count": 1 }
-		],
-		"energy": 250000
-	}).id('gregification:thermal/assembly/cosmic_void');
-   
-   allthemods.custom({
-		"type": "thermal_extra:component_assembly",
-		"ingredients": [
-			{ "fluid": "gtceu:stable_life_essence", "amount": 10000 }, 
-			{ "item": "bloodmagic:dungeon_metal" }, // count: 1 is default
-			{ "item": "occultism:iesnium_block" },
-			{ "item": "bloodmagic:demonslate" },
-			{ "item": "evilcraft:dark_power_gem_block" },
-			{ "item": "mythicbotany:alfsteel_block" },
-			{ "item": "productivebees:inactive_dragon_egg" }
-		],
-		"result": [
-			{ "item": "kubejs:life_essence", "count": 1 }
-		],
-		"energy": 250000
-	}).id('gregification:thermal/assembly/life_essence');
-	
-	
-	
-		
 
 	
     //ghast tears from ender tears

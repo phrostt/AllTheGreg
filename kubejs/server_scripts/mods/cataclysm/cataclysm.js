@@ -1,6 +1,6 @@
 // This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 9.
 // As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
-
+/*
 ServerEvents.entityLootTables(allthemods => {
     allthemods.modifyEntity('cataclysm:deepling_brute', table => {
         table.addPool(pool => {
@@ -13,6 +13,6 @@ ServerEvents.entityLootTables(allthemods => {
         })
     })
 })
-
+*/
 // This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 9.
 // As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

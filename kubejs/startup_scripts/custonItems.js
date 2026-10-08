@@ -31,23 +31,6 @@ StartupEvents.registry('item', event => {
         .tooltip('Thermal Spark')
         .rarity('ie_masterwork')
 
-
-    event.create('cosmic_void')
-        .texture('kubejs:item/micro_universe_catalyst')
-        .displayName('Cosmic Void')
-        .tooltip('Made from primordial cosmic soup')
-
-
-    event.create('life_essence')
-        .texture('layer0', 'forbidden_arcanus:item/soul')
-        .color(0, 0xFF69B4) // Tinted to your Stable Life Essence pink
-        .texture('layer1', 'bloodmagic:item/archmagebloodorb')
-        .rarity('EPIC')
-        .displayName('Life Essence')
-        .tooltip('The distilled power of a Master, stabilized and refined.')
-        .glow(true); // Gives it that high-tier magical pulse
-
-
     event.create('quantum_sentient_circuit')
         .texture('layer0', 'pneumaticcraft:item/printed_circuit_board')
         .texture('layer1', 'advanced_ae:item/quantum_storage_component')
@@ -95,10 +78,10 @@ StartupEvents.registry('item', event => {
     const quarks = [
         { name: 'up', description: '§cFundamental positive charge constituent.', rarity: 'extra_red' },
         { name: 'down', description: '§9Fundamental negative charge constituent.', rarity: 'extra_blue' },
-        { name: 'top', description: '§bMassive, extremely short-lived particle.', rarity: 'blue' },
-        { name: 'bottom', description: '§5Heavy, dense constituent.', rarity: 'dark_gray' },
+        { name: 'top', description: '§bMassive, extremely short-lived particle.', rarity: 'extra_dark_aqua' },
+        { name: 'bottom', description: '§5Heavy, dense constituent.', rarity: 'COMMON' },
         { name: 'strange', description: '§dExotic particle with high stability decay.', rarity: 'extra_dark_purple' },
-        { name: 'charm', description: '§eLuminous second-generation quark.', rarity: 'gold' }
+        { name: 'charm', description: '§eLuminous second-generation quark.', rarity: 'UNCOMMON' }
     ];
 
 
@@ -138,8 +121,8 @@ StartupEvents.registry('item', event => {
         { name: 'fire', description: '§cThe essence of flame and heat.', rarity: 'extra_red' },
         { name: 'water', description: '§9The essence of fluidity and life.', rarity: 'extra_blue' },
         { name: 'earth', description: '§aThe essence of stability and growth.', rarity: 'extra_green' },
-        { name: 'air', description: '§fThe essence of freedom and movement.', rarity: 'white' },
-        { name: 'blank', description: '§7The essence of nothingness.', rarity: 'dark_gray' }
+        { name: 'air', description: '§fThe essence of freedom and movement.', rarity: 'COMMON' },
+        { name: 'blank', description: '§7The essence of nothingness.', rarity: 'ie_masterwork' }
     ]
     elements.forEach(element => {
         event.create(`gtceu:element_${element.name}`)

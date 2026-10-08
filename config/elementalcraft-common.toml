@@ -134,7 +134,7 @@
 
 			[elementalcraft.instruments.purifier.pureOre]
 				#Set to false if you want to manually manage processing of pure ore.
-				pureOreRecipeInjection = true
+				pureOreRecipeInjection = false
 
 		[elementalcraft.instruments.elementPipe]
 			#The amount of element transferred by impaired pipes.
