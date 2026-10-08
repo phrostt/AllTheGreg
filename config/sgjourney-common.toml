@@ -9,9 +9,6 @@
 	["Stargate Journey Common Config"."ZPM Config"]
 
 		["Stargate Journey Common Config"."ZPM Config".server]
-			#The energy that can be extracted from a single level of entropy
-			#Range: 1 ~ 9223372036854775807
-			zpm_energy_per_level_of_entropy = 100000000000
 			#Maximum amount of energy that can be transferred from the ZPM Hub in one tick
 			#Range: 1 ~ 9223372036854775807
 			zpm_hub_max_transfer = 100000000000
@@ -21,6 +18,9 @@
 			tech_uses_zero_point_energy = true
 			#If true, it will be possible to power technology and cables from other mods with energy from ZPMs
 			other_mods_use_zero_point_energy = false
+			#The energy that can be extracted from a single level of entropy
+			#Range: 1 ~ 9223372036854775807
+			zpm_energy_per_level_of_entropy = 100000000000
 
 	["Stargate Journey Common Config"."Interface Config"]
 

@@ -42,5 +42,87 @@ ServerEvents.recipes(allthemods => {
         MV, // MV Voltage
         600  // 30 Seconds
     );
+    //'mob_grinding_utils:recipe_saw_upgrade_beheading'
+
+    allthemods.shaped('mob_grinding_utils:saw_upgrade_beheading', [
+        "GLG",
+        "LRL",
+        "GLG"
+      ], {
+      G: '#forge:plates/vibranium',
+      L: '#forge:plates/polybenzimidazole',
+      R: 'gtceu:tungsten_grinding_head'
+    }).id('gregification:mob_grinding_utils/saw_upgrade_beheading')
+
+
+    allthemods.shaped('mob_grinding_utils:fan_upgrade_height', [
+        "PWP",
+        "PRP",
+        "PWP"
+    ],
+    {
+        R: '#forge:rotors/tungsten_steel',        
+        P: '#forge:plates/allthemodium',
+        W: '#forge:wires/quadruple/mercury_barium_calcium_cuprate'
+    }).id('gregification:mob_grinding_utils/fan_upgrade_height')
+
+    allthemods.shaped('mob_grinding_utils:fan_upgrade_width', [
+        "PPP",
+        "WRW",
+        "PPP"
+    ],
+    {
+        R: '#forge:rotors/tungsten_steel',        
+        P: '#forge:plates/allthemodium',
+        W: '#forge:wires/quadruple/mercury_barium_calcium_cuprate'
+    }).id('gregification:mob_grinding_utils/fan_upgrade_width')
+
+    allthemods.shaped('mob_grinding_utils:fan_upgrade_speed', [
+        "PWP",
+        "WRW",
+        "PWP"
+    ],
+    {
+        R: '#forge:rotors/tungsten_steel',        
+        P: '#forge:plates/allthemodium',
+        W: '#forge:wires/quadruple/mercury_barium_calcium_cuprate'
+    }).id('gregification:mob_grinding_utils/fan_upgrade_speed')
+
+
+
+
+    allthemods.shaped('mob_grinding_utils:fan', [
+        "PRP",
+        "WHW",
+        "PCP"
+    ],
+    {
+        R: '#forge:rotors/tungsten_steel',
+        C: '#forge:circuits/iv',
+        H: 'gtceu:hv_machine_hull',
+        P: '#forge:plates/unobtainium',
+        W: '#forge:wires/hex/cadmium_copper'
+    }).id('gregification:mob_grinding_utils/fan')
+    
+    allthemods.shaped('mob_grinding_utils:saw_upgrade_looting', [
+        "GLG",
+        "LRL",
+        "GLG"
+      ], {
+      G: '#forge:plates/allthemodium',
+      L: '#forge:plates/polybenzimidazole',
+      R: [Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 1).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 2).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 3).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 4).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 5).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 6).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 7).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:looting', 8).strongNBT()]
+    }).id('gregification:mob_grinding_utils/saw_upgrade_looting')
+
+    allthemods.shaped('mob_grinding_utils:saw_upgrade_sharpness', [
+        "GLG",
+        "LRL",
+        "GLG"
+      ], {
+      G: '#forge:plates/vibranium',
+      L: '#forge:plates/polybenzimidazole',
+      R: [Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 1).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 2).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 3).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 4).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 5).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 6).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 7).strongNBT(),Item.of('minecraft:enchanted_book').enchant('minecraft:sharpness', 8).strongNBT()]
+    }).id('gregification:mob_grinding_utils/saw_upgrade_sharpness')
+  
 	
 })

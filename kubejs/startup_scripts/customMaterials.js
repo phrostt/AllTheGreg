@@ -73,7 +73,10 @@ const materialsGem = [
     { name: 'empowered_enori', simple: true, element: 'enori', color: 0xf5f5f5, iconSet: 'QUARTZ' },
 
     { name: 'fluix', color: 0x8F5CCB, iconSet: 'SHINY', components: '1x redstone, 1x certus_quartz, 1x nether_quartz', voltage: 32, loss: 2, superconductor: false },
-    { name: 'atm_star', color: 0xFFC107, iconSet: 'SHINY', voltage: 2097152, loss: 2, superconductor: false }
+    { name: 'atm_star', color: 0xFFC107, iconSet: 'SHINY', voltage: 2097152, loss: 2, superconductor: false },
+    { name: 'dark_matter', color: 0x3b173f, iconSet: 'NETHERSTAR', simple: true},
+    { name: 'red_matter', color: 0x7a0606, iconSet: 'NETHERSTAR', simple: true}
+    
 ];
 
 
@@ -293,8 +296,8 @@ const fluids = [
     { name: 'boron_slurry_fuel', color: 0x5E5A3A, iconSet: 'FLUID', noDecomp: true },
     { name: 'pinene_dimer', components: '20x carbon, 32x hydrogen', formula: 'C20H32', color: 0xD9C27A, iconSet: 'FLUID', noDecomp: true },
     { name: 'hydrogenated_pinene_dimer', components: '20x carbon, 36x hydrogen', formula: 'C20H36', color: 0xF0E6B8, iconSet: 'FLUID', noDecomp: true },
-    { name: 'isobornyl_acetate', components: '12x carbon, 20x hydrogen, 2x oxygen', formula: 'C12H20O2', color: 0xEDE8D0, iconSet: 'FLUID', noDecomp: true }
-
+    { name: 'isobornyl_acetate', components: '12x carbon, 20x hydrogen, 2x oxygen', formula: 'C12H20O2', color: 0xEDE8D0, iconSet: 'FLUID', noDecomp: true },
+    { name: 'necrotic_acid', components:'4x witherite, 1x nether_star, 4x aqua_regia', color: 0x6B7A3A, iconSet: 'FLUID' },
 ];
 
 const modifyElement = (materialO, materialN, bTemp, volts, gem, polymer, ingot) => {
@@ -517,7 +520,9 @@ const dusts = [
     { name: 'chromium_bio_ash', color: 0x7A5C5C, iconSet: 'DULL', noDecomp: true },
     { name: 'silver_bio_ash', color: 0x8C8E92, iconSet: 'DULL', noDecomp: true },
     { name: 'iron_bio_ash', color: 0x7A5E50, iconSet: 'DULL', noDecomp: true },
-    { name: 'titanium_bio_ash', color: 0x7E7A86, iconSet: 'DULL', noDecomp: true }
+    { name: 'titanium_bio_ash', color: 0x7E7A86, iconSet: 'DULL', noDecomp: true },
+    { name: 'witherite', components: '1x barium, 1x carbon, 3x oxygen, 3x netherite', color: 0xD8D4B8, iconSet: 'ROUGH' }
+    
 
 ];
 
@@ -1313,6 +1318,8 @@ const ignoredItems = {
         niotic_crystal: 'powah:crystal_niotic',
         spirited_crystal: 'powah:crystal_spirited',
         nitro_crystal: 'powah:crystal_nitro',
+        dark_matter: 'projecte:dark_matter',
+        red_matter: 'projecte:red_matter'
     },
     ingot: {
         alloy_atomic: 'mekanism:alloy_atomic',

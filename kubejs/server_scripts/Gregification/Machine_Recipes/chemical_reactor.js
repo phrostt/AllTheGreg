@@ -85,6 +85,13 @@ ServerEvents.recipes(allthemods => {
         .duration(600)
         .EUt(EV);
 
+    allthemods.recipes.gtceu.chemical_reactor('gregification:necrotic_acid')
+        .itemInputs('4x #forge:dusts/witherite', '#forge:dusts/nether_star')
+        .inputFluids('#forge:aqua_regia 4000')
+        .outputFluids('gtceu:necrotic_acid 1000')
+        .duration(500)
+        .EUt(IV);
+
     allthemods.recipes.gtceu.chemical_reactor('gregification:super_coolant')
         .itemInputs('ad_astra:ice_shard', '#forge:dusts/blue_ice')
         .inputFluids('#forge:blue_ice 1000')

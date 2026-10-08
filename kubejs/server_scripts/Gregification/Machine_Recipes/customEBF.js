@@ -78,7 +78,7 @@ ServerEvents.recipes(allthemods => {
     //sky steel
     addEBF(
         ['#forge:ingots/iron', 'ae2:sky_stone_block', 'ae2:charged_certus_quartz_crystal'],
-        'minecraft:lava 1000',
+        'industrialforegoing:ether_gas 1000',
         '2x megacells:sky_steel_ingot',
         null,
         3600,

@@ -115,9 +115,20 @@ ServerEvents.recipes(allthemods => {
         'powah:crafting/energy_discharger_blazing', 'powah:crafting/energy_discharger_niotic', 'powah:crafting/energy_discharger_spirited', 
         'powah:crafting/energy_discharger_nitro',
 
+        'alltheores:smelting_dust/osmium_ingot', 'chemlib:osmium_ingot_from_blasting_osmium_dust',
+        'enderio:smelting/alltheores/smelting_dust/osmium_ingot',
+        'tconstruct:smeltery/melting/metal/osmium/dust',
+
+        'projecte:dark_matter', 'projecte:red_matter', 'projecte:red_matter_alt'
+
 
     ]
     const globalRemoves3 = [
+        // --- Mob Grinding Utils ---
+        'mob_grinding_utils:recipe_fan', 'mob_grinding_utils:recipe_saw_upgrade_looting', 'mob_grinding_utils:recipe_saw_upgrade_sharpness',
+        'mob_grinding_utils:recipe_fan_upgrade_height', 'mob_grinding_utils:recipe_fan_upgrade_width', 'mob_grinding_utils:recipe_fan_upgrade_speed',
+        'mob_grinding_utils:recipe_saw_upgrade_beheading',
+
         // --- Misc Utilities & Villagers ---
         'enderchests:ender_pouch', 'enderchests:ender_bag', 'enderchests:ender_chest', 'minecraft:ender_chest',
         'endertanks:bucket', 'endertanks:tank', 'entangled:block', 'entangled:item',
@@ -134,6 +145,7 @@ ServerEvents.recipes(allthemods => {
         'sanguine_networks:virtual_sacrificer', 'industrialforegoingsouls:soul_laser_base', 'industrialforegoingsouls:soul_surge',
         'industrialforegoingsouls:soul_network_pipe', 'ad_astra:launch_pad', 'ad_astra:oxygen_loader', 'ad_astra:fuel_refinery',
         'justdirethings:gooblock_tier1', 'justdirethings:gooblock_tier2', 'justdirethings:gooblock_tier3', 'justdirethings:gooblock_tier4',
+        'justdirethings:paradoxmachine',
 
         'wirelesschargers:basic_wireless_player_charger', 'wirelesschargers:advanced_wireless_player_charger',
         'wirelesschargers:basic_wireless_block_charger', 'wirelesschargers:advanced_wireless_block_charger',

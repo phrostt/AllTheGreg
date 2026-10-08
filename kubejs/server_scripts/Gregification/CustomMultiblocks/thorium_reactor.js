@@ -1,53 +1,27 @@
 ServerEvents.recipes(allthemods => {
     const [ ULV, LV, MV, HV, EV, IV, LuV, ZPM, UV, UHV, UEV, UIV, UXV, OpV, MAX ] = GTValues.VA
-    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/single_cell')
-        .itemInputs('gtceu:thorium_single')
-        .itemOutputs('chemlib:protactinium_dust')
-        .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:radon 2000', 'gtceu:radioactive_bioresidue 2000'])
-        .duration(1500)
-        .EUt(-131072);
 
-    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/double_cell')
-        .itemInputs('gtceu:thorium_double')
-        .itemOutputs('2x chemlib:protactinium_dust')
-        .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:radon 4000', 'gtceu:radioactive_bioresidue 4000'])
-        .duration(3150)
-        .EUt(-131072);
+    const thoriumCells = [
+        { id: 'thorium_single_cell',    input: 'gtceu:thorium_single',            outputCount: 1, gas: 'gtceu:radon', duration: 1500,  eu: ZPM },
+        { id: 'thorium_double_cell',    input: 'gtceu:thorium_double',            outputCount: 2, gas: 'gtceu:radon', duration: 4950,  eu: ZPM },
+        { id: 'thorium_quad_cell',      input: 'gtceu:thorium_quad',              outputCount: 4, gas: 'gtceu:radon', duration: 12600, eu: ZPM },
+        { id: 'berkelium_single_cell',  input: 'gtceu:thorium_berkelium_single',  outputCount: 2, gas: 'gtceu:xenon', duration: 1500,  eu: UV },
+        { id: 'berkelium_double_cell',  input: 'gtceu:thorium_berkelium_double',  outputCount: 4, gas: 'gtceu:xenon', duration: 4950,  eu: UV },
+        { id: 'berkelium_quad_cell',    input: 'gtceu:thorium_berkelium_quad',    outputCount: 8, gas: 'gtceu:xenon', duration: 12600, eu: UV }
+    ];
 
-    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/quad_cell')
-        .itemInputs('gtceu:thorium_quad')
-        .itemOutputs('4x chemlib:protactinium_dust')
-        .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:radon 8000', 'gtceu:radioactive_bioresidue 8000'])
-        .duration(6500)
-        .EUt(-131072);
+    thoriumCells.forEach(cell => {
+        let gasAmount = cell.outputCount * 500;
+        let bioresidueAmount = cell.outputCount * 1000;
 
-    
-    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/single_berkelium_cell')
-        .itemInputs('gtceu:thorium_berkelium_single')
-        .itemOutputs('2x chemlib:protactinium_dust')
-        .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:xenon 2000', 'gtceu:radioactive_bioresidue 2000'])
-        .duration(1500)
-        .EUt(-524288);
-
-    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/double_berkelium_cell')
-        .itemInputs('gtceu:thorium_berkelium_double')
-        .itemOutputs('4x chemlib:protactinium_dust')
-        .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:xenon 4000', 'gtceu:radioactive_bioresidue 4000'])
-        .duration(3150)
-        .EUt(-524288);
-
-    allthemods.recipes.gtceu.thorium_reactor('allthemods:thorium_reactor/quad_berkelium_cell')
-        .itemInputs('gtceu:thorium_berkelium_quad')
-        .itemOutputs('8x chemlib:protactinium_dust')
-        .inputFluids('gtceu:distilled_water 16000')
-        .outputFluids(['gtceu:xenon 8000', 'gtceu:radioactive_bioresidue 8000'])
-        .duration(6500)
-        .EUt(-524288);
+        allthemods.recipes.gtceu.thorium_reactor(`allthemods:thorium_reactor/${cell.id}`)
+            .itemInputs(cell.input)
+            .itemOutputs(`${cell.outputCount}x chemlib:protactinium_dust`)
+            .inputFluids('gtceu:distilled_water 16000')
+            .outputFluids([`${cell.gas} ${gasAmount}`, `gtceu:radioactive_bioresidue ${bioresidueAmount}`])
+            .duration(cell.duration)
+            .EUt(-cell.eu);
+    });
 
     allthemods.recipes.gtceu.assembly_line('gregification:craft_thorium_reactor')
         .itemInputs(

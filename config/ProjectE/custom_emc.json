@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "item": "projecte:dark_matter",
+      "emc": 0
+    },
+    {
+      "item": "projecte:red_matter",
+      "emc": 0
+    },
+    {
       "item": "minecraft:beef",
       "emc": 64
     },

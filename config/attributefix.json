@@ -308,6 +308,17 @@
         "value": 1024
       }
     },
+    "irons_lib:projectile_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
     "ars_nouveau:ars_nouveau.perk.percent_max_mana": {
       "enabled": false,
       "min": {

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_special_custom",
+  "conditions": [
+    {
+      "type": "forge:false"
+    }
+  ]
+}

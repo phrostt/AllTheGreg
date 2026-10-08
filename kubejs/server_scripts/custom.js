@@ -272,7 +272,7 @@ ServerEvents.recipes(allthemods => {
 	rotary('kubejs:saturated_tau_gas', 'gtceu:saturated_tau', 1);
 	rotary('kubejs:compressed_air_gas', 'gtceu:compressed_air', 1);
 	rotary('mekanism:polonium', 'gtceu:polonium', 1)
-	enrich('kubejs:dirty_dust_demonite', 'bloodmagic:sand_hellforged', 'dirty_demonite_to_sand');
+	//enrich('kubejs:dirty_dust_demonite', 'bloodmagic:sand_hellforged', 'dirty_demonite_to_sand');
 	
 	//igniter('iesnium',					'occultism:raw_iesnium', 				'kubejs:iesnium_chunk',			2,	'kubejs:iesnium_chunk', 		1, 0.15, 	15000 );
 	//igniter('demonite', 				'bloodmagic:rawdemonite', 				'kubejs:demonite_chunk',		2,	'kubejs:demonite_chunk', 		1, 0.15, 	20000);

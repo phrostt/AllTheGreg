@@ -42,7 +42,7 @@ ServerEvents.recipes(allthemods => {
 			'32x mekanism:pellet_antimatter', 
 			'8x industrialforegoing:black_hole_controller',
 			'16x ironfurnaces:unobtainium_furnace',
-			'32x computercraft:computer_advanced',
+			//'32x computercraft:computer_advanced',
 			Item.of('exchangers:end_steel_exchanger', 8, '{Energy:50000000}').weakNBT()
 		], 
 		[

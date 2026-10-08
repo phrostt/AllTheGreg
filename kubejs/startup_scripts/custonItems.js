@@ -1,24 +1,5 @@
 StartupEvents.registry('item', event => {
 
-    /*const oreChunk = (id, iTexture, iColor) => {	
-        event.create(`${id}_chunk`)			
-            .displayName(`${id.charAt(0).toUpperCase() + id.slice(1)} Chunk`)
-            //.glow(true) 			
-            .tooltip(`§7A concentrated chunk of ${id} ore.`) 
-            .texture('layer0', 'thermal_extra:item/iron_ore_chunk')
-            //.texture('layer1', iTexture)
-            .color(0, iColor)
-    }*/
-
-    //oreChunk('demonite',		'bloodmagic:item/rawdemonite', 			0x7BA4B1)
-    //oreChunk('iesnium',			'occultism:item/raw_iesnium', 			0x7FA9C1)
-    //oreChunk('allthemodium',	'allthemodium:item/allthemodium_ingot',	0xF9D71C)
-    //oreChunk('vibranium', 		'allthemodium:item/vibranium_ingot', 	0x51FF00)
-    //oreChunk('unobtainium', 	'allthemodium:item/unobtainium_ingot', 	0x8C00FF)
-
-
-
-
     event.create('gtceu:technomancy_orb')
         .displayName('Technomancy Orb')
         .tooltip('Orb of Technomantic Ascendancy')

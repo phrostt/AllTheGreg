@@ -361,7 +361,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.gtceu.mixer('gregification:semi_stable_clathrate')
         .itemInputs(['#forge:dusts/vibrant_crystal', '#forge:dusts/pulsating_crystal'])
         .itemOutputs('gtceu:semi_stable_clathrate_dust')
-        .duration(2048)
+        .duration(800)
         .EUt(HV);
 
     //stabilized clathrate
@@ -369,8 +369,19 @@ ServerEvents.recipes(allthemods => {
         .itemInputs(['#forge:dusts/semi_stable_clathrate', '#forge:dusts/gadolinium', '#forge:dusts/ender_pearl'])
         .itemOutputs('gtceu:stabilized_clathrate_dust')
         .inputFluids('#forge:tetrahydrofuran 1000')
-        .duration(2048)
+        .duration(800)
         .EUt(MV);
+
+    //witherite
+    allthemods.recipes.gtceu.mixer('gregification:witherite')
+        .itemInputs(['#forge:dusts/barium', '#forge:dusts/carbon', '3x #forge:dusts/netherite'])
+        .itemOutputs('gtceu:witherite_dust')
+        .inputFluids('#forge:oxygen 3000')
+        .duration(600)
+        .EUt(IV);
+
+    
+
 
     //demonic alloy
     addMixer(
@@ -444,5 +455,7 @@ ServerEvents.recipes(allthemods => {
         UEV,
         500
     )
+
+    
 
 });

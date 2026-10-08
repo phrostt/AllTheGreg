@@ -1,33 +1,33 @@
 filename = 'Stargate Journey-1.20.1-0.6.44.jar'
 name = 'Stargate Journey'
-side = 'both'
+side = 'server'
 x-prismlauncher-loaders = [ 'forge' ]
 x-prismlauncher-mc-versions = [ '1.20.1' ]
 x-prismlauncher-release-type = 'beta'
-x-prismlauncher-version-number = '0.6.44'
+x-prismlauncher-version-number = 'Stargate Journey 1.20.1 - 0.6.44'
 
 [download]
-hash = '431a62c73b53f09585f9f958366d82fa040d798a2e6a8cac77dd8bc0c955b7d850c5983e31aa7d517da4ac184a35f83d0f803a15226538ceb667292d26a494de'
-hash-format = 'sha512'
-mode = 'url'
-url = 'https://cdn.modrinth.com/data/qlc8dxM6/versions/DfgorLCp/Stargate Journey-1.20.1-0.6.44.jar'
+hash = 'e6fd269effa2f9ea13a0faa0d5ea6e0424b8d8ff'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
 
-[update.modrinth]
-mod-id = 'qlc8dxM6'
-version = 'DfgorLCp'
+[update.curseforge]
+file-id = 7173638
+project-id = 689083
 
 [[x-prismlauncher-dependencies]]
-addonId = 'gu7yAYhd'
+addonId = '238222'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
-addonId = '3ufwT9JF'
+addonId = '865273'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
-addonId = 'Iairjv0A'
+addonId = '282001'
 type = 'OPTIONAL'
 
 [[x-prismlauncher-dependencies]]
-addonId = 'u6dRKJwZ'
+addonId = '635042'
 type = 'OPTIONAL'

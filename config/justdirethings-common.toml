@@ -142,12 +142,12 @@
 	#ores by default) are affected - this list can only narrow that, not widen it.
 	#Example: ".*reative.*" blocks all blocks with "reative" in their ID (e.g. all Creative blocks),
 	#or "seeds" blocks any block whose ID contains "seeds".
-	paradox_block_blacklist = []
+	paradox_block_blacklist = [".*"]
 	#Additional entities the Paradox Machine cannot save/restore, matched by regex against the full entity ID.
 	#Each entry is a regex searched (not fully matched) against the entity ID, so partial matches work.
 	#Example: "draconicevolution:chaos_guardian" blocks that exact entity,
 	#or "^draconicevolution:" blocks all entities from that mod.
-	paradox_entity_blacklist = []
+	paradox_entity_blacklist = [".*"]
 
 #Polymorphic Wand
 [polymorphic_wand]

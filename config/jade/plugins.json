@@ -247,8 +247,14 @@
   "ars_nouveau": {
     "mob_jar": true
   },
+  "enderio_evolution": {
+    "capacitor_bank_render": true
+  },
   "jadeaddons": {
     "equipment_requirement": ""
+  },
+  "enderio_conduit_opt": {
+    "conduit_info": true
   },
   "jadeaddons.lootr": {
     "info": true
