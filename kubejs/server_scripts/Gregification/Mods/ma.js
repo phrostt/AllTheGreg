@@ -13,13 +13,14 @@ ServerEvents.recipes(allthemods => {
     };
 
     const essences = ['fire','water','air', 'earth']
+    /*
     essences.forEach(essence => {
-        let recipe = allthemods.recipes.gtceu.extractor(`allthemods:extractor/${essence}`)
+        let recipe = allthemods.recipes.gtceu.extractor(`gregification:extracting_essence/${essence}`)
             .itemInputs(`#forge:gems/${essence}_essence`)
             .outputFluids(`gtceu:${essence}_essence 10`)
             .duration(300)
             .EUt(MV);        
-    });
+    });*/
     
 
     const supremiumBee = Item.of('productivebees:spawn_egg_configurable_bee', '{EntityTag:{type:"productivebees:supremium"}}').strongNBT();

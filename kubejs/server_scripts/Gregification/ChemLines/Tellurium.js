@@ -49,7 +49,7 @@ ServerEvents.recipes(allthemods => {
         .EUt(TelluriumEUComplex);
 
     // Step 5: Electrolyzer
-    allthemods.recipes.gtceu.electrolyzer('gregification:tellurium_recovery')
+    allthemods.recipes.gtceu.chemical_reactor('gregification:tellurium_recovery')
         .inputFluids('#forge:sodium_tellurite_solution 2000', 'gtceu:acetic_acid 1000') 
         .outputFluids('gtceu:carbon_dioxide 2000')
         .itemOutputs('2x chemlib:tellurium_dust', '4x gtceu:sodium_hydroxide_dust')

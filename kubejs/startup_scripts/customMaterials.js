@@ -546,7 +546,7 @@ const modalloys = [
     { name: 'dark_steel', components: '1x steel, 1x carbon, 1x obsidian', color: 0x3D3D3D, iconSet: 'METALLIC', voltage: 512, loss: 2, cBlast: { temp: 2700, duration: 400, volts: 512 } },
     { name: 'end_steel', components: '1x dark_steel, 1x endstone, 1x obsidian', color: 0xE6F1A8, iconSet: 'METALLIC', voltage: 2048, loss: 0, cBlast: { temp: 3600, duration: 400, volts: 2048 } },
 
-    { name: 'bedrockium', color: 0x101010, iconSet: 'METALLIC', cBlast: { temp: 7200, duration: 1200, volts: 524288 } },
+    //{ name: 'bedrockium', color: 0x101010, iconSet: 'METALLIC', cBlast: { temp: 7200, duration: 1200, volts: 524288 } },
     // --- Botania Metals ---
     { name: 'manasteel', element: 'manasteel', color: 0x47CCFF, cDust: true, iconSet: 'METALLIC', voltage: 128, loss: 1 },
     { name: 'elementium', element: 'elementium', color: 0xF687FF, cDust: true, iconSet: 'METALLIC', voltage: 512, loss: 2 },
@@ -718,7 +718,8 @@ const newOres = [
 ];
 
 const customMatsToRegister = [
-
+    
+    { name: 'bedrockium', color: 0x101010, iconSet: 'METALLIC', ingot: true, ore: true, dust: true, flags: [GTMaterialFlags.NO_SMELTING, CMMEMaterialFlags.GENERATE_SINGULARITY, GTMaterialFlags.DISABLE_DECOMPOSITION, GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.GENERATE_ROD, GTMaterialFlags.GENERATE_LONG_ROD, GTMaterialFlags.GENERATE_RING, GTMaterialFlags.GENERATE_BOLT_SCREW, GTMaterialFlags.GENERATE_ROUND, GTMaterialFlags.GENERATE_FRAME, GTMaterialFlags.GENERATE_DENSE, GTMaterialFlags.GENERATE_GEAR, GTMaterialFlags.GENERATE_SMALL_GEAR, GTMaterialFlags.GENERATE_FOIL] },
     { name: 'debris', color: 0x6E5A52, iconSet: 'METALLIC', ore: true },
     { name: 'crimson_iron', color: 0xee4f7f, iconSet: 'METALLIC', ore: true },
     { name: 'ferricore', color: 0xb1e5db, iconSet: 'METALLIC', ingot: true, ore: true },
@@ -736,7 +737,7 @@ const customMatsToRegister = [
     { name: 'fire_essence', color: 0xD74C4C, iconSet: 'FLUID', fluid: true, gem: true },
     { name: 'water_essence', color: 0x4C7DD7, iconSet: 'FLUID', fluid: true, gem: true },
     { name: 'air_essence', color: 0xD7D34C, iconSet: 'FLUID', fluid: true, gem: true },
-    { name: 'earth_essence', color: 0xD7D34C, iconSet: 'FLUID', fluid: true, gem: true },
+    { name: 'earth_essence', color: 0x45b23f, iconSet: 'FLUID', fluid: true, gem: true },
     { name: 'spent_nuclear_waste', color: 0x53D74C, iconSet: 'RADIOACTIVE', fluid: true },
 
     { name: 'semi_stable_clathrate', color: 0x8FFFD7, iconSet: 'METALLIC', dust: true, ingot: true, flags: [GTMaterialFlags.GENERATE_PLATE, GTMaterialFlags.NO_SMELTING, CMMEMaterialFlags.GENERATE_SINGULARITY, GTMaterialFlags.DISABLE_DECOMPOSITION] },

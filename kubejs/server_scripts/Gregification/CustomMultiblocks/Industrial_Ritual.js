@@ -581,13 +581,13 @@ ServerEvents.recipes(allthemods => {
         'ritual_summon_crush_tier4'
     );
 
-    addRitual(
+    /*addRitual(
         ['occultism:otherworld_sapling', 'minecraft:oak_sapling', 'minecraft:birch_sapling', 'minecraft:spruce_sapling', '#forge:tools/metal/axes'],
         Item.of('occultism:spawn_egg/foliot', '{EntityTag:{spiritJob:{factoryId:"occultism:lumberjack",conversionTimer:0},spiritMaxAge:-1,spiritAge:0}}').strongNBT(),
         'aviars_circle',
         60,
         'ritual_summon_lumberjack'
-    );
+    );*/
 
     addRitual(
         ['minecraft:torch', '#minecraft:saplings', 'minecraft:wheat', '#forge:dyes/yellow'],

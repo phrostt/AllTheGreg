@@ -460,7 +460,7 @@ ServerEvents.recipes(allthemods => {
         ZPM,null,0
     );
 
-    createModelBlueprints('prototype_assembler', 'ender_dragon', 'creative_container', ['elementalcraft:creative_container'],
+    createModelBlueprints('prototype_assembler', 'drowned', 'creative_container', ['elementalcraft:creative_container'],
         [
             'elementalcraft:container',
             'gtceu:element_fire',
@@ -618,7 +618,7 @@ ServerEvents.recipes(allthemods => {
         .duration(400)
         .EUt(LuV);
 
-    createModelBlueprints('prototype_assembler', 'blaze', 'flight_module', jCreative,
+    createModelBlueprints('prototype_assembler', 'ghast', 'flight_module', jCreative,
         [
             jUnobtainium,
             $SizedIngredient.create(jThruster, 2),
@@ -638,7 +638,7 @@ ServerEvents.recipes(allthemods => {
         ],
         '#forge:chocolate 1024000',
         6000,
-        LuV, 16,null,0
+        LuV, 16,'creative_blaze_cake',0
     );
 
     createModelBlueprints('prototype_assembler', '~death_tome', 'font', 'botania:creative_pool',
@@ -900,7 +900,7 @@ ServerEvents.recipes(allthemods => {
         null,
         null,
         6000,
-        LuV,32,"chaotic_blueprint",2
+        LuV,32,"chaotic_blueprint",2 //just make a blueprint
     );
 
 

@@ -20,7 +20,7 @@ ServerEvents.recipes(allthemods => {
             .itemInputs(`gtceu:${baseMaterial2}_${type}`)
             .itemOutputs(`gtceu:${magneticMaterial2}_${type}`)
             .duration(150)
-            .EUt(ZPM);
+            .EUt(IV);
     });
 
     components2.forEach(type => {        
@@ -38,7 +38,7 @@ ServerEvents.recipes(allthemods => {
             .itemInputs(`gtceu:${m[0]}_${baseMaterial2}_${m[1]}`)
             .itemOutputs(`gtceu:${m[0]}_${magneticMaterial2}_${m[1]}`)            
             .duration(150)
-            .EUt(ZPM);
+            .EUt(IV);
     });
 
     

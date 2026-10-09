@@ -309,7 +309,7 @@ ServerEvents.recipes(allthemods => {
         ],
         `powah:capacitor_${tier.tier}`,
         null,
-        index*100,
+        (index+1)*100,
         tier.eu
     )
     });    

@@ -3,7 +3,7 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.gtceu.distillery('refine_seed_oil')
         .inputFluids('#forge:seed_oil 100')
         .outputFluids('gtceu:refined_seed_oil 100')
-        .circuit(1)
+        .circuit(7)
         .duration(600)
         .EUt(EV);
         

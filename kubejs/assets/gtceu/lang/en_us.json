@@ -738,6 +738,17 @@
     "material.gtceu.dark_matter": "Dark Matter",
     "material.gtceu.red_matter": "Red Matter",
     "material.gtceu.necrotic_acid": "Necrotic Acid",
-    "material.gtceu.witherite": "Witherite"
+    "material.gtceu.witherite": "Witherite",
+    
+    "gtcoilemi.tooltip.requires": "Requires %s or better",
+    "gtcoilemi.tooltip.temperature": "Recipe temperature: %s K",
+    "gtcoilemi.tooltip.level": "Required coil level: %s",
+    "gtcoilemi.tooltip.tier": "Required coil tier: %s",
+
+    "gtcoilemi.text.temperature": "Temp: %s K",
+    "gtcoilemi.text.level": "Level: %s",
+    "gtcoilemi.text.tier": "Tier: %s",
+    "gtcoilemi.text.coil": "Coil: %s"
 }
+
  
